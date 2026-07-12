@@ -4,6 +4,13 @@ This isolated Node.js utility audits TMDB company and TV-network source caches, 
 
 The renderer uses Sharp and the TMDB image CDN only. It does not call the TMDB search/detail API and does not publish into the final asset folders or create the production manifest.
 
+## Continuity
+
+Before resuming implementation or generation work, read:
+
+- [Repository operating instructions](../../AGENTS.md)
+- [Current project status](PROJECT_STATUS.md)
+
 ## Source data and eligibility
 
 The authoritative inputs are read directly from a neighbouring `tmdb-id-lookup` checkout:
@@ -105,6 +112,14 @@ npm run generate -- --all --preset production-v1
 
 `--all` must always be explicit. Additional controls are `--dry-run`, `--force`, `--include-ineligible`, `--refresh-logo-cache`, `--source-dir`, `--preset`, and `--json`. `production-v1` is the default outside proof-of-concept mode; proof-of-concept mode continues to default to `poc-v1`. `--refresh-logo-cache` refetches only distinct logo paths in the current selection. `--force` regenerates selected staged covers without deleting cache content. The proof-of-concept mode also creates the three controlled variants for its six configured difficult-logo records and builds both contact sheets.
 
+Before any production missing-logo render, verify the local Sharp/libvips/Pango font path:
+
+```powershell
+npm run font-check
+```
+
+The command checks both `C:\Windows\Fonts` and the current user's local Windows Fonts directory, compares a deterministic requested-family render with a fallback-only render, and writes an ignored diagnostic PNG and JSON report under `.work/font-diagnostics/`. It does not download or install fonts.
+
 ## Download, analysis, and rendering
 
 Logo URLs are constructed as `https://image.tmdb.org/t/p/original{logo_path}`. The cache filename is a SHA-256 key of that full URL plus a safe source extension. Downloads use Node's built-in `fetch`, a utility user agent, a timeout, and bounded transient retries. A successful response must be non-empty, image-typed when a content type is present, and decodable by Sharp. Cache writes and completed cover/report writes use temporary files followed by rename.
@@ -115,7 +130,7 @@ For each candidate background, every visible pixel is composited against that ba
 
 The visible rectangle is fitted with `min(maximumWidth / visibleWidth, maximumHeight / visibleHeight)`, resized with Lanczos, and centred on its visible geometry. The primary preset uses 864×324 maximum visible bounds on a 1200×675 canvas. Enlargement above 2× and low-resolution or unexpectedly opaque sources are review flags. Flat backgrounds are primary; the configured subtle gradients are used only by the gradient comparison variant.
 
-Missing logo paths produce a centred text fallback using the current source name. The renderer requests `Inter, Segoe UI, Arial, Helvetica, sans-serif`; Inter is the preferred face, while the remaining bundled/system faces are deterministic fallbacks until a font-file loading path is introduced. This stack is isolated in `fallbackText.fontFamily` in the preset so Inter can be swapped in without renderer changes. Text starts on one line, uses a balanced word-boundary wrap of no more than two lines when necessary, and reduces in size inside the central safe region. Every fallback records its background, font stack, font size, line count, and wrapped lines, and has `status: missing-logo` and `reviewStatus: needs-review`.
+Missing logo paths produce a centred text fallback using the current source name. `production-v1` requests the exact `Inter` family and requires the font check to confirm both a discovered Inter font and a renderer result distinct from the fallback-only comparison. Production rendering stops before writing work files when Inter cannot be confirmed; it never silently falls through to Segoe UI or Arial. Non-production and test presets retain the configurable `Inter, Segoe UI, Arial, Helvetica, sans-serif` stack. Text starts on one line, uses a balanced word-boundary wrap of no more than two lines when necessary, and reduces in size inside the central safe region. Every fallback records its background, font family, font size, line count, and wrapped lines, and has `status: missing-logo` and `reviewStatus: needs-review`.
 
 Every WebP is decoded after writing and must be exactly 1200×675, WebP, and non-empty. The staged file hash and byte count are recorded.
 
@@ -130,6 +145,14 @@ Ignored run-state is maintained per stable key and variant. An output is skipped
 Exact duplicate logo paths reuse one download and one analysis in a run. Identical rendering inputs may also reuse the rendered WebP buffer, but each entity still receives a separate ID-named staged file. Production reports include `run-summary.json`, `entities.jsonl`, readable generation and status-grouped Markdown summaries, `review-priority.json`, status groups, a contact-sheet index, per-run crash-recovery JSON Lines, source-file hashes, Node/Sharp/libvips/WebP versions, reuse counters, review flags, background splits, failures, and output-size statistics. Production runs create deterministic 8×8 paged contact sheets for companies, networks, and the combined review set.
 
 ## Review and publish preparation
+
+Build focused review sheets and a pending hash-bound review draft from the existing staged outputs and reports without running generation:
+
+```powershell
+npm run review-prep -- --preset production-v1
+```
+
+This reads the persistent current run state, so a selective rerun does not hide unchanged outputs from review. It writes ignored reason-specific 8×8 sheets and their Markdown/JSON index under `.work/contact-sheets/production-v1/review/`, plus `review-state-draft.json`, `review-checklist.csv`, and (when Inter is unconfirmed) `fallback-ids.json` under `.work/reviews/production-v1/`. Every pending draft entry is checked against the current staged file hash. The command refuses report outputs outside ignored staging and performs no final-asset or canonical-manifest writes.
 
 `schemas/review-state.schema.json` defines the future human review-state file. Approved entries bind a stable key and publish target to the exact reviewed output hash. `src/publish-plan.mjs` can validate those approvals against the staged file and build an in-memory dry publish plan; it performs no copy and writes no canonical manifest. A later publish command may consume that plan only after explicit approval, copy verified files to `assets/collection_covers/companies/{id}.webp` or `assets/collection_covers/networks/{id}.webp`, and then create the canonical published manifest. Stage three does none of those actions.
 
