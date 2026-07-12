@@ -46,9 +46,10 @@ test("missing, invalid JSON, and non-array top levels produce clear errors", asy
   context.after(() => fs.rm(root, { recursive: true, force: true }));
   await fs.mkdir(path.join(root, "data"));
   await fs.writeFile(path.join(root, "data/companies.min.json"), "{");
-  await fs.writeFile(path.join(root, "data/tv-networks.min.json"), "{}");
+  await fs.writeFile(path.join(root, "data/tv-networks.min.json"), "[]");
   await assert.rejects(loadSourceData(root), /Invalid JSON/);
   await fs.writeFile(path.join(root, "data/companies.min.json"), "[]");
+  await fs.writeFile(path.join(root, "data/tv-networks.min.json"), "{}");
   await assert.rejects(loadSourceData(root), /top-level array/);
   await fs.rm(path.join(root, "data/tv-networks.min.json"));
   await assert.rejects(loadSourceData(root), /Missing network source JSON/);

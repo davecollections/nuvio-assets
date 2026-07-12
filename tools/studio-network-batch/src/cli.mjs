@@ -10,19 +10,22 @@ import { readManifest } from "./manifest.mjs";
 import { readStableKeyArray } from "./json-input.mjs";
 import { buildSelectionPlan, formatSelectionPlan } from "./selection.mjs";
 import { resolveSourceDirectory } from "./source-path.mjs";
+import { generateBatch, formatGenerationSummary } from "./generator.mjs";
+import { RENDERER_VERSION } from "./constants.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "../..");
 
 async function main() {
   const [command, ...args] = process.argv.slice(2);
-  if (command !== "audit" && command !== "plan") {
-    throw new Error("Usage: node src/cli.mjs <audit|plan> [options]");
+  if (!new Set(["audit", "plan", "generate"]).has(command)) {
+    throw new Error("Usage: node src/cli.mjs <audit|plan|generate> [options]");
   }
   const options = parseCliOptions(args);
   if (command === "audit") {
     const planOnly = options.all || options.proofOfConcept || options.newRecords || options.changedRecords ||
-      options.companyIds.length || options.networkIds.length || options.idsFile || options.manifest;
+      options.companyIds.length || options.networkIds.length || options.idsFile || options.manifest ||
+      options.force || options.dryRun || options.includeIneligible || options.refreshLogoCache || options.preset;
     if (planOnly) throw new Error("Selection and manifest options are only valid for plan.");
   }
   const source = resolveSourceDirectory({ sourceDir: options.sourceDir, repoRoot });
@@ -48,7 +51,9 @@ async function main() {
   );
   const manifestProvided = Boolean(options.manifest);
   const manifest = manifestProvided ? await readManifest(path.resolve(options.manifest)) : new Map();
-  const preset = JSON.parse(await fs.readFile(path.join(packageRoot, "presets/poc-v1.json"), "utf8"));
+  const presetPath = resolvePresetPath(options.preset);
+  const preset = JSON.parse(await fs.readFile(presetPath, "utf8"));
+  validatePreset(preset, presetPath);
   const plan = buildSelectionPlan({
     entities: sourceData.entities,
     validationErrors: sourceData.validationErrors,
@@ -59,12 +64,41 @@ async function main() {
     manifestProvided,
     includeIneligible: options.includeIneligible,
     force: options.force,
-    dryRun: true,
-    rendererVersion: "renderer-not-implemented",
+    dryRun: command === "plan" || options.dryRun,
+    rendererVersion: RENDERER_VERSION,
     presetVersion: preset.version,
     repoRoot,
   });
-  process.stdout.write(`${options.json ? JSON.stringify(plan, null, 2) : formatSelectionPlan(plan)}\n`);
+  if (command === "plan") {
+    process.stdout.write(`${options.json ? JSON.stringify(plan, null, 2) : formatSelectionPlan(plan)}\n`);
+    return;
+  }
+  const result = await generateBatch({
+    plan,
+    preset,
+    packageRoot,
+    sourceData,
+    dryRun: options.dryRun,
+    force: options.force,
+    refreshLogoCache: options.refreshLogoCache,
+  });
+  process.stdout.write(`${options.json ? JSON.stringify(result, null, 2) : formatGenerationSummary(result)}\n`);
+}
+
+function resolvePresetPath(option) {
+  if (!option) return path.join(packageRoot, "presets", "poc-v1.json");
+  if (option.includes("/") || option.includes("\\") || option.toLowerCase().endsWith(".json")) {
+    return path.resolve(option);
+  }
+  return path.join(packageRoot, "presets", `${option}.json`);
+}
+
+function validatePreset(preset, presetPath) {
+  if (!preset?.version || !preset?.canvas?.width || !preset?.canvas?.height ||
+      !preset?.logo?.maximumVisibleWidthPercent || !preset?.logo?.maximumVisibleHeightPercent ||
+      !preset?.output?.quality) {
+    throw new Error(`Preset is missing required generation settings: ${presetPath}`);
+  }
 }
 
 main().catch((error) => {

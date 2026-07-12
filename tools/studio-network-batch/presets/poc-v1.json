@@ -7,14 +7,63 @@
   },
   "logo": {
     "maximumVisibleWidthPercent": 72,
-    "maximumVisibleHeightPercent": 48
+    "maximumVisibleHeightPercent": 48,
+    "visibleAlphaThreshold": 8,
+    "lowResolutionMinimumWidth": 96,
+    "lowResolutionMinimumHeight": 48,
+    "extremeDimension": 8192,
+    "highUpscaleReviewThreshold": 2
   },
   "backgrounds": {
     "dark": "#08141C",
-    "light": "#E4E7E9"
+    "light": "#E4E7E9",
+    "darkGradientStart": "#0E222E",
+    "darkGradientEnd": "#08141C",
+    "lightGradientStart": "#F1F3F4",
+    "lightGradientEnd": "#E4E7E9",
+    "primaryStyle": "flat"
+  },
+  "contrast": {
+    "minimumRobustScore": 2.5,
+    "closeScoreDifference": 0.35,
+    "usefulRatio": 3,
+    "strongRatio": 4.5
   },
   "output": {
     "format": "webp",
-    "quality": 86
+    "quality": 86,
+    "effort": 4,
+    "smartSubsample": true
+  },
+  "download": {
+    "timeoutMs": 20000,
+    "retries": 2,
+    "retryDelayMs": 500,
+    "userAgent": "NuvioStudioNetworkBatch/0.2 (local artwork utility)"
+  },
+  "variants": {
+    "stableKeys": [
+      "network:6",
+      "network:49",
+      "network:1024",
+      "company:2",
+      "company:174",
+      "company:21"
+    ],
+    "smaller": {
+      "maximumVisibleWidthPercent": 68,
+      "maximumVisibleHeightPercent": 42,
+      "backgroundStyle": "flat"
+    },
+    "larger": {
+      "maximumVisibleWidthPercent": 76,
+      "maximumVisibleHeightPercent": 54,
+      "backgroundStyle": "flat"
+    },
+    "gradient": {
+      "maximumVisibleWidthPercent": 72,
+      "maximumVisibleHeightPercent": 48,
+      "backgroundStyle": "subtle-gradient"
+    }
   }
 }

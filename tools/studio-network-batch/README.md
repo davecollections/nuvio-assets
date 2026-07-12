@@ -1,8 +1,8 @@
 # Nuvio studio/network batch utility
 
-This isolated Node.js utility audits TMDB company and TV-network source caches and creates deterministic artwork-selection plans. It is separate from Nuvio's Collection Builder: it plans landscape collection artwork keyed by TMDB entity IDs, while the Collection Builder has a different responsibility.
+This isolated Node.js utility audits TMDB company and TV-network source caches, creates deterministic selections, and stages 16:9 collection artwork for review. It is separate from Nuvio's Collection Builder: it handles artwork keyed by TMDB entity IDs, while the Collection Builder has a different responsibility.
 
-Image generation is intentionally **not implemented in this stage**. The utility does not download logos, call the TMDB API, render images, build contact sheets, or create the production manifest. Sharp is not installed; it is planned for the next implementation stage.
+The renderer uses Sharp and the TMDB image CDN only. It does not call the TMDB search/detail API and does not publish into the final asset folders or create the production manifest.
 
 ## Source data and eligibility
 
@@ -38,17 +38,20 @@ tools/studio-network-batch/
   tests/
 ```
 
-Temporary future work belongs under the ignored `.work/` tree:
+All downloads, state, generated covers, reports, and contact sheets remain under the ignored `.work/` tree:
 
 ```text
 .work/
-  cache/
-  staging/
-  contact-sheets/
-  reports/
+  cache/logos/
+  staging/poc-v1/
+    primary/companies/
+    primary/networks/
+    variants/
+  contact-sheets/poc-v1/
+  reports/poc-v1/
 ```
 
-The utility does not create these directories during planning. `node_modules/` is also ignored locally, but `package-lock.json` is deliberately not ignored.
+Planning and generation dry-runs do not create these directories. `node_modules/` is ignored locally, but `package-lock.json` is deliberately tracked.
 
 ## Commands
 
@@ -81,13 +84,46 @@ ID files are JSON arrays of stable keys such as `"company:33"` and `"network:18"
 
 `--new` selects eligible records missing from a supplied future canonical manifest. With no manifest, all eligible records are treated as new and the plan states this explicitly. `--changed` requires a manifest baseline and compares artwork inputs, renderer and preset versions, expected output path, and—when a manifest entry says it was generated—output existence, byte count, and file hash. Source-logo and normalised-pixel hashes remain future rendering-stage inputs.
 
-`--force` marks selected entries for unconditional regeneration by the future generator but does not broaden the selection. `--dry-run` is accepted as the shared future option; planning itself is always non-rendering. Add `--json` to any plan command for machine-readable standard output.
+`--force` marks selected entries for unconditional regeneration and does not broaden the selection. `--dry-run` is shared with generation; planning itself is always non-rendering. Add `--json` to any plan command for machine-readable standard output.
 
-## Fingerprints and refresh behaviour
+Generation reuses the same explicit selection modes:
+
+```powershell
+npm run generate -- --proof-of-concept
+npm run generate -- --company-ids 33,174
+npm run generate -- --network-ids 18,66
+npm run generate -- --company-ids 33 --network-ids 18
+npm run generate -- --ids-file path\to\ids.json
+npm run generate -- --new --manifest path\to\manifest.json
+npm run generate -- --changed --manifest path\to\manifest.json
+npm run generate -- --all
+```
+
+`--all` must always be explicit. Additional controls are `--dry-run`, `--force`, `--include-ineligible`, `--refresh-logo-cache`, `--source-dir`, `--preset`, and `--json`. `--refresh-logo-cache` refetches only distinct logo paths in the current selection. `--force` regenerates selected staged covers without deleting cache content. The proof-of-concept mode also creates the three controlled variants for its six configured difficult-logo records and builds both contact sheets.
+
+## Download, analysis, and rendering
+
+Logo URLs are constructed as `https://image.tmdb.org/t/p/original{logo_path}`. The cache filename is a SHA-256 key of that full URL plus a safe source extension. Downloads use Node's built-in `fetch`, a utility user agent, a timeout, and bounded transient retries. A successful response must be non-empty, image-typed when a content type is present, and decodable by Sharp. Cache writes and completed cover/report writes use temporary files followed by rename.
+
+Each source is rotated for EXIF orientation, converted to sRGB, given an alpha channel, and decoded to raw RGBA. Pixels with alpha at least 8 are visible. The analysis records their exact bounding rectangle, transparent padding, alpha coverage, source and visible dimensions, visible-pixel count, source hash, and normalised RGBA hash. The extracted rectangle retains internal transparent holes.
+
+For each candidate background, every visible pixel is composited against that background and assigned its WCAG-style relative-luminance contrast ratio. Ratios are alpha-weighted. The robust score combines the lower 10th percentile, median, and weighted proportions meeting 3:1 and 4.5:1. The higher score wins deterministically. Low best scores or differences below the versioned confidence threshold are marked `needs-review`; no outlines, shadows, or recolouring are added.
+
+The visible rectangle is fitted with `min(maximumWidth / visibleWidth, maximumHeight / visibleHeight)`, resized with Lanczos, and centred on its visible geometry. The primary preset uses 864×324 maximum visible bounds on a 1200×675 canvas. Enlargement above 2× and low-resolution or unexpectedly opaque sources are review flags. Flat backgrounds are primary; the configured subtle gradients are used only by the gradient comparison variant.
+
+Missing logo paths produce a centred text fallback using the current source name and a Windows sans-serif stack. Text wraps and reduces in size inside the safe region. Every fallback has `status: missing-logo` and `reviewStatus: needs-review`.
+
+Every WebP is decoded after writing and must be exactly 1200×675, WebP, and non-empty. The staged file hash and byte count are recorded.
+
+## Fingerprints, state, and refresh behaviour
 
 The source-record hash includes entity type, TMDB ID, name, title count, and logo path for audit/history. The separate artwork-input hash includes identity, logo path, fallback name only when text fallback is needed, renderer version, and preset version. Therefore a title count moving from 200 to 201 changes source history but does not by itself refresh artwork while the entity remains eligible.
 
 The committed proof-of-concept file contains only stable keys. Names, counts, and logo paths are resolved and validated from the current source caches every run; a missing or ineligible configured record is reported without substitution.
+
+Ignored run-state is maintained per stable key and variant. An output is skipped only when identity, logo/fallback input, source hash, artwork-input hash, renderer and preset versions, output path, output hash, dimensions, format, and decode validation all match. Title-count-only changes do not regenerate eligible artwork; a logo-path change, corrupt/missing output, renderer/preset change, or `--force` does.
+
+Exact duplicate logo paths reuse one download and one analysis in a run. Identical rendering inputs may also reuse the rendered WebP buffer, but each entity still receives a separate ID-named staged file. Reports include `run-summary.json`, primary and variant JSON Lines, a readable Markdown summary, per-run crash-recovery JSON Lines, source-cache hashes, runtime versions, reuse counters, review flags, failures, and output-size statistics.
 
 ## Future artwork and manifest policy
 
@@ -98,6 +134,6 @@ assets/collection_covers/companies/{tmdb_id}.webp
 assets/collection_covers/networks/{tmdb_id}.webp
 ```
 
-Duplicate source-logo processing may later be reused internally, but final assets are not aliases and are not collapsed into a shared physical file.
+Duplicate source-logo processing is reused internally, but final identities are not aliases and are not collapsed into a shared physical file.
 
-`presets/poc-v1.json` records provisional 1200×675, 16:9 settings: maximum visible logo width 72%, maximum visible logo height 48%, dark background `#08141C`, light background `#E4E7E9`, WebP quality 86, and WebP output. They are proof-of-concept candidates, not final production values. `schemas/manifest-entry.schema.json` is a draft for the future manifest; no production manifest exists yet.
+`presets/poc-v1.json` records all provisional canvas, alpha, contrast, safe-box, background, WebP, download, and variant settings. They remain proof-of-concept candidates, not final production values. `schemas/manifest-entry.schema.json` is a draft for the future manifest; no production manifest is created by this utility stage.

@@ -26,14 +26,16 @@ export function parseCliOptions(argv) {
     includeIneligible: false,
     force: false,
     dryRun: false,
+    refreshLogoCache: false,
     companyIds: [],
     networkIds: [],
   };
-  const valueNames = new Set(["--source-dir", "--company-ids", "--network-ids", "--ids-file", "--manifest"]);
+  const valueNames = new Set(["--source-dir", "--company-ids", "--network-ids", "--ids-file", "--manifest", "--preset"]);
   const flagNames = new Map([
     ["--json", "json"], ["--all", "all"], ["--proof-of-concept", "proofOfConcept"],
     ["--new", "newRecords"], ["--changed", "changedRecords"],
     ["--include-ineligible", "includeIneligible"], ["--force", "force"], ["--dry-run", "dryRun"],
+    ["--refresh-logo-cache", "refreshLogoCache"],
   ]);
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];

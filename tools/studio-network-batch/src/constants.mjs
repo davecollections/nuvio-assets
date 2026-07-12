@@ -7,8 +7,10 @@ export const SOURCE_FILES = Object.freeze({
 
 export const ENTITY_ORDER = Object.freeze({ company: 0, network: 1 });
 
-export const DEFAULT_RENDERER_VERSION = "renderer-not-implemented";
+export const DEFAULT_RENDERER_VERSION = "sharp-renderer-v1";
 export const DEFAULT_PRESET_VERSION = "poc-v1";
+export const RENDERER_VERSION = DEFAULT_RENDERER_VERSION;
+export const TMDB_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
 export function outputPathFor(entity) {
   const folder = entity.entityType === "company" ? "companies" : "networks";

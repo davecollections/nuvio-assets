@@ -10,7 +10,8 @@
   "scripts": {
     "test": "node --test",
     "audit": "node src/cli.mjs audit",
-    "plan": "node src/cli.mjs plan"
+    "plan": "node src/cli.mjs plan",
+    "generate": "node src/cli.mjs generate"
   },
   "dependencies": {
     "sharp": "^0.35.3"
