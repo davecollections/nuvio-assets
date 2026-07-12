@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/studio-network-manifest-entry.schema.json",
+  "title": "Future Nuvio studio/network artwork manifest entry",
+  "description": "Draft only. No production manifest is created during the ingestion/planning stage.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entity_type",
+    "tmdb_id",
+    "stable_key",
+    "name",
+    "title_count",
+    "logo_path",
+    "source_record_hash",
+    "artwork_input_hash",
+    "renderer_version",
+    "preset_version",
+    "output_path",
+    "status",
+    "review_status"
+  ],
+  "properties": {
+    "entity_type": { "enum": ["company", "network"] },
+    "tmdb_id": { "type": "integer", "minimum": 1 },
+    "stable_key": { "type": "string", "pattern": "^(company|network):[1-9][0-9]*$" },
+    "name": { "type": "string", "minLength": 1 },
+    "title_count": { "type": "integer", "minimum": 0 },
+    "logo_path": { "type": "string" },
+    "source_record_hash": { "$ref": "#/$defs/nullableHash" },
+    "artwork_input_hash": { "$ref": "#/$defs/nullableHash" },
+    "source_logo_hash": { "$ref": "#/$defs/nullableHash" },
+    "normalized_pixel_hash": { "$ref": "#/$defs/nullableHash" },
+    "renderer_version": { "type": "string", "minLength": 1 },
+    "preset_version": { "type": "string", "minLength": 1 },
+    "background_preset": { "type": ["string", "null"] },
+    "source_dimensions": { "$ref": "#/$defs/nullableDimensions" },
+    "visible_bounds": { "$ref": "#/$defs/nullableBounds" },
+    "output_path": { "type": "string", "pattern": "^assets/collection_covers/(companies|networks)/[1-9][0-9]*\\.webp$" },
+    "output_hash": { "$ref": "#/$defs/nullableHash" },
+    "output_bytes": { "type": ["integer", "null"], "minimum": 0 },
+    "status": { "enum": ["planned", "generated", "failed", "skipped"] },
+    "review_status": { "enum": ["unreviewed", "approved", "rejected", "needs_changes"] },
+    "generated_at": { "type": ["string", "null"], "format": "date-time" },
+    "reviewed_at": { "type": ["string", "null"], "format": "date-time" },
+    "error_code": { "type": ["string", "null"] },
+    "error_message": { "type": ["string", "null"] }
+  },
+  "$defs": {
+    "nullableHash": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+    "nullableDimensions": {
+      "oneOf": [
+        { "type": "null" },
+        { "type": "object", "additionalProperties": false, "required": ["width", "height"], "properties": { "width": { "type": "integer", "minimum": 1 }, "height": { "type": "integer", "minimum": 1 } } }
+      ]
+    },
+    "nullableBounds": {
+      "oneOf": [
+        { "type": "null" },
+        { "type": "object", "additionalProperties": false, "required": ["x", "y", "width", "height"], "properties": { "x": { "type": "number" }, "y": { "type": "number" }, "width": { "type": "number", "minimum": 0 }, "height": { "type": "number", "minimum": 0 } } }
+      ]
+    }
+  }
+}

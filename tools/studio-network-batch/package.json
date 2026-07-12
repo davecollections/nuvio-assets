@@ -1,0 +1,18 @@
+{
+  "name": "@nuvio/studio-network-batch",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Audit and selection planning for Nuvio company and TV-network collection artwork.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "audit": "node src/cli.mjs audit",
+    "plan": "node src/cli.mjs plan"
+  },
+  "dependencies": {
+    "sharp": "^0.35.3"
+  }
+}

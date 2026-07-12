@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "entries": [
+    {
+      "stable_key": "company:2",
+      "artwork_input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "renderer_version": "old-renderer",
+      "preset_version": "old-preset",
+      "output_path": "assets/collection_covers/companies/2.webp",
+      "status": "planned"
+    },
+    {
+      "stable_key": "network:999",
+      "artwork_input_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+      "renderer_version": "old-renderer",
+      "preset_version": "old-preset",
+      "output_path": "assets/collection_covers/networks/999.webp",
+      "status": "planned"
+    }
+  ]
+}

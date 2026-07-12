@@ -1,0 +1,20 @@
+{
+  "version": "poc-v1",
+  "status": "proof-of-concept candidate",
+  "canvas": {
+    "width": 1200,
+    "height": 675
+  },
+  "logo": {
+    "maximumVisibleWidthPercent": 72,
+    "maximumVisibleHeightPercent": 48
+  },
+  "backgrounds": {
+    "dark": "#08141C",
+    "light": "#E4E7E9"
+  },
+  "output": {
+    "format": "webp",
+    "quality": 86
+  }
+}
