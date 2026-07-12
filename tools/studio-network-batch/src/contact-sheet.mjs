@@ -19,15 +19,22 @@ function truncate(value, maximum) {
 }
 
 function labelSvg(item, width, height) {
-  const name = escapeXml(truncate(item.name, 38));
-  const identity = escapeXml(`${item.tmdbId} · ${item.entityType}`);
-  const reviewMarker = item.reviewStatus === "needs-review" ? " · needs-review" : "";
-  const detail = escapeXml(truncate(`${item.backgroundPreset ?? "n/a"} · ${item.renderStatus ?? item.status}${reviewMarker}`, 46));
+  const defaultLines = [
+    item.name,
+    `${item.tmdbId} · ${item.entityType}`,
+    `${item.backgroundPreset ?? "n/a"} · ${item.renderStatus ?? item.status}${item.reviewStatus === "needs-review" ? " · needs-review" : ""}`,
+  ];
+  const lines = (item.contactSheetLabelLines ?? defaultLines).map((line) => truncate(String(line), 54));
+  const text = lines.map((line, index) => {
+    const y = index === 0 ? 21 : 21 + index * 17;
+    const colour = index === 0 ? "#FFFFFF" : index === 1 ? "#D9DDE0" : "#BAC1C6";
+    const size = index === 0 ? 15 : 11;
+    const weight = index === 0 ? ' font-weight="600"' : "";
+    return `<text x="10" y="${y}" fill="${colour}" font-family="Segoe UI,Arial,sans-serif" font-size="${size}"${weight}>${escapeXml(line)}</text>`;
+  }).join("");
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
     <rect width="100%" height="100%" fill="#33383D"/>
-    <text x="10" y="22" fill="#FFFFFF" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600">${name}</text>
-    <text x="10" y="43" fill="#D9DDE0" font-family="Segoe UI,Arial,sans-serif" font-size="13">${identity}</text>
-    <text x="10" y="61" fill="#BAC1C6" font-family="Segoe UI,Arial,sans-serif" font-size="12">${detail}</text>
+    ${text}
   </svg>`);
 }
 

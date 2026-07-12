@@ -75,6 +75,8 @@ test("production preset loads the locked artwork settings", () => {
   assert.equal(productionPreset.logo.maximumVisibleWidthPercent, 72);
   assert.equal(productionPreset.logo.maximumVisibleHeightPercent, 48);
   assert.equal(productionPreset.output.quality, 86);
+  assert.equal(productionPreset.fallbackText.requiredFontFamily, "Inter");
+  assert.equal(productionPreset.fallbackText.requireConfirmedFont, true);
 });
 
 test("fallback text chooses one line when comfortable and no more than two when wrapping", () => {
@@ -82,7 +84,7 @@ test("fallback text chooses one line when comfortable and no more than two when 
   const twoLines = layoutFallbackText("A Deliberately Long International Television Network Name", productionPreset);
   assert.equal(oneLine.lineCount, 1);
   assert.equal(twoLines.lineCount, 2);
-  assert.match(oneLine.fontFamily, /^Inter,/);
+  assert.equal(oneLine.fontFamily, "Inter");
   assert.deepEqual(twoLines.lines, twoLines.wrappedTextLines);
 });
 
@@ -119,11 +121,13 @@ test("large-boundary resumability skips all 65 valid staged outputs", async (con
   const selected = Array.from({ length: 65 }, (_, index) => entity(index + 1));
   const first = await generateBatch({
     plan: plan(selected), preset: data.preset, packageRoot: data.packageRoot, sourceData: data.sourceData,
+    fontCheckImpl: async () => ({ requestedFamily: "Inter", confirmed: true }),
   });
   assert.equal(first.missingLogoGenerated, 65);
   assert.equal(first.contactSheets.groups.companies.length, 2);
   const second = await generateBatch({
     plan: plan(selected), preset: data.preset, packageRoot: data.packageRoot, sourceData: data.sourceData,
+    fontCheckImpl: async () => ({ requestedFamily: "Inter", confirmed: true }),
   });
   assert.equal(second.skipped, 65);
   assert.equal(second.generated, 0);
@@ -138,6 +142,7 @@ test("publish preparation verifies approval hashes without writing final assets"
   const generated = await generateBatch({
     plan: plan([entity(10, "Approved Example")]), preset: data.preset,
     packageRoot: data.packageRoot, sourceData: data.sourceData,
+    fontCheckImpl: async () => ({ requestedFamily: "Inter", confirmed: true }),
   });
   const record = generated.records[0];
   const publishPlan = await buildPublishPlan({
@@ -153,4 +158,19 @@ test("publish preparation verifies approval hashes without writing final assets"
   assert.equal(publishPlan.approvedCount, 1);
   assert.equal(publishPlan.writesPerformed, false);
   await assert.rejects(fs.access(path.join(data.packageRoot, "assets", "collection_covers", "companies", "10.webp")));
+});
+
+test("production fallback generation stops before creating work files when Inter is unconfirmed", async (context) => {
+  const data = await fixture(context);
+  await assert.rejects(
+    generateBatch({
+      plan: plan([entity(11, "Blocked Example")]),
+      preset: data.preset,
+      packageRoot: data.packageRoot,
+      sourceData: data.sourceData,
+      fontCheckImpl: async () => ({ requestedFamily: "Inter", confirmed: false }),
+    }),
+    (error) => error.code === "required_font_unavailable",
+  );
+  await assert.rejects(fs.access(path.join(data.packageRoot, ".work")));
 });

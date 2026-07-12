@@ -27,7 +27,8 @@
     "strongRatio": 4.5
   },
   "fallbackText": {
-    "fontFamily": "Inter, Segoe UI, Arial, Helvetica, sans-serif",
+    "requiredFontFamily": "Inter",
+    "requireConfirmedFont": true,
     "fontWeight": 600,
     "maximumFontSize": 96,
     "minimumFontSize": 28,

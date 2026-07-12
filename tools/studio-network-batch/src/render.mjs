@@ -3,6 +3,11 @@ import path from "node:path";
 import sharp from "sharp";
 
 import { atomicWrite } from "./atomic.mjs";
+import {
+  assertProductionFallbackFont,
+  checkInterAvailability,
+  NON_PRODUCTION_FONT_STACK,
+} from "./font-check.mjs";
 
 export function calculateFit(visibleWidth, visibleHeight, canvas, logoConfig) {
   if (!(visibleWidth > 0) || !(visibleHeight > 0)) throw new Error("Visible logo dimensions must be positive.");
@@ -136,7 +141,9 @@ export function layoutFallbackText(name, preset) {
   const safeWidth = Math.floor(preset.canvas.width * preset.logo.maximumVisibleWidthPercent / 100);
   const safeHeight = Math.floor(preset.canvas.height * preset.logo.maximumVisibleHeightPercent / 100);
   const config = preset.fallbackText ?? {};
-  const fontFamily = config.fontFamily ?? "Inter, Segoe UI, Arial, Helvetica, sans-serif";
+  const fontFamily = config.requireConfirmedFont
+    ? config.requiredFontFamily ?? "Inter"
+    : config.fontFamily ?? NON_PRODUCTION_FONT_STACK;
   const maximumFontSize = config.maximumFontSize ?? 96;
   const minimumFontSize = config.minimumFontSize ?? 28;
   const lineHeightMultiplier = config.lineHeightMultiplier ?? 1.18;
@@ -162,7 +169,13 @@ export function layoutFallbackText(name, preset) {
   return { lines, wrappedTextLines: lines, lineCount: lines.length, fontFamily, fontSize: 18, lineHeight: 21, safeWidth, safeHeight };
 }
 
-export async function renderFallbackCover(entity, preset, { sharpImpl = sharp } = {}) {
+export async function renderFallbackCover(entity, preset, { sharpImpl = sharp, fontCheckResult = null } = {}) {
+  if (preset.fallbackText?.requireConfirmedFont) {
+    const result = fontCheckResult ?? await checkInterAvailability({
+      requestedFamily: preset.fallbackText.requiredFontFamily ?? "Inter",
+    });
+    assertProductionFallbackFont(preset, result);
+  }
   const layout = layoutFallbackText(entity.name, preset);
   const selectedBackground = preset.fallbackText?.selectedBackground ?? "dark";
   const backgroundColour = preset.backgrounds[selectedBackground];

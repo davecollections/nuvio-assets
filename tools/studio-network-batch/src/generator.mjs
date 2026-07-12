@@ -11,6 +11,7 @@ import {
   variantContactSheetPath,
 } from "./contact-sheet.mjs";
 import { RENDERER_VERSION } from "./constants.mjs";
+import { assertProductionFallbackFont, checkInterAvailability } from "./font-check.mjs";
 import { artworkInputFingerprint, bufferFingerprint } from "./fingerprints.mjs";
 import { analyseLogo } from "./image-analysis.mjs";
 import { createLogoDownloader } from "./logo-cache.mjs";
@@ -54,6 +55,7 @@ function renderInputHash(entity, sourceHash, preset, variantName, renderConfig) 
     preset.logo.visibleAlphaThreshold,
     preset.backgrounds,
     preset.contrast,
+    entity.logoPath ? null : preset.fallbackText,
     preset.output,
   ])));
 }
@@ -211,6 +213,7 @@ export async function generateBatch({
   refreshLogoCache = false,
   fetchImpl = globalThis.fetch,
   now = () => new Date(),
+  fontCheckImpl = checkInterAvailability,
 } = {}) {
   const startedAt = now();
   if (dryRun) {
@@ -225,6 +228,14 @@ export async function generateBatch({
       message: "Dry run completed without downloads, cache writes, reports, contact sheets, or staged outputs.",
       issues: plan.issues,
     };
+  }
+
+  let productionFontCheck = null;
+  if (preset.fallbackText?.requireConfirmedFont && plan.selected.some((entity) => !entity.logoPath)) {
+    productionFontCheck = await fontCheckImpl({
+      requestedFamily: preset.fallbackText.requiredFontFamily ?? "Inter",
+    });
+    assertProductionFallbackFont(preset, productionFontCheck);
   }
 
   const workRoot = path.join(packageRoot, ".work");
@@ -322,7 +333,7 @@ export async function generateBatch({
 
       let renderedResult;
       if (!entity.logoPath) {
-        renderedResult = await renderFallbackCover(entity, variantPreset);
+        renderedResult = await renderFallbackCover(entity, variantPreset, { fontCheckResult: productionFontCheck });
       } else {
         let analysisPromise = analyses.get(source.sourceHash);
         const analysisReused = Boolean(analysisPromise);

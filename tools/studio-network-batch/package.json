@@ -11,7 +11,9 @@
     "test": "node --test",
     "audit": "node src/cli.mjs audit",
     "plan": "node src/cli.mjs plan",
-    "generate": "node src/cli.mjs generate"
+    "generate": "node src/cli.mjs generate",
+    "font-check": "node src/font-check-cli.mjs",
+    "review-prep": "node src/review-prep-cli.mjs"
   },
   "dependencies": {
     "sharp": "^0.35.3"
