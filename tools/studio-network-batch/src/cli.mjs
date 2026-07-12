@@ -11,7 +11,7 @@ import { readStableKeyArray } from "./json-input.mjs";
 import { buildSelectionPlan, formatSelectionPlan } from "./selection.mjs";
 import { resolveSourceDirectory } from "./source-path.mjs";
 import { generateBatch, formatGenerationSummary } from "./generator.mjs";
-import { RENDERER_VERSION } from "./constants.mjs";
+import { DEFAULT_PRESET_VERSION, RENDERER_VERSION } from "./constants.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "../..");
@@ -51,7 +51,7 @@ async function main() {
   );
   const manifestProvided = Boolean(options.manifest);
   const manifest = manifestProvided ? await readManifest(path.resolve(options.manifest)) : new Map();
-  const presetPath = resolvePresetPath(options.preset);
+  const presetPath = resolvePresetPath(options.preset, mode);
   const preset = JSON.parse(await fs.readFile(presetPath, "utf8"));
   validatePreset(preset, presetPath);
   const plan = buildSelectionPlan({
@@ -85,8 +85,11 @@ async function main() {
   process.stdout.write(`${options.json ? JSON.stringify(result, null, 2) : formatGenerationSummary(result)}\n`);
 }
 
-function resolvePresetPath(option) {
-  if (!option) return path.join(packageRoot, "presets", "poc-v1.json");
+function resolvePresetPath(option, mode) {
+  if (!option) {
+    const defaultVersion = mode === "proof-of-concept" ? "poc-v1" : DEFAULT_PRESET_VERSION;
+    return path.join(packageRoot, "presets", `${defaultVersion}.json`);
+  }
   if (option.includes("/") || option.includes("\\") || option.toLowerCase().endsWith(".json")) {
     return path.resolve(option);
   }

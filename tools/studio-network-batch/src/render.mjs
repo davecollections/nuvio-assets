@@ -101,56 +101,87 @@ export async function renderLogoCover(analysis, preset, {
   };
 }
 
-function wrapText(name, maximumCharacters) {
-  const words = name.trim().split(/\s+/).filter(Boolean);
-  if (!words.length) return [""];
-  const lines = [];
-  let current = "";
-  for (const word of words) {
-    if (!current) {
-      current = word;
-    } else if (`${current} ${word}`.length <= maximumCharacters) {
-      current = `${current} ${word}`;
-    } else {
-      lines.push(current);
-      current = word;
-    }
+function estimatedTextWidth(value, fontSize) {
+  let units = 0;
+  for (const character of value) {
+    if (character === " ") units += 0.33;
+    else if (/[ilI1|.,'`]/.test(character)) units += 0.3;
+    else if (/[MW@%&]/.test(character)) units += 0.9;
+    else if (/[A-Z0-9]/.test(character)) units += 0.67;
+    else units += 0.55;
   }
-  if (current) lines.push(current);
-  return lines;
+  return units * fontSize;
+}
+
+function bestWordWrap(name) {
+  const words = name.trim().split(/\s+/).filter(Boolean);
+  if (words.length < 2) return null;
+  let best = null;
+  for (let index = 1; index < words.length; index += 1) {
+    const lines = [words.slice(0, index).join(" "), words.slice(index).join(" ")];
+    const widths = lines.map((line) => estimatedTextWidth(line, 1));
+    const score = Math.max(...widths) + Math.abs(widths[0] - widths[1]) * 0.12;
+    if (!best || score < best.score) best = { lines, score };
+  }
+  return best.lines;
+}
+
+function unavoidableCharacterWrap(name) {
+  const compact = name.trim();
+  const midpoint = Math.ceil(compact.length / 2);
+  return [compact.slice(0, midpoint), compact.slice(midpoint)];
 }
 
 export function layoutFallbackText(name, preset) {
   const safeWidth = Math.floor(preset.canvas.width * preset.logo.maximumVisibleWidthPercent / 100);
   const safeHeight = Math.floor(preset.canvas.height * preset.logo.maximumVisibleHeightPercent / 100);
-  for (let fontSize = 96; fontSize >= 28; fontSize -= 2) {
-    const approximateCharacters = Math.max(4, Math.floor(safeWidth / (fontSize * 0.58)));
-    const lines = wrapText(name, approximateCharacters);
-    const lineHeight = Math.round(fontSize * 1.18);
-    if (lines.length * lineHeight <= safeHeight && lines.every((line) => line.length <= approximateCharacters)) {
-      return { lines, fontSize, lineHeight, safeWidth, safeHeight };
+  const config = preset.fallbackText ?? {};
+  const fontFamily = config.fontFamily ?? "Inter, Segoe UI, Arial, Helvetica, sans-serif";
+  const maximumFontSize = config.maximumFontSize ?? 96;
+  const minimumFontSize = config.minimumFontSize ?? 28;
+  const lineHeightMultiplier = config.lineHeightMultiplier ?? 1.18;
+  const cleanName = name.trim();
+  const wrapped = bestWordWrap(cleanName);
+  for (let fontSize = maximumFontSize; fontSize >= minimumFontSize; fontSize -= 2) {
+    const lineHeight = Math.round(fontSize * lineHeightMultiplier);
+    if (estimatedTextWidth(cleanName, fontSize) <= safeWidth && lineHeight <= safeHeight) {
+      return { lines: [cleanName], wrappedTextLines: [cleanName], lineCount: 1, fontFamily, fontSize, lineHeight, safeWidth, safeHeight };
+    }
+    if (wrapped && wrapped.every((line) => estimatedTextWidth(line, fontSize) <= safeWidth) && 2 * lineHeight <= safeHeight) {
+      return { lines: wrapped, wrappedTextLines: wrapped, lineCount: 2, fontFamily, fontSize, lineHeight, safeWidth, safeHeight };
     }
   }
-  return { lines: wrapText(name, 42), fontSize: 28, lineHeight: 34, safeWidth, safeHeight };
+  for (let fontSize = minimumFontSize - 1; fontSize >= 18; fontSize -= 1) {
+    const lineHeight = Math.round(fontSize * lineHeightMultiplier);
+    const lines = wrapped ?? unavoidableCharacterWrap(cleanName);
+    if (lines.every((line) => estimatedTextWidth(line, fontSize) <= safeWidth) && 2 * lineHeight <= safeHeight) {
+      return { lines, wrappedTextLines: lines, lineCount: lines.length, fontFamily, fontSize, lineHeight, safeWidth, safeHeight };
+    }
+  }
+  const lines = wrapped ?? unavoidableCharacterWrap(cleanName);
+  return { lines, wrappedTextLines: lines, lineCount: lines.length, fontFamily, fontSize: 18, lineHeight: 21, safeWidth, safeHeight };
 }
 
 export async function renderFallbackCover(entity, preset, { sharpImpl = sharp } = {}) {
   const layout = layoutFallbackText(entity.name, preset);
+  const selectedBackground = preset.fallbackText?.selectedBackground ?? "dark";
+  const backgroundColour = preset.backgrounds[selectedBackground];
+  const textColour = selectedBackground === "dark" ? preset.backgrounds.light : preset.backgrounds.dark;
   const centreY = preset.canvas.height / 2;
   const firstBaseline = centreY - ((layout.lines.length - 1) * layout.lineHeight) / 2 + layout.fontSize * 0.35;
   const text = layout.lines.map((line, index) =>
     `<text x="${preset.canvas.width / 2}" y="${firstBaseline + index * layout.lineHeight}" text-anchor="middle">${escapeXml(line)}</text>`,
   ).join("");
   const svg = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${preset.canvas.width}" height="${preset.canvas.height}">
-    <rect width="100%" height="100%" fill="${preset.backgrounds.dark}"/>
-    <g fill="${preset.backgrounds.light}" font-family="Segoe UI, Arial, Helvetica, sans-serif" font-size="${layout.fontSize}" font-weight="600">${text}</g>
+    <rect width="100%" height="100%" fill="${backgroundColour}"/>
+    <g fill="${textColour}" font-family="${escapeXml(layout.fontFamily)}" font-size="${layout.fontSize}" font-weight="${preset.fallbackText?.fontWeight ?? 600}">${text}</g>
   </svg>`);
   const buffer = await sharpImpl(svg).webp(webpOptions(preset)).toBuffer();
   return {
     buffer,
-    layout,
-    selectedBackground: "dark",
-    backgroundPreset: "dark-flat",
+    layout: { ...layout, selectedBackground, textColour },
+    selectedBackground,
+    backgroundPreset: `${selectedBackground}-flat`,
     reviewReasons: ["missing-logo-text-fallback"],
   };
 }
@@ -158,6 +189,9 @@ export async function renderFallbackCover(entity, preset, { sharpImpl = sharp } 
 export function stagedOutputPath(packageRoot, presetVersion, entity, variantName = "primary") {
   const entityFolder = entity.entityType === "company" ? "companies" : "networks";
   if (variantName === "primary") {
+    if (presetVersion === "production-v1") {
+      return path.join(packageRoot, ".work", "staging", presetVersion, entityFolder, `${entity.tmdbId}.webp`);
+    }
     return path.join(packageRoot, ".work", "staging", presetVersion, "primary", entityFolder, `${entity.tmdbId}.webp`);
   }
   return path.join(packageRoot, ".work", "staging", presetVersion, "variants", variantName, entityFolder, `${entity.tmdbId}.webp`);

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/studio-network-review-state.schema.json",
+  "title": "Draft Nuvio studio/network review state",
+  "description": "Draft schema for a future human-maintained approval file. Stage three does not create a production approval file.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "stableKey",
+      "reviewStatus",
+      "reviewer",
+      "reviewedAt",
+      "note",
+      "approvedOutputHash",
+      "publishTargetPath"
+    ],
+    "properties": {
+      "stableKey": { "type": "string", "pattern": "^(company|network):[1-9][0-9]*$" },
+      "reviewStatus": { "enum": ["approved", "rejected", "needs-changes"] },
+      "reviewer": { "type": "string" },
+      "reviewedAt": { "type": "string", "format": "date-time" },
+      "note": { "type": "string" },
+      "approvedOutputHash": {
+        "type": ["string", "null"],
+        "pattern": "^[a-f0-9]{64}$"
+      },
+      "publishTargetPath": {
+        "type": "string",
+        "pattern": "^assets/collection_covers/(companies|networks)/[1-9][0-9]*\\.webp$"
+      }
+    }
+  }
+}

@@ -31,6 +31,7 @@ tools/studio-network-batch/
   README.md
   presets/
     poc-v1.json
+    production-v1.json
     proof-of-concept-ids.json
   schemas/
     manifest-entry.schema.json
@@ -43,12 +44,14 @@ All downloads, state, generated covers, reports, and contact sheets remain under
 ```text
 .work/
   cache/logos/
-  staging/poc-v1/
-    primary/companies/
-    primary/networks/
-    variants/
-  contact-sheets/poc-v1/
-  reports/poc-v1/
+  staging/production-v1/
+    companies/
+    networks/
+  contact-sheets/production-v1/
+    companies/
+    networks/
+    combined/
+  reports/production-v1/
 ```
 
 Planning and generation dry-runs do not create these directories. `node_modules/` is ignored locally, but `package-lock.json` is deliberately tracked.
@@ -97,9 +100,10 @@ npm run generate -- --ids-file path\to\ids.json
 npm run generate -- --new --manifest path\to\manifest.json
 npm run generate -- --changed --manifest path\to\manifest.json
 npm run generate -- --all
+npm run generate -- --all --preset production-v1
 ```
 
-`--all` must always be explicit. Additional controls are `--dry-run`, `--force`, `--include-ineligible`, `--refresh-logo-cache`, `--source-dir`, `--preset`, and `--json`. `--refresh-logo-cache` refetches only distinct logo paths in the current selection. `--force` regenerates selected staged covers without deleting cache content. The proof-of-concept mode also creates the three controlled variants for its six configured difficult-logo records and builds both contact sheets.
+`--all` must always be explicit. Additional controls are `--dry-run`, `--force`, `--include-ineligible`, `--refresh-logo-cache`, `--source-dir`, `--preset`, and `--json`. `production-v1` is the default outside proof-of-concept mode; proof-of-concept mode continues to default to `poc-v1`. `--refresh-logo-cache` refetches only distinct logo paths in the current selection. `--force` regenerates selected staged covers without deleting cache content. The proof-of-concept mode also creates the three controlled variants for its six configured difficult-logo records and builds both contact sheets.
 
 ## Download, analysis, and rendering
 
@@ -111,7 +115,7 @@ For each candidate background, every visible pixel is composited against that ba
 
 The visible rectangle is fitted with `min(maximumWidth / visibleWidth, maximumHeight / visibleHeight)`, resized with Lanczos, and centred on its visible geometry. The primary preset uses 864×324 maximum visible bounds on a 1200×675 canvas. Enlargement above 2× and low-resolution or unexpectedly opaque sources are review flags. Flat backgrounds are primary; the configured subtle gradients are used only by the gradient comparison variant.
 
-Missing logo paths produce a centred text fallback using the current source name and a Windows sans-serif stack. Text wraps and reduces in size inside the safe region. Every fallback has `status: missing-logo` and `reviewStatus: needs-review`.
+Missing logo paths produce a centred text fallback using the current source name. The renderer requests `Inter, Segoe UI, Arial, Helvetica, sans-serif`; Inter is the preferred face, while the remaining bundled/system faces are deterministic fallbacks until a font-file loading path is introduced. This stack is isolated in `fallbackText.fontFamily` in the preset so Inter can be swapped in without renderer changes. Text starts on one line, uses a balanced word-boundary wrap of no more than two lines when necessary, and reduces in size inside the central safe region. Every fallback records its background, font stack, font size, line count, and wrapped lines, and has `status: missing-logo` and `reviewStatus: needs-review`.
 
 Every WebP is decoded after writing and must be exactly 1200×675, WebP, and non-empty. The staged file hash and byte count are recorded.
 
@@ -123,7 +127,11 @@ The committed proof-of-concept file contains only stable keys. Names, counts, an
 
 Ignored run-state is maintained per stable key and variant. An output is skipped only when identity, logo/fallback input, source hash, artwork-input hash, renderer and preset versions, output path, output hash, dimensions, format, and decode validation all match. Title-count-only changes do not regenerate eligible artwork; a logo-path change, corrupt/missing output, renderer/preset change, or `--force` does.
 
-Exact duplicate logo paths reuse one download and one analysis in a run. Identical rendering inputs may also reuse the rendered WebP buffer, but each entity still receives a separate ID-named staged file. Reports include `run-summary.json`, primary and variant JSON Lines, a readable Markdown summary, per-run crash-recovery JSON Lines, source-cache hashes, runtime versions, reuse counters, review flags, failures, and output-size statistics.
+Exact duplicate logo paths reuse one download and one analysis in a run. Identical rendering inputs may also reuse the rendered WebP buffer, but each entity still receives a separate ID-named staged file. Production reports include `run-summary.json`, `entities.jsonl`, readable generation and status-grouped Markdown summaries, `review-priority.json`, status groups, a contact-sheet index, per-run crash-recovery JSON Lines, source-file hashes, Node/Sharp/libvips/WebP versions, reuse counters, review flags, background splits, failures, and output-size statistics. Production runs create deterministic 8×8 paged contact sheets for companies, networks, and the combined review set.
+
+## Review and publish preparation
+
+`schemas/review-state.schema.json` defines the future human review-state file. Approved entries bind a stable key and publish target to the exact reviewed output hash. `src/publish-plan.mjs` can validate those approvals against the staged file and build an in-memory dry publish plan; it performs no copy and writes no canonical manifest. A later publish command may consume that plan only after explicit approval, copy verified files to `assets/collection_covers/companies/{id}.webp` or `assets/collection_covers/networks/{id}.webp`, and then create the canonical published manifest. Stage three does none of those actions.
 
 ## Future artwork and manifest policy
 
@@ -136,4 +144,4 @@ assets/collection_covers/networks/{tmdb_id}.webp
 
 Duplicate source-logo processing is reused internally, but final identities are not aliases and are not collapsed into a shared physical file.
 
-`presets/poc-v1.json` records all provisional canvas, alpha, contrast, safe-box, background, WebP, download, and variant settings. They remain proof-of-concept candidates, not final production values. `schemas/manifest-entry.schema.json` is a draft for the future manifest; no production manifest is created by this utility stage.
+`presets/poc-v1.json` remains the proof-of-concept configuration. `presets/production-v1.json` is the approved first full-staging preset: 1200×675, flat `#08141C`/`#E4E7E9` automatic backgrounds, alpha threshold 8, 72%×48% visible-logo safe box, and quality-86 WebP. `schemas/manifest-entry.schema.json` and `schemas/review-state.schema.json` are drafts for later stages; no production manifest or approval file is created by this utility stage.

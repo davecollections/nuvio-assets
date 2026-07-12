@@ -6,6 +6,7 @@ import sharp from "sharp";
 import { atomicWrite, atomicWriteJson } from "./atomic.mjs";
 import {
   createContactSheet,
+  createPagedContactSheets,
   primaryContactSheetPath,
   variantContactSheetPath,
 } from "./contact-sheet.mjs";
@@ -20,6 +21,14 @@ import {
   stagedOutputPath,
   writeRenderedOutput,
 } from "./render.mjs";
+import {
+  buildReviewPriority,
+  calculateRunStatistics,
+  contactSheetIndexMarkdown,
+  generationSummaryMarkdown,
+  groupRecordsByStatus,
+  statusSummaryMarkdown,
+} from "./reports.mjs";
 
 function isoRunId(date) {
   return date.toISOString().replaceAll(":", "-").replaceAll(".", "-");
@@ -116,6 +125,25 @@ function errorRecord(base, error) {
     errorMessage: error.message,
     generatedAt: new Date().toISOString(),
   };
+}
+
+const REQUIRED_REPORT_FIELDS = [
+  "entityType", "tmdbId", "stableKey", "name", "titleCount", "logoPath", "logoUrl",
+  "status", "reviewStatus", "backgroundPreset", "darkContrastScore", "lightContrastScore",
+  "contrastConfidence", "sourcePath", "sourceFormat", "sourceWidth", "sourceHeight",
+  "visibleBounds", "visibleWidth", "visibleHeight", "transparentPadding", "visiblePixelCount",
+  "alphaCoverage", "sourceHash", "normalisedPixelHash", "resizeScale", "upscaleFactor",
+  "presetVersion", "rendererVersion", "outputPath", "outputHash", "outputBytes",
+  "downloadReused", "analysisReused", "renderReused", "generatedAt", "errorCode",
+  "errorMessage", "fallbackTextLayout",
+];
+
+function completeReportRecord(record) {
+  for (const field of REQUIRED_REPORT_FIELDS) {
+    if (!(field in record)) record[field] = null;
+  }
+  if (!Array.isArray(record.reviewReasons)) record.reviewReasons = [];
+  return record;
 }
 
 async function hashFile(filePath) {
@@ -222,6 +250,7 @@ export async function generateBatch({
   const variantRecords = [];
 
   async function persistRecord(record, variantName) {
+    completeReportRecord(record);
     state.entries[stateKey(record.stableKey, variantName)] = record;
     await atomicWriteJson(statePath, state);
     await fs.appendFile(recoveryJsonlPath, `${JSON.stringify({ ...record, variantName })}\n`);
@@ -337,6 +366,7 @@ export async function generateBatch({
         renderedVisibleHeight: renderedResult.fit?.height ?? null,
         fallbackFontSize: renderedResult.layout?.fontSize ?? null,
         fallbackLines: renderedResult.layout?.lines ?? null,
+        fallbackTextLayout: renderedResult.layout ?? null,
         status: entity.logoPath ? "generated" : "missing-logo",
         renderStatus: entity.logoPath ? "generated" : "missing-logo",
         reviewStatus: entity.logoPath && !reviewReasons.length ? "unreviewed" : "needs-review",
@@ -386,10 +416,17 @@ export async function generateBatch({
       columns: 4,
       labelHeight: 72,
     });
+  } else {
+    contactSheets = await createPagedContactSheets(
+      primaryRecords,
+      packageRoot,
+      preset.version,
+      preset.contactSheets ?? {},
+    );
   }
 
   const completedAt = now();
-  const statistics = calculateStatistics(primaryRecords);
+  const statistics = calculateRunStatistics(primaryRecords, preset);
   const sourceCacheHashes = {
     company: await hashFile(sourceData.sourceFiles.company),
     network: await hashFile(sourceData.sourceFiles.network),
@@ -404,6 +441,7 @@ export async function generateBatch({
     rendererVersion: RENDERER_VERSION,
     sourceDirectory: sourceData.sourceDirectory,
     sourceCacheHashes,
+    sourceFileHashes: sourceCacheHashes,
     ...statistics,
     variantsGenerated: variantRecords.filter((record) => ["generated", "missing-logo"].includes(record.status)).length,
     variantsSkipped: variantRecords.filter((record) => record.status === "skipped").length,
@@ -415,16 +453,27 @@ export async function generateBatch({
     nodeVersion: process.version,
     sharpVersion: sharp.versions.sharp,
     libvipsVersion: sharp.versions.vips,
+    webpVersion: sharp.versions.webp,
     issues: plan.issues,
   };
 
+  const reviewPriority = buildReviewPriority(primaryRecords, preset);
+  const statusGroups = groupRecordsByStatus(primaryRecords);
+
   await atomicWriteJson(path.join(runDirectory, "summary.json"), summary);
-  await atomicWrite(path.join(runDirectory, "summary.md"), markdownSummary(summary, primaryRecords));
+  await atomicWrite(path.join(runDirectory, "summary.md"), generationSummaryMarkdown(summary, reviewPriority));
   await atomicWriteJson(path.join(reportsDirectory, "run-summary.json"), summary);
   await atomicWrite(path.join(reportsDirectory, "entities.jsonl"), `${primaryRecords.map((record) => JSON.stringify(record)).join("\n")}\n`);
   await atomicWrite(path.join(reportsDirectory, "variants.jsonl"), `${variantRecords.map((record) => JSON.stringify(record)).join("\n")}${variantRecords.length ? "\n" : ""}`);
-  await atomicWrite(path.join(reportsDirectory, "summary.md"), markdownSummary(summary, primaryRecords));
-  return { ...summary, records: primaryRecords, variantRecords };
+  await atomicWrite(path.join(reportsDirectory, "summary.md"), generationSummaryMarkdown(summary, reviewPriority));
+  await atomicWriteJson(path.join(reportsDirectory, "review-priority.json"), reviewPriority);
+  await atomicWriteJson(path.join(reportsDirectory, "status-groups.json"), statusGroups);
+  await atomicWrite(path.join(reportsDirectory, "review-summary.md"), statusSummaryMarkdown(statusGroups));
+  if (contactSheets.groups) {
+    await atomicWriteJson(path.join(reportsDirectory, "contact-sheet-index.json"), contactSheets);
+    await atomicWrite(path.join(reportsDirectory, "contact-sheet-index.md"), contactSheetIndexMarkdown(contactSheets));
+  }
+  return { ...summary, reviewPriority, statusGroups, records: primaryRecords, variantRecords };
 }
 
 export function formatGenerationSummary(summary) {
@@ -440,11 +489,13 @@ export function formatGenerationSummary(summary) {
     `Mode: ${summary.mode}`,
     `Selected: ${summary.totalSelected}`,
     `Generated: ${summary.generated}; fallback: ${summary.fallbackGenerated}; skipped: ${summary.skipped}`,
-    `Failed downloads: ${summary.failedDownload}; decode/analysis: ${summary.failedDecode}; render: ${summary.failedRender}`,
+    `Failed downloads: ${summary.failedDownload}; decode: ${summary.failedDecode}; analysis: ${summary.failedAnalysis}; render: ${summary.failedRender}`,
     `Reuse — download: ${summary.downloadReused}; analysis: ${summary.analysisReused}; rendering: ${summary.renderingReused}`,
     `Needs review: ${summary.needsReview}`,
+    `Backgrounds — dark: ${summary.backgroundSplit.dark}; light: ${summary.backgroundSplit.light}`,
     `Output bytes — total: ${summary.totalOutputBytes}; median: ${summary.medianOutputBytes}; range: ${summary.minimumOutputBytes}–${summary.maximumOutputBytes}`,
     `Variants — generated: ${summary.variantsGenerated}; skipped: ${summary.variantsSkipped}; failed: ${summary.variantsFailed}`,
+    summary.contactSheets?.totalSheets ? `Paged contact sheets: ${summary.contactSheets.totalSheets}` : null,
     summary.contactSheets?.primary ? `Primary contact sheet: ${summary.contactSheets.primary.outputPath}` : null,
     summary.contactSheets?.variants ? `Variant contact sheet: ${summary.contactSheets.variants.outputPath}` : null,
   ].filter(Boolean).join("\n");

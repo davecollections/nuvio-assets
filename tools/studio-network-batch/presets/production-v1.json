@@ -1,0 +1,80 @@
+{
+  "version": "production-v1",
+  "status": "approved for full staging review",
+  "canvas": {
+    "width": 1200,
+    "height": 675
+  },
+  "logo": {
+    "maximumVisibleWidthPercent": 72,
+    "maximumVisibleHeightPercent": 48,
+    "visibleAlphaThreshold": 8,
+    "lowResolutionMinimumWidth": 96,
+    "lowResolutionMinimumHeight": 48,
+    "extremeDimension": 8192,
+    "highUpscaleReviewThreshold": 2
+  },
+  "backgrounds": {
+    "dark": "#08141C",
+    "light": "#E4E7E9",
+    "primaryStyle": "flat"
+  },
+  "contrast": {
+    "minimumRobustScore": 2.5,
+    "closeScoreDifference": 0.35,
+    "veryCloseScoreDifference": 0.15,
+    "usefulRatio": 3,
+    "strongRatio": 4.5
+  },
+  "fallbackText": {
+    "fontFamily": "Inter, Segoe UI, Arial, Helvetica, sans-serif",
+    "fontWeight": 600,
+    "maximumFontSize": 96,
+    "minimumFontSize": 28,
+    "lineHeightMultiplier": 1.18,
+    "maximumLines": 2,
+    "selectedBackground": "dark"
+  },
+  "review": {
+    "verySmallVisiblePixelCount": 4096
+  },
+  "contactSheets": {
+    "columns": 8,
+    "rows": 8,
+    "thumbnailWidth": 280,
+    "thumbnailHeight": 158,
+    "labelHeight": 72,
+    "gap": 16,
+    "margin": 40
+  },
+  "output": {
+    "format": "webp",
+    "quality": 86,
+    "effort": 4,
+    "smartSubsample": true
+  },
+  "download": {
+    "timeoutMs": 20000,
+    "retries": 2,
+    "retryDelayMs": 500,
+    "userAgent": "NuvioStudioNetworkBatch/0.3 (local artwork utility)"
+  },
+  "variants": {
+    "stableKeys": [],
+    "smaller": {
+      "maximumVisibleWidthPercent": 68,
+      "maximumVisibleHeightPercent": 42,
+      "backgroundStyle": "flat"
+    },
+    "larger": {
+      "maximumVisibleWidthPercent": 76,
+      "maximumVisibleHeightPercent": 54,
+      "backgroundStyle": "flat"
+    },
+    "gradient": {
+      "maximumVisibleWidthPercent": 72,
+      "maximumVisibleHeightPercent": 48,
+      "backgroundStyle": "subtle-gradient"
+    }
+  }
+}

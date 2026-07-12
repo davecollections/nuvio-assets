@@ -4,6 +4,7 @@ import fs from "node:fs/promises";
 import sharp from "sharp";
 
 import { atomicWrite } from "./atomic.mjs";
+import { compareEntities } from "./constants.mjs";
 
 function escapeXml(value) {
   return String(value)
@@ -20,7 +21,8 @@ function truncate(value, maximum) {
 function labelSvg(item, width, height) {
   const name = escapeXml(truncate(item.name, 38));
   const identity = escapeXml(`${item.tmdbId} · ${item.entityType}`);
-  const detail = escapeXml(`${item.backgroundPreset ?? "n/a"} · ${item.renderStatus ?? item.status}`);
+  const reviewMarker = item.reviewStatus === "needs-review" ? " · needs-review" : "";
+  const detail = escapeXml(truncate(`${item.backgroundPreset ?? "n/a"} · ${item.renderStatus ?? item.status}${reviewMarker}`, 46));
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
     <rect width="100%" height="100%" fill="#33383D"/>
     <text x="10" y="22" fill="#FFFFFF" font-family="Segoe UI,Arial,sans-serif" font-size="16" font-weight="600">${name}</text>
@@ -72,6 +74,65 @@ export async function createContactSheet(items, outputPath, {
   }).composite(composites).png({ compressionLevel: 9 }).toBuffer();
   await atomicWrite(outputPath, buffer);
   return { outputPath, width, height, items: items.length, bytes: buffer.length };
+}
+
+export function orderContactSheetItems(items) {
+  return [...items].sort((left, right) =>
+    compareEntities(left, right) || String(left.variantName ?? "").localeCompare(String(right.variantName ?? "")),
+  );
+}
+
+export function paginateContactSheetItems(items, { pageSize = 64 } = {}) {
+  if (!Number.isSafeInteger(pageSize) || pageSize < 1) throw new Error("Contact-sheet page size must be a positive integer.");
+  const ordered = orderContactSheetItems(items);
+  const pages = [];
+  for (let index = 0; index < ordered.length; index += pageSize) {
+    pages.push(ordered.slice(index, index + pageSize));
+  }
+  return pages;
+}
+
+export function pagedContactSheetPath(packageRoot, presetVersion, group, pageNumber) {
+  const digits = String(pageNumber).padStart(2, "0");
+  return path.join(
+    packageRoot,
+    ".work",
+    "contact-sheets",
+    presetVersion,
+    group,
+    `${group}-page-${digits}.png`,
+  );
+}
+
+export async function createPagedContactSheets(items, packageRoot, presetVersion, options = {}) {
+  const { rows = 8, ...sheetOptions } = options;
+  const columns = sheetOptions.columns ?? 8;
+  const pageSize = columns * rows;
+  const definitions = [
+    ["companies", items.filter((item) => item.entityType === "company")],
+    ["networks", items.filter((item) => item.entityType === "network")],
+    ["combined", items],
+  ];
+  const groups = {};
+  for (const [group, groupItems] of definitions) {
+    const pages = paginateContactSheetItems(groupItems, { pageSize });
+    groups[group] = [];
+    for (const [index, pageItems] of pages.entries()) {
+      const outputPath = pagedContactSheetPath(packageRoot, presetVersion, group, index + 1);
+      const result = await createContactSheet(pageItems, outputPath, { columns, ...sheetOptions });
+      groups[group].push({
+        ...result,
+        pageNumber: index + 1,
+        stableKeys: pageItems.map((item) => item.stableKey),
+        tmdbIds: pageItems.map((item) => item.tmdbId),
+      });
+    }
+  }
+  return {
+    pageSize,
+    totalSheets: Object.values(groups).reduce((sum, pages) => sum + pages.length, 0),
+    groups,
+  };
 }
 
 export function primaryContactSheetPath(packageRoot, presetVersion) {
