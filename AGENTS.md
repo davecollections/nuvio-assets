@@ -100,6 +100,8 @@ Current focused review categories are:
 
 Known concern: a multicolour logo can contain black or grey wording that becomes unreadable on a dark background even when its overall contrast score appears acceptable. Handle this through focused review and algorithm testing before publication. Do not make ad hoc edits to random staged output files.
 
+Manual background decisions must bind the stable key to the exact reviewed source-logo hash. If that source hash changes, ignore the stale decision, return the background choice to automatic analysis, and add a stale-decision review reason. When a new background-decision version leaves the selected background unchanged, validated metadata may be reconciled without rewriting the staged image.
+
 ## Safety rules for agents
 
 Before implementation or generation work:

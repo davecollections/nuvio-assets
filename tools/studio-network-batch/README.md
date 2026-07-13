@@ -40,6 +40,9 @@ tools/studio-network-batch/
     poc-v1.json
     production-v1.json
     proof-of-concept-ids.json
+  config/
+    background-decisions.json
+    background-review-resolutions.json
   schemas/
     manifest-entry.schema.json
   src/
@@ -110,7 +113,7 @@ npm run generate -- --all
 npm run generate -- --all --preset production-v1
 ```
 
-`--all` must always be explicit. Additional controls are `--dry-run`, `--force`, `--include-ineligible`, `--refresh-logo-cache`, `--source-dir`, `--preset`, and `--json`. `production-v1` is the default outside proof-of-concept mode; proof-of-concept mode continues to default to `poc-v1`. `--refresh-logo-cache` refetches only distinct logo paths in the current selection. `--force` regenerates selected staged covers without deleting cache content. The proof-of-concept mode also creates the three controlled variants for its six configured difficult-logo records and builds both contact sheets.
+`--all` must always be explicit. Additional controls are `--dry-run`, `--force`, `--offline`, `--include-ineligible`, `--refresh-logo-cache`, `--source-dir`, `--preset`, and `--json`. `production-v1` is the default outside proof-of-concept mode; proof-of-concept mode continues to default to `poc-v1`. `--offline` permits valid cache reads but fails a selected record with `offline_cache_miss` instead of making a CDN request. It cannot refresh cache content. `--refresh-logo-cache` refetches only distinct logo paths in the current selection. `--force` regenerates selected staged covers without deleting cache content. The proof-of-concept mode also creates the three controlled variants for its six configured difficult-logo records and builds both contact sheets.
 
 Before any production missing-logo render, verify the local Sharp/libvips/Pango font path:
 
@@ -126,7 +129,11 @@ Logo URLs are constructed as `https://image.tmdb.org/t/p/original{logo_path}`. T
 
 Each source is rotated for EXIF orientation, converted to sRGB, given an alpha channel, and decoded to raw RGBA. Pixels with alpha at least 8 are visible. The analysis records their exact bounding rectangle, transparent padding, alpha coverage, source and visible dimensions, visible-pixel count, source hash, and normalised RGBA hash. The extracted rectangle retains internal transparent holes.
 
-For each candidate background, every visible pixel is composited against that background and assigned its WCAG-style relative-luminance contrast ratio. Ratios are alpha-weighted. The robust score combines the lower 10th percentile, median, and weighted proportions meeting 3:1 and 4.5:1. The higher score wins deterministically. Low best scores or differences below the versioned confidence threshold are marked `needs-review`; no outlines, shadows, or recolouring are added.
+For each candidate background, every visible pixel is composited against that background and assigned its WCAG-style relative-luminance contrast ratio. Ratios are alpha-weighted. The robust score combines the lower 10th percentile, median, and weighted proportions meeting 3:1 and 4.5:1. The higher score is the existing deterministic aggregate choice. Low best scores or differences below the versioned confidence threshold are marked `needs-review`; no outlines, shadows, or recolouring are added.
+
+Production then applies `hybrid-dark-component-v1`. It preserves the aggregate calculation while adding deterministic lower-tail and low-contrast-share guards for mixed marks whose dark wording is lost on the dark background. Decision precedence is: an exact source-hash-matching manual decision, an automatic hybrid switch, then the existing aggregate choice. Records store `manual-hash-bound`, `hybrid-dark-component-v1`, or `existing-aggregate` as the decision source. The rule does not alter trimming, placement, safe-box sizing, dimensions, quality, colour, outlines, or shadows.
+
+Manual decisions live in `config/background-decisions.json` and are validated for stable-key order, duplicate keys, background values, and 64-character source hashes. A changed source-logo hash invalidates the manual choice, returns the logo to automatic analysis, and adds `stale-background-decision`; the old staged file is not deleted. `config/background-review-resolutions.json` records reason-level completion of the 20-logo mixed-contrast review without approving unrelated cover concerns. A record can therefore have its background decision resolved while remaining pending for an opaque source, low resolution, or another independent reason.
 
 The visible rectangle is fitted with `min(maximumWidth / visibleWidth, maximumHeight / visibleHeight)`, resized with Lanczos, and centred on its visible geometry. The primary preset uses 864×324 maximum visible bounds on a 1200×675 canvas. Enlargement above 2× and low-resolution or unexpectedly opaque sources are review flags. Flat backgrounds are primary; the configured subtle gradients are used only by the gradient comparison variant.
 
@@ -140,7 +147,7 @@ The source-record hash includes entity type, TMDB ID, name, title count, and log
 
 The committed proof-of-concept file contains only stable keys. Names, counts, and logo paths are resolved and validated from the current source caches every run; a missing or ineligible configured record is reported without substitution.
 
-Ignored run-state is maintained per stable key and variant. An output is skipped only when identity, logo/fallback input, source hash, artwork-input hash, renderer and preset versions, output path, output hash, dimensions, format, and decode validation all match. Title-count-only changes do not regenerate eligible artwork; a logo-path change, corrupt/missing output, renderer/preset change, or `--force` does.
+Ignored run-state is maintained per stable key and variant. An output is skipped only when identity, logo/fallback input, source hash, artwork-input hash, renderer and preset versions, selected background, output path, output hash, dimensions, format, and decode validation all match. A background-analysis or decision-version change with the same selected background can be reconciled after output validation without rewriting the image. Title-count-only changes do not regenerate eligible artwork; a changed selected background, logo-path change, corrupt/missing output, renderer/preset change, or `--force` does.
 
 Exact duplicate logo paths reuse one download and one analysis in a run. Identical rendering inputs may also reuse the rendered WebP buffer, but each entity still receives a separate ID-named staged file. Production reports include `run-summary.json`, `entities.jsonl`, readable generation and status-grouped Markdown summaries, `review-priority.json`, status groups, a contact-sheet index, per-run crash-recovery JSON Lines, source-file hashes, Node/Sharp/libvips/WebP versions, reuse counters, review flags, background splits, failures, and output-size statistics. Production runs create deterministic 8×8 paged contact sheets for companies, networks, and the combined review set.
 
@@ -155,6 +162,18 @@ npm run review-prep -- --preset production-v1
 This reads the persistent current run state, so a selective rerun does not hide unchanged outputs from review. It writes ignored reason-specific 8×8 sheets and their Markdown/JSON index under `.work/contact-sheets/production-v1/review/`, plus `review-state-draft.json`, `review-checklist.csv`, and (when Inter is unconfirmed) `fallback-ids.json` under `.work/reviews/production-v1/`. Every pending draft entry is checked against the current staged file hash. The command refuses report outputs outside ignored staging and performs no final-asset or canonical-manifest writes.
 
 `schemas/review-state.schema.json` defines the future human review-state file. Approved entries bind a stable key and publish target to the exact reviewed output hash. `src/publish-plan.mjs` can validate those approvals against the staged file and build an in-memory dry publish plan; it performs no copy and writes no canonical manifest. A later publish command may consume that plan only after explicit approval, copy verified files to `assets/collection_covers/companies/{id}.webp` or `assets/collection_covers/networks/{id}.webp`, and then create the canonical published manifest. Stage three does none of those actions.
+
+The completed mixed-contrast owner review contains 12 light choices and 8 dark choices. Exactly the 12 dark-to-light covers were regenerated offline; the eight retained-dark covers and the other 1,055 staged outputs kept their hashes and modification times. The full 1,075-record persistent state, production reports, focused review hashes, and contact sheets were then reconciled. The focused final sheet is `.work/contact-sheets/production-v1/review/mixed-contrast-approved.png`, with its machine-readable summary under `.work/reviews/production-v1/`. Nothing from this review has been published.
+
+The reconciliation workflow is deliberately separate from generation:
+
+```powershell
+npm run reconcile-production -- snapshot --output .work/plans/mixed-contrast-approved/before-staging.json
+npm run generate -- --ids-file .work/plans/mixed-contrast-approved/light-switches.json --preset production-v1 --force --offline
+npm run reconcile-production -- reconcile --before-snapshot .work/plans/mixed-contrast-approved/before-staging.json --changed-ids .work/plans/mixed-contrast-approved/light-switches.json --retained-ids .work/plans/mixed-contrast-approved/approved-dark-retained.json --after-snapshot .work/plans/mixed-contrast-approved/after-staging.json --summary .work/reviews/production-v1/mixed-contrast-approved-summary.json
+```
+
+The next project phase is the separate `titleCount >= 50` eligibility expansion. It must start with a fresh source audit and plan; it was not part of this background-decision rollout.
 
 ## Future artwork and manifest policy
 
