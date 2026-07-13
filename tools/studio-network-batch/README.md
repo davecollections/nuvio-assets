@@ -20,7 +20,16 @@ The authoritative inputs are read directly from a neighbouring `tmdb-id-lookup` 
 
 Compact JSON is used because it is the repository's authoritative cache, preserves typed fields, and avoids a lossy or duplicated CSV export. The compact keys map as follows: `i` TMDB ID, `n` name, `p` parent company (companies only), `c` origin country, `h` headquarters, `l` relative TMDB logo path, and `t` title count. Optional fields may be omitted; in the source cache an omitted `t` is its compact representation of zero and is normalised accordingly. A supplied title count must still be a non-negative integer.
 
-An entity is eligible when `titleCount >= 100`. Counts are always calculated from current source data; they are never hardcoded.
+Automatic eligibility uses independent production thresholds loaded from `config/eligibility.json`: companies require `titleCount >= 50`, and networks require `titleCount >= 50`. Counts are always calculated from current source data; they are never hardcoded. `--company-min-titles` and `--network-min-titles` can override the policy for a one-off audit or plan without changing the committed defaults.
+
+Planning and reporting classify records into four inclusion tiers:
+
+- `core`: `titleCount >= 100`;
+- `expanded-threshold`: automatically eligible at the configured threshold but below 100;
+- `curated-exception`: a future owner-approved below-threshold stable key;
+- `explicit`: processed below threshold only through an explicit ID request with `--include-ineligible`.
+
+No curated exceptions are configured by this stage.
 
 Source-directory resolution uses this priority:
 
@@ -41,8 +50,10 @@ tools/studio-network-batch/
     production-v1.json
     proof-of-concept-ids.json
   config/
+    eligibility.json
     background-decisions.json
     background-review-resolutions.json
+    recognisability-seed.json
   schemas/
     manifest-entry.schema.json
   src/
@@ -77,7 +88,7 @@ npm run audit -- --json
 npm run audit -- --source-dir C:\path\to\tmdb-id-lookup
 ```
 
-The audit reports companies, networks, and combined totals: total and eligible records, exactly-100 records, eligible records with and without logos, duplicate eligible exact-logo groups, duplicate eligible normalised-name groups, and validation errors. `--json` writes the full result to standard output only.
+The audit reports companies, networks, and combined totals using the same shared eligibility resolver as planning and generation: total and eligible records, exactly-100 records, eligible records with and without logos, duplicate eligible exact-logo groups, duplicate eligible normalised-name groups, and validation errors. `--json` writes the full result to standard output only.
 
 Planning requires an explicit selection mode; omitting one never defaults to all records:
 
@@ -89,13 +100,14 @@ npm run plan -- --company-ids 33,174 --network-ids 18,66
 npm run plan -- --ids-file path\to\ids.json
 npm run plan -- --proof-of-concept
 npm run plan -- --new
+npm run plan -- --new-from-state --preset production-v1
 npm run plan -- --new --manifest path\to\manifest.json
 npm run plan -- --changed --manifest path\to\manifest.json
 ```
 
 ID files are JSON arrays of stable keys such as `"company:33"` and `"network:18"`. Unknown, malformed, missing, and currently ineligible selections are reported separately. Explicitly selected records below the threshold are excluded unless `--include-ineligible` is deliberately supplied. Company and network ID lists may be combined; other selection modes conflict by design. Output order is always company then network, with numeric TMDB ID ordering inside each type.
 
-`--new` selects eligible records missing from a supplied future canonical manifest. With no manifest, all eligible records are treated as new and the plan states this explicitly. `--changed` requires a manifest baseline and compares artwork inputs, renderer and preset versions, expected output path, and—when a manifest entry says it was generated—output existence, byte count, and file hash. Source-logo and normalised-pixel hashes remain future rendering-stage inputs.
+`--new` selects eligible records missing from a supplied future canonical manifest. With no manifest, all eligible records are treated as new and the plan states this explicitly. `--new-from-state` instead compares current eligibility with `.work/reports/{preset}/run-state.json`, selects only stable keys absent from persistent production state, validates existing staged outputs, and reports changed logo paths, changed cached source hashes, disappeared records, and records now below automatic eligibility separately. It never widens to all records. `--changed` requires a manifest baseline and compares artwork inputs, renderer and preset versions, expected output path, and—when a manifest entry says it was generated—output existence, byte count, and file hash.
 
 `--force` marks selected entries for unconditional regeneration and does not broaden the selection. `--dry-run` is shared with generation; planning itself is always non-rendering. Add `--json` to any plan command for machine-readable standard output.
 
@@ -113,7 +125,7 @@ npm run generate -- --all
 npm run generate -- --all --preset production-v1
 ```
 
-`--all` must always be explicit. Additional controls are `--dry-run`, `--force`, `--offline`, `--include-ineligible`, `--refresh-logo-cache`, `--source-dir`, `--preset`, and `--json`. `production-v1` is the default outside proof-of-concept mode; proof-of-concept mode continues to default to `poc-v1`. `--offline` permits valid cache reads but fails a selected record with `offline_cache_miss` instead of making a CDN request. It cannot refresh cache content. `--refresh-logo-cache` refetches only distinct logo paths in the current selection. `--force` regenerates selected staged covers without deleting cache content. The proof-of-concept mode also creates the three controlled variants for its six configured difficult-logo records and builds both contact sheets.
+`--all` must always be explicit. Additional controls are `--dry-run`, `--force`, `--offline`, `--include-ineligible`, `--refresh-logo-cache`, `--source-dir`, `--preset`, `--company-min-titles`, `--network-min-titles`, and `--json`. `production-v1` is the default outside proof-of-concept mode; proof-of-concept mode continues to default to `poc-v1`. `--offline` permits valid cache reads but fails a selected record with `offline_cache_miss` instead of making a CDN request. It cannot refresh cache content. `--refresh-logo-cache` refetches only distinct logo paths in the current selection. `--force` regenerates selected staged covers without deleting cache content. The proof-of-concept mode also creates the three controlled variants for its six configured difficult-logo records and builds both contact sheets.
 
 Before any production missing-logo render, verify the local Sharp/libvips/Pango font path:
 
@@ -149,7 +161,27 @@ The committed proof-of-concept file contains only stable keys. Names, counts, an
 
 Ignored run-state is maintained per stable key and variant. An output is skipped only when identity, logo/fallback input, source hash, artwork-input hash, renderer and preset versions, selected background, output path, output hash, dimensions, format, and decode validation all match. A background-analysis or decision-version change with the same selected background can be reconciled after output validation without rewriting the image. Title-count-only changes do not regenerate eligible artwork; a changed selected background, logo-path change, corrupt/missing output, renderer/preset change, or `--force` does.
 
-Exact duplicate logo paths reuse one download and one analysis in a run. Identical rendering inputs may also reuse the rendered WebP buffer, but each entity still receives a separate ID-named staged file. Production reports include `run-summary.json`, `entities.jsonl`, readable generation and status-grouped Markdown summaries, `review-priority.json`, status groups, a contact-sheet index, per-run crash-recovery JSON Lines, source-file hashes, Node/Sharp/libvips/WebP versions, reuse counters, review flags, background splits, failures, and output-size statistics. Production runs create deterministic 8×8 paged contact sheets for companies, networks, and the combined review set.
+Exact duplicate logo paths reuse one download and one analysis in a run. Identical rendering inputs may also reuse the rendered WebP buffer, but each entity still receives a separate ID-named staged file. An entity falling below the automatic threshold is reported as legacy state; its staged or published asset is never deleted automatically. Production reports include `run-summary.json`, `entities.jsonl`, readable generation and status-grouped Markdown summaries, `review-priority.json`, status groups, a contact-sheet index, per-run crash-recovery JSON Lines, source-file hashes, Node/Sharp/libvips/WebP versions, reuse counters, review flags, background splits, failures, and output-size statistics. Production runs create deterministic 8×8 paged contact sheets for companies, networks, and the combined review set.
+
+## Eligibility-expansion audit
+
+Build the ignored 50/50 threshold plans and human-readable audit reports without downloading logos or writing artwork:
+
+```powershell
+npm run threshold-audit
+```
+
+Plans are written under `.work/plans/eligibility-50/`; reports are written under `.work/reports/threshold-audit-50/`. The audit covers title-count bands, newly eligible records, missing logos, exact-logo reuse, persistent-state drift, storage/runtime estimates, and conservative recognisability candidates. `proposed-exceptions.json` is review material only and does not configure production exceptions.
+
+After explicit owner approval, the incremental generation command is:
+
+```powershell
+npm run generate -- --ids-file .work/plans/eligibility-50/new-all.json --preset production-v1
+```
+
+From the repository root, the equivalent command is `npm --prefix tools/studio-network-batch run generate -- --ids-file .work/plans/eligibility-50/new-all.json --preset production-v1`; the relative IDs-file path resolves from the package directory.
+
+The safe future sequence is: generate only `new-all.json`; validate the new outputs; merge them into full persistent state; rebuild full production reports; rerun review preparation; preserve existing review entries whose output hashes are unchanged; then add review entries only for new outputs that require review.
 
 ## Review and publish preparation
 
@@ -173,7 +205,7 @@ npm run generate -- --ids-file .work/plans/mixed-contrast-approved/light-switche
 npm run reconcile-production -- reconcile --before-snapshot .work/plans/mixed-contrast-approved/before-staging.json --changed-ids .work/plans/mixed-contrast-approved/light-switches.json --retained-ids .work/plans/mixed-contrast-approved/approved-dark-retained.json --after-snapshot .work/plans/mixed-contrast-approved/after-staging.json --summary .work/reviews/production-v1/mixed-contrast-approved-summary.json
 ```
 
-The next project phase is the separate `titleCount >= 50` eligibility expansion. It must start with a fresh source audit and plan; it was not part of this background-decision rollout.
+The 50/50 eligibility-expansion audit and planning stage is complete. Incremental generation remains owner-gated and has not begun.
 
 ## Future artwork and manifest policy
 

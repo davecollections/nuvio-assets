@@ -19,7 +19,7 @@ Source-directory resolution is, in order:
 2. `TMDB_ID_LOOKUP_DIR`
 3. discovery of a sibling `tmdb-id-lookup` repository
 
-Do not make one absolute local path a project requirement. An entity is eligible when `titleCount >= 100`. Recalculate counts from the current source caches; never hardcode current totals into implementation logic.
+Do not make one absolute local path a project requirement. The approved automatic company minimum is `titleCount >= 50`; the approved automatic network minimum is `titleCount >= 50`. Keep the thresholds independently configurable through the shared eligibility resolver. Recalculate counts from the current source caches; never hardcode current totals into implementation logic.
 
 Treat `tmdb-id-lookup` as read-only unless the user explicitly puts that repository in scope.
 
@@ -83,6 +83,8 @@ The utility supports all eligible entities, selected company IDs, selected netwo
 Always prefer the narrowest safe selection. Do not run `--all` merely because chat history is missing.
 
 A title-count-only movement must not force artwork regeneration while the entity remains eligible. A changed logo, fallback-text input, renderer version, preset version, missing/corrupt output, or an explicitly requested force run may require regeneration.
+
+Eligibility tiers are `core` for counts at least 100, `expanded-threshold` for automatically eligible counts below 100, `curated-exception` for a future owner-approved below-threshold key, and `explicit` for an ineligible ID processed only through an explicit request. Falling below the automatic threshold never authorises deletion of an existing staged or published asset.
 
 Report exactly which records were generated, regenerated, skipped, or failed.
 

@@ -1,10 +1,10 @@
 # Studio/network batch project status
 
-**Last verified:** 2026-07-13 18:25 AEST (UTC+10)
+**Last verified:** 2026-07-13 19:35 AEST (UTC+10)
 
-**Verified against commit:** `5be5183` (`docs: add batch project continuity guidance`)
+**Verified against commit:** `0bda30e` (`docs: record mixed-contrast production workflow`)
 
-**Working tree state:** Not clean. It contains the preserved mixed-contrast experiment plus the uncommitted production rule promotion, hash-bound owner decisions, offline selective-generation support, reconciliation/verification workflow, tests, and documentation. Preserve and inspect these changes before editing.
+**Working tree state:** Not clean. It contains the uncommitted eligibility-50 audit/planning implementation, tests, and documentation described below. Ignored plans and reports were written under `.work`; production staging and review hashes remain unchanged. Preserve and inspect these changes before editing.
 
 This file is a dated project snapshot. Recheck the repository and ignored `.work` data before updating it.
 
@@ -22,18 +22,19 @@ The following stages are complete and present locally:
 - the isolated `mixed-contrast-v1` experiment, including an offline 929-logo scan, 8 candidate comparisons, 12 controls, and projected-change review;
 - production promotion of `hybrid-dark-component-v1`, 17 hash-bound manual decisions, and reason-level resolution of the 20-record owner review;
 - offline selective regeneration of exactly 12 dark-to-light covers followed by full-state metadata, report, contact-sheet, and review reconciliation.
+- the separate eligibility-expansion audit using independently configurable company/network minimums of 50, persistent-state-aware planning, deterministic incremental stable-key plans, threshold-band reports, exact-logo reuse analysis, and conservative below-threshold recognisability review.
 
 No publication stage has been performed.
 
 ## Latest verified source counts
 
-Snapshot from the non-writing audit at 2026-07-13, using `titleCount >= 100`:
+Snapshot from the non-writing audit at 2026-07-13, using the approved company/network minimums of 50:
 
 | Group | Eligible | With logo | Missing logo |
 |---|---:|---:|---:|
-| Companies | 751 | 606 | 145 |
-| Networks | 324 | 323 | 1 |
-| Combined | 1,075 | 929 | 146 |
+| Companies | 1,796 | 1,319 | 477 |
+| Networks | 569 | 568 | 1 |
+| Combined | 2,365 | 1,887 | 478 |
 
 The audit reported zero validation errors. These are dated source facts, not implementation constants.
 
@@ -50,6 +51,8 @@ The audit reported zero validation errors. These are dated source facts, not imp
 - Final assets published: no
 
 The persistent current state is `.work/reports/production-v1/run-state.json`. The reconciled top-level `entities.jsonl` currently contains all 1,075 primary records.
+
+The 50/50 audit did not expand this staged state. It verified the same content fingerprint and modification-time fingerprint before and after planning, and it left the review-state draft and checklist hashes unchanged.
 
 ## Inter status
 
@@ -175,6 +178,45 @@ The full reconciled verification proves:
 
 Review preparation was rebuilt from the full persistent state: 1,075 report records, 266 unique needs-review records, 14 focused sheets, zero missing staged files, and zero report/output hash mismatches. The reason-group counts remain unchanged because the mixed-contrast experiment had not previously injected those reasons into production state.
 
+## Eligibility-50 audit and incremental plan
+
+The approved production automatic thresholds are independently configurable and currently set to 50 for companies and 50 for networks in `config/eligibility.json`. All audit, plan, generate, new, and changed selections use the same resolver. Records at 100 or above are `core`; automatically eligible records from 50–99 are `expanded-threshold`. No `curated-exception` is approved, and below-threshold `explicit` processing still requires an explicit ID selection with `--include-ineligible`.
+
+The live source audit verified:
+
+- 1,796 eligible companies;
+- 569 eligible networks;
+- 2,365 eligible records combined;
+- zero source validation errors.
+
+Compared with the persistent 1,075-record production state, the deterministic incremental delta is:
+
+- 1,075 existing records still eligible;
+- 1,045 newly eligible companies;
+- 245 newly eligible networks;
+- 1,290 newly eligible records combined;
+- 958 newly eligible logo-backed records;
+- 332 newly eligible missing-logo fallbacks;
+- 19 newly eligible records with exact-logo reuse opportunities (11 share with current state; 8 share with another new record);
+- zero existing logo-path changes, cached source-hash changes, missing/corrupt outputs, disappeared records, renamed records, or records below the new automatic threshold;
+- zero invalid newly eligible records.
+
+The 104-item local-cache seed audit produced 20 conservative below-threshold candidates: three high-confidence proposals (`company:11537` LAIKA, `company:90733` NEON, and `network:1255` Stan) plus 17 manual-review records. These are proposals only; no production exception configuration was created. The focused recognised-network 10–49 results are Stan, `network:95` MediaCorp Channel 5, and `network:6100` Paramount+.
+
+Ignored stable-key plans are under `.work/plans/eligibility-50/`. Ignored human-readable and machine-readable reports are under `.work/reports/threshold-audit-50/`. They include band statistics, newly eligible metadata, recognisability candidates, seed results, duplicate/successor notes, proposed exceptions, and storage/runtime estimates.
+
+The estimated incremental footprint is approximately 13.8–14.6 MB using current median/average output sizes, about 21–35 minutes based on the previous full run, and 17 company, 4 network, and 21 combined 8×8 contact-sheet pages. These are estimates, not generation results. Existing cache content allowed offline background analysis for only 11 of 958 new logo-backed records; the remaining background split is unknown until a later approved generation stage.
+
+Protected state after the audit:
+
+- staged files: 1,075;
+- content fingerprint: `f4e4d40a98baea30566113c2f9306537687a9031a3454e649627b54de9ad637d`;
+- modification-time fingerprint: `725d6e18a8995d25503eb4cd898e5090c16b1cb11b4995a8e6676a35c0bdce6c`;
+- review-state draft SHA-256: `c1d8b467716097273114d8ef1e2e816d0f77284d2525b24713fbcce8349e7565`;
+- review checklist SHA-256: `f16d45a4c531849128bb4aa672fff3760be67ecf920ba57403d112739f4dce28`.
+
+No artwork, production report, production review entry, final asset, canonical manifest, font, or source-cache file was written by the eligibility audit.
+
 ## Current open decisions
 
 - Human acceptance of all fallback typography.
@@ -184,7 +226,7 @@ Review preparation was rebuilt from the full persistent state: 1,075 report reco
 
 ## Exact next step
 
-Start the separate `titleCount >= 50` expansion as a new scoped phase: re-run recovery and tests, calculate the current 50–99 population from the source caches, update the eligibility configuration deliberately, and plan only newly eligible stable keys before any generation. Do not use `--all`, publish current staging, or treat this completed background rollout as authorization for the expansion.
+After explicit owner approval, generate only the audited incremental plan with `npm --prefix tools/studio-network-batch run generate -- --ids-file .work/plans/eligibility-50/new-all.json --preset production-v1`. Before running it, recheck Git, source-cache, plan-file, staged-output, and review hashes and confirm Inter availability for the 332 planned missing-logo fallbacks. Do not use `--all`.
 
 ## Important commands
 
@@ -196,6 +238,9 @@ npm --prefix tools/studio-network-batch run font-check
 npm --prefix tools/studio-network-batch run contrast-experiment -- --preset production-v1
 npm --prefix tools/studio-network-batch run generate -- --ids-file .work/plans/mixed-contrast-approved/light-switches.json --preset production-v1 --force --offline
 npm --prefix tools/studio-network-batch run reconcile-production -- reconcile --before-snapshot .work/plans/mixed-contrast-approved/before-staging.json --changed-ids .work/plans/mixed-contrast-approved/light-switches.json --retained-ids .work/plans/mixed-contrast-approved/approved-dark-retained.json --after-snapshot .work/plans/mixed-contrast-approved/after-staging.json --summary .work/reviews/production-v1/mixed-contrast-approved-summary.json
+npm --prefix tools/studio-network-batch run plan -- --new-from-state --preset production-v1
+npm --prefix tools/studio-network-batch run threshold-audit
+npm --prefix tools/studio-network-batch run generate -- --ids-file .work/plans/eligibility-50/new-all.json --preset production-v1
 npm --prefix tools/studio-network-batch run audit
 npm --prefix tools/studio-network-batch run generate -- --proof-of-concept
 npm --prefix tools/studio-network-batch run generate -- --all --preset production-v1
