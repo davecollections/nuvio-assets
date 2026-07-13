@@ -4,6 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { checkInterAvailability } from "./font-check.mjs";
+import { loadEligibilityPolicy } from "./eligibility.mjs";
 import { readStableKeyArray } from "./json-input.mjs";
 import { loadSourceData } from "./load-source.mjs";
 import {
@@ -44,6 +45,7 @@ function resolvePackagePath(value, label) {
 async function main() {
   const options = parseOptions(process.argv.slice(2));
   const preset = JSON.parse(await fs.readFile(path.join(packageRoot, "presets", `${options.preset}.json`), "utf8"));
+  const eligibility = await loadEligibilityPolicy(packageRoot, { configuration: preset.eligibilityConfiguration });
   if (options.command === "validate") {
     process.stdout.write(`${JSON.stringify(await validateProductionState({ packageRoot, preset }), null, 2)}\n`);
     return;
@@ -73,6 +75,7 @@ async function main() {
     preset,
     sourceData,
     selectivelyRegeneratedKeys,
+    eligibility,
   });
   const fontCheckResult = await checkInterAvailability({ requestedFamily: preset.fallbackText?.requiredFontFamily ?? "Inter" });
   const reviewResult = await prepareProductionReview({ packageRoot, preset, fontCheckResult });

@@ -1,4 +1,8 @@
-import { ELIGIBILITY_THRESHOLD } from "./constants.mjs";
+import {
+  CORE_MINIMUM_TITLE_COUNT,
+  eligibilityRuleSummary,
+  isAutomaticallyEligible,
+} from "./eligibility.mjs";
 
 function duplicates(items, valueFor) {
   const groups = new Map();
@@ -19,13 +23,13 @@ function duplicates(items, valueFor) {
   };
 }
 
-function metrics(entities, validationErrorCount, totalRecords = entities.length) {
-  const eligible = entities.filter((entity) => entity.titleCount >= ELIGIBILITY_THRESHOLD);
+function metrics(entities, validationErrorCount, eligibility, totalRecords = entities.length) {
+  const eligible = entities.filter((entity) => isAutomaticallyEligible(entity, eligibility));
   const withLogos = eligible.filter((entity) => entity.logoPath);
   return {
     totalRecords,
     eligibleRecords: eligible.length,
-    exactly100Records: entities.filter((entity) => entity.titleCount === 100).length,
+    exactly100Records: entities.filter((entity) => entity.titleCount === CORE_MINIMUM_TITLE_COUNT).length,
     eligibleWithLogos: withLogos.length,
     eligibleWithoutLogos: eligible.length - withLogos.length,
     duplicateExactLogoPaths: duplicates(withLogos, (entity) => entity.logoPath),
@@ -36,7 +40,8 @@ function metrics(entities, validationErrorCount, totalRecords = entities.length)
   };
 }
 
-export function buildAudit(sourceData) {
+export function buildAudit(sourceData, { eligibility } = {}) {
+  if (!eligibility) throw new Error("Eligibility policy is required for audit.");
   const companies = sourceData.entities.filter((entity) => entity.entityType === "company");
   const networks = sourceData.entities.filter((entity) => entity.entityType === "network");
   const companyErrors = sourceData.validationErrors.filter(
@@ -47,10 +52,15 @@ export function buildAudit(sourceData) {
   return {
     generatedAt: new Date().toISOString(),
     sourceDirectory: sourceData.sourceDirectory,
-    eligibilityRule: `titleCount >= ${ELIGIBILITY_THRESHOLD}`,
-    company: metrics(companies, companyErrors, sourceData.rawRecordCounts?.company),
-    network: metrics(networks, networkErrors, sourceData.rawRecordCounts?.network),
-    combined: metrics(sourceData.entities, sourceData.validationErrors.length, sourceData.rawRecordCounts?.combined),
+    eligibility: {
+      version: eligibility.version,
+      companyMinimumTitleCount: eligibility.companyMinimumTitleCount,
+      networkMinimumTitleCount: eligibility.networkMinimumTitleCount,
+    },
+    eligibilityRule: eligibilityRuleSummary(eligibility),
+    company: metrics(companies, companyErrors, eligibility, sourceData.rawRecordCounts?.company),
+    network: metrics(networks, networkErrors, eligibility, sourceData.rawRecordCounts?.network),
+    combined: metrics(sourceData.entities, sourceData.validationErrors.length, eligibility, sourceData.rawRecordCounts?.combined),
     validationErrors: sourceData.validationErrors,
   };
 }

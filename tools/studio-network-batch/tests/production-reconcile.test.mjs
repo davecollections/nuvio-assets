@@ -129,9 +129,11 @@ test("selective change reconciliation preserves full state, retained hashes and 
     preset: data.preset,
     sourceData: data.sourceData,
     selectivelyRegeneratedKeys: ["company:1"],
+    eligibility: { version: "test", companyMinimumTitleCount: 100, networkMinimumTitleCount: 100 },
   });
   assert.equal(reconciled.records.length, 2);
   assert.equal(reconciled.summary.metadataOnlyReconciled, 1);
+  assert.equal(reconciled.records.every((record) => record.eligibilityTier === "core"), true);
   assert.equal(reconciled.records.every((record) => record.backgroundDecisionVersion === "hybrid-dark-component-v1"), true);
   assert.deepEqual(reconciled.records[0].reviewReasons, ["unexpectedly-opaque-source-background"]);
   assert.equal(reconciled.records[0].mixedContrastReviewResolution.status, "resolved");

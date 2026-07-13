@@ -9,7 +9,8 @@ import {
   mergeBackgroundDecisionReviewReasons,
 } from "./background-decision.mjs";
 import { createContactSheet, createPagedContactSheets } from "./contact-sheet.mjs";
-import { compareEntities, ELIGIBILITY_THRESHOLD, RENDERER_VERSION } from "./constants.mjs";
+import { compareEntities, RENDERER_VERSION } from "./constants.mjs";
+import { classifyEligibilityTier, isAutomaticallyEligible } from "./eligibility.mjs";
 import { bufferFingerprint, sourceRecordFingerprint } from "./fingerprints.mjs";
 import { analyseLogo } from "./image-analysis.mjs";
 import { logoCachePath } from "./logo-cache.mjs";
@@ -128,18 +129,20 @@ export async function reconcileProductionState({
   preset,
   sourceData,
   selectivelyRegeneratedKeys = [],
+  eligibility,
   now = () => new Date(),
 } = {}) {
   if (sourceData.validationErrors?.length) {
     throw new Error(`Cannot reconcile with ${sourceData.validationErrors.length} source validation error(s).`);
   }
+  if (!eligibility) throw new Error("Eligibility policy is required for reconciliation.");
   const reportsRoot = path.join(packageRoot, ".work", "reports", preset.version);
   const statePath = path.join(reportsRoot, "run-state.json");
   const stagingRoot = path.join(packageRoot, ".work", "staging", preset.version);
   const state = await readState(statePath);
   const configuration = await loadBackgroundDecisionConfiguration(packageRoot, preset);
   const eligible = sourceData.entities
-    .filter((entity) => entity.titleCount >= ELIGIBILITY_THRESHOLD)
+    .filter((entity) => isAutomaticallyEligible(entity, eligibility))
     .sort(compareEntities);
   const primaryKeys = Object.keys(state.entries).filter((key) => key.endsWith("|primary"));
   if (primaryKeys.length !== eligible.length) {
@@ -211,6 +214,7 @@ export async function reconcileProductionState({
       stableKey: entity.stableKey,
       name: entity.name,
       titleCount: entity.titleCount,
+      eligibilityTier: classifyEligibilityTier(entity, eligibility),
       logoPath: entity.logoPath,
       sourceRecordHash: sourceRecordFingerprint(entity),
       selectedBackground,

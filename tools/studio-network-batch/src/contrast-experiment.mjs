@@ -3,7 +3,6 @@ import path from "node:path";
 
 import { atomicWrite, atomicWriteJson } from "./atomic.mjs";
 import { createContactSheet } from "./contact-sheet.mjs";
-import { ELIGIBILITY_THRESHOLD } from "./constants.mjs";
 import { analyseLogo } from "./image-analysis.mjs";
 import { loadSourceData } from "./load-source.mjs";
 import { logoCachePath } from "./logo-cache.mjs";
@@ -186,9 +185,9 @@ export async function runContrastExperiment({ packageRoot, repoRoot, presetName 
 
   const source = resolveSourceDirectory({ sourceDir, repoRoot });
   const sourceData = await loadSourceData(source.directory);
-  const eligible = sourceData.entities.filter((entity) => entity.titleCount >= ELIGIBILITY_THRESHOLD);
-  const logoBearing = eligible.filter((entity) => entity.logoPath).sort(compareStableKeys);
   const currentMap = currentStateMap(state);
+  const eligible = sourceData.entities.filter((entity) => currentMap.has(entity.stableKey));
+  const logoBearing = eligible.filter((entity) => entity.logoPath).sort(compareStableKeys);
   const candidateKeys = new Set(definition.candidates);
   const controlDefinitions = new Map(definition.controls.map((control) => [control.stableKey, control]));
   const controlKeys = new Set(controlDefinitions.keys());

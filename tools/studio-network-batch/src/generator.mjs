@@ -136,7 +136,7 @@ function errorRecord(base, error) {
 }
 
 const REQUIRED_REPORT_FIELDS = [
-  "entityType", "tmdbId", "stableKey", "name", "titleCount", "logoPath", "logoUrl",
+  "entityType", "tmdbId", "stableKey", "name", "titleCount", "eligibilityTier", "logoPath", "logoUrl",
   "status", "reviewStatus", "backgroundPreset", "darkContrastScore", "lightContrastScore",
   "contrastConfidence", "sourcePath", "sourceFormat", "sourceWidth", "sourceHeight",
   "visibleBounds", "visibleWidth", "visibleHeight", "transparentPadding", "visiblePixelCount",
@@ -296,6 +296,7 @@ export async function generateBatch({
       stableKey: entity.stableKey,
       name: entity.name,
       titleCount: entity.titleCount,
+      eligibilityTier: entity.eligibilityTier ?? null,
       logoPath: entity.logoPath,
       logoUrl: null,
       presetVersion: preset.version,

@@ -12,6 +12,8 @@ import { buildSelectionPlan, formatSelectionPlan } from "./selection.mjs";
 import { resolveSourceDirectory } from "./source-path.mjs";
 import { generateBatch, formatGenerationSummary } from "./generator.mjs";
 import { DEFAULT_PRESET_VERSION, RENDERER_VERSION } from "./constants.mjs";
+import { loadEligibilityPolicy } from "./eligibility.mjs";
+import { buildPersistentStateDelta, readPersistentProductionState } from "./state-delta.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "../..");
@@ -23,21 +25,29 @@ async function main() {
   }
   const options = parseCliOptions(args);
   if (command === "audit") {
-    const planOnly = options.all || options.proofOfConcept || options.newRecords || options.changedRecords ||
+    const planOnly = options.all || options.proofOfConcept || options.newRecords || options.newFromState || options.changedRecords ||
       options.companyIds.length || options.networkIds.length || options.idsFile || options.manifest ||
-      options.force || options.dryRun || options.includeIneligible || options.refreshLogoCache || options.offline || options.preset;
+      options.force || options.dryRun || options.includeIneligible || options.refreshLogoCache || options.offline;
     if (planOnly) throw new Error("Selection and manifest options are only valid for plan.");
   }
   const source = resolveSourceDirectory({ sourceDir: options.sourceDir, repoRoot });
   const sourceData = await loadSourceData(source.directory);
+  const mode = command === "audit" ? null : determinePlanMode(options);
+  const presetPath = resolvePresetPath(options.preset, mode);
+  const preset = JSON.parse(await fs.readFile(presetPath, "utf8"));
+  validatePreset(preset, presetPath);
+  const eligibility = await loadEligibilityPolicy(packageRoot, {
+    configuration: preset.eligibilityConfiguration,
+    companyMinimumTitleCount: options.companyMinTitles,
+    networkMinimumTitleCount: options.networkMinTitles,
+  });
 
   if (command === "audit") {
-    const audit = buildAudit(sourceData);
+    const audit = buildAudit(sourceData, { eligibility });
     process.stdout.write(`${options.json ? JSON.stringify(audit, null, 2) : formatAudit(audit)}\n`);
     return;
   }
 
-  const mode = determinePlanMode(options);
   const requestedKeys = [
     ...options.companyIds.map((id) => `company:${id}`),
     ...options.networkIds.map((id) => `network:${id}`),
@@ -51,9 +61,17 @@ async function main() {
   );
   const manifestProvided = Boolean(options.manifest);
   const manifest = manifestProvided ? await readManifest(path.resolve(options.manifest)) : new Map();
-  const presetPath = resolvePresetPath(options.preset, mode);
-  const preset = JSON.parse(await fs.readFile(presetPath, "utf8"));
-  validatePreset(preset, presetPath);
+  let stateDelta = null;
+  if (mode === "new-from-state") {
+    const persistent = await readPersistentProductionState(packageRoot, preset.version);
+    stateDelta = await buildPersistentStateDelta({
+      entities: sourceData.entities,
+      eligibility,
+      stateRecords: persistent.records,
+      packageRoot,
+      preset,
+    });
+  }
   const plan = buildSelectionPlan({
     entities: sourceData.entities,
     validationErrors: sourceData.validationErrors,
@@ -68,6 +86,8 @@ async function main() {
     rendererVersion: RENDERER_VERSION,
     presetVersion: preset.version,
     repoRoot,
+    eligibility,
+    stateDelta,
   });
   if (command === "plan") {
     process.stdout.write(`${options.json ? JSON.stringify(plan, null, 2) : formatSelectionPlan(plan)}\n`);

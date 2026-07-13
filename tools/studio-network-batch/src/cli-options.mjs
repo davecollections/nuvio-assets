@@ -16,12 +16,19 @@ function parseIds(value, name) {
   });
 }
 
+function parseMinimumTitles(value, name) {
+  const result = Number(value);
+  if (!Number.isSafeInteger(result) || result < 0) throw new Error(`${name} requires a non-negative integer.`);
+  return result;
+}
+
 export function parseCliOptions(argv) {
   const options = {
     json: false,
     all: false,
     proofOfConcept: false,
     newRecords: false,
+    newFromState: false,
     changedRecords: false,
     includeIneligible: false,
     force: false,
@@ -31,10 +38,11 @@ export function parseCliOptions(argv) {
     companyIds: [],
     networkIds: [],
   };
-  const valueNames = new Set(["--source-dir", "--company-ids", "--network-ids", "--ids-file", "--manifest", "--preset"]);
+  const valueNames = new Set(["--source-dir", "--company-ids", "--network-ids", "--ids-file", "--manifest", "--preset", "--company-min-titles", "--network-min-titles"]);
   const flagNames = new Map([
     ["--json", "json"], ["--all", "all"], ["--proof-of-concept", "proofOfConcept"],
     ["--new", "newRecords"], ["--changed", "changedRecords"],
+    ["--new-from-state", "newFromState"],
     ["--include-ineligible", "includeIneligible"], ["--force", "force"], ["--dry-run", "dryRun"],
     ["--refresh-logo-cache", "refreshLogoCache"],
     ["--offline", "offline"],
@@ -47,7 +55,9 @@ export function parseCliOptions(argv) {
       index += consumed;
       if (valueName === "--company-ids") options.companyIds.push(...parseIds(value, valueName));
       else if (valueName === "--network-ids") options.networkIds.push(...parseIds(value, valueName));
-      else options[valueName.slice(2).replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())] = value;
+      else if (valueName === "--company-min-titles" || valueName === "--network-min-titles") {
+        options[valueName.slice(2).replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())] = parseMinimumTitles(value, valueName);
+      } else options[valueName.slice(2).replace(/-([a-z])/g, (_, letter) => letter.toUpperCase())] = value;
       continue;
     }
     const flag = flagNames.get(argument);
@@ -64,9 +74,10 @@ export function determinePlanMode(options) {
     explicit && "explicit",
     options.proofOfConcept && "proof-of-concept",
     options.newRecords && "new",
+    options.newFromState && "new-from-state",
     options.changedRecords && "changed",
   ].filter(Boolean);
-  if (modes.length === 0) throw new Error("Choose a selection mode: --all, IDs, --proof-of-concept, --new, or --changed.");
+  if (modes.length === 0) throw new Error("Choose a selection mode: --all, IDs, --proof-of-concept, --new, --new-from-state, or --changed.");
   if (modes.length > 1) throw new Error(`Conflicting selection modes: ${modes.join(", ")}.`);
   return modes[0];
 }

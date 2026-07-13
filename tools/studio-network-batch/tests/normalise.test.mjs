@@ -4,6 +4,8 @@ import test from "node:test";
 import { buildAudit } from "../src/audit.mjs";
 import { normaliseCompactRecord, normaliseCompactRecords, isValidLogoPath } from "../src/normalise.mjs";
 
+const eligibility = { version: "test-50", companyMinimumTitleCount: 50, networkMinimumTitleCount: 50 };
+
 test("normalises a compact company record", () => {
   const { entity, errors } = normaliseCompactRecord(
     { i: 33, n: " Universal Pictures ", p: "Comcast", c: "US", h: "Universal City", l: "/logo.png", t: 2765 },
@@ -41,14 +43,14 @@ test("an omitted compact title count normalises to zero", () => {
   assert.equal(entity.titleCount, 0);
 });
 
-test("eligibility boundary includes 100 and 101 but not 99", () => {
-  const entities = [99, 100, 101].map((titleCount, index) => ({
+test("eligibility boundary includes company counts 50 and 51 but not 49", () => {
+  const entities = [49, 50, 51].map((titleCount, index) => ({
     entityType: "company", tmdbId: index + 1, stableKey: `company:${index + 1}`,
     name: `C${index}`, titleCount, logoPath: "", parentCompany: "", originCountry: "", headquarters: "",
   }));
-  const audit = buildAudit({ sourceDirectory: "fixture", entities, validationErrors: [] });
+  const audit = buildAudit({ sourceDirectory: "fixture", entities, validationErrors: [] }, { eligibility });
   assert.equal(audit.company.eligibleRecords, 2);
-  assert.equal(audit.company.exactly100Records, 1);
+  assert.equal(audit.company.exactly100Records, 0);
 });
 
 test("duplicate IDs are reported and only the first valid record is retained", () => {

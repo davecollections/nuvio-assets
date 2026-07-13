@@ -1,0 +1,7 @@
+{
+  "version": "eligibility-50-v1",
+  "eligibility": {
+    "companyMinimumTitleCount": 50,
+    "networkMinimumTitleCount": 50
+  }
+}

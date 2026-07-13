@@ -1,6 +1,7 @@
 {
   "version": "production-v1",
   "status": "approved for full staging review",
+  "eligibilityConfiguration": "config/eligibility.json",
   "canvas": {
     "width": 1200,
     "height": 675

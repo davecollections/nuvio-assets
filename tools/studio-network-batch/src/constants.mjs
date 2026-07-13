@@ -1,5 +1,3 @@
-export const ELIGIBILITY_THRESHOLD = 100;
-
 export const SOURCE_FILES = Object.freeze({
   company: "data/companies.min.json",
   network: "data/tv-networks.min.json",
