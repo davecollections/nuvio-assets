@@ -75,6 +75,7 @@ test("production preset loads the locked artwork settings", () => {
   assert.equal(productionPreset.logo.maximumVisibleWidthPercent, 72);
   assert.equal(productionPreset.logo.maximumVisibleHeightPercent, 48);
   assert.equal(productionPreset.output.quality, 86);
+  assert.equal(productionPreset.backgroundDecision.version, "hybrid-dark-component-v1");
   assert.equal(productionPreset.fallbackText.requiredFontFamily, "Inter");
   assert.equal(productionPreset.fallbackText.requireConfirmedFont, true);
 });

@@ -27,6 +27,7 @@ export function parseCliOptions(argv) {
     force: false,
     dryRun: false,
     refreshLogoCache: false,
+    offline: false,
     companyIds: [],
     networkIds: [],
   };
@@ -36,6 +37,7 @@ export function parseCliOptions(argv) {
     ["--new", "newRecords"], ["--changed", "changedRecords"],
     ["--include-ineligible", "includeIneligible"], ["--force", "force"], ["--dry-run", "dryRun"],
     ["--refresh-logo-cache", "refreshLogoCache"],
+    ["--offline", "offline"],
   ]);
   for (let index = 0; index < argv.length; index += 1) {
     const argument = argv[index];

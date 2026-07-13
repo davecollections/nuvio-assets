@@ -1,0 +1,41 @@
+{
+  "version": "mixed-contrast-v1",
+  "productionPreset": "production-v1",
+  "candidates": [
+    "company:6438",
+    "company:7981",
+    "company:10330",
+    "company:11846",
+    "network:461",
+    "network:3127",
+    "network:3732",
+    "network:4353"
+  ],
+  "controls": [
+    { "stableKey": "company:2", "category": "black-wordmark", "reason": "Obvious black legacy wordmark that correctly uses light." },
+    { "stableKey": "company:21", "category": "detailed-emblem", "reason": "Detailed gold emblem from the proof of concept that currently uses dark." },
+    { "stableKey": "company:33", "category": "detailed-emblem", "reason": "Detailed dark globe-and-wordmark control that correctly uses light." },
+    { "stableKey": "company:174", "category": "compact-symbol", "reason": "Compact bright shield from the proof of concept that correctly uses dark." },
+    { "stableKey": "company:41077", "category": "black-wordmark", "reason": "Compact black wordmark that correctly uses light." },
+    { "stableKey": "network:6", "category": "colourful-symbol", "reason": "Multicolour peacock control without a dark-wording failure." },
+    { "stableKey": "network:49", "category": "black-wordmark", "reason": "Obvious black wordmark that correctly uses light." },
+    { "stableKey": "network:66", "category": "black-symbol", "reason": "Compact black symbol that correctly uses light." },
+    { "stableKey": "network:118", "category": "colourful-symbol", "reason": "Balanced colourful symbol and close-score proof-of-concept control." },
+    { "stableKey": "network:213", "category": "colourful-wordmark", "reason": "Red wide wordmark and close-score proof-of-concept control." },
+    { "stableKey": "network:1024", "category": "white-wordmark", "reason": "Mostly white wide wordmark that correctly uses dark." },
+    { "stableKey": "network:2334", "category": "detailed-emblem", "reason": "Detailed bright emblem and close-score proof-of-concept control." }
+  ],
+  "recommendedRule": "hybrid-dark-component-v1",
+  "rules": [
+    { "id": "current-aggregate", "type": "baseline" },
+    { "id": "p10-floor-1.5", "type": "lower-percentile", "percentile": "p10", "selectedFloor": 1.5, "minimumAlternativeGain": 0.25, "minimumAlternativeAggregate": 2.0 },
+    { "id": "p10-floor-2.0", "type": "lower-percentile", "percentile": "p10", "selectedFloor": 2.0, "minimumAlternativeGain": 0.25, "minimumAlternativeAggregate": 2.0 },
+    { "id": "p20-floor-2.0", "type": "lower-percentile", "percentile": "p20", "selectedFloor": 2.0, "minimumAlternativeGain": 0.25, "minimumAlternativeAggregate": 2.0 },
+    { "id": "below3-share-40", "type": "low-share", "metric": "below3", "selectedShare": 0.4, "minimumShareImprovement": 0.08, "maximumAtOrAbove3Loss": 0.15, "minimumAlternativeAggregate": 2.0 },
+    { "id": "below2-share-30", "type": "low-share", "metric": "below2", "selectedShare": 0.3, "minimumShareImprovement": 0.08, "maximumAtOrAbove3Loss": 0.15, "minimumAlternativeAggregate": 2.0 },
+    { "id": "hybrid-below2-conservative", "type": "hybrid", "selectedBelow2": 0.35, "minimumBelow2Improvement": 0.1, "maximumAtOrAbove3Loss": 0.1, "minimumAlternativeAggregate": 2.2, "maximumAggregateLoss": 1.5, "selectedP20Ceiling": 3.0, "reviewSelectedBelow2": 0.28, "reviewMinimumBelow2Improvement": 0.06, "reviewMaximumAtOrAbove3Loss": 0.16, "reviewMinimumAlternativeAggregate": 2.0 },
+    { "id": "hybrid-below2-balanced", "type": "hybrid", "selectedBelow2": 0.32, "minimumBelow2Improvement": 0.08, "maximumAtOrAbove3Loss": 0.15, "minimumAlternativeAggregate": 2.0, "maximumAggregateLoss": 2.0, "selectedP20Ceiling": 3.0, "reviewSelectedBelow2": 0.25, "reviewMinimumBelow2Improvement": 0.05, "reviewMaximumAtOrAbove3Loss": 0.2, "reviewMinimumAlternativeAggregate": 1.8 },
+    { "id": "hybrid-dark-component-v1", "type": "mixed-dark-component", "selectedBelow3Minimum": 0.4, "selectedBelow3Maximum": 0.5, "selectedP10Maximum": 1.2, "minimumBelow1_5Improvement": 0.2, "minimumAlternativeP10": 1.16, "minimumAlternativeAtOrAbove3": 0.4, "maximumAtOrAbove3Loss": 0.15, "minimumAlternativeAggregate": 1.8, "reviewP10Minimum": 2.0, "reviewP10Maximum": 3.0, "reviewMaximumBelow2": 0.05, "reviewMaximumAtOrAbove3Loss": 0.1, "reviewMinimumAlternativeAggregate": 2.0 },
+    { "id": "meaningful-alternative", "type": "meaningful-alternative", "selectedBelow2": 0.25, "minimumBelow2Improvement": 0.1, "maximumAtOrAbove3Loss": 0.12, "minimumAlternativeAggregate": 2.2, "maximumAggregateLoss": 1.75 }
+  ]
+}

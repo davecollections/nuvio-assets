@@ -63,6 +63,7 @@ function wait(milliseconds) {
 export function createLogoDownloader({
   cacheDirectory,
   fetchImpl = globalThis.fetch,
+  offline = false,
   sharpImpl = sharp,
   timeoutMs = 20_000,
   retries = 2,
@@ -71,7 +72,7 @@ export function createLogoDownloader({
   sleep = wait,
 } = {}) {
   if (!cacheDirectory) throw new Error("cacheDirectory is required");
-  if (typeof fetchImpl !== "function") throw new Error("fetch is unavailable");
+  if (!offline && typeof fetchImpl !== "function") throw new Error("fetch is unavailable");
   const inRun = new Map();
 
   async function download(logoPath, { refresh = false } = {}) {
@@ -92,11 +93,17 @@ export function createLogoDownloader({
   async function downloadOnce(logoPath, { refresh }) {
     const url = logoUrlFor(logoPath);
     const cachePath = logoCachePath(cacheDirectory, logoPath);
+    if (offline && refresh) {
+      throw new PipelineError("offline_cache_refresh_forbidden", `Offline mode cannot refresh the logo cache: ${logoPath}`);
+    }
     if (!refresh) {
       const cached = await readValidCache(cachePath);
       if (cached) {
         return describe(cached.buffer, cached.metadata, { logoPath, url, cachePath, reused: true, reuseKind: "cache" });
       }
+    }
+    if (offline) {
+      throw new PipelineError("offline_cache_miss", `Offline generation requires a valid cached logo: ${cachePath}`);
     }
 
     let lastError;

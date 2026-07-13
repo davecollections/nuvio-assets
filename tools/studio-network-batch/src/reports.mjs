@@ -4,6 +4,8 @@ const DOWNLOAD_ERRORS = new Set([
   "download_failed",
   "empty_response",
   "unsupported_content_type",
+  "offline_cache_miss",
+  "offline_cache_refresh_forbidden",
 ]);
 const DECODE_ERRORS = new Set(["decode_failed", "zero_size_image"]);
 const ANALYSIS_ERRORS = new Set(["no_visible_pixels", "analysis_failed"]);

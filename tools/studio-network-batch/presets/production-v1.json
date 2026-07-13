@@ -26,6 +26,12 @@
     "usefulRatio": 3,
     "strongRatio": 4.5
   },
+  "backgroundDecision": {
+    "version": "hybrid-dark-component-v1",
+    "ruleDefinition": "presets/mixed-contrast-v1.json",
+    "manualDecisions": "config/background-decisions.json",
+    "reviewResolutions": "config/background-review-resolutions.json"
+  },
   "fallbackText": {
     "requiredFontFamily": "Inter",
     "requireConfirmedFont": true,

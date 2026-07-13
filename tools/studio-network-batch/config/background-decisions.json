@@ -1,0 +1,121 @@
+[
+  {
+    "stableKey": "company:880",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "d2288bd0d4809ac28debfad9f3e47dbb5a8ccc2860da4cfc5e61e50d1175d184",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Daiei Film"
+  },
+  {
+    "stableKey": "company:1385",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "10d13b642fac2f29a592c3aa8ca02164100390534d07e7836c6b8338b05f3fb2",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Acar Film"
+  },
+  {
+    "stableKey": "company:5056",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "dc9eaaee506601b179a41fda00349f6d5372746a194436e8be24244c0750dffa",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Head Gear Films"
+  },
+  {
+    "stableKey": "company:5798",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "4ba5e4d703d1f4c8ea9e76a5001a118ca00637a8d6debf23172cb2d4daa01b31",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Shaw Brothers"
+  },
+  {
+    "stableKey": "company:7981",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "9f8246aa302c8f826b124fe28be5a2a4134471cbf7712e133663e0e8b59e03b5",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Pathé"
+  },
+  {
+    "stableKey": "company:10330",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "6e8d1a4088c3811adb4a7553a7885f72dc89056e108d0586da51e67659832743",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Universal International Pictures"
+  },
+  {
+    "stableKey": "company:20630",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "9ef457408ddac2eda66f2eb121baf34465aa53c93aab1a0af7d8e7464f8ac41b",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Lumiton"
+  },
+  {
+    "stableKey": "company:22155",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "273dc2199f438e1936f64c49e0fb473f70ee728efcbb0c4ca27d97a547af431a",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Karagiannis-Karatzopoulos"
+  },
+  {
+    "stableKey": "company:27683",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "e82ebe289e6e04914517e3748aa7c65a44916bf773e15e3bdc551a27e7406bef",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Televizija Zagreb"
+  },
+  {
+    "stableKey": "company:138205",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "80a1bacd41e846d8cb77e5dd48f41610fd64b15a199fa66034522a4beb26b134",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Zen Pictures"
+  },
+  {
+    "stableKey": "company:161115",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "785bee5299160545b0c9db5bcca2ffb6ec86440198b1f65fa546607667d4e3be",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "BBC TV"
+  },
+  {
+    "stableKey": "network:83",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "337a45d10df3022014728862ad8df1233c42f37bb308a512abdaa7f49854441e",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Teletoon"
+  },
+  {
+    "stableKey": "network:344",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "54bd891a0f9eeed58f8cf9f85595b44229407a5e674fea36b3ff10eeffdcd4a7",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Channel 3"
+  },
+  {
+    "stableKey": "network:461",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "028ec7cb63dd49d1e5249cdd61e851f52913718fba92e2b89af0c81f7c2b1aee",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "ATV"
+  },
+  {
+    "stableKey": "network:1199",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "0d599ccc4c59997da8481950aae58ec04d9810ffe81bcea6b505b7a86348b44c",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "NTV"
+  },
+  {
+    "stableKey": "network:3127",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "614d712fd894e73504c0b084f49558ad0b1f85e52f9f1b0873eb612cf56917ab",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "Aniworld TV"
+  },
+  {
+    "stableKey": "network:4353",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "cd284be2daff76a191b2f5138657ea8b30e4c6ba5fadf812cabd878d235d0ab0",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "discovery+"
+  }
+]

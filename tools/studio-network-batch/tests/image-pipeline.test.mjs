@@ -67,6 +67,23 @@ test("downloads once, reuses exact duplicate paths in-run, and reuses a valid ca
   assert.equal(cached.reuseKind, "cache");
 });
 
+test("offline logo loading uses valid cache and never falls through to a network request", async (context) => {
+  const cacheDirectory = await temporaryDirectory(context, "nuvio-offline-cache-");
+  const logo = await rectangleLogo();
+  const cachedPath = logoCachePath(cacheDirectory, "/cached.png");
+  await fs.writeFile(cachedPath, logo);
+  let requests = 0;
+  const downloader = createLogoDownloader({
+    cacheDirectory,
+    offline: true,
+    fetchImpl: async () => { requests += 1; throw new Error("network must not run"); },
+  });
+  const cached = await downloader.download("/cached.png");
+  assert.equal(cached.reuseKind, "cache");
+  await assert.rejects(downloader.download("/missing.png"), (error) => error.code === "offline_cache_miss");
+  assert.equal(requests, 0);
+});
+
 test("refresh-logo-cache refetches only once per distinct in-run path", async (context) => {
   const cacheDirectory = await temporaryDirectory(context, "nuvio-refresh-");
   const logo = await rectangleLogo();

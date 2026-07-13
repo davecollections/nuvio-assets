@@ -139,8 +139,9 @@ export async function readCurrentProductionRecords(reportsRoot) {
   }
 }
 
-export async function buildHashBoundReviewEntries(records, packageRoot, presetVersion) {
+export async function buildHashBoundReviewEntries(records, packageRoot, presetVersion, { existingEntries = [] } = {}) {
   const stagingRoot = path.join(packageRoot, ".work", "staging", presetVersion);
+  const existingByKey = new Map(existingEntries.map((entry) => [entry.stableKey, entry]));
   const entries = [];
   for (const record of records) {
     if (!record.outputPath || !isWithin(record.outputPath, stagingRoot)) {
@@ -150,13 +151,17 @@ export async function buildHashBoundReviewEntries(records, packageRoot, presetVe
     if (record.outputHash !== actualHash) {
       throw new Error(`Staged output hash differs from the production report for ${record.stableKey}.`);
     }
+    const reasons = [...new Set(record.reviewReasons ?? [])].sort();
+    const existing = existingByKey.get(record.stableKey);
+    const sameReasons = JSON.stringify(existing?.reasons ?? []) === JSON.stringify(reasons);
+    const preserve = existing?.outputHash === actualHash && (existing.reviewStatus === "pending" || sameReasons);
     entries.push({
       stableKey: record.stableKey,
       outputHash: actualHash,
-      reviewStatus: "pending",
-      reasons: [...new Set(record.reviewReasons ?? [])].sort(),
-      note: "",
-      reviewedAt: null,
+      reviewStatus: preserve ? existing.reviewStatus : "pending",
+      reasons,
+      note: preserve ? existing.note ?? "" : "",
+      reviewedAt: preserve ? existing.reviewedAt ?? null : null,
     });
   }
   return entries;
@@ -173,7 +178,15 @@ export async function prepareProductionReview({ packageRoot, preset, fontCheckRe
   const records = await readCurrentProductionRecords(reportsRoot);
   const groups = buildReviewGroups(records, preset);
   const uniqueNeedsReview = groups["all-needs-review"].records;
-  const entries = await buildHashBoundReviewEntries(uniqueNeedsReview, packageRoot, preset.version);
+  let existingEntries = [];
+  const draftPath = path.join(reviewStateRoot, "review-state-draft.json");
+  try {
+    const parsed = JSON.parse(await fs.readFile(draftPath, "utf8"));
+    if (Array.isArray(parsed)) existingEntries = parsed;
+  } catch (error) {
+    if (error.code !== "ENOENT") throw new Error(`Invalid existing review draft ${draftPath}: ${error.message}`);
+  }
+  const entries = await buildHashBoundReviewEntries(uniqueNeedsReview, packageRoot, preset.version, { existingEntries });
   const columns = preset.contactSheets?.columns ?? 8;
   const rows = preset.contactSheets?.rows ?? 8;
   const pageSize = columns * rows;
@@ -208,7 +221,6 @@ export async function prepareProductionReview({ packageRoot, preset, fontCheckRe
     uniqueNeedsReview: uniqueNeedsReview.length,
     groups: indexGroups,
   };
-  const draftPath = path.join(reviewStateRoot, "review-state-draft.json");
   const checklistPath = path.join(reviewStateRoot, "review-checklist.csv");
   const indexPath = path.join(reviewSheetsRoot, "index.md");
   const indexJsonPath = path.join(reviewSheetsRoot, "index.json");

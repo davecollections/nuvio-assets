@@ -127,10 +127,11 @@ test("force is recorded but does not widen selection; planning stays dry-run", (
   assert.equal(plan.dryRun, false);
 });
 
-test("CLI parser supports mixed ID options and rejects conflicting selection modes", () => {
-  const options = parseCliOptions(["--company-ids", "33,174", "--network-ids=18,66", "--dry-run"]);
+test("CLI parser supports mixed ID and offline options and rejects conflicting selection modes", () => {
+  const options = parseCliOptions(["--company-ids", "33,174", "--network-ids=18,66", "--dry-run", "--offline"]);
   assert.deepEqual(options.companyIds, [33, 174]);
   assert.deepEqual(options.networkIds, [18, 66]);
+  assert.equal(options.offline, true);
   assert.equal(determinePlanMode(options), "explicit");
   assert.throws(() => determinePlanMode({ ...options, all: true }), /Conflicting selection modes/);
 });

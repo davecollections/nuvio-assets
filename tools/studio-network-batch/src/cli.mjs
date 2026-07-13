@@ -25,7 +25,7 @@ async function main() {
   if (command === "audit") {
     const planOnly = options.all || options.proofOfConcept || options.newRecords || options.changedRecords ||
       options.companyIds.length || options.networkIds.length || options.idsFile || options.manifest ||
-      options.force || options.dryRun || options.includeIneligible || options.refreshLogoCache || options.preset;
+      options.force || options.dryRun || options.includeIneligible || options.refreshLogoCache || options.offline || options.preset;
     if (planOnly) throw new Error("Selection and manifest options are only valid for plan.");
   }
   const source = resolveSourceDirectory({ sourceDir: options.sourceDir, repoRoot });
@@ -81,6 +81,7 @@ async function main() {
     dryRun: options.dryRun,
     force: options.force,
     refreshLogoCache: options.refreshLogoCache,
+    offline: options.offline,
   });
   process.stdout.write(`${options.json ? JSON.stringify(result, null, 2) : formatGenerationSummary(result)}\n`);
 }

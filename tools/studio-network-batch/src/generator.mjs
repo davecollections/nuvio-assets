@@ -5,6 +5,12 @@ import sharp from "sharp";
 
 import { atomicWrite, atomicWriteJson } from "./atomic.mjs";
 import {
+  applyProductionBackgroundDecision,
+  fallbackBackgroundDecision,
+  loadBackgroundDecisionConfiguration,
+  mergeBackgroundDecisionReviewReasons,
+} from "./background-decision.mjs";
+import {
   createContactSheet,
   createPagedContactSheets,
   primaryContactSheetPath,
@@ -72,7 +78,7 @@ async function readState(filePath) {
 
 async function canSkip(previous, current, outputPath, preset) {
   if (!previous) return null;
-  for (const key of ["stableKey", "logoPath", "sourceHash", "artworkInputHash", "rendererVersion", "presetVersion"]) {
+  for (const key of ["stableKey", "logoPath", "sourceHash", "artworkInputHash", "rendererVersion", "presetVersion", "selectedBackground"]) {
     if ((previous[key] ?? null) !== (current[key] ?? null)) return null;
   }
   if (previous.outputPath !== outputPath || !previous.outputHash) return null;
@@ -138,6 +144,9 @@ const REQUIRED_REPORT_FIELDS = [
   "presetVersion", "rendererVersion", "outputPath", "outputHash", "outputBytes",
   "downloadReused", "analysisReused", "renderReused", "generatedAt", "errorCode",
   "errorMessage", "fallbackTextLayout",
+  "backgroundDecisionVersion", "backgroundDecisionSource", "backgroundDecisionReason",
+  "backgroundDecisionSourceLogoHash", "aggregateSelectedBackground", "automaticBackgroundDecision",
+  "manualBackgroundDecision", "mixedContrastReviewResolution", "mixedContrastMetrics",
 ];
 
 function completeReportRecord(record) {
@@ -211,6 +220,7 @@ export async function generateBatch({
   dryRun = false,
   force = false,
   refreshLogoCache = false,
+  offline = false,
   fetchImpl = globalThis.fetch,
   now = () => new Date(),
   fontCheckImpl = checkInterAvailability,
@@ -247,9 +257,13 @@ export async function generateBatch({
   const recoveryJsonlPath = path.join(runDirectory, "records.jsonl");
   await fs.mkdir(runDirectory, { recursive: true });
   const state = await readState(statePath);
+  const backgroundConfiguration = preset.backgroundDecision && plan.selected.some((entity) => entity.logoPath)
+    ? await loadBackgroundDecisionConfiguration(packageRoot, preset)
+    : null;
   const downloader = createLogoDownloader({
     cacheDirectory,
     fetchImpl,
+    offline,
     timeoutMs: preset.download.timeoutMs,
     retries: preset.download.retries,
     retryDelayMs: preset.download.retryDelayMs,
@@ -298,6 +312,8 @@ export async function generateBatch({
 
     try {
       let source = null;
+      let analysis = null;
+      let renderAnalysis = null;
       if (entity.logoPath) {
         source = await downloader.download(entity.logoPath, { refresh: refreshLogoCache });
         Object.assign(base, {
@@ -313,6 +329,41 @@ export async function generateBatch({
       } else {
         base.sourceHash = null;
       }
+
+      if (entity.logoPath) {
+        let analysisPromise = analyses.get(source.sourceHash);
+        const analysisReused = Boolean(analysisPromise);
+        if (!analysisPromise) {
+          analysisPromise = analyseLogo(source.cachePath, preset);
+          analyses.set(source.sourceHash, analysisPromise);
+        }
+        analysis = await analysisPromise;
+        base.analysisReused = analysisReused;
+        Object.assign(base, reportAnalysis(analysis));
+        const decision = applyProductionBackgroundDecision(analysis, preset, {
+          stableKey: entity.stableKey,
+          sourceLogoHash: source.sourceHash,
+          configuration: backgroundConfiguration,
+        });
+        base.selectedBackground = decision.selectedBackground;
+        Object.assign(base, decision.metadata);
+        base.reviewReasons = mergeBackgroundDecisionReviewReasons(
+          [...new Set([...(previous?.reviewReasons ?? []), ...analysis.reviewReasons])],
+          decision.reviewReasons,
+        );
+        base.reviewStatus = base.reviewReasons.length ? "needs-review" : "unreviewed";
+        renderAnalysis = {
+          ...analysis,
+          selectedBackground: decision.selectedBackground,
+          reviewReasons: mergeBackgroundDecisionReviewReasons(analysis.reviewReasons, decision.reviewReasons),
+        };
+      } else {
+        const decision = fallbackBackgroundDecision(preset);
+        base.selectedBackground = decision.selectedBackground;
+        Object.assign(base, decision.metadata);
+        base.reviewReasons = previous?.reviewReasons ?? ["missing-logo-text-fallback"];
+        base.reviewStatus = "needs-review";
+      }
       base.artworkInputHash = renderInputHash(entity, base.sourceHash, preset, variantName, renderConfig);
 
       if (!force) {
@@ -324,6 +375,8 @@ export async function generateBatch({
             ...valid,
             status: "skipped",
             renderStatus: previous.renderStatus ?? previous.status,
+            reviewReasons: base.reviewReasons,
+            reviewStatus: base.reviewStatus,
             generatedAt: new Date().toISOString(),
           };
           await persistRecord(record, variantName);
@@ -335,27 +388,18 @@ export async function generateBatch({
       if (!entity.logoPath) {
         renderedResult = await renderFallbackCover(entity, variantPreset, { fontCheckResult: productionFontCheck });
       } else {
-        let analysisPromise = analyses.get(source.sourceHash);
-        const analysisReused = Boolean(analysisPromise);
-        if (!analysisPromise) {
-          analysisPromise = analyseLogo(source.cachePath, preset);
-          analyses.set(source.sourceHash, analysisPromise);
-        }
-        const analysis = await analysisPromise;
-        base.analysisReused = analysisReused;
-        Object.assign(base, reportAnalysis(analysis));
         const renderReuseKey = bufferFingerprint(Buffer.from(JSON.stringify([
           source.sourceHash,
           analysis.normalisedPixelHash,
           renderConfig,
-          analysis.selectedBackground,
+          renderAnalysis.selectedBackground,
           preset.version,
           RENDERER_VERSION,
         ])));
         let renderPromise = rendered.get(renderReuseKey);
         const renderReused = Boolean(renderPromise);
         if (!renderPromise) {
-          renderPromise = renderLogoCover(analysis, variantPreset);
+          renderPromise = renderLogoCover(renderAnalysis, variantPreset);
           rendered.set(renderReuseKey, renderPromise);
         }
         renderedResult = await renderPromise;
@@ -448,6 +492,8 @@ export async function generateBatch({
     dryRun: false,
     force,
     refreshLogoCache,
+    offline,
+    networkRequestsMade: offline ? 0 : null,
     presetVersion: preset.version,
     rendererVersion: RENDERER_VERSION,
     sourceDirectory: sourceData.sourceDirectory,

@@ -7,7 +7,7 @@ import test from "node:test";
 import sharp from "sharp";
 
 import { bufferFingerprint } from "../src/fingerprints.mjs";
-import { buildReviewGroups, prepareProductionReview } from "../src/review-prep.mjs";
+import { buildHashBoundReviewEntries, buildReviewGroups, prepareProductionReview } from "../src/review-prep.mjs";
 
 const preset = {
   version: "production-v1",
@@ -117,4 +117,25 @@ test("review preparation rejects a report hash that no longer matches staged out
     prepareProductionReview({ packageRoot, preset, fontCheckResult: { confirmed: false } }),
     /hash differs/,
   );
+});
+
+test("review preparation preserves matching hash-bound state and resets changed output hashes", async (context) => {
+  const packageRoot = await fs.mkdtemp(path.join(os.tmpdir(), "nuvio-review-preserve-"));
+  context.after(() => fs.rm(packageRoot, { recursive: true, force: true }));
+  const staging = path.join(packageRoot, ".work", "staging", "production-v1", "companies");
+  await fs.mkdir(staging, { recursive: true });
+  const first = await sharp({ create: { width: 120, height: 68, channels: 4, background: "#08141C" } }).webp().toBuffer();
+  const second = await sharp({ create: { width: 120, height: 68, channels: 4, background: "#E4E7E9" } }).webp().toBuffer();
+  const records = [
+    record(1, { outputPath: path.join(staging, "1.webp"), outputHash: bufferFingerprint(first), reviewReasons: ["close-background-scores"] }),
+    record(2, { outputPath: path.join(staging, "2.webp"), outputHash: bufferFingerprint(second), reviewReasons: ["close-background-scores"] }),
+  ];
+  await Promise.all([fs.writeFile(records[0].outputPath, first), fs.writeFile(records[1].outputPath, second)]);
+  const entries = await buildHashBoundReviewEntries(records, packageRoot, "production-v1", { existingEntries: [
+    { stableKey: "company:1", outputHash: bufferFingerprint(first), reviewStatus: "pending", reasons: ["close-background-scores"], note: "keep", reviewedAt: null },
+    { stableKey: "company:2", outputHash: bufferFingerprint(first), reviewStatus: "pending", reasons: ["close-background-scores"], note: "reset", reviewedAt: null },
+  ] });
+  assert.equal(entries[0].note, "keep");
+  assert.equal(entries[1].note, "");
+  assert.equal(entries[1].outputHash, bufferFingerprint(second));
 });
