@@ -53,6 +53,7 @@ tools/studio-network-batch/
     eligibility.json
     background-decisions.json
     background-review-resolutions.json
+    review-reason-resolutions.json
     recognisability-seed.json
   schemas/
     manifest-entry.schema.json
@@ -145,11 +146,11 @@ For each candidate background, every visible pixel is composited against that ba
 
 Production then applies `hybrid-dark-component-v1`. It preserves the aggregate calculation while adding deterministic lower-tail and low-contrast-share guards for mixed marks whose dark wording is lost on the dark background. Decision precedence is: an exact source-hash-matching manual decision, an automatic hybrid switch, then the existing aggregate choice. Records store `manual-hash-bound`, `hybrid-dark-component-v1`, or `existing-aggregate` as the decision source. The rule does not alter trimming, placement, safe-box sizing, dimensions, quality, colour, outlines, or shadows.
 
-Manual decisions live in `config/background-decisions.json` and are validated for stable-key order, duplicate keys, background values, and 64-character source hashes. A changed source-logo hash invalidates the manual choice, returns the logo to automatic analysis, and adds `stale-background-decision`; the old staged file is not deleted. `config/background-review-resolutions.json` records reason-level completion of the 20-logo mixed-contrast review without approving unrelated cover concerns. A record can therefore have its background decision resolved while remaining pending for an opaque source, low resolution, or another independent reason.
+Manual decisions live in `config/background-decisions.json` and are validated for stable-key order, duplicate keys, background values, and 64-character source hashes. A changed source-logo hash invalidates the manual choice, returns the logo to automatic analysis, and adds `stale-background-decision`; the old staged file is not deleted. `config/background-review-resolutions.json` records reason-level completion of source-hash-bound background reviews without approving unrelated cover concerns. `config/review-reason-resolutions.json` stores other owner-approved review reasons in deterministic groups bound to exact output hashes and, for source-sensitive reasons, exact source-logo hashes. A changed binding leaves the original reason pending. Resolved flags remain present as production metadata, and another independent reason keeps the cover in `needs-review`.
 
 The visible rectangle is fitted with `min(maximumWidth / visibleWidth, maximumHeight / visibleHeight)`, resized with Lanczos, and centred on its visible geometry. The primary preset uses 864×324 maximum visible bounds on a 1200×675 canvas. Enlargement above 2× and low-resolution or unexpectedly opaque sources are review flags. Flat backgrounds are primary; the configured subtle gradients are used only by the gradient comparison variant.
 
-Missing logo paths produce a centred text fallback using the current source name. `production-v1` requests the exact `Inter` family and requires the font check to confirm both a discovered Inter font and a renderer result distinct from the fallback-only comparison. Production rendering stops before writing work files when Inter cannot be confirmed; it never silently falls through to Segoe UI or Arial. Non-production and test presets retain the configurable `Inter, Segoe UI, Arial, Helvetica, sans-serif` stack. Text starts on one line, uses a balanced word-boundary wrap of no more than two lines when necessary, and reduces in size inside the central safe region. Every fallback records its background, font family, font size, line count, and wrapped lines, and has `status: missing-logo` and `reviewStatus: needs-review`.
+Missing logo paths produce a centred text fallback using the current source name. `production-v1` requests the exact `Inter` family and requires the font check to confirm both a discovered Inter font and a renderer result distinct from the fallback-only comparison. Production rendering stops before writing work files when Inter cannot be confirmed; it never silently falls through to Segoe UI or Arial. Non-production and test presets retain the configurable `Inter, Segoe UI, Arial, Helvetica, sans-serif` stack. Text starts on one line, uses a balanced word-boundary wrap of no more than two lines when necessary, and reduces in size inside the central safe region. Every fallback records its background, font family, font size, line count, wrapped lines, and `renderStatus: missing-logo`. It begins with the `missing-logo-text-fallback` review reason; an exact output-hash-bound owner resolution may clear that reason without removing the fallback metadata or approving another independent concern.
 
 Every WebP is decoded after writing and must be exactly 1200×675, WebP, and non-empty. The staged file hash and byte count are recorded.
 
@@ -159,7 +160,7 @@ The source-record hash includes entity type, TMDB ID, name, title count, and log
 
 The committed proof-of-concept file contains only stable keys. Names, counts, and logo paths are resolved and validated from the current source caches every run; a missing or ineligible configured record is reported without substitution.
 
-Ignored run-state is maintained per stable key and variant. An output is skipped only when identity, logo/fallback input, source hash, artwork-input hash, renderer and preset versions, selected background, output path, output hash, dimensions, format, and decode validation all match. A background-analysis or decision-version change with the same selected background can be reconciled after output validation without rewriting the image. Title-count-only changes do not regenerate eligible artwork; a changed selected background, logo-path change, corrupt/missing output, renderer/preset change, or `--force` does.
+Ignored run-state is maintained per stable key and variant. An output is skipped only when identity, logo/fallback input, source hash, artwork-input hash, renderer and preset versions, selected background, output path, output hash, dimensions, format, and decode validation all match. A background-analysis or decision-version change with the same selected background can be reconciled after output validation without rewriting the image. Title-count-only changes do not regenerate eligible artwork; a changed selected background, logo-path change, corrupt/missing output, renderer/preset change, or `--force` does. Full reconciliation is state-scoped: a newly eligible source record absent from persistent state is reported as deferred drift rather than silently widening a selective task or generating a new cover.
 
 Exact duplicate logo paths reuse one download and one analysis in a run. Identical rendering inputs may also reuse the rendered WebP buffer, but each entity still receives a separate ID-named staged file. An entity falling below the automatic threshold is reported as legacy state; its staged or published asset is never deleted automatically. Production reports include `run-summary.json`, `entities.jsonl`, readable generation and status-grouped Markdown summaries, `review-priority.json`, status groups, a contact-sheet index, per-run crash-recovery JSON Lines, source-file hashes, Node/Sharp/libvips/WebP versions, reuse counters, review flags, background splits, failures, and output-size statistics. Production runs create deterministic 8×8 paged contact sheets for companies, networks, and the combined review set.
 
@@ -173,7 +174,7 @@ npm run threshold-audit
 
 Plans are written under `.work/plans/eligibility-50/`; reports are written under `.work/reports/threshold-audit-50/`. The audit covers title-count bands, newly eligible records, missing logos, exact-logo reuse, persistent-state drift, storage/runtime estimates, and conservative recognisability candidates. `proposed-exceptions.json` is review material only and does not configure production exceptions.
 
-After explicit owner approval, the incremental generation command is:
+The eligibility-50 expansion was completed on 2026-07-13 using the exact incremental plan. The historical command was:
 
 ```powershell
 npm run generate -- --ids-file .work/plans/eligibility-50/new-all.json --preset production-v1
@@ -181,7 +182,7 @@ npm run generate -- --ids-file .work/plans/eligibility-50/new-all.json --preset 
 
 From the repository root, the equivalent command is `npm --prefix tools/studio-network-batch run generate -- --ids-file .work/plans/eligibility-50/new-all.json --preset production-v1`; the relative IDs-file path resolves from the package directory.
 
-The safe future sequence is: generate only `new-all.json`; validate the new outputs; merge them into full persistent state; rebuild full production reports; rerun review preparation; preserve existing review entries whose output hashes are unchanged; then add review entries only for new outputs that require review.
+Do not rerun that plan merely because it remains on disk. The persistent state contains the 2,365 records from the completed expansion; the current source has one separately deferred newly eligible record, which requires a new narrow `--new-from-state` plan.
 
 ## Review and publish preparation
 
@@ -192,6 +193,14 @@ npm run review-prep -- --preset production-v1
 ```
 
 This reads the persistent current run state, so a selective rerun does not hide unchanged outputs from review. It writes ignored reason-specific 8×8 sheets and their Markdown/JSON index under `.work/contact-sheets/production-v1/review/`, plus `review-state-draft.json`, `review-checklist.csv`, and (when Inter is unconfirmed) `fallback-ids.json` under `.work/reviews/production-v1/`. Every pending draft entry is checked against the current staged file hash. The command refuses report outputs outside ignored staging and performs no final-asset or canonical-manifest writes.
+
+Prepare the current eligibility-50 visual-review package offline from cached logos, staged outputs, and persistent state:
+
+```powershell
+npm run review-focus
+```
+
+This command writes only below `.work/review-focus/eligibility-50/`. It resolves the named contrast candidates (including duplicate discovery+ identities), renders dark/light comparisons, creates resolution details and a representative fallback sheet, classifies newly opaque sources, and writes output-hash-bound action proposals. It snapshots staging content and modification times plus both production review hashes before and after, and aborts if any protected value changes. It never changes a production background decision or review approval.
 
 `schemas/review-state.schema.json` defines the future human review-state file. Approved entries bind a stable key and publish target to the exact reviewed output hash. `src/publish-plan.mjs` can validate those approvals against the staged file and build an in-memory dry publish plan; it performs no copy and writes no canonical manifest. A later publish command may consume that plan only after explicit approval, copy verified files to `assets/collection_covers/companies/{id}.webp` or `assets/collection_covers/networks/{id}.webp`, and then create the canonical published manifest. Stage three does none of those actions.
 
@@ -205,7 +214,7 @@ npm run generate -- --ids-file .work/plans/mixed-contrast-approved/light-switche
 npm run reconcile-production -- reconcile --before-snapshot .work/plans/mixed-contrast-approved/before-staging.json --changed-ids .work/plans/mixed-contrast-approved/light-switches.json --retained-ids .work/plans/mixed-contrast-approved/approved-dark-retained.json --after-snapshot .work/plans/mixed-contrast-approved/after-staging.json --summary .work/reviews/production-v1/mixed-contrast-approved-summary.json
 ```
 
-The 50/50 eligibility-expansion audit and planning stage is complete. Incremental generation remains owner-gated and has not begun.
+The eligibility-50 owner decisions were applied on 2026-07-14. Exactly five light-switch covers were regenerated offline; four reviewed-current covers and 2,356 unrelated outputs remained byte-for-byte and timestamp unchanged. The full state contains 2,365 valid 1200×675 WebPs, 389 pending review entries, and zero review/output hash mismatches. The final nine-record contrast sheet is `.work/contact-sheets/production-v1/review/eligibility-50-contrast-approved.png`; the exact 76 deferred opaque problem cases are indexed under `.work/contact-sheets/production-v1/review/eligibility-50-opaque-pending/`. The current source additionally contains out-of-scope `company:281730`, recorded as deferred new eligibility. Nothing has been published.
 
 ## Future artwork and manifest policy
 
