@@ -66,6 +66,15 @@ async function main() {
     readStableKeyArray(changedIdsPath, "selectively regenerated IDs"),
     readStableKeyArray(retainedIdsPath, "retained reviewed IDs"),
   ]);
+  const pendingOpaqueKeys = options.pendingOpaqueIds
+    ? await readStableKeyArray(resolvePackagePath(options.pendingOpaqueIds, "--pending-opaque-ids"), "pending opaque IDs")
+    : [];
+  const expectedPendingOpaqueCount = options.expectedPendingOpaqueCount === undefined
+    ? null
+    : Number.parseInt(options.expectedPendingOpaqueCount, 10);
+  if (expectedPendingOpaqueCount !== null && (!Number.isInteger(expectedPendingOpaqueCount) || expectedPendingOpaqueCount < 0)) {
+    throw new Error("--expected-pending-opaque-count must be a non-negative integer.");
+  }
   const overlap = selectivelyRegeneratedKeys.filter((stableKey) => retainedReviewedKeys.includes(stableKey));
   if (overlap.length) throw new Error(`Changed and retained ID plans overlap: ${overlap.join(", ")}`);
   const source = resolveSourceDirectory({ sourceDir: options.sourceDir, repoRoot });
@@ -90,6 +99,14 @@ async function main() {
     records: reconciliation.records,
     configuration: reconciliation.configuration,
     reviewResult,
+    verificationSheetPath: options.verificationSheet
+      ? resolvePackagePath(options.verificationSheet, "--verification-sheet")
+      : null,
+    pendingOpaqueKeys,
+    pendingOpaqueOutputDir: options.pendingOpaqueOutputDir
+      ? resolvePackagePath(options.pendingOpaqueOutputDir, "--pending-opaque-output-dir")
+      : null,
+    expectedPendingOpaqueCount,
   });
   process.stdout.write(`${JSON.stringify({
     reportRecords: reconciliation.records.length,
@@ -99,6 +116,7 @@ async function main() {
     beforeFingerprint: verification.before.combinedFingerprint,
     afterFingerprint: verification.after.combinedFingerprint,
     verificationSheet: verification.verificationSheet.outputPath,
+    pendingOpaqueCount: verification.pendingOpaque?.count ?? null,
     summaryPath,
   }, null, 2)}\n`);
 }

@@ -1,5 +1,12 @@
 [
   {
+    "stableKey": "company:420",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "4511a2e3b8bab239ae2454d31b1ec4084d9c9494413ce2ced97f0067ea1ade7d",
+    "reason": "Owner-reviewed eligibility-50 contrast comparison",
+    "name": "Marvel Studios"
+  },
+  {
     "stableKey": "company:880",
     "backgroundPreset": "light",
     "sourceLogoHash": "d2288bd0d4809ac28debfad9f3e47dbb5a8ccc2860da4cfc5e61e50d1175d184",
@@ -42,6 +49,34 @@
     "name": "Universal International Pictures"
   },
   {
+    "stableKey": "company:11339",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "70f192340eb15249e78e4ababefe90054b4ddd09299a8a34c4ff613d8cae1a18",
+    "reason": "Owner-reviewed eligibility-50 contrast comparison",
+    "name": "Automat Pictures"
+  },
+  {
+    "stableKey": "company:11561",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "a3a44ef77dcbec173d4d5a9cfb0d69ab80b5f79163441f8bcd5576308714851f",
+    "reason": "Owner-reviewed eligibility-50 contrast comparison",
+    "name": "Recorded Picture Company"
+  },
+  {
+    "stableKey": "company:12037",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "6fa9c1d4e97a281935333e207ef714893510ec1aedcbf7b3124832e452453675",
+    "reason": "Owner-reviewed eligibility-50 contrast comparison",
+    "name": "La Poudrière"
+  },
+  {
+    "stableKey": "company:17009",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "3a40c35d230b9a986d15291ab54b9e198662b4906907c1377823c6e9e49fb594",
+    "reason": "Owner-reviewed eligibility-50 contrast comparison",
+    "name": "Universal 1440 Entertainment"
+  },
+  {
     "stableKey": "company:20630",
     "backgroundPreset": "light",
     "sourceLogoHash": "9ef457408ddac2eda66f2eb121baf34465aa53c93aab1a0af7d8e7464f8ac41b",
@@ -61,6 +96,20 @@
     "sourceLogoHash": "e82ebe289e6e04914517e3748aa7c65a44916bf773e15e3bdc551a27e7406bef",
     "reason": "Owner-reviewed mixed-contrast logo",
     "name": "Televizija Zagreb"
+  },
+  {
+    "stableKey": "company:55802",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "236ee4ecfb7965cc8b84a8aff3e6221cc5f0799f8b19d146a6eb17d0ac370227",
+    "reason": "Owner-reviewed eligibility-50 contrast comparison",
+    "name": "MM2 Entertainment"
+  },
+  {
+    "stableKey": "company:78952",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "8fe209d6b312cbf676016f41d79bbbea16a79c4d04a56e7cb8852dea0a5e7ae0",
+    "reason": "Owner-reviewed eligibility-50 contrast comparison",
+    "name": "Wanda Pictures"
   },
   {
     "stableKey": "company:138205",
@@ -116,6 +165,20 @@
     "backgroundPreset": "light",
     "sourceLogoHash": "cd284be2daff76a191b2f5138657ea8b30e4c6ba5fadf812cabd878d235d0ab0",
     "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "discovery+"
+  },
+  {
+    "stableKey": "network:4440",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "ccf525844288b5349bdcb790067abb4acf981ffccf268b0af9613cefd9a8a952",
+    "reason": "Owner-reviewed eligibility-50 contrast comparison",
+    "name": "Discovery+"
+  },
+  {
+    "stableKey": "network:4883",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "ccf525844288b5349bdcb790067abb4acf981ffccf268b0af9613cefd9a8a952",
+    "reason": "Owner-reviewed eligibility-50 contrast comparison",
     "name": "discovery+"
   }
 ]

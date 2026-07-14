@@ -7,11 +7,11 @@ import { compareEntities } from "./constants.mjs";
 import { bufferFingerprint } from "./fingerprints.mjs";
 
 const GROUP_DEFINITIONS = [
-  { id: "missing-logo", filePrefix: "missing-logo", reason: "missing-logo-text-fallback", matches: (record) => (record.renderStatus ?? record.status) === "missing-logo" },
-  { id: "unexpectedly-opaque-source", filePrefix: "opaque-source", reason: "unexpectedly-opaque-source-background", matches: (record) => record.unexpectedlyOpaqueBackground === true || record.reviewReasons?.includes("unexpectedly-opaque-source-background") },
+  { id: "missing-logo", filePrefix: "missing-logo", reason: "missing-logo-text-fallback", matches: (record) => record.reviewReasons?.includes("missing-logo-text-fallback") },
+  { id: "unexpectedly-opaque-source", filePrefix: "opaque-source", reason: "unexpectedly-opaque-source-background", matches: (record) => record.reviewReasons?.includes("unexpectedly-opaque-source-background") },
   { id: "close-background-score", filePrefix: "close-background-score", reason: "close-background-scores", matches: (record) => record.reviewReasons?.includes("close-background-scores") },
-  { id: "very-close-contrast", filePrefix: "very-close-contrast", reason: "very-close-contrast", matches: (record, preset) => Number.isFinite(record.contrastConfidence) && record.contrastConfidence < (preset.contrast.veryCloseScoreDifference ?? preset.contrast.closeScoreDifference) },
-  { id: "upscale-over-2x", filePrefix: "upscale", reason: "high-upscale-factor", matches: (record, preset) => record.upscaleFactor > preset.logo.highUpscaleReviewThreshold },
+  { id: "very-close-contrast", filePrefix: "very-close-contrast", reason: "very-close-contrast", matches: (record) => record.reviewReasons?.includes("very-close-contrast") },
+  { id: "upscale-over-2x", filePrefix: "upscale", reason: "high-upscale-factor", matches: (record) => record.reviewReasons?.includes("high-upscale-factor") },
   { id: "likely-low-resolution", filePrefix: "low-resolution", reason: "likely-low-resolution-source", matches: (record) => record.reviewReasons?.includes("likely-low-resolution-source") },
   { id: "all-needs-review", filePrefix: "all-needs-review", reason: null, matches: (record) => record.reviewStatus === "needs-review" },
 ];
@@ -21,11 +21,8 @@ function isWithin(child, parent) {
   return relative === "" || (!relative.startsWith("..") && !path.isAbsolute(relative));
 }
 
-function reviewReasons(record, preset) {
-  const reasons = new Set(record.reviewReasons ?? []);
-  const veryClose = GROUP_DEFINITIONS.find((definition) => definition.id === "very-close-contrast");
-  if (veryClose.matches(record, preset)) reasons.add(veryClose.reason);
-  return [...reasons].sort();
+function reviewReasons(record) {
+  return [...new Set(record.reviewReasons ?? [])].sort();
 }
 
 export function deduplicateReviewRecords(records, preset) {
@@ -33,10 +30,10 @@ export function deduplicateReviewRecords(records, preset) {
   for (const record of [...records].sort(compareEntities)) {
     const existing = byKey.get(record.stableKey);
     if (!existing) {
-      byKey.set(record.stableKey, { ...record, reviewReasons: reviewReasons(record, preset) });
+      byKey.set(record.stableKey, { ...record, reviewReasons: reviewReasons(record) });
       continue;
     }
-    existing.reviewReasons = [...new Set([...existing.reviewReasons, ...reviewReasons(record, preset)])].sort();
+    existing.reviewReasons = [...new Set([...existing.reviewReasons, ...reviewReasons(record)])].sort();
   }
   return [...byKey.values()].sort(compareEntities);
 }

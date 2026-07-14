@@ -7,8 +7,10 @@ import {
   fallbackBackgroundDecision,
   loadBackgroundDecisionConfiguration,
   mergeBackgroundDecisionReviewReasons,
+  MIXED_CONTRAST_REVIEW_REASON,
+  STALE_BACKGROUND_DECISION_REASON,
 } from "./background-decision.mjs";
-import { createContactSheet, createPagedContactSheets } from "./contact-sheet.mjs";
+import { createContactSheet, createPagedContactSheets, paginateContactSheetItems } from "./contact-sheet.mjs";
 import { compareEntities, RENDERER_VERSION } from "./constants.mjs";
 import { classifyEligibilityTier, isAutomaticallyEligible } from "./eligibility.mjs";
 import { bufferFingerprint, sourceRecordFingerprint } from "./fingerprints.mjs";
@@ -23,6 +25,10 @@ import {
   groupRecordsByStatus,
   statusSummaryMarkdown,
 } from "./reports.mjs";
+import {
+  applyReviewReasonResolutions,
+  loadReviewReasonResolutionConfiguration,
+} from "./review-reason-resolution.mjs";
 import { compareProductionSnapshots, snapshotProductionDirectory } from "./staging-snapshot.mjs";
 
 function stateKey(stableKey) {
@@ -62,8 +68,7 @@ function stableKeyToRelativePath(stableKey) {
   return `${match[1] === "company" ? "companies" : "networks"}/${match[2]}.webp`;
 }
 
-function reviewStatusFor(record, reasons) {
-  if ((record.renderStatus ?? record.status) === "missing-logo") return "needs-review";
+function reviewStatusFor(reasons) {
   return reasons.length ? "needs-review" : "unreviewed";
 }
 
@@ -140,21 +145,24 @@ export async function reconcileProductionState({
   const statePath = path.join(reportsRoot, "run-state.json");
   const stagingRoot = path.join(packageRoot, ".work", "staging", preset.version);
   const state = await readState(statePath);
-  const configuration = await loadBackgroundDecisionConfiguration(packageRoot, preset);
+  const [configuration, reasonConfiguration] = await Promise.all([
+    loadBackgroundDecisionConfiguration(packageRoot, preset),
+    loadReviewReasonResolutionConfiguration(packageRoot, preset),
+  ]);
   const eligible = sourceData.entities
     .filter((entity) => isAutomaticallyEligible(entity, eligibility))
     .sort(compareEntities);
   const primaryKeys = Object.keys(state.entries).filter((key) => key.endsWith("|primary"));
-  if (primaryKeys.length !== eligible.length) {
-    throw new Error(`Persistent state has ${primaryKeys.length} primary records; current eligibility has ${eligible.length}.`);
-  }
   const eligibleKeySet = new Set(eligible.map((entity) => stateKey(entity.stableKey)));
   const unexpectedStateKeys = primaryKeys.filter((key) => !eligibleKeySet.has(key));
   if (unexpectedStateKeys.length) {
     throw new Error(`Persistent state contains non-current primary records: ${unexpectedStateKeys.slice(0, 12).join(", ")}`);
   }
+  const stateKeySet = new Set(primaryKeys);
+  const reconciliationEntities = eligible.filter((entity) => stateKeySet.has(stateKey(entity.stableKey)));
+  const deferredNewEligible = eligible.filter((entity) => !stateKeySet.has(stateKey(entity.stableKey)));
 
-  const reconciled = await mapConcurrent(eligible, 8, async (entity) => {
+  const reconciled = await mapConcurrent(reconciliationEntities, 8, async (entity) => {
     const key = stateKey(entity.stableKey);
     const previous = state.entries[key];
     if (!previous) throw new Error(`Persistent state is missing ${entity.stableKey}.`);
@@ -188,15 +196,24 @@ export async function reconcileProductionState({
       if (sourceHash !== previous.sourceHash) {
         throw new Error(`Cached source hash changed for ${entity.stableKey}; artwork regeneration is required.`);
       }
-      const analysis = await analyseLogo(cachePath, preset);
-      const decision = applyProductionBackgroundDecision(analysis, preset, {
-        stableKey: entity.stableKey,
-        sourceLogoHash: sourceHash,
-        configuration,
-      });
-      selectedBackground = decision.selectedBackground;
-      decisionMetadata = decision.metadata;
-      decisionReasons = decision.reviewReasons;
+      const requiresDecisionRefresh = previous.backgroundDecisionVersion !== configuration.version
+        || configuration.manualByKey.has(entity.stableKey)
+        || configuration.resolutionByKey.has(entity.stableKey);
+      if (requiresDecisionRefresh) {
+        const analysis = await analyseLogo(cachePath, preset);
+        const decision = applyProductionBackgroundDecision(analysis, preset, {
+          stableKey: entity.stableKey,
+          sourceLogoHash: sourceHash,
+          configuration,
+        });
+        selectedBackground = decision.selectedBackground;
+        decisionMetadata = decision.metadata;
+        decisionReasons = decision.reviewReasons;
+      } else {
+        decisionReasons = (previous.reviewReasons ?? []).filter((reason) =>
+          reason === MIXED_CONTRAST_REVIEW_REASON || reason === STALE_BACKGROUND_DECISION_REASON,
+        );
+      }
     } else {
       const decision = fallbackBackgroundDecision(preset);
       selectedBackground = decision.selectedBackground;
@@ -205,8 +222,12 @@ export async function reconcileProductionState({
     if (selectedBackground !== previous.selectedBackground) {
       throw new Error(`Staged background for ${entity.stableKey} is ${previous.selectedBackground}; decision now requires ${selectedBackground}.`);
     }
-    const reviewReasons = mergeBackgroundDecisionReviewReasons(previous.reviewReasons, decisionReasons);
-    const record = {
+    const derivedReviewReasons = mergeBackgroundDecisionReviewReasons(previous.reviewReasons, decisionReasons);
+    const veryCloseThreshold = preset.contrast?.veryCloseScoreDifference ?? preset.contrast?.closeScoreDifference;
+    if (Number.isFinite(previous.contrastConfidence) && previous.contrastConfidence < veryCloseThreshold) {
+      derivedReviewReasons.push("very-close-contrast");
+    }
+    const baseRecord = {
       ...previous,
       ...valid,
       entityType: entity.entityType,
@@ -219,11 +240,17 @@ export async function reconcileProductionState({
       sourceRecordHash: sourceRecordFingerprint(entity),
       selectedBackground,
       backgroundPreset: `${selectedBackground}-flat`,
-      reviewReasons,
-      reviewStatus: reviewStatusFor(previous, reviewReasons),
       ...decisionMetadata,
     };
-    return record;
+    const reasonResult = applyReviewReasonResolutions(baseRecord, derivedReviewReasons, reasonConfiguration);
+    return {
+      ...baseRecord,
+      reviewReasons: reasonResult.unresolvedReasons,
+      reviewStatus: reviewStatusFor(reasonResult.unresolvedReasons),
+      reviewReasonResolutionVersion: reasonConfiguration.version,
+      resolvedReviewReasons: reasonResult.resolvedReviewReasons,
+      reviewReasonResolutionStatuses: reasonResult.reviewReasonResolutionStatuses,
+    };
   });
   for (const record of reconciled) state.entries[stateKey(record.stableKey)] = record;
 
@@ -249,6 +276,13 @@ export async function reconcileProductionState({
     presetVersion: preset.version,
     rendererVersion: RENDERER_VERSION,
     backgroundDecisionVersion: configuration.version,
+    reviewReasonResolutionVersion: reasonConfiguration.version,
+    reviewReasonResolutions: {
+      configured: reasonConfiguration.resolutions.length,
+      resolved: reconciled.reduce((sum, record) => sum + record.resolvedReviewReasons.length, 0),
+      staleOutput: reconciled.reduce((sum, record) => sum + record.reviewReasonResolutionStatuses.filter((item) => item.status === "stale-output").length, 0),
+      staleSource: reconciled.reduce((sum, record) => sum + record.reviewReasonResolutionStatuses.filter((item) => item.status === "stale-source").length, 0),
+    },
     sourceDirectory: sourceData.sourceDirectory,
     sourceCacheHashes: {
       company: await hashFile(sourceData.sourceFiles.company),
@@ -265,7 +299,15 @@ export async function reconcileProductionState({
     runDurationMs: 0,
     issues: {
       malformedKeys: [], unknownKeys: [], ineligibleKeys: [], removedKeys: [], ineligibleManifestKeys: [],
+      deferredNewEligibleKeys: deferredNewEligible.map((entity) => entity.stableKey),
     },
+    currentEligibleCount: eligible.length,
+    deferredNewEligible: deferredNewEligible.map((entity) => ({
+      stableKey: entity.stableKey,
+      name: entity.name,
+      titleCount: entity.titleCount,
+      logoPath: entity.logoPath,
+    })),
     finalAssetsWritten: false,
     canonicalManifestWritten: false,
   };
@@ -281,7 +323,75 @@ export async function reconcileProductionState({
     atomicWrite(path.join(reportsRoot, "contact-sheet-index.md"), contactSheetIndexMarkdown(contactSheets)),
     atomicWriteJson(path.join(reportsRoot, "background-reconciliation-summary.json"), summary),
   ]);
-  return { records: reconciled, summary, configuration };
+  return { records: reconciled, summary, configuration, reasonConfiguration };
+}
+
+async function createPendingOpaqueVerification({ packageRoot, preset, records, stableKeys, outputDir } = {}) {
+  assertWorkPath(outputDir, packageRoot, "Pending opaque verification directory");
+  const byKey = new Map(records.map((record) => [record.stableKey, record]));
+  const selected = stableKeys.map((stableKey) => {
+    const record = byKey.get(stableKey);
+    if (!record) throw new Error(`Pending opaque verification record is missing: ${stableKey}.`);
+    if (!record.reviewReasons?.includes("unexpectedly-opaque-source-background")) {
+      throw new Error(`Pending opaque reason is no longer unresolved for ${stableKey}.`);
+    }
+    return record;
+  });
+  const columns = preset.contactSheets?.columns ?? 8;
+  const rows = preset.contactSheets?.rows ?? 8;
+  const pages = paginateContactSheetItems(selected, { pageSize: columns * rows });
+  const pageResults = [];
+  for (const [index, pageRecords] of pages.entries()) {
+    const outputPath = path.join(outputDir, `page-${String(index + 1).padStart(2, "0")}.png`);
+    const labelled = pageRecords.map((record) => ({
+      ...record,
+      contactSheetLabelLines: [
+        record.name,
+        record.stableKey,
+        `Background: ${record.selectedBackground}`,
+        "Pending: unexpectedly-opaque-source-background",
+      ],
+    }));
+    const result = await createContactSheet(labelled, outputPath, {
+      ...preset.contactSheets,
+      columns,
+      labelHeight: Math.max(108, preset.contactSheets?.labelHeight ?? 0),
+    });
+    pageResults.push({
+      ...result,
+      pageNumber: index + 1,
+      items: pageRecords.map((record) => ({
+        stableKey: record.stableKey,
+        name: record.name,
+        outputHash: record.outputHash,
+        sourceLogoHash: record.sourceHash,
+      })),
+    });
+  }
+  const index = {
+    presetVersion: preset.version,
+    reason: "unexpectedly-opaque-source-background",
+    status: "pending",
+    count: selected.length,
+    pages: pageResults,
+    artworkChanged: false,
+  };
+  const markdown = `# Eligibility-50 pending opaque-source review
+
+- Pending records: ${selected.length}
+- Artwork changed: no
+- Reason: unexpectedly-opaque-source-background
+
+${pageResults.map((page) => `## Page ${String(page.pageNumber).padStart(2, "0")}
+
+- File: ${path.basename(page.outputPath)}
+- Stable keys: ${page.items.map((item) => item.stableKey).join(", ")}`).join("\n\n")}
+`;
+  await Promise.all([
+    atomicWriteJson(path.join(outputDir, "index.json"), index),
+    atomicWrite(path.join(outputDir, "index.md"), markdown),
+  ]);
+  return index;
 }
 
 export async function verifySelectiveProductionChange({
@@ -295,6 +405,10 @@ export async function verifySelectiveProductionChange({
   records,
   configuration,
   reviewResult,
+  verificationSheetPath = null,
+  pendingOpaqueKeys = [],
+  pendingOpaqueOutputDir = null,
+  expectedPendingOpaqueCount = null,
 } = {}) {
   for (const [label, filePath] of [["After snapshot", afterSnapshotPath], ["Verification summary", summaryPath]]) {
     assertWorkPath(filePath, packageRoot, label);
@@ -319,13 +433,24 @@ export async function verifySelectiveProductionChange({
   const retainedPaths = new Set(retainedReviewedKeys.map(stableKeyToRelativePath));
   const retainedTouched = comparison.changed.filter((entry) => retainedPaths.has(entry.path));
   if (retainedTouched.length) {
-    throw new Error(`Approved-dark outputs changed unexpectedly: ${retainedTouched.map((entry) => entry.path).join(", ")}`);
+    throw new Error(`Retained reviewed outputs changed unexpectedly: ${retainedTouched.map((entry) => entry.path).join(", ")}`);
+  }
+  if (expectedPendingOpaqueCount !== null && pendingOpaqueKeys.length !== expectedPendingOpaqueCount) {
+    throw new Error(`Expected ${expectedPendingOpaqueCount} pending opaque keys, received ${pendingOpaqueKeys.length}.`);
+  }
+  const pendingOpaquePaths = new Set(pendingOpaqueKeys.map(stableKeyToRelativePath));
+  const pendingOpaqueTouched = comparison.changed.filter((entry) => pendingOpaquePaths.has(entry.path));
+  if (pendingOpaqueTouched.length) {
+    throw new Error(`Pending opaque outputs changed unexpectedly: ${pendingOpaqueTouched.map((entry) => entry.path).join(", ")}`);
   }
 
   const byKey = new Map(records.map((record) => [record.stableKey, record]));
-  const finalDecisions = configuration.reviewResolutions.map((resolution) => {
-    const record = byKey.get(resolution.stableKey);
-    if (!record) throw new Error(`Reconciled state is missing reviewed record ${resolution.stableKey}.`);
+  const reviewedKeys = [...selectivelyRegeneratedKeys, ...retainedReviewedKeys];
+  const finalDecisions = reviewedKeys.map((stableKey) => {
+    const resolution = configuration.resolutionByKey.get(stableKey);
+    if (!resolution) throw new Error(`Background review resolution is missing for ${stableKey}.`);
+    const record = byKey.get(stableKey);
+    if (!record) throw new Error(`Reconciled state is missing reviewed record ${stableKey}.`);
     if (record.selectedBackground !== resolution.backgroundPreset) {
       throw new Error(`Final background mismatch for ${resolution.stableKey}: expected ${resolution.backgroundPreset}, received ${record.selectedBackground}.`);
     }
@@ -346,7 +471,9 @@ export async function verifySelectiveProductionChange({
       outputPath: record.outputPath,
     };
   });
-  const sheetPath = path.join(packageRoot, ".work", "contact-sheets", preset.version, "review", "mixed-contrast-approved.png");
+  const sheetPath = verificationSheetPath
+    ?? path.join(packageRoot, ".work", "contact-sheets", preset.version, "review", "mixed-contrast-approved.png");
+  assertWorkPath(sheetPath, packageRoot, "Contrast verification sheet");
   const labelled = finalDecisions.map((record) => ({
     ...record,
     contactSheetLabelLines: [
@@ -364,6 +491,15 @@ export async function verifySelectiveProductionChange({
     gap: 16,
     margin: 40,
   });
+  const pendingOpaque = pendingOpaqueOutputDir
+    ? await createPendingOpaqueVerification({
+      packageRoot,
+      preset,
+      records,
+      stableKeys: pendingOpaqueKeys,
+      outputDir: pendingOpaqueOutputDir,
+    })
+    : null;
   const summary = {
     presetVersion: preset.version,
     backgroundDecisionVersion: configuration.version,
@@ -386,6 +522,7 @@ export async function verifySelectiveProductionChange({
     finalDecisions,
     review: reviewResult,
     verificationSheet: sheet,
+    pendingOpaque,
     fullBatchRegenerated: false,
     finalAssetsWritten: false,
     canonicalManifestWritten: false,

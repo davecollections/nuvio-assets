@@ -55,13 +55,15 @@ function configuration(manualDecisions = [], reviewResolutions = []) {
   };
 }
 
-test("production configuration loads 17 hash-bound decisions and 20 reason-level resolutions", async () => {
+test("production configuration loads 26 hash-bound decisions and 29 background resolutions", async () => {
   const loaded = await loadBackgroundDecisionConfiguration(packageRoot, preset);
   assert.equal(loaded.version, "hybrid-dark-component-v1");
-  assert.equal(loaded.manualDecisions.length, 17);
-  assert.equal(loaded.reviewResolutions.length, 20);
+  assert.equal(loaded.manualDecisions.length, 26);
+  assert.equal(loaded.reviewResolutions.length, 29);
   assert.equal(loaded.manualByKey.get("company:880").backgroundPreset, "light");
   assert.equal(loaded.manualByKey.get("company:1385").backgroundPreset, "dark");
+  assert.equal(loaded.manualByKey.get("network:4440").backgroundPreset, "light");
+  assert.equal(loaded.manualByKey.get("network:4883").backgroundPreset, "light");
 });
 
 test("all three approved automatic signatures switch and all 12 controls remain unchanged", () => {

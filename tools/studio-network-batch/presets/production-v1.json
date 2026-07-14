@@ -44,7 +44,8 @@
     "selectedBackground": "dark"
   },
   "review": {
-    "verySmallVisiblePixelCount": 4096
+    "verySmallVisiblePixelCount": 4096,
+    "reasonResolutions": "config/review-reason-resolutions.json"
   },
   "contactSheets": {
     "columns": 8,

@@ -61,6 +61,7 @@ async function fixture(context) {
   await Promise.all([
     fs.writeFile(path.join(packageRoot, "config", "background-decisions.json"), JSON.stringify(decisions)),
     fs.writeFile(path.join(packageRoot, "config", "background-review-resolutions.json"), JSON.stringify(decisions)),
+    fs.writeFile(path.join(packageRoot, "config", "review-reason-resolutions.json"), JSON.stringify({ version: "test-v1", groups: [] })),
   ]);
   for (const item of entities) {
     await fs.writeFile(logoCachePath(path.join(packageRoot, ".work", "cache", "logos"), item.logoPath), sourceLogo);
@@ -123,6 +124,7 @@ test("selective change reconciliation preserves full state, retained hashes and 
     outputBytes: data.light.length,
   });
   await fs.writeFile(data.statePath, JSON.stringify(state));
+  data.sourceData.entities.push(entity(3));
 
   const reconciled = await reconcileProductionState({
     packageRoot: data.packageRoot,
@@ -133,6 +135,7 @@ test("selective change reconciliation preserves full state, retained hashes and 
   });
   assert.equal(reconciled.records.length, 2);
   assert.equal(reconciled.summary.metadataOnlyReconciled, 1);
+  assert.deepEqual(reconciled.summary.deferredNewEligible.map((item) => item.stableKey), ["company:3"]);
   assert.equal(reconciled.records.every((record) => record.eligibilityTier === "core"), true);
   assert.equal(reconciled.records.every((record) => record.backgroundDecisionVersion === "hybrid-dark-component-v1"), true);
   assert.deepEqual(reconciled.records[0].reviewReasons, ["unexpectedly-opaque-source-background"]);

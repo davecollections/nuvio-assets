@@ -33,7 +33,7 @@ function record(id, overrides = {}) {
 
 test("review reason groups filter correctly and all-needs-review is deduplicated in stable order", () => {
   const records = [
-    record(3, { reviewReasons: ["close-background-scores"], contrastConfidence: 0.1 }),
+    record(3, { reviewReasons: ["close-background-scores", "very-close-contrast"], contrastConfidence: 0.1 }),
     record(1, { status: "missing-logo", renderStatus: "missing-logo", reviewReasons: ["missing-logo-text-fallback"] }),
     record(2, { unexpectedlyOpaqueBackground: true, upscaleFactor: 3, reviewReasons: ["unexpectedly-opaque-source-background", "high-upscale-factor", "likely-low-resolution-source"] }),
     record(1, { status: "missing-logo", renderStatus: "missing-logo", reviewReasons: ["missing-logo-text-fallback"] }),
@@ -47,6 +47,26 @@ test("review reason groups filter correctly and all-needs-review is deduplicated
   assert.equal(groups["likely-low-resolution"].records.length, 1);
   assert.deepEqual(groups["all-needs-review"].records.map((item) => item.stableKey), ["company:1", "company:2", "company:3"]);
   assert.deepEqual(groups["very-close-contrast"].records[0].reviewReasons, ["close-background-scores", "very-close-contrast"]);
+});
+
+test("resolved reasons stay out of focused groups even when source flags remain", () => {
+  const resolved = record(1, {
+    status: "missing-logo",
+    renderStatus: "missing-logo",
+    reviewStatus: "unreviewed",
+    reviewReasons: [],
+    unexpectedlyOpaqueBackground: true,
+    upscaleFactor: 3,
+    contrastConfidence: 0.1,
+    resolvedReviewReasons: [
+      { reason: "missing-logo-text-fallback" },
+      { reason: "unexpectedly-opaque-source-background" },
+      { reason: "high-upscale-factor" },
+      { reason: "very-close-contrast" },
+    ],
+  });
+  const groups = buildReviewGroups([resolved], preset);
+  assert.equal(Object.values(groups).every((group) => group.records.length === 0), true);
 });
 
 test("review preparation binds drafts to current output hashes and writes only ignored work artifacts", async (context) => {
