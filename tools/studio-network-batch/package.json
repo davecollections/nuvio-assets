@@ -16,7 +16,8 @@
     "font-check": "node src/font-check-cli.mjs",
     "reconcile-production": "node src/production-reconcile-cli.mjs",
     "threshold-audit": "node src/threshold-audit-cli.mjs",
-    "review-prep": "node src/review-prep-cli.mjs"
+    "review-prep": "node src/review-prep-cli.mjs",
+    "review-focus": "node src/review-focus-cli.mjs"
   },
   "dependencies": {
     "sharp": "^0.35.3"
