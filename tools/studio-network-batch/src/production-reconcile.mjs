@@ -279,7 +279,8 @@ export async function reconcileProductionState({
     reviewReasonResolutionVersion: reasonConfiguration.version,
     reviewReasonResolutions: {
       configured: reasonConfiguration.resolutions.length,
-      resolved: reconciled.reduce((sum, record) => sum + record.resolvedReviewReasons.length, 0),
+      resolved: reconciled.reduce((sum, record) => sum
+        + record.reviewReasonResolutionStatuses.filter((item) => item.status === "resolved").length, 0),
       staleOutput: reconciled.reduce((sum, record) => sum + record.reviewReasonResolutionStatuses.filter((item) => item.status === "stale-output").length, 0),
       staleSource: reconciled.reduce((sum, record) => sum + record.reviewReasonResolutionStatuses.filter((item) => item.status === "stale-source").length, 0),
     },
@@ -401,6 +402,7 @@ export async function verifySelectiveProductionChange({
   afterSnapshotPath,
   summaryPath,
   selectivelyRegeneratedKeys,
+  selectivelyAddedKeys = [],
   retainedReviewedKeys,
   records,
   configuration,
@@ -416,7 +418,9 @@ export async function verifySelectiveProductionChange({
   const before = JSON.parse(await fs.readFile(beforeSnapshotPath, "utf8"));
   const after = await snapshotProductionDirectory(path.join(packageRoot, ".work", "staging", preset.version));
   const comparison = compareProductionSnapshots(before, after);
-  const expectedChangedPaths = new Set(selectivelyRegeneratedKeys.map(stableKeyToRelativePath));
+  const expectedChangedPaths = new Set(
+    [...selectivelyRegeneratedKeys, ...selectivelyAddedKeys].map(stableKeyToRelativePath),
+  );
   const actualChangedPaths = new Set(comparison.changed.map((entry) => entry.path));
   const missingChanges = [...expectedChangedPaths].filter((filePath) => !actualChangedPaths.has(filePath));
   const unexpectedChanges = [...actualChangedPaths].filter((filePath) => !expectedChangedPaths.has(filePath));
@@ -445,6 +449,27 @@ export async function verifySelectiveProductionChange({
   }
 
   const byKey = new Map(records.map((record) => [record.stableKey, record]));
+  const addedRecords = selectivelyAddedKeys.map((stableKey) => {
+    const record = byKey.get(stableKey);
+    if (!record) throw new Error(`Reconciled state is missing newly added record ${stableKey}.`);
+    const changed = comparison.changed.find((entry) => entry.path === stableKeyToRelativePath(stableKey));
+    if (!changed || changed.before !== null || changed.after === null) {
+      throw new Error(`Newly added record ${stableKey} was not absent before and present after.`);
+    }
+    return {
+      stableKey: record.stableKey,
+      entityType: record.entityType,
+      tmdbId: record.tmdbId,
+      name: record.name,
+      finalBackground: record.selectedBackground,
+      decisionSource: record.backgroundDecisionSource,
+      regenerated: false,
+      added: true,
+      outputHash: record.outputHash,
+      remainingReviewReasons: record.reviewReasons ?? [],
+      outputPath: record.outputPath,
+    };
+  });
   const reviewedKeys = [...selectivelyRegeneratedKeys, ...retainedReviewedKeys];
   const finalDecisions = reviewedKeys.map((stableKey) => {
     const resolution = configuration.resolutionByKey.get(stableKey);
@@ -474,12 +499,12 @@ export async function verifySelectiveProductionChange({
   const sheetPath = verificationSheetPath
     ?? path.join(packageRoot, ".work", "contact-sheets", preset.version, "review", "mixed-contrast-approved.png");
   assertWorkPath(sheetPath, packageRoot, "Contrast verification sheet");
-  const labelled = finalDecisions.map((record) => ({
+  const labelled = [...finalDecisions, ...addedRecords].map((record) => ({
     ...record,
     contactSheetLabelLines: [
       record.name,
       `${record.stableKey} · ${record.finalBackground}`,
-      `${record.decisionSource} · ${record.regenerated ? "regenerated" : "retained"}`,
+      `${record.decisionSource} · ${record.added ? "newly added" : record.regenerated ? "regenerated" : "retained"}`,
       `Remaining: ${record.remainingReviewReasons.length ? record.remainingReviewReasons.join(", ") : "none"}`,
     ],
   }));
@@ -515,10 +540,13 @@ export async function verifySelectiveProductionChange({
     },
     selectivelyRegeneratedCount: selectivelyRegeneratedKeys.length,
     selectivelyRegeneratedKeys,
+    selectivelyAddedCount: selectivelyAddedKeys.length,
+    selectivelyAddedKeys,
     retainedReviewedCount: retainedReviewedKeys.length,
     retainedReviewedKeys,
     unchangedOutputCount: comparison.unchanged.length,
     changedFiles: comparison.changed,
+    addedRecords,
     finalDecisions,
     review: reviewResult,
     verificationSheet: sheet,

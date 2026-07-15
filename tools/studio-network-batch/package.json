@@ -17,7 +17,8 @@
     "reconcile-production": "node src/production-reconcile-cli.mjs",
     "threshold-audit": "node src/threshold-audit-cli.mjs",
     "review-prep": "node src/review-prep-cli.mjs",
-    "review-focus": "node src/review-focus-cli.mjs"
+    "review-focus": "node src/review-focus-cli.mjs",
+    "opaque-review": "node src/opaque-review-cli.mjs"
   },
   "dependencies": {
     "sharp": "^0.35.3"

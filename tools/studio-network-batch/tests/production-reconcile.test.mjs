@@ -140,6 +140,9 @@ test("selective change reconciliation preserves full state, retained hashes and 
   assert.equal(reconciled.records.every((record) => record.backgroundDecisionVersion === "hybrid-dark-component-v1"), true);
   assert.deepEqual(reconciled.records[0].reviewReasons, ["unexpectedly-opaque-source-background"]);
   assert.equal(reconciled.records[0].mixedContrastReviewResolution.status, "resolved");
+  assert.equal(reconciled.summary.reviewReasonResolutions.resolved, 0);
+  assert.equal(reconciled.summary.reviewReasonResolutions.staleOutput, 0);
+  assert.equal(reconciled.summary.reviewReasonResolutions.staleSource, 0);
   assert.equal((await fs.stat(data.outputs[1])).mtimeMs, retainedBefore.mtimeMs);
   assert.equal(bufferFingerprint(await fs.readFile(data.outputs[1])), bufferFingerprint(data.dark));
 
@@ -163,4 +166,102 @@ test("selective change reconciliation preserves full state, retained hashes and 
   assert.equal(verified.finalDecisions[1].regenerated, false);
   await assert.rejects(fs.access(path.join(data.packageRoot, "assets")));
   await assert.rejects(fs.access(path.join(data.packageRoot, "manifest.json")));
+});
+
+test("new-key reconciliation verifies an absent-before addition without requiring a background review resolution", async (context) => {
+  const data = await fixture(context);
+  const beforeSnapshotPath = path.join(data.packageRoot, ".work", "plans", "before-add.json");
+  const afterSnapshotPath = path.join(data.packageRoot, ".work", "plans", "after-add.json");
+  const summaryPath = path.join(data.packageRoot, ".work", "plans", "add-summary.json");
+  const initialState = JSON.parse(await fs.readFile(data.statePath, "utf8"));
+  Object.assign(initialState.entries["company:1|primary"], {
+    selectedBackground: "light",
+    backgroundPreset: "light-flat",
+    outputHash: bufferFingerprint(data.light),
+    outputBytes: data.light.length,
+  });
+  await Promise.all([
+    fs.writeFile(data.outputs[0], data.light),
+    fs.writeFile(data.statePath, JSON.stringify(initialState)),
+  ]);
+  await writeProductionSnapshot({
+    packageRoot: data.packageRoot,
+    presetVersion: data.preset.version,
+    outputPath: beforeSnapshotPath,
+  });
+
+  const addedEntity = entity(3);
+  const addedOutputPath = path.join(
+    data.packageRoot,
+    ".work",
+    "staging",
+    data.preset.version,
+    "companies",
+    "3.webp",
+  );
+  const addedSourcePath = logoCachePath(
+    path.join(data.packageRoot, ".work", "cache", "logos"),
+    addedEntity.logoPath,
+  );
+  const sourceLogo = await fs.readFile(logoCachePath(
+    path.join(data.packageRoot, ".work", "cache", "logos"),
+    data.entities[0].logoPath,
+  ));
+  await Promise.all([
+    fs.writeFile(addedOutputPath, data.dark),
+    fs.writeFile(addedSourcePath, sourceLogo),
+  ]);
+  const state = JSON.parse(await fs.readFile(data.statePath, "utf8"));
+  state.entries["company:3|primary"] = {
+    ...addedEntity,
+    variantName: "primary",
+    status: "generated",
+    renderStatus: "generated",
+    reviewStatus: "unreviewed",
+    reviewReasons: [],
+    selectedBackground: "dark",
+    backgroundPreset: "dark-flat",
+    sourceHash: bufferFingerprint(sourceLogo),
+    sourcePath: addedSourcePath,
+    artworkInputHash: "input-added",
+    rendererVersion: "sharp-renderer-v2",
+    presetVersion: data.preset.version,
+    outputPath: addedOutputPath,
+    outputHash: bufferFingerprint(data.dark),
+    outputBytes: data.dark.length,
+    generatedAt: "2026-01-02T00:00:00.000Z",
+  };
+  await fs.writeFile(data.statePath, JSON.stringify(state));
+  data.sourceData.entities.push(addedEntity);
+
+  const reconciled = await reconcileProductionState({
+    packageRoot: data.packageRoot,
+    preset: data.preset,
+    sourceData: data.sourceData,
+    selectivelyRegeneratedKeys: [addedEntity.stableKey],
+    eligibility: { version: "test", companyMinimumTitleCount: 100, networkMinimumTitleCount: 100 },
+  });
+  assert.equal(reconciled.records.length, 3);
+  assert.equal(reconciled.summary.metadataOnlyReconciled, 2);
+
+  const verified = await verifySelectiveProductionChange({
+    packageRoot: data.packageRoot,
+    preset: data.preset,
+    beforeSnapshotPath,
+    afterSnapshotPath,
+    summaryPath,
+    selectivelyRegeneratedKeys: [],
+    selectivelyAddedKeys: [addedEntity.stableKey],
+    retainedReviewedKeys: [],
+    records: reconciled.records,
+    configuration: reconciled.configuration,
+    reviewResult: { writesFinalAssets: false, canonicalManifestCreated: false },
+  });
+  assert.equal(verified.selectivelyRegeneratedCount, 0);
+  assert.equal(verified.selectivelyAddedCount, 1);
+  assert.equal(verified.unchangedOutputCount, 2);
+  assert.equal(verified.changedFiles.length, 1);
+  assert.equal(verified.changedFiles[0].before, null);
+  assert.equal(verified.addedRecords[0].stableKey, addedEntity.stableKey);
+  assert.deepEqual(verified.finalDecisions, []);
 });

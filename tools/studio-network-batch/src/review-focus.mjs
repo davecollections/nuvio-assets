@@ -249,7 +249,7 @@ export function classifyOpaqueMetrics(metrics) {
   return "manual-review";
 }
 
-async function opaqueMetrics(record, preset) {
+export async function calculateOpaqueMetrics(record, preset) {
   const result = await sharp(record.sourcePath, { failOn: "error" }).rotate().toColourspace("srgb").ensureAlpha().raw().toBuffer({ resolveWithObject: true });
   const { width, height, channels } = result.info;
   if (channels !== 4) throw new Error(`Expected RGBA source for ${record.stableKey}.`);
@@ -329,7 +329,7 @@ async function prepareOpaqueReview(records, preset, focusRoot) {
   for (const record of records) {
     const sourceBuffer = await fs.readFile(record.sourcePath);
     if (bufferFingerprint(sourceBuffer) !== record.sourceHash) throw new Error(`Cached source hash changed for ${record.stableKey}.`);
-    const metrics = await opaqueMetrics(record, preset);
+    const metrics = await calculateOpaqueMetrics(record, preset);
     classified.push({
       stableKey: record.stableKey,
       entityType: record.entityType,
