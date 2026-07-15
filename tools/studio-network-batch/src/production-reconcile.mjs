@@ -30,6 +30,11 @@ import {
   loadReviewReasonResolutionConfiguration,
 } from "./review-reason-resolution.mjs";
 import { compareProductionSnapshots, snapshotProductionDirectory } from "./staging-snapshot.mjs";
+import {
+  loadSourceTreatmentConfiguration,
+  resolveSourceTreatment,
+  sourceTreatmentBackgroundDecision,
+} from "./source-treatment.mjs";
 
 function stateKey(stableKey) {
   return `${stableKey}|primary`;
@@ -145,9 +150,10 @@ export async function reconcileProductionState({
   const statePath = path.join(reportsRoot, "run-state.json");
   const stagingRoot = path.join(packageRoot, ".work", "staging", preset.version);
   const state = await readState(statePath);
-  const [configuration, reasonConfiguration] = await Promise.all([
+  const [configuration, reasonConfiguration, treatmentConfiguration] = await Promise.all([
     loadBackgroundDecisionConfiguration(packageRoot, preset),
     loadReviewReasonResolutionConfiguration(packageRoot, preset),
+    loadSourceTreatmentConfiguration(packageRoot, preset),
   ]);
   const eligible = sourceData.entities
     .filter((entity) => isAutomaticallyEligible(entity, eligibility))
@@ -184,6 +190,7 @@ export async function reconcileProductionState({
     let selectedBackground = previous.selectedBackground;
     let decisionMetadata;
     let decisionReasons = [];
+    let treatment = null;
     if (entity.logoPath) {
       const cachePath = logoCachePath(path.join(packageRoot, ".work", "cache", "logos"), entity.logoPath);
       let cacheBuffer;
@@ -192,27 +199,53 @@ export async function reconcileProductionState({
       } catch (error) {
         throw new Error(`Offline reconciliation requires cached logo for ${entity.stableKey}: ${error.message}`);
       }
-      const sourceHash = bufferFingerprint(cacheBuffer);
-      if (sourceHash !== previous.sourceHash) {
-        throw new Error(`Cached source hash changed for ${entity.stableKey}; artwork regeneration is required.`);
-      }
-      const requiresDecisionRefresh = previous.backgroundDecisionVersion !== configuration.version
-        || configuration.manualByKey.has(entity.stableKey)
-        || configuration.resolutionByKey.has(entity.stableKey);
-      if (requiresDecisionRefresh) {
-        const analysis = await analyseLogo(cachePath, preset);
-        const decision = applyProductionBackgroundDecision(analysis, preset, {
-          stableKey: entity.stableKey,
-          sourceLogoHash: sourceHash,
-          configuration,
-        });
+      const originalSourceHash = bufferFingerprint(cacheBuffer);
+      treatment = await resolveSourceTreatment({
+        packageRoot,
+        configuration: treatmentConfiguration,
+        entity,
+        originalSource: {
+          cachePath,
+          sourceHash: originalSourceHash,
+          url: previous.originalTmdbSourceUrl ?? previous.logoUrl ?? null,
+        },
+      });
+      if (treatment) {
+        for (const field of ["treatmentId", "treatmentType", "treatmentVersion", "treatmentHash", "originalTmdbSourceHash"]) {
+          if ((previous[field] ?? null) !== (treatment.metadata[field] ?? null)) {
+            throw new Error(`Source treatment ${field} changed for ${entity.stableKey}; artwork regeneration is required.`);
+          }
+        }
+        const expectedSourceHash = treatment.effectiveSource?.sourceHash ?? treatment.metadata.treatmentHash;
+        if ((previous.sourceHash ?? null) !== expectedSourceHash) {
+          throw new Error(`Source treatment input changed for ${entity.stableKey}; artwork regeneration is required.`);
+        }
+        const decision = sourceTreatmentBackgroundDecision(treatment, preset);
         selectedBackground = decision.selectedBackground;
         decisionMetadata = decision.metadata;
         decisionReasons = decision.reviewReasons;
       } else {
-        decisionReasons = (previous.reviewReasons ?? []).filter((reason) =>
-          reason === MIXED_CONTRAST_REVIEW_REASON || reason === STALE_BACKGROUND_DECISION_REASON,
-        );
+        if (originalSourceHash !== previous.sourceHash) {
+          throw new Error(`Cached source hash changed for ${entity.stableKey}; artwork regeneration is required.`);
+        }
+        const requiresDecisionRefresh = previous.backgroundDecisionVersion !== configuration.version
+          || configuration.manualByKey.has(entity.stableKey)
+          || configuration.resolutionByKey.has(entity.stableKey);
+        if (requiresDecisionRefresh) {
+          const analysis = await analyseLogo(cachePath, preset);
+          const decision = applyProductionBackgroundDecision(analysis, preset, {
+            stableKey: entity.stableKey,
+            sourceLogoHash: originalSourceHash,
+            configuration,
+          });
+          selectedBackground = decision.selectedBackground;
+          decisionMetadata = decision.metadata;
+          decisionReasons = decision.reviewReasons;
+        } else {
+          decisionReasons = (previous.reviewReasons ?? []).filter((reason) =>
+            reason === MIXED_CONTRAST_REVIEW_REASON || reason === STALE_BACKGROUND_DECISION_REASON,
+          );
+        }
       }
     } else {
       const decision = fallbackBackgroundDecision(preset);
@@ -222,7 +255,11 @@ export async function reconcileProductionState({
     if (selectedBackground !== previous.selectedBackground) {
       throw new Error(`Staged background for ${entity.stableKey} is ${previous.selectedBackground}; decision now requires ${selectedBackground}.`);
     }
-    const derivedReviewReasons = mergeBackgroundDecisionReviewReasons(previous.reviewReasons, decisionReasons);
+    const previouslyResolvedReasons = (previous.resolvedReviewReasons ?? []).map((item) => item.reason);
+    const derivedReviewReasons = mergeBackgroundDecisionReviewReasons(
+      [...new Set([...(previous.reviewReasons ?? []), ...previouslyResolvedReasons])],
+      decisionReasons,
+    );
     const veryCloseThreshold = preset.contrast?.veryCloseScoreDifference ?? preset.contrast?.closeScoreDifference;
     if (Number.isFinite(previous.contrastConfidence) && previous.contrastConfidence < veryCloseThreshold) {
       derivedReviewReasons.push("very-close-contrast");
@@ -277,6 +314,7 @@ export async function reconcileProductionState({
     rendererVersion: RENDERER_VERSION,
     backgroundDecisionVersion: configuration.version,
     reviewReasonResolutionVersion: reasonConfiguration.version,
+    sourceTreatmentVersion: treatmentConfiguration.version,
     reviewReasonResolutions: {
       configured: reasonConfiguration.resolutions.length,
       resolved: reconciled.reduce((sum, record) => sum
@@ -324,7 +362,7 @@ export async function reconcileProductionState({
     atomicWrite(path.join(reportsRoot, "contact-sheet-index.md"), contactSheetIndexMarkdown(contactSheets)),
     atomicWriteJson(path.join(reportsRoot, "background-reconciliation-summary.json"), summary),
   ]);
-  return { records: reconciled, summary, configuration, reasonConfiguration };
+  return { records: reconciled, summary, configuration, reasonConfiguration, treatmentConfiguration };
 }
 
 async function createPendingOpaqueVerification({ packageRoot, preset, records, stableKeys, outputDir } = {}) {
@@ -406,6 +444,7 @@ export async function verifySelectiveProductionChange({
   retainedReviewedKeys,
   records,
   configuration,
+  treatmentConfiguration = null,
   reviewResult,
   verificationSheetPath = null,
   pendingOpaqueKeys = [],
@@ -472,15 +511,25 @@ export async function verifySelectiveProductionChange({
   });
   const reviewedKeys = [...selectivelyRegeneratedKeys, ...retainedReviewedKeys];
   const finalDecisions = reviewedKeys.map((stableKey) => {
-    const resolution = configuration.resolutionByKey.get(stableKey);
-    if (!resolution) throw new Error(`Background review resolution is missing for ${stableKey}.`);
     const record = byKey.get(stableKey);
     if (!record) throw new Error(`Reconciled state is missing reviewed record ${stableKey}.`);
-    if (record.selectedBackground !== resolution.backgroundPreset) {
-      throw new Error(`Final background mismatch for ${resolution.stableKey}: expected ${resolution.backgroundPreset}, received ${record.selectedBackground}.`);
-    }
-    if (record.mixedContrastReviewResolution?.status !== "resolved") {
-      throw new Error(`Mixed-contrast review is not resolved for ${resolution.stableKey}.`);
+    const treatment = treatmentConfiguration?.byStableKey?.get(stableKey);
+    if (treatment) {
+      if (record.treatmentStatus !== "applied" || record.treatmentType !== treatment.type) {
+        throw new Error(`Source treatment is not applied for ${stableKey}.`);
+      }
+      if (record.selectedBackground !== treatment.selectedBackground) {
+        throw new Error(`Source treatment background mismatch for ${stableKey}.`);
+      }
+    } else {
+      const resolution = configuration.resolutionByKey.get(stableKey);
+      if (!resolution) throw new Error(`Background review resolution is missing for ${stableKey}.`);
+      if (record.selectedBackground !== resolution.backgroundPreset) {
+        throw new Error(`Final background mismatch for ${resolution.stableKey}: expected ${resolution.backgroundPreset}, received ${record.selectedBackground}.`);
+      }
+      if (record.mixedContrastReviewResolution?.status !== "resolved") {
+        throw new Error(`Mixed-contrast review is not resolved for ${resolution.stableKey}.`);
+      }
     }
     const regenerated = expectedChangedPaths.has(stableKeyToRelativePath(record.stableKey));
     return {
@@ -490,6 +539,8 @@ export async function verifySelectiveProductionChange({
       name: record.name,
       finalBackground: record.selectedBackground,
       decisionSource: record.backgroundDecisionSource,
+      treatmentType: record.treatmentType ?? null,
+      treatmentHash: record.treatmentHash ?? null,
       regenerated,
       outputHash: record.outputHash,
       remainingReviewReasons: record.reviewReasons ?? [],

@@ -265,3 +265,46 @@ test("new-key reconciliation verifies an absent-before addition without requirin
   assert.equal(verified.addedRecords[0].stableKey, addedEntity.stableKey);
   assert.deepEqual(verified.finalDecisions, []);
 });
+
+test("selective verification accepts a hash-bound source treatment without a mixed-contrast resolution", async (context) => {
+  const data = await fixture(context);
+  const beforeSnapshotPath = path.join(data.packageRoot, ".work", "plans", "before-treatment.json");
+  const afterSnapshotPath = path.join(data.packageRoot, ".work", "plans", "after-treatment.json");
+  const summaryPath = path.join(data.packageRoot, ".work", "plans", "treatment-summary.json");
+  await writeProductionSnapshot({
+    packageRoot: data.packageRoot,
+    presetVersion: data.preset.version,
+    outputPath: beforeSnapshotPath,
+  });
+  await new Promise((resolve) => setTimeout(resolve, 25));
+  await fs.writeFile(data.outputs[0], data.light);
+  const state = JSON.parse(await fs.readFile(data.statePath, "utf8"));
+  const record = state.entries["company:1|primary"];
+  Object.assign(record, {
+    outputHash: bufferFingerprint(data.light),
+    outputBytes: data.light.length,
+    treatmentStatus: "applied",
+    treatmentType: "manual-source",
+    treatmentHash: "a".repeat(64),
+    selectedBackground: "dark",
+    backgroundDecisionSource: "owner-approved-source-treatment",
+    reviewReasons: [],
+  });
+  const verified = await verifySelectiveProductionChange({
+    packageRoot: data.packageRoot,
+    preset: data.preset,
+    beforeSnapshotPath,
+    afterSnapshotPath,
+    summaryPath,
+    selectivelyRegeneratedKeys: ["company:1"],
+    retainedReviewedKeys: [],
+    records: [record, state.entries["company:2|primary"]],
+    configuration: { resolutionByKey: new Map() },
+    treatmentConfiguration: {
+      byStableKey: new Map([["company:1", { type: "manual-source", selectedBackground: "dark" }]]),
+    },
+    reviewResult: { writesFinalAssets: false, canonicalManifestCreated: false },
+  });
+  assert.equal(verified.finalDecisions[0].treatmentType, "manual-source");
+  assert.equal(verified.finalDecisions[0].treatmentHash, "a".repeat(64));
+});

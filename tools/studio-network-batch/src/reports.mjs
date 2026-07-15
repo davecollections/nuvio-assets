@@ -50,6 +50,13 @@ export function calculateRunStatistics(records, preset) {
     skipped: records.filter((record) => record.status === "skipped").length,
     missingLogoGenerated: records.filter((record) => record.status === "missing-logo").length,
     fallbackGenerated: records.filter((record) => record.status === "missing-logo").length,
+    ownerApprovedTextGenerated: records.filter((record) => record.renderStatus === "owner-approved-text" && record.outputHash).length,
+    logoBackedOutputs: records.filter((record) =>
+      record.outputHash && !new Set(["missing-logo", "owner-approved-text"]).has(record.renderStatus ?? record.status),
+    ).length,
+    textFallbackOutputs: records.filter((record) =>
+      record.outputHash && new Set(["missing-logo", "owner-approved-text"]).has(record.renderStatus ?? record.status),
+    ).length,
     failedDownload: failed.filter((record) => DOWNLOAD_ERRORS.has(record.errorCode)).length,
     failedDecode: failed.filter((record) => DECODE_ERRORS.has(record.errorCode)).length,
     failedAnalysis: failed.filter((record) => ANALYSIS_ERRORS.has(record.errorCode)).length,
@@ -142,6 +149,8 @@ export function generationSummaryMarkdown(summary, reviewPriority) {
 - Generated: ${summary.generated}
 - Skipped: ${summary.skipped}
 - Missing-logo fallbacks generated: ${summary.missingLogoGenerated}
+- Owner-approved text treatments: ${summary.ownerApprovedTextGenerated}
+- Output treatments: ${summary.logoBackedOutputs} image/logo-backed; ${summary.textFallbackOutputs} text
 - Failed: ${failed}
 - Needs review: ${summary.needsReview}
 - Backgrounds: ${summary.backgroundSplit.dark} dark; ${summary.backgroundSplit.light} light

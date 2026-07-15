@@ -105,6 +105,7 @@ async function main() {
     retainedReviewedKeys,
     records: reconciliation.records,
     configuration: reconciliation.configuration,
+    treatmentConfiguration: reconciliation.treatmentConfiguration,
     reviewResult,
     verificationSheetPath: options.verificationSheet
       ? resolvePackagePath(options.verificationSheet, "--verification-sheet")

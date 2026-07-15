@@ -29,6 +29,11 @@ import {
   writeRenderedOutput,
 } from "./render.mjs";
 import {
+  loadSourceTreatmentConfiguration,
+  resolveSourceTreatment,
+  sourceTreatmentBackgroundDecision,
+} from "./source-treatment.mjs";
+import {
   buildReviewPriority,
   calculateRunStatistics,
   contactSheetIndexMarkdown,
@@ -45,10 +50,11 @@ function stateKey(stableKey, variantName) {
   return `${stableKey}|${variantName}`;
 }
 
-function renderInputHash(entity, sourceHash, preset, variantName, renderConfig) {
+function renderInputHash(entity, sourceHash, preset, variantName, renderConfig, treatment = null) {
   const base = artworkInputFingerprint(entity, {
     rendererVersion: RENDERER_VERSION,
     presetVersion: preset.version,
+    fallbackTextUsed: !entity.logoPath || treatment?.renderMode === "text",
   });
   return bufferFingerprint(Buffer.from(JSON.stringify([
     "nuvio-stage-render-input-v1",
@@ -61,7 +67,9 @@ function renderInputHash(entity, sourceHash, preset, variantName, renderConfig) 
     preset.logo.visibleAlphaThreshold,
     preset.backgrounds,
     preset.contrast,
-    entity.logoPath ? null : preset.fallbackText,
+    entity.logoPath && treatment?.renderMode !== "text" ? null : preset.fallbackText,
+    treatment?.metadata?.treatmentHash ?? null,
+    treatment?.treatment?.type ?? null,
     preset.output,
   ])));
 }
@@ -78,7 +86,10 @@ async function readState(filePath) {
 
 async function canSkip(previous, current, outputPath, preset) {
   if (!previous) return null;
-  for (const key of ["stableKey", "logoPath", "sourceHash", "artworkInputHash", "rendererVersion", "presetVersion", "selectedBackground"]) {
+  for (const key of [
+    "stableKey", "logoPath", "sourceHash", "artworkInputHash", "rendererVersion", "presetVersion", "selectedBackground",
+    "treatmentType", "treatmentHash", "originalTmdbSourceHash",
+  ]) {
     if ((previous[key] ?? null) !== (current[key] ?? null)) return null;
   }
   if (previous.outputPath !== outputPath || !previous.outputHash) return null;
@@ -147,6 +158,11 @@ const REQUIRED_REPORT_FIELDS = [
   "backgroundDecisionVersion", "backgroundDecisionSource", "backgroundDecisionReason",
   "backgroundDecisionSourceLogoHash", "aggregateSelectedBackground", "automaticBackgroundDecision",
   "manualBackgroundDecision", "mixedContrastReviewResolution", "mixedContrastMetrics",
+  "treatmentId", "treatmentType", "treatmentVersion", "treatmentHash", "treatmentStatus",
+  "treatmentOwnerDecision", "treatmentSelectedBackground", "treatmentSourceHash", "treatmentSourcePageUrl",
+  "treatmentDirectAssetUrl", "treatmentProvenanceType", "treatmentProvenanceConfidence",
+  "treatmentLicenceOrRightsNote", "treatmentDerivation", "originalTmdbLogoPath", "originalTmdbSourcePath",
+  "originalTmdbSourceHash", "originalTmdbSourceUrl",
 ];
 
 function completeReportRecord(record) {
@@ -240,8 +256,12 @@ export async function generateBatch({
     };
   }
 
+  const treatmentConfiguration = await loadSourceTreatmentConfiguration(packageRoot, preset);
   let productionFontCheck = null;
-  if (preset.fallbackText?.requireConfirmedFont && plan.selected.some((entity) => !entity.logoPath)) {
+  const requiresFallbackFont = plan.selected.some((entity) =>
+    !entity.logoPath || treatmentConfiguration.byStableKey.get(entity.stableKey)?.type === "owner-approved-text",
+  );
+  if (preset.fallbackText?.requireConfirmedFont && requiresFallbackFont) {
     productionFontCheck = await fontCheckImpl({
       requestedFamily: preset.fallbackText.requiredFontFamily ?? "Inter",
     });
@@ -312,52 +332,90 @@ export async function generateBatch({
     };
 
     try {
+      let originalSource = null;
       let source = null;
+      let treatment = null;
       let analysis = null;
       let renderAnalysis = null;
       if (entity.logoPath) {
-        source = await downloader.download(entity.logoPath, { refresh: refreshLogoCache });
+        originalSource = await downloader.download(entity.logoPath, { refresh: refreshLogoCache });
         Object.assign(base, {
-          logoUrl: source.url,
-          sourcePath: source.cachePath,
-          sourceFormat: source.sourceFormat,
-          sourceWidth: source.sourceWidth,
-          sourceHeight: source.sourceHeight,
-          sourceHash: source.sourceHash,
-          downloadReused: source.reused,
-          downloadReuseKind: source.reuseKind,
+          logoUrl: originalSource.url,
+          sourcePath: originalSource.cachePath,
+          sourceFormat: originalSource.sourceFormat,
+          sourceWidth: originalSource.sourceWidth,
+          sourceHeight: originalSource.sourceHeight,
+          sourceHash: originalSource.sourceHash,
+          downloadReused: originalSource.reused,
+          downloadReuseKind: originalSource.reuseKind,
         });
+        treatment = await resolveSourceTreatment({
+          packageRoot,
+          configuration: treatmentConfiguration,
+          entity,
+          originalSource,
+        });
+        if (treatment) {
+          Object.assign(base, treatment.metadata);
+          source = treatment.effectiveSource;
+          Object.assign(base, {
+            sourcePath: source?.sourcePath ?? null,
+            sourceFormat: source?.sourceFormat ?? null,
+            sourceWidth: source?.sourceWidth ?? null,
+            sourceHeight: source?.sourceHeight ?? null,
+            sourceHash: source?.sourceHash ?? (treatment.renderMode === "text" ? treatment.metadata.treatmentHash : null),
+          });
+        } else {
+          source = { ...originalSource, input: originalSource.cachePath, sourcePath: originalSource.cachePath };
+        }
       } else {
         base.sourceHash = null;
       }
 
-      if (entity.logoPath) {
+      const usesLogoRender = Boolean(entity.logoPath && treatment?.renderMode !== "text");
+      if (usesLogoRender) {
         let analysisPromise = analyses.get(source.sourceHash);
         const analysisReused = Boolean(analysisPromise);
         if (!analysisPromise) {
-          analysisPromise = analyseLogo(source.cachePath, preset);
+          analysisPromise = analyseLogo(source.input, preset);
           analyses.set(source.sourceHash, analysisPromise);
         }
         analysis = await analysisPromise;
         base.analysisReused = analysisReused;
         Object.assign(base, reportAnalysis(analysis));
-        const decision = applyProductionBackgroundDecision(analysis, preset, {
-          stableKey: entity.stableKey,
-          sourceLogoHash: source.sourceHash,
-          configuration: backgroundConfiguration,
-        });
+        const decision = treatment
+          ? sourceTreatmentBackgroundDecision(treatment, preset)
+          : applyProductionBackgroundDecision(analysis, preset, {
+            stableKey: entity.stableKey,
+            sourceLogoHash: source.sourceHash,
+            configuration: backgroundConfiguration,
+          });
         base.selectedBackground = decision.selectedBackground;
         Object.assign(base, decision.metadata);
+        const previouslyResolvedReasons = treatment
+          ? (previous?.resolvedReviewReasons ?? []).map((item) => item.reason)
+          : [];
         base.reviewReasons = mergeBackgroundDecisionReviewReasons(
-          [...new Set([...(previous?.reviewReasons ?? []), ...analysis.reviewReasons])],
+          [...new Set([...(previous?.reviewReasons ?? []), ...previouslyResolvedReasons, ...analysis.reviewReasons])],
           decision.reviewReasons,
         );
         base.reviewStatus = base.reviewReasons.length ? "needs-review" : "unreviewed";
         renderAnalysis = {
           ...analysis,
           selectedBackground: decision.selectedBackground,
-          reviewReasons: mergeBackgroundDecisionReviewReasons(analysis.reviewReasons, decision.reviewReasons),
+          reviewReasons: treatment
+            ? base.reviewReasons
+            : mergeBackgroundDecisionReviewReasons(analysis.reviewReasons, decision.reviewReasons),
         };
+      } else if (treatment?.renderMode === "text") {
+        const decision = sourceTreatmentBackgroundDecision(treatment, preset);
+        base.selectedBackground = decision.selectedBackground;
+        Object.assign(base, decision.metadata);
+        base.reviewReasons = [...new Set([
+          ...(previous?.reviewReasons ?? []),
+          ...(previous?.resolvedReviewReasons ?? []).map((item) => item.reason),
+        ])].sort();
+        base.reviewStatus = base.reviewReasons.length ? "needs-review" : "unreviewed";
       } else {
         const decision = fallbackBackgroundDecision(preset);
         base.selectedBackground = decision.selectedBackground;
@@ -365,7 +423,7 @@ export async function generateBatch({
         base.reviewReasons = previous?.reviewReasons ?? ["missing-logo-text-fallback"];
         base.reviewStatus = "needs-review";
       }
-      base.artworkInputHash = renderInputHash(entity, base.sourceHash, preset, variantName, renderConfig);
+      base.artworkInputHash = renderInputHash(entity, base.sourceHash, preset, variantName, renderConfig, treatment);
 
       if (!force) {
         const valid = await canSkip(previous, base, outputPath, variantPreset);
@@ -386,7 +444,7 @@ export async function generateBatch({
       }
 
       let renderedResult;
-      if (!entity.logoPath) {
+      if (!entity.logoPath || treatment?.renderMode === "text") {
         renderedResult = await renderFallbackCover(entity, variantPreset, { fontCheckResult: productionFontCheck });
       } else {
         const renderReuseKey = bufferFingerprint(Buffer.from(JSON.stringify([
@@ -409,7 +467,13 @@ export async function generateBatch({
 
       await writeRenderedOutput(outputPath, renderedResult.buffer);
       const valid = await validateOutput(outputPath, variantPreset);
-      const reviewReasons = [...new Set(renderedResult.reviewReasons ?? [])];
+      const reviewReasons = treatment
+        ? [...new Set([
+          ...base.reviewReasons,
+          ...(renderedResult.reviewReasons ?? []).filter((reason) => reason !== "missing-logo-text-fallback"),
+        ])].sort()
+        : [...new Set(renderedResult.reviewReasons ?? [])];
+      const renderStatus = treatment?.treatment?.type ?? (entity.logoPath ? "generated" : "missing-logo");
       const record = {
         ...base,
         ...valid,
@@ -424,7 +488,7 @@ export async function generateBatch({
         fallbackLines: renderedResult.layout?.lines ?? null,
         fallbackTextLayout: renderedResult.layout ?? null,
         status: entity.logoPath ? "generated" : "missing-logo",
-        renderStatus: entity.logoPath ? "generated" : "missing-logo",
+        renderStatus,
         reviewStatus: entity.logoPath && !reviewReasons.length ? "unreviewed" : "needs-review",
         reviewReasons,
         generatedAt: new Date().toISOString(),
@@ -497,6 +561,7 @@ export async function generateBatch({
     networkRequestsMade: offline ? 0 : null,
     presetVersion: preset.version,
     rendererVersion: RENDERER_VERSION,
+    sourceTreatmentVersion: treatmentConfiguration.version,
     sourceDirectory: sourceData.sourceDirectory,
     sourceCacheHashes,
     sourceFileHashes: sourceCacheHashes,

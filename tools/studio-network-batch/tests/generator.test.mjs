@@ -6,6 +6,7 @@ import test from "node:test";
 
 import sharp from "sharp";
 
+import { bufferFingerprint } from "../src/fingerprints.mjs";
 import { generateBatch } from "../src/generator.mjs";
 
 const presetTemplate = JSON.parse(await fs.readFile(new URL("../presets/poc-v1.json", import.meta.url), "utf8"));
@@ -48,7 +49,7 @@ async function setup(context) {
   };
   const preset = structuredClone(presetTemplate);
   preset.variants.stableKeys = [];
-  return { packageRoot, sourceData, fetchImpl, requestCount: () => requests, preset };
+  return { packageRoot, sourceData, fetchImpl, requestCount: () => requests, preset, logo };
 }
 
 function plan(selected, mode = "explicit") {
@@ -129,6 +130,57 @@ test("missing-logo generation produces a forced-review fallback", async (context
   assert.equal(result.records[0].status, "missing-logo");
   assert.equal(result.records[0].reviewStatus, "needs-review");
   assert.deepEqual(result.records[0].fallbackLines, ["Syndication"]);
+});
+
+test("owner-approved text treatment is not classified as a missing-logo fallback", async (context) => {
+  const fixture = await setup(context);
+  const selected = entity(2788, "/avex.png", "Avex Entertainment");
+  fixture.preset.sourceTreatments = "config/source-treatments.json";
+  fixture.preset.fallbackText = {
+    requiredFontFamily: "Inter",
+    requireConfirmedFont: true,
+    fontWeight: 600,
+    maximumFontSize: 96,
+    minimumFontSize: 28,
+    lineHeightMultiplier: 1.18,
+    maximumLines: 2,
+    selectedBackground: "dark",
+  };
+  await fs.mkdir(path.join(fixture.packageRoot, "config"));
+  await fs.writeFile(path.join(fixture.packageRoot, fixture.preset.sourceTreatments), JSON.stringify({
+    version: "test-source-treatment-v1",
+    scope: [selected.stableKey],
+    treatments: [{
+      stableKey: selected.stableKey,
+      treatmentId: "company-2788__owner-approved-text",
+      type: "owner-approved-text",
+      canonicalName: selected.name,
+      originalTmdbLogoPath: selected.logoPath,
+      originalTmdbSourceHash: bufferFingerprint(fixture.logo),
+      selectedBackground: "dark",
+      text: selected.name,
+      fontFamily: "Inter",
+      ownerDecision: "Owner-approved test text treatment.",
+    }],
+  }));
+  const result = await generateBatch({
+    plan: plan([selected]),
+    preset: fixture.preset,
+    packageRoot: fixture.packageRoot,
+    sourceData: fixture.sourceData,
+    fetchImpl: fixture.fetchImpl,
+    fontCheckImpl: async () => ({ requestedFamily: "Inter", confirmed: true }),
+  });
+  assert.equal(result.generated, 1);
+  assert.equal(result.fallbackGenerated, 0);
+  assert.equal(result.ownerApprovedTextGenerated, 1);
+  assert.equal(result.records[0].status, "generated");
+  assert.equal(result.records[0].renderStatus, "owner-approved-text");
+  assert.equal(result.records[0].reviewStatus, "unreviewed");
+  assert.deepEqual(result.records[0].reviewReasons, []);
+  assert.equal(result.records[0].sourceHash, result.records[0].treatmentHash);
+  assert.equal(result.records[0].originalTmdbSourceHash, bufferFingerprint(fixture.logo));
+  assert.equal(result.records[0].fallbackTextLayout.fontFamily, "Inter");
 });
 
 test("one failed download is recorded while remaining selected records continue", async (context) => {
