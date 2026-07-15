@@ -27,16 +27,16 @@ function configuration() {
   };
 }
 
-test("production reason resolutions load all eligibility-50 hash bindings", async () => {
+test("production reason resolutions load all reviewed hash bindings", async () => {
   const preset = JSON.parse(await fs.readFile(path.join(packageRoot, "presets", "production-v1.json"), "utf8"));
   const loaded = await loadReviewReasonResolutionConfiguration(packageRoot, preset);
-  assert.equal(loaded.resolutions.length, 369);
+  assert.equal(loaded.resolutions.length, 515);
   assert.deepEqual(Object.fromEntries(loaded.groups.map((group) => [group.reason, group.bindings.length])), {
     "close-background-scores": 4,
     "high-upscale-factor": 7,
     "likely-low-resolution-source": 2,
     "missing-logo-text-fallback": 332,
-    "unexpectedly-opaque-source-background": 23,
+    "unexpectedly-opaque-source-background": 169,
     "very-close-contrast": 1,
   });
 });
