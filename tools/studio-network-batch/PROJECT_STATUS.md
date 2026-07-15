@@ -1,10 +1,10 @@
 # Studio/network batch project status
 
-**Last verified:** 2026-07-14 AEST (UTC+10)
+**Last verified:** 2026-07-15 AEST (UTC+10)
 
-**Verified through implementation commit:** `45dfb71` (`feat: apply eligibility-50 review decisions`)
+**Verified through implementation commit:** `458abf8` (`feat: resolve reviewed opaque-source reasons`)
 
-**Tracked implementation state:** The focused-review tooling checkpoint is `1ac9ffc`; the owner decisions, hash-bound reason-resolution system, and reconciliation updates are in `45dfb71`. Ignored production/review artifacts remain under `.work/` and must not be added to Git.
+**Tracked implementation state:** The eligibility-50 owner decisions and original hash-bound reason-resolution system are in `45dfb71`; the reviewed documentation baseline is `f2181af`; explicit new-key reconciliation and reusable enlarged opaque-review tooling are in `ff26340`; and the final opaque-source reason decisions are in `458abf8`. Ignored production/review artifacts remain under `.work/` and must not be added to Git.
 
 This file is a dated project snapshot. Recheck the repository and ignored `.work` data before updating it.
 
@@ -26,12 +26,15 @@ The following stages are complete and present locally:
 - offline eligibility-50 focused-review preparation with contrast comparisons, resolution details, a representative fallback sample, deterministic opaque-source classification, and output-hash-bound action proposals;
 - owner application of the eligibility-50 decisions: exactly five dark-to-light covers regenerated offline, four reviewed backgrounds retained byte-for-byte, 369 exact output-hash-bound generic reason resolutions applied, and all full reports/review sheets reconciled;
 - a narrowed pending-opaque package containing exactly the 76 owner-deferred eligibility-50 problem cases.
+- narrow generation and full-state reconciliation of the separately deferred `company:281730`, with the previous 2,365 outputs retained byte-for-byte and timestamp unchanged;
+- an offline 4×4 owner-review package containing every then-unresolved opaque-source record, with complete-source insets and blank output-hash-bound decision fields;
+- owner application of exactly 146 reviewed opaque-source reason resolutions, leaving exactly seven records classified `needs-better-source`, followed by full report/review reconciliation and a final seven-record package.
 
 No publication stage has been performed.
 
 ## Latest verified source counts
 
-Current source-cache snapshot on 2026-07-14, using the approved company/network minimums of 50:
+Current source-cache snapshot on 2026-07-15, using the approved company/network minimums of 50:
 
 | Group | Eligible | With logo | Missing logo |
 |---|---:|---:|---:|
@@ -39,22 +42,22 @@ Current source-cache snapshot on 2026-07-14, using the approved company/network 
 | Networks | 569 | 568 | 1 |
 | Combined | 2,366 | 1,888 | 478 |
 
-The source contains one newly eligible record absent from the current production state: `company:281730` (Atresmedia Cine, title count 71). It was detected during reconciliation and deliberately deferred because it was outside the authorised five-cover selection. No validation error, removal, or rename was found. These are dated source facts, not implementation constants.
+All 2,366 currently eligible source records are now present in persistent production state. The previously deferred `company:281730` (Atresmedia Cine, title count 71) is present as `expanded-threshold`. No validation error, removal, rename, or newly eligible state delta remains. These are dated source facts, not implementation constants.
 
 ## Latest staged-output state
 
 - Preset: `production-v1`
 - Location: `.work/staging/production-v1/`
-- Staged WebP files: 2,365 (1,796 companies, 569 networks)
+- Staged WebP files: 2,366 (1,797 companies, 569 networks)
 - Current failed state records: 0
-- Current staged bytes: 26,545,608 total
-- Current staged file size: 10,450-byte median; 1,888–39,004-byte range
-- Background split: 1,139 dark; 1,226 light
-- Combined staged content fingerprint: `39fe140c6717b57a54155f287559689e7468e8664bf9ac82aad074f5fb28d566`
-- Combined staged modification-time fingerprint: `10f6b74e54ffa2289ac21e17b1b18419a07f75ad5cdf4b06eabe9813034417cc`
+- Current staged bytes: 26,557,920 total
+- Current staged file size: 10,456-byte median; 1,888–39,004-byte range
+- Background split: 1,140 dark; 1,226 light
+- Combined staged content fingerprint: `50e5325c226f91951d8a29bf391f41cecda24f847f3ec10c6431310c39120a4a`
+- Combined staged modification-time fingerprint: `1757abf186cd6df307b8809211d913093ce1e80d64c609b99ca79fc65e6e4217`
 - Final assets published: no
 
-The persistent current state is `.work/reports/production-v1/run-state.json`. The reconciled top-level `entities.jsonl` contains all 2,365 primary records. The eligibility-50 expansion retained all 1,075 original outputs byte-for-byte with their modification times.
+The persistent current state is `.work/reports/production-v1/run-state.json`. The reconciled top-level `entities.jsonl` contains all 2,366 primary records. The post-expansion single-key run retained all previous 2,365 outputs byte-for-byte with their modification times.
 
 ## Inter status
 
@@ -77,17 +80,17 @@ The owner resolved the `missing-logo-text-fallback` reason for all 332 newly eli
 
 ## Current review state
 
-Latest full review preparation contains 389 unique pending records and 433 unresolved reasons:
+Latest full review preparation contains 244 unique pending records and 287 unresolved reasons:
 
 | Category | Records |
 |---|---:|
 | Missing logo | 146 |
-| Unexpectedly opaque source | 153 |
+| Unexpectedly opaque source | 7 |
 | Close background score | 76 |
 | Very-close contrast | 40 |
 | Upscale over 2× | 6 |
 | Likely low resolution | 2 |
-| All needs review, deduplicated | 389 |
+| All needs review, deduplicated | 244 |
 
 Flags overlap, so category counts do not sum to the unique total.
 
@@ -108,10 +111,39 @@ Relevant paths:
 - `.work/contact-sheets/production-v1/review/eligibility-50-contrast-approved.png`
 - `.work/contact-sheets/production-v1/review/eligibility-50-opaque-pending/index.md`
 - `.work/reports/production-v1/eligibility-50-review-outcome.json`
+- `.work/review-focus/opaque-final/index.md`
+- `.work/review-focus/opaque-final/summary.json`
+- `.work/review-focus/opaque-final/review-template.csv`
+- `.work/review-focus/opaque-final-needs-source/needs-better-source.png`
+- `.work/review-focus/opaque-final-needs-source/needs-better-source.json`
+- `.work/review-focus/opaque-final-needs-source/needs-better-source.md`
+- `.work/reviews/production-v1/opaque-final-owner-review-summary.json`
 
 All cover-level draft entries are pending; no cover has been promoted to publication approval. Exact reason resolution removed only named reasons. `company:12434` remains pending for mixed contrast and `company:35953` remains pending for close/very-close contrast after their safe opaque reasons were resolved.
 
-The eligibility-50 owner decisions are applied: 332 fallback reasons, 7 high-upscale reasons, 2 likely-low-resolution reasons, 23 conservative opaque-source reasons, 4 close-background reasons, and 1 very-close-contrast reason are exact-hash resolved. Six mixed-contrast reasons were independently resolved through the existing source-hash-bound background-review system. The 76 opaque sticker/tiny-canvas/uncertain records remain pending and untouched.
+The eligibility-50 owner decisions are applied: 332 fallback reasons, 7 high-upscale reasons, 2 likely-low-resolution reasons, 23 conservative opaque-source reasons, 4 close-background reasons, and 1 very-close-contrast reason are exact-hash resolved. Six mixed-contrast reasons were independently resolved through the existing source-hash-bound background-review system. The historical 76-record deferred package remains available as an audit artifact, but its current reason state is superseded by the final owner review.
+
+The enlarged review package used the complete 153-record unresolved opaque-source population, not only the 76 eligibility-50 subset: 15 `tiny-logo-inside-opaque-canvas`, 110 `opaque-sticker-effect`, 4 `manual-review`, 1 `opaque-blends-with-background`, and 23 `opaque-suitable`. Ten 4×4 pages covered every stable key exactly once. One record had an additional unresolved reason, 36 had estimated foreground pixel proportions at or below 12%, and one had an opaque edge within RGB distance 30 of the selected background. Preparing that package itself resolved no reason.
+
+## Final opaque-source owner review
+
+The owner resolved `unexpectedly-opaque-source-background` for exactly 146 of the 153 reviewed records. Each decision binds the stable key to the exact current output and source-logo hashes. The generic reason-resolution configuration now contains 515 current bindings in total, including 169 opaque-source bindings, with zero stale-output or stale-source bindings.
+
+Exactly seven opaque-source reasons remain unresolved and are classified `needs-better-source`: `company:1742`, `company:2788`, `company:3407`, `company:47208`, `company:69347`, `company:80138`, and `company:102867`. The supplied handoff paired OctoArts Films with `company:4708`; current source/state and the reviewed package prove its stable key is `company:47208`. `company:4708` is Brain Damage Films and was not changed. `company:39074` had only its opaque reason resolved and remains pending for `close-background-scores`.
+
+Full offline reconciliation changed pending review entries from 389 to 244 and unresolved reasons from 433 to 287; the opaque category changed from 153 to 7. The review-state draft is now `cd24a0fa4393d1e7e47747b5410616892f3224bb9e1c49570779f50fee032fe2`, and the review checklist is now `01f842f5cde794277a00415a70d1b9b04c36a75f0a6d599962944b68c5436eaf`.
+
+Before/after snapshots prove all 2,366 staged covers retained the same bytes and modification times: content fingerprint `50e5325c226f91951d8a29bf391f41cecda24f847f3ec10c6431310c39120a4a` and modification-time fingerprint `1757abf186cd6df307b8809211d913093ce1e80d64c609b99ca79fc65e6e4217`. No cover was generated or regenerated, no network request was made, and no final asset or canonical manifest was written. The source-cache repository was not modified.
+
+The final seven-record sheet, machine-readable data, notes, current output hashes, source dimensions, and visible bounds are under `.work/review-focus/opaque-final-needs-source/`.
+
+## Post-expansion single-key follow-up
+
+Persistent-state-aware planning selected exactly `company:281730` and reported no other new, changed, removed, ineligible, invalid, or corrupt record. The locked one-key plan is `.work/plans/post-expansion-new/company-281730.json`.
+
+Run `2026-07-15T08-17-53-376Z` generated one logo-backed dark cover with hash `ccb211c3b2750ddc474571d3d414a41cad15e5e44343dbfd58879d4abdee7303` and size 12,312 bytes. Its source logo was not cached, so generation made the one permitted TMDB image-CDN download. There were zero fallback, download, decode, analysis, or render failures and no TMDB search/detail API call.
+
+At that checkpoint, full-state reconciliation verified one absent-before addition, 2,365 unchanged paths, zero old content or modification-time changes, 2,366 valid 1200×675 WebPs, 389 pending review entries, 433 unresolved reasons, zero review/output hash mismatches, and zero stale output/source bindings. Atresmedia Cine has no review reason. The then-current review-state draft and checklist hashes were `db3aa4d8d247fd0acbdaf35aa3e248dbc4bb9ed00b7b071480a5822c3316b269` and `a65bbcab014337e31bdc54bc598884d7ed7490b246dafabce7979e1716443295`.
 
 ## Eligibility-50 owner review outcome
 
@@ -227,22 +259,21 @@ The pre-review protected hashes were:
 - review-state draft SHA-256: `c1b76dd135ca712d1dfe51f94f25d967946c032687f1a20916239149b7f49667`;
 - review checklist SHA-256: `bc50b5acf4fbf9d7305756044327a9117fb7c2cc9a81848b53fbbb29ed4630f2`.
 
-The current reconciled hashes are:
+The current reconciled hashes after the final opaque-source owner review are:
 
-- review-state draft SHA-256: `db3aa4d8d247fd0acbdaf35aa3e248dbc4bb9ed00b7b071480a5822c3316b269`;
-- review checklist SHA-256: `a65bbcab014337e31bdc54bc598884d7ed7490b246dafabce7979e1716443295`.
+- review-state draft SHA-256: `cd24a0fa4393d1e7e47747b5410616892f3224bb9e1c49570779f50fee032fe2`;
+- review checklist SHA-256: `01f842f5cde794277a00415a70d1b9b04c36a75f0a6d599962944b68c5436eaf`.
 
 ## Current open decisions
 
-- Human disposition of the exact 76 eligibility-50 opaque sticker/tiny-canvas/uncertain cases.
-- Separate handling of the newly eligible, out-of-scope `company:281730` source record.
-- Disposition of the older pending fallback, opaque, contrast, upscale, and low-resolution reasons.
+- Acquisition and explicit approval of better source artwork for the seven remaining opaque-source records.
+- Disposition of the remaining pending fallback, contrast, upscale, and low-resolution reasons.
 - The approval-record workflow and who signs off reviewed hashes.
 - Publication timing after all required review and selected reruns.
 
 ## Exact next step
 
-Review the exact 76-record package at `.work/contact-sheets/production-v1/review/eligibility-50-opaque-pending/` and record explicit reason-level decisions before publication. Handle `company:281730` as a separate narrow `--new-from-state` follow-up; do not widen either task to `--all`.
+Use `.work/review-focus/opaque-final-needs-source/needs-better-source.md` and its PNG/JSON companions to locate better source artwork for exactly the seven remaining records. Do not replace a source, rerender a cover, resolve its reason, or publish anything without a separate explicit owner decision.
 
 ## Important commands
 
@@ -252,6 +283,7 @@ Run these examples from the repository root:
 npm --prefix tools/studio-network-batch test
 npm --prefix tools/studio-network-batch run font-check
 npm --prefix tools/studio-network-batch run review-focus
+npm --prefix tools/studio-network-batch run opaque-review
 npm --prefix tools/studio-network-batch run contrast-experiment -- --preset production-v1
 npm --prefix tools/studio-network-batch run generate -- --ids-file .work/plans/mixed-contrast-approved/light-switches.json --preset production-v1 --force --offline
 npm --prefix tools/studio-network-batch run reconcile-production -- reconcile --before-snapshot .work/plans/mixed-contrast-approved/before-staging.json --changed-ids .work/plans/mixed-contrast-approved/light-switches.json --retained-ids .work/plans/mixed-contrast-approved/approved-dark-retained.json --after-snapshot .work/plans/mixed-contrast-approved/after-staging.json --summary .work/reviews/production-v1/mixed-contrast-approved-summary.json
