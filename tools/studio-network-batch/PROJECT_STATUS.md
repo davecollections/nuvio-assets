@@ -2,9 +2,9 @@
 
 **Last verified:** 2026-07-15 AEST (UTC+10)
 
-**Verified through implementation commit:** `458abf8` (`feat: resolve reviewed opaque-source reasons`)
+**Verified through decision commit:** `0284533` (`feat: apply seven source-quality decisions`)
 
-**Tracked implementation state:** The eligibility-50 owner decisions and original hash-bound reason-resolution system are in `45dfb71`; the reviewed documentation baseline is `f2181af`; explicit new-key reconciliation and reusable enlarged opaque-review tooling are in `ff26340`; and the final opaque-source reason decisions are in `458abf8`. Ignored production/review artifacts remain under `.work/` and must not be added to Git.
+**Tracked implementation state:** The eligibility-50 owner decisions and original hash-bound reason-resolution system are in `45dfb71`; explicit new-key reconciliation and reusable enlarged opaque-review tooling are in `ff26340`; the initial opaque-source decisions are in `458abf8`; durable approved source-treatment support is in `c57bce7`; and the exact seven source-quality decisions, verified manual inputs, and hash-bound reason resolutions are in `0284533`. Ignored production/review artifacts remain under `.work/` and must not be added to Git.
 
 This file is a dated project snapshot. Recheck the repository and ignored `.work` data before updating it.
 
@@ -29,6 +29,7 @@ The following stages are complete and present locally:
 - narrow generation and full-state reconciliation of the separately deferred `company:281730`, with the previous 2,365 outputs retained byte-for-byte and timestamp unchanged;
 - an offline 4×4 owner-review package containing every then-unresolved opaque-source record, with complete-source insets and blank output-hash-bound decision fields;
 - owner application of exactly 146 reviewed opaque-source reason resolutions, leaving exactly seven records classified `needs-better-source`, followed by full report/review reconciliation and a final seven-record package.
+- owner application of the seven final source-quality decisions: three verified official manual sources, one deterministic safe crop, and three exact-name Inter treatments; exactly seven covers regenerated offline, eight directly applicable source-quality reasons hash-bound and resolved, and 2,359 unrelated staged outputs retained unchanged.
 
 No publication stage has been performed.
 
@@ -50,11 +51,12 @@ All 2,366 currently eligible source records are now present in persistent produc
 - Location: `.work/staging/production-v1/`
 - Staged WebP files: 2,366 (1,797 companies, 569 networks)
 - Current failed state records: 0
-- Current staged bytes: 26,557,920 total
-- Current staged file size: 10,456-byte median; 1,888–39,004-byte range
-- Background split: 1,140 dark; 1,226 light
-- Combined staged content fingerprint: `50e5325c226f91951d8a29bf391f41cecda24f847f3ec10c6431310c39120a4a`
-- Combined staged modification-time fingerprint: `1757abf186cd6df307b8809211d913093ce1e80d64c609b99ca79fc65e6e4217`
+- Current staged bytes: 26,586,082 total
+- Current staged file size: 10,458-byte median; 2,258–39,004-byte range
+- Background split: 1,144 dark; 1,222 light
+- Output treatments: 1,885 image/logo-backed; 478 missing-logo Inter fallbacks; 3 owner-approved Inter text treatments
+- Combined staged content fingerprint: `346c486d5a019e462853fe099f3a55760e626fbbeba5f5e7fdc8500004a3e7ab`
+- Combined staged modification-time fingerprint: `936db6efed47dacb5dbc9ece6f465b233ea6a20a0c7254760c9935b5ad089c19`
 - Final assets published: no
 
 The persistent current state is `.work/reports/production-v1/run-state.json`. The reconciled top-level `entities.jsonl` contains all 2,366 primary records. The post-expansion single-key run retained all previous 2,365 outputs byte-for-byte with their modification times.
@@ -74,23 +76,26 @@ Re-run `font-check` before any future production missing-logo render because thi
 - The original 146 fallback covers were selectively regenerated with Inter in run `2026-07-12T10-15-33-781Z`.
 - The eligibility-50 expansion added 332 Inter fallbacks, bringing the current total to 478.
 - Every current fallback retains Inter, a one- or two-line layout, and `renderStatus: missing-logo` metadata.
+- Three additional owner-approved exact-name Inter treatments are recorded separately with `renderStatus: owner-approved-text`; they are not missing-logo fallbacks and do not carry the missing-logo reason.
 - The focused-review package samples 22 deterministic representatives spanning length, layout, accents, punctuation, institutional names, and the smallest observed font sizes.
 
 The owner resolved the `missing-logo-text-fallback` reason for all 332 newly eligible fallbacks against their exact current output hashes. The 146 older fallback reasons remain pending. A future output-hash change invalidates a resolution; no fallback was automatically approved at the whole-cover level.
 
 ## Current review state
 
-Latest full review preparation contains 244 unique pending records and 287 unresolved reasons:
+Latest full review preparation contains 237 unique pending records and 280 unresolved reasons:
 
 | Category | Records |
 |---|---:|
 | Missing logo | 146 |
-| Unexpectedly opaque source | 7 |
+| Unexpectedly opaque source | 0 |
 | Close background score | 76 |
 | Very-close contrast | 40 |
 | Upscale over 2× | 6 |
 | Likely low resolution | 2 |
-| All needs review, deduplicated | 244 |
+| Mixed-contrast background review | 9 |
+| Low robust contrast | 1 |
+| All needs review, deduplicated | 237 |
 
 Flags overlap, so category counts do not sum to the unique total.
 
@@ -125,17 +130,19 @@ The eligibility-50 owner decisions are applied: 332 fallback reasons, 7 high-ups
 
 The enlarged review package used the complete 153-record unresolved opaque-source population, not only the 76 eligibility-50 subset: 15 `tiny-logo-inside-opaque-canvas`, 110 `opaque-sticker-effect`, 4 `manual-review`, 1 `opaque-blends-with-background`, and 23 `opaque-suitable`. Ten 4×4 pages covered every stable key exactly once. One record had an additional unresolved reason, 36 had estimated foreground pixel proportions at or below 12%, and one had an opaque edge within RGB distance 30 of the selected background. Preparing that package itself resolved no reason.
 
-## Final opaque-source owner review
+## Final opaque-source owner review and source treatments
 
-The owner resolved `unexpectedly-opaque-source-background` for exactly 146 of the 153 reviewed records. Each decision binds the stable key to the exact current output and source-logo hashes. The generic reason-resolution configuration now contains 515 current bindings in total, including 169 opaque-source bindings, with zero stale-output or stale-source bindings.
+The first owner pass resolved `unexpectedly-opaque-source-background` for exactly 146 of the 153 reviewed records. Each decision binds the stable key to the exact current output and source-logo hashes. The seven remaining records then received separate source investigation and explicit treatment decisions.
 
-Exactly seven opaque-source reasons remain unresolved and are classified `needs-better-source`: `company:1742`, `company:2788`, `company:3407`, `company:47208`, `company:69347`, `company:80138`, and `company:102867`. The supplied handoff paired OctoArts Films with `company:4708`; current source/state and the reviewed package prove its stable key is `company:47208`. `company:4708` is Brain Damage Films and was not changed. `company:39074` had only its opaque reason resolved and remains pending for `close-background-scores`.
+The final treatments are: verified official manual sources for `company:1742`, `company:80138`, and `company:102867`; owner-approved exact canonical-name Inter text for `company:2788`, `company:3407`, and `company:69347`; and the exact deterministic current-TMDB-source crop for `company:47208`. Every treatment uses the dark production background. OctoArts Films is `company:47208`; unrelated `company:4708` was not changed.
 
-Full offline reconciliation changed pending review entries from 389 to 244 and unresolved reasons from 433 to 287; the opaque category changed from 153 to 7. The review-state draft is now `cd24a0fa4393d1e7e47747b5410616892f3224bb9e1c49570779f50fee032fe2`, and the review checklist is now `01f842f5cde794277a00415a70d1b9b04c36a75f0a6d599962944b68c5436eaf`.
+The final offline run generated exactly seven covers with zero network requests and zero failures. Full reconciliation verified exactly seven content-and-mtime changes and 2,359 unchanged staged outputs. It removed the seven opaque reasons and the directly related low-resolution reason introduced by the owner-approved Les Films 13 source. The generic resolution configuration now contains 523 bindings: 176 opaque-source and 3 likely-low-resolution bindings, with zero stale-output or stale-source bindings.
 
-Before/after snapshots prove all 2,366 staged covers retained the same bytes and modification times: content fingerprint `50e5325c226f91951d8a29bf391f41cecda24f847f3ec10c6431310c39120a4a` and modification-time fingerprint `1757abf186cd6df307b8809211d913093ce1e80d64c609b99ca79fc65e6e4217`. No cover was generated or regenerated, no network request was made, and no final asset or canonical manifest was written. The source-cache repository was not modified.
+Full review preparation now has 237 pending records and 280 unresolved reasons. The review-state draft is `6f234f9fe763c6e9fa32b780b935d7872a813e55eb70988312271f704d789cde`, and the checklist is `027d2ededb17a4a34c51988a609937077e96061f0954e55ab37c068d22fd77c5`.
 
-The final seven-record sheet, machine-readable data, notes, current output hashes, source dimensions, and visible bounds are under `.work/review-focus/opaque-final-needs-source/`.
+The investigation-only baseline preserved all 2,366 staged bytes and mtimes at content fingerprint `50e5325c226f91951d8a29bf391f41cecda24f847f3ec10c6431310c39120a4a` and mtime fingerprint `1757abf186cd6df307b8809211d913093ce1e80d64c609b99ca79fc65e6e4217`. The later authorised selective verifier moved the fingerprints to the current values above and proved that only the seven approved paths changed. No final asset or canonical manifest was written, and the source-cache repository was not modified.
+
+The investigation comparison sheets and provenance reports remain under `.work/source-quality-seven/`. The applied seven-cover verification sheet is `.work/source-quality-seven-apply/contact-sheets/seven-approved-treatments.png`; its machine-readable selective verification is `.work/source-quality-seven-apply/selective-verification.json`.
 
 ## Post-expansion single-key follow-up
 
@@ -259,21 +266,20 @@ The pre-review protected hashes were:
 - review-state draft SHA-256: `c1b76dd135ca712d1dfe51f94f25d967946c032687f1a20916239149b7f49667`;
 - review checklist SHA-256: `bc50b5acf4fbf9d7305756044327a9117fb7c2cc9a81848b53fbbb29ed4630f2`.
 
-The current reconciled hashes after the final opaque-source owner review are:
+The current reconciled hashes after the approved seven source treatments are:
 
-- review-state draft SHA-256: `cd24a0fa4393d1e7e47747b5410616892f3224bb9e1c49570779f50fee032fe2`;
-- review checklist SHA-256: `01f842f5cde794277a00415a70d1b9b04c36a75f0a6d599962944b68c5436eaf`.
+- review-state draft SHA-256: `6f234f9fe763c6e9fa32b780b935d7872a813e55eb70988312271f704d789cde`;
+- review checklist SHA-256: `027d2ededb17a4a34c51988a609937077e96061f0954e55ab37c068d22fd77c5`.
 
 ## Current open decisions
 
-- Acquisition and explicit approval of better source artwork for the seven remaining opaque-source records.
 - Disposition of the remaining pending fallback, contrast, upscale, and low-resolution reasons.
 - The approval-record workflow and who signs off reviewed hashes.
 - Publication timing after all required review and selected reruns.
 
 ## Exact next step
 
-Use `.work/review-focus/opaque-final-needs-source/needs-better-source.md` and its PNG/JSON companions to locate better source artwork for exactly the seven remaining records. Do not replace a source, rerender a cover, resolve its reason, or publish anything without a separate explicit owner decision.
+Review the applied seven-cover sheet at `.work/source-quality-seven-apply/contact-sheets/seven-approved-treatments.png`, then decide whether to address any of the remaining independent fallback, contrast, upscale, and low-resolution review reasons. Publication remains a separate owner-authorised stage; no final asset or canonical manifest exists.
 
 ## Important commands
 
