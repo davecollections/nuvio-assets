@@ -1,10 +1,10 @@
 # Studio/network batch project status
 
-**Last verified:** 2026-07-15 AEST (UTC+10)
+**Last verified:** 2026-07-16 AEST (UTC+10)
 
-**Verified through decision commit:** `0284533` (`feat: apply seven source-quality decisions`)
+**Verified through decision commit:** `903a359` (`feat: resolve four publication review exceptions`)
 
-**Tracked implementation state:** The eligibility-50 owner decisions and original hash-bound reason-resolution system are in `45dfb71`; explicit new-key reconciliation and reusable enlarged opaque-review tooling are in `ff26340`; the initial opaque-source decisions are in `458abf8`; durable approved source-treatment support is in `c57bce7`; and the exact seven source-quality decisions, verified manual inputs, and hash-bound reason resolutions are in `0284533`. Ignored production/review artifacts remain under `.work/` and must not be added to Git.
+**Tracked implementation state:** The eligibility-50 owner decisions and original hash-bound reason-resolution system are in `45dfb71`; explicit new-key reconciliation and reusable enlarged opaque-review tooling are in `ff26340`; the initial opaque-source decisions are in `458abf8`; durable approved source-treatment support is in `c57bce7`; the exact seven source-quality decisions are in `0284533`; and the four final publication-review exceptions are in `903a359`. Ignored production/review artifacts remain under `.work/` and must not be added to Git.
 
 This file is a dated project snapshot. Recheck the repository and ignored `.work` data before updating it.
 
@@ -30,6 +30,7 @@ The following stages are complete and present locally:
 - an offline 4×4 owner-review package containing every then-unresolved opaque-source record, with complete-source insets and blank output-hash-bound decision fields;
 - owner application of exactly 146 reviewed opaque-source reason resolutions, leaving exactly seven records classified `needs-better-source`, followed by full report/review reconciliation and a final seven-record package.
 - owner application of the seven final source-quality decisions: three verified official manual sources, one deterministic safe crop, and three exact-name Inter treatments; exactly seven covers regenerated offline, eight directly applicable source-quality reasons hash-bound and resolved, and 2,359 unrelated staged outputs retained unchanged.
+- owner application of the four publication-readiness exceptions: three exact source-hash-bound switches to light and one verified official Synthetic Cinema source on dark; exactly four covers regenerated offline, five reasons resolved, and 2,362 unrelated outputs and all unrelated review records retained unchanged.
 
 No publication stage has been performed.
 
@@ -51,12 +52,12 @@ All 2,366 currently eligible source records are now present in persistent produc
 - Location: `.work/staging/production-v1/`
 - Staged WebP files: 2,366 (1,797 companies, 569 networks)
 - Current failed state records: 0
-- Current staged bytes: 26,586,082 total
+- Current staged bytes: 26,589,254 total
 - Current staged file size: 10,458-byte median; 2,258–39,004-byte range
-- Background split: 1,144 dark; 1,222 light
+- Background split: 1,142 dark; 1,224 light
 - Output treatments: 1,885 image/logo-backed; 478 missing-logo Inter fallbacks; 3 owner-approved Inter text treatments
-- Combined staged content fingerprint: `346c486d5a019e462853fe099f3a55760e626fbbeba5f5e7fdc8500004a3e7ab`
-- Combined staged modification-time fingerprint: `936db6efed47dacb5dbc9ece6f465b233ea6a20a0c7254760c9935b5ad089c19`
+- Combined staged content fingerprint: `48eff273e92778f1a20801dad7160e05a659c211c5f942d2a35c6b97f055c508`
+- Combined staged modification-time fingerprint: `fb1454694062842d5301a0768791cbaeab11e89ce382272bab8adaca19775951`
 - Final assets published: no
 
 The persistent current state is `.work/reports/production-v1/run-state.json`. The reconciled top-level `entities.jsonl` contains all 2,366 primary records. The post-expansion single-key run retained all previous 2,365 outputs byte-for-byte with their modification times.
@@ -83,19 +84,19 @@ The owner resolved the `missing-logo-text-fallback` reason for all 332 newly eli
 
 ## Current review state
 
-Latest full review preparation contains 237 unique pending records and 280 unresolved reasons:
+Latest full review preparation contains 233 unique pending records and 275 unresolved reasons:
 
 | Category | Records |
 |---|---:|
 | Missing logo | 146 |
 | Unexpectedly opaque source | 0 |
-| Close background score | 76 |
-| Very-close contrast | 40 |
+| Close background score | 73 |
+| Very-close contrast | 39 |
 | Upscale over 2× | 6 |
 | Likely low resolution | 2 |
 | Mixed-contrast background review | 9 |
-| Low robust contrast | 1 |
-| All needs review, deduplicated | 237 |
+| Low robust contrast | 0 |
+| All needs review, deduplicated | 233 |
 
 Flags overlap, so category counts do not sum to the unique total.
 
@@ -136,13 +137,23 @@ The first owner pass resolved `unexpectedly-opaque-source-background` for exactl
 
 The final treatments are: verified official manual sources for `company:1742`, `company:80138`, and `company:102867`; owner-approved exact canonical-name Inter text for `company:2788`, `company:3407`, and `company:69347`; and the exact deterministic current-TMDB-source crop for `company:47208`. Every treatment uses the dark production background. OctoArts Films is `company:47208`; unrelated `company:4708` was not changed.
 
-The final offline run generated exactly seven covers with zero network requests and zero failures. Full reconciliation verified exactly seven content-and-mtime changes and 2,359 unchanged staged outputs. It removed the seven opaque reasons and the directly related low-resolution reason introduced by the owner-approved Les Films 13 source. The generic resolution configuration now contains 523 bindings: 176 opaque-source and 3 likely-low-resolution bindings, with zero stale-output or stale-source bindings.
+The seven-cover offline run generated exactly seven covers with zero network requests and zero failures. Full reconciliation verified exactly seven content-and-mtime changes and 2,359 unchanged staged outputs. It removed the seven opaque reasons and the directly related low-resolution reason introduced by the owner-approved Les Films 13 source. At that checkpoint, the generic resolution configuration contained 523 bindings and full review preparation contained 237 pending records and 280 unresolved reasons.
 
-Full review preparation now has 237 pending records and 280 unresolved reasons. The review-state draft is `6f234f9fe763c6e9fa32b780b935d7872a813e55eb70988312271f704d789cde`, and the checklist is `027d2ededb17a4a34c51988a609937077e96061f0954e55ab37c068d22fd77c5`.
+Those checkpoint review hashes were `6f234f9fe763c6e9fa32b780b935d7872a813e55eb70988312271f704d789cde` for the draft and `027d2ededb17a4a34c51988a609937077e96061f0954e55ab37c068d22fd77c5` for the checklist.
 
 The investigation-only baseline preserved all 2,366 staged bytes and mtimes at content fingerprint `50e5325c226f91951d8a29bf391f41cecda24f847f3ec10c6431310c39120a4a` and mtime fingerprint `1757abf186cd6df307b8809211d913093ce1e80d64c609b99ca79fc65e6e4217`. The later authorised selective verifier moved the fingerprints to the current values above and proved that only the seven approved paths changed. No final asset or canonical manifest was written, and the source-cache repository was not modified.
 
 The investigation comparison sheets and provenance reports remain under `.work/source-quality-seven/`. The applied seven-cover verification sheet is `.work/source-quality-seven-apply/contact-sheets/seven-approved-treatments.png`; its machine-readable selective verification is `.work/source-quality-seven-apply/selective-verification.json`.
+
+## Publication-readiness four-exception follow-up
+
+The owner approved light backgrounds for `company:12852` (Shout! Factory), `company:24546` (ITV Studios), and `network:1795` (ORF III). Each manual decision and reason resolution binds the stable key to the exact current TMDB source and regenerated output hashes.
+
+For `company:23761` (Synthetic Cinema International), the owner-supplied `https://www.syntheticcinema.com/sci-logo.webp` decoded as a 2,367×472 transparent WebP with SHA-256 `c72bc6092c52200a3e342d1b7677ac9c921a1fb7d9ce683228a6278a6b37d1ae`. It is served by the organisation's official website, has clean transparent edges, and produced a materially stronger dark-background comparison. The treatment remains bound to the original TMDB source hash, the verified official source hash, and treatment hash `d242f89259ca0bfb75c1c8be4cf13c993ae49bea2275ff03c4cca5b6d58c28c7`.
+
+Run `2026-07-15T22-45-59-078Z` selected exactly those four keys with `--force --offline`, generated four covers, made zero network requests, and had zero download, decode, analysis, or render failures. Full reconciliation verified exactly four content-and-mtime changes, 2,362 byte-and-mtime-identical unrelated outputs, and zero unrelated persistent-state or review-entry changes. Pending review changed from 237 records and 280 reasons to 233 records and 275 reasons. All four authorised records now have no unresolved reason.
+
+The verification sheet is `.work/owner-follow-up-four/contact-sheets/four-approved-outcomes.png`; the Synthetic Cinema source comparison is `.work/owner-follow-up-four/contact-sheets/synthetic-cinema-comparison.png`; and the machine-readable selective proof is `.work/owner-follow-up-four/reports/selective-verification.json`. Current review hashes are `64bf26efb67b1787939a27abe5004e4076152cea3ce00a733a5284998b57746c` for the draft and `8061862c2d9a6274a98939aa10f2aa64cb1f0ea495c584b39a69a08f8df9d236` for the checklist. Nothing was published.
 
 ## Post-expansion single-key follow-up
 
@@ -152,7 +163,7 @@ Run `2026-07-15T08-17-53-376Z` generated one logo-backed dark cover with hash `c
 
 At that checkpoint, full-state reconciliation verified one absent-before addition, 2,365 unchanged paths, zero old content or modification-time changes, 2,366 valid 1200×675 WebPs, 389 pending review entries, 433 unresolved reasons, zero review/output hash mismatches, and zero stale output/source bindings. Atresmedia Cine has no review reason. The then-current review-state draft and checklist hashes were `db3aa4d8d247fd0acbdaf35aa3e248dbc4bb9ed00b7b071480a5822c3316b269` and `a65bbcab014337e31bdc54bc598884d7ed7490b246dafabce7979e1716443295`.
 
-## Eligibility-50 owner review outcome
+## Historical eligibility-50 owner review outcome (2,365-record checkpoint)
 
 Run `2026-07-14T10-10-21-277Z` used the exact five-key plan with `--force --offline`. It selected and generated five light covers, reused five cached downloads, made zero network requests, generated zero fallbacks, and had zero download, decode, analysis, or render failures.
 
@@ -236,7 +247,7 @@ The full reconciled verification proves:
 
 Review preparation was rebuilt from the full persistent state: 1,075 report records, 266 unique needs-review records, 14 focused sheets, zero missing staged files, and zero report/output hash mismatches. The reason-group counts remain unchanged because the mixed-contrast experiment had not previously injected those reasons into production state.
 
-## Eligibility-50 expansion
+## Historical eligibility-50 expansion (2,365-record checkpoint)
 
 The approved production automatic thresholds are independently configurable and currently set to 50 for companies and 50 for networks in `config/eligibility.json`. All audit, plan, generate, new, and changed selections use the same resolver. Records at 100 or above are `core`; automatically eligible records from 50–99 are `expanded-threshold`. No `curated-exception` is approved, and below-threshold `explicit` processing still requires an explicit ID selection with `--include-ineligible`.
 
@@ -266,7 +277,7 @@ The pre-review protected hashes were:
 - review-state draft SHA-256: `c1b76dd135ca712d1dfe51f94f25d967946c032687f1a20916239149b7f49667`;
 - review checklist SHA-256: `bc50b5acf4fbf9d7305756044327a9117fb7c2cc9a81848b53fbbb29ed4630f2`.
 
-The current reconciled hashes after the approved seven source treatments are:
+The historical reconciled hashes immediately after the approved seven source treatments were:
 
 - review-state draft SHA-256: `6f234f9fe763c6e9fa32b780b935d7872a813e55eb70988312271f704d789cde`;
 - review checklist SHA-256: `027d2ededb17a4a34c51988a609937077e96061f0954e55ab37c068d22fd77c5`.
@@ -279,7 +290,7 @@ The current reconciled hashes after the approved seven source treatments are:
 
 ## Exact next step
 
-Review the applied seven-cover sheet at `.work/source-quality-seven-apply/contact-sheets/seven-approved-treatments.png`, then decide whether to address any of the remaining independent fallback, contrast, upscale, and low-resolution review reasons. Publication remains a separate owner-authorised stage; no final asset or canonical manifest exists.
+Review the four-cover verification sheet at `.work/owner-follow-up-four/contact-sheets/four-approved-outcomes.png`, then decide whether the remaining independent fallback, contrast, upscale, and low-resolution review records block publication. Publication remains a separate owner-authorised stage; no final asset or canonical manifest exists. Current tooling also has no explicit pruning step for superseded ignored review/contact-sheet pages, so publication cleanup policy must be decided before any future publish implementation.
 
 ## Important commands
 
