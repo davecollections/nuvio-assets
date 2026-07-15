@@ -2,9 +2,12 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { atomicWrite, atomicWriteJson } from "./atomic.mjs";
+import { loadBackgroundDecisionConfiguration } from "./background-decision.mjs";
 import { createContactSheet, paginateContactSheetItems } from "./contact-sheet.mjs";
 import { compareEntities } from "./constants.mjs";
 import { bufferFingerprint } from "./fingerprints.mjs";
+import { applyReviewResolutionsInMemory } from "./reason-approval.mjs";
+import { loadReviewReasonResolutionConfiguration } from "./review-reason-resolution.mjs";
 
 const GROUP_DEFINITIONS = [
   { id: "missing-logo", filePrefix: "missing-logo", reason: "missing-logo-text-fallback", matches: (record) => record.reviewReasons?.includes("missing-logo-text-fallback") },
@@ -172,7 +175,12 @@ export async function prepareProductionReview({ packageRoot, preset, fontCheckRe
   for (const outputRoot of [reviewSheetsRoot, reviewStateRoot]) {
     if (!isWithin(outputRoot, workRoot)) throw new Error(`Review preparation refuses to write outside .work: ${outputRoot}`);
   }
-  const records = await readCurrentProductionRecords(reportsRoot);
+  const persistentRecords = await readCurrentProductionRecords(reportsRoot);
+  const [reasonConfiguration, backgroundConfiguration] = await Promise.all([
+    loadReviewReasonResolutionConfiguration(packageRoot, preset),
+    loadBackgroundDecisionConfiguration(packageRoot, preset),
+  ]);
+  const records = applyReviewResolutionsInMemory(persistentRecords, reasonConfiguration, backgroundConfiguration);
   const groups = buildReviewGroups(records, preset);
   const uniqueNeedsReview = groups["all-needs-review"].records;
   let existingEntries = [];
@@ -232,6 +240,9 @@ export async function prepareProductionReview({ packageRoot, preset, fontCheckRe
   }
   return {
     reportRecords: records.length,
+    persistentPendingRecords: persistentRecords.filter((record) => record.reviewStatus === "needs-review").length,
+    effectiveResolvedReasons: persistentRecords.reduce((sum, record, index) =>
+      sum + Math.max(0, (record.reviewReasons ?? []).length - (records[index].reviewReasons ?? []).length), 0),
     uniqueNeedsReview: uniqueNeedsReview.length,
     groupCounts: Object.fromEntries(indexGroups.map((group) => [group.sheetName, group.count])),
     totalSheets: index.totalSheets,

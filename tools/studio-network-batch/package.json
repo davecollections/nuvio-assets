@@ -17,6 +17,7 @@
     "reconcile-production": "node src/production-reconcile-cli.mjs",
     "threshold-audit": "node src/threshold-audit-cli.mjs",
     "review-prep": "node src/review-prep-cli.mjs",
+    "approve-review-reasons": "node src/reason-approval-cli.mjs",
     "review-focus": "node src/review-focus-cli.mjs",
     "opaque-review": "node src/opaque-review-cli.mjs"
   },

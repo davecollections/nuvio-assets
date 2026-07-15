@@ -1,10 +1,24 @@
 [
   {
+    "stableKey": "company:207",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "de758dd96c44232c9eaee4013f9c4b57058f296f111cff25b815d4b69d9079d3",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Agat Films & Cie / Ex Nihilo"
+  },
+  {
     "stableKey": "company:420",
     "backgroundPreset": "light",
     "sourceLogoHash": "4511a2e3b8bab239ae2454d31b1ec4084d9c9494413ce2ced97f0067ea1ade7d",
     "reason": "Owner approved final eligibility-50 background",
     "name": "Marvel Studios"
+  },
+  {
+    "stableKey": "company:822",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "359b86ab7677e5b73987928c078fdbcffd5c054e86756f4762f78740ebe2cfd1",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Happinet Pictures"
   },
   {
     "stableKey": "company:880",
@@ -21,11 +35,53 @@
     "name": "Acar Film"
   },
   {
+    "stableKey": "company:1950",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "3818a550c800013175ff313e998ea75ad280c98c8434e5c6666bd0d0bf45985e",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "New World Pictures"
+  },
+  {
+    "stableKey": "company:2606",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "09c559e4bf130d02fb4b3d13eab5f8f978cf8fee3121d7ae344b016da182fccc",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Idéale Audience"
+  },
+  {
     "stableKey": "company:5056",
     "backgroundPreset": "dark",
     "sourceLogoHash": "dc9eaaee506601b179a41fda00349f6d5372746a194436e8be24244c0750dffa",
     "reason": "Owner approved final mixed-contrast background",
     "name": "Head Gear Films"
+  },
+  {
+    "stableKey": "company:5069",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "94d2cbb45f6d3910f7fddfff0d615e6ad179c2b94d76f0d1af9ea6273e143a00",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Mainichi Shimbun"
+  },
+  {
+    "stableKey": "company:5369",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "5d32fae4fcc0ef516c09d376a03bba39e54e82ceebd7ed54d6055e969b59715b",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "GMM Tai Hub (GTH)"
+  },
+  {
+    "stableKey": "company:5671",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "15708573583ce2663c970535f02270207608e1a3bd3b75bf92a88bf446869c0d",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Ishimori Production"
+  },
+  {
+    "stableKey": "company:5754",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "d4e5fa40050a8c53ea58844331130becbb8d00859b350866be6dc100496b906f",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Rat Pack Filmproduktion"
   },
   {
     "stableKey": "company:5798",
@@ -42,6 +98,27 @@
     "name": "Muse Entertainment"
   },
   {
+    "stableKey": "company:6626",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "3089d99b325f3e4c25ed7368855b156badec541c4ac349e8799352e627f58f43",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Voltage Pictures"
+  },
+  {
+    "stableKey": "company:7395",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "dee9dce49a2db4330d47520348c4a68d0917dd833ca260cce318d0d98d760ad1",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Les films du Worso"
+  },
+  {
+    "stableKey": "company:7724",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "0029573db10abb668bb0c514a08888f282460c7b8655a2e23fb88a789489d2b0",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Red Bull Media House"
+  },
+  {
     "stableKey": "company:7981",
     "backgroundPreset": "light",
     "sourceLogoHash": "9f8246aa302c8f826b124fe28be5a2a4134471cbf7712e133663e0e8b59e03b5",
@@ -49,11 +126,39 @@
     "name": "Pathé"
   },
   {
+    "stableKey": "company:8157",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "0f3cc7ef90807f6d7f258cc82493ffa103f5e560c241690e70d34c5cb2f2baa5",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "jeki"
+  },
+  {
+    "stableKey": "company:9115",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "98ac871c7f1458be26af2832b01014dc48e24f5d533537ba1f16365bf520d433",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Société Radio-Canada"
+  },
+  {
+    "stableKey": "company:10188",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "929ae1632903b835d64a92dfa987cd85fb8d046294a8acfe8cd5742262a3e0af",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Aleph"
+  },
+  {
     "stableKey": "company:10330",
     "backgroundPreset": "dark",
     "sourceLogoHash": "6e8d1a4088c3811adb4a7553a7885f72dc89056e108d0586da51e67659832743",
     "reason": "Owner approved final mixed-contrast background",
     "name": "Universal International Pictures"
+  },
+  {
+    "stableKey": "company:10951",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "3bee4d2d7bc0ab8e6875763c5055a2095bf81853cf57631727239bc89010fd88",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Screen NSW"
   },
   {
     "stableKey": "company:11339",
@@ -84,11 +189,60 @@
     "name": "La Poudrière"
   },
   {
+    "stableKey": "company:12077",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "e40753cf776b943cd0b88da37caf1756175a9d8a003503191841366be79ebeff",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Viacom Productions"
+  },
+  {
+    "stableKey": "company:12372",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "a2e8554eab7d86471c47814ac9975ad91ad536f2e3cc4921fb4a79ff27a6e80c",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "UFA"
+  },
+  {
+    "stableKey": "company:12434",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "86c52a4913b3fe3f3cc204fae12b7ed02031da2b5b971b4ef3c51a46fe1f4dcb",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Autour de Minuit"
+  },
+  {
     "stableKey": "company:12852",
     "backgroundPreset": "light",
     "sourceLogoHash": "c94555ae1264bed07c562e408939fb8d010dd96e3cfe25af340c09529c58c6d5",
     "reason": "Owner approved final publication-readiness background",
     "name": "Shout! Factory"
+  },
+  {
+    "stableKey": "company:13571",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "cfac2a36998b5a3e48071b0664630b2b855b8aade74e06a7f418591cd24f8361",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Disney Educational Productions"
+  },
+  {
+    "stableKey": "company:13668",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "e25c60ff226ed225630b34c987204a75af004d8397f19beaf9f1f6a368b9b80f",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "RTS"
+  },
+  {
+    "stableKey": "company:13839",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "ca08d69c58425498b25e90152619b144e9eb45b6d78796a129cdd6e20ce615de",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Metafilms"
+  },
+  {
+    "stableKey": "company:15505",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "0429672b7115976f7d8f253a311cebd84d1e3b95cec6117fc06c82f944d256e0",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "NHK"
   },
   {
     "stableKey": "company:17009",
@@ -105,6 +259,13 @@
     "name": "Lumiton"
   },
   {
+    "stableKey": "company:21246",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "213f43a08b882f33c6a71c869cb72e74322b997cd68261ef31c0eeec2d49bd29",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Wildside"
+  },
+  {
     "stableKey": "company:22155",
     "backgroundPreset": "dark",
     "sourceLogoHash": "273dc2199f438e1936f64c49e0fb473f70ee728efcbb0c4ca27d97a547af431a",
@@ -119,11 +280,53 @@
     "name": "ITV Studios"
   },
   {
+    "stableKey": "company:25204",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "76eff90622bc17400f356f0a10103e519bd3d472f50bae2df5077f363ba0b761",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "RTS"
+  },
+  {
     "stableKey": "company:27683",
     "backgroundPreset": "light",
     "sourceLogoHash": "e82ebe289e6e04914517e3748aa7c65a44916bf773e15e3bdc551a27e7406bef",
     "reason": "Owner approved final mixed-contrast background",
     "name": "Televizija Zagreb"
+  },
+  {
+    "stableKey": "company:35953",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "959150fd2020025647cb6c12618996d088cfe308ab0d9901dd8725294c708b09",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "TF1 Production"
+  },
+  {
+    "stableKey": "company:39074",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "36684c6616f8e778aab5846379e5e2647d63d4a9709424c58beb504b32dd66b8",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "August 1st Film Studio 八一电影制片厂 (A1FS)"
+  },
+  {
+    "stableKey": "company:41861",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "958e27639a81b4b45c01ba7a42c362f3a54840b355d4f0e95a8fc95e93a7ff1d",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "GYAO"
+  },
+  {
+    "stableKey": "company:44161",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "a9beed9cb022e16d355dfa48decd529c71ff3d6b9f56060b174b4a8d6a2b4e30",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Suresh Productions"
+  },
+  {
+    "stableKey": "company:44989",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "758e16e5f7a8acfc2d64f192c998889e08723efda7269870d28994c7fe1eec3a",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Phantom Film"
   },
   {
     "stableKey": "company:55802",
@@ -133,11 +336,95 @@
     "name": "MM2 Entertainment"
   },
   {
+    "stableKey": "company:57621",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "551d6c518d5701ea934b8cc65ebadd007536885cbed8725fc573b85ce089b151",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Film Development Council of the Philippines"
+  },
+  {
+    "stableKey": "company:57752",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "6ed92b4d706fdaab118d9e3536c25f1275d3175f1f797bebb04982c34df9af43",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Nord-Ouest Films"
+  },
+  {
+    "stableKey": "company:66331",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "81ee81f2a0525c90b332f5276faf8b87c11508176f0f22366c9e1acb4b22468f",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Bonne Pioche"
+  },
+  {
+    "stableKey": "company:69587",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "91db349c0756f2e1016d738ccd63f000130eb4609042ff23d3c01a04eb1634fe",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Russia 1"
+  },
+  {
+    "stableKey": "company:78523",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "5e5963b414579f42be9aaff143b7ae0ba8d6d4744c84f92191e248587280c8f6",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Universitat Pompeu Fabra"
+  },
+  {
     "stableKey": "company:78952",
     "backgroundPreset": "dark",
     "sourceLogoHash": "8fe209d6b312cbf676016f41d79bbbea16a79c4d04a56e7cb8852dea0a5e7ae0",
     "reason": "Owner approved final eligibility-50 background",
     "name": "Wanda Pictures"
+  },
+  {
+    "stableKey": "company:81414",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "1d2069303e283e375fe1be2d53fb73fa59a66a62f086dc546e0e704a0c121cbc",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Hokkaido Television Broadcasting"
+  },
+  {
+    "stableKey": "company:85580",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "3d19a5ea736200abf020b5665465a19a4fa8bb54e1382daeb18c5bf3e4cddd11",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "TRT"
+  },
+  {
+    "stableKey": "company:97346",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "22bbe75d5dccab6f8e2b9c9124cd8abb9ac8d1c8e04eaaa9e2d1fa025836b77f",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Brain Power Studio"
+  },
+  {
+    "stableKey": "company:115599",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "75c7310a37fa15e937ea1c6996d4c71417b9237a62c1599e980429ff1f8b8728",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Nikolaus Geyrhalter Filmproduktion"
+  },
+  {
+    "stableKey": "company:116072",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "df7e0e4d57837b0f28899a97e3c2b6aecf0da8dcfe371c438fc55fc53ebca76e",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Histoire TV"
+  },
+  {
+    "stableKey": "company:130409",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "2bbeb48d9a86224ac73920bbdeaa6ef415c14afee70dfcbd909d735874425f32",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "FFTV IKJ"
+  },
+  {
+    "stableKey": "company:131381",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "1cafbdcdacd9b0e32d8b418ed940a623557905fa8439b8f9aa990e66490fabc1",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Film and Television Institute of India"
   },
   {
     "stableKey": "company:138205",
@@ -154,11 +441,109 @@
     "name": "BBC TV"
   },
   {
+    "stableKey": "company:192168",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "cf822ace10dc34b570e6c08ce6d298a677f7663f2bbed0183d70b0bf0e83aa08",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "NIFCO"
+  },
+  {
+    "stableKey": "company:193549",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "359b86ab7677e5b73987928c078fdbcffd5c054e86756f4762f78740ebe2cfd1",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Happinet"
+  },
+  {
+    "stableKey": "network:12",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "1d2069303e283e375fe1be2d53fb73fa59a66a62f086dc546e0e704a0c121cbc",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "HTB"
+  },
+  {
+    "stableKey": "network:28",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "90330dbf9f4bc1c3b3da334816b2b2bbeb1a35f9d4efdeb1ba91dd803ac0db00",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Univision"
+  },
+  {
+    "stableKey": "network:30",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "bb863bdf39909142497d20a55773850b5f23c8da4dcfe25de41a01728c6e4534",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "USA Network"
+  },
+  {
+    "stableKey": "network:46",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "70ff4a22b849dd57e4e5b4436d82a275334c06c15e655d29c0baffaf11cd8699",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "YTV"
+  },
+  {
     "stableKey": "network:83",
     "backgroundPreset": "dark",
     "sourceLogoHash": "337a45d10df3022014728862ad8df1233c42f37bb308a512abdaa7f49854441e",
     "reason": "Owner approved final mixed-contrast background",
     "name": "Teletoon"
+  },
+  {
+    "stableKey": "network:103",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "18fda9736acad965386ab8eb0077d4d68f961b168f6ce3b09e04c74f62f74506",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "tv asahi"
+  },
+  {
+    "stableKey": "network:118",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "5c1eef6f4c5a10f7233bf7926b0ca48231514e998917f7ed04ca4bd04b63398e",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Seven Network"
+  },
+  {
+    "stableKey": "network:157",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "5ee86f021a77aed0fe7972e28492e63875b72b865568fc6a5c984f8d8f9e189a",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "TVNorge"
+  },
+  {
+    "stableKey": "network:177",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "e9b5254a76164e360dd5e8a895177365a282585222ee44b115fab0be8e11c09c",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "DD National"
+  },
+  {
+    "stableKey": "network:189",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "bc3da635ea540aba61f0fcee95f0aa541d29fd010a7a11e0d2f544cb45606cdb",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "ORF 1"
+  },
+  {
+    "stableKey": "network:213",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "b303bfb65d4b63f353357e4ddfab010f14756c713327a45b71d8afc7141bea13",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Netflix"
+  },
+  {
+    "stableKey": "network:236",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "207a5e9d01635d0a8890b44d8b2984d23912b163b635ee97f87c2252498ea5e2",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Rai 2"
+  },
+  {
+    "stableKey": "network:295",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "0c7825031dbfc3140d84a1e62343693fa9465634077a0372580be971b09c7114",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "MTV3"
   },
   {
     "stableKey": "network:344",
@@ -168,11 +553,74 @@
     "name": "Channel 3"
   },
   {
+    "stableKey": "network:378",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "4b88d8bb47681067aa55bed3db68265b61d665bc3a08af854bd41813e9331e48",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Cuatro"
+  },
+  {
+    "stableKey": "network:412",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "b41fd7a1dc1aca21a99c659a866169069ad78b29cfe5799c6b9bd7fc6f1c317c",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Russia-1"
+  },
+  {
+    "stableKey": "network:437",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "098950584c55ff0781aa4f0b51db5bef11589987e2415eaa867d31cf5c75b465",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Kanal 5"
+  },
+  {
     "stableKey": "network:461",
     "backgroundPreset": "light",
     "sourceLogoHash": "028ec7cb63dd49d1e5249cdd61e851f52913718fba92e2b89af0c81f7c2b1aee",
     "reason": "Owner approved final mixed-contrast background",
     "name": "ATV"
+  },
+  {
+    "stableKey": "network:538",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "5d433160f5211108bd25e0f3fafe182ee1283458be66f81717d6b33be6a63571",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "VTV3"
+  },
+  {
+    "stableKey": "network:676",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "0fdab76a849bbc637b34d8c9715eccb2855bd5040e7cb3972ddedf1db6060f4b",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Sony Entertainment Television"
+  },
+  {
+    "stableKey": "network:829",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "abb988dae4008dd1ad79d9d54af2ac7a6fec44eca6a678903b15d992ee2b180e",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "KBS1"
+  },
+  {
+    "stableKey": "network:1016",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "a7f59254e17b3e9301e91ff2b75969812dde330f54c9e08c48d77abad4428f6b",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "laSexta"
+  },
+  {
+    "stableKey": "network:1054",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "62ecc97576ca3532bb495a6a1c45ff70954950e34b38efe80a3eca1236ffae14",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "MBC MASR"
+  },
+  {
+    "stableKey": "network:1137",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "1fa1ccfdc8a2d04eec37d8586ed936315f15ff1129378d465471fe1f8c15c149",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "KBS Kyoto"
   },
   {
     "stableKey": "network:1199",
@@ -182,11 +630,67 @@
     "name": "NTV"
   },
   {
+    "stableKey": "network:1260",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "914e03358fdcbd390d86eeb3af4507e7c82e7f9394d7c3139f7e5cf70f92816e",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Sohu Video"
+  },
+  {
+    "stableKey": "network:1277",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "b72dadfeb257a68948aff468d13b548a1c58ae150a4bdf5a2f30a2e3826837c2",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "RTVS"
+  },
+  {
+    "stableKey": "network:1625",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "d48faa6f029c4ff43dbd2ded83655482c81f0328de024e2ce892cf71160291b6",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Ukraine"
+  },
+  {
     "stableKey": "network:1795",
     "backgroundPreset": "light",
     "sourceLogoHash": "30f6958a8c3ebc2e355953464e371d10b64a5a4c59d9951368fc0cb7c32fb13d",
     "reason": "Owner approved final publication-readiness background",
     "name": "ORF III"
+  },
+  {
+    "stableKey": "network:2147",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "1891ec6f29275d28d935655bd947d1257ca8032831dcba185fe87b09b14c0a2e",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "ARD-alpha"
+  },
+  {
+    "stableKey": "network:2334",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "0429672b7115976f7d8f253a311cebd84d1e3b95cec6117fc06c82f944d256e0",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "NHK"
+  },
+  {
+    "stableKey": "network:2462",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "fd0c5202a31d0ca08b8ce197b767554571824a9c883312871b4a8feda707444a",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "NBC"
+  },
+  {
+    "stableKey": "network:2686",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "bd292efc84bed0bcc549ca69dbdcc7b9db41fbfeaa1c4127af53703bc2faafcd",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Fox Kids"
+  },
+  {
+    "stableKey": "network:2978",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "c51a09dcaebc4cf81917197d8f012ade06d55b1e90ba2a5b921d6a7abab7ca5f",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Channel 8"
   },
   {
     "stableKey": "network:3127",
@@ -203,6 +707,27 @@
     "name": "WeTV"
   },
   {
+    "stableKey": "network:3784",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "157ce78dc671dd4778524363a16d8afc19b3d30869eff89c66e927fdd108d1a0",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Channel 101"
+  },
+  {
+    "stableKey": "network:3920",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "21d7a57c75f35a5bedef7dd44900fd450e1b1e8c598edc92e069b1e54f266653",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Kapamilya Channel"
+  },
+  {
+    "stableKey": "network:4330",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "9f8048f3bf5859396bfaef3fcdc6e3a21061c93fbef6e2b04e1f4d9c6f4e7920",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Paramount+"
+  },
+  {
     "stableKey": "network:4353",
     "backgroundPreset": "light",
     "sourceLogoHash": "cd284be2daff76a191b2f5138657ea8b30e4c6ba5fadf812cabd878d235d0ab0",
@@ -217,10 +742,45 @@
     "name": "Discovery+"
   },
   {
+    "stableKey": "network:4547",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "083c78799ef43cb8eec2a10a204fa6abc906fdd294f801373d2a4e59e37f9ea9",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "OPTO"
+  },
+  {
+    "stableKey": "network:4798",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "37aa9d589dcddc7fe0d1b58cede61b390f151c7d322209b5e9b0847dc2522765",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "ABA"
+  },
+  {
     "stableKey": "network:4883",
     "backgroundPreset": "light",
     "sourceLogoHash": "ccf525844288b5349bdcb790067abb4acf981ffccf268b0af9613cefd9a8a952",
     "reason": "Owner approved final eligibility-50 background",
     "name": "discovery+"
+  },
+  {
+    "stableKey": "network:5174",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "a0dc53aaebd43cacf06aeffe17b835c97680d68eb7a414dd0a3f226fc07e0d6a",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Voyo"
+  },
+  {
+    "stableKey": "network:6366",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "e88cc7566fe9fb0ccd0cabab5d69d8534d9015923ac2a62be813d638b1486f11",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Akita Asahi Broadcasting"
+  },
+  {
+    "stableKey": "network:7167",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "cfb0906a138b1537c24329660738cc632a384f371bbd083c82bb87612565d3df",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "3Cat"
   }
 ]
