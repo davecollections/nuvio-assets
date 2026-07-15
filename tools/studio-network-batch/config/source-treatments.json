@@ -4,6 +4,7 @@
     "company:1742",
     "company:2788",
     "company:3407",
+    "company:23761",
     "company:47208",
     "company:69347",
     "company:80138",
@@ -52,6 +53,25 @@
       "text": "Shanghai Film Group",
       "fontFamily": "Inter",
       "ownerDecision": "Owner-approved Inter text treatment using the exact canonical name because no verified cleaner logo source was accepted."
+    },
+    {
+      "stableKey": "company:23761",
+      "treatmentId": "company-23761__official-01",
+      "type": "manual-source",
+      "canonicalName": "Synthetic Cinema International",
+      "originalTmdbLogoPath": "/4jwuS7AnT0Itq4ExleF90Cmo3mt.png",
+      "originalTmdbSourceHash": "408019fcacd0be7b73b97a6d6ad758c9a0eab0a2cc94bf26ddda576635adf206",
+      "selectedBackground": "dark",
+      "sourcePath": "manual-sources/companies/23761/synthetic-cinema-international-official.webp",
+      "sourcePageUrl": "https://www.syntheticcinema.com/",
+      "directAssetUrl": "https://www.syntheticcinema.com/sci-logo.webp",
+      "sourceHash": "c72bc6092c52200a3e342d1b7677ac9c921a1fb7d9ce683228a6278a6b37d1ae",
+      "sourceWidth": 2367,
+      "sourceHeight": 472,
+      "provenanceType": "official-website",
+      "provenanceConfidence": "high",
+      "licenceOrRightsNote": "Asset served by the organisation's official website; the site states © 2026 Synthetic Cinema International, All Rights Reserved; logo/trademark rights may apply.",
+      "ownerDecision": "Owner-approved verified official transparent source on the production dark background after direct dark/light comparison."
     },
     {
       "stableKey": "company:47208",

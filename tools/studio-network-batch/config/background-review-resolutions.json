@@ -84,6 +84,13 @@
     "name": "La Poudrière"
   },
   {
+    "stableKey": "company:12852",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "c94555ae1264bed07c562e408939fb8d010dd96e3cfe25af340c09529c58c6d5",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "Shout! Factory"
+  },
+  {
     "stableKey": "company:17009",
     "backgroundPreset": "dark",
     "sourceLogoHash": "3a40c35d230b9a986d15291ab54b9e198662b4906907c1377823c6e9e49fb594",
@@ -103,6 +110,13 @@
     "sourceLogoHash": "273dc2199f438e1936f64c49e0fb473f70ee728efcbb0c4ca27d97a547af431a",
     "reason": "Owner approved final mixed-contrast background",
     "name": "Karagiannis-Karatzopoulos"
+  },
+  {
+    "stableKey": "company:24546",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "631debaded10ce7b8dbc6cc665458a47fcbcef8030d2714c70ff0c4e8275f923",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "ITV Studios"
   },
   {
     "stableKey": "company:27683",
@@ -166,6 +180,13 @@
     "sourceLogoHash": "0d599ccc4c59997da8481950aae58ec04d9810ffe81bcea6b505b7a86348b44c",
     "reason": "Owner approved final mixed-contrast background",
     "name": "NTV"
+  },
+  {
+    "stableKey": "network:1795",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "30f6958a8c3ebc2e355953464e371d10b64a5a4c59d9951368fc0cb7c32fb13d",
+    "reason": "Owner approved final publication-readiness background",
+    "name": "ORF III"
   },
   {
     "stableKey": "network:3127",

@@ -16,14 +16,29 @@
           "70f192340eb15249e78e4ababefe90054b4ddd09299a8a34c4ff613d8cae1a18"
         ],
         [
+          "company:12852",
+          "345b4688bbbb4e4cc7be56854768bd9712bb57e0f18db0a79163ddb28dc6e83f",
+          "c94555ae1264bed07c562e408939fb8d010dd96e3cfe25af340c09529c58c6d5"
+        ],
+        [
           "company:17009",
           "08dbe48b268ad13880598800ef455d9e53ab85bbcb41e70ae016b2f9f80c1d62",
           "3a40c35d230b9a986d15291ab54b9e198662b4906907c1377823c6e9e49fb594"
         ],
         [
+          "company:24546",
+          "1f0655a6f9d16dd9d91fd6dfd33769d96e2c10586f79ecbcb6bfbbe152af8a0d",
+          "631debaded10ce7b8dbc6cc665458a47fcbcef8030d2714c70ff0c4e8275f923"
+        ],
+        [
           "company:78952",
           "84d895ed518f4b0d77fe13e5491c46cad57f3c35e8a49ea8fc2f8732522323b3",
           "8fe209d6b312cbf676016f41d79bbbea16a79c4d04a56e7cb8852dea0a5e7ae0"
+        ],
+        [
+          "network:1795",
+          "0c348f352e8fd5312fb44ba2c6f9a7868bc58fd0a585d111878188d9dee49558",
+          "30f6958a8c3ebc2e355953464e371d10b64a5a4c59d9951368fc0cb7c32fb13d"
         ]
       ]
     },
@@ -77,6 +92,17 @@
         [
           "company:4667",
           "1f4ae55624f09ff76978ad73df6b7b60ffa929d47803a2c5ceff359d2d7a01b2"
+        ]
+      ]
+    },
+    {
+      "reason": "low-robust-contrast",
+      "approvalReason": "Owner-approved verified official source review",
+      "bindings": [
+        [
+          "company:23761",
+          "314c1b8f39654b60727d855e7f53d7dc177375d8dcb8a9e57cae195edca317b3",
+          "c72bc6092c52200a3e342d1b7677ac9c921a1fb7d9ce683228a6278a6b37d1ae"
         ]
       ]
     },
@@ -2308,6 +2334,11 @@
           "company:420",
           "ad17fb51bd106ccd66dc754f28e61b8b3a65f1f1fe37128250eb2652e6d03ced",
           "4511a2e3b8bab239ae2454d31b1ec4084d9c9494413ce2ced97f0067ea1ade7d"
+        ],
+        [
+          "company:12852",
+          "345b4688bbbb4e4cc7be56854768bd9712bb57e0f18db0a79163ddb28dc6e83f",
+          "c94555ae1264bed07c562e408939fb8d010dd96e3cfe25af340c09529c58c6d5"
         ]
       ]
     }

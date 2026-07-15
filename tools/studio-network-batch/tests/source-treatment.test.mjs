@@ -21,6 +21,7 @@ const AUTHORISED_KEYS = [
   "company:1742",
   "company:2788",
   "company:3407",
+  "company:23761",
   "company:47208",
   "company:69347",
   "company:80138",
@@ -48,7 +49,7 @@ function textConfiguration(sourceHash) {
   };
 }
 
-test("production source treatments are limited to the exact seven authorised keys", async () => {
+test("production source treatments are limited to the exact eight authorised keys", async () => {
   const configuration = await loadSourceTreatmentConfiguration(packageRoot, productionPreset);
   assert.deepEqual(configuration.scope, AUTHORISED_KEYS);
   assert.deepEqual(configuration.treatments.map((entry) => entry.stableKey), AUTHORISED_KEYS);
