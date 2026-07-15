@@ -1,5 +1,5 @@
 {
-  "version": "opaque-final-reason-resolutions-v1",
+  "version": "source-treatment-reason-resolutions-v2",
   "groups": [
     {
       "reason": "close-background-scores",
@@ -65,6 +65,11 @@
       "reason": "likely-low-resolution-source",
       "approvalReason": "Owner-approved eligibility-50 resolution review",
       "bindings": [
+        [
+          "company:1742",
+          "d2a498c32d203c458563a8b91e68460dbf799a08e3607ee4348ce4d0d7be0eec",
+          "41fead3f2c4f6c35dc40a0e2fc7484cee5a97dcfff051c9f7a6b4d171a41250a"
+        ],
         [
           "company:3528",
           "501c00866c2ed811bb4bd2fe86b9778694530110bb52f7e18537590d25dcea07"
@@ -1509,6 +1514,11 @@
           "503e6e10c45a924f37ab5fd290703604646c9ef449e1f896ce9011e3d690e9e2"
         ],
         [
+          "company:1742",
+          "d2a498c32d203c458563a8b91e68460dbf799a08e3607ee4348ce4d0d7be0eec",
+          "41fead3f2c4f6c35dc40a0e2fc7484cee5a97dcfff051c9f7a6b4d171a41250a"
+        ],
+        [
           "company:1889",
           "debb26e93e67fbf2c2eb1d8c5134055b8786945403929f186163f546f13d90af",
           "436a69c0667da74f47bc214619675b5c8a036c566120e4a4fa39a10a31ef6400"
@@ -1529,6 +1539,11 @@
           "27124ced9c050a758c2034088baa1868f483ae4e45bc2371298dfdc1bef1502b"
         ],
         [
+          "company:2788",
+          "7928db4b92bb0b0b4bfb3eecc2fdea58595c5ff86e3d59e108ed6210eac980ca",
+          "5cc58c894d8001edbdd76b0594bf3ee86274223f9cdfcd6b38580eaa9985a393"
+        ],
+        [
           "company:2865",
           "0166c2eeb8ba4753a063f947adf15e7cd9b16dbb43152b98f86d15afef8bca85",
           "ab6ba8f59563943626cb3a67a329a3664ddec2939bdbf1c5def2fe3105072eaa"
@@ -1547,6 +1562,11 @@
           "company:3094",
           "b32395dc2bbb8fc50810e69f226aa7ed1761a75c3da422ca49e7069f22de36f1",
           "7301c68da177734a2042c1ab944f126c793c0e22522d41041a8908c2fa4b8be7"
+        ],
+        [
+          "company:3407",
+          "75425a3c4a6d9d235ca72ebdeaa8f22b0b57d1005cdf0c10187eadf7d15af64b",
+          "d100e76b61aed8db1ac7c4eba369956dcc02c01c8ad08635ef0546e19dbd01b0"
         ],
         [
           "company:3467",
@@ -1919,6 +1939,11 @@
           "872d75c66673546cd83244a78ff5e454c7b7e179e446d1fea37d8a9516bd1a89"
         ],
         [
+          "company:47208",
+          "1596b44df30cca90874d5c7920b0d8e04f30350eb07cc9dbf627bfe616f99b26",
+          "922f1305abfee9a3f166ec222482add3ac3b9a8e9758c080458a60cc2737478a"
+        ],
+        [
           "company:47413",
           "3d8a0e586d4b3eeb369ff83ac5cb4d811af7bb011766246e3d16a4e0e6dcaaec",
           "4931967bfda15f4336fe6a79b28cfe8cee60c0cf8e8b6e8da4e9a1d62af80106"
@@ -1969,6 +1994,11 @@
           "23a2f921d466ef238130584dbdc569473f3ac9b0fd506d29a6bca5abbe58d681"
         ],
         [
+          "company:69347",
+          "9700e3fb2d9605807b037bd7120143b9041bb7644e2dfee07ab12c831c4fa71a",
+          "a2dced584ddcb8183ab03db0864cd675a307f7ba81a34e1af68b5622fc7b95f9"
+        ],
+        [
           "company:69545",
           "c04ee106dfde731a61f005390e016923bbd499ac9e495434973136c486ca8921",
           "1f6177d7e6b5e0caab7a8e438aa58e3a8af46b7b4e8cefc6f6a4cbb11234c56d"
@@ -1997,6 +2027,11 @@
           "company:77692",
           "0fb9a884658d0931faa7bbdce8ee26c5a5858ffa709727fb540f1aa04707731b",
           "0baf2e04c5214d7a412294359b2b744c74e098ec7957b2140429d3e840e4e312"
+        ],
+        [
+          "company:80138",
+          "192f3dd76322aa01bfbdc40ec5158e61c22700f1335c242c3d212ae559f6bdb9",
+          "b8ac9e83b64c31fc068117343d2df332527fad471d6d80e0d5f9fccc9a045fa7"
         ],
         [
           "company:82801",
@@ -2057,6 +2092,11 @@
           "company:102208",
           "700106c084078854f7cb94dc5124fab3c63086117a71be0ba6e6d786bf7c8fe9",
           "1a7c200b4c73f90596836b36ea0c924d7ab5f28675a4a53639714f3978e32a02"
+        ],
+        [
+          "company:102867",
+          "fa913ee730cabbe5778cd7af7811da7cbabaef61b0c3a992b0a7edc9662ce7d1",
+          "d409c6becb1df5ac450cceb09fd05228357c1301aadc8068c61a539b43e70a66"
         ],
         [
           "company:103501",

@@ -30,13 +30,13 @@ function configuration() {
 test("production reason resolutions load all reviewed hash bindings", async () => {
   const preset = JSON.parse(await fs.readFile(path.join(packageRoot, "presets", "production-v1.json"), "utf8"));
   const loaded = await loadReviewReasonResolutionConfiguration(packageRoot, preset);
-  assert.equal(loaded.resolutions.length, 515);
+  assert.equal(loaded.resolutions.length, 523);
   assert.deepEqual(Object.fromEntries(loaded.groups.map((group) => [group.reason, group.bindings.length])), {
     "close-background-scores": 4,
     "high-upscale-factor": 7,
-    "likely-low-resolution-source": 2,
+    "likely-low-resolution-source": 3,
     "missing-logo-text-fallback": 332,
-    "unexpectedly-opaque-source-background": 169,
+    "unexpectedly-opaque-source-background": 176,
     "very-close-contrast": 1,
   });
 });
