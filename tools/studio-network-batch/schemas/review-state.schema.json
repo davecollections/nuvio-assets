@@ -1,34 +1,54 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://nuvio.example/schemas/studio-network-review-state.schema.json",
-  "title": "Draft Nuvio studio/network review state",
-  "description": "Draft schema for a future human-maintained approval file. Stage three does not create a production approval file.",
-  "type": "array",
-  "items": {
-    "type": "object",
-    "additionalProperties": false,
-    "required": [
-      "stableKey",
-      "reviewStatus",
-      "reviewer",
-      "reviewedAt",
-      "note",
-      "approvedOutputHash",
-      "publishTargetPath"
-    ],
-    "properties": {
-      "stableKey": { "type": "string", "pattern": "^(company|network):[1-9][0-9]*$" },
-      "reviewStatus": { "enum": ["approved", "rejected", "needs-changes"] },
-      "reviewer": { "type": "string" },
-      "reviewedAt": { "type": "string", "format": "date-time" },
-      "note": { "type": "string" },
-      "approvedOutputHash": {
-        "type": ["string", "null"],
-        "pattern": "^[a-f0-9]{64}$"
-      },
-      "publishTargetPath": {
-        "type": "string",
-        "pattern": "^assets/collection_covers/(companies|networks)/[1-9][0-9]*\\.webp$"
+  "title": "Nuvio studio/network exact-output cover approvals",
+  "description": "Durable owner approval state for every production-v1 staged cover. Each approval is bound to the exact staged WebP hash and publish target.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "reviewedAt", "approvalSource", "approvalCount", "approvals"],
+  "properties": {
+    "version": { "const": "studio-network-cover-approvals-v1" },
+    "reviewedAt": { "type": "string", "format": "date-time" },
+    "approvalSource": { "type": "string", "minLength": 1 },
+    "approvalCount": { "type": "integer", "minimum": 1 },
+    "approvals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stableKey",
+          "entityType",
+          "tmdbId",
+          "canonicalNameAtApproval",
+          "publishTarget",
+          "approvedOutputHash",
+          "approvedByteCount",
+          "width",
+          "height",
+          "format",
+          "approvalStatus",
+          "approvalSource",
+          "reviewedAt"
+        ],
+        "properties": {
+          "stableKey": { "type": "string", "pattern": "^(company|network):[1-9][0-9]*$" },
+          "entityType": { "enum": ["company", "network"] },
+          "tmdbId": { "type": "integer", "minimum": 1 },
+          "canonicalNameAtApproval": { "type": "string", "minLength": 1 },
+          "publishTarget": {
+            "type": "string",
+            "pattern": "^assets/collection_covers/(companies|networks)/[1-9][0-9]*\\.webp$"
+          },
+          "approvedOutputHash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "approvedByteCount": { "type": "integer", "minimum": 1 },
+          "width": { "const": 1200 },
+          "height": { "const": 675 },
+          "format": { "const": "webp" },
+          "approvalStatus": { "const": "approved" },
+          "approvalSource": { "type": "string", "minLength": 1 },
+          "reviewedAt": { "type": "string", "format": "date-time" }
+        }
       }
     }
   }

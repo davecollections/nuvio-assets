@@ -13,14 +13,16 @@ export async function buildPublishPlan({ records, reviewEntries, repoRoot } = {}
   const entries = [];
   const issues = [];
   for (const review of reviewEntries) {
-    if (review.reviewStatus !== "approved") continue;
+    const reviewStatus = review.reviewStatus ?? review.approvalStatus;
+    const reviewedPublishTarget = review.publishTargetPath ?? review.publishTarget;
+    if (reviewStatus !== "approved") continue;
     const record = recordsByKey.get(review.stableKey);
     if (!record) {
       issues.push({ stableKey: review.stableKey, code: "missing-staged-record" });
       continue;
     }
     const publishTargetPath = expectedTarget(record);
-    if (review.publishTargetPath !== publishTargetPath) {
+    if (reviewedPublishTarget !== publishTargetPath) {
       issues.push({ stableKey: review.stableKey, code: "publish-target-mismatch", expected: publishTargetPath });
       continue;
     }
