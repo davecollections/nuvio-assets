@@ -2,7 +2,7 @@
 
 This isolated Node.js utility audits TMDB company and TV-network source caches, creates deterministic selections, and stages 16:9 collection artwork for review. It is separate from Nuvio's Collection Builder: it handles artwork keyed by TMDB entity IDs, while the Collection Builder has a different responsibility.
 
-The renderer uses Sharp and the TMDB image CDN only. It does not call the TMDB search/detail API and does not publish into the final asset folders or create the production manifest.
+The renderer uses Sharp with cached TMDB artwork and narrowly configured owner-approved source treatments. Routine generation does not call the TMDB search/detail API, and this utility does not publish into final asset folders or create the production manifest.
 
 ## Continuity
 
@@ -54,9 +54,12 @@ tools/studio-network-batch/
     background-decisions.json
     background-review-resolutions.json
     review-reason-resolutions.json
+    review-state.json
+    source-treatments.json
     recognisability-seed.json
   schemas/
     manifest-entry.schema.json
+    review-state.schema.json
   src/
   tests/
 ```
@@ -200,7 +203,7 @@ Build focused review sheets and a pending hash-bound review draft from the exist
 npm run review-prep -- --preset production-v1
 ```
 
-This reads the persistent current run state, so a selective rerun does not hide unchanged outputs from review. It writes ignored reason-specific 8×8 sheets and their Markdown/JSON index under `.work/contact-sheets/production-v1/review/`, plus `review-state-draft.json`, `review-checklist.csv`, and (when Inter is unconfirmed) `fallback-ids.json` under `.work/reviews/production-v1/`. Every pending draft entry is checked against the current staged file hash. The command refuses report outputs outside ignored staging and performs no final-asset or canonical-manifest writes.
+This reads the persistent current run state, so a selective rerun does not hide unchanged outputs from review. It applies current exact-hash reason resolutions and source-hash-bound background resolutions in memory, preserving the persistent audit metadata while deriving the live review queue. It writes ignored reason-specific 8×8 sheets and their Markdown/JSON index under `.work/contact-sheets/production-v1/review/`, plus `review-state-draft.json`, `review-checklist.csv`, and (when Inter is unconfirmed) `fallback-ids.json` under `.work/reviews/production-v1/`. Every pending draft entry is checked against the current staged file hash. The command refuses report outputs outside ignored staging and performs no final-asset or canonical-manifest writes.
 
 Prepare the current eligibility-50 visual-review package offline from cached logos, staged outputs, and persistent state:
 
@@ -220,9 +223,11 @@ This offline command reads only persistent production state, staged covers, and 
 
 The 153-record package was owner-reviewed on 2026-07-15. The first pass resolved 146 `unexpectedly-opaque-source-background` reasons and isolated seven `needs-better-source` records. A later owner-approved source-treatment pass regenerated exactly those seven offline: three tracked official sources, one deterministic TMDB-source crop, and three exact-name Inter treatments. All seven opaque reasons and the directly related low-resolution flag on the approved Les Films 13 source were exact output/source-or-treatment-hash resolved. At that checkpoint, full review preparation contained 237 pending records and 280 unresolved reasons. The source investigation remains under `.work/source-quality-seven/`; the applied seven-cover proof sheet is under `.work/source-quality-seven-apply/contact-sheets/`. Nothing was published.
 
-A 2026-07-16 four-record owner follow-up then switched Shout! Factory, ITV Studios, and ORF III to exact source-hash-bound light backgrounds and applied a verified official Synthetic Cinema International source on dark. Exactly four covers were regenerated offline, five reasons were resolved, 2,362 unrelated outputs and every unrelated review record remained unchanged, and current review preparation contains 233 pending records and 275 unresolved reasons.
+A 2026-07-16 four-record owner follow-up then switched Shout! Factory, ITV Studios, and ORF III to exact source-hash-bound light backgrounds and applied a verified official Synthetic Cinema International source on dark. Exactly four covers were regenerated offline, five reasons were resolved, and 2,362 unrelated outputs and every unrelated review record remained unchanged. The resulting 233-record / 275-reason queue was a historical checkpoint before the final owner approval pass.
 
-`schemas/review-state.schema.json` defines the future human review-state file. Approved entries bind a stable key and publish target to the exact reviewed output hash. `src/publish-plan.mjs` can validate those approvals against the staged file and build an in-memory dry publish plan; it performs no copy and writes no canonical manifest. A later publish command may consume that plan only after explicit approval, copy verified files to `assets/collection_covers/companies/{id}.webp` or `assets/collection_covers/networks/{id}.webp`, and then create the canonical published manifest. Stage three does none of those actions.
+The final owner approval pass applied exactly 154 `approve-reason-as-is` rows and 121 `retain-current-background` rows across those 233 records. The four previously completed exception keys were not reprocessed. Full review preparation now produces zero pending records and zero unresolved reasons while the unchanged persistent state retains the original flags as audit history.
+
+`schemas/review-state.schema.json` defines the durable exact-output approval model, and `config/review-state.json` contains one approved record for each of the 2,366 staged covers. Each record binds identity, canonical name, publish target, output hash, byte count, 1200×675 WebP metadata, approval source, and reviewed date. `src/publish-plan.mjs` validates those approvals against the staged files and builds an in-memory dry publish plan; the completed validation fully decoded all 2,366 covers and produced 2,366 entries with zero issues and zero writes. A later publish command may consume that plan only after explicit approval, copy verified files to `assets/collection_covers/companies/{id}.webp` or `assets/collection_covers/networks/{id}.webp`, and then create the canonical published manifest. This approval phase did none of those actions.
 
 Superseded ignored review/contact-sheet cleanup is not implemented. `review-prep` atomically overwrites pages in the current index but does not prune no-longer-referenced page files when pagination shrinks, and the current publish-plan module has no cleanup phase. Historical evidence may intentionally remain; a future publication workflow must define explicit retention and pruning rules rather than deleting `.work` broadly.
 
@@ -238,7 +243,7 @@ npm run reconcile-production -- reconcile --before-snapshot .work/plans/mixed-co
 
 For a genuinely absent-before production addition, use `--added-ids` instead of `--changed-ids`. The verifier requires the path to be absent from the before snapshot and present afterward, keeps the background-review resolution requirement limited to changed/retained background decisions, validates configured source treatments through their treatment metadata, and reports old paths separately from new additions.
 
-The eligibility-50 owner decisions were applied on 2026-07-14. Exactly five light-switch covers were regenerated offline; four reviewed-current covers and 2,356 unrelated outputs remained byte-for-byte and timestamp unchanged. The separately deferred `company:281730` was then generated through an exact one-key plan and reconciled as the sole absent-before addition. The final seven source-quality decisions were applied on 2026-07-15 with exactly seven offline regenerations and 2,359 unchanged outputs. The four-exception owner follow-up then regenerated exactly four covers and retained 2,362 unrelated outputs. The current full state contains 2,366 valid 1200×675 WebPs, 233 pending review entries, 275 unresolved reasons, and zero review/output hash mismatches. Nothing has been published.
+The eligibility-50 owner decisions were applied on 2026-07-14. Exactly five light-switch covers were regenerated offline; four reviewed-current covers and 2,356 unrelated outputs remained byte-for-byte and timestamp unchanged. The separately deferred `company:281730` was then generated through an exact one-key plan and reconciled as the sole absent-before addition. The final seven source-quality decisions were applied on 2026-07-15 with exactly seven offline regenerations and 2,359 unchanged outputs. The four-exception owner follow-up then regenerated exactly four covers and retained 2,362 unrelated outputs. The final review pass changed no artwork: the current full state contains 2,366 valid 1200×675 WebPs, zero live pending review entries, zero unresolved reasons, and 2,366 exact-hash cover approvals. Nothing has been published.
 
 ## Future artwork and manifest policy
 
@@ -251,4 +256,4 @@ assets/collection_covers/networks/{tmdb_id}.webp
 
 Duplicate source-logo processing is reused internally, but final identities are not aliases and are not collapsed into a shared physical file.
 
-`presets/poc-v1.json` remains the proof-of-concept configuration. `presets/production-v1.json` is the approved first full-staging preset: 1200×675, flat `#08141C`/`#E4E7E9` automatic backgrounds, alpha threshold 8, 72%×48% visible-logo safe box, and quality-86 WebP. `schemas/manifest-entry.schema.json` and `schemas/review-state.schema.json` are drafts for later stages; no production manifest or approval file is created by this utility stage.
+`presets/poc-v1.json` remains the proof-of-concept configuration. `presets/production-v1.json` is the approved first full-staging preset: 1200×675, flat `#08141C`/`#E4E7E9` automatic backgrounds, alpha threshold 8, 72%×48% visible-logo safe box, and quality-86 WebP. `schemas/manifest-entry.schema.json` remains a draft for the later publication stage. `schemas/review-state.schema.json` and `config/review-state.json` are the active durable cover-approval contract and state; they do not constitute a published manifest or final artwork.

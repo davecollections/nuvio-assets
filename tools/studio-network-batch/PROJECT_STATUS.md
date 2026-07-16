@@ -2,9 +2,9 @@
 
 **Last verified:** 2026-07-16 AEST (UTC+10)
 
-**Verified through decision commit:** `903a359` (`feat: resolve four publication review exceptions`)
+**Verified through approval-state commit:** `798517f` (`Record staged cover approvals`)
 
-**Tracked implementation state:** The eligibility-50 owner decisions and original hash-bound reason-resolution system are in `45dfb71`; explicit new-key reconciliation and reusable enlarged opaque-review tooling are in `ff26340`; the initial opaque-source decisions are in `458abf8`; durable approved source-treatment support is in `c57bce7`; the exact seven source-quality decisions are in `0284533`; and the four final publication-review exceptions are in `903a359`. Ignored production/review artifacts remain under `.work/` and must not be added to Git.
+**Tracked implementation state:** The eligibility-50 owner decisions and original hash-bound reason-resolution system are in `45dfb71`; explicit new-key reconciliation and reusable enlarged opaque-review tooling are in `ff26340`; the initial opaque-source decisions are in `458abf8`; durable approved source-treatment support is in `c57bce7`; the exact seven source-quality decisions are in `0284533`; the four final publication-review exceptions are in `903a359`; the final 275 reason-level approvals are in `3c00849`; and the schema-validated exact-output approval state for all 2,366 covers is in `798517f`. Ignored production/review artifacts remain under `.work/` and must not be added to Git.
 
 This file is a dated project snapshot. Recheck the repository and ignored `.work` data before updating it.
 
@@ -31,6 +31,9 @@ The following stages are complete and present locally:
 - owner application of exactly 146 reviewed opaque-source reason resolutions, leaving exactly seven records classified `needs-better-source`, followed by full report/review reconciliation and a final seven-record package.
 - owner application of the seven final source-quality decisions: three verified official manual sources, one deterministic safe crop, and three exact-name Inter treatments; exactly seven covers regenerated offline, eight directly applicable source-quality reasons hash-bound and resolved, and 2,359 unrelated staged outputs retained unchanged.
 - owner application of the four publication-readiness exceptions: three exact source-hash-bound switches to light and one verified official Synthetic Cinema source on dark; exactly four covers regenerated offline, five reasons resolved, and 2,362 unrelated outputs and all unrelated review records retained unchanged.
+- owner application of the remaining 275 safe reason-level decisions without artwork regeneration: 154 approve-as-is rows and 121 retain-current-background rows across 233 records;
+- a full review rebuild to zero pending records and zero unresolved reasons while preserving the persistent production audit history;
+- durable exact-output-hash cover approvals for all 2,366 staged covers and a validated 2,366-entry dry publish plan with zero writes and zero issues.
 
 No publication stage has been performed.
 
@@ -80,25 +83,23 @@ Re-run `font-check` before any future production missing-logo render because thi
 - Three additional owner-approved exact-name Inter treatments are recorded separately with `renderStatus: owner-approved-text`; they are not missing-logo fallbacks and do not carry the missing-logo reason.
 - The focused-review package samples 22 deterministic representatives spanning length, layout, accents, punctuation, institutional names, and the smallest observed font sizes.
 
-The owner resolved the `missing-logo-text-fallback` reason for all 332 newly eligible fallbacks against their exact current output hashes. The 146 older fallback reasons remain pending. A future output-hash change invalidates a resolution; no fallback was automatically approved at the whole-cover level.
+The owner resolved the `missing-logo-text-fallback` reason for all 478 current fallbacks against their exact current output hashes. A future output-hash change invalidates a reason resolution and the exact-output cover approval. Fallback metadata remains present in persistent production state.
 
-## Current review state
+## Current review and approval state
 
-Latest full review preparation contains 233 unique pending records and 275 unresolved reasons:
+Latest full review preparation contains zero pending records and zero unresolved reasons. The final owner pass applied exactly 275 safe reason-level decisions from the preserved proposal package:
 
-| Category | Records |
+| Action | Reason rows |
 |---|---:|
-| Missing logo | 146 |
-| Unexpectedly opaque source | 0 |
-| Close background score | 73 |
-| Very-close contrast | 39 |
-| Upscale over 2× | 6 |
-| Likely low resolution | 2 |
-| Mixed-contrast background review | 9 |
-| Low robust contrast | 0 |
-| All needs review, deduplicated | 233 |
+| Approve reason as-is | 154 |
+| Retain current background | 121 |
+| Total | 275 |
 
-Flags overlap, so category counts do not sum to the unique total.
+Those rows covered 233 unique records. The five old proposal rows for `company:12852`, `company:23761`, `company:24546`, and `network:1795` were recognised as historical because the earlier four-record follow-up had already changed and resolved them; none was reapplied.
+
+The persistent `run-state.json` remains byte-for-byte unchanged and therefore still records the original 233 records / 275 flags as historical audit metadata. `review-prep` now applies the current exact-hash generic and source-hash-bound background resolutions in memory before building its live queue. The resulting draft is `[]`, the checklist has only its header, and no new review sheet is referenced by the current index.
+
+All 2,366 staged covers also have durable cover-level approval in `config/review-state.json`. The schema-validated records bind stable key, identity, canonical name, publish target, output hash, byte count, 1200×675 WebP metadata, approval source, and reviewed date. Validation fully decoded all 2,366 files and produced a dry 2,366-entry publish plan with zero issues and zero writes.
 
 Relevant paths:
 
@@ -124,10 +125,13 @@ Relevant paths:
 - `.work/review-focus/opaque-final-needs-source/needs-better-source.json`
 - `.work/review-focus/opaque-final-needs-source/needs-better-source.md`
 - `.work/reviews/production-v1/opaque-final-owner-review-summary.json`
+- `.work/final-review-approval/README.md`
+- `.work/final-review-approval/reports/review-completion.json`
+- `.work/final-review-approval/reports/review-completion.csv`
+- `.work/final-review-approval/reports/dry-publish-plan.json`
+- `.work/final-review-approval/reports/preservation-verification.json`
 
-All cover-level draft entries are pending; no cover has been promoted to publication approval. Exact reason resolution removed only named reasons. `company:12434` remains pending for mixed contrast and `company:35953` remains pending for close/very-close contrast after their safe opaque reasons were resolved.
-
-The eligibility-50 owner decisions are applied: 332 fallback reasons, 7 high-upscale reasons, 2 likely-low-resolution reasons, 23 conservative opaque-source reasons, 4 close-background reasons, and 1 very-close-contrast reason are exact-hash resolved. Six mixed-contrast reasons were independently resolved through the existing source-hash-bound background-review system. The historical 76-record deferred package remains available as an audit artifact, but its current reason state is superseded by the final owner review.
+The eligibility-50 owner decisions remain part of the history: 332 fallback reasons, 7 high-upscale reasons, 2 likely-low-resolution reasons, 23 conservative opaque-source reasons, 4 close-background reasons, and 1 very-close-contrast reason were exact-hash resolved at that checkpoint. Six mixed-contrast reasons were independently resolved through the source-hash-bound background-review system. The historical 76-record deferred package remains available as an audit artifact, but its reason state is superseded by the completed final owner review.
 
 The enlarged review package used the complete 153-record unresolved opaque-source population, not only the 76 eligibility-50 subset: 15 `tiny-logo-inside-opaque-canvas`, 110 `opaque-sticker-effect`, 4 `manual-review`, 1 `opaque-blends-with-background`, and 23 `opaque-suitable`. Ten 4×4 pages covered every stable key exactly once. One record had an additional unresolved reason, 36 had estimated foreground pixel proportions at or below 12%, and one had an opaque edge within RGB distance 30 of the selected background. Preparing that package itself resolved no reason.
 
@@ -153,7 +157,7 @@ For `company:23761` (Synthetic Cinema International), the owner-supplied `https:
 
 Run `2026-07-15T22-45-59-078Z` selected exactly those four keys with `--force --offline`, generated four covers, made zero network requests, and had zero download, decode, analysis, or render failures. Full reconciliation verified exactly four content-and-mtime changes, 2,362 byte-and-mtime-identical unrelated outputs, and zero unrelated persistent-state or review-entry changes. Pending review changed from 237 records and 280 reasons to 233 records and 275 reasons. All four authorised records now have no unresolved reason.
 
-The verification sheet is `.work/owner-follow-up-four/contact-sheets/four-approved-outcomes.png`; the Synthetic Cinema source comparison is `.work/owner-follow-up-four/contact-sheets/synthetic-cinema-comparison.png`; and the machine-readable selective proof is `.work/owner-follow-up-four/reports/selective-verification.json`. Current review hashes are `64bf26efb67b1787939a27abe5004e4076152cea3ce00a733a5284998b57746c` for the draft and `8061862c2d9a6274a98939aa10f2aa64cb1f0ea495c584b39a69a08f8df9d236` for the checklist. Nothing was published.
+The verification sheet is `.work/owner-follow-up-four/contact-sheets/four-approved-outcomes.png`; the Synthetic Cinema source comparison is `.work/owner-follow-up-four/contact-sheets/synthetic-cinema-comparison.png`; and the machine-readable selective proof is `.work/owner-follow-up-four/reports/selective-verification.json`. At that checkpoint, the review hashes were `64bf26efb67b1787939a27abe5004e4076152cea3ce00a733a5284998b57746c` for the draft and `8061862c2d9a6274a98939aa10f2aa64cb1f0ea495c584b39a69a08f8df9d236` for the checklist. The completed review hashes are now `37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570` for the empty draft and `a1d89cf5a6b418d805dea03cf5233415cd0374fdf6eaa06da4ef2429f2ce2470` for the header-only checklist. Nothing was published.
 
 ## Post-expansion single-key follow-up
 
@@ -284,13 +288,12 @@ The historical reconciled hashes immediately after the approved seven source tre
 
 ## Current open decisions
 
-- Disposition of the remaining pending fallback, contrast, upscale, and low-resolution reasons.
-- The approval-record workflow and who signs off reviewed hashes.
-- Publication timing after all required review and selected reruns.
+- Publication timing and explicit authorisation for the separate publish stage.
+- Retention/pruning policy for superseded ignored review and contact-sheet artifacts.
 
 ## Exact next step
 
-Review the four-cover verification sheet at `.work/owner-follow-up-four/contact-sheets/four-approved-outcomes.png`, then decide whether the remaining independent fallback, contrast, upscale, and low-resolution review records block publication. Publication remains a separate owner-authorised stage; no final asset or canonical manifest exists. Current tooling also has no explicit pruning step for superseded ignored review/contact-sheet pages, so publication cleanup policy must be decided before any future publish implementation.
+Review the completion dashboard at `.work/final-review-approval/README.md` and the durable approval state at `config/review-state.json`. The next operation, if authorised, is a separate publication implementation that consumes the exact-hash dry plan, writes verified final identity files, and creates the canonical manifest. Before that implementation, decide whether superseded ignored review/contact-sheet pages should be retained as history or explicitly pruned; current tooling does not implement that cleanup.
 
 ## Important commands
 
@@ -312,6 +315,8 @@ npm --prefix tools/studio-network-batch run generate -- --proof-of-concept
 npm --prefix tools/studio-network-batch run generate -- --all --preset production-v1
 npm --prefix tools/studio-network-batch run generate -- --ids-file .work/reviews/production-v1/fallback-ids.json --preset production-v1 --force
 npm --prefix tools/studio-network-batch run review-prep -- --preset production-v1
+npm --prefix tools/studio-network-batch run approve-review-reasons -- --json
+npm --prefix tools/studio-network-batch run approve-staged-covers -- --json
 ```
 
 `--all` is shown for reference, not as the default recovery action. Prefer the narrowest safe selection.
