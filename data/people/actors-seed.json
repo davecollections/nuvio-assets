@@ -1,0 +1,6118 @@
+{
+  "version": "people-seed-v1",
+  "generatedAt": "2026-07-16T05:02:18.079Z",
+  "status": "proposed-candidate-rollout",
+  "category": "actor",
+  "ordering": "tmdb-person-id-ascending",
+  "recordCount": 325,
+  "records": [
+    {
+      "stableKey": "person:3",
+      "tmdbPersonId": 3,
+      "canonicalName": "Harrison Ford",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          18
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4",
+      "tmdbPersonId": 4,
+      "canonicalName": "Carrie Fisher",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          256
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:31",
+      "tmdbPersonId": 31,
+      "canonicalName": "Tom Hanks",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          10
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:33",
+      "tmdbPersonId": 33,
+      "canonicalName": "Gary Sinise",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          63
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:35",
+      "tmdbPersonId": 35,
+      "canonicalName": "Sally Field",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          54
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:40",
+      "tmdbPersonId": 40,
+      "canonicalName": "Orson Welles",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          150
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:48",
+      "tmdbPersonId": 48,
+      "canonicalName": "Sean Bean",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          296
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:62",
+      "tmdbPersonId": 62,
+      "canonicalName": "Bruce Willis",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          149
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:64",
+      "tmdbPersonId": 64,
+      "canonicalName": "Gary Oldman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          26
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:85",
+      "tmdbPersonId": 85,
+      "canonicalName": "Johnny Depp",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          43
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:103",
+      "tmdbPersonId": 103,
+      "canonicalName": "Mark Ruffalo",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          261
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:110",
+      "tmdbPersonId": 110,
+      "canonicalName": "Viggo Mortensen",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          144
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:112",
+      "tmdbPersonId": 112,
+      "canonicalName": "Cate Blanchett",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          28
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:113",
+      "tmdbPersonId": 113,
+      "canonicalName": "Christopher Lee",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          100
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:118",
+      "tmdbPersonId": 118,
+      "canonicalName": "Geoffrey Rush",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          262
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:131",
+      "tmdbPersonId": 131,
+      "canonicalName": "Jake Gyllenhaal",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          247
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:139",
+      "tmdbPersonId": 139,
+      "canonicalName": "Uma Thurman",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          285
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:190",
+      "tmdbPersonId": 190,
+      "canonicalName": "Clint Eastwood",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          9
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:192",
+      "tmdbPersonId": 192,
+      "canonicalName": "Morgan Freeman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          6
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:193",
+      "tmdbPersonId": 193,
+      "canonicalName": "Gene Hackman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          33
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:194",
+      "tmdbPersonId": 194,
+      "canonicalName": "Richard Harris",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          154
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:204",
+      "tmdbPersonId": 204,
+      "canonicalName": "Kate Winslet",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          37
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:206",
+      "tmdbPersonId": 206,
+      "canonicalName": "Jim Carrey",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          218
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:227",
+      "tmdbPersonId": 227,
+      "canonicalName": "William Hurt",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          271
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:228",
+      "tmdbPersonId": 228,
+      "canonicalName": "Ed Harris",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          59
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:287",
+      "tmdbPersonId": 287,
+      "canonicalName": "Brad Pitt",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          89
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:290",
+      "tmdbPersonId": 290,
+      "canonicalName": "Christopher Plummer",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          93
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:368",
+      "tmdbPersonId": 368,
+      "canonicalName": "Reese Witherspoon",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          178
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:380",
+      "tmdbPersonId": 380,
+      "canonicalName": "Robert De Niro",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          8
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:448",
+      "tmdbPersonId": 448,
+      "canonicalName": "Hilary Swank",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          244
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:500",
+      "tmdbPersonId": 500,
+      "canonicalName": "Tom Cruise",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          293
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:504",
+      "tmdbPersonId": 504,
+      "canonicalName": "Tim Robbins",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          240
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:514",
+      "tmdbPersonId": 514,
+      "canonicalName": "Jack Nicholson",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          4
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:515",
+      "tmdbPersonId": 515,
+      "canonicalName": "Glenn Close",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          118
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:516",
+      "tmdbPersonId": 516,
+      "canonicalName": "Annette Bening",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          231
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:517",
+      "tmdbPersonId": 517,
+      "canonicalName": "Pierce Brosnan",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          170
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:518",
+      "tmdbPersonId": 518,
+      "canonicalName": "Danny DeVito",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          115
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:521",
+      "tmdbPersonId": 521,
+      "canonicalName": "Michael J. Fox",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          94
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:524",
+      "tmdbPersonId": 524,
+      "canonicalName": "Natalie Portman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          132
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:707",
+      "tmdbPersonId": 707,
+      "canonicalName": "Dan Aykroyd",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          294
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:723",
+      "tmdbPersonId": 723,
+      "canonicalName": "Patrick Swayze",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          158
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:738",
+      "tmdbPersonId": 738,
+      "canonicalName": "Sean Connery",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          15
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:819",
+      "tmdbPersonId": 819,
+      "canonicalName": "Edward Norton",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          79
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:854",
+      "tmdbPersonId": 854,
+      "canonicalName": "James Stewart",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          27
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:862",
+      "tmdbPersonId": 862,
+      "canonicalName": "George C. Scott",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          147
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:879",
+      "tmdbPersonId": 879,
+      "canonicalName": "Billy Bob Thornton",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          274
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:884",
+      "tmdbPersonId": 884,
+      "canonicalName": "Steve Buscemi",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          60
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:887",
+      "tmdbPersonId": 887,
+      "canonicalName": "Owen Wilson",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:934",
+      "tmdbPersonId": 934,
+      "canonicalName": "Russell Crowe",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          101
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:976",
+      "tmdbPersonId": 976,
+      "canonicalName": "Jason Statham",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1037",
+      "tmdbPersonId": 1037,
+      "canonicalName": "Harvey Keitel",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          217
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1038",
+      "tmdbPersonId": 1038,
+      "canonicalName": "Jodie Foster",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          48
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1062",
+      "tmdbPersonId": 1062,
+      "canonicalName": "Christopher Lloyd",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          156
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1100",
+      "tmdbPersonId": 1100,
+      "canonicalName": "Arnold Schwarzenegger",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1121",
+      "tmdbPersonId": 1121,
+      "canonicalName": "Benicio del Toro",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          279
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1158",
+      "tmdbPersonId": 1158,
+      "canonicalName": "Al Pacino",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          3
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1160",
+      "tmdbPersonId": 1160,
+      "canonicalName": "Michelle Pfeiffer",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          75
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1204",
+      "tmdbPersonId": 1204,
+      "canonicalName": "Julia Roberts",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          135
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1205",
+      "tmdbPersonId": 1205,
+      "canonicalName": "Richard Gere",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          243
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1229",
+      "tmdbPersonId": 1229,
+      "canonicalName": "Jeff Bridges",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          66
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1230",
+      "tmdbPersonId": 1230,
+      "canonicalName": "John Goodman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          123
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1231",
+      "tmdbPersonId": 1231,
+      "canonicalName": "Julianne Moore",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          105
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1233",
+      "tmdbPersonId": 1233,
+      "canonicalName": "Philip Seymour Hoffman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          106
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1245",
+      "tmdbPersonId": 1245,
+      "canonicalName": "Scarlett Johansson",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          225
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1269",
+      "tmdbPersonId": 1269,
+      "canonicalName": "Kevin Costner",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          116
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1271",
+      "tmdbPersonId": 1271,
+      "canonicalName": "Andy Garcia",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          248
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1283",
+      "tmdbPersonId": 1283,
+      "canonicalName": "Helena Bonham Carter",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          80
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1327",
+      "tmdbPersonId": 1327,
+      "canonicalName": "Ian McKellen",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          44
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1461",
+      "tmdbPersonId": 1461,
+      "canonicalName": "George Clooney",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          223
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1532",
+      "tmdbPersonId": 1532,
+      "canonicalName": "Bill Murray",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          91
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1733",
+      "tmdbPersonId": 1733,
+      "canonicalName": "Nick Nolte",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          232
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1749",
+      "tmdbPersonId": 1749,
+      "canonicalName": "Leonard Nimoy",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          284
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1810",
+      "tmdbPersonId": 1810,
+      "canonicalName": "Heath Ledger",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          45
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1813",
+      "tmdbPersonId": 1813,
+      "canonicalName": "Anne Hathaway",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          193
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1892",
+      "tmdbPersonId": 1892,
+      "canonicalName": "Matt Damon",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          77
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1896",
+      "tmdbPersonId": 1896,
+      "canonicalName": "Don Cheadle",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          191
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1905",
+      "tmdbPersonId": 1905,
+      "canonicalName": "Vincent Price",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          126
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1920",
+      "tmdbPersonId": 1920,
+      "canonicalName": "Winona Ryder",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          179
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1932",
+      "tmdbPersonId": 1932,
+      "canonicalName": "Audrey Hepburn",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          20
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1937",
+      "tmdbPersonId": 1937,
+      "canonicalName": "Mickey Rooney",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          237
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1979",
+      "tmdbPersonId": 1979,
+      "canonicalName": "Kevin Spacey",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          145
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2047",
+      "tmdbPersonId": 2047,
+      "canonicalName": "Danny Glover",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          181
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2053",
+      "tmdbPersonId": 2053,
+      "canonicalName": "Bill Paxton",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          286
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2090",
+      "tmdbPersonId": 2090,
+      "canonicalName": "Kirk Douglas",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          65
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2094",
+      "tmdbPersonId": 2094,
+      "canonicalName": "Peter Lorre",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          282
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2157",
+      "tmdbPersonId": 2157,
+      "canonicalName": "Robin Williams",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          5
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2176",
+      "tmdbPersonId": 2176,
+      "canonicalName": "Tommy Lee Jones",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          25
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2178",
+      "tmdbPersonId": 2178,
+      "canonicalName": "Forest Whitaker",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          119
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2201",
+      "tmdbPersonId": 2201,
+      "canonicalName": "Max von Sydow",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          220
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2227",
+      "tmdbPersonId": 2227,
+      "canonicalName": "Nicole Kidman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          148
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2228",
+      "tmdbPersonId": 2228,
+      "canonicalName": "Sean Penn",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          253
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2231",
+      "tmdbPersonId": 2231,
+      "canonicalName": "Samuel L. Jackson",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          41
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2232",
+      "tmdbPersonId": 2232,
+      "canonicalName": "Michael Keaton",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          71
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2282",
+      "tmdbPersonId": 2282,
+      "canonicalName": "Ben Kingsley",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          68
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2283",
+      "tmdbPersonId": 2283,
+      "canonicalName": "Stanley Tucci",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          159
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2387",
+      "tmdbPersonId": 2387,
+      "canonicalName": "Patrick Stewart",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          73
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2461",
+      "tmdbPersonId": 2461,
+      "canonicalName": "Mel Gibson",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          134
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2628",
+      "tmdbPersonId": 2628,
+      "canonicalName": "Kiefer Sutherland",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          264
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2638",
+      "tmdbPersonId": 2638,
+      "canonicalName": "Cary Grant",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          35
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2749",
+      "tmdbPersonId": 2749,
+      "canonicalName": "James Dean",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          192
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2769",
+      "tmdbPersonId": 2769,
+      "canonicalName": "Natalie Wood",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          141
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2778",
+      "tmdbPersonId": 2778,
+      "canonicalName": "Dennis Hopper",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          204
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2882",
+      "tmdbPersonId": 2882,
+      "canonicalName": "Diane Lane",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          186
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2888",
+      "tmdbPersonId": 2888,
+      "canonicalName": "Will Smith",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          203
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2896",
+      "tmdbPersonId": 2896,
+      "canonicalName": "Marlene Dietrich",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          298
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2963",
+      "tmdbPersonId": 2963,
+      "canonicalName": "Nicolas Cage",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          269
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2975",
+      "tmdbPersonId": 2975,
+      "canonicalName": "Laurence Fishburne",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          155
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3036",
+      "tmdbPersonId": 3036,
+      "canonicalName": "John Cusack",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          208
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3037",
+      "tmdbPersonId": 3037,
+      "canonicalName": "Richard Dreyfuss",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          152
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3061",
+      "tmdbPersonId": 3061,
+      "canonicalName": "Ewan McGregor",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          161
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3084",
+      "tmdbPersonId": 3084,
+      "canonicalName": "Marlon Brando",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          21
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3085",
+      "tmdbPersonId": 3085,
+      "canonicalName": "James Caan",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          194
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3087",
+      "tmdbPersonId": 3087,
+      "canonicalName": "Robert Duvall",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          16
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3092",
+      "tmdbPersonId": 3092,
+      "canonicalName": "Diane Keaton",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          110
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3131",
+      "tmdbPersonId": 3131,
+      "canonicalName": "Antonio Banderas",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          246
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3141",
+      "tmdbPersonId": 3141,
+      "canonicalName": "Marisa Tomei",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          185
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3149",
+      "tmdbPersonId": 3149,
+      "canonicalName": "Marilyn Monroe",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          174
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3150",
+      "tmdbPersonId": 3150,
+      "canonicalName": "Tony Curtis",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          196
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3151",
+      "tmdbPersonId": 3151,
+      "canonicalName": "Jack Lemmon",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          47
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3223",
+      "tmdbPersonId": 3223,
+      "canonicalName": "Robert Downey Jr.",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          32
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3265",
+      "tmdbPersonId": 3265,
+      "canonicalName": "Eli Wallach",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          283
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3359",
+      "tmdbPersonId": 3359,
+      "canonicalName": "Laurence Olivier",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          64
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3380",
+      "tmdbPersonId": 3380,
+      "canonicalName": "Bette Davis",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          162
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3392",
+      "tmdbPersonId": 3392,
+      "canonicalName": "Michael Douglas",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          97
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3460",
+      "tmdbPersonId": 3460,
+      "canonicalName": "Gene Wilder",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          51
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3635",
+      "tmdbPersonId": 3635,
+      "canonicalName": "Elizabeth Taylor",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          107
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3636",
+      "tmdbPersonId": 3636,
+      "canonicalName": "Paul Newman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          7
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3785",
+      "tmdbPersonId": 3785,
+      "canonicalName": "Jack Palance",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          297
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3894",
+      "tmdbPersonId": 3894,
+      "canonicalName": "Christian Bale",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          50
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3895",
+      "tmdbPersonId": 3895,
+      "canonicalName": "Michael Caine",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          11
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3896",
+      "tmdbPersonId": 3896,
+      "canonicalName": "Liam Neeson",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          46
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3905",
+      "tmdbPersonId": 3905,
+      "canonicalName": "William H. Macy",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          121
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3910",
+      "tmdbPersonId": 3910,
+      "canonicalName": "Frances McDormand",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          260
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4038",
+      "tmdbPersonId": 4038,
+      "canonicalName": "Susan Sarandon",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          99
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4068",
+      "tmdbPersonId": 4068,
+      "canonicalName": "Gary Cooper",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          114
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4070",
+      "tmdbPersonId": 4070,
+      "canonicalName": "Grace Kelly",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          95
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4090",
+      "tmdbPersonId": 4090,
+      "canonicalName": "Shirley MacLaine",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          146
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4110",
+      "tmdbPersonId": 4110,
+      "canonicalName": "Humphrey Bogart",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          56
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4111",
+      "tmdbPersonId": 4111,
+      "canonicalName": "Ingrid Bergman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          40
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4135",
+      "tmdbPersonId": 4135,
+      "canonicalName": "Robert Redford",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          76
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4165",
+      "tmdbPersonId": 4165,
+      "canonicalName": "John Wayne",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          87
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4173",
+      "tmdbPersonId": 4173,
+      "canonicalName": "Anthony Hopkins",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          1
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4299",
+      "tmdbPersonId": 4299,
+      "canonicalName": "Dean Martin",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          213
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4431",
+      "tmdbPersonId": 4431,
+      "canonicalName": "Jessica Lange",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          142
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4483",
+      "tmdbPersonId": 4483,
+      "canonicalName": "Dustin Hoffman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          52
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4491",
+      "tmdbPersonId": 4491,
+      "canonicalName": "Jennifer Aniston",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4495",
+      "tmdbPersonId": 4495,
+      "canonicalName": "Steve Carell",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4512",
+      "tmdbPersonId": 4512,
+      "canonicalName": "James Woods",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          157
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4517",
+      "tmdbPersonId": 4517,
+      "canonicalName": "Joe Pesci",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          124
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4566",
+      "tmdbPersonId": 4566,
+      "canonicalName": "Alan Rickman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          19
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4690",
+      "tmdbPersonId": 4690,
+      "canonicalName": "Christopher Walken",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          36
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4724",
+      "tmdbPersonId": 4724,
+      "canonicalName": "Kevin Bacon",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          108
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4783",
+      "tmdbPersonId": 4783,
+      "canonicalName": "Sam Neill",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          224
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4785",
+      "tmdbPersonId": 4785,
+      "canonicalName": "Jeff Goldblum",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          153
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4786",
+      "tmdbPersonId": 4786,
+      "canonicalName": "Richard Attenborough",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          228
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4958",
+      "tmdbPersonId": 4958,
+      "canonicalName": "Henry Fonda",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          69
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4960",
+      "tmdbPersonId": 4960,
+      "canonicalName": "Charles Bronson",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          205
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5004",
+      "tmdbPersonId": 5004,
+      "canonicalName": "Omar Sharif",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          207
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5049",
+      "tmdbPersonId": 5049,
+      "canonicalName": "John Hurt",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          130
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5064",
+      "tmdbPersonId": 5064,
+      "canonicalName": "Meryl Streep",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          2
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5081",
+      "tmdbPersonId": 5081,
+      "canonicalName": "Emily Blunt",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          199
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5292",
+      "tmdbPersonId": 5292,
+      "canonicalName": "Denzel Washington",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          14
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5293",
+      "tmdbPersonId": 5293,
+      "canonicalName": "Willem Dafoe",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          84
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5309",
+      "tmdbPersonId": 5309,
+      "canonicalName": "Judi Dench",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          22
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5341",
+      "tmdbPersonId": 5341,
+      "canonicalName": "Richard Burton",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          172
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5344",
+      "tmdbPersonId": 5344,
+      "canonicalName": "Meg Ryan",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          291
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5401",
+      "tmdbPersonId": 5401,
+      "canonicalName": "Anthony Quinn",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          188
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5469",
+      "tmdbPersonId": 5469,
+      "canonicalName": "Ralph Fiennes",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          83
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5472",
+      "tmdbPersonId": 5472,
+      "canonicalName": "Colin Firth",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          143
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5530",
+      "tmdbPersonId": 5530,
+      "canonicalName": "James McAvoy",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          190
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5563",
+      "tmdbPersonId": 5563,
+      "canonicalName": "James Coburn",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          168
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5606",
+      "tmdbPersonId": 5606,
+      "canonicalName": "Sissy Spacek",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          184
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5657",
+      "tmdbPersonId": 5657,
+      "canonicalName": "Anjelica Huston",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          241
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5698",
+      "tmdbPersonId": 5698,
+      "canonicalName": "Jessica Tandy",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          140
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5788",
+      "tmdbPersonId": 5788,
+      "canonicalName": "James Cagney",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          131
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5823",
+      "tmdbPersonId": 5823,
+      "canonicalName": "Julie Andrews",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          29
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6065",
+      "tmdbPersonId": 6065,
+      "canonicalName": "Dennis Quaid",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          235
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6161",
+      "tmdbPersonId": 6161,
+      "canonicalName": "Jennifer Connelly",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          258
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6193",
+      "tmdbPersonId": 6193,
+      "canonicalName": "Leonardo DiCaprio",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          13
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6197",
+      "tmdbPersonId": 6197,
+      "canonicalName": "Brian Dennehy",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          299
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6355",
+      "tmdbPersonId": 6355,
+      "canonicalName": "Roy Scheider",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          160
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6384",
+      "tmdbPersonId": 6384,
+      "canonicalName": "Keanu Reeves",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          62
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6450",
+      "tmdbPersonId": 6450,
+      "canonicalName": "Faye Dunaway",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          222
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6598",
+      "tmdbPersonId": 6598,
+      "canonicalName": "Katharine Hepburn",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          30
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6837",
+      "tmdbPersonId": 6837,
+      "canonicalName": "Walter Matthau",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          78
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6856",
+      "tmdbPersonId": 6856,
+      "canonicalName": "Kurt Russell",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          38
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6885",
+      "tmdbPersonId": 6885,
+      "canonicalName": "Charlize Theron",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          120
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6949",
+      "tmdbPersonId": 6949,
+      "canonicalName": "John Malkovich",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          90
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6968",
+      "tmdbPersonId": 6968,
+      "canonicalName": "Hugh Jackman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          39
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7056",
+      "tmdbPersonId": 7056,
+      "canonicalName": "Emma Thompson",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          49
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7180",
+      "tmdbPersonId": 7180,
+      "canonicalName": "John Candy",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          173
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7301",
+      "tmdbPersonId": 7301,
+      "canonicalName": "Anthony Perkins",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          288
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7302",
+      "tmdbPersonId": 7302,
+      "canonicalName": "Janet Leigh",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          189
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7399",
+      "tmdbPersonId": 7399,
+      "canonicalName": "Ben Stiller",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7502",
+      "tmdbPersonId": 7502,
+      "canonicalName": "Ernest Borgnine",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          109
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7570",
+      "tmdbPersonId": 7570,
+      "canonicalName": "Lauren Bacall",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          98
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7633",
+      "tmdbPersonId": 7633,
+      "canonicalName": "Leslie Nielsen",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          165
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8237",
+      "tmdbPersonId": 8237,
+      "canonicalName": "Doris Day",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          169
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8252",
+      "tmdbPersonId": 8252,
+      "canonicalName": "William Holden",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          164
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8349",
+      "tmdbPersonId": 8349,
+      "canonicalName": "Martin Sheen",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          216
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8487",
+      "tmdbPersonId": 8487,
+      "canonicalName": "Gregory Peck",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          17
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8534",
+      "tmdbPersonId": 8534,
+      "canonicalName": "Kathy Bates",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          34
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8635",
+      "tmdbPersonId": 8635,
+      "canonicalName": "Buster Keaton",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          281
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8724",
+      "tmdbPersonId": 8724,
+      "canonicalName": "Errol Flynn",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          254
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8725",
+      "tmdbPersonId": 8725,
+      "canonicalName": "Olivia de Havilland",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          151
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8784",
+      "tmdbPersonId": 8784,
+      "canonicalName": "Daniel Craig",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          238
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8857",
+      "tmdbPersonId": 8857,
+      "canonicalName": "Debbie Reynolds",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          180
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8891",
+      "tmdbPersonId": 8891,
+      "canonicalName": "John Travolta",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          300
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8930",
+      "tmdbPersonId": 8930,
+      "canonicalName": "John Cleese",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          195
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8944",
+      "tmdbPersonId": 8944,
+      "canonicalName": "Jamie Lee Curtis",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          133
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8945",
+      "tmdbPersonId": 8945,
+      "canonicalName": "Kevin Kline",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          202
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9066",
+      "tmdbPersonId": 9066,
+      "canonicalName": "Judy Garland",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          74
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9273",
+      "tmdbPersonId": 9273,
+      "canonicalName": "Amy Adams",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          137
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9309",
+      "tmdbPersonId": 9309,
+      "canonicalName": "Richard Pryor",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          266
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9560",
+      "tmdbPersonId": 9560,
+      "canonicalName": "Ellen Burstyn",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          221
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9642",
+      "tmdbPersonId": 9642,
+      "canonicalName": "Jude Law",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          249
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9994",
+      "tmdbPersonId": 9994,
+      "canonicalName": "Helen Hunt",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          209
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10017",
+      "tmdbPersonId": 10017,
+      "canonicalName": "Charlton Heston",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          117
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10127",
+      "tmdbPersonId": 10127,
+      "canonicalName": "Jon Voight",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          210
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10158",
+      "tmdbPersonId": 10158,
+      "canonicalName": "Robert Mitchum",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          102
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10205",
+      "tmdbPersonId": 10205,
+      "canonicalName": "Sigourney Weaver",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          103
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10297",
+      "tmdbPersonId": 10297,
+      "canonicalName": "Matthew McConaughey",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          70
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10538",
+      "tmdbPersonId": 10538,
+      "canonicalName": "Vivien Leigh",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          61
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10774",
+      "tmdbPersonId": 10774,
+      "canonicalName": "Anne Bancroft",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          136
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10859",
+      "tmdbPersonId": 10859,
+      "canonicalName": "Ryan Reynolds",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          287
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10978",
+      "tmdbPersonId": 10978,
+      "canonicalName": "Maggie Smith",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          24
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10990",
+      "tmdbPersonId": 10990,
+      "canonicalName": "Emma Watson",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          268
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11390",
+      "tmdbPersonId": 11390,
+      "canonicalName": "Peter O'Toole",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          86
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11477",
+      "tmdbPersonId": 11477,
+      "canonicalName": "Ray Liotta",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          201
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11492",
+      "tmdbPersonId": 11492,
+      "canonicalName": "Clark Gable",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          53
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11514",
+      "tmdbPersonId": 11514,
+      "canonicalName": "Catherine O'Hara",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          255
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11701",
+      "tmdbPersonId": 11701,
+      "canonicalName": "Angelina Jolie",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11856",
+      "tmdbPersonId": 11856,
+      "canonicalName": "Daniel Day-Lewis",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          12
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12074",
+      "tmdbPersonId": 12074,
+      "canonicalName": "John Lithgow",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          92
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12147",
+      "tmdbPersonId": 12147,
+      "canonicalName": "Spencer Tracy",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          81
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12151",
+      "tmdbPersonId": 12151,
+      "canonicalName": "Montgomery Clift",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          230
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12248",
+      "tmdbPersonId": 12248,
+      "canonicalName": "Alec Guinness",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          57
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12446",
+      "tmdbPersonId": 12446,
+      "canonicalName": "Peter Sellers",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          198
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13240",
+      "tmdbPersonId": 13240,
+      "canonicalName": "Mark Wahlberg",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          211
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13242",
+      "tmdbPersonId": 13242,
+      "canonicalName": "Paul Giamatti",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          257
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13294",
+      "tmdbPersonId": 13294,
+      "canonicalName": "Gene Kelly",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          176
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13333",
+      "tmdbPersonId": 13333,
+      "canonicalName": "Vanessa Redgrave",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          250
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13472",
+      "tmdbPersonId": 13472,
+      "canonicalName": "Tim Curry",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          234
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13565",
+      "tmdbPersonId": 13565,
+      "canonicalName": "Steve McQueen",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          55
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13566",
+      "tmdbPersonId": 13566,
+      "canonicalName": "Edward G. Robinson",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          182
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13784",
+      "tmdbPersonId": 13784,
+      "canonicalName": "Burt Lancaster",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          111
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13848",
+      "tmdbPersonId": 13848,
+      "canonicalName": "Charlie Chaplin",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          88
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14261",
+      "tmdbPersonId": 14261,
+      "canonicalName": "David Niven",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          219
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14528",
+      "tmdbPersonId": 14528,
+      "canonicalName": "Yul Brynner",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          163
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14639",
+      "tmdbPersonId": 14639,
+      "canonicalName": "Mel Brooks",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          270
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14730",
+      "tmdbPersonId": 14730,
+      "canonicalName": "Angela Lansbury",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          187
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14837",
+      "tmdbPersonId": 14837,
+      "canonicalName": "Carol Burnett",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          227
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14974",
+      "tmdbPersonId": 14974,
+      "canonicalName": "Barbara Stanwyck",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          183
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15112",
+      "tmdbPersonId": 15112,
+      "canonicalName": "Tom Selleck",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          276
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15152",
+      "tmdbPersonId": 15152,
+      "canonicalName": "James Earl Jones",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          31
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15735",
+      "tmdbPersonId": 15735,
+      "canonicalName": "Helen Mirren",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          23
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16483",
+      "tmdbPersonId": 16483,
+      "canonicalName": "Sylvester Stallone",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16523",
+      "tmdbPersonId": 16523,
+      "canonicalName": "Burgess Meredith",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          215
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16757",
+      "tmdbPersonId": 16757,
+      "canonicalName": "Sophia Loren",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          112
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16896",
+      "tmdbPersonId": 16896,
+      "canonicalName": "James Garner",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          85
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16897",
+      "tmdbPersonId": 16897,
+      "canonicalName": "Sidney Poitier",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          67
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16935",
+      "tmdbPersonId": 16935,
+      "canonicalName": "Geena Davis",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          295
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16940",
+      "tmdbPersonId": 16940,
+      "canonicalName": "Jeremy Irons",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          128
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18072",
+      "tmdbPersonId": 18072,
+      "canonicalName": "Michael Herbig",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18277",
+      "tmdbPersonId": 18277,
+      "canonicalName": "Sandra Bullock",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          58
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18391",
+      "tmdbPersonId": 18391,
+      "canonicalName": "Lee Marvin",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          125
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18892",
+      "tmdbPersonId": 18892,
+      "canonicalName": "Goldie Hawn",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          206
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18897",
+      "tmdbPersonId": 18897,
+      "canonicalName": "Jackie Chan",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          233
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18918",
+      "tmdbPersonId": 18918,
+      "canonicalName": "Dwayne Johnson",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          290
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18973",
+      "tmdbPersonId": 18973,
+      "canonicalName": "Mila Kunis",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18999",
+      "tmdbPersonId": 18999,
+      "canonicalName": "J.K. Simmons",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          171
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:19292",
+      "tmdbPersonId": 19292,
+      "canonicalName": "Adam Sandler",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:19549",
+      "tmdbPersonId": 19549,
+      "canonicalName": "Greta Garbo",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          236
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:20006",
+      "tmdbPersonId": 20006,
+      "canonicalName": "Christopher Reeve",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          197
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:20141",
+      "tmdbPersonId": 20141,
+      "canonicalName": "Deborah Kerr",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          252
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:21007",
+      "tmdbPersonId": 21007,
+      "canonicalName": "Jonah Hill",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:21278",
+      "tmdbPersonId": 21278,
+      "canonicalName": "Alan Alda",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          280
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:22226",
+      "tmdbPersonId": 22226,
+      "canonicalName": "Paul Rudd",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          267
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:22970",
+      "tmdbPersonId": 22970,
+      "canonicalName": "Peter Dinklage",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          292
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:24045",
+      "tmdbPersonId": 24045,
+      "canonicalName": "Joseph Gordon-Levitt",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          265
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:25541",
+      "tmdbPersonId": 25541,
+      "canonicalName": "Katherine Heigl",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:25787",
+      "tmdbPersonId": 25787,
+      "canonicalName": "Ava Gardner",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          212
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:26510",
+      "tmdbPersonId": 26510,
+      "canonicalName": "Eugene Levy",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          275
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:26512",
+      "tmdbPersonId": 26512,
+      "canonicalName": "Carroll O'Connor",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          259
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:27319",
+      "tmdbPersonId": 27319,
+      "canonicalName": "Christoph Waltz",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          289
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:27726",
+      "tmdbPersonId": 27726,
+      "canonicalName": "Don Knotts",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          278
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:27772",
+      "tmdbPersonId": 27772,
+      "canonicalName": "John Ritter",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          277
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:30124",
+      "tmdbPersonId": 30124,
+      "canonicalName": "Susan Hayward",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          245
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:30181",
+      "tmdbPersonId": 30181,
+      "canonicalName": "Fred Astaire",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          177
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:30614",
+      "tmdbPersonId": 30614,
+      "canonicalName": "Ryan Gosling",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          242
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:31550",
+      "tmdbPersonId": 31550,
+      "canonicalName": "Joan Crawford",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          200
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:33741",
+      "tmdbPersonId": 33741,
+      "canonicalName": "Rita Hayworth",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          127
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:38673",
+      "tmdbPersonId": 38673,
+      "canonicalName": "Channing Tatum",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:40174",
+      "tmdbPersonId": 40174,
+      "canonicalName": "Lucille Ball",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          82
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:41419",
+      "tmdbPersonId": 41419,
+      "canonicalName": "Hugh Laurie",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          226
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:51329",
+      "tmdbPersonId": 51329,
+      "canonicalName": "Bradley Cooper",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          167
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:51576",
+      "tmdbPersonId": 51576,
+      "canonicalName": "Chuck Norris",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:54693",
+      "tmdbPersonId": 54693,
+      "canonicalName": "Emma Stone",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          263
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:55536",
+      "tmdbPersonId": 55536,
+      "canonicalName": "Melissa McCarthy",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:55636",
+      "tmdbPersonId": 55636,
+      "canonicalName": "Donald Sutherland",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          42
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:57755",
+      "tmdbPersonId": 57755,
+      "canonicalName": "Woody Harrelson",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          113
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:61303",
+      "tmdbPersonId": 61303,
+      "canonicalName": "Dick Van Dyke",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          129
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:61981",
+      "tmdbPersonId": 61981,
+      "canonicalName": "Michael Clarke Duncan",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          272
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:65562",
+      "tmdbPersonId": 65562,
+      "canonicalName": "Andy Griffith",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          214
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:67773",
+      "tmdbPersonId": 67773,
+      "canonicalName": "Steve Martin",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          122
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:69597",
+      "tmdbPersonId": 69597,
+      "canonicalName": "Drew Barrymore",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          273
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:70035",
+      "tmdbPersonId": 70035,
+      "canonicalName": "Maureen O'Hara",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          96
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:70851",
+      "tmdbPersonId": 70851,
+      "canonicalName": "Jack Black",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:71580",
+      "tmdbPersonId": 71580,
+      "canonicalName": "Benedict Cumberbatch",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          104
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:71727",
+      "tmdbPersonId": 71727,
+      "canonicalName": "Betty White",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          72
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:72129",
+      "tmdbPersonId": 72129,
+      "canonicalName": "Jennifer Lawrence",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          229
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:73421",
+      "tmdbPersonId": 73421,
+      "canonicalName": "Joaquin Phoenix",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          175
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:74568",
+      "tmdbPersonId": 74568,
+      "canonicalName": "Chris Hemsworth",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          251
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:78198",
+      "tmdbPersonId": 78198,
+      "canonicalName": "Tyler Hoechlin",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          166
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:95624",
+      "tmdbPersonId": 95624,
+      "canonicalName": "Shirley Temple",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          139
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:112561",
+      "tmdbPersonId": 112561,
+      "canonicalName": "Lily Collins",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:115440",
+      "tmdbPersonId": 115440,
+      "canonicalName": "Sydney Sweeney",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:234352",
+      "tmdbPersonId": 234352,
+      "canonicalName": "Margot Robbie",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "ranker-core",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          138
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:505710",
+      "tmdbPersonId": 505710,
+      "canonicalName": "Zendaya",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:587020",
+      "tmdbPersonId": 587020,
+      "canonicalName": "Theo James",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "ranker-core"
+      ],
+      "sourceRanks": {
+        "ranker-actors": [
+          239
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:974169",
+      "tmdbPersonId": 974169,
+      "canonicalName": "Jenna Ortega",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1136406",
+      "tmdbPersonId": 1136406,
+      "canonicalName": "Tom Holland",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1190668",
+      "tmdbPersonId": 1190668,
+      "canonicalName": "Timothée Chalamet",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1356210",
+      "tmdbPersonId": 1356210,
+      "canonicalName": "Millie Bobby Brown",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1373737",
+      "tmdbPersonId": 1373737,
+      "canonicalName": "Florence Pugh",
+      "category": "actor",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    }
+  ]
+}

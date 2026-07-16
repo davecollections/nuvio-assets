@@ -1,0 +1,128 @@
+{
+  "version": "people-sources-v1",
+  "generatedAt": "2026-07-16T05:02:18.079Z",
+  "ordering": "source-id-ascending",
+  "sourceCount": 6,
+  "sources": [
+    {
+      "sourceId": "imkaptain-actors",
+      "displayTitle": "ImKaptain actor identity cross-check",
+      "sourceType": "external-catalog-cross-check",
+      "sourceUrl": "https://raw.githubusercontent.com/ImKaptain/nuvio-assets/9f1d4de802e828c1ed8dee9b53a6051880d2babd/nuvio-share-hub/collections/actors.json",
+      "sourceFile": "tools/studio-network-batch/.work/imkaptain-identity-comparison/external-inputs/actors.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-16T03:29:01.591Z",
+      "sourceHash": {
+        "algorithm": "sha256",
+        "value": "4fbf5ac0b0cc43f1ac97292dfe835f54a96be24208d369a7026a021f83608645",
+        "scope": "complete pinned actors.json response"
+      },
+      "extractionMethod": "Read 58 explicit TMDB person IDs from the validated text-only identity inventory; artwork fields were excluded.",
+      "completenessStatement": "All 58 actor identity records in the pinned cross-check file are represented as source memberships.",
+      "knownLimitations": [
+        "Cross-check source only; absence from Ranker does not imply final Nuvio inclusion."
+      ],
+      "rankingDynamicWarning": null
+    },
+    {
+      "sourceId": "imkaptain-directors",
+      "displayTitle": "ImKaptain director catalogue cross-check",
+      "sourceType": "external-catalog-cross-check",
+      "sourceUrl": "https://raw.githubusercontent.com/ImKaptain/nuvio-assets/9f1d4de802e828c1ed8dee9b53a6051880d2babd/nuvio-share-hub/collections/legendary_directors.json",
+      "sourceFile": "tools/studio-network-batch/.work/imkaptain-identity-comparison/external-inputs/legendary_directors.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-16T03:29:01.591Z",
+      "sourceHash": {
+        "algorithm": "sha256",
+        "value": "73b52b70bc9e0491fe329d737c64a9cdf67ead53d6b0c515fef69a5e856283fe",
+        "scope": "complete pinned legendary_directors.json response"
+      },
+      "extractionMethod": "Retained 20 MDBList catalogue references as secondary provenance and resolved people independently through TMDB metadata.",
+      "completenessStatement": "All 20 director catalogue records in the pinned cross-check file are represented as source memberships.",
+      "knownLimitations": [
+        "MDBList catalogue IDs identify source catalogues, not TMDB people, and must never be used as TMDB person IDs."
+      ],
+      "rankingDynamicWarning": null
+    },
+    {
+      "sourceId": "ranker-actors",
+      "displayTitle": "The 830+ Best Actors of All Time, Ranked",
+      "sourceType": "dynamic-user-ranking",
+      "sourceUrl": "https://www.ranker.com/crowdranked-list/the-greatest-film-actors-and-actresses-of-all-time",
+      "sourceFile": "tools/people-seed/.work/people-seed-build/inputs/ranker-source-snapshot.json",
+      "publicationOrSnapshotYear": 2025,
+      "retrievalTimestamp": "2026-07-16T04:21:46.9728561Z",
+      "sourceHash": {
+        "algorithm": "sha256",
+        "value": "3eb0a34f907bf39f812db40086762ccc3790f34a2934c82abf53d52c95130613",
+        "scope": "Ranker list-items JSON response data"
+      },
+      "extractionMethod": "Extracted the complete requested rank boundary 1-300 from Ranker's text JSON list-items endpoint, retaining source names, ranks, and ontology IDs.",
+      "completenessStatement": "Every Ranker source rank from 1 through 300 is represented exactly once.",
+      "knownLimitations": [
+        "Dynamic user-voted ranking with plausible English-language popularity bias; source rank is provenance, not objective quality."
+      ],
+      "rankingDynamicWarning": "Dynamic user-voted list; ranks can change after the captured snapshot."
+    },
+    {
+      "sourceId": "tmdb-identity-resolution",
+      "displayTitle": "TMDB person identity-resolution metadata",
+      "sourceType": "identity-metadata",
+      "sourceUrl": "https://developer.themoviedb.org/reference/person-details",
+      "sourceFile": "tools/people-seed/.work/people-seed-build/drafts/people-registry.draft.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-16T05:02:18.079Z",
+      "sourceHash": {
+        "algorithm": "sha256",
+        "value": "3e2bd9202898776b9da6d9af34ac1fedfa2769e8348f48583e76def91c588f7a",
+        "scope": "completed resolved people registry draft"
+      },
+      "extractionMethod": "Resolved names through cached TMDB person search, details, alternate names, combined credits, and relative profile-path metadata; the promotion made no network requests.",
+      "completenessStatement": "All 619 candidate identities are exact explicit-ID or high-confidence name-and-career matches; zero ambiguous, unresolved, or not-found identities entered the registry.",
+      "knownLimitations": [
+        "Profile paths and career metadata are snapshot metadata and may change in future TMDB data; no profile image was downloaded."
+      ],
+      "rankingDynamicWarning": null
+    },
+    {
+      "sourceId": "tspdt-21c-directors",
+      "displayTitle": "The 21st Century's Most Acclaimed Films (Top 100 Directors)",
+      "sourceType": "critical-aggregation-ranking",
+      "sourceUrl": "https://theyshootpictures.com/21stcentury_top100directors.htm",
+      "sourceFile": null,
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-16T05:02:18.079Z",
+      "sourceHash": {
+        "algorithm": "sha256",
+        "value": "64dcc9f1a71d2059085d0e7c830b07890b84033cba74e02924ea2ad3e10d5a14",
+        "scope": "retrieved TSPDT 21st-century ranking HTML"
+      },
+      "extractionMethod": "Extracted ranks 1-100 and expanded two directing-team rows to 102 person memberships while preserving the original rank and team spelling.",
+      "completenessStatement": "All 100 ranking rows and all 102 expanded person occurrences are represented.",
+      "knownLimitations": [
+        "Bounded modern-supplement evidence; the ranking is a source aggregation, not an objective truth or final Nuvio order."
+      ],
+      "rankingDynamicWarning": "Edition-specific source ranking; source rank does not establish final Nuvio ordering."
+    },
+    {
+      "sourceId": "tspdt-directors",
+      "displayTitle": "The 1,000 Greatest Films (Top 250 Directors)",
+      "sourceType": "critical-aggregation-ranking",
+      "sourceUrl": "https://theyshootpictures.com/gf1000_top250directors.htm",
+      "sourceFile": null,
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-16T05:02:18.079Z",
+      "sourceHash": {
+        "algorithm": "sha256",
+        "value": "e96af941b9451ca42d6e4dc7452efa2caafcb461b619f8855ad31bebdee124d0",
+        "scope": "retrieved TSPDT all-time ranking HTML"
+      },
+      "extractionMethod": "Extracted ranks 1-250 and expanded seven directing-team rows to 257 person occurrences while preserving original ranks and team spelling.",
+      "completenessStatement": "All 250 ranking rows and all 257 expanded person occurrences are represented.",
+      "knownLimitations": [
+        "Critical-list aggregation, not objective truth; source rank does not determine final Nuvio inclusion or ordering."
+      ],
+      "rankingDynamicWarning": "Edition-specific source ranking; source rank does not establish final Nuvio ordering."
+    }
+  ]
+}

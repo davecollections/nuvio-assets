@@ -1,0 +1,6053 @@
+{
+  "version": "people-seed-v1",
+  "generatedAt": "2026-07-16T05:02:18.079Z",
+  "status": "proposed-candidate-rollout",
+  "category": "director",
+  "ordering": "tmdb-person-id-ascending",
+  "recordCount": 300,
+  "records": [
+    {
+      "stableKey": "person:1",
+      "tmdbPersonId": 1,
+      "canonicalName": "George Lucas",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          127
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7",
+      "tmdbPersonId": 7,
+      "canonicalName": "Andrew Stanton",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          71
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:24",
+      "tmdbPersonId": 24,
+      "canonicalName": "Robert Zemeckis",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          125
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:40",
+      "tmdbPersonId": 40,
+      "canonicalName": "Orson Welles",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          2
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:42",
+      "tmdbPersonId": 42,
+      "canonicalName": "Lars von Trier",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          8
+        ],
+        "tspdt-directors": [
+          77
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:68",
+      "tmdbPersonId": 68,
+      "canonicalName": "Fritz Lang",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          24
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:108",
+      "tmdbPersonId": 108,
+      "canonicalName": "Peter Jackson",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          37
+        ],
+        "tspdt-directors": [
+          201
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:138",
+      "tmdbPersonId": 138,
+      "canonicalName": "Quentin Tarantino",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          22
+        ],
+        "tspdt-directors": [
+          64
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:190",
+      "tmdbPersonId": 190,
+      "canonicalName": "Clint Eastwood",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          48
+        ],
+        "tspdt-directors": [
+          108
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:201",
+      "tmdbPersonId": 201,
+      "canonicalName": "Michel Gondry",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          31
+        ],
+        "tspdt-directors": [
+          213
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:202",
+      "tmdbPersonId": 202,
+      "canonicalName": "Charlie Kaufman",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          83
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:223",
+      "tmdbPersonId": 223,
+      "canonicalName": "Alejandro G. Iñárritu",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          52
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:224",
+      "tmdbPersonId": 224,
+      "canonicalName": "David Cronenberg",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          59
+        ],
+        "tspdt-directors": [
+          93
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:240",
+      "tmdbPersonId": 240,
+      "canonicalName": "Stanley Kubrick",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          3
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:280",
+      "tmdbPersonId": 280,
+      "canonicalName": "Terry Gilliam",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          142
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:309",
+      "tmdbPersonId": 309,
+      "canonicalName": "Pedro Almodóvar",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          29
+        ],
+        "tspdt-directors": [
+          99
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:488",
+      "tmdbPersonId": 488,
+      "canonicalName": "Steven Spielberg",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          32
+        ],
+        "tspdt-directors": [
+          23
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:510",
+      "tmdbPersonId": 510,
+      "canonicalName": "Tim Burton",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          202
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:525",
+      "tmdbPersonId": 525,
+      "canonicalName": "Christopher Nolan",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          16
+        ],
+        "tspdt-directors": [
+          164
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:564",
+      "tmdbPersonId": 564,
+      "canonicalName": "Richard Linklater",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          14
+        ],
+        "tspdt-directors": [
+          132
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:578",
+      "tmdbPersonId": 578,
+      "canonicalName": "Ridley Scott",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          43
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:607",
+      "tmdbPersonId": 607,
+      "canonicalName": "Zhang Yimou",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          158
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:608",
+      "tmdbPersonId": 608,
+      "canonicalName": "Hayao Miyazaki",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          10
+        ],
+        "tspdt-directors": [
+          69
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:638",
+      "tmdbPersonId": 638,
+      "canonicalName": "Michael Mann",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          131
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:793",
+      "tmdbPersonId": 793,
+      "canonicalName": "Luis Buñuel",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          14
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:834",
+      "tmdbPersonId": 834,
+      "canonicalName": "Otto Preminger",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          153
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1032",
+      "tmdbPersonId": 1032,
+      "canonicalName": "Martin Scorsese",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          33
+        ],
+        "tspdt-directors": [
+          12
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1126",
+      "tmdbPersonId": 1126,
+      "canonicalName": "Krzysztof Kieślowski",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          59
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1150",
+      "tmdbPersonId": 1150,
+      "canonicalName": "Brian De Palma",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          101
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1152",
+      "tmdbPersonId": 1152,
+      "canonicalName": "Oliver Stone",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          250
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1188",
+      "tmdbPersonId": 1188,
+      "canonicalName": "Kim Ki-duk",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          99
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1223",
+      "tmdbPersonId": 1223,
+      "canonicalName": "Joel Coen",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          21
+        ],
+        "tspdt-directors": [
+          61
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1224",
+      "tmdbPersonId": 1224,
+      "canonicalName": "Ethan Coen",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          21
+        ],
+        "tspdt-directors": [
+          61
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1243",
+      "tmdbPersonId": 1243,
+      "canonicalName": "Woody Allen",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          38
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1496",
+      "tmdbPersonId": 1496,
+      "canonicalName": "Tod Browning",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          200
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1524",
+      "tmdbPersonId": 1524,
+      "canonicalName": "Harold Ramis",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          244
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1614",
+      "tmdbPersonId": 1614,
+      "canonicalName": "Ang Lee",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          26
+        ],
+        "tspdt-directors": [
+          152
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1650",
+      "tmdbPersonId": 1650,
+      "canonicalName": "François Truffaut",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          25
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1744",
+      "tmdbPersonId": 1744,
+      "canonicalName": "Robert Wise",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          181
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1769",
+      "tmdbPersonId": 1769,
+      "canonicalName": "Sofia Coppola",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          39
+        ],
+        "tspdt-directors": [
+          209
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1776",
+      "tmdbPersonId": 1776,
+      "canonicalName": "Francis Ford Coppola",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          5
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1884",
+      "tmdbPersonId": 1884,
+      "canonicalName": "Steven Soderbergh",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          76
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2226",
+      "tmdbPersonId": 2226,
+      "canonicalName": "Sydney Pollack",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          236
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2303",
+      "tmdbPersonId": 2303,
+      "canonicalName": "Wim Wenders",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          73
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2419",
+      "tmdbPersonId": 2419,
+      "canonicalName": "Jean-Pierre Jeunet",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          91
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2428",
+      "tmdbPersonId": 2428,
+      "canonicalName": "Ernst Lubitsch",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          37
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2559",
+      "tmdbPersonId": 2559,
+      "canonicalName": "Henri-Georges Clouzot",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          173
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2636",
+      "tmdbPersonId": 2636,
+      "canonicalName": "Alfred Hitchcock",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          1
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2662",
+      "tmdbPersonId": 2662,
+      "canonicalName": "Frank Capra",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          68
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2690",
+      "tmdbPersonId": 2690,
+      "canonicalName": "Peter Weir",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          138
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2710",
+      "tmdbPersonId": 2710,
+      "canonicalName": "James Cameron",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          106
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2725",
+      "tmdbPersonId": 2725,
+      "canonicalName": "Rainer Werner Fassbinder",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          48
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2746",
+      "tmdbPersonId": 2746,
+      "canonicalName": "Elia Kazan",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          88
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2765",
+      "tmdbPersonId": 2765,
+      "canonicalName": "Nicholas Ray",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          70
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2801",
+      "tmdbPersonId": 2801,
+      "canonicalName": "Andrzej Wajda",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          143
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2891",
+      "tmdbPersonId": 2891,
+      "canonicalName": "Josef von Sternberg",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          98
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2917",
+      "tmdbPersonId": 2917,
+      "canonicalName": "James Whale",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          198
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2991",
+      "tmdbPersonId": 2991,
+      "canonicalName": "Robert Wiene",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          241
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3026",
+      "tmdbPersonId": 3026,
+      "canonicalName": "Rob Reiner",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          139
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3146",
+      "tmdbPersonId": 3146,
+      "canonicalName": "Billy Wilder",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          17
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3238",
+      "tmdbPersonId": 3238,
+      "canonicalName": "Merian C. Cooper",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          190
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3239",
+      "tmdbPersonId": 3239,
+      "canonicalName": "Ernest B. Schoedsack",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          190
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3556",
+      "tmdbPersonId": 3556,
+      "canonicalName": "Roman Polanski",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          44
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3776",
+      "tmdbPersonId": 3776,
+      "canonicalName": "Jean-Luc Godard",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          45
+        ],
+        "tspdt-directors": [
+          6
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3831",
+      "tmdbPersonId": 3831,
+      "canonicalName": "Jean-Pierre Melville",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          95
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3974",
+      "tmdbPersonId": 3974,
+      "canonicalName": "Miloš Forman",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          85
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4065",
+      "tmdbPersonId": 4065,
+      "canonicalName": "Fred Zinnemann",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          231
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4109",
+      "tmdbPersonId": 4109,
+      "canonicalName": "Michael Curtiz",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          63
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4385",
+      "tmdbPersonId": 4385,
+      "canonicalName": "Sergio Leone",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          41
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4410",
+      "tmdbPersonId": 4410,
+      "canonicalName": "Roberto Rossellini",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          27
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4415",
+      "tmdbPersonId": 4415,
+      "canonicalName": "Federico Fellini",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          4
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4429",
+      "tmdbPersonId": 4429,
+      "canonicalName": "Jim Jarmusch",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          121
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4762",
+      "tmdbPersonId": 4762,
+      "canonicalName": "Paul Thomas Anderson",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          4
+        ],
+        "tspdt-directors": [
+          58
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4955",
+      "tmdbPersonId": 4955,
+      "canonicalName": "Dario Argento",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          207
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4956",
+      "tmdbPersonId": 4956,
+      "canonicalName": "Bernardo Bertolucci",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          62
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4964",
+      "tmdbPersonId": 4964,
+      "canonicalName": "Hal Ashby",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          137
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5026",
+      "tmdbPersonId": 5026,
+      "canonicalName": "Akira Kurosawa",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          8
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5216",
+      "tmdbPersonId": 5216,
+      "canonicalName": "Gus Van Sant",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          43
+        ],
+        "tspdt-directors": [
+          162
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5281",
+      "tmdbPersonId": 5281,
+      "canonicalName": "Spike Lee",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          72
+        ],
+        "tspdt-directors": [
+          75
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5342",
+      "tmdbPersonId": 5342,
+      "canonicalName": "Mike Nichols",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          149
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5446",
+      "tmdbPersonId": 5446,
+      "canonicalName": "David Hand",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          243
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5602",
+      "tmdbPersonId": 5602,
+      "canonicalName": "David Lynch",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          2
+        ],
+        "tspdt-directors": [
+          22
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5655",
+      "tmdbPersonId": 5655,
+      "canonicalName": "Wes Anderson",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          25
+        ],
+        "tspdt-directors": [
+          160
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5656",
+      "tmdbPersonId": 5656,
+      "canonicalName": "Noah Baumbach",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          100
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5763",
+      "tmdbPersonId": 5763,
+      "canonicalName": "Jacques Tati",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          53
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5970",
+      "tmdbPersonId": 5970,
+      "canonicalName": "Pier Paolo Pasolini",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          52
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6011",
+      "tmdbPersonId": 6011,
+      "canonicalName": "Michael Haneke",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          5
+        ],
+        "tspdt-directors": [
+          84
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6349",
+      "tmdbPersonId": 6349,
+      "canonicalName": "Alan J. Pakula",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          215
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6431",
+      "tmdbPersonId": 6431,
+      "canonicalName": "Darren Aronofsky",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          64
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6448",
+      "tmdbPersonId": 6448,
+      "canonicalName": "Arthur Penn",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          183
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6593",
+      "tmdbPersonId": 6593,
+      "canonicalName": "John Huston",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          65
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6648",
+      "tmdbPersonId": 6648,
+      "canonicalName": "Ingmar Bergman",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          7
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6817",
+      "tmdbPersonId": 6817,
+      "canonicalName": "Agnès Varda",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          18
+        ],
+        "tspdt-directors": [
+          47
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6818",
+      "tmdbPersonId": 6818,
+      "canonicalName": "Werner Herzog",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          82
+        ],
+        "tspdt-directors": [
+          55
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7467",
+      "tmdbPersonId": 7467,
+      "canonicalName": "David Fincher",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          27
+        ],
+        "tspdt-directors": [
+          117
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7767",
+      "tmdbPersonId": 7767,
+      "canonicalName": "Sam Peckinpah",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          71
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8193",
+      "tmdbPersonId": 8193,
+      "canonicalName": "Florian Henckel von Donnersmarck",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          84
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8452",
+      "tmdbPersonId": 8452,
+      "canonicalName": "Andrei Tarkovsky",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          13
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8500",
+      "tmdbPersonId": 8500,
+      "canonicalName": "John Ford",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          10
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8630",
+      "tmdbPersonId": 8630,
+      "canonicalName": "Erich von Stroheim",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          94
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8635",
+      "tmdbPersonId": 8635,
+      "canonicalName": "Buster Keaton",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          50
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8741",
+      "tmdbPersonId": 8741,
+      "canonicalName": "Victor Sjöström",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          185
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8823",
+      "tmdbPersonId": 8823,
+      "canonicalName": "Raoul Walsh",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          146
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9049",
+      "tmdbPersonId": 9049,
+      "canonicalName": "Victor Fleming",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          81
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9076",
+      "tmdbPersonId": 9076,
+      "canonicalName": "F. W. Murnau",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          19
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9339",
+      "tmdbPersonId": 9339,
+      "canonicalName": "Lilly Wachowski",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          192
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9340",
+      "tmdbPersonId": 9340,
+      "canonicalName": "Lana Wachowski",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          192
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9603",
+      "tmdbPersonId": 9603,
+      "canonicalName": "Sergei Eisenstein",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          29
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9730",
+      "tmdbPersonId": 9730,
+      "canonicalName": "Jean Cocteau",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          147
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9789",
+      "tmdbPersonId": 9789,
+      "canonicalName": "Robert Altman",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          49
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9888",
+      "tmdbPersonId": 9888,
+      "canonicalName": "Claire Denis",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          20
+        ],
+        "tspdt-directors": [
+          60
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9956",
+      "tmdbPersonId": 9956,
+      "canonicalName": "Chris Marker",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          54
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10001",
+      "tmdbPersonId": 10001,
+      "canonicalName": "William Wyler",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          110
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10051",
+      "tmdbPersonId": 10051,
+      "canonicalName": "Tobe Hooper",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          155
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10092",
+      "tmdbPersonId": 10092,
+      "canonicalName": "Robert Flaherty",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          156
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10099",
+      "tmdbPersonId": 10099,
+      "canonicalName": "Park Chan-wook",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          41
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10146",
+      "tmdbPersonId": 10146,
+      "canonicalName": "Jacques Tourneur",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          100
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10316",
+      "tmdbPersonId": 10316,
+      "canonicalName": "Theo Angelopoulos",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          112
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10346",
+      "tmdbPersonId": 10346,
+      "canonicalName": "Robert Bresson",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          16
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10367",
+      "tmdbPersonId": 10367,
+      "canonicalName": "John Waters",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          238
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10491",
+      "tmdbPersonId": 10491,
+      "canonicalName": "Paul Verhoeven",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          177
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10601",
+      "tmdbPersonId": 10601,
+      "canonicalName": "Joseph L. Mankiewicz",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          102
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10757",
+      "tmdbPersonId": 10757,
+      "canonicalName": "Jane Campion",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          97
+        ],
+        "tspdt-directors": [
+          86
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10828",
+      "tmdbPersonId": 10828,
+      "canonicalName": "Guillermo del Toro",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          40
+        ],
+        "tspdt-directors": [
+          247
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11090",
+      "tmdbPersonId": 11090,
+      "canonicalName": "Edgar Wright",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          93
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11147",
+      "tmdbPersonId": 11147,
+      "canonicalName": "John Cassavetes",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          33
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11218",
+      "tmdbPersonId": 11218,
+      "canonicalName": "Alfonso Cuarón",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          12
+        ],
+        "tspdt-directors": [
+          157
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11435",
+      "tmdbPersonId": 11435,
+      "canonicalName": "Howard Hawks",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          20
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11528",
+      "tmdbPersonId": 11528,
+      "canonicalName": "Jean Renoir",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          9
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11572",
+      "tmdbPersonId": 11572,
+      "canonicalName": "Carl Theodor Dreyer",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          18
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11770",
+      "tmdbPersonId": 11770,
+      "canonicalName": "John Carpenter",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          105
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11983",
+      "tmdbPersonId": 11983,
+      "canonicalName": "Alain Resnais",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          40
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12114",
+      "tmdbPersonId": 12114,
+      "canonicalName": "Michael Cimino",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          114
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12160",
+      "tmdbPersonId": 12160,
+      "canonicalName": "Satyajit Ray",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          36
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12238",
+      "tmdbPersonId": 12238,
+      "canonicalName": "David Lean",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          39
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12329",
+      "tmdbPersonId": 12329,
+      "canonicalName": "Vittorio De Sica",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          32
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12453",
+      "tmdbPersonId": 12453,
+      "canonicalName": "Wong Kar-Wai",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          1
+        ],
+        "tspdt-directors": [
+          30
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13235",
+      "tmdbPersonId": 13235,
+      "canonicalName": "Alexander Payne",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          70
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13284",
+      "tmdbPersonId": 13284,
+      "canonicalName": "Stanley Donen",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          42
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13294",
+      "tmdbPersonId": 13294,
+      "canonicalName": "Gene Kelly",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          42
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13848",
+      "tmdbPersonId": 13848,
+      "canonicalName": "Charlie Chaplin",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          15
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13899",
+      "tmdbPersonId": 13899,
+      "canonicalName": "G.W. Pabst",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          193
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13980",
+      "tmdbPersonId": 13980,
+      "canonicalName": "Vincente Minnelli",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          72
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14132",
+      "tmdbPersonId": 14132,
+      "canonicalName": "Nicolas Roeg",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          90
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14353",
+      "tmdbPersonId": 14353,
+      "canonicalName": "Max Ophüls",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          46
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14392",
+      "tmdbPersonId": 14392,
+      "canonicalName": "Kathryn Bigelow",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          89
+        ],
+        "tspdt-directors": [
+          221
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14566",
+      "tmdbPersonId": 14566,
+      "canonicalName": "Alexander Mackendrick",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          184
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14597",
+      "tmdbPersonId": 14597,
+      "canonicalName": "Gaspar Noé",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          77
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14639",
+      "tmdbPersonId": 14639,
+      "canonicalName": "Mel Brooks",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          245
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14674",
+      "tmdbPersonId": 14674,
+      "canonicalName": "George Cukor",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          109
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14773",
+      "tmdbPersonId": 14773,
+      "canonicalName": "Don Siegel",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          240
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14855",
+      "tmdbPersonId": 14855,
+      "canonicalName": "Frank Borzage",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          214
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14999",
+      "tmdbPersonId": 14999,
+      "canonicalName": "George A. Romero",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          150
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15127",
+      "tmdbPersonId": 15127,
+      "canonicalName": "Luchino Visconti",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          34
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15175",
+      "tmdbPersonId": 15175,
+      "canonicalName": "William Friedkin",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          126
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15189",
+      "tmdbPersonId": 15189,
+      "canonicalName": "Michelangelo Antonioni",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          21
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15254",
+      "tmdbPersonId": 15254,
+      "canonicalName": "Emir Kusturica",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          178
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15378",
+      "tmdbPersonId": 15378,
+      "canonicalName": "Carol Reed",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          76
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15389",
+      "tmdbPersonId": 15389,
+      "canonicalName": "Louis Malle",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          179
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15488",
+      "tmdbPersonId": 15488,
+      "canonicalName": "Ken Loach",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          122
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16294",
+      "tmdbPersonId": 16294,
+      "canonicalName": "Jonathan Demme",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          197
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16767",
+      "tmdbPersonId": 16767,
+      "canonicalName": "Aki Kaurismäki",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          74
+        ],
+        "tspdt-directors": [
+          217
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16863",
+      "tmdbPersonId": 16863,
+      "canonicalName": "Todd Haynes",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          46
+        ],
+        "tspdt-directors": [
+          144
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16988",
+      "tmdbPersonId": 16988,
+      "canonicalName": "Maurice Pialat",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          133
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:17496",
+      "tmdbPersonId": 17496,
+      "canonicalName": "Jacques Audiard",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          65
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18392",
+      "tmdbPersonId": 18392,
+      "canonicalName": "Robert Aldrich",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          154
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18533",
+      "tmdbPersonId": 18533,
+      "canonicalName": "Errol Morris",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          228
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18626",
+      "tmdbPersonId": 18626,
+      "canonicalName": "Andy Warhol",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          165
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18738",
+      "tmdbPersonId": 18738,
+      "canonicalName": "George Stevens",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          187
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:19069",
+      "tmdbPersonId": 19069,
+      "canonicalName": "Claude Chabrol",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          222
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:19304",
+      "tmdbPersonId": 19304,
+      "canonicalName": "John Schlesinger",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          211
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:19665",
+      "tmdbPersonId": 19665,
+      "canonicalName": "John Boorman",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          180
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:20025",
+      "tmdbPersonId": 20025,
+      "canonicalName": "Shōhei Imamura",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          188
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:20629",
+      "tmdbPersonId": 20629,
+      "canonicalName": "George Miller",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          49
+        ],
+        "tspdt-directors": [
+          171
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:20657",
+      "tmdbPersonId": 20657,
+      "canonicalName": "Cristian Mungiu",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          86
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:20660",
+      "tmdbPersonId": 20660,
+      "canonicalName": "Carlos Reygadas",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          67
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:21678",
+      "tmdbPersonId": 21678,
+      "canonicalName": "Olivier Assayas",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          78
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:21684",
+      "tmdbPersonId": 21684,
+      "canonicalName": "Bong Joon Ho",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          7
+        ],
+        "tspdt-directors": [
+          120
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:24011",
+      "tmdbPersonId": 24011,
+      "canonicalName": "Jia Zhangke",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          15
+        ],
+        "tspdt-directors": [
+          166
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:24882",
+      "tmdbPersonId": 24882,
+      "canonicalName": "Jacques Demy",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          92
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:25161",
+      "tmdbPersonId": 25161,
+      "canonicalName": "Marcel Carné",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          89
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:25645",
+      "tmdbPersonId": 25645,
+      "canonicalName": "Hirokazu Kore-eda",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          53
+        ],
+        "tspdt-directors": [
+          182
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:26959",
+      "tmdbPersonId": 26959,
+      "canonicalName": "Samuel Fuller",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          176
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:27213",
+      "tmdbPersonId": 27213,
+      "canonicalName": "Ermanno Olmi",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          191
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:27977",
+      "tmdbPersonId": 27977,
+      "canonicalName": "Leos Carax",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          61
+        ],
+        "tspdt-directors": [
+          186
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:28615",
+      "tmdbPersonId": 28615,
+      "canonicalName": "Éric Rohmer",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          82
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:29720",
+      "tmdbPersonId": 29720,
+      "canonicalName": "Abel Gance",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          151
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:29905",
+      "tmdbPersonId": 29905,
+      "canonicalName": "Marguerite Duras",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          189
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:29962",
+      "tmdbPersonId": 29962,
+      "canonicalName": "King Vidor",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          111
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:30008",
+      "tmdbPersonId": 30008,
+      "canonicalName": "Leo McCarey",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          80
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:30249",
+      "tmdbPersonId": 30249,
+      "canonicalName": "Preston Sturges",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          87
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:30711",
+      "tmdbPersonId": 30711,
+      "canonicalName": "Kenneth Lonergan",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          73
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:30715",
+      "tmdbPersonId": 30715,
+      "canonicalName": "Terrence Malick",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          11
+        ],
+        "tspdt-directors": [
+          51
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:33166",
+      "tmdbPersonId": 33166,
+      "canonicalName": "René Clair",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          232
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:37302",
+      "tmdbPersonId": 37302,
+      "canonicalName": "Georges Franju",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          223
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:37493",
+      "tmdbPersonId": 37493,
+      "canonicalName": "Luis García Berlanga",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          159
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:37833",
+      "tmdbPersonId": 37833,
+      "canonicalName": "Víctor Erice",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          96
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:37846",
+      "tmdbPersonId": 37846,
+      "canonicalName": "Emeric Pressburger",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          35
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:39009",
+      "tmdbPersonId": 39009,
+      "canonicalName": "Joseph Losey",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          195
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:39012",
+      "tmdbPersonId": 39012,
+      "canonicalName": "Peter Bogdanovich",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          169
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:39996",
+      "tmdbPersonId": 39996,
+      "canonicalName": "Sidney Lumet",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          103
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:40199",
+      "tmdbPersonId": 40199,
+      "canonicalName": "Anthony Mann",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          219
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:40476",
+      "tmdbPersonId": 40476,
+      "canonicalName": "Maren Ade",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          58
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:45138",
+      "tmdbPersonId": 45138,
+      "canonicalName": "Luc Dardenne",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          63
+        ],
+        "tspdt-directors": [
+          204
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:45400",
+      "tmdbPersonId": 45400,
+      "canonicalName": "Greta Gerwig",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "external-supplement"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:45791",
+      "tmdbPersonId": 45791,
+      "canonicalName": "Roy Andersson",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          47
+        ],
+        "tspdt-directors": [
+          220
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:46230",
+      "tmdbPersonId": 46230,
+      "canonicalName": "Nagisa Ōshima",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          145
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:46712",
+      "tmdbPersonId": 46712,
+      "canonicalName": "Douglas Sirk",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          74
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:53296",
+      "tmdbPersonId": 53296,
+      "canonicalName": "Joshua Oppenheimer",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          62
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:53914",
+      "tmdbPersonId": 53914,
+      "canonicalName": "Jean Eustache",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          104
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:56194",
+      "tmdbPersonId": 56194,
+      "canonicalName": "Paolo Sorrentino",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          81
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:56208",
+      "tmdbPersonId": 56208,
+      "canonicalName": "Lucrecia Martel",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          6
+        ],
+        "tspdt-directors": [
+          116
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:56209",
+      "tmdbPersonId": 56209,
+      "canonicalName": "Jean-Pierre Dardenne",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          63
+        ],
+        "tspdt-directors": [
+          204
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:56214",
+      "tmdbPersonId": 56214,
+      "canonicalName": "Nuri Bilge Ceylan",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          28
+        ],
+        "tspdt-directors": [
+          205
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:56383",
+      "tmdbPersonId": 56383,
+      "canonicalName": "Kelly Reichardt",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          17
+        ],
+        "tspdt-directors": [
+          208
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:64992",
+      "tmdbPersonId": 64992,
+      "canonicalName": "Hou Hsiao-hsien",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          34
+        ],
+        "tspdt-directors": [
+          57
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:65314",
+      "tmdbPersonId": 65314,
+      "canonicalName": "Giuseppe Tornatore",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          234
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:65452",
+      "tmdbPersonId": 65452,
+      "canonicalName": "Mike Leigh",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          118
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:66728",
+      "tmdbPersonId": 66728,
+      "canonicalName": "Jonathan Glazer",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          36
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:66777",
+      "tmdbPersonId": 66777,
+      "canonicalName": "Bob Fosse",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          135
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:68424",
+      "tmdbPersonId": 68424,
+      "canonicalName": "Michael Powell",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          35,
+          210
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:68519",
+      "tmdbPersonId": 68519,
+      "canonicalName": "Andrey Zvyagintsev",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          75
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:68813",
+      "tmdbPersonId": 68813,
+      "canonicalName": "Céline Sciamma",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          9
+        ],
+        "tspdt-directors": [
+          124
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:69759",
+      "tmdbPersonId": 69759,
+      "canonicalName": "Apichatpong Weerasethakul",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          3
+        ],
+        "tspdt-directors": [
+          78
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:70864",
+      "tmdbPersonId": 70864,
+      "canonicalName": "Robert Hamer",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          239
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:71082",
+      "tmdbPersonId": 71082,
+      "canonicalName": "Andrea Arnold",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          51
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:71174",
+      "tmdbPersonId": 71174,
+      "canonicalName": "Tsai Ming-liang",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          13
+        ],
+        "tspdt-directors": [
+          113
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:72646",
+      "tmdbPersonId": 72646,
+      "canonicalName": "Tomás Gutiérrez Alea",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          216
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:72757",
+      "tmdbPersonId": 72757,
+      "canonicalName": "Steve McQueen",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          35
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:73153",
+      "tmdbPersonId": 73153,
+      "canonicalName": "Jacques Rivette",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          83
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:78157",
+      "tmdbPersonId": 78157,
+      "canonicalName": "Lindsay Anderson",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          227
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:81749",
+      "tmdbPersonId": 81749,
+      "canonicalName": "Manoel de Oliveira",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          167
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:83287",
+      "tmdbPersonId": 83287,
+      "canonicalName": "Lynne Ramsay",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          50
+        ],
+        "tspdt-directors": [
+          196
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:83698",
+      "tmdbPersonId": 83698,
+      "canonicalName": "King Hu",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          218
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:85637",
+      "tmdbPersonId": 85637,
+      "canonicalName": "Béla Tarr",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          19
+        ],
+        "tspdt-directors": [
+          79
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:86290",
+      "tmdbPersonId": 86290,
+      "canonicalName": "Derek Jarman",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          246
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:87267",
+      "tmdbPersonId": 87267,
+      "canonicalName": "Francesco Rosi",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          230
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:90694",
+      "tmdbPersonId": 90694,
+      "canonicalName": "Gillo Pontecorvo",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          91
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:92784",
+      "tmdbPersonId": 92784,
+      "canonicalName": "Barry Jenkins",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          24
+        ],
+        "tspdt-directors": [
+          199
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:93406",
+      "tmdbPersonId": 93406,
+      "canonicalName": "Elem Klimov",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          119
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:93911",
+      "tmdbPersonId": 93911,
+      "canonicalName": "Terence Davies",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          168
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:95066",
+      "tmdbPersonId": 95066,
+      "canonicalName": "Sergei Parajanov",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          130
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:95111",
+      "tmdbPersonId": 95111,
+      "canonicalName": "Dziga Vertov",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          56
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:95501",
+      "tmdbPersonId": 95501,
+      "canonicalName": "Yasujirō Ozu",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          11
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:95568",
+      "tmdbPersonId": 95568,
+      "canonicalName": "Peter Watkins",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          249
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:96657",
+      "tmdbPersonId": 96657,
+      "canonicalName": "Lee Chang-dong",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          55
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:96813",
+      "tmdbPersonId": 96813,
+      "canonicalName": "Maya Deren",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          170
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:97202",
+      "tmdbPersonId": 97202,
+      "canonicalName": "Kenji Mizoguchi",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          26
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:97755",
+      "tmdbPersonId": 97755,
+      "canonicalName": "Charles Burnett",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          136
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:100036",
+      "tmdbPersonId": 100036,
+      "canonicalName": "D.W. Griffith",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          67
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:102844",
+      "tmdbPersonId": 102844,
+      "canonicalName": "Louis Feuillade",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          225
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:103393",
+      "tmdbPersonId": 103393,
+      "canonicalName": "Jacques Becker",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          224
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:105435",
+      "tmdbPersonId": 105435,
+      "canonicalName": "Joanna Hogg",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          96
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:107533",
+      "tmdbPersonId": 107533,
+      "canonicalName": "Cristi Puiu",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          60
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:107762",
+      "tmdbPersonId": 107762,
+      "canonicalName": "Aleksandr Sokurov",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          56
+        ],
+        "tspdt-directors": [
+          174
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:108764",
+      "tmdbPersonId": 108764,
+      "canonicalName": "Mikhail Kalatozov",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          161
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:118772",
+      "tmdbPersonId": 118772,
+      "canonicalName": "Abderrahmane Sissako",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          92
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:119294",
+      "tmdbPersonId": 119294,
+      "canonicalName": "Abbas Kiarostami",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          66
+        ],
+        "tspdt-directors": [
+          31
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:120229",
+      "tmdbPersonId": 120229,
+      "canonicalName": "Jafar Panahi",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          54
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:121585",
+      "tmdbPersonId": 121585,
+      "canonicalName": "Raúl Ruiz",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          233
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:122423",
+      "tmdbPersonId": 122423,
+      "canonicalName": "Yorgos Lanthimos",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          69
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:124137",
+      "tmdbPersonId": 124137,
+      "canonicalName": "Věra Chytilová",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          141
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:125354",
+      "tmdbPersonId": 125354,
+      "canonicalName": "Guru Dutt",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          212
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:125690",
+      "tmdbPersonId": 125690,
+      "canonicalName": "Mikio Naruse",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          129
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:127491",
+      "tmdbPersonId": 127491,
+      "canonicalName": "Claude Lanzmann",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          97
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:130030",
+      "tmdbPersonId": 130030,
+      "canonicalName": "Chantal Akerman",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          28
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:137427",
+      "tmdbPersonId": 137427,
+      "canonicalName": "Denis Villeneuve",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "cross-source",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          68
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:138006",
+      "tmdbPersonId": 138006,
+      "canonicalName": "Frederick Wiseman",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          163
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:141713",
+      "tmdbPersonId": 141713,
+      "canonicalName": "Oleksandr Dovzhenko",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          148
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:142603",
+      "tmdbPersonId": 142603,
+      "canonicalName": "Julie Dash",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          229
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:142865",
+      "tmdbPersonId": 142865,
+      "canonicalName": "Jean Vigo",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          45
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:143035",
+      "tmdbPersonId": 143035,
+      "canonicalName": "Edward Yang",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          66
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:143285",
+      "tmdbPersonId": 143285,
+      "canonicalName": "Larisa Shepitko",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          206
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:144826",
+      "tmdbPersonId": 144826,
+      "canonicalName": "Boris Barnet",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          237
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:150512",
+      "tmdbPersonId": 150512,
+      "canonicalName": "Miguel Gomes",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          80
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:150975",
+      "tmdbPersonId": 150975,
+      "canonicalName": "Hong Sang-soo",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          30
+        ],
+        "tspdt-directors": [
+          226
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:229931",
+      "tmdbPersonId": 229931,
+      "canonicalName": "Asghar Farhadi",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          44
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:233200",
+      "tmdbPersonId": 233200,
+      "canonicalName": "Fei Mu",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          194
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:238384",
+      "tmdbPersonId": 238384,
+      "canonicalName": "Alain Guiraudie",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          95
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:238960",
+      "tmdbPersonId": 238960,
+      "canonicalName": "Jean Rouch",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          235
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:256841",
+      "tmdbPersonId": 256841,
+      "canonicalName": "Pedro Costa",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          23
+        ],
+        "tspdt-directors": [
+          172
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:270361",
+      "tmdbPersonId": 270361,
+      "canonicalName": "Aleksei German",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          242
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:291263",
+      "tmdbPersonId": 291263,
+      "canonicalName": "Jordan Peele",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          38
+        ],
+        "tspdt-directors": [
+          248
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:543652",
+      "tmdbPersonId": 543652,
+      "canonicalName": "Ritwik Ghatak",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          175
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:544845",
+      "tmdbPersonId": 544845,
+      "canonicalName": "Glauber Rocha",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          107
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:557134",
+      "tmdbPersonId": 557134,
+      "canonicalName": "Ousmane Sembène",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          123
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:563461",
+      "tmdbPersonId": 563461,
+      "canonicalName": "Stan Brakhage",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          128
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:566294",
+      "tmdbPersonId": 566294,
+      "canonicalName": "Patricio Guzmán",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          79
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:931211",
+      "tmdbPersonId": 931211,
+      "canonicalName": "Alice Rohrwacher",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          88
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:933088",
+      "tmdbPersonId": 933088,
+      "canonicalName": "Wang Bing",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          42
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:935136",
+      "tmdbPersonId": 935136,
+      "canonicalName": "Jean-Marie Straub",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          115
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:935137",
+      "tmdbPersonId": 935137,
+      "canonicalName": "Danièle Huillet",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          115
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:936169",
+      "tmdbPersonId": 936169,
+      "canonicalName": "Michael Snow",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          134
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1012088",
+      "tmdbPersonId": 1012088,
+      "canonicalName": "James Benning",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          98
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1051381",
+      "tmdbPersonId": 1051381,
+      "canonicalName": "Lav Diaz",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          57
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1056121",
+      "tmdbPersonId": 1056121,
+      "canonicalName": "Ryan Coogler",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          90
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1079380",
+      "tmdbPersonId": 1079380,
+      "canonicalName": "Djibril Diop Mambéty",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "tspdt-all-time"
+      ],
+      "sourceRanks": {
+        "tspdt-directors": [
+          140
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1092208",
+      "tmdbPersonId": 1092208,
+      "canonicalName": "Jonas Mekas",
+      "category": "director",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "tspdt-all-time",
+        "tspdt-21st-century",
+        "cross-source"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          87
+        ],
+        "tspdt-directors": [
+          203
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1395183",
+      "tmdbPersonId": 1395183,
+      "canonicalName": "Chloé Zhao",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          94
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1487492",
+      "tmdbPersonId": 1487492,
+      "canonicalName": "Ryusuke Hamaguchi",
+      "category": "director",
+      "rolloutTier": "review",
+      "selectionBasis": [
+        "tspdt-21st-century",
+        "modern-supplement"
+      ],
+      "sourceRanks": {
+        "tspdt-21c-directors": [
+          85
+        ]
+      },
+      "recommendedAction": "manual-selection-review",
+      "selectionStatus": "proposed",
+      "ownerDecision": null,
+      "ownerNote": ""
+    }
+  ]
+}
