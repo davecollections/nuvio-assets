@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/people-sources.schema.json",
+  "title": "Nuvio people seed source registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "generatedAt", "ordering", "sourceCount", "sources"],
+  "properties": {
+    "version": { "const": "people-sources-v1" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "ordering": { "const": "source-id-ascending" },
+    "sourceCount": { "type": "integer", "minimum": 1 },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "sourceId",
+          "displayTitle",
+          "sourceType",
+          "sourceUrl",
+          "sourceFile",
+          "publicationOrSnapshotYear",
+          "retrievalTimestamp",
+          "sourceHash",
+          "extractionMethod",
+          "completenessStatement",
+          "knownLimitations",
+          "rankingDynamicWarning"
+        ],
+        "properties": {
+          "sourceId": {
+            "enum": [
+              "imkaptain-actors",
+              "imkaptain-directors",
+              "ranker-actors",
+              "tmdb-identity-resolution",
+              "tspdt-21c-directors",
+              "tspdt-directors"
+            ]
+          },
+          "displayTitle": { "type": "string", "minLength": 1 },
+          "sourceType": {
+            "enum": [
+              "dynamic-user-ranking",
+              "critical-aggregation-ranking",
+              "external-catalog-cross-check",
+              "identity-metadata"
+            ]
+          },
+          "sourceUrl": { "type": "string", "pattern": "^https://" },
+          "sourceFile": {
+            "type": ["string", "null"],
+            "pattern": "^[A-Za-z0-9._/-]+$"
+          },
+          "publicationOrSnapshotYear": { "type": "integer", "minimum": 1900, "maximum": 2100 },
+          "retrievalTimestamp": { "type": "string", "format": "date-time" },
+          "sourceHash": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["algorithm", "value", "scope"],
+            "properties": {
+              "algorithm": { "const": "sha256" },
+              "value": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+              "scope": { "type": "string", "minLength": 1 }
+            }
+          },
+          "extractionMethod": { "type": "string", "minLength": 1 },
+          "completenessStatement": { "type": "string", "minLength": 1 },
+          "knownLimitations": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "rankingDynamicWarning": { "type": ["string", "null"], "minLength": 1 }
+        }
+      }
+    }
+  }
+}

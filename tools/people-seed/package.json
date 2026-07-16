@@ -1,0 +1,15 @@
+{
+  "name": "@nuvio/people-seed",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Offline validation and deterministic promotion tooling for Nuvio people candidate data.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "build-foundation": "node scripts/build-foundation.mjs",
+    "test": "node --test",
+    "validate": "node src/validate-cli.mjs"
+  }
+}

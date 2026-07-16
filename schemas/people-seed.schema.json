@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/people-seed.schema.json",
+  "title": "Nuvio category-specific people seed membership",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "generatedAt", "status", "category", "ordering", "recordCount", "records"],
+  "properties": {
+    "version": { "const": "people-seed-v1" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "status": { "const": "proposed-candidate-rollout" },
+    "category": { "enum": ["actor", "director"] },
+    "ordering": { "const": "tmdb-person-id-ascending" },
+    "recordCount": { "type": "integer", "minimum": 1 },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stableKey",
+          "tmdbPersonId",
+          "canonicalName",
+          "category",
+          "rolloutTier",
+          "selectionBasis",
+          "sourceRanks",
+          "recommendedAction",
+          "selectionStatus",
+          "ownerDecision",
+          "ownerNote"
+        ],
+        "properties": {
+          "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+          "tmdbPersonId": { "type": "integer", "minimum": 1 },
+          "canonicalName": { "type": "string", "minLength": 1 },
+          "category": { "enum": ["actor", "director"] },
+          "rolloutTier": { "enum": ["initial", "later", "review"] },
+          "selectionBasis": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "ranker-core",
+                "tspdt-all-time",
+                "tspdt-21st-century",
+                "cross-source",
+                "external-supplement",
+                "modern-supplement",
+                "owner-added"
+              ]
+            }
+          },
+          "sourceRanks": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "integer", "minimum": 1 }
+            },
+            "propertyNames": {
+              "enum": ["ranker-actors", "tspdt-21c-directors", "tspdt-directors"]
+            }
+          },
+          "recommendedAction": {
+            "enum": ["include-initial", "include-later", "manual-selection-review"]
+          },
+          "selectionStatus": { "enum": ["proposed", "owner-decided"] },
+          "ownerDecision": { "enum": [null, "include", "exclude", "defer"] },
+          "ownerNote": { "type": "string" }
+        }
+      }
+    }
+  }
+}

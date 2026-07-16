@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/people-registry.schema.json",
+  "title": "Nuvio people candidate registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "generatedAt",
+    "status",
+    "ordering",
+    "recordCount",
+    "sourceMembershipCount",
+    "sourceMembershipFingerprint",
+    "records"
+  ],
+  "properties": {
+    "version": { "const": "people-registry-v1" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "status": { "const": "candidate-identities" },
+    "ordering": { "const": "tmdb-person-id-ascending" },
+    "recordCount": { "type": "integer", "minimum": 1 },
+    "sourceMembershipCount": { "type": "integer", "minimum": 1 },
+    "sourceMembershipFingerprint": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stableKey",
+          "tmdbPersonId",
+          "canonicalName",
+          "alsoKnownAs",
+          "knownForDepartment",
+          "profilePath",
+          "actorCreditCount",
+          "directorCreditCount",
+          "activityYearRange",
+          "categoryMembership",
+          "identityConfidence",
+          "identityEvidence",
+          "sourceMemberships",
+          "reviewStatus"
+        ],
+        "properties": {
+          "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+          "tmdbPersonId": { "type": "integer", "minimum": 1 },
+          "canonicalName": { "type": "string", "minLength": 1 },
+          "alsoKnownAs": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "knownForDepartment": { "enum": ["Acting", "Directing", "Production", "Writing"] },
+          "profilePath": {
+            "type": ["string", "null"],
+            "pattern": "^/[A-Za-z0-9_-]+\\.(jpg|jpeg|png|webp)$"
+          },
+          "actorCreditCount": { "type": "integer", "minimum": 0 },
+          "directorCreditCount": { "type": "integer", "minimum": 0 },
+          "activityYearRange": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["first", "last"],
+            "properties": {
+              "first": { "type": "integer", "minimum": 1800, "maximum": 2100 },
+              "last": { "type": "integer", "minimum": 1800, "maximum": 2100 }
+            }
+          },
+          "categoryMembership": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "uniqueItems": true,
+            "items": { "enum": ["actor", "director"] }
+          },
+          "identityConfidence": {
+            "enum": ["exact-explicit-id", "high-confidence-name-and-career-match"]
+          },
+          "identityEvidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "sourceMemberships": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["sourceId", "sourceRank", "sourceName"],
+              "properties": {
+                "sourceId": {
+                  "enum": [
+                    "imkaptain-actors",
+                    "imkaptain-directors",
+                    "ranker-actors",
+                    "tspdt-21c-directors",
+                    "tspdt-directors"
+                  ]
+                },
+                "sourceRank": { "type": ["integer", "null"], "minimum": 1 },
+                "sourceName": { "type": "string", "minLength": 1 },
+                "sourceRowType": { "enum": ["individual", "directing-team-member"] },
+                "sourceOntologyId": { "type": "integer", "minimum": 1 },
+                "secondaryCatalogIds": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": { "type": "string", "pattern": "^mdblist\\.[1-9][0-9]*$" }
+                },
+                "identityStatus": { "enum": ["explicit-tmdb-person-id", "catalog-id-only"] }
+              }
+            }
+          },
+          "reviewStatus": { "const": "candidate" }
+        }
+      }
+    }
+  }
+}
