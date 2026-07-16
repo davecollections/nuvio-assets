@@ -1,6 +1,10 @@
 # Studio/network batch project status
 
-**Last verified:** 2026-07-16 AEST (UTC+10)
+**Last verified:** 2026-07-16 AEST (UTC+10), after production publication and post-cleanup verification
+
+**Published release:** `studio-network-v1-2026-07-16` at `2026-07-16T02:17:14.289Z`
+
+**Asset publication commit:** `a5344e311195bb2d06fa9929669c7f56ad121c2a`
 
 **Verified through approval-state commit:** `798517f` (`Record staged cover approvals`)
 
@@ -34,8 +38,9 @@ The following stages are complete and present locally:
 - owner application of the remaining 275 safe reason-level decisions without artwork regeneration: 154 approve-as-is rows and 121 retain-current-background rows across 233 records;
 - a full review rebuild to zero pending records and zero unresolved reasons while preserving the persistent production audit history;
 - durable exact-output-hash cover approvals for all 2,366 staged covers and a validated 2,366-entry dry publish plan with zero writes and zero issues.
+- transaction-like publication of all 2,366 approved covers, installation of the canonical manifest only after permanent-file validation, generation of final release contact sheets from the published files, and cleanup of only the ignored artifacts authorised by the validated cleanup plan.
 
-No publication stage has been performed.
+The reviewed library is now published: 1,797 company covers and 569 network covers, with zero unapproved outputs, zero pending review records, and zero unresolved reasons.
 
 ## Latest verified source counts
 
@@ -61,7 +66,7 @@ All 2,366 currently eligible source records are now present in persistent produc
 - Output treatments: 1,885 image/logo-backed; 478 missing-logo Inter fallbacks; 3 owner-approved Inter text treatments
 - Combined staged content fingerprint: `48eff273e92778f1a20801dad7160e05a659c211c5f942d2a35c6b97f055c508`
 - Combined staged modification-time fingerprint: `fb1454694062842d5301a0768791cbaeab11e89ce382272bab8adaca19775951`
-- Final assets published: no
+- Final assets published: yes, in release `studio-network-v1-2026-07-16`
 
 The persistent current state is `.work/reports/production-v1/run-state.json`. The reconciled top-level `entities.jsonl` contains all 2,366 primary records. The post-expansion single-key run retained all previous 2,365 outputs byte-for-byte with their modification times.
 
@@ -288,12 +293,11 @@ The historical reconciled hashes immediately after the approved seven source tre
 
 ## Current open decisions
 
-- Publication timing and explicit authorisation for the separate publish stage.
-- Retention/pruning policy for superseded ignored review and contact-sheet artifacts.
+The initial publication and its authorised ignored-work cleanup are complete. No permanent cleanup or quarantine action is pending from this release.
 
 ## Exact next step
 
-Review the completion dashboard at `.work/final-review-approval/README.md` and the durable approval state at `config/review-state.json`. The next operation, if authorised, is a separate publication implementation that consumes the exact-hash dry plan, writes verified final identity files, and creates the canonical manifest. Before that implementation, decide whether superseded ignored review/contact-sheet pages should be retained as history or explicitly pruned; current tooling does not implement that cleanup.
+The next maintenance task is a narrow source-delta audit against the published manifest. Use current `tmdb-id-lookup` caches, plan newly eligible and artwork-input-changed records separately, and process only the resulting stable keys through staging, review, approval, and a later explicitly authorised manifest update. Do not use `--all` for routine maintenance.
 
 ## Important commands
 
@@ -325,10 +329,17 @@ With `npm --prefix tools/studio-network-batch`, the command runs in `tools/studi
 
 ## Publication state
 
-Verified absent:
+Release `studio-network-v1-2026-07-16` published at `2026-07-16T02:17:14.289Z`:
 
-- `assets/collection_covers/companies/`
-- `assets/collection_covers/networks/`
-- canonical published studio/network manifest
+- `assets/collection_covers/companies/{tmdb_id}.webp`: 1,797 files;
+- `assets/collection_covers/networks/{tmdb_id}.webp`: 569 files;
+- `assets/collection_covers/manifest.json`: 2,366 entries, 5,438,312 bytes, SHA-256 `4aff260b404dc6f7fecf63fdaf7de09a3bc87f3af9871e0b83109e2e2e20e312`;
+- published artwork bytes: 26,589,254;
+- published asset fingerprint: `48eff273e92778f1a20801dad7160e05a659c211c5f942d2a35c6b97f055c508`;
+- final release contact sheets: 29 company pages, 9 network pages, and 37 combined pages;
+- ignored-work cleanup: 28 obsolete indexed pages plus 708 other approved reproducible files removed, recovering 90,607,350 bytes;
+- retained historical proof sheets: `eligibility-50-contrast-approved.png`, `mixed-contrast-approved.png`, and `post-expansion-new.png`.
 
-The repository contains only the draft manifest schema, manifest implementation support, and test fixture. Those are not a published manifest.
+Release evidence and rollback records are retained under `.work/publication-release/studio-network-v1-2026-07-16/`. Production staging, exact approvals, persistent state, source treatments, background decisions, manual-source provenance, source-cache provenance, and the sibling `tmdb-id-lookup` checkout remained unchanged.
+
+Automatic eligibility remains independently configured at 50 titles for companies and 50 for networks; `core` remains 100+. A record later falling below the threshold or disappearing from current source data is reported as legacy state and never authorises automatic staged or published asset deletion. Permanent legacy/manual artwork remains protected unless a later task explicitly authorises a narrowly reviewed action.

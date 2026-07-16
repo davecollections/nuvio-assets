@@ -1,8 +1,8 @@
 # Nuvio studio/network batch utility
 
-This isolated Node.js utility audits TMDB company and TV-network source caches, creates deterministic selections, and stages 16:9 collection artwork for review. It is separate from Nuvio's Collection Builder: it handles artwork keyed by TMDB entity IDs, while the Collection Builder has a different responsibility.
+This isolated Node.js utility audits TMDB company and TV-network source caches, creates deterministic selections, and stages 16:9 collection artwork for review and controlled publication maintenance. It is separate from Nuvio's Collection Builder: it handles artwork keyed by TMDB entity IDs, while the Collection Builder has a different responsibility.
 
-The renderer uses Sharp with cached TMDB artwork and narrowly configured owner-approved source treatments. Routine generation does not call the TMDB search/detail API, and this utility does not publish into final asset folders or create the production manifest.
+The renderer uses Sharp with cached TMDB artwork and narrowly configured owner-approved source treatments. Routine generation does not call the TMDB search/detail API and continues to write only to ignored staging; final asset and manifest writes require a separate, explicitly authorised, validation-first publication transaction.
 
 ## Continuity
 
@@ -243,9 +243,31 @@ npm run reconcile-production -- reconcile --before-snapshot .work/plans/mixed-co
 
 For a genuinely absent-before production addition, use `--added-ids` instead of `--changed-ids`. The verifier requires the path to be absent from the before snapshot and present afterward, keeps the background-review resolution requirement limited to changed/retained background decisions, validates configured source treatments through their treatment metadata, and reports old paths separately from new additions.
 
-The eligibility-50 owner decisions were applied on 2026-07-14. Exactly five light-switch covers were regenerated offline; four reviewed-current covers and 2,356 unrelated outputs remained byte-for-byte and timestamp unchanged. The separately deferred `company:281730` was then generated through an exact one-key plan and reconciled as the sole absent-before addition. The final seven source-quality decisions were applied on 2026-07-15 with exactly seven offline regenerations and 2,359 unchanged outputs. The four-exception owner follow-up then regenerated exactly four covers and retained 2,362 unrelated outputs. The final review pass changed no artwork: the current full state contains 2,366 valid 1200×675 WebPs, zero live pending review entries, zero unresolved reasons, and 2,366 exact-hash cover approvals. Nothing has been published.
+The eligibility-50 owner decisions were applied on 2026-07-14. Exactly five light-switch covers were regenerated offline; four reviewed-current covers and 2,356 unrelated outputs remained byte-for-byte and timestamp unchanged. The separately deferred `company:281730` was then generated through an exact one-key plan and reconciled as the sole absent-before addition. The final seven source-quality decisions were applied on 2026-07-15 with exactly seven offline regenerations and 2,359 unchanged outputs. The four-exception owner follow-up then regenerated exactly four covers and retained 2,362 unrelated outputs. The final review pass changed no artwork: the current full state contains 2,366 valid 1200×675 WebPs, zero live pending review entries, zero unresolved reasons, and 2,366 exact-hash cover approvals. That exact approved state was subsequently published in release `studio-network-v1-2026-07-16`.
 
-## Future artwork and manifest policy
+## Published library and maintenance
+
+Release `studio-network-v1-2026-07-16` was published at `2026-07-16T02:17:14.289Z` in asset commit `a5344e311195bb2d06fa9929669c7f56ad121c2a`:
+
+- 1,797 company covers under `assets/collection_covers/companies/{tmdb_id}.webp`;
+- 569 network covers under `assets/collection_covers/networks/{tmdb_id}.webp`;
+- 2,366 entries in `assets/collection_covers/manifest.json`;
+- manifest SHA-256 `4aff260b404dc6f7fecf63fdaf7de09a3bc87f3af9871e0b83109e2e2e20e312` and byte count 5,438,312;
+- published asset fingerprint `48eff273e92778f1a20801dad7160e05a659c211c5f942d2a35c6b97f055c508` over 26,589,254 WebP bytes.
+
+The publication copied exact approved staged bytes into a temporary release tree, fully validated that tree, installed and fully validated every permanent cover, and only then atomically installed the canonical manifest. Final contact sheets were generated from the installed manifest and permanent files. Release evidence is retained under `.work/publication-release/studio-network-v1-2026-07-16/`.
+
+Routine maintenance is incremental:
+
+1. load the current sibling `tmdb-id-lookup` caches and audit eligibility with the committed 50/50 thresholds;
+2. plan newly eligible records with `--new-from-state` and artwork-input changes against `assets/collection_covers/manifest.json` separately;
+3. stage only the resulting stable keys, preferably offline when their approved source cache is available;
+4. rebuild focused review, resolve every reason, and create new exact-output approvals for changed or added covers;
+5. publish only that reviewed delta through a separately authorised transaction that preserves one physical file per TMDB ID and atomically updates the manifest after permanent verification.
+
+Do not use `--all` for routine maintenance. A title-count-only movement does not regenerate artwork while the record remains eligible. Falling below the automatic threshold or disappearing from current source data never authorises automatic deletion of staged or published artwork; preserve it as legacy state until a later explicit owner decision.
+
+## Published artwork and manifest policy
 
 Every TMDB ID receives its own final output path, even when several entities share the same source logo:
 
@@ -256,4 +278,4 @@ assets/collection_covers/networks/{tmdb_id}.webp
 
 Duplicate source-logo processing is reused internally, but final identities are not aliases and are not collapsed into a shared physical file.
 
-`presets/poc-v1.json` remains the proof-of-concept configuration. `presets/production-v1.json` is the approved first full-staging preset: 1200×675, flat `#08141C`/`#E4E7E9` automatic backgrounds, alpha threshold 8, 72%×48% visible-logo safe box, and quality-86 WebP. `schemas/manifest-entry.schema.json` remains a draft for the later publication stage. `schemas/review-state.schema.json` and `config/review-state.json` are the active durable cover-approval contract and state; they do not constitute a published manifest or final artwork.
+`presets/poc-v1.json` remains the proof-of-concept configuration. `presets/production-v1.json` is the approved first full-staging preset: 1200×675, flat `#08141C`/`#E4E7E9` automatic backgrounds, alpha threshold 8, 72%×48% visible-logo safe box, and quality-86 WebP. `schemas/manifest-entry.schema.json` defines the validated entry shape used by the canonical manifest. `schemas/review-state.schema.json` and `config/review-state.json` remain the durable exact-output approval contract and state; publication consumes them but does not alter them.
