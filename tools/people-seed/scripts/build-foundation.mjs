@@ -5,6 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { sourceMembershipFingerprint, validatePeopleFoundation } from "../src/people-validation.mjs";
+import { mergeActorSupplementFoundation } from "../src/actor-supplement-promotion.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "../..");
@@ -355,6 +356,8 @@ async function main() {
     registrySchema,
     seedSchema,
     sourcesSchema,
+    supplement,
+    supplementSchema,
   ] = await Promise.all([
     fs.readFile(paths.registryDraft),
     readJson(paths.registryDraft),
@@ -373,6 +376,8 @@ async function main() {
     readJson(path.join(repoRoot, "schemas", "people-registry.schema.json")),
     readJson(path.join(repoRoot, "schemas", "people-seed.schema.json")),
     readJson(path.join(repoRoot, "schemas", "people-sources.schema.json")),
+    readJson(path.join(dataRoot, "actor-owner-supplement.json")),
+    readJson(path.join(repoRoot, "schemas", "actor-owner-supplement.schema.json")),
   ]);
 
   assert(summary.registryCount === 619, "Completed summary registry count changed.");
@@ -384,23 +389,32 @@ async function main() {
   assert(actorDecisions.trim().split(/\r?\n/).length === 326 && actorDecisions.trim().split(/\r?\n/).slice(1).every((line) => line.endsWith(",,")), "Actor owner-decision draft must remain blank and complete.");
   assert(directorDecisions.trim().split(/\r?\n/).length === 301 && directorDecisions.trim().split(/\r?\n/).slice(1).every((line) => line.endsWith(",,")), "Director owner-decision draft must remain blank and complete.");
 
-  const registry = registryDocument(registryDraft);
-  const registryById = new Map(registry.records.map((record) => [record.tmdbPersonId, record]));
-  const actors = categoryDocument(actorsDraft, registryById);
-  const directors = categoryDocument(directorsDraft, registryById);
-  const sources = sourceDocument({
-    generatedAt: registry.generatedAt,
+  const baseRegistry = registryDocument(registryDraft);
+  const baseRegistryById = new Map(baseRegistry.records.map((record) => [record.tmdbPersonId, record]));
+  const baseActors = categoryDocument(actorsDraft, baseRegistryById);
+  const baseDirectors = categoryDocument(directorsDraft, baseRegistryById);
+  const baseSources = sourceDocument({
+    generatedAt: baseRegistry.generatedAt,
     sourceInventory,
     imkEvidence,
     registryDraftHash: sha256(registryDraftRaw),
   });
+  const { registry, actors, directors, sources } = mergeActorSupplementFoundation({
+    registry: baseRegistry,
+    actors: baseActors,
+    directors: baseDirectors,
+    sources: baseSources,
+    supplement,
+  });
+  const registryById = new Map(registry.records.map((record) => [record.tmdbPersonId, record]));
 
   const validation = validatePeopleFoundation({
     registry,
     actors,
     directors,
     sources,
-    schemas: { registry: registrySchema, seed: seedSchema, sources: sourcesSchema },
+    supplement,
+    schemas: { registry: registrySchema, seed: seedSchema, sources: sourcesSchema, supplement: supplementSchema },
   });
   if (validation.errors.length) throw new Error(`Generated foundation failed validation:\n${validation.errors.map((error) => `- ${error}`).join("\n")}`);
 

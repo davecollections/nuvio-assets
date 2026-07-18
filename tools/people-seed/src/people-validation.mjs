@@ -3,17 +3,21 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { validateAgainstSchema } from "./schema-validator.mjs";
+import {
+  ACTOR_SUPPLEMENT_COUNTS,
+  validateActorSupplement,
+} from "./actor-supplement-promotion.mjs";
 
 export const EXPECTED_COUNTS = Object.freeze({
-  registry: 619,
-  actor: 325,
+  registry: 817,
+  actor: 523,
   director: 300,
   shared: 6,
-  sourceMemberships: 737,
+  sourceMemberships: 1069,
 });
 
 export const EXPECTED_ROLLOUT = Object.freeze({
-  actor: Object.freeze({ initial: 200, later: 100, review: 25 }),
+  actor: Object.freeze({ initial: 295, later: 203, review: 25 }),
   director: Object.freeze({ initial: 154, later: 102, review: 44 }),
 });
 
@@ -27,23 +31,41 @@ const EXPECTED_SHARED_NAMES = [
 ];
 
 const EXPECTED_SOURCE_COUNTS = Object.freeze({
+  "filmaholic-top100-actors-2026": 64,
+  "imdb-starmeter-2026-07-18": 45,
   "imkaptain-actors": 58,
   "imkaptain-directors": 20,
+  "owner-actor-supplement-2026-07": 198,
   "ranker-actors": 300,
+  "ranker-current-famous-actors-2026": 25,
   "tspdt-21c-directors": 102,
   "tspdt-directors": 257,
 });
 
 const EXPECTED_SOURCE_IDS = [
+  "filmaholic-top100-actors-2026",
+  "imdb-actor-list-ls548798415",
+  "imdb-popular-celebrities-ls052283250",
+  "imdb-starmeter-2026-07-18",
   "imkaptain-actors",
   "imkaptain-directors",
+  "owner-actor-supplement-2026-07",
   "ranker-actors",
+  "ranker-current-famous-actors-2026",
   "tmdb-identity-resolution",
   "tspdt-21c-directors",
   "tspdt-directors",
+  "wikipedia-highest-grossing-actors-2026",
 ];
 
-const ACTOR_SOURCES = new Set(["imkaptain-actors", "ranker-actors"]);
+const ACTOR_SOURCES = new Set([
+  "filmaholic-top100-actors-2026",
+  "imdb-starmeter-2026-07-18",
+  "imkaptain-actors",
+  "owner-actor-supplement-2026-07",
+  "ranker-actors",
+  "ranker-current-famous-actors-2026",
+]);
 const DIRECTOR_SOURCES = new Set(["imkaptain-directors", "tspdt-21c-directors", "tspdt-directors"]);
 const BASIS_ORDER = [
   "ranker-core",
@@ -108,6 +130,7 @@ function expectedSelectionBasis(category, memberships) {
   const sourceIds = new Set(memberships.map((membership) => membership.sourceId));
   const basis = [];
   if (category === "actor") {
+    if (sourceIds.has("owner-actor-supplement-2026-07")) return ["owner-added"];
     if (sourceIds.has("ranker-actors")) basis.push("ranker-core");
     if (sourceIds.size > 1) basis.push("cross-source");
     if (!sourceIds.has("ranker-actors") && sourceIds.has("imkaptain-actors")) basis.push("external-supplement");
@@ -186,8 +209,10 @@ function validateCategory(errors, document, category, registryById) {
       "manual-selection-review": "review",
     }[record.recommendedAction];
     addIf(errors, record.rolloutTier === expectedTier, `${category} ${record.stableKey}: rollout tier does not match recommendation`);
-    addIf(errors, record.selectionStatus === "proposed", `${category} ${record.stableKey}: selection status must remain proposed`);
-    addIf(errors, record.ownerDecision === null, `${category} ${record.stableKey}: owner decision must remain blank`);
+    const ownerApprovedSupplement = category === "actor"
+      && memberships.some((membership) => membership.sourceId === "owner-actor-supplement-2026-07");
+    addIf(errors, record.selectionStatus === (ownerApprovedSupplement ? "owner-decided" : "proposed"), `${category} ${record.stableKey}: selection status does not match owner-approval policy`);
+    addIf(errors, record.ownerDecision === (ownerApprovedSupplement ? "include" : null), `${category} ${record.stableKey}: owner decision does not match owner-approval policy`);
     addIf(errors, record.ownerNote === "", `${category} ${record.stableKey}: owner note must remain blank`);
     addIf(errors, Object.keys(record.sourceRanks).every((key, index, keys) => index === 0 || keys[index - 1].localeCompare(key) < 0), `${category} ${record.stableKey}: source-rank keys must be ordered`);
     addIf(errors, record.selectionBasis.every((basis, index) => index === 0 || BASIS_ORDER.indexOf(record.selectionBasis[index - 1]) < BASIS_ORDER.indexOf(basis)), `${category} ${record.stableKey}: selection basis must be deterministically ordered`);
@@ -197,13 +222,14 @@ function validateCategory(errors, document, category, registryById) {
   addIf(errors, sameJson(rollout, EXPECTED_ROLLOUT[category]), `${category} rollout counts do not match the authorised proposal`);
 }
 
-export function validatePeopleFoundation({ registry, actors, directors, sources, schemas = null, rawDocuments = null }) {
+export function validatePeopleFoundation({ registry, actors, directors, sources, supplement = null, schemas = null, rawDocuments = null }) {
   const errors = [];
   if (schemas) {
     errors.push(...validateAgainstSchema(registry, schemas.registry, "people-registry.json"));
     errors.push(...validateAgainstSchema(actors, schemas.seed, "actors-seed.json"));
     errors.push(...validateAgainstSchema(directors, schemas.seed, "directors-seed.json"));
     errors.push(...validateAgainstSchema(sources, schemas.sources, "sources.json"));
+    if (supplement && schemas.supplement) errors.push(...validateActorSupplement(supplement, schemas.supplement).errors);
   }
   if (rawDocuments) {
     for (const [name, document] of Object.entries({
@@ -211,6 +237,7 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
       "actors-seed.json": actors,
       "directors-seed.json": directors,
       "sources.json": sources,
+      ...(supplement ? { "actor-owner-supplement.json": supplement } : {}),
     })) {
       addIf(errors, rawDocuments[name] === `${JSON.stringify(document, null, 2)}\n`, `${name}: JSON serialization is not deterministic`);
     }
@@ -237,6 +264,9 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
   addIf(errors, sourceMemberships.length === EXPECTED_COUNTS.sourceMemberships, `registry must preserve ${EXPECTED_COUNTS.sourceMemberships} source occurrences`);
   addIf(errors, registry.sourceMembershipFingerprint === sourceMembershipFingerprint(registry.records), "registry source-membership fingerprint mismatch");
   addIf(errors, sameJson(countBy(sourceMemberships, (membership) => membership.sourceId), EXPECTED_SOURCE_COUNTS), "source occurrence counts do not match the completed build");
+
+  const declaredSourceIds = new Set(sources.sources.map((source) => source.sourceId));
+  addIf(errors, sourceMemberships.every((membership) => declaredSourceIds.has(membership.sourceId)), "all registry source memberships must reference declared sources");
 
   const registryById = new Map(registry.records.map((record) => [record.tmdbPersonId, record]));
   validateCategory(errors, actors, "actor", registryById);
@@ -266,6 +296,18 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
   addIf(errors, actorReview.length === 25, "25 actor supplements must remain review candidates");
   addIf(errors, actorReview.every((record) => record.selectionBasis.includes("external-supplement")), "actor review candidates must retain external-supplement basis");
   addIf(errors, actorReview.every((record) => !record.selectionBasis.includes("modern-supplement")), "ImKaptain-only actors must not be inferred as modern supplements");
+  const promotedActors = actors.records.filter((record) => record.selectionBasis.includes("owner-added"));
+  addIf(errors, promotedActors.length === ACTOR_SUPPLEMENT_COUNTS.records, "exactly 198 owner-approved actor additions must be identifiable");
+  addIf(errors, promotedActors.every((record) => record.selectionStatus === "owner-decided" && record.ownerDecision === "include"), "all promoted actors must retain explicit owner approval");
+  addIf(errors, promotedActors.every((record) => record.rolloutTier !== "review"), "no promoted actor may be assigned to review");
+  if (supplement) {
+    const supplementIds = new Set(supplement.records.map((record) => record.tmdbPersonId));
+    addIf(errors, promotedActors.every((record) => supplementIds.has(record.tmdbPersonId)), "promoted actors must match the tracked supplement identities");
+    addIf(errors, supplementIds.size === promotedActors.length, "every tracked supplement identity must have one actor membership");
+    addIf(errors, supplement.promotedAt === registry.generatedAt, "tracked supplement promotion timestamp must match canonical document timestamps");
+  } else {
+    errors.push("tracked actor supplement must be provided for foundation validation");
+  }
 
   const tspdtAllTime = sourceMemberships.filter((membership) => membership.sourceId === "tspdt-directors");
   const tspdt21c = sourceMemberships.filter((membership) => membership.sourceId === "tspdt-21c-directors");
@@ -297,11 +339,11 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
   if (michaelPowell) addIf(errors, sameJson(michaelPowell.sourceRanks["tspdt-directors"], [35, 210]), "Michael Powell must retain both TSPDT source ranks 35 and 210");
 
   addIf(errors, sources.sourceCount === sources.sources.length, "source registry sourceCount must equal sources length");
-  addIf(errors, sources.sources.length === EXPECTED_SOURCE_IDS.length, "source registry must contain six required sources");
+  addIf(errors, sources.sources.length === EXPECTED_SOURCE_IDS.length, "source registry must contain 13 required sources");
   addIf(errors, sameJson(sources.sources.map((source) => source.sourceId), EXPECTED_SOURCE_IDS), "source registry must use deterministic source-ID ordering and include every required source");
   addIf(errors, registry.generatedAt === actors.generatedAt && actors.generatedAt === directors.generatedAt && directors.generatedAt === sources.generatedAt, "all canonical files must share the completed-build timestamp");
 
-  for (const document of [registry, actors, directors, sources]) {
+  for (const document of [registry, actors, directors, sources, ...(supplement ? [supplement] : [])]) {
     inspectPortableValues(document, errors);
     inspectForbiddenKeys(document, errors);
   }
@@ -318,6 +360,7 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
       sourceMembershipCount: sourceMemberships.length,
       sourceMembershipFingerprint: registry.sourceMembershipFingerprint,
       sourceCount: sources.sources.length,
+      supplementCount: supplement?.records.length ?? 0,
     },
   };
 }
@@ -359,6 +402,7 @@ export async function readPeopleFoundation(repoRoot) {
     actors: "actors-seed.json",
     directors: "directors-seed.json",
     sources: "sources.json",
+    supplement: "actor-owner-supplement.json",
   };
   const rawDocuments = {};
   const documents = {};
@@ -367,14 +411,15 @@ export async function readPeopleFoundation(repoRoot) {
     rawDocuments[name] = raw;
     documents[key] = JSON.parse(raw);
   }));
-  const [registrySchema, seedSchema, sourcesSchema] = await Promise.all([
+  const [registrySchema, seedSchema, sourcesSchema, supplementSchema] = await Promise.all([
     fs.readFile(path.join(schemaRoot, "people-registry.schema.json"), "utf8").then(JSON.parse),
     fs.readFile(path.join(schemaRoot, "people-seed.schema.json"), "utf8").then(JSON.parse),
     fs.readFile(path.join(schemaRoot, "people-sources.schema.json"), "utf8").then(JSON.parse),
+    fs.readFile(path.join(schemaRoot, "actor-owner-supplement.schema.json"), "utf8").then(JSON.parse),
   ]);
   return {
     ...documents,
-    schemas: { registry: registrySchema, seed: seedSchema, sources: sourcesSchema },
+    schemas: { registry: registrySchema, seed: seedSchema, sources: sourcesSchema, supplement: supplementSchema },
     rawDocuments,
   };
 }

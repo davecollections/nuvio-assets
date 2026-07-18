@@ -1,11 +1,26 @@
 {
   "version": "people-seed-v1",
-  "generatedAt": "2026-07-16T05:02:18.079Z",
+  "generatedAt": "2026-07-17T14:00:00.000Z",
   "status": "proposed-candidate-rollout",
   "category": "actor",
   "ordering": "tmdb-person-id-ascending",
-  "recordCount": 325,
+  "recordCount": 523,
   "records": [
+    {
+      "stableKey": "person:2",
+      "tmdbPersonId": 2,
+      "canonicalName": "Mark Hamill",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
     {
       "stableKey": "person:3",
       "tmdbPersonId": 3,
@@ -43,6 +58,25 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:19",
+      "tmdbPersonId": 19,
+      "canonicalName": "Allison Janney",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          88
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -199,6 +233,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:99",
+      "tmdbPersonId": 99,
+      "canonicalName": "Amanda Plummer",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          94
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:103",
       "tmdbPersonId": 103,
       "canonicalName": "Mark Ruffalo",
@@ -275,6 +328,36 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:114",
+      "tmdbPersonId": 114,
+      "canonicalName": "Orlando Bloom",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:116",
+      "tmdbPersonId": 116,
+      "canonicalName": "Keira Knightley",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:118",
       "tmdbPersonId": 118,
       "canonicalName": "Geoffrey Rush",
@@ -314,6 +397,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:134",
+      "tmdbPersonId": 134,
+      "canonicalName": "Jamie Foxx",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          63
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:139",
       "tmdbPersonId": 139,
       "canonicalName": "Uma Thurman",
@@ -330,6 +432,25 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:147",
+      "tmdbPersonId": 147,
+      "canonicalName": "Michael Madsen",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          29
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -508,6 +629,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:289",
+      "tmdbPersonId": 289,
+      "canonicalName": "Madeleine Stowe",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          27
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:290",
       "tmdbPersonId": 290,
       "canonicalName": "Christopher Plummer",
@@ -582,6 +722,25 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:477",
+      "tmdbPersonId": 477,
+      "canonicalName": "Julie Walters",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          82
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -757,6 +916,59 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:529",
+      "tmdbPersonId": 529,
+      "canonicalName": "Guy Pearce",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          86
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:569",
+      "tmdbPersonId": 569,
+      "canonicalName": "Ethan Hawke",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:586",
+      "tmdbPersonId": 586,
+      "canonicalName": "Sean Young",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          70
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:707",
       "tmdbPersonId": 707,
       "canonicalName": "Dan Aykroyd",
@@ -811,6 +1023,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:776",
+      "tmdbPersonId": 776,
+      "canonicalName": "Eddie Murphy",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -890,6 +1117,40 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:880",
+      "tmdbPersonId": 880,
+      "canonicalName": "Ben Affleck",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          64
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:882",
+      "tmdbPersonId": 882,
+      "canonicalName": "Liv Tyler",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:884",
       "tmdbPersonId": 884,
       "canonicalName": "Steve Buscemi",
@@ -940,6 +1201,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:955",
+      "tmdbPersonId": 955,
+      "canonicalName": "Penélope Cruz",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1027,6 +1303,25 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1118",
+      "tmdbPersonId": 1118,
+      "canonicalName": "Rade Šerbedžija",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          49
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1297,6 +1592,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:1333",
+      "tmdbPersonId": 1333,
+      "canonicalName": "Andy Serkis",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:1461",
       "tmdbPersonId": 1461,
       "canonicalName": "George Clooney",
@@ -1529,6 +1839,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:1954",
+      "tmdbPersonId": 1954,
+      "canonicalName": "Billy Zane",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          32
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:1979",
       "tmdbPersonId": 1979,
       "canonicalName": "Kevin Spacey",
@@ -1548,6 +1877,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:2037",
+      "tmdbPersonId": 2037,
+      "canonicalName": "Cillian Murphy",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:2047",
       "tmdbPersonId": 2047,
       "canonicalName": "Danny Glover",
@@ -1564,6 +1908,25 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2048",
+      "tmdbPersonId": 2048,
+      "canonicalName": "Gary Busey",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          47
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1624,6 +1987,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:2144",
+      "tmdbPersonId": 2144,
+      "canonicalName": "Tobin Bell",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:2157",
       "tmdbPersonId": 2157,
       "canonicalName": "Robin Williams",
@@ -1641,6 +2019,25 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2165",
+      "tmdbPersonId": 2165,
+      "canonicalName": "Rosanna Arquette",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          67
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1698,6 +2095,25 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2206",
+      "tmdbPersonId": 2206,
+      "canonicalName": "Samantha Morton",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          52
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1817,6 +2233,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:2372",
+      "tmdbPersonId": 2372,
+      "canonicalName": "Ron Perlman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          17
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:2387",
       "tmdbPersonId": 2387,
       "canonicalName": "Patrick Stewart",
@@ -1836,6 +2271,44 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:2395",
+      "tmdbPersonId": 2395,
+      "canonicalName": "Whoopi Goldberg",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          68
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2453",
+      "tmdbPersonId": 2453,
+      "canonicalName": "Mary Steenburgen",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          95
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:2461",
       "tmdbPersonId": 2461,
       "canonicalName": "Mel Gibson",
@@ -1852,6 +2325,40 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2524",
+      "tmdbPersonId": 2524,
+      "canonicalName": "Tom Hardy",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2535",
+      "tmdbPersonId": 2535,
+      "canonicalName": "Vivica A. Fox",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          54
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1890,6 +2397,25 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2714",
+      "tmdbPersonId": 2714,
+      "canonicalName": "Lance Henriksen",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          11
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2043,6 +2569,25 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2983",
+      "tmdbPersonId": 2983,
+      "canonicalName": "Mark Strong",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          91
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2274,6 +2819,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:3197",
+      "tmdbPersonId": 3197,
+      "canonicalName": "Tom Sizemore",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          10
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:3223",
       "tmdbPersonId": 3223,
       "canonicalName": "Robert Downey Jr.",
@@ -2310,6 +2874,25 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3291",
+      "tmdbPersonId": 3291,
+      "canonicalName": "Hugh Grant",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          74
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2370,6 +2953,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:3416",
+      "tmdbPersonId": 3416,
+      "canonicalName": "Demi Moore",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:3460",
       "tmdbPersonId": 3460,
       "canonicalName": "Gene Wilder",
@@ -2386,6 +2984,40 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3489",
+      "tmdbPersonId": 3489,
+      "canonicalName": "Naomi Watts",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          90
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3490",
+      "tmdbPersonId": 3490,
+      "canonicalName": "Adrien Brody",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2443,6 +3075,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3810",
+      "tmdbPersonId": 3810,
+      "canonicalName": "Javier Bardem",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2542,6 +3189,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:3967",
+      "tmdbPersonId": 3967,
+      "canonicalName": "Kate Beckinsale",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:4038",
       "tmdbPersonId": 4038,
       "canonicalName": "Susan Sarandon",
@@ -2615,6 +3277,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4091",
+      "tmdbPersonId": 4091,
+      "canonicalName": "Fred MacMurray",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2729,6 +3406,40 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4347",
+      "tmdbPersonId": 4347,
+      "canonicalName": "Frank Sinatra",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4430",
+      "tmdbPersonId": 4430,
+      "canonicalName": "Sharon Stone",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          86
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2854,6 +3565,40 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4568",
+      "tmdbPersonId": 4568,
+      "canonicalName": "Jayne Eastwood",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          84
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4587",
+      "tmdbPersonId": 4587,
+      "canonicalName": "Halle Berry",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3009,6 +3754,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:5048",
+      "tmdbPersonId": 5048,
+      "canonicalName": "Harry Dean Stanton",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          43
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:5049",
       "tmdbPersonId": 5049,
       "canonicalName": "John Hurt",
@@ -3067,6 +3831,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:5151",
+      "tmdbPersonId": 5151,
+      "canonicalName": "Beth Grant",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          59
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:5292",
       "tmdbPersonId": 5292,
       "canonicalName": "Denzel Washington",
@@ -3103,6 +3886,25 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5294",
+      "tmdbPersonId": 5294,
+      "canonicalName": "Chiwetel Ejiofor",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          99
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3506,6 +4308,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:6614",
+      "tmdbPersonId": 6614,
+      "canonicalName": "Cole Hauser",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          83
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:6837",
       "tmdbPersonId": 6837,
       "canonicalName": "Walter Matthau",
@@ -3563,6 +4384,59 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:6905",
+      "tmdbPersonId": 6905,
+      "canonicalName": "Bruce Dern",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          23
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6941",
+      "tmdbPersonId": 6941,
+      "canonicalName": "Cameron Diaz",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6944",
+      "tmdbPersonId": 6944,
+      "canonicalName": "Octavia Spencer",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          96
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:6949",
       "tmdbPersonId": 6949,
       "canonicalName": "John Malkovich",
@@ -3617,6 +4491,44 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7124",
+      "tmdbPersonId": 7124,
+      "canonicalName": "Ray Milland",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          27
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7152",
+      "tmdbPersonId": 7152,
+      "canonicalName": "Sandra Hüller",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          11
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3692,6 +4604,40 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:7401",
+      "tmdbPersonId": 7401,
+      "canonicalName": "Lin Shaye",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          56
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7499",
+      "tmdbPersonId": 7499,
+      "canonicalName": "Jared Leto",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:7502",
       "tmdbPersonId": 7502,
       "canonicalName": "Ernest Borgnine",
@@ -3708,6 +4654,25 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7505",
+      "tmdbPersonId": 7505,
+      "canonicalName": "Roddy McDowall",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          30
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3746,6 +4711,36 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7907",
+      "tmdbPersonId": 7907,
+      "canonicalName": "John Ratzenberger",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8167",
+      "tmdbPersonId": 8167,
+      "canonicalName": "Paul Walker",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3825,6 +4820,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:8516",
+      "tmdbPersonId": 8516,
+      "canonicalName": "John Carradine",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          4
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:8534",
       "tmdbPersonId": 8534,
       "canonicalName": "Kathy Bates",
@@ -3860,6 +4874,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8691",
+      "tmdbPersonId": 8691,
+      "canonicalName": "Zoe Saldaña",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4016,6 +5045,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:8963",
+      "tmdbPersonId": 8963,
+      "canonicalName": "Karen Black",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          58
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:9066",
       "tmdbPersonId": 9066,
       "canonicalName": "Judy Garland",
@@ -4054,6 +5102,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:9278",
+      "tmdbPersonId": 9278,
+      "canonicalName": "Jennifer Garner",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:9309",
       "tmdbPersonId": 9309,
       "canonicalName": "Richard Pryor",
@@ -4089,6 +5152,25 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9599",
+      "tmdbPersonId": 9599,
+      "canonicalName": "Cloris Leachman",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          83
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4284,6 +5366,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:10912",
+      "tmdbPersonId": 10912,
+      "canonicalName": "Eva Green",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:10978",
       "tmdbPersonId": 10978,
       "canonicalName": "Maggie Smith",
@@ -4303,6 +5400,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:10980",
+      "tmdbPersonId": 10980,
+      "canonicalName": "Daniel Radcliffe",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:10990",
       "tmdbPersonId": 10990,
       "canonicalName": "Emma Watson",
@@ -4319,6 +5431,74 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11150",
+      "tmdbPersonId": 11150,
+      "canonicalName": "Gina Gershon",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          74
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11160",
+      "tmdbPersonId": 11160,
+      "canonicalName": "Danny Trejo",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          2
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11184",
+      "tmdbPersonId": 11184,
+      "canonicalName": "Warwick Davis",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11288",
+      "tmdbPersonId": 11288,
+      "canonicalName": "Robert Pattinson",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4413,6 +5593,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:11782",
+      "tmdbPersonId": 11782,
+      "canonicalName": "Adrienne Barbeau",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          91
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:11856",
       "tmdbPersonId": 11856,
       "canonicalName": "Daniel Day-Lewis",
@@ -4448,6 +5647,25 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12134",
+      "tmdbPersonId": 12134,
+      "canonicalName": "Sally Kirkland",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          57
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4524,6 +5742,40 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12835",
+      "tmdbPersonId": 12835,
+      "canonicalName": "Vin Diesel",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13023",
+      "tmdbPersonId": 13023,
+      "canonicalName": "Colleen Camp",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          78
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4717,6 +5969,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:14500",
+      "tmdbPersonId": 14500,
+      "canonicalName": "Jean Simmons",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:14528",
       "tmdbPersonId": 14528,
       "canonicalName": "Yul Brynner",
@@ -4850,6 +6117,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:15277",
+      "tmdbPersonId": 15277,
+      "canonicalName": "Jon Favreau",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:15735",
       "tmdbPersonId": 15735,
       "canonicalName": "Helen Mirren",
@@ -4869,6 +6151,59 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:15761",
+      "tmdbPersonId": 15761,
+      "canonicalName": "Grey DeLisle",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          62
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15762",
+      "tmdbPersonId": 15762,
+      "canonicalName": "Tara Strong",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          79
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15831",
+      "tmdbPersonId": 15831,
+      "canonicalName": "Frank Welker",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:16483",
       "tmdbPersonId": 16483,
       "canonicalName": "Sylvester Stallone",
@@ -4881,6 +6216,25 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16501",
+      "tmdbPersonId": 16501,
+      "canonicalName": "Milo Ventimiglia",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          10
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4919,6 +6273,40 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16828",
+      "tmdbPersonId": 16828,
+      "canonicalName": "Chris Evans",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:16851",
+      "tmdbPersonId": 16851,
+      "canonicalName": "Josh Brolin",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          80
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4998,6 +6386,149 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:17051",
+      "tmdbPersonId": 17051,
+      "canonicalName": "James Franco",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:17243",
+      "tmdbPersonId": 17243,
+      "canonicalName": "Jonathan Tucker",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          38
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:17244",
+      "tmdbPersonId": 17244,
+      "canonicalName": "Hayden Christensen",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:17288",
+      "tmdbPersonId": 17288,
+      "canonicalName": "Michael Fassbender",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:17419",
+      "tmdbPersonId": 17419,
+      "canonicalName": "Bryan Cranston",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:17521",
+      "tmdbPersonId": 17521,
+      "canonicalName": "Kelly Reilly",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:17604",
+      "tmdbPersonId": 17604,
+      "canonicalName": "Jeremy Renner",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:17605",
+      "tmdbPersonId": 17605,
+      "canonicalName": "Idris Elba",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:17697",
+      "tmdbPersonId": 17697,
+      "canonicalName": "John Krasinski",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          67
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:18072",
       "tmdbPersonId": 18072,
       "canonicalName": "Michael Herbig",
@@ -5010,6 +6541,44 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18082",
+      "tmdbPersonId": 18082,
+      "canonicalName": "Timothy Olyphant",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          68
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18262",
+      "tmdbPersonId": 18262,
+      "canonicalName": "Richard Riehle",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          7
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5030,6 +6599,25 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:18284",
+      "tmdbPersonId": 18284,
+      "canonicalName": "Loretta Devine",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          85
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5145,6 +6733,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:19274",
+      "tmdbPersonId": 19274,
+      "canonicalName": "Seth Rogen",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          90
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:19292",
       "tmdbPersonId": 19292,
       "canonicalName": "Adam Sandler",
@@ -5157,6 +6764,55 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:19384",
+      "tmdbPersonId": 19384,
+      "canonicalName": "Tony Todd",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          22
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:19429",
+      "tmdbPersonId": 19429,
+      "canonicalName": "Bruce Lee",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:19498",
+      "tmdbPersonId": 19498,
+      "canonicalName": "Jon Bernthal",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5198,6 +6854,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:20011",
+      "tmdbPersonId": 20011,
+      "canonicalName": "Margot Kidder",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          76
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:20141",
       "tmdbPersonId": 20141,
       "canonicalName": "Deborah Kerr",
@@ -5217,6 +6892,44 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:20750",
+      "tmdbPersonId": 20750,
+      "canonicalName": "Judy Greer",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          100
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:20904",
+      "tmdbPersonId": 20904,
+      "canonicalName": "James Hong",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          14
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:21007",
       "tmdbPersonId": 21007,
       "canonicalName": "Jonah Hill",
@@ -5229,6 +6942,21 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:21088",
+      "tmdbPersonId": 21088,
+      "canonicalName": "Alan Tudyk",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5248,6 +6976,82 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:21315",
+      "tmdbPersonId": 21315,
+      "canonicalName": "Eric Roberts",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          1
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:21422",
+      "tmdbPersonId": 21422,
+      "canonicalName": "Brett Goldstein",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          75
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:21911",
+      "tmdbPersonId": 21911,
+      "canonicalName": "Shu Qi",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          77
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:22082",
+      "tmdbPersonId": 22082,
+      "canonicalName": "Lacey Chabert",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          71
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5289,6 +7093,40 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:23532",
+      "tmdbPersonId": 23532,
+      "canonicalName": "Jason Bateman",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          75
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:23659",
+      "tmdbPersonId": 23659,
+      "canonicalName": "Will Ferrell",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:24045",
       "tmdbPersonId": 24045,
       "canonicalName": "Joseph Gordon-Levitt",
@@ -5305,6 +7143,36 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:24937",
+      "tmdbPersonId": 24937,
+      "canonicalName": "Bing Crosby",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:25072",
+      "tmdbPersonId": 25072,
+      "canonicalName": "Oscar Isaac",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5380,6 +7248,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:27136",
+      "tmdbPersonId": 27136,
+      "canonicalName": "Katharine Isabelle",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          89
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:27319",
       "tmdbPersonId": 27319,
       "canonicalName": "Christoph Waltz",
@@ -5396,6 +7283,25 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:27578",
+      "tmdbPersonId": 27578,
+      "canonicalName": "Elliot Page",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          5
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5434,6 +7340,44 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:29222",
+      "tmdbPersonId": 29222,
+      "canonicalName": "Zac Efron",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          61
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:29528",
+      "tmdbPersonId": 29528,
+      "canonicalName": "Matthew Rhys",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          28
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5513,6 +7457,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:32544",
+      "tmdbPersonId": 32544,
+      "canonicalName": "Monique Parent",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          66
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:33741",
       "tmdbPersonId": 33741,
       "canonicalName": "Rita Hayworth",
@@ -5529,6 +7492,97 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:34982",
+      "tmdbPersonId": 34982,
+      "canonicalName": "Jeff Bennett",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          35
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:34983",
+      "tmdbPersonId": 34983,
+      "canonicalName": "Tress MacNeille",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          97
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:35579",
+      "tmdbPersonId": 35579,
+      "canonicalName": "Debbie Rochon",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          51
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:37625",
+      "tmdbPersonId": 37625,
+      "canonicalName": "Andrew Garfield",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:37632",
+      "tmdbPersonId": 37632,
+      "canonicalName": "Eddie Redmayne",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          82
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5585,6 +7639,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:49624",
+      "tmdbPersonId": 49624,
+      "canonicalName": "Jensen Ackles",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:51329",
       "tmdbPersonId": 51329,
       "canonicalName": "Bradley Cooper",
@@ -5619,6 +7688,59 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:53650",
+      "tmdbPersonId": 53650,
+      "canonicalName": "Anthony Mackie",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          71
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:53714",
+      "tmdbPersonId": 53714,
+      "canonicalName": "Rachel McAdams",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:54564",
+      "tmdbPersonId": 54564,
+      "canonicalName": "George Buck Flower",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          41
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:54693",
       "tmdbPersonId": 54693,
       "canonicalName": "Emma Stone",
@@ -5636,6 +7758,25 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:54830",
+      "tmdbPersonId": 54830,
+      "canonicalName": "Sophia Bush",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          97
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5673,6 +7814,36 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:55638",
+      "tmdbPersonId": 55638,
+      "canonicalName": "Kevin Hart",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:56731",
+      "tmdbPersonId": 56731,
+      "canonicalName": "Jessica Alba",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:57755",
       "tmdbPersonId": 57755,
       "canonicalName": "Woody Harrelson",
@@ -5689,6 +7860,74 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:58224",
+      "tmdbPersonId": 58224,
+      "canonicalName": "Jason Sudeikis",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          98
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:58873",
+      "tmdbPersonId": 58873,
+      "canonicalName": "Dan Fogler",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:59315",
+      "tmdbPersonId": 59315,
+      "canonicalName": "Olivia Wilde",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          35
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:59410",
+      "tmdbPersonId": 59410,
+      "canonicalName": "Bob Odenkirk",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5730,6 +7969,78 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:62001",
+      "tmdbPersonId": 62001,
+      "canonicalName": "Dee Wallace",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          55
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:62064",
+      "tmdbPersonId": 62064,
+      "canonicalName": "Chris Pine",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:62410",
+      "tmdbPersonId": 62410,
+      "canonicalName": "Sammo Hung Kam-Bo",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          8
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:64295",
+      "tmdbPersonId": 64295,
+      "canonicalName": "Alan Ritchson",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          95
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:65562",
       "tmdbPersonId": 65562,
       "canonicalName": "Andy Griffith",
@@ -5749,6 +8060,59 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:65717",
+      "tmdbPersonId": 65717,
+      "canonicalName": "Jon Hamm",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          102
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:65731",
+      "tmdbPersonId": 65731,
+      "canonicalName": "Sam Worthington",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:65827",
+      "tmdbPersonId": 65827,
+      "canonicalName": "Keith David",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          9
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:67773",
       "tmdbPersonId": 67773,
       "canonicalName": "Steve Martin",
@@ -5765,6 +8129,25 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:69122",
+      "tmdbPersonId": 69122,
+      "canonicalName": "Heather Graham",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          75
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5899,6 +8282,55 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:73457",
+      "tmdbPersonId": 73457,
+      "canonicalName": "Chris Pratt",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:73968",
+      "tmdbPersonId": 73968,
+      "canonicalName": "Henry Cavill",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:74036",
+      "tmdbPersonId": 74036,
+      "canonicalName": "Tom Arnold",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          40
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:74568",
       "tmdbPersonId": 74568,
       "canonicalName": "Chris Hemsworth",
@@ -5915,6 +8347,44 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:74673",
+      "tmdbPersonId": 74673,
+      "canonicalName": "Felissa Rose",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          64
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:78029",
+      "tmdbPersonId": 78029,
+      "canonicalName": "Martin Lawrence",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          94
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5937,6 +8407,199 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:78317",
+      "tmdbPersonId": 78317,
+      "canonicalName": "Bob Bergen",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:80116",
+      "tmdbPersonId": 80116,
+      "canonicalName": "Julie Strain",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          65
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:82666",
+      "tmdbPersonId": 82666,
+      "canonicalName": "Rhys Darby",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          82
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:83271",
+      "tmdbPersonId": 83271,
+      "canonicalName": "Glen Powell",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:83873",
+      "tmdbPersonId": 83873,
+      "canonicalName": "June Diane Raphael",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          42
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:85139",
+      "tmdbPersonId": 85139,
+      "canonicalName": "Nicholas Braun",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          54
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:86019",
+      "tmdbPersonId": 86019,
+      "canonicalName": "Asrani",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          3
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:90130",
+      "tmdbPersonId": 90130,
+      "canonicalName": "Aaron Ashmore",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          18
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:90633",
+      "tmdbPersonId": 90633,
+      "canonicalName": "Gal Gadot",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:91606",
+      "tmdbPersonId": 91606,
+      "canonicalName": "Tom Hiddleston",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:92572",
+      "tmdbPersonId": 92572,
+      "canonicalName": "Betty Gilpin",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          98
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:95624",
       "tmdbPersonId": 95624,
       "canonicalName": "Shirley Temple",
@@ -5953,6 +8616,101 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:97619",
+      "tmdbPersonId": 97619,
+      "canonicalName": "Linnea Quigley",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          53
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:97621",
+      "tmdbPersonId": 97621,
+      "canonicalName": "Brinke Stevens",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          52
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:97698",
+      "tmdbPersonId": 97698,
+      "canonicalName": "Michelle Bauer",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          98
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:98102",
+      "tmdbPersonId": 98102,
+      "canonicalName": "William Smith",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          36
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:102441",
+      "tmdbPersonId": 102441,
+      "canonicalName": "Dick Miller",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          44
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5986,6 +8744,180 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:117642",
+      "tmdbPersonId": 117642,
+      "canonicalName": "Jason Momoa",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:119589",
+      "tmdbPersonId": 119589,
+      "canonicalName": "Donald Glover",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          100
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:121323",
+      "tmdbPersonId": 121323,
+      "canonicalName": "Bess Flowers",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "filmaholic-top100-actors-2026": [
+          60
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:135651",
+      "tmdbPersonId": 135651,
+      "canonicalName": "Michael B. Jordan",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:136532",
+      "tmdbPersonId": 136532,
+      "canonicalName": "Matt Smith",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:150903",
+      "tmdbPersonId": 150903,
+      "canonicalName": "Gong Yoo",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:184581",
+      "tmdbPersonId": 184581,
+      "canonicalName": "Hamish Linklater",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          46
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:206919",
+      "tmdbPersonId": 206919,
+      "canonicalName": "Daniel Kaluuya",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          97
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:215055",
+      "tmdbPersonId": 215055,
+      "canonicalName": "Steven Yeun",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          92
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:221192",
+      "tmdbPersonId": 221192,
+      "canonicalName": "Kathryn Newton",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          57
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:234352",
       "tmdbPersonId": 234352,
       "canonicalName": "Margot Robbie",
@@ -6006,6 +8938,40 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:236695",
+      "tmdbPersonId": 236695,
+      "canonicalName": "John Boyega",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          104
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:239019",
+      "tmdbPersonId": 239019,
+      "canonicalName": "Kit Harington",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:505710",
       "tmdbPersonId": 505710,
       "canonicalName": "Zendaya",
@@ -6018,6 +8984,25 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:543530",
+      "tmdbPersonId": 543530,
+      "canonicalName": "Dave Bautista",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          83
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -6040,6 +9025,59 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:933238",
+      "tmdbPersonId": 933238,
+      "canonicalName": "Rebecca Ferguson",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          36
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:933271",
+      "tmdbPersonId": 933271,
+      "canonicalName": "Eve Hewson",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          63
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:972356",
+      "tmdbPersonId": 972356,
+      "canonicalName": "Luke Bracey",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:974169",
       "tmdbPersonId": 974169,
       "canonicalName": "Jenna Ortega",
@@ -6052,6 +9090,78 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1007683",
+      "tmdbPersonId": 1007683,
+      "canonicalName": "Jack Reynor",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1023139",
+      "tmdbPersonId": 1023139,
+      "canonicalName": "Adam Driver",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          72
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1059597",
+      "tmdbPersonId": 1059597,
+      "canonicalName": "Zoey Deutch",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          2
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1108907",
+      "tmdbPersonId": 1108907,
+      "canonicalName": "Nick Robinson",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          8
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -6070,6 +9180,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:1173984",
+      "tmdbPersonId": 1173984,
+      "canonicalName": "Olivia Cooke",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          32
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:1190668",
       "tmdbPersonId": 1190668,
       "canonicalName": "Timothée Chalamet",
@@ -6082,6 +9211,108 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1205278",
+      "tmdbPersonId": 1205278,
+      "canonicalName": "James Norton",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          39
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1223786",
+      "tmdbPersonId": 1223786,
+      "canonicalName": "Emilia Clarke",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1227717",
+      "tmdbPersonId": 1227717,
+      "canonicalName": "Himesh Patel",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1253360",
+      "tmdbPersonId": 1253360,
+      "canonicalName": "Pedro Pascal",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1254583",
+      "tmdbPersonId": 1254583,
+      "canonicalName": "Jamie Dornan",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          101
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1267329",
+      "tmdbPersonId": 1267329,
+      "canonicalName": "Lupita Nyong'o",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          25
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -6100,6 +9331,25 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:1372369",
+      "tmdbPersonId": 1372369,
+      "canonicalName": "Samara Weaving",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          16
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:1373737",
       "tmdbPersonId": 1373737,
       "canonicalName": "Florence Pugh",
@@ -6112,6 +9362,222 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1388593",
+      "tmdbPersonId": 1388593,
+      "canonicalName": "Jodie Comer",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1392137",
+      "tmdbPersonId": 1392137,
+      "canonicalName": "Margaret Qualley",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          31
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1397778",
+      "tmdbPersonId": 1397778,
+      "canonicalName": "Anya Taylor-Joy",
+      "category": "actor",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          76
+        ]
+      },
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1425934",
+      "tmdbPersonId": 1425934,
+      "canonicalName": "Nicholas Galitzine",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          15
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1428070",
+      "tmdbPersonId": 1428070,
+      "canonicalName": "Isabela Merced",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1442069",
+      "tmdbPersonId": 1442069,
+      "canonicalName": "Finn Wolfhard",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          88
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1558986",
+      "tmdbPersonId": 1558986,
+      "canonicalName": "Louis Partridge",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1782117",
+      "tmdbPersonId": 1782117,
+      "canonicalName": "Molly Gordon",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          29
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1785590",
+      "tmdbPersonId": 1785590,
+      "canonicalName": "David Corenswet",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          99
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2034418",
+      "tmdbPersonId": 2034418,
+      "canonicalName": "Jacob Elordi",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "ranker-current-famous-actors-2026": [
+          93
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2046128",
+      "tmdbPersonId": 2046128,
+      "canonicalName": "Milly Alcock",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          13
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2121005",
+      "tmdbPersonId": 2121005,
+      "canonicalName": "Emma D'Arcy",
+      "category": "actor",
+      "rolloutTier": "later",
+      "selectionBasis": [
+        "owner-added"
+      ],
+      "sourceRanks": {
+        "imdb-starmeter-2026-07-18": [
+          19
+        ]
+      },
+      "recommendedAction": "include-later",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     }
   ]

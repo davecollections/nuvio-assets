@@ -35,10 +35,17 @@
             "enum": [
               "imkaptain-actors",
               "imkaptain-directors",
+              "filmaholic-top100-actors-2026",
+              "imdb-actor-list-ls548798415",
+              "imdb-popular-celebrities-ls052283250",
+              "imdb-starmeter-2026-07-18",
+              "owner-actor-supplement-2026-07",
               "ranker-actors",
+              "ranker-current-famous-actors-2026",
               "tmdb-identity-resolution",
               "tspdt-21c-directors",
-              "tspdt-directors"
+              "tspdt-directors",
+              "wikipedia-highest-grossing-actors-2026"
             ]
           },
           "displayTitle": { "type": "string", "minLength": 1 },
@@ -47,10 +54,15 @@
               "dynamic-user-ranking",
               "critical-aggregation-ranking",
               "external-catalog-cross-check",
-              "identity-metadata"
+              "identity-metadata",
+              "editorial-user-list",
+              "editorial-ranked-list",
+              "dynamic-weekly-popularity-chart",
+              "encyclopedic-commercial-table",
+              "owner-decision-after-cross-source-comparison"
             ]
           },
-          "sourceUrl": { "type": "string", "pattern": "^https://" },
+          "sourceUrl": { "type": ["string", "null"], "pattern": "^https://" },
           "sourceFile": {
             "type": ["string", "null"],
             "pattern": "^[A-Za-z0-9._/-]+$"

@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/actor-owner-supplement.schema.json",
+  "title": "Nuvio owner-approved actor supplement",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "promotedAt", "status", "ordering", "recordCount", "tierDistribution", "approvedEvidence", "sourceCount", "sources", "records"],
+  "properties": {
+    "version": { "const": "actor-owner-supplement-v1" },
+    "promotedAt": { "type": "string", "format": "date-time" },
+    "status": { "const": "owner-approved" },
+    "ordering": { "const": "tmdb-person-id-ascending" },
+    "recordCount": { "const": 198 },
+    "tierDistribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["initial", "later", "review"],
+      "properties": {
+        "initial": { "const": 95 },
+        "later": { "const": 103 },
+        "review": { "const": 0 }
+      }
+    },
+    "approvedEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "reviewedAt", "identityBlockerCount", "decision"],
+      "properties": {
+        "path": { "const": "tools/people-seed/.work/actor-owner-supplement-review/drafts/actor-owner-supplement.draft.json" },
+        "sha256": { "const": "ebc3661dd4806ce8bf3a39ef15c1e4e07691202540d71bff7168d1f46b2b94a1" },
+        "reviewedAt": { "type": "string", "format": "date-time" },
+        "identityBlockerCount": { "const": 0 },
+        "decision": { "type": "string", "minLength": 1 }
+      }
+    },
+    "sourceCount": { "const": 7 },
+    "sources": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["sourceId", "displayTitle", "sourceType", "sourceUrl", "sourceFile", "publicationOrSnapshotYear", "retrievalTimestamp", "sourceHash", "extractionMethod", "completenessStatement", "knownLimitations", "rankingDynamicWarning"],
+        "properties": {
+          "sourceId": { "enum": ["filmaholic-top100-actors-2026", "imdb-actor-list-ls548798415", "imdb-popular-celebrities-ls052283250", "imdb-starmeter-2026-07-18", "owner-actor-supplement-2026-07", "ranker-current-famous-actors-2026", "wikipedia-highest-grossing-actors-2026"] },
+          "displayTitle": { "type": "string", "minLength": 1 },
+          "sourceType": { "enum": ["dynamic-user-ranking", "editorial-user-list", "editorial-ranked-list", "dynamic-weekly-popularity-chart", "encyclopedic-commercial-table", "owner-decision-after-cross-source-comparison"] },
+          "sourceUrl": { "type": ["string", "null"], "pattern": "^https://" },
+          "sourceFile": { "type": ["string", "null"], "pattern": "^[A-Za-z0-9._/-]+$" },
+          "publicationOrSnapshotYear": { "const": 2026 },
+          "retrievalTimestamp": { "type": "string", "format": "date-time" },
+          "sourceHash": {
+            "type": ["object", "null"],
+            "additionalProperties": false,
+            "required": ["algorithm", "value", "scope"],
+            "properties": {
+              "algorithm": { "const": "sha256" },
+              "value": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+              "scope": { "type": "string", "minLength": 1 }
+            }
+          },
+          "extractionMethod": { "type": "string", "minLength": 1 },
+          "completenessStatement": { "type": "string", "minLength": 1 },
+          "knownLimitations": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "rankingDynamicWarning": { "type": ["string", "null"], "minLength": 1 }
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 198,
+      "maxItems": 198,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["suppliedName", "canonicalName", "stableKey", "tmdbPersonId", "alsoKnownAs", "knownForDepartment", "profilePath", "actorCreditCount", "directorCreditCount", "activityYearRange", "rolloutTier", "recommendedAction", "ownerInclusionDecision", "ownerTierDecision", "sourceGroups", "sourceMemberships", "identityStatus", "identityConfidence", "identityEvidence", "specialtyPlanningTags", "provenanceReference"],
+        "properties": {
+          "suppliedName": { "type": "string", "minLength": 1 },
+          "canonicalName": { "type": "string", "minLength": 1 },
+          "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+          "tmdbPersonId": { "type": "integer", "minimum": 1 },
+          "alsoKnownAs": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+          "knownForDepartment": { "const": "Acting" },
+          "profilePath": { "type": "string", "pattern": "^/[A-Za-z0-9_-]+\\.(jpg|jpeg|png|webp)$" },
+          "actorCreditCount": { "type": "integer", "minimum": 1 },
+          "directorCreditCount": { "type": "integer", "minimum": 0 },
+          "activityYearRange": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["first", "last"],
+            "properties": {
+              "first": { "type": "integer", "minimum": 1800, "maximum": 2100 },
+              "last": { "type": "integer", "minimum": 1800, "maximum": 2100 }
+            }
+          },
+          "rolloutTier": { "enum": ["initial", "later"] },
+          "recommendedAction": { "enum": ["include-initial", "include-later"] },
+          "ownerInclusionDecision": { "const": "include" },
+          "ownerTierDecision": { "enum": ["initial", "later"] },
+          "sourceGroups": { "type": "array", "minItems": 1, "maxItems": 1, "uniqueItems": true, "items": { "enum": ["A", "B", "C", "D", "E"] } },
+          "sourceMemberships": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 2,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["sourceId", "sourceRank", "sourceName"],
+              "properties": {
+                "sourceId": { "enum": ["filmaholic-top100-actors-2026", "imdb-starmeter-2026-07-18", "owner-actor-supplement-2026-07", "ranker-current-famous-actors-2026"] },
+                "sourceRank": { "type": ["integer", "null"], "minimum": 1 },
+                "sourceName": { "type": "string", "minLength": 1 },
+                "comparisonGroup": { "enum": ["A", "B", "C", "D", "E"] },
+                "ownerDecision": { "const": "include" }
+              }
+            }
+          },
+          "identityStatus": { "const": "resolved" },
+          "identityConfidence": { "enum": ["high-confidence-exact-name-and-career-match", "high-confidence-disambiguated-name-and-career-match"] },
+          "identityEvidence": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+          "specialtyPlanningTags": { "type": "array", "uniqueItems": true, "items": { "enum": ["action", "character-actor", "classic", "comedy", "cult", "franchise", "horror", "international", "martial-arts", "motion-capture", "musical", "television", "voice"] } },
+          "provenanceReference": { "const": "data/people/sources.json#owner-actor-supplement-2026-07" }
+        }
+      }
+    }
+  }
+}

@@ -62,7 +62,14 @@
               "items": { "type": "integer", "minimum": 1 }
             },
             "propertyNames": {
-              "enum": ["ranker-actors", "tspdt-21c-directors", "tspdt-directors"]
+              "enum": [
+                "filmaholic-top100-actors-2026",
+                "imdb-starmeter-2026-07-18",
+                "ranker-actors",
+                "ranker-current-famous-actors-2026",
+                "tspdt-21c-directors",
+                "tspdt-directors"
+              ]
             }
           },
           "recommendedAction": {

@@ -24,6 +24,7 @@ function clone(foundation) {
     actors: foundation.actors,
     directors: foundation.directors,
     sources: foundation.sources,
+    supplement: foundation.supplement,
     schemas: foundation.schemas,
   });
 }
@@ -51,11 +52,11 @@ integration("canonical people foundation validates fully offline", async () => {
   try {
     const result = validatePeopleFoundation(foundation);
     assert.deepEqual(result.errors, []);
-    assert.equal(result.summary.registryCount, 619);
-    assert.equal(result.summary.actorCount, 325);
+    assert.equal(result.summary.registryCount, 817);
+    assert.equal(result.summary.actorCount, 523);
     assert.equal(result.summary.directorCount, 300);
     assert.equal(result.summary.sharedCount, 6);
-    assert.deepEqual(result.summary.actorRollout, { initial: 200, later: 100, review: 25 });
+    assert.deepEqual(result.summary.actorRollout, { initial: 295, later: 203, review: 25 });
     assert.deepEqual(result.summary.directorRollout, { initial: 154, later: 102, review: 44 });
   } finally {
     globalThis.fetch = previousFetch;
@@ -138,13 +139,17 @@ integration("external artwork URLs and local absolute paths are rejected", async
   assert.match(messages(validatePeopleFoundation(absolutePath)), /local absolute path|must match/);
 });
 
-integration("selection basis keeps supplements proposed and does not infer actor modernity", async () => {
+integration("selection policy preserves original proposals and explicit supplement approval", async () => {
   const foundation = await readPeopleFoundation(repoRoot);
   const actorReview = foundation.actors.records.filter((record) => record.rolloutTier === "review");
   assert.equal(actorReview.length, 25);
   assert.ok(actorReview.every((record) => record.selectionBasis.includes("external-supplement")));
   assert.ok(actorReview.every((record) => !record.selectionBasis.includes("modern-supplement")));
-  assert.ok([...foundation.actors.records, ...foundation.directors.records].every((record) => record.ownerDecision === null && record.selectionStatus === "proposed"));
+  const promoted = foundation.actors.records.filter((record) => record.selectionBasis.includes("owner-added"));
+  assert.equal(promoted.length, 198);
+  assert.ok(promoted.every((record) => record.ownerDecision === "include" && record.selectionStatus === "owner-decided"));
+  const original = [...foundation.actors.records.filter((record) => !record.selectionBasis.includes("owner-added")), ...foundation.directors.records];
+  assert.ok(original.every((record) => record.ownerDecision === null && record.selectionStatus === "proposed"));
 });
 
 test("write-boundary validation rejects studio/network and people-artwork changes", async () => {

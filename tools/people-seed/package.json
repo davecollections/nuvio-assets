@@ -9,6 +9,10 @@
   },
   "scripts": {
     "build-foundation": "node scripts/build-foundation.mjs",
+    "prepare-actor-supplement": "node scripts/promote-actor-supplement.mjs --prepare-from-approved-package",
+    "promote-actor-supplement": "node scripts/promote-actor-supplement.mjs",
+    "check-actor-supplement": "node scripts/promote-actor-supplement.mjs --check",
+    "verify-actor-supplement-build": "node scripts/promote-actor-supplement.mjs --verify-build",
     "test": "node --test",
     "validate": "node src/validate-cli.mjs"
   }

@@ -1,9 +1,77 @@
 {
   "version": "people-sources-v1",
-  "generatedAt": "2026-07-16T05:02:18.079Z",
+  "generatedAt": "2026-07-17T14:00:00.000Z",
   "ordering": "source-id-ascending",
-  "sourceCount": 6,
+  "sourceCount": 13,
   "sources": [
+    {
+      "sourceId": "filmaholic-top100-actors-2026",
+      "displayTitle": "Filmaholic Top 100 Actors",
+      "sourceType": "editorial-ranked-list",
+      "sourceUrl": "https://thefilmaholic.com/top100/actors",
+      "sourceFile": "tools/people-seed/.work/actor-owner-supplement-review/source-snapshots/preceding-comparison-evidence.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-18T00:00:00.000Z",
+      "sourceHash": null,
+      "extractionMethod": "Direct rendered access was Cloudflare-blocked; the complete exact page was obtained through a recent search-engine crawl and the captured ranks were preserved for the 64 owner-selected occurrences.",
+      "completenessStatement": "The complete top-100 list was available through the recent crawl of the exact page, not through direct rendered access.",
+      "knownLimitations": [
+        "Direct rendered access was Cloudflare-blocked.",
+        "The source was weighted conservatively because it was recovered through a search-engine crawl.",
+        "Owner inclusion decisions, rather than this source alone, govern promotion.",
+        "Ranks are provenance, not acting quality."
+      ],
+      "rankingDynamicWarning": null
+    },
+    {
+      "sourceId": "imdb-actor-list-ls548798415",
+      "displayTitle": "IMDb actor list ls548798415",
+      "sourceType": "editorial-user-list",
+      "sourceUrl": "https://www.imdb.com/list/ls548798415/",
+      "sourceFile": "tools/people-seed/.work/actor-owner-supplement-review/source-snapshots/preceding-comparison-evidence.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-18T00:00:00.000Z",
+      "sourceHash": null,
+      "extractionMethod": "Preserved the directly retrieved IMDb user-list comparison as discovery provenance; no individual rank was fabricated where the local comparison evidence did not retain one.",
+      "completenessStatement": "The complete compared IMDb list was directly retrieved during the owner comparison.",
+      "knownLimitations": [
+        "IMDb user list; its selection and ordering are not objective measures of acting quality."
+      ],
+      "rankingDynamicWarning": null
+    },
+    {
+      "sourceId": "imdb-popular-celebrities-ls052283250",
+      "displayTitle": "IMDb popular celebrities list ls052283250",
+      "sourceType": "editorial-user-list",
+      "sourceUrl": "https://www.imdb.com/list/ls052283250/",
+      "sourceFile": "tools/people-seed/.work/actor-owner-supplement-review/source-snapshots/preceding-comparison-evidence.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-18T00:00:00.000Z",
+      "sourceHash": null,
+      "extractionMethod": "Preserved the directly retrieved IMDb popular-celebrities comparison as discovery provenance; no individual rank was fabricated where the local comparison evidence did not retain one.",
+      "completenessStatement": "The complete compared IMDb list was directly retrieved during the owner comparison.",
+      "knownLimitations": [
+        "IMDb user list; popularity and editorial selection are not objective measures of acting quality."
+      ],
+      "rankingDynamicWarning": null
+    },
+    {
+      "sourceId": "imdb-starmeter-2026-07-18",
+      "displayTitle": "IMDb STARmeter",
+      "sourceType": "dynamic-weekly-popularity-chart",
+      "sourceUrl": "https://www.imdb.com/chart/starmeter/",
+      "sourceFile": "tools/people-seed/.work/actor-owner-supplement-review/source-snapshots/preceding-comparison-evidence.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-18T00:00:00.000Z",
+      "sourceHash": null,
+      "extractionMethod": "Preserved the July 18, 2026 STARmeter snapshot and only the individual ranks retained with confidence in the approved comparison evidence.",
+      "completenessStatement": "The complete 100-person STARmeter chart was directly retrieved; 45 owner-approved actor occurrences are represented and ranks remain null where not safely retained.",
+      "knownLimitations": [
+        "STARmeter is a volatile weekly popularity snapshot.",
+        "Weekly rank does not establish durable acting importance, quality, or final rollout priority."
+      ],
+      "rankingDynamicWarning": "Volatile weekly snapshot captured July 18, 2026; ranks can change each week."
+    },
     {
       "sourceId": "imkaptain-actors",
       "displayTitle": "ImKaptain actor identity cross-check",
@@ -45,6 +113,22 @@
       "rankingDynamicWarning": null
     },
     {
+      "sourceId": "owner-actor-supplement-2026-07",
+      "displayTitle": "Nuvio owner actor supplement decision",
+      "sourceType": "owner-decision-after-cross-source-comparison",
+      "sourceUrl": null,
+      "sourceFile": "data/people/actor-owner-supplement.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-18T00:00:00.000Z",
+      "sourceHash": null,
+      "extractionMethod": "Recorded the explicit owner decision after the bounded cross-source comparison and metadata-only identity resolution.",
+      "completenessStatement": "All 198 additions were explicitly approved for inclusion; the proposed split of 95 initial and 103 later actors was subsequently approved with zero review additions.",
+      "knownLimitations": [
+        "Inclusion and rollout are owner catalogue decisions, not an objective ranking of performers."
+      ],
+      "rankingDynamicWarning": null
+    },
+    {
       "sourceId": "ranker-actors",
       "displayTitle": "The 830+ Best Actors of All Time, Ranked",
       "sourceType": "dynamic-user-ranking",
@@ -63,6 +147,22 @@
         "Dynamic user-voted ranking with plausible English-language popularity bias; source rank is provenance, not objective quality."
       ],
       "rankingDynamicWarning": "Dynamic user-voted list; ranks can change after the captured snapshot."
+    },
+    {
+      "sourceId": "ranker-current-famous-actors-2026",
+      "displayTitle": "The Most Famous Actors In The World Right Now",
+      "sourceType": "dynamic-user-ranking",
+      "sourceUrl": "https://www.ranker.com/list/most-famous-actors-right-now/celebrity-lists",
+      "sourceFile": "tools/people-seed/.work/actor-owner-supplement-review/source-snapshots/preceding-comparison-evidence.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-18T00:00:00.000Z",
+      "sourceHash": null,
+      "extractionMethod": "Preserved the complete directly retrieved current-famous actor list from the July 18, 2026 comparison; retained ranks are provenance only.",
+      "completenessStatement": "The complete compared Ranker list was directly retrieved; the 25 owner-selected supplement occurrences retain captured ranks.",
+      "knownLimitations": [
+        "Dynamic user-voted current-fame list; rank is provenance, not acting quality or final Nuvio order."
+      ],
+      "rankingDynamicWarning": "Dynamic user-voted list; ranks can change after the captured July 18, 2026 snapshot."
     },
     {
       "sourceId": "tmdb-identity-resolution",
@@ -123,6 +223,22 @@
         "Critical-list aggregation, not objective truth; source rank does not determine final Nuvio inclusion or ordering."
       ],
       "rankingDynamicWarning": "Edition-specific source ranking; source rank does not establish final Nuvio ordering."
+    },
+    {
+      "sourceId": "wikipedia-highest-grossing-actors-2026",
+      "displayTitle": "List of highest-grossing actors",
+      "sourceType": "encyclopedic-commercial-table",
+      "sourceUrl": "https://en.wikipedia.org/wiki/List_of_highest-grossing_actors",
+      "sourceFile": "tools/people-seed/.work/actor-owner-supplement-review/source-snapshots/preceding-comparison-evidence.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": "2026-07-18T00:00:00.000Z",
+      "sourceHash": null,
+      "extractionMethod": "Preserved the directly retrieved commercial-table comparison as context only; director-only and unapproved entries were excluded.",
+      "completenessStatement": "The relevant comparison tables were directly retrieved during the owner review.",
+      "knownLimitations": [
+        "Commercial gross is not acting quality and depends on table methodology, franchise participation, inflation, market coverage, and credit scope."
+      ],
+      "rankingDynamicWarning": "Commercial totals and table methodology can change over time."
     }
   ]
 }
