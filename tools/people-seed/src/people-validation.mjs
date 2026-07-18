@@ -370,16 +370,21 @@ export function validateChangedPaths(paths) {
     "tools/studio-network-batch/",
     "assets/collection_covers/companies/",
     "assets/collection_covers/networks/",
-    "assets/collection_covers/people/",
   ];
   const protectedFiles = new Set(["assets/collection_covers/manifest.json"]);
+  const peopleRoot = "assets/collection_covers/people/";
+  const allowedPeoplePublicationPath = (item) => item === `${peopleRoot}manifest.json`
+    || new RegExp(`^${peopleRoot}(?:landscape|poster)/[1-9][0-9]*\\.webp$`, "u").test(item);
   return paths.map((item) => item.replaceAll("\\", "/")).filter((item) => (
-    protectedFiles.has(item) || protectedPrefixes.some((prefix) => item.startsWith(prefix))
-  )).map((item) => `protected studio/network or people-artwork path changed: ${item}`);
+    protectedFiles.has(item)
+    || protectedPrefixes.some((prefix) => item.startsWith(prefix))
+    || (item.startsWith(peopleRoot) && !allowedPeoplePublicationPath(item))
+  )).map((item) => `protected studio/network or unrecognised people-artwork path changed: ${item}`);
 }
 
 export async function validatePeopleAssetBoundary(repoRoot) {
   const peopleRoot = path.join(repoRoot, "assets", "collection_covers", "people");
+  const manifestPath = path.join(peopleRoot, "manifest.json");
   const errors = [];
   let entries = [];
   try {
@@ -389,7 +394,23 @@ export async function validatePeopleAssetBoundary(repoRoot) {
   }
   for (const entry of entries) {
     if (entry.isFile() && /^[1-9][0-9]*\.webp$/i.test(entry.name)) errors.push(`people portrait asset exists unexpectedly: assets/collection_covers/people/${entry.name}`);
-    if (entry.isFile() && /manifest.*\.json$|people.*manifest.*\.json$/i.test(entry.name)) errors.push(`people artwork manifest exists unexpectedly: assets/collection_covers/people/${entry.name}`);
+    if (entry.isFile() && /manifest.*\.json$|people.*manifest.*\.json$/i.test(entry.name) && entry.name !== "manifest.json") errors.push(`unrecognised people artwork manifest: assets/collection_covers/people/${entry.name}`);
+    if (entry.isDirectory() && !new Set(["landscape", "poster"]).has(entry.name)) errors.push(`unrecognised people artwork directory: assets/collection_covers/people/${entry.name}`);
+  }
+  const manifestExists = await fs.access(manifestPath).then(() => true, () => false);
+  const formatAssetCount = (await Promise.all(["landscape", "poster"].map(async (formatId) => {
+    try {
+      return (await fs.readdir(path.join(peopleRoot, formatId), { withFileTypes: true })).filter((entry) => entry.isFile() && entry.name.endsWith(".webp")).length;
+    } catch (error) {
+      if (error.code === "ENOENT") return 0;
+      throw error;
+    }
+  }))).reduce((sum, count) => sum + count, 0);
+  if (!manifestExists && formatAssetCount > 0) errors.push("people format assets require assets/collection_covers/people/manifest.json");
+  if (manifestExists) {
+    const { validateTrackedPeopleManifest } = await import("./people-publication.mjs");
+    const result = await validateTrackedPeopleManifest({ repoRoot, manifestPath });
+    for (const error of [...result.manifestValidation.errors, ...result.pathValidation.errors]) errors.push(`people publication candidate: ${error}`);
   }
   return errors;
 }

@@ -65,17 +65,21 @@ The ImKaptain data is identity/catalogue cross-check provenance only. Its artwor
 
 ## Artwork and publishing boundary
 
-No portrait was downloaded or generated for this foundation. No TMDB-ID people portrait is published, and no people artwork manifest exists.
+The identity foundation itself acquired no portrait. Reusable tooling can create an explicitly bounded local publication candidate, but no numeric people portrait set or production people artwork manifest is currently committed or published. The completed locked-40 candidate remains only in ignored local evidence pending a separate portrait-rights and redistribution decision; this does not publish the complete actor or director catalogue or make a proposed public URL live.
 
 The promoted `profilePath` values are relative identity metadata only. They were read from the approved local evidence and do not indicate that an image was fetched, licensed, reviewed, or published.
 
-The proposed future physical path is:
+Future candidate physical paths are:
 
 ```text
-assets/collection_covers/people/{tmdb_person_id}.webp
+assets/collection_covers/people/landscape/{tmdb_person_id}.webp
+assets/collection_covers/people/poster/{tmdb_person_id}.webp
+assets/collection_covers/people/manifest.json
 ```
 
-Future actor and director manifests should reference the same physical person asset for a shared TMDB person ID. Portrait sourcing, visual treatment, final inclusion, manifest design, and publication all require separate owner decisions. Existing generic people artwork is not a dependency of this data foundation, and no third-party artwork dependency was introduced.
+Actor and director collections reference the same physical person assets for a shared TMDB person ID. Existing generic people artwork is not a dependency of this workflow. Publication scope must always be explicitly bounded, and the tooling contains no network, commit, or push automation.
+
+Candidate covers transform third-party portraits. TMDB provides metadata and image hosting but may not own the underlying photography; the repository code licence does not automatically license portrait photography. Public redistribution requires an explicit later project decision, no attribution or rights claim is invented, and every manifest record preserves source provenance with `third-party-portrait-review-required` status. See `tools/people-seed/PUBLICATION.md`.
 
 ## Validation and owner review
 
@@ -85,6 +89,7 @@ The strict schemas are:
 - `schemas/people-seed.schema.json`
 - `schemas/people-sources.schema.json`
 - `schemas/actor-owner-supplement.schema.json`
+- `schemas/people-artwork-manifest.schema.json`
 
 Run the fully offline checks from the repository root:
 

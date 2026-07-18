@@ -14,10 +14,12 @@ Release `studio-network-v1-2026-07-16` contains 1,797 company covers and 569 net
 
 The batch utility and maintenance policy are documented in `tools/studio-network-batch/README.md`. Artwork that later falls below an automatic eligibility threshold or disappears from current source data is retained as legacy state; it is never deleted automatically.
 
-## People candidate identity foundation
+## People candidate identity and artwork workflow
 
-The tracked people foundation contains 619 resolved TMDB candidate identities, 325 actor memberships, and 300 director memberships. Six people belong to both categories through one shared registry identity. Proposed rollout is 200 initial, 100 later, and 25 review actors; and 154 initial, 102 later, and 44 review directors.
+The tracked people foundation contains 817 resolved TMDB candidate identities, 523 actor memberships, and 300 director memberships. Six people belong to both categories through one shared registry identity. Proposed rollout is 295 initial, 203 later, and 25 review actors; and 154 initial, 102 later, and 44 review directors.
 
-These are candidate data and workflow proposals, not a published people collection or artwork approval. The 69 supplement candidates still require individual owner selection. No portrait was generated or downloaded, no TMDB-ID people asset was published, and no people artwork manifest exists.
+Reusable tooling is available for explicitly bounded, offline people-artwork publication candidates. No numeric people portrait set is currently published, no production people artwork manifest is committed, and no raw GitHub people-artwork URL is claimed live. The completed locked-40 artwork candidate is held only in ignored local evidence pending a separate portrait-rights and redistribution decision; its artwork and technical package remain approved.
 
-The model and policy are documented in `data/people/README.md`. Canonical data lives under `data/people/`, strict schemas live under `schemas/`, and fully offline validation lives under `tools/people-seed/`.
+Portrait sources are third-party material. TMDB metadata and hosting do not establish ownership of the underlying photography, and the repository's code licence does not automatically cover portrait rights. Every future candidate record must remain `third-party-portrait-review-required` and preserve exact source provenance. The publication tooling has no network, commit, or push capability and requires an explicit bounded scope.
+
+The identity model is documented in `data/people/README.md`; the offline candidate publication workflow and rights boundary are documented in `tools/people-seed/PUBLICATION.md`. Canonical data lives under `data/people/`, strict schemas live under `schemas/`, and validation lives under `tools/people-seed/`.

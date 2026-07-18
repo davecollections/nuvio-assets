@@ -93,12 +93,14 @@ test("promotion merge is deterministic and idempotent", () => {
   assert.deepEqual(first.sources, foundation.sources);
 });
 
-test("promotion acquires no images and creates no production people artwork", async () => {
+test("actor-supplement promotion acquires no images and leaves no permanent numeric publication candidate", async () => {
   assert.deepEqual(await validatePeopleAssetBoundary(repoRoot), []);
   const peopleArtworkRoot = path.join(repoRoot, "assets", "collection_covers", "people");
   const existingGenericFiles = await fs.readdir(peopleArtworkRoot);
   assert.ok(existingGenericFiles.every((name) => !/^[1-9][0-9]*\.webp$/i.test(name)));
-  assert.ok(existingGenericFiles.every((name) => !/manifest.*\.json$/i.test(name)));
+  assert.ok(!existingGenericFiles.includes("manifest.json"));
+  assert.ok(!existingGenericFiles.includes("landscape"));
+  assert.ok(!existingGenericFiles.includes("poster"));
   const productionManifestCandidates = [
     path.join(repoRoot, "assets", "collection_covers", "people-manifest.json"),
     path.join(repoRoot, "data", "people", "artwork-manifest.json"),

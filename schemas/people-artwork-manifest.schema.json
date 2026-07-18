@@ -1,0 +1,177 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/people-artwork-manifest.schema.json",
+  "title": "Nuvio people artwork publication manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "status",
+    "schemaPath",
+    "publicationCandidateAt",
+    "ordering",
+    "recordCount",
+    "landscapeCount",
+    "posterCount",
+    "fallbackCount",
+    "rendererVersion",
+    "rendererRuntime",
+    "fontLockHash",
+    "fontHash",
+    "fingerprintExcludes",
+    "manifestFingerprint",
+    "rightsNotice",
+    "records"
+  ],
+  "properties": {
+    "version": { "const": "people-artwork-manifest-v1" },
+    "status": { "enum": ["publication-candidate", "commit-ready"] },
+    "schemaPath": { "const": "schemas/people-artwork-manifest.schema.json" },
+    "publicationCandidateAt": { "type": "string", "format": "date-time" },
+    "ordering": { "const": "explicit-selection-order" },
+    "recordCount": { "type": "integer", "minimum": 1 },
+    "landscapeCount": { "type": "integer", "minimum": 0 },
+    "posterCount": { "type": "integer", "minimum": 0 },
+    "fallbackCount": { "type": "integer", "minimum": 0 },
+    "rendererVersion": { "const": "people-artwork-renderer-v1" },
+    "rendererRuntime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sharp", "libvips", "skiaCanvas"],
+      "properties": {
+        "sharp": { "const": "0.35.3" },
+        "libvips": { "const": "8.18.3" },
+        "skiaCanvas": { "const": "3.0.8" }
+      }
+    },
+    "fontLockHash": { "$ref": "#/$defs/hash" },
+    "fontHash": { "$ref": "#/$defs/hash" },
+    "fingerprintExcludes": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": { "enum": ["publicationCandidateAt", "manifestFingerprint"] },
+      "uniqueItems": true
+    },
+    "manifestFingerprint": { "$ref": "#/$defs/hash" },
+    "rightsNotice": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "portraitSources",
+        "tmdbRole",
+        "codeLicenceSeparation",
+        "redistributionDecision",
+        "attributionPolicy",
+        "ownershipClaim"
+      ],
+      "properties": {
+        "portraitSources": { "type": "string", "minLength": 1 },
+        "tmdbRole": { "type": "string", "minLength": 1 },
+        "codeLicenceSeparation": { "type": "string", "minLength": 1 },
+        "redistributionDecision": { "type": "string", "minLength": 1 },
+        "attributionPolicy": { "type": "string", "minLength": 1 },
+        "ownershipClaim": { "const": "No ownership of the underlying portrait photography is claimed." }
+      }
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "nullableHash": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+    "nullablePath": { "type": ["string", "null"], "pattern": "^assets/collection_covers/people/(landscape|poster)/[1-9][0-9]*\\.webp$" },
+    "nullableUrl": { "type": ["string", "null"], "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/people/(landscape|poster)/[1-9][0-9]*\\.webp$" },
+    "sourceDimensions": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "rolloutTierByCategory": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "actor": { "enum": ["initial", "later", "review"] },
+        "director": { "enum": ["initial", "later", "review"] }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableKey",
+        "tmdbPersonId",
+        "canonicalName",
+        "categoryMembership",
+        "rolloutTierByCategory",
+        "sourceDecision",
+        "resolvedProfilePath",
+        "sourceHash",
+        "sourceDimensions",
+        "fallbackUsed",
+        "fallbackReason",
+        "landscapePath",
+        "landscapeUrlProposal",
+        "landscapeHash",
+        "landscapeByteCount",
+        "landscapePresetId",
+        "landscapePresetHash",
+        "posterPath",
+        "posterUrlProposal",
+        "posterHash",
+        "posterByteCount",
+        "posterPresetId",
+        "posterPresetHash",
+        "rendererMetadataVersion",
+        "ownerReviewStatus",
+        "distributionStatus",
+        "rightsStatus"
+      ],
+      "properties": {
+        "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+        "tmdbPersonId": { "type": "integer", "minimum": 1 },
+        "canonicalName": { "type": "string", "minLength": 1 },
+        "categoryMembership": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": { "enum": ["actor", "director"] },
+          "uniqueItems": true
+        },
+        "rolloutTierByCategory": { "$ref": "#/$defs/rolloutTierByCategory" },
+        "sourceDecision": { "enum": ["use-owner-selected", "retain-registry-source", "registry-default"] },
+        "resolvedProfilePath": { "type": ["string", "null"], "pattern": "^/[A-Za-z0-9_-]+\\.jpg$" },
+        "sourceHash": { "$ref": "#/$defs/nullableHash" },
+        "sourceDimensions": { "$ref": "#/$defs/sourceDimensions" },
+        "fallbackUsed": { "type": "boolean" },
+        "fallbackReason": {
+          "type": ["string", "null"],
+          "enum": [null, "no-profile-path", "source-not-cached", "source-fetch-failed", "source-http-invalid", "source-content-type-invalid", "source-empty", "source-decode-failed", "source-dimensions-invalid", "source-validation-failed"]
+        },
+        "landscapePath": { "$ref": "#/$defs/nullablePath" },
+        "landscapeUrlProposal": { "$ref": "#/$defs/nullableUrl" },
+        "landscapeHash": { "$ref": "#/$defs/nullableHash" },
+        "landscapeByteCount": { "type": ["integer", "null"], "minimum": 1 },
+        "landscapePresetId": { "type": ["string", "null"] },
+        "landscapePresetHash": { "$ref": "#/$defs/nullableHash" },
+        "posterPath": { "$ref": "#/$defs/nullablePath" },
+        "posterUrlProposal": { "$ref": "#/$defs/nullableUrl" },
+        "posterHash": { "$ref": "#/$defs/nullableHash" },
+        "posterByteCount": { "type": ["integer", "null"], "minimum": 1 },
+        "posterPresetId": { "type": ["string", "null"] },
+        "posterPresetHash": { "$ref": "#/$defs/nullableHash" },
+        "rendererMetadataVersion": { "const": "people-artwork-render-metadata-v1" },
+        "ownerReviewStatus": { "enum": ["approved-artwork", "revision-required"] },
+        "distributionStatus": { "enum": ["publication-candidate", "commit-ready"] },
+        "rightsStatus": { "const": "third-party-portrait-review-required" }
+      }
+    }
+  }
+}

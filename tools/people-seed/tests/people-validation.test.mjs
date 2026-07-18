@@ -152,7 +152,7 @@ integration("selection policy preserves original proposals and explicit suppleme
   assert.ok(original.every((record) => record.ownerDecision === null && record.selectionStatus === "proposed"));
 });
 
-test("write-boundary validation rejects studio/network and people-artwork changes", async () => {
+test("write-boundary validation protects studio/network and unrecognised people paths while accepting the validated publication architecture", async () => {
   assert.deepEqual(validateChangedPaths([
     "data/people/people-registry.json",
     "schemas/people-registry.schema.json",
@@ -165,5 +165,10 @@ test("write-boundary validation rejects studio/network and people-artwork change
     "assets/collection_covers/manifest.json",
   ]);
   assert.equal(errors.length, 4);
+  assert.deepEqual(validateChangedPaths([
+    "assets/collection_covers/people/manifest.json",
+    "assets/collection_covers/people/landscape/123.webp",
+    "assets/collection_covers/people/poster/123.webp",
+  ]), []);
   if (foundationAvailable) assert.deepEqual(await validatePeopleAssetBoundary(repoRoot), []);
 });
