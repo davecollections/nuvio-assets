@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/portrait-source-decisions.schema.json",
+  "title": "Nuvio people portrait source decisions",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "status", "ordering", "recordCount", "records"],
+  "properties": {
+    "version": { "const": "people-portrait-source-decisions-v1" },
+    "status": { "const": "owner-approved" },
+    "ordering": { "const": "tmdb-person-id-ascending" },
+    "recordCount": { "const": 7 },
+    "records": {
+      "type": "array",
+      "minItems": 7,
+      "maxItems": 7,
+      "items": { "$ref": "#/$defs/decision" }
+    }
+  },
+  "$defs": {
+    "nullableHash": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+    "profilePath": { "type": "string", "pattern": "^/[A-Za-z0-9_-]+\\.jpg$" },
+    "decision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stableKey", "tmdbPersonId", "canonicalName", "decision", "registryProfilePath", "approvedProfilePath", "approvedSourceHash", "decisionBasis", "evidencePackage", "approvedLandscapeOutputHash", "approvedPosterOutputHash", "ownerDecisionStatus", "fallbackIfUnavailable"],
+      "properties": {
+        "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+        "tmdbPersonId": { "type": "integer", "minimum": 1 },
+        "canonicalName": { "type": "string", "minLength": 1 },
+        "decision": { "enum": ["use-owner-selected", "retain-registry-source"] },
+        "registryProfilePath": { "$ref": "#/$defs/profilePath" },
+        "approvedProfilePath": { "$ref": "#/$defs/profilePath" },
+        "approvedSourceHash": { "$ref": "#/$defs/nullableHash" },
+        "decisionBasis": { "type": "string", "minLength": 1 },
+        "evidencePackage": { "type": "string", "const": "tools/people-seed/.work/people-owner-source-review" },
+        "approvedLandscapeOutputHash": { "$ref": "#/$defs/nullableHash" },
+        "approvedPosterOutputHash": { "$ref": "#/$defs/nullableHash" },
+        "ownerDecisionStatus": { "const": "approved" },
+        "fallbackIfUnavailable": { "const": "text-only" }
+      }
+    }
+  }
+}

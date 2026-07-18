@@ -1,0 +1,107 @@
+{
+  "id": "people-landscape-cormorant-v1",
+  "version": 1,
+  "status": "production-candidate",
+  "publicationAuthorised": false,
+  "concept": "Subtle Toned Archive",
+  "formatId": "landscape",
+  "promotionEvidence": {
+    "presetPath": "tools/people-seed/.work/people-visual-proof/stage-3-final-typography/presets/people-landscape-cormorant-v1.draft.json",
+    "presetSha256": "2a8dab8e78c06fa8490f1c34271717d6793e16f71ccda65d2ed6ce6234f0fe9c",
+    "sizePolicy": "Stage 3 global R1"
+  },
+  "renderer": {
+    "sharp": "0.35.3",
+    "libvips": "8.18.3",
+    "skiaCanvas": "3.0.8",
+    "resizeKernel": "cubic",
+    "intermediateFormat": "png"
+  },
+  "canvas": {
+    "width": 1200,
+    "height": 675,
+    "aspectRatio": "16:9"
+  },
+  "output": {
+    "format": "webp",
+    "quality": 88,
+    "effort": 6,
+    "chromaSubsampling": "4:4:4",
+    "alphaQuality": 100
+  },
+  "background": {
+    "base": "#171512",
+    "horizontalPortraitFade": [
+      [0, 1],
+      [0.38, 1],
+      [0.51, 0.86],
+      [0.66, 0.1],
+      [0.76, 0]
+    ],
+    "bottomGradient": {
+      "startsAtCanvasPercent": 69,
+      "colour": "#080706",
+      "maximumOpacity": 0.42
+    }
+  },
+  "portraitRegion": {
+    "x": 438,
+    "y": 0,
+    "width": 660,
+    "height": 675
+  },
+  "crop": {
+    "strategy": "deterministic-geometric-north-cover",
+    "subjectCenterTargetXPercent": 64,
+    "eyeLineTargetYPercent": 37,
+    "maximumAutomaticUpscale": 2,
+    "mirror": false
+  },
+  "tonal": {
+    "conversion": "warm-grey-split-tone",
+    "brightness": 0.99,
+    "contrast": 1.06,
+    "saturation": 1,
+    "tint": "#C6BBAA",
+    "vignetteOpacity": 0.1
+  },
+  "grain": {
+    "amount": 0.05,
+    "lowResolutionAmount": 0.02,
+    "seedBehavior": "first-32-bits-of-sha256(B:sourceHash:people-grain-v1)",
+    "blend": "soft-light"
+  },
+  "frame": null,
+  "typography": {
+    "content": "canonical-person-name-only",
+    "family": "Cormorant Garamond",
+    "fontHash": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+    "weight": 700,
+    "weightAxisValue": 700,
+    "sizePolicy": "R1-current-T2-nominal",
+    "sourceT2NominalSize": 84,
+    "nominalMultiplier": 1,
+    "deterministicRounding": "not-applicable",
+    "requestedFontSize": 84,
+    "minimumFontSize": 54,
+    "fontSizeStep": 2,
+    "lineHeight": 76,
+    "letterSpacing": 0,
+    "region": {
+      "x": 72,
+      "y": 291,
+      "width": 520,
+      "height": 200
+    },
+    "alignment": "left",
+    "verticalAlignment": "region-centre",
+    "maximumLines": 2,
+    "oneLineMaximumUnicodeCodePoints": 18,
+    "wrapRule": "balanced-word-boundary-minimum-width-difference",
+    "colour": "#EEEAE3",
+    "syntheticBold": false,
+    "outlineStrokeGlowBevel": false,
+    "horizontalScale": 1,
+    "roleOrDecorativeText": false
+  }
+}

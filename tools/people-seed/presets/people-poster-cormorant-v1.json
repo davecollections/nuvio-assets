@@ -1,0 +1,105 @@
+{
+  "id": "people-poster-cormorant-v1",
+  "version": 1,
+  "status": "production-candidate",
+  "publicationAuthorised": false,
+  "concept": "Subtle Toned Archive",
+  "formatId": "poster",
+  "promotionEvidence": {
+    "presetPath": "tools/people-seed/.work/people-visual-proof/stage-3-final-typography/presets/people-poster-cormorant-v1.draft.json",
+    "presetSha256": "4fdcdd663a38dabff12ea7da9ba2041a683ec1d9fc2544dd627d3a871a228e23",
+    "sizePolicy": "Stage 3 global R2"
+  },
+  "renderer": {
+    "sharp": "0.35.3",
+    "libvips": "8.18.3",
+    "skiaCanvas": "3.0.8",
+    "resizeKernel": "cubic",
+    "intermediateFormat": "png"
+  },
+  "canvas": {
+    "width": 1000,
+    "height": 1500,
+    "aspectRatio": "2:3"
+  },
+  "output": {
+    "format": "webp",
+    "quality": 88,
+    "effort": 6,
+    "chromaSubsampling": "4:4:4",
+    "alphaQuality": 100
+  },
+  "background": {
+    "base": "#171512",
+    "bottomGradient": {
+      "transparentUntilCanvasPercent": 42,
+      "transitionAtCanvasPercent": 68,
+      "bottomColour": "#100E0B",
+      "maximumOpacity": 0.92
+    }
+  },
+  "portraitRegion": {
+    "x": 0,
+    "y": 0,
+    "width": 1000,
+    "height": 1500
+  },
+  "crop": {
+    "strategy": "deterministic-geometric-north-centre-cover",
+    "subjectCenterTargetXPercent": 50,
+    "eyeLineTargetYPercent": 36,
+    "preserveTopOfHead": true,
+    "avoidChinCropWherePractical": true,
+    "maximumAutomaticUpscale": 2,
+    "mirror": false
+  },
+  "tonal": {
+    "conversion": "warm-grey-split-tone",
+    "brightness": 0.99,
+    "contrast": 1.06,
+    "saturation": 1,
+    "tint": "#C6BBAA",
+    "vignetteOpacity": 0.1
+  },
+  "grain": {
+    "amount": 0.05,
+    "lowResolutionAmount": 0.02,
+    "seedBehavior": "first-32-bits-of-sha256(poster:sourceHash:people-grain-v1)",
+    "blend": "soft-light"
+  },
+  "frame": {
+    "type": "none"
+  },
+  "typography": {
+    "content": "canonical-person-name-only",
+    "family": "Cormorant Garamond",
+    "fontHash": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+    "weight": 700,
+    "weightAxisValue": 700,
+    "sizePolicy": "R2-current-T2-plus-6-percent",
+    "sourceT2NominalSize": 108,
+    "nominalMultiplier": 1.06,
+    "deterministicRounding": "Math.round to nearest whole pixel",
+    "requestedFontSize": 114,
+    "minimumFontSize": 62,
+    "fontSizeStep": 1,
+    "lineHeight": 100,
+    "letterSpacing": 0,
+    "region": {
+      "x": 72,
+      "y": 1110,
+      "width": 856,
+      "height": 280
+    },
+    "alignment": "center",
+    "verticalAlignment": "region-centre",
+    "maximumLines": 2,
+    "oneLineMaximumUnicodeCodePoints": 18,
+    "wrapRule": "balanced-word-boundary-minimum-width-difference",
+    "colour": "#EEEAE3",
+    "syntheticBold": false,
+    "outlineStrokeGlowBevel": false,
+    "horizontalScale": 1,
+    "roleOrDecorativeText": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "version": "people-cormorant-garamond-700-lock-v1",
+  "family": "Cormorant Garamond",
+  "registrationAlias": "Nuvio People Cormorant",
+  "weight": 700,
+  "weightAxis": {
+    "tag": "wght",
+    "minimum": 300,
+    "default": 300,
+    "maximum": 700,
+    "requiredValue": 700
+  },
+  "fontFileName": "CormorantGaramond[wght].ttf",
+  "fontSha256": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+  "fontSourceRevision": "26c5c976d82d50c24a8f0a7ac455e0a7c639c226",
+  "fontSourceUrl": "https://raw.githubusercontent.com/google/fonts/26c5c976d82d50c24a8f0a7ac455e0a7c639c226/ofl/cormorantgaramond/CormorantGaramond%5Bwght%5D.ttf",
+  "licence": "OFL-1.1",
+  "licenceFileName": "OFL.txt",
+  "licenceSha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+  "licenceSourceUrl": "https://raw.githubusercontent.com/google/fonts/26c5c976d82d50c24a8f0a7ac455e0a7c639c226/ofl/cormorantgaramond/OFL.txt",
+  "cacheDirectoryName": "cormorant-garamond",
+  "legacyApprovedCache": "tools/people-seed/.work/people-typography-calibration/fonts/cormorant-garamond",
+  "automaticAcquisition": false,
+  "windowsInstallation": false
+}

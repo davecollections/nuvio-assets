@@ -1,0 +1,90 @@
+{
+  "id": "people-text-fallback-landscape-v2",
+  "version": 2,
+  "status": "production-candidate",
+  "publicationAuthorised": false,
+  "formatId": "landscape",
+  "promotionEvidence": {
+    "presetPath": "tools/people-seed/.work/people-owner-source-review/text-fallback-proof/landscape-96-refinement/preset/people-text-fallback-landscape-v2.draft.json",
+    "presetSha256": "160a5ab02028cc19781787d1fdacd643170687d278193b697286306e3a16fd85",
+    "ownerRequest": "increase-text-only-landscape-nominal-size-from-84-to-96"
+  },
+  "renderer": {
+    "sharp": "0.35.3",
+    "libvips": "8.18.3",
+    "skiaCanvas": "3.0.8",
+    "intermediateFormat": "png"
+  },
+  "activation": "only-when-no-approved-usable-portrait-source",
+  "canvas": {
+    "width": 1200,
+    "height": 675,
+    "aspectRatio": "16:9"
+  },
+  "output": {
+    "format": "webp",
+    "quality": 88,
+    "effort": 6,
+    "chromaSubsampling": "4:4:4",
+    "alphaQuality": 100
+  },
+  "background": {
+    "type": "flat-dark-warm",
+    "base": "#171512",
+    "portraitLikeImagery": false
+  },
+  "grain": {
+    "amount": 0.012,
+    "seedBehavior": "first-32-bits-of-sha256(people-text-fallback-v1|format|stableKey|canonicalName)",
+    "blend": "soft-light"
+  },
+  "typography": {
+    "content": "canonical-person-name-only",
+    "family": "Cormorant Garamond",
+    "fontHash": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+    "weight": 700,
+    "weightAxisValue": 700,
+    "nominalSizePolicy": "text-only-landscape-96-owner-refinement",
+    "requestedFontSize": 96,
+    "minimumFontSize": 54,
+    "fontSizeStep": 2,
+    "lineHeight": 87,
+    "lineHeightPolicy": "Math.round(76 * 96 / 84)",
+    "letterSpacing": 0,
+    "maximumWidth": 1000,
+    "maximumHeight": 300,
+    "region": {
+      "x": 100,
+      "y": 187.5,
+      "width": 1000,
+      "height": 300
+    },
+    "safeMargins": {
+      "left": 100,
+      "right": 100,
+      "top": 187.5,
+      "bottom": 187.5
+    },
+    "colour": "#EEEAE3",
+    "horizontalAlignment": "center",
+    "verticalAlignment": "center",
+    "maximumLines": 2,
+    "oneLineMaximumUnicodeCodePoints": 18,
+    "wrapRule": "balanced-word-boundary-minimum-width-difference",
+    "preserveCanonicalAccentsPunctuationAndInitials": true,
+    "syntheticBold": false,
+    "horizontalScale": 1
+  },
+  "prohibited": {
+    "portrait": true,
+    "face": true,
+    "silhouette": true,
+    "roleLabel": true,
+    "icon": true,
+    "logo": true,
+    "border": true,
+    "frame": true,
+    "glow": true,
+    "additionalWording": true
+  }
+}

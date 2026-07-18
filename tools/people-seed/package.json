@@ -2,7 +2,7 @@
   "name": "@nuvio/people-seed",
   "version": "0.1.0",
   "private": true,
-  "description": "Offline validation and deterministic promotion tooling for Nuvio people candidate data.",
+  "description": "Offline validation, deterministic promotion, and production-candidate people artwork tooling for Nuvio.",
   "type": "module",
   "engines": {
     "node": ">=20.9.0"
@@ -13,7 +13,18 @@
     "promote-actor-supplement": "node scripts/promote-actor-supplement.mjs",
     "check-actor-supplement": "node scripts/promote-actor-supplement.mjs --check",
     "verify-actor-supplement-build": "node scripts/promote-actor-supplement.mjs --verify-build",
+    "renderer-help": "node src/render-people-cli.mjs --help",
+    "render-people-offline": "node src/render-people-cli.mjs --offline",
+    "validate-renderer": "node src/people-artwork-validation-cli.mjs",
+    "verify-people-font": "node src/people-font-cli.mjs verify",
+    "acquire-people-font": "node src/people-font-cli.mjs acquire",
+    "promotion-parity": "node scripts/verify-people-artwork-promotion.mjs",
+    "deterministic-replay": "node scripts/verify-people-artwork-promotion.mjs --replay-only",
     "test": "node --test",
     "validate": "node src/validate-cli.mjs"
+  },
+  "dependencies": {
+    "sharp": "0.35.3",
+    "skia-canvas": "3.0.8"
   }
 }

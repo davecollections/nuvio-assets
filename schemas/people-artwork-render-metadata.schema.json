@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/people-artwork-render-metadata.schema.json",
+  "title": "Nuvio people artwork render metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "ordering", "recordCount", "records"],
+  "properties": {
+    "version": { "const": "people-artwork-render-metadata-v1" },
+    "ordering": { "const": "selection-order-then-landscape-poster" },
+    "recordCount": { "type": "integer", "minimum": 0 },
+    "records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "nullableHash": { "type": ["string", "null"], "pattern": "^[a-f0-9]{64}$" },
+    "bounds": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["x", "y", "width", "height"],
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "width": { "type": "number", "minimum": 0 },
+        "height": { "type": "number", "minimum": 0 }
+      }
+    },
+    "crop": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["left", "top", "width", "height"],
+      "properties": {
+        "left": { "type": "integer", "minimum": 0 },
+        "top": { "type": "integer", "minimum": 0 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "margins": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left", "right", "top", "bottom"],
+      "properties": {
+        "left": { "type": "number" },
+        "right": { "type": "number" },
+        "top": { "type": "number" },
+        "bottom": { "type": "number" }
+      }
+    },
+    "scale": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number", "minimum": 0 },
+        "y": { "type": "number", "minimum": 0 }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stableKey", "tmdbPersonId", "canonicalName", "categoryMembership", "categoryNeutralReuse", "formatId", "fallbackUsed", "fallbackReason", "profilePathAttempted", "sourceStatus", "sourceDecision", "sourcePath", "sourceHash", "sourceWidth", "sourceHeight", "independentlyGeneratedFromOriginalSource", "derivedFromOtherFormat", "presetId", "presetHash", "fontFamily", "fontWeight", "fontHash", "requestedFontSize", "finalFontSize", "nameLines", "lineCount", "lineHeight", "textBounds", "safeMargins", "cropMethod", "cropRectangle", "cropRetainedAreaFraction", "resizeScale", "upscaleFactor", "portraitBounds", "gradientBounds", "grainSeed", "grainAmount", "canvasWidth", "canvasHeight", "outputPath", "outputHash", "byteCount"],
+      "properties": {
+        "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+        "tmdbPersonId": { "type": "integer", "minimum": 1 },
+        "canonicalName": { "type": "string", "minLength": 1 },
+        "categoryMembership": { "type": "array", "items": { "enum": ["actor", "director"] }, "uniqueItems": true },
+        "categoryNeutralReuse": { "const": true },
+        "formatId": { "enum": ["landscape", "poster"] },
+        "fallbackUsed": { "type": "boolean" },
+        "fallbackReason": { "type": ["string", "null"], "enum": [null, "no-profile-path", "source-not-cached", "source-fetch-failed", "source-http-invalid", "source-content-type-invalid", "source-empty", "source-decode-failed", "source-dimensions-invalid", "source-validation-failed"] },
+        "profilePathAttempted": { "type": ["string", "null"] },
+        "sourceStatus": { "type": "string", "minLength": 1 },
+        "sourceDecision": { "enum": ["use-owner-selected", "retain-registry-source", "registry-default"] },
+        "sourcePath": { "type": ["string", "null"] },
+        "sourceHash": { "$ref": "#/$defs/nullableHash" },
+        "sourceWidth": { "type": ["integer", "null"], "minimum": 1 },
+        "sourceHeight": { "type": ["integer", "null"], "minimum": 1 },
+        "independentlyGeneratedFromOriginalSource": { "type": "boolean" },
+        "derivedFromOtherFormat": { "const": false },
+        "presetId": { "type": "string", "minLength": 1 },
+        "presetHash": { "$ref": "#/$defs/hash" },
+        "fontFamily": { "const": "Cormorant Garamond" },
+        "fontWeight": { "const": 700 },
+        "fontHash": { "$ref": "#/$defs/hash" },
+        "requestedFontSize": { "type": "integer", "minimum": 1 },
+        "finalFontSize": { "type": "integer", "minimum": 1 },
+        "nameLines": { "type": "array", "minItems": 1, "maxItems": 2, "items": { "type": "string", "minLength": 1 } },
+        "lineCount": { "type": "integer", "minimum": 1, "maximum": 2 },
+        "lineHeight": { "type": "integer", "minimum": 1 },
+        "textBounds": { "$ref": "#/$defs/bounds" },
+        "safeMargins": { "$ref": "#/$defs/margins" },
+        "cropMethod": { "type": ["string", "null"] },
+        "cropRectangle": { "$ref": "#/$defs/crop" },
+        "cropRetainedAreaFraction": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "resizeScale": { "$ref": "#/$defs/scale" },
+        "upscaleFactor": { "type": ["number", "null"], "minimum": 0 },
+        "portraitBounds": { "$ref": "#/$defs/bounds" },
+        "gradientBounds": { "$ref": "#/$defs/bounds" },
+        "grainSeed": { "type": "integer", "minimum": 0 },
+        "grainAmount": { "type": "number", "minimum": 0, "maximum": 1 },
+        "canvasWidth": { "type": "integer", "minimum": 1 },
+        "canvasHeight": { "type": "integer", "minimum": 1 },
+        "outputPath": { "type": "string", "minLength": 1 },
+        "outputHash": { "$ref": "#/$defs/hash" },
+        "byteCount": { "type": "integer", "minimum": 1 }
+      }
+    }
+  }
+}

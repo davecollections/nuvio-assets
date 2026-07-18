@@ -1,0 +1,88 @@
+{
+  "id": "people-text-fallback-poster-v1",
+  "version": 1,
+  "status": "production-candidate",
+  "publicationAuthorised": false,
+  "formatId": "poster",
+  "promotionEvidence": {
+    "presetPath": "tools/people-seed/.work/people-owner-source-review/text-fallback-proof/presets/people-text-fallback-poster-v1.draft.json",
+    "presetSha256": "341bf4d0bbdffeb170db72e3f3965e3131cf4949619db72ae5f15dcd2daf8fd5"
+  },
+  "renderer": {
+    "sharp": "0.35.3",
+    "libvips": "8.18.3",
+    "skiaCanvas": "3.0.8",
+    "intermediateFormat": "png"
+  },
+  "activation": "only-when-no-approved-usable-portrait-source",
+  "canvas": {
+    "width": 1000,
+    "height": 1500,
+    "aspectRatio": "2:3"
+  },
+  "output": {
+    "format": "webp",
+    "quality": 88,
+    "effort": 6,
+    "chromaSubsampling": "4:4:4",
+    "alphaQuality": 100
+  },
+  "background": {
+    "type": "flat-dark-warm",
+    "base": "#171512",
+    "portraitLikeImagery": false
+  },
+  "grain": {
+    "amount": 0.012,
+    "seedBehavior": "first-32-bits-of-sha256(people-text-fallback-v1|format|stableKey|canonicalName)",
+    "blend": "soft-light"
+  },
+  "typography": {
+    "content": "canonical-person-name-only",
+    "family": "Cormorant Garamond",
+    "fontHash": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+    "weight": 700,
+    "weightAxisValue": 700,
+    "nominalSizePolicy": "R2-current-T2-plus-6-percent",
+    "requestedFontSize": 114,
+    "minimumFontSize": 62,
+    "fontSizeStep": 1,
+    "lineHeight": 100,
+    "letterSpacing": 0,
+    "maximumWidth": 820,
+    "maximumHeight": 400,
+    "region": {
+      "x": 90,
+      "y": 550,
+      "width": 820,
+      "height": 400
+    },
+    "safeMargins": {
+      "left": 90,
+      "right": 90,
+      "top": 550,
+      "bottom": 550
+    },
+    "colour": "#EEEAE3",
+    "horizontalAlignment": "center",
+    "verticalAlignment": "center",
+    "maximumLines": 2,
+    "oneLineMaximumUnicodeCodePoints": 18,
+    "wrapRule": "balanced-word-boundary-minimum-width-difference",
+    "preserveCanonicalAccentsPunctuationAndInitials": true,
+    "syntheticBold": false,
+    "horizontalScale": 1
+  },
+  "prohibited": {
+    "portrait": true,
+    "face": true,
+    "silhouette": true,
+    "roleLabel": true,
+    "icon": true,
+    "logo": true,
+    "border": true,
+    "frame": true,
+    "glow": true,
+    "additionalWording": true
+  }
+}

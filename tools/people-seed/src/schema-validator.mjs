@@ -19,8 +19,19 @@ function validateFormat(value, format) {
   return true;
 }
 
-export function validateAgainstSchema(value, schema, path = "$") {
+function resolveLocalReference(schema, rootSchema) {
+  if (!schema.$ref) return schema;
+  if (!schema.$ref.startsWith("#/")) throw new Error(`Unsupported schema reference ${schema.$ref}`);
+  return schema.$ref.slice(2).split("/").reduce((current, segment) => {
+    const key = segment.replaceAll("~1", "/").replaceAll("~0", "~");
+    if (!current || !Object.hasOwn(current, key)) throw new Error(`Unresolved schema reference ${schema.$ref}`);
+    return current[key];
+  }, rootSchema);
+}
+
+export function validateAgainstSchema(value, schema, path = "$", rootSchema = schema) {
   const errors = [];
+  schema = resolveLocalReference(schema, rootSchema);
   const add = (message) => errors.push(`${path}: ${message}`);
 
   if (Object.hasOwn(schema, "const") && !sameValue(value, schema.const)) {
@@ -59,7 +70,7 @@ export function validateAgainstSchema(value, schema, path = "$") {
       if (new Set(encoded).size !== encoded.length) add("must contain unique items");
     }
     if (schema.items) {
-      value.forEach((item, index) => errors.push(...validateAgainstSchema(item, schema.items, `${path}[${index}]`)));
+      value.forEach((item, index) => errors.push(...validateAgainstSchema(item, schema.items, `${path}[${index}]`, rootSchema)));
     }
   }
 
@@ -70,13 +81,13 @@ export function validateAgainstSchema(value, schema, path = "$") {
     }
     for (const [key, child] of Object.entries(value)) {
       if (properties[key]) {
-        errors.push(...validateAgainstSchema(child, properties[key], `${path}.${key}`));
+        errors.push(...validateAgainstSchema(child, properties[key], `${path}.${key}`, rootSchema));
       } else if (schema.additionalProperties === false) {
         errors.push(`${path}.${key}: additional property is not allowed`);
       } else if (schema.additionalProperties && typeof schema.additionalProperties === "object") {
-        errors.push(...validateAgainstSchema(child, schema.additionalProperties, `${path}.${key}`));
+        errors.push(...validateAgainstSchema(child, schema.additionalProperties, `${path}.${key}`, rootSchema));
       }
-      if (schema.propertyNames) errors.push(...validateAgainstSchema(key, schema.propertyNames, `${path}.{propertyName}`));
+      if (schema.propertyNames) errors.push(...validateAgainstSchema(key, schema.propertyNames, `${path}.{propertyName}`, rootSchema));
     }
   }
 

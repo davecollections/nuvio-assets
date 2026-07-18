@@ -10,6 +10,7 @@ import {
   validatePeopleAssetBoundary,
   validatePeopleFoundation,
 } from "./people-validation.mjs";
+import { validatePeopleArtworkConfiguration } from "./people-artwork-validation.mjs";
 
 const execFileAsync = promisify(execFile);
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -25,9 +26,10 @@ function statusPaths(output) {
 const foundation = await readPeopleFoundation(repoRoot);
 const result = validatePeopleFoundation(foundation);
 const assetErrors = await validatePeopleAssetBoundary(repoRoot);
+const artworkConfiguration = await validatePeopleArtworkConfiguration({ repoRoot, registry: foundation.registry });
 const { stdout } = await execFileAsync("git", ["status", "--porcelain=v1", "--untracked-files=all"], { cwd: repoRoot });
 const changedPathErrors = validateChangedPaths(statusPaths(stdout));
-const errors = [...result.errors, ...assetErrors, ...changedPathErrors];
+const errors = [...result.errors, ...artworkConfiguration.errors, ...assetErrors, ...changedPathErrors];
 
 if (errors.length) {
   process.stderr.write(`People foundation validation failed with ${errors.length} issue(s):\n`);
@@ -38,6 +40,7 @@ if (errors.length) {
     valid: true,
     offline: true,
     ...result.summary,
+    peopleArtworkConfiguration: artworkConfiguration.summary,
     peoplePortraitAssets: 0,
     peopleArtworkManifests: 0,
     protectedWorktreeChanges: 0,
