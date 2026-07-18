@@ -1,0 +1,53 @@
+name: Artwork removal or replacement request
+description: Request removal, replacement, or an attribution correction for an artwork asset.
+title: "[Artwork] "
+body:
+  - type: input
+    id: asset
+    attributes:
+      label: Affected asset path or URL
+      description: Provide the repository asset path or public URL.
+      placeholder: assets/collection_covers/people/poster/123.webp
+    validations:
+      required: true
+  - type: dropdown
+    id: action
+    attributes:
+      label: Requested action
+      options:
+        - Remove
+        - Replace
+        - Correct attribution
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: relationship
+    attributes:
+      label: Requester relationship
+      options:
+        - Rights holder
+        - Authorised representative
+        - Subject depicted
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Brief details
+      description: Explain the requested change without including sensitive personal information. Further details can be arranged if needed.
+    validations:
+      required: true
+  - type: input
+    id: supporting-link
+    attributes:
+      label: Supporting public link (optional)
+      description: If useful, provide a public webpage that helps identify the asset or request context.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I have not posted sensitive personal information or private documents in this issue.
+          required: true

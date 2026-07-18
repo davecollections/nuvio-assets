@@ -70,6 +70,8 @@ if (!result.valid) {
     manifestPath: path.relative(repoRoot, manifestPath).replaceAll("\\", "/"),
     manifestHash: result.file.hash,
     manifestFingerprint: result.file.manifestFingerprint,
+    status: result.manifest.status,
+    published: result.manifest.status === "published",
     recordCount: result.manifest.recordCount,
     landscapeCount: result.manifest.landscapeCount,
     posterCount: result.manifest.posterCount,

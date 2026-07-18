@@ -21,6 +21,7 @@
     "artwork:font-check": "node src/people-font-cli.mjs verify",
     "acquire-people-font": "node src/people-font-cli.mjs acquire",
     "publication": "node src/people-publication-cli.mjs",
+    "publication:finalize": "node src/people-publication-finalize-cli.mjs",
     "publication:validate": "node src/people-publication-validation-cli.mjs",
     "promotion-parity": "node scripts/verify-people-artwork-promotion.mjs",
     "deterministic-replay": "node scripts/verify-people-artwork-promotion.mjs --replay-only",

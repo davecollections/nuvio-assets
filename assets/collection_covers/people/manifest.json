@@ -1,0 +1,1356 @@
+{
+  "version": "people-artwork-manifest-v1",
+  "status": "published",
+  "schemaPath": "schemas/people-artwork-manifest.schema.json",
+  "publishedAt": "2026-07-18T21:40:14.874Z",
+  "ordering": "explicit-selection-order",
+  "recordCount": 40,
+  "landscapeCount": 40,
+  "posterCount": 40,
+  "fallbackCount": 0,
+  "rendererVersion": "people-artwork-renderer-v1",
+  "rendererRuntime": {
+    "sharp": "0.35.3",
+    "libvips": "8.18.3",
+    "skiaCanvas": "3.0.8"
+  },
+  "fontLockHash": "803c9045519eee3b9ac2eb83708b5d7296507497dd7f27515402084cb8fcd0e1",
+  "fontHash": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+  "fingerprintExcludes": [
+    "publishedAt",
+    "manifestFingerprint"
+  ],
+  "manifestFingerprint": "431905679ffe833c005b1c7ef92066f452887debecae981d5f4e0e40764bbc3c",
+  "attribution": {
+    "provider": "The Movie Database (TMDB)",
+    "url": "https://www.themoviedb.org/",
+    "notice": "This product uses the TMDB API but is not endorsed or certified by TMDB.",
+    "source": "The Movie Database is the metadata and image source for this collection."
+  },
+  "records": [
+    {
+      "stableKey": "person:13848",
+      "tmdbPersonId": 13848,
+      "canonicalName": "Charlie Chaplin",
+      "categoryMembership": [
+        "actor",
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial",
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/lRI9Ky1SMOehn04OqhYJ5hQfgIK.jpg",
+      "sourceHash": "6c9b511a761db4521842c9791a49c4c5d332abe2ebefabb79b8479dc9f0523a7",
+      "sourceDimensions": {
+        "width": 604,
+        "height": 905
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/13848.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/13848.webp",
+      "landscapeHash": "45a42f9d8017fbefae3383832523a403252a06a7ba871fa43acc9578c673f208",
+      "landscapeByteCount": 63078,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/13848.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/13848.webp",
+      "posterHash": "b88122e9793d75195aeed075e8c04001b729c7dd034bc895f42e7cef4a4f97b2",
+      "posterByteCount": 184292,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:1158",
+      "tmdbPersonId": 1158,
+      "canonicalName": "Al Pacino",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/m8HAAjq1T75JypKk0v1FFQn4ysZ.jpg",
+      "sourceHash": "684a77bf67e3df742dcebb0c4256956f1c7395444fdb4d16e586ca1837cbdb8d",
+      "sourceDimensions": {
+        "width": 1000,
+        "height": 1500
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/1158.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/1158.webp",
+      "landscapeHash": "96deecb23d3d7d8252797b8307d37eaa0eb472fcc990ac02d2ba20303df433b5",
+      "landscapeByteCount": 58892,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/1158.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1158.webp",
+      "posterHash": "4cb517e195597a434d503357152678d61fc14a09d34341909c3f3e3ba05808f8",
+      "posterByteCount": 157370,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:287",
+      "tmdbPersonId": 287,
+      "canonicalName": "Brad Pitt",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/m09Y1YfPPeNYYUSHnnVqahkrC1o.jpg",
+      "sourceHash": "25694c0c51c71fd0f3e6564346821b35cb171e1eb46883fe68eec6a2458cbd89",
+      "sourceDimensions": {
+        "width": 1684,
+        "height": 2528
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/287.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/287.webp",
+      "landscapeHash": "31dd8b367e8cd28b8e1c816493d63ed43f5e0a81fe93f544476fa31c5fead6cc",
+      "landscapeByteCount": 29376,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/287.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/287.webp",
+      "posterHash": "8796a3e44c4d4e5bb0971218e397ea29f78554ef9f71f0ac78146164435f5fc6",
+      "posterByteCount": 88034,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:2231",
+      "tmdbPersonId": 2231,
+      "canonicalName": "Samuel L. Jackson",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/qdfRtvPCj51C9Uy5VEgjgj69JyV.jpg",
+      "sourceHash": "4d4973cfa46829e2aba1301d2b65441555443820cc383b21765a69bb3c268d31",
+      "sourceDimensions": {
+        "width": 1897,
+        "height": 2846
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/2231.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/2231.webp",
+      "landscapeHash": "a9346c8de1a51fe51f1a9d30f3c294975ada365ab77f52a54dc2930399f8596d",
+      "landscapeByteCount": 48528,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/2231.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/2231.webp",
+      "posterHash": "38cca9bca0957a32c28d88b4d4e20551b6086cc37352b198e495f769a5fb938b",
+      "posterByteCount": 206866,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:3223",
+      "tmdbPersonId": 3223,
+      "canonicalName": "Robert Downey Jr.",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/5qHNjhtjMD4YWH3UP0rm4tKwxCL.jpg",
+      "sourceHash": "7a87950075597c9b714dff9312667bec9bd370c3114f463780f49e358d6267a1",
+      "sourceDimensions": {
+        "width": 853,
+        "height": 1280
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/3223.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/3223.webp",
+      "landscapeHash": "3d17893460ab128d188bbfcb9c7bf81c8ae208d825068a9455c7c378f773a9ce",
+      "landscapeByteCount": 47736,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/3223.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/3223.webp",
+      "posterHash": "897bba32a05e30c23ec08c3d0a70429e72f0df78ed770c66e408eb351ddccd12",
+      "posterByteCount": 134188,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:13566",
+      "tmdbPersonId": 13566,
+      "canonicalName": "Edward G. Robinson",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "use-owner-selected",
+      "resolvedProfilePath": "/sI3vtDTeGcV0uhumtZmYmfcOBav.jpg",
+      "sourceHash": "c8b5970d9e5d33b3a1bb66d5fa03cd1ca046774561e8302a5b0b054a47a9c16a",
+      "sourceDimensions": {
+        "width": 1255,
+        "height": 1883
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/13566.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/13566.webp",
+      "landscapeHash": "4dfc25b1275e2ff3ad472585a8fb79a5a296a72d6e73d61418f9e37fad2d3d19",
+      "landscapeByteCount": 26822,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/13566.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/13566.webp",
+      "posterHash": "af90395d8982450ab79c5f882a4e2c1573dc0edc8d7de6d3cde8acede9e3bd32",
+      "posterByteCount": 93070,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:11856",
+      "tmdbPersonId": 11856,
+      "canonicalName": "Daniel Day-Lewis",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/3kNA9VcmymoEwT0btQ4bvMYxzcP.jpg",
+      "sourceHash": "fd140c63aca1c563d88b28ab8c0771249383fa5480106ab4e8e8f515e9a1a50c",
+      "sourceDimensions": {
+        "width": 800,
+        "height": 1200
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/11856.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/11856.webp",
+      "landscapeHash": "125a969dc13ec251c7702071481f8700e0170511e1fcc19d5425374f26e0ef3f",
+      "landscapeByteCount": 36274,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/11856.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/11856.webp",
+      "posterHash": "ea5c6ce8154ce5ae3301e1dc61eeacdedf307763d818785d6446eff42ac15b67",
+      "posterByteCount": 96802,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:70035",
+      "tmdbPersonId": 70035,
+      "canonicalName": "Maureen O'Hara",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/yGNh18kBF7afOdjTcEP2zFCxzCH.jpg",
+      "sourceHash": "3c5ad58498c2f8293bf6478b0fc70f1bf37cba581015a6445109fe3d3bddf5b9",
+      "sourceDimensions": {
+        "width": 836,
+        "height": 1254
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/70035.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/70035.webp",
+      "landscapeHash": "7084295277d314246d51897d11e62227ed873989cbd08799b20900587f8322cf",
+      "landscapeByteCount": 45204,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/70035.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/70035.webp",
+      "posterHash": "a3468df869a3f668320ce1ee3fdedec8e1140bdb4f94da1279cc2287512a08f9",
+      "posterByteCount": 128574,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:18999",
+      "tmdbPersonId": 18999,
+      "canonicalName": "J.K. Simmons",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/ScmKoJ9eiSUOthAt1PDNLi8Fkw.jpg",
+      "sourceHash": "156e181dccd4dd254856d5100a552c8be1419bebd6e1e39bf92a774e6df211fc",
+      "sourceDimensions": {
+        "width": 1000,
+        "height": 1500
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/18999.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/18999.webp",
+      "landscapeHash": "5dfda49d188c0f61bfb3fa96bd2e13fbc1f1edea8232cd2e83c18d01c1702d14",
+      "landscapeByteCount": 27502,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/18999.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/18999.webp",
+      "posterHash": "ec1abeeb30cb787472f3fd4341e9eb91a9c81afa562b4a7903583630087e46dd",
+      "posterByteCount": 113472,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:1233",
+      "tmdbPersonId": 1233,
+      "canonicalName": "Philip Seymour Hoffman",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/50rqDkmvXwjwVhFH7q6ph2Rkw7S.jpg",
+      "sourceHash": "5be8c108e222c5b75a28d998ad4cea6c1a9723ec44955d10e00e63f8d10a2399",
+      "sourceDimensions": {
+        "width": 993,
+        "height": 1489
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/1233.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/1233.webp",
+      "landscapeHash": "8b48f8bfec32cc31bea6d2014000fb9c2a0524ac528eb5bd21733c25a60f12be",
+      "landscapeByteCount": 48708,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/1233.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1233.webp",
+      "posterHash": "e628300ff29ba353e71ae9bc051803fb731710013df588dbbfa81ef93878102c",
+      "posterByteCount": 167494,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:1283",
+      "tmdbPersonId": 1283,
+      "canonicalName": "Helena Bonham Carter",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/hJMbNSPJ2PCahsP3rNEU39C8GWU.jpg",
+      "sourceHash": "2c3294a233b36c6bb2b3150873c1d1820ef1193f8f2273dce5cfcfd16767a86b",
+      "sourceDimensions": {
+        "width": 800,
+        "height": 1200
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/1283.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/1283.webp",
+      "landscapeHash": "e00275ccb7918af999a36e4b63af412f5d85957b6b2e7589a93cc9fbce48b678",
+      "landscapeByteCount": 55898,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/1283.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1283.webp",
+      "posterHash": "fad4ddec85c29d6eaf0f3d5fc112d4b5e6d39b33416dd5d12763c87876ef453c",
+      "posterByteCount": 170206,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:71580",
+      "tmdbPersonId": 71580,
+      "canonicalName": "Benedict Cumberbatch",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/wz3MRiMmoz6b5X3oSzMRC9nLxY1.jpg",
+      "sourceHash": "5827ee9fb72f368f428cde9b42c7b191dfbefdf00183fb3e305c982ec1b75f3d",
+      "sourceDimensions": {
+        "width": 800,
+        "height": 1200
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/71580.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/71580.webp",
+      "landscapeHash": "9679fe312fc8353154fba66bb4d9219eac4d524f8c9cea23596fedc34ca7169c",
+      "landscapeByteCount": 39966,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/71580.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/71580.webp",
+      "posterHash": "3d2d060774280a218b1f13fc1cf35bc5485ac0d9059657cf00502869894757be",
+      "posterByteCount": 114196,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:10297",
+      "tmdbPersonId": 10297,
+      "canonicalName": "Matthew McConaughey",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/lCySuYjhXix3FzQdS4oceDDrXKI.jpg",
+      "sourceHash": "f743805167bdd8ae9c024f0c2c1e4c99fa0b7dd1fa7662fc3596b7b964f95daf",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/10297.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/10297.webp",
+      "landscapeHash": "f121d8b8ee983a68aa2ff8f8cf4a2d4597f208f91fcbfe81c0ee24147807d400",
+      "landscapeByteCount": 58648,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/10297.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/10297.webp",
+      "posterHash": "8e321443cf7ee6593638e881616732722264aaee3da1dba846a8ee18a009a816",
+      "posterByteCount": 163302,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:5292",
+      "tmdbPersonId": 5292,
+      "canonicalName": "Denzel Washington",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/393wX9AGWpseVqojQDPLy3bTBia.jpg",
+      "sourceHash": "01b3e9e10b93a48832dcf9bd64b04cf99bc97c9222d3d9eed322b68c0d99529b",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/5292.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/5292.webp",
+      "landscapeHash": "be2315b1e9bdc5047d7c053ae7f9772642f42a6b48af00fbd3b3b9e48ddc51dc",
+      "landscapeByteCount": 43460,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/5292.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/5292.webp",
+      "posterHash": "142a198e90ed4fcd90466f5f926c93abe82edc081e233246b94bf3bf09e6c3a6",
+      "posterByteCount": 117598,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:6193",
+      "tmdbPersonId": 6193,
+      "canonicalName": "Leonardo DiCaprio",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/mkdRcVIQl4WZhDf1vXKWTD7HZrZ.jpg",
+      "sourceHash": "32a2597dd241063ea163dc3971072c4f5ffa9ac328d6ecc68dd27857b038abb7",
+      "sourceDimensions": {
+        "width": 1684,
+        "height": 2528
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/6193.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/6193.webp",
+      "landscapeHash": "ffe6c079bcd51f7517801ba53d952df118d2c008e67d9c4f7bd61c39a342a455",
+      "landscapeByteCount": 26102,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/6193.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/6193.webp",
+      "posterHash": "5744397325aacbaf0d8633157744e14716bbf9294e078a08efe1232bcbf358df",
+      "posterByteCount": 70424,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:8725",
+      "tmdbPersonId": 8725,
+      "canonicalName": "Olivia de Havilland",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "use-owner-selected",
+      "resolvedProfilePath": "/g3scfKWRDJIFsuphfv3Ylo2GyGH.jpg",
+      "sourceHash": "86b030110fba0398d49127e9e5f9c9163e5be47fdae2cb6789de178fba2412d5",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/8725.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/8725.webp",
+      "landscapeHash": "074f8f63927ef418cb9978b97f8790e3674e2123100ab7fde07e1918db141ed3",
+      "landscapeByteCount": 24356,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/8725.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/8725.webp",
+      "posterHash": "d99c98ec298dee124a626263863976049bc7b2338cbfec5b4ac61261d12dd541",
+      "posterByteCount": 61874,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:3",
+      "tmdbPersonId": 3,
+      "canonicalName": "Harrison Ford",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/pjBMJVPpcZK23Vt1nzr1zEBTWrP.jpg",
+      "sourceHash": "49e7f4934360b12ff112b8beee8152fffdc051bc83b9b9ddf83ef64206977f52",
+      "sourceDimensions": {
+        "width": 727,
+        "height": 1091
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/3.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/3.webp",
+      "landscapeHash": "65b7be4dec772f2c2f86c4b0bd8b31ae1cbcc5ee9baeaa424c47aa5582933851",
+      "landscapeByteCount": 55862,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/3.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/3.webp",
+      "posterHash": "a02f1af2e49414c88dab7e6d19286cb7b89ea5786fb0a085307f3bbbd3966777",
+      "posterByteCount": 184204,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:5064",
+      "tmdbPersonId": 5064,
+      "canonicalName": "Meryl Streep",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "use-owner-selected",
+      "resolvedProfilePath": "/pSyM9cteYYWUBDalJzMPLH0SLgB.jpg",
+      "sourceHash": "a2b95053ae511d2f977298fa2dfb0a74c0656624ba83fad46c4907cf317aacb6",
+      "sourceDimensions": {
+        "width": 1270,
+        "height": 1905
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/5064.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/5064.webp",
+      "landscapeHash": "63cc449d2811f020fee567cf3c09552aa6bb082a07e7afc65da658d5cbfe4dc6",
+      "landscapeByteCount": 40416,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/5064.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/5064.webp",
+      "posterHash": "1cd90ef504a738d42bd7168642da4e8c2222598d3fbbd0d82350610c3477f73c",
+      "posterByteCount": 190572,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:3894",
+      "tmdbPersonId": 3894,
+      "canonicalName": "Christian Bale",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/7Pxez9J8fuPd2Mn9kex13YALrCQ.jpg",
+      "sourceHash": "f411c868d2fe6efb0d8a83b4254891e68463ad0fc42ab7ecfb7f95e200edd80f",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/3894.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/3894.webp",
+      "landscapeHash": "39131c011eacb0c05f121605a8c6ea3ae11421e252545850a1e4b5d2dfac0ec0",
+      "landscapeByteCount": 23714,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/3894.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/3894.webp",
+      "posterHash": "ca754b8a0b5b2a47a148eff5472e6eba3e26a507ad94ae66b8e45198e164dbcb",
+      "posterByteCount": 69278,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:78198",
+      "tmdbPersonId": 78198,
+      "canonicalName": "Tyler Hoechlin",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/9AAjJeq9b0GyO0LmKQ9LHb9rzw0.jpg",
+      "sourceHash": "a01853e6720a38fb16c67db794addf8b9f6ba082f2571aed75a5b7d427a13f2d",
+      "sourceDimensions": {
+        "width": 825,
+        "height": 1238
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/78198.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/78198.webp",
+      "landscapeHash": "e7ca635dc025e5ab489e6400cc63ae3d95c2b2ad8378e5e1c710136eba5534ee",
+      "landscapeByteCount": 29096,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/78198.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/78198.webp",
+      "posterHash": "ba97820d2e0af6fa745a4d109548ae013114dd30ee9e4965f97fd63e05b26a58",
+      "posterByteCount": 71098,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:6598",
+      "tmdbPersonId": 6598,
+      "canonicalName": "Katharine Hepburn",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/hzBSOe6bburyMeeCqD9kR9tRfdD.jpg",
+      "sourceHash": "6a10673afce177f64781bfb0850a014d3659bee5d865abecd33db8e8c0164040",
+      "sourceDimensions": {
+        "width": 983,
+        "height": 1475
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/6598.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/6598.webp",
+      "landscapeHash": "9de73d3b04bc3a6b80b716417674faedd61e50641c37aa94fe3580307ff32201",
+      "landscapeByteCount": 55502,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/6598.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/6598.webp",
+      "posterHash": "e59d2171fd8a9703be0356a38eb160a0c50cb125acb51e311e61b2ef7bc1660b",
+      "posterByteCount": 167282,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:4110",
+      "tmdbPersonId": 4110,
+      "canonicalName": "Humphrey Bogart",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/4pk2VbOb2td7iBZyir6Ji46HH4N.jpg",
+      "sourceHash": "3b5a19b3a429efba3fc494b7cb028c7c48c6e7a669c7e38619d1c6d49f2dbb14",
+      "sourceDimensions": {
+        "width": 1000,
+        "height": 1500
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/4110.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/4110.webp",
+      "landscapeHash": "8de803e4999ee5b1f7c153d958d2d5f1d8114d8a89915d5dbd4784b91f63f0ba",
+      "landscapeByteCount": 49652,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/4110.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/4110.webp",
+      "posterHash": "98230cac03d37ed6243798252843eff0cd828d2e021f033703d57f2c59b8a878",
+      "posterByteCount": 165462,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:9273",
+      "tmdbPersonId": 9273,
+      "canonicalName": "Amy Adams",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/1h2r2VTpoFb5QefAaBYYQgQzL9z.jpg",
+      "sourceHash": "aa2272b681fdcc01bc7ee25bedb3404b7439a0eb34bee91c2c243d5229277bca",
+      "sourceDimensions": {
+        "width": 590,
+        "height": 885
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/9273.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/9273.webp",
+      "landscapeHash": "02c4c1364fb5bc6796cc67da2f2e7f2d067cce202e5fe1c00587532f244ec12a",
+      "landscapeByteCount": 35840,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/9273.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/9273.webp",
+      "posterHash": "897089e8a2cd5d3cf709c60a81ceb05d7339555b3ab53a0b0fed3a70e649fc63",
+      "posterByteCount": 84850,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:2227",
+      "tmdbPersonId": 2227,
+      "canonicalName": "Nicole Kidman",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/lfW2cDigTcvuoe4k6UfCdGVE1R6.jpg",
+      "sourceHash": "7cd930850f6a30024c0a00078c0ca5c23380c4318a677015a73fe32edb38985c",
+      "sourceDimensions": {
+        "width": 1176,
+        "height": 1764
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/2227.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/2227.webp",
+      "landscapeHash": "fb0f3742d09dd0c5eb3ef17c301cb0f6a93004a73afc2adf121b44bbe756e9fd",
+      "landscapeByteCount": 38418,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/2227.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/2227.webp",
+      "posterHash": "63104af2cc5d2ebf1ef6199b4fb49e4986854007ddff42ce205c69cfba611825",
+      "posterByteCount": 147826,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:40",
+      "tmdbPersonId": 40,
+      "canonicalName": "Orson Welles",
+      "categoryMembership": [
+        "actor",
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "initial",
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/e9lGmqQq3EsHeUQgQLByo275hcc.jpg",
+      "sourceHash": "fe071e4cab56c3526cac58356b570bb254c7a26a987a79ec2807503f449a847b",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/40.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/40.webp",
+      "landscapeHash": "d9ec61ec01fa4c9064eba7d9a818d87d95b26d97d514bd2f4ad55cb09dfe0c15",
+      "landscapeByteCount": 48246,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/40.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/40.webp",
+      "posterHash": "3145fef3ec82662a364987f13d67a947ed568d1ba9f78ffa6e4a3ca9dbbfd39f",
+      "posterByteCount": 171458,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:8500",
+      "tmdbPersonId": 8500,
+      "canonicalName": "John Ford",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/ffgVJWV8pDomSdTkjOqdrwMX9G6.jpg",
+      "sourceHash": "c77df847b4ad0a6c0b9cf8f01c648d3a058511c085b58b755d33deb2d2be1771",
+      "sourceDimensions": {
+        "width": 900,
+        "height": 1350
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/8500.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/8500.webp",
+      "landscapeHash": "f78fb15900970a56fb4710ad0f81585ff0126eb0d699a7f5c94a318d8c579c60",
+      "landscapeByteCount": 43954,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/8500.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/8500.webp",
+      "posterHash": "601c9091d6036673b191845033c9427042e266d19c6e68ff2853c4c933b744ea",
+      "posterByteCount": 116278,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:14353",
+      "tmdbPersonId": 14353,
+      "canonicalName": "Max Ophüls",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "retain-registry-source",
+      "resolvedProfilePath": "/7fS9M8xuhcuE6swofTjvsLAWT3N.jpg",
+      "sourceHash": "a6ad9919a869acd874ada928c0152ca6af325e000f5447c892a9c8b0ff3fc7e2",
+      "sourceDimensions": {
+        "width": 480,
+        "height": 720
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/14353.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/14353.webp",
+      "landscapeHash": "b0933fe7986ff0f1ee274c76df569ccad7385f7adfa573fa994b0134f63ea2ba",
+      "landscapeByteCount": 34636,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/14353.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/14353.webp",
+      "posterHash": "21d6b2bb8810604e6affc284efc6fe31c31d1feae3d5932ad8f1e1cd56dbb301",
+      "posterByteCount": 93196,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:9076",
+      "tmdbPersonId": 9076,
+      "canonicalName": "F. W. Murnau",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "retain-registry-source",
+      "resolvedProfilePath": "/keLp43iiIkkllroUwExIJITeR7a.jpg",
+      "sourceHash": "b8e0d32803b6de27c15652627243efa1ef1589cb1f6706a37d2e75679d7cf419",
+      "sourceDimensions": {
+        "width": 363,
+        "height": 544
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/9076.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/9076.webp",
+      "landscapeHash": "e18d24161781375b0954aa03e7b57688df928109e239bd244ee0f5e519b1d8aa",
+      "landscapeByteCount": 24094,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/9076.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/9076.webp",
+      "posterHash": "7805a12df792a0374a3e8e086d954e4dd5a68811cd82641dd9823b32c039d5ca",
+      "posterByteCount": 56854,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:10601",
+      "tmdbPersonId": 10601,
+      "canonicalName": "Joseph L. Mankiewicz",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/qfs773ZGMwojZTl0WKM7b7qh8Mu.jpg",
+      "sourceHash": "65fcbc1d7676361091afecba6c7f7425f814dedb9d8d77d2e2004c8a84de8873",
+      "sourceDimensions": {
+        "width": 1000,
+        "height": 1500
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/10601.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/10601.webp",
+      "landscapeHash": "91d3fab0be8b19e7333f941dedde92db90626a981d0a2740059b3a1e0f5ebab7",
+      "landscapeByteCount": 47766,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/10601.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/10601.webp",
+      "posterHash": "df86d048c1c5ec3ca11fd112fcbbe28bd601496f1b96fe71fb4b6c53223c506e",
+      "posterByteCount": 134254,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:95501",
+      "tmdbPersonId": 95501,
+      "canonicalName": "Yasujirō Ozu",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/s0KBnwAxr6Aujbi6cA3inDqH8Fe.jpg",
+      "sourceHash": "3cb4475cb33a510f7e73ad887377d7159664a800f17cd2752ae8ae24a72e5c4c",
+      "sourceDimensions": {
+        "width": 533,
+        "height": 800
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/95501.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/95501.webp",
+      "landscapeHash": "10a83d6ef9695b2e831745407641c08c7095e11b3268f554d3f4a7aec2b2dc57",
+      "landscapeByteCount": 48618,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/95501.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/95501.webp",
+      "posterHash": "ad9ec8e5643a2b93d2b7b332dc2d4acd82d21f665e8eac7d2f28994b65b1701d",
+      "posterByteCount": 162610,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:1126",
+      "tmdbPersonId": 1126,
+      "canonicalName": "Krzysztof Kieślowski",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/vOgq6ojWQturbj0XLL9ryBL0V4r.jpg",
+      "sourceHash": "a0d5aa9c0b79b90b3566d536c5d78595c1a280e890a3d89aa41616852a083cce",
+      "sourceDimensions": {
+        "width": 638,
+        "height": 956
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/1126.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/1126.webp",
+      "landscapeHash": "375fda0693a0b168e20ae14f3c6cb6275c76acae3cb52b07bc21c80c30ed1f81",
+      "landscapeByteCount": 51712,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/1126.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1126.webp",
+      "posterHash": "be6c63da2cb4bdecbe02bd313ceea7b52fb15e1114ee6304e6c4fcbd03e56075",
+      "posterByteCount": 120294,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:1079380",
+      "tmdbPersonId": 1079380,
+      "canonicalName": "Djibril Diop Mambéty",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "retain-registry-source",
+      "resolvedProfilePath": "/qP0a19xyKBoAY22ZsnJJy9Okfm6.jpg",
+      "sourceHash": "631b5120b1729a19479c92ddfaa35ccc5e61a39a41318bf27953ee089d78ab43",
+      "sourceDimensions": {
+        "width": 336,
+        "height": 504
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/1079380.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/1079380.webp",
+      "landscapeHash": "18250a2281a428ae8add3088b8517f5b29aec1477ffe51da7dedf8ce229b1e92",
+      "landscapeByteCount": 39812,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/1079380.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1079380.webp",
+      "posterHash": "aff7798ab2dae2b65a332b11319aac9d770443094c834612a1d6c27779e41e76",
+      "posterByteCount": 92042,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:309",
+      "tmdbPersonId": 309,
+      "canonicalName": "Pedro Almodóvar",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/dKlaXJk3NLcsC1CKMx6xmyW5BZD.jpg",
+      "sourceHash": "31c099e42c41855c2ea177dc6d375af5003ffc3a806a460b20c79bc919a51812",
+      "sourceDimensions": {
+        "width": 1156,
+        "height": 1734
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/309.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/309.webp",
+      "landscapeHash": "1de84f53ef6663d05b8c876f813fdb2f0c7fff1b0964f695d50d564ca07d4cad",
+      "landscapeByteCount": 51946,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/309.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/309.webp",
+      "posterHash": "74861462799fdca9d7db9bdd35f530a43d8915c5f5b0d4719fe412b2fbc137b5",
+      "posterByteCount": 161006,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:69759",
+      "tmdbPersonId": 69759,
+      "canonicalName": "Apichatpong Weerasethakul",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/zZyGqhaPNzeb88bHkYiCQHHXyhY.jpg",
+      "sourceHash": "1b752b4eff3454017d09ba15823614ad003d8f0fd6d0cde08c6aed7debabbcbb",
+      "sourceDimensions": {
+        "width": 540,
+        "height": 810
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/69759.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/69759.webp",
+      "landscapeHash": "832cb26f4bcae9a77a7efd4db19aad28b56eaea597d12f52617377966e40952c",
+      "landscapeByteCount": 29006,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/69759.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/69759.webp",
+      "posterHash": "3e634d6776547357ac49f8911ac26ba795720462f052822d3c519bfb6c656b66",
+      "posterByteCount": 62780,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:68813",
+      "tmdbPersonId": 68813,
+      "canonicalName": "Céline Sciamma",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/4B5Bt47HYTObsde1einBDha03ka.jpg",
+      "sourceHash": "dfed98938d11670e8aa95e3f09587ad2d032165cef21c706cd32f052fc21c142",
+      "sourceDimensions": {
+        "width": 1600,
+        "height": 2401
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/68813.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/68813.webp",
+      "landscapeHash": "8709ebc276ebaddd201e3e47147be0c9c81914833e2f6ae75c83f02920faed43",
+      "landscapeByteCount": 28570,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/68813.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/68813.webp",
+      "posterHash": "a53a8a8e98425573a31ed4add6fc53472479e89f75b39df06254d045bee8e107",
+      "posterByteCount": 86244,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:12453",
+      "tmdbPersonId": 12453,
+      "canonicalName": "Wong Kar-Wai",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/msp2p1lFpbsQ3Ntpdh1sbryIZBR.jpg",
+      "sourceHash": "487ec82825bc65ca40a814951de214cf66d43bb9204cf9020319cc9b35d5d04d",
+      "sourceDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/12453.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/12453.webp",
+      "landscapeHash": "4862d4b4f0792beec8b8b581d8f65a327bc3141c1f9f82384d9a3e9bb3851d96",
+      "landscapeByteCount": 25730,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/12453.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/12453.webp",
+      "posterHash": "77b99620bceb2df091cb9b13e3a5ee9cbc2eee60bb956d85dc2f531ae8d2d945",
+      "posterByteCount": 73304,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:4762",
+      "tmdbPersonId": 4762,
+      "canonicalName": "Paul Thomas Anderson",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/wKAs2LtLYSUzt3ZZ8pnxMwuEWuR.jpg",
+      "sourceHash": "42196b467dc04b783734bd247833363ea90026a844b214fc15a93943f7ccf6eb",
+      "sourceDimensions": {
+        "width": 666,
+        "height": 1000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/4762.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/4762.webp",
+      "landscapeHash": "344c8dd6f0b1d39060b2c93dd56f5c51775b64aebb8df4deedf827ff6222fdf5",
+      "landscapeByteCount": 41906,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/4762.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/4762.webp",
+      "posterHash": "0debe7790fbb71945b9daf3a85e1f0a32c73cf9a62b4f4c2c31ba0e689172204",
+      "posterByteCount": 96986,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:5281",
+      "tmdbPersonId": 5281,
+      "canonicalName": "Spike Lee",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/2KOHXgk2uoRXl6u7V9xpAIo3uay.jpg",
+      "sourceHash": "da72cc38ffb4abfb6c02d1568981505b4fa4177341b18939a5f3c203ab0ca2e8",
+      "sourceDimensions": {
+        "width": 800,
+        "height": 1200
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/5281.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/5281.webp",
+      "landscapeHash": "b0f20c6c62dcc5269e5d6ce088c0ff8d9e22c470b6517480945e99868a496685",
+      "landscapeByteCount": 44610,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/5281.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/5281.webp",
+      "posterHash": "a77e4d05e5d7a131d0d25e4d48a80f2365ee3686f2860a895c60a74ac883e5c3",
+      "posterByteCount": 127520,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:56208",
+      "tmdbPersonId": 56208,
+      "canonicalName": "Lucrecia Martel",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "use-owner-selected",
+      "resolvedProfilePath": "/szuJZR2uAyGnbhku6WjEM7JX8hK.jpg",
+      "sourceHash": "eba6d94eb2d36538d1d758e894b0ee65ef61d5c1ba0ad2b890e3487273465b7f",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/56208.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/56208.webp",
+      "landscapeHash": "d0f0466397e736f79b0f67566274d982a6ae2405239e04885d609448a86cee9d",
+      "landscapeByteCount": 44914,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/56208.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/56208.webp",
+      "posterHash": "45faa70aeb166cbdfbbf4204f3b41b3205cd16268057907114a7aee865558d11",
+      "posterByteCount": 207824,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:2725",
+      "tmdbPersonId": 2725,
+      "canonicalName": "Rainer Werner Fassbinder",
+      "categoryMembership": [
+        "director"
+      ],
+      "rolloutTierByCategory": {
+        "director": "initial"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/uZFSBv6Q4ZSwZr8wfLobBCiiC14.jpg",
+      "sourceHash": "754d8cda81b40ff0877bb3840fef33a060208cbd709804831ae37d8bbf76c3ec",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/2725.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/2725.webp",
+      "landscapeHash": "1cba2114a8597ee71f5bc8d418f7e68a44f4d977341be13073f8bdc5c6d88c55",
+      "landscapeByteCount": 55628,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/2725.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/2725.webp",
+      "posterHash": "0374d5386f3e240df34d418c99c3d62f3066821e4c858d9c5d06946d3951f080",
+      "posterByteCount": 264386,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    }
+  ]
+}

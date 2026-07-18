@@ -8,13 +8,16 @@ import { execFileSync, spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 import { parsePublicationArguments } from "../src/people-publication-cli.mjs";
+import { parseFinalizationArguments } from "../src/people-publication-finalize-cli.mjs";
 import { loadPeopleArtworkRuntime } from "../src/people-artwork/runtime-dependencies.mjs";
 import {
   OWNER_REVIEW_FIELDS,
   PEOPLE_ASSET_RELATIVE_ROOT,
   PEOPLE_MANIFEST_RELATIVE_PATH,
+  PUBLIC_MANIFEST_ATTRIBUTION,
   buildOwnerReviewRows,
   buildPeopleArtworkManifest,
+  buildPublishedPeopleArtworkManifest,
   calculateManifestFingerprint,
   categoryReuseReport,
   compareRenderWithPromotionEvidence,
@@ -208,13 +211,17 @@ test("render parity rejects approved evidence rows outside the explicit rendered
   }
 });
 
-test("default publication validation accepts the framework-only state without a permanent candidate", () => {
+test("default publication validation accepts the tracked published manifest", () => {
   const output = execFileSync(process.execPath, [validationCli], { cwd: repoRoot, encoding: "utf8", windowsHide: true });
   const result = JSON.parse(output);
   assert.equal(result.valid, true);
   assert.equal(result.frameworkAvailable, true);
-  assert.equal(result.candidatePresent, false);
-  assert.equal(result.numericAssetCount, 0);
+  assert.equal(result.candidatePresent, true);
+  assert.equal(result.status, "published");
+  assert.equal(result.published, true);
+  assert.equal(result.recordCount, 40);
+  assert.equal(result.landscapeCount, 40);
+  assert.equal(result.posterCount, 40);
   assert.equal(result.manifestPath, PEOPLE_MANIFEST_RELATIVE_PATH);
   const missing = spawnSync(process.execPath, [validationCli, "--manifest", "tools/people-seed/.work/does-not-exist.json"], { cwd: repoRoot, encoding: "utf8", windowsHide: true });
   assert.notEqual(missing.status, 0);
@@ -341,6 +348,55 @@ test("manifest fingerprint excludes only its timestamp and own value", async () 
   });
 });
 
+test("published manifest has final URLs, attribution, deterministic replay, and no internal workflow fields", async () => {
+  await withSyntheticCandidate(async ({ root, manifest: candidateManifest }) => {
+    const publishedAt = "2026-07-19T01:02:03.000Z";
+    const manifest = buildPublishedPeopleArtworkManifest({ candidateManifest, publishedAt });
+    const replay = buildPublishedPeopleArtworkManifest({ candidateManifest, publishedAt });
+    const validation = await validatePeopleArtworkManifest({ manifest, repoRoot: root, expectedStableKeys: ["person:101", "person:202"] });
+    const assets = await validateManifestAssets({ manifest, repoRoot: root });
+    assert.equal(validation.valid, true);
+    assert.equal(assets.valid, true);
+    assert.equal(manifest.status, "published");
+    assert.equal(manifest.publishedAt, publishedAt);
+    assert.deepEqual(manifest.fingerprintExcludes, ["publishedAt", "manifestFingerprint"]);
+    assert.deepEqual(manifest.attribution, PUBLIC_MANIFEST_ATTRIBUTION);
+    assert.deepEqual(manifest, replay);
+    assert.equal(manifest.manifestFingerprint, calculateManifestFingerprint(manifest));
+    assert.equal(calculateManifestFingerprint({ ...manifest, publishedAt: "2030-01-01T00:00:00.000Z" }), manifest.manifestFingerprint);
+    for (const record of manifest.records) {
+      assert.equal(record.landscapeUrl, proposedRawUrl(record.landscapePath));
+      assert.equal(record.posterUrl, proposedRawUrl(record.posterPath));
+      for (const field of ["landscapeUrlProposal", "posterUrlProposal", "ownerReviewStatus", "distributionStatus", "rightsStatus"]) assert.equal(Object.hasOwn(record, field), false);
+    }
+    assert.equal(Object.hasOwn(manifest, "publicationCandidateAt"), false);
+    assert.equal(Object.hasOwn(manifest, "rightsNotice"), false);
+
+    const internalField = structuredClone(manifest);
+    internalField.records[0].rightsStatus = "internal";
+    internalField.manifestFingerprint = calculateManifestFingerprint(internalField);
+    const invalid = await validatePeopleArtworkManifest({ manifest: internalField, repoRoot: root });
+    assert.ok(invalid.errors.some((error) => /published record must omit rightsStatus/u.test(error)));
+  });
+});
+
+test("published finalization arguments bind explicit local evidence and a fixed timestamp", () => {
+  const options = parseFinalizationArguments([
+    "--locked-pilot",
+    "--source-manifest", "tools/people-seed/.work/held/manifest.json",
+    "--expected-source-manifest-sha256", "a".repeat(64),
+    "--expected-source-manifest-fingerprint", "b".repeat(64),
+    "--manifest", PEOPLE_MANIFEST_RELATIVE_PATH,
+    "--owner-decisions", "tools/people-seed/.work/held/decisions.csv",
+    "--work-root", "tools/people-seed/.work/release",
+    "--published-at", "2026-07-19T01:02:03.000Z",
+    "--offline",
+  ]);
+  assert.equal(options.lockedPilot, true);
+  assert.equal(options.publishedAt, "2026-07-19T01:02:03.000Z");
+  assert.equal(options.sourceManifest, "tools/people-seed/.work/held/manifest.json");
+});
+
 test("candidate statuses, rights boundary, and URL proposals are mandatory", async () => {
   await withSyntheticCandidate(async ({ root, manifest }) => {
     assert.ok(manifest.records.every((record) => record.ownerReviewStatus === "approved-artwork"));
@@ -434,6 +490,7 @@ test("publication implementation contains no network opt-in, full-catalogue shor
   const files = [
     path.join(packageRoot, "src", "people-publication.mjs"),
     path.join(packageRoot, "src", "people-publication-cli.mjs"),
+    path.join(packageRoot, "src", "people-publication-finalize-cli.mjs"),
   ];
   const source = (await Promise.all(files.map((filePath) => fs.readFile(filePath, "utf8")))).join("\n");
   assert.doesNotMatch(source, /--allow-network|allowNetwork|person\/images|search\/person/iu);
@@ -443,9 +500,18 @@ test("publication implementation contains no network opt-in, full-catalogue shor
   assert.match(source, /offline:\s*true/u);
 });
 
-test("permanent people artwork contains only unchanged legacy generic JPGs", async () => {
+test("permanent people artwork contains the exact published formats and unchanged legacy generic JPGs", async () => {
   const expected = ["actor hero.jpg", "actors.jpg", "director hero.jpg", "directors.jpg", "jane_austen_collection.jpg", "people hero backdrop.jpg", "people.jpg"];
   const entries = await fs.readdir(path.join(repoRoot, PEOPLE_ASSET_RELATIVE_ROOT), { withFileTypes: true });
   assert.deepEqual(entries.filter((entry) => entry.isFile() && entry.name.endsWith(".jpg")).map((entry) => entry.name).sort(), expected.sort());
-  assert.equal(entries.some((entry) => entry.name === "manifest.json" || entry.name === "landscape" || entry.name === "poster"), false);
+  assert.equal(entries.some((entry) => entry.isFile() && entry.name === "manifest.json"), true);
+  assert.deepEqual(entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort(), ["landscape", "poster"]);
+  const manifest = JSON.parse(await fs.readFile(path.join(repoRoot, PEOPLE_MANIFEST_RELATIVE_PATH), "utf8"));
+  assert.equal(manifest.status, "published");
+  assert.equal(manifest.recordCount, 40);
+  for (const formatId of ["landscape", "poster"]) {
+    const files = await fs.readdir(path.join(repoRoot, PEOPLE_ASSET_RELATIVE_ROOT, formatId));
+    assert.equal(files.length, 40);
+    assert.ok(files.every((name) => /^[1-9][0-9]*\.webp$/u.test(name)));
+  }
 });

@@ -410,7 +410,7 @@ export async function validatePeopleAssetBoundary(repoRoot) {
   if (manifestExists) {
     const { validateTrackedPeopleManifest } = await import("./people-publication.mjs");
     const result = await validateTrackedPeopleManifest({ repoRoot, manifestPath });
-    for (const error of [...result.manifestValidation.errors, ...result.pathValidation.errors]) errors.push(`people publication candidate: ${error}`);
+    for (const error of [...result.manifestValidation.errors, ...result.pathValidation.errors]) errors.push(`people publication manifest: ${error}`);
   }
   return errors;
 }

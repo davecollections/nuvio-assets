@@ -65,11 +65,11 @@ The ImKaptain data is identity/catalogue cross-check provenance only. Its artwor
 
 ## Artwork and publishing boundary
 
-The identity foundation itself acquired no portrait. Reusable tooling can create an explicitly bounded local publication candidate, but no numeric people portrait set or production people artwork manifest is currently committed or published. The completed locked-40 candidate remains only in ignored local evidence pending a separate portrait-rights and redistribution decision; this does not publish the complete actor or director catalogue or make a proposed public URL live.
+The identity foundation itself acquired no portrait. A separate, explicitly bounded publication contains exactly 40 numeric people identities, with 40 landscape and 40 poster WebPs plus a public manifest. It does not publish or generate the complete 523-actor or 300-director catalogue.
 
-The promoted `profilePath` values are relative identity metadata only. They were read from the approved local evidence and do not indicate that an image was fetched, licensed, reviewed, or published.
+The promoted `profilePath` values are relative identity metadata only. A profile path by itself does not indicate the state of any corresponding artwork asset.
 
-Future candidate physical paths are:
+Published physical paths are:
 
 ```text
 assets/collection_covers/people/landscape/{tmdb_person_id}.webp
@@ -79,7 +79,7 @@ assets/collection_covers/people/manifest.json
 
 Actor and director collections reference the same physical person assets for a shared TMDB person ID. Existing generic people artwork is not a dependency of this workflow. Publication scope must always be explicitly bounded, and the tooling contains no network, commit, or push automation.
 
-Candidate covers transform third-party portraits. TMDB provides metadata and image hosting but may not own the underlying photography; the repository code licence does not automatically license portrait photography. Public redistribution requires an explicit later project decision, no attribution or rights claim is invented, and every manifest record preserves source provenance with `third-party-portrait-review-required` status. See `tools/people-seed/PUBLICATION.md`.
+The public manifest preserves source and output provenance, exact hashes, dimensions, preset bindings, and final raw asset URLs. TMDB attribution and the repository's third-party artwork licensing exclusion are stated in the root README. See `tools/people-seed/PUBLICATION.md`.
 
 ## Validation and owner review
 
@@ -111,4 +111,4 @@ tools/people-seed/.work/people-seed-foundation/owner-review/
 
 Only the original 25 actor and 44 director `review` candidates receive individual blank decision rows. The supplement's ignored promotion-proof review files are informational because all 198 inclusion and tier decisions are already approved.
 
-People artwork remains a separate owner-authorised workflow. This data promotion did not change the locked 40-person proof, Stage 3 typography, portrait-source decisions, fallback decisions, permanent assets, or manifests.
+People artwork remains a separate bounded workflow. The earlier foundation data promotion did not change the locked 40-person proof, Stage 3 typography, portrait-source decisions, or fallback decisions.

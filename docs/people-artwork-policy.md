@@ -59,6 +59,6 @@ npm --prefix tools/people-seed run deterministic-replay
 
 The renderer writes deterministic JSON and CSV render metadata. Metadata binds identity, category-neutral reuse, source resolution, source and output hashes, preset IDs and hashes, crop and typography details, fallback reasons, and stable ordering. It is render evidence, not a production people-artwork manifest.
 
-## Rights and provenance
+## Provenance and licensing boundary
 
-Source paths, hashes, dimensions, and acquisition results must be retained as provenance. TMDB-hosted and other third-party portrait photography is not covered by this repository’s MIT code licence or by any CC0 statement applied to repository-created artwork. Nuvio does not claim ownership of portrait photography. Licensing and redistribution rights must be reviewed separately before publication.
+Source paths, hashes, dimensions, and acquisition results are retained as provenance. The repository’s code licence does not grant rights to third-party portraits, photographs, source images, or media derived from them. Nuvio does not claim ownership of third-party portrait photography. TMDB attribution and the artwork removal or replacement process are documented in the root README.

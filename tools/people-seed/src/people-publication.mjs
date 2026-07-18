@@ -14,6 +14,12 @@ export const LOCKED_PILOT_RELATIVE_PATH = "tools/people-seed/.work/people-proof-
 export const PROMOTION_PROOF_RELATIVE_ROOT = "tools/people-seed/.work/people-production-promotion-proof";
 export const PEOPLE_ASSET_RELATIVE_ROOT = "assets/collection_covers/people";
 export const PEOPLE_MANIFEST_RELATIVE_PATH = `${PEOPLE_ASSET_RELATIVE_ROOT}/manifest.json`;
+export const PUBLIC_MANIFEST_ATTRIBUTION = Object.freeze({
+  provider: "The Movie Database (TMDB)",
+  url: "https://www.themoviedb.org/",
+  notice: "This product uses the TMDB API but is not endorsed or certified by TMDB.",
+  source: "The Movie Database is the metadata and image source for this collection.",
+});
 
 const FORMAT_ORDER = ["landscape", "poster"];
 const REQUIRED_RIGHTS_STATUS = "third-party-portrait-review-required";
@@ -29,7 +35,12 @@ export function stableStringify(value) {
 }
 
 export function manifestFingerprintPayload(manifest) {
-  const { publicationCandidateAt: _publicationCandidateAt, manifestFingerprint: _manifestFingerprint, ...payload } = manifest;
+  const {
+    publicationCandidateAt: _publicationCandidateAt,
+    publishedAt: _publishedAt,
+    manifestFingerprint: _manifestFingerprint,
+    ...payload
+  } = manifest;
   return payload;
 }
 
@@ -428,15 +439,78 @@ export async function buildPeopleArtworkManifest({ people, foundation, metadata,
   return manifest;
 }
 
+export function buildPublishedPeopleArtworkManifest({ candidateManifest, publishedAt } = {}) {
+  assert(candidateManifest && ["publication-candidate", "commit-ready"].includes(candidateManifest.status), "Published finalization requires a candidate or commit-ready source manifest.");
+  assert(Number.isFinite(Date.parse(publishedAt)), "publishedAt must be an ISO date-time.");
+  const records = candidateManifest.records.map((record) => {
+    const formatFields = (formatId) => ({
+      [`${formatId}Path`]: record[`${formatId}Path`],
+      [`${formatId}Url`]: record[`${formatId}Path`] ? proposedRawUrl(record[`${formatId}Path`]) : null,
+      [`${formatId}Hash`]: record[`${formatId}Hash`],
+      [`${formatId}ByteCount`]: record[`${formatId}ByteCount`],
+      [`${formatId}PresetId`]: record[`${formatId}PresetId`],
+      [`${formatId}PresetHash`]: record[`${formatId}PresetHash`],
+    });
+    return {
+      stableKey: record.stableKey,
+      tmdbPersonId: record.tmdbPersonId,
+      canonicalName: record.canonicalName,
+      categoryMembership: record.categoryMembership,
+      rolloutTierByCategory: record.rolloutTierByCategory,
+      sourceDecision: record.sourceDecision,
+      resolvedProfilePath: record.resolvedProfilePath,
+      sourceHash: record.sourceHash,
+      sourceDimensions: record.sourceDimensions,
+      fallbackUsed: record.fallbackUsed,
+      fallbackReason: record.fallbackReason,
+      ...formatFields("landscape"),
+      ...formatFields("poster"),
+      rendererMetadataVersion: record.rendererMetadataVersion,
+    };
+  });
+  const manifest = {
+    version: candidateManifest.version,
+    status: "published",
+    schemaPath: candidateManifest.schemaPath,
+    publishedAt: new Date(publishedAt).toISOString(),
+    ordering: candidateManifest.ordering,
+    recordCount: records.length,
+    landscapeCount: records.filter((record) => record.landscapePath).length,
+    posterCount: records.filter((record) => record.posterPath).length,
+    fallbackCount: records.filter((record) => record.fallbackUsed).length,
+    rendererVersion: candidateManifest.rendererVersion,
+    rendererRuntime: structuredClone(candidateManifest.rendererRuntime),
+    fontLockHash: candidateManifest.fontLockHash,
+    fontHash: candidateManifest.fontHash,
+    fingerprintExcludes: ["publishedAt", "manifestFingerprint"],
+    manifestFingerprint: "0".repeat(64),
+    attribution: structuredClone(PUBLIC_MANIFEST_ATTRIBUTION),
+    records,
+  };
+  manifest.manifestFingerprint = calculateManifestFingerprint(manifest);
+  return manifest;
+}
+
 export async function validatePeopleArtworkManifest({ manifest, repoRoot = PEOPLE_ARTWORK_REPO_ROOT, expectedStableKeys = null } = {}) {
   const schema = await readJson(path.join(repoRoot, "schemas/people-artwork-manifest.schema.json"));
   const errors = validateAgainstSchema(manifest, schema, "people-artwork-manifest");
+  const published = manifest.status === "published";
+  const expectedFingerprintExcludes = published ? ["publishedAt", "manifestFingerprint"] : ["publicationCandidateAt", "manifestFingerprint"];
   if (manifest.recordCount !== manifest.records.length) errors.push("recordCount must equal records length");
   if (manifest.landscapeCount !== manifest.records.filter((record) => record.landscapePath).length) errors.push("landscapeCount does not match records");
   if (manifest.posterCount !== manifest.records.filter((record) => record.posterPath).length) errors.push("posterCount does not match records");
   if (manifest.fallbackCount !== manifest.records.filter((record) => record.fallbackUsed).length) errors.push("fallbackCount does not match records");
-  if (!same(manifest.fingerprintExcludes, ["publicationCandidateAt", "manifestFingerprint"])) errors.push("fingerprintExcludes must contain the exact exclusions in canonical order");
+  if (!same(manifest.fingerprintExcludes, expectedFingerprintExcludes)) errors.push("fingerprintExcludes must contain the exact status-specific exclusions in canonical order");
   if (manifest.manifestFingerprint !== calculateManifestFingerprint(manifest)) errors.push("manifestFingerprint does not match deterministic content");
+  if (published) {
+    if (!Object.hasOwn(manifest, "publishedAt")) errors.push("published manifest requires publishedAt");
+    if (!Object.hasOwn(manifest, "attribution")) errors.push("published manifest requires attribution");
+    for (const field of ["publicationCandidateAt", "rightsNotice"]) if (Object.hasOwn(manifest, field)) errors.push(`published manifest must omit ${field}`);
+  } else {
+    if (!Object.hasOwn(manifest, "publicationCandidateAt")) errors.push("candidate manifest requires publicationCandidateAt");
+    if (!Object.hasOwn(manifest, "rightsNotice")) errors.push("candidate manifest requires rightsNotice");
+    for (const field of ["publishedAt", "attribution"]) if (Object.hasOwn(manifest, field)) errors.push(`candidate manifest must omit ${field}`);
+  }
   const keys = manifest.records.map((record) => record.stableKey);
   const ids = manifest.records.map((record) => record.tmdbPersonId);
   const paths = manifest.records.flatMap((record) => [record.landscapePath, record.posterPath]).filter(Boolean);
@@ -452,16 +526,24 @@ export async function validatePeopleArtworkManifest({ manifest, repoRoot = PEOPL
     if (!same(Object.keys(record.rolloutTierByCategory), expectedCategoryOrder)) errors.push(`${record.stableKey}: rollout tiers must match category membership`);
     for (const formatId of FORMAT_ORDER) {
       const repositoryPath = record[`${formatId}Path`];
-      const formatValues = ["Path", "UrlProposal", "Hash", "ByteCount", "PresetId", "PresetHash"].map((suffix) => record[`${formatId}${suffix}`]);
+      const urlField = `${formatId}${published ? "Url" : "UrlProposal"}`;
+      const otherUrlField = `${formatId}${published ? "UrlProposal" : "Url"}`;
+      const formatValues = [record[`${formatId}Path`], record[urlField], record[`${formatId}Hash`], record[`${formatId}ByteCount`], record[`${formatId}PresetId`], record[`${formatId}PresetHash`]];
       if (!formatValues.every((value) => value === null) && !formatValues.every((value) => value !== null)) errors.push(`${record.stableKey}/${formatId}: format fields must be entirely populated or entirely null`);
       if (repositoryPath && repositoryPath !== expectedAssetPath(formatId, record.tmdbPersonId)) errors.push(`${record.stableKey}/${formatId}: path is not the numeric identity path`);
-      if (repositoryPath && record[`${formatId}UrlProposal`] !== proposedRawUrl(repositoryPath)) errors.push(`${record.stableKey}/${formatId}: raw URL proposal differs from repository path`);
+      if (repositoryPath && record[urlField] !== proposedRawUrl(repositoryPath)) errors.push(`${record.stableKey}/${formatId}: raw URL differs from repository path`);
+      if (Object.hasOwn(record, otherUrlField)) errors.push(`${record.stableKey}/${formatId}: manifest status must omit ${otherUrlField}`);
     }
     if (record.fallbackUsed !== Boolean(record.fallbackReason)) errors.push(`${record.stableKey}: fallback flag and reason disagree`);
     if (!record.fallbackUsed && (!record.sourceHash || !record.sourceDimensions)) errors.push(`${record.stableKey}: portrait-backed artwork requires source hash and dimensions`);
-    if (record.fallbackUsed && record.ownerReviewStatus !== "revision-required") errors.push(`${record.stableKey}: fallback artwork cannot be approved automatically`);
-    if (manifest.status === "commit-ready" && (record.fallbackUsed || record.ownerReviewStatus !== "approved-artwork")) errors.push(`${record.stableKey}: commit-ready artwork must be portrait-backed and approved`);
-    if (record.distributionStatus !== manifest.status) errors.push(`${record.stableKey}: distribution status differs from document status`);
+    if (published) {
+      for (const field of ["ownerReviewStatus", "distributionStatus", "rightsStatus"]) if (Object.hasOwn(record, field)) errors.push(`${record.stableKey}: published record must omit ${field}`);
+    } else {
+      for (const field of ["ownerReviewStatus", "distributionStatus", "rightsStatus"]) if (!Object.hasOwn(record, field)) errors.push(`${record.stableKey}: candidate record requires ${field}`);
+      if (record.fallbackUsed && record.ownerReviewStatus !== "revision-required") errors.push(`${record.stableKey}: fallback artwork cannot be approved automatically`);
+      if (manifest.status === "commit-ready" && (record.fallbackUsed || record.ownerReviewStatus !== "approved-artwork")) errors.push(`${record.stableKey}: commit-ready artwork must be portrait-backed and approved`);
+      if (record.distributionStatus !== manifest.status) errors.push(`${record.stableKey}: distribution status differs from document status`);
+    }
   }
   return { version: "people-artwork-manifest-validation-v1", valid: errors.length === 0, errorCount: errors.length, errors };
 }
@@ -490,8 +572,13 @@ export async function validateManifestAssets({ manifest, repoRoot = PEOPLE_ARTWO
       const filePath = path.join(repoRoot, repositoryPath);
       const file = await fileRecord(filePath);
       let decoded = null;
+      let decodedFully = false;
       if (file.exists) {
-        try { decoded = await runtime.sharp(filePath, { failOn: "error" }).metadata(); } catch (error) { errors.push(`${repositoryPath}: decode failed: ${error.message}`); }
+        try {
+          decoded = await runtime.sharp(filePath, { failOn: "error" }).metadata();
+          await runtime.sharp(filePath, { failOn: "error" }).raw().toBuffer();
+          decodedFully = true;
+        } catch (error) { errors.push(`${repositoryPath}: decode failed: ${error.message}`); }
       }
       const expectedDimensions = formatId === "landscape" ? { width: 1200, height: 675 } : { width: 1000, height: 1500 };
       const checks = {
@@ -499,6 +586,7 @@ export async function validateManifestAssets({ manifest, repoRoot = PEOPLE_ARTWO
         numericFilename: new RegExp(`/${record.tmdbPersonId}\\.webp$`, "u").test(repositoryPath),
         hash: file.hash === record[`${formatId}Hash`],
         byteCount: file.byteCount === record[`${formatId}ByteCount`],
+        decodedFully,
         format: decoded?.format === "webp",
         dimensions: decoded?.width === expectedDimensions.width && decoded?.height === expectedDimensions.height,
       };

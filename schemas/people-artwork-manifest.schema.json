@@ -8,7 +8,6 @@
     "version",
     "status",
     "schemaPath",
-    "publicationCandidateAt",
     "ordering",
     "recordCount",
     "landscapeCount",
@@ -20,14 +19,14 @@
     "fontHash",
     "fingerprintExcludes",
     "manifestFingerprint",
-    "rightsNotice",
     "records"
   ],
   "properties": {
     "version": { "const": "people-artwork-manifest-v1" },
-    "status": { "enum": ["publication-candidate", "commit-ready"] },
+    "status": { "enum": ["publication-candidate", "commit-ready", "published"] },
     "schemaPath": { "const": "schemas/people-artwork-manifest.schema.json" },
     "publicationCandidateAt": { "type": "string", "format": "date-time" },
+    "publishedAt": { "type": "string", "format": "date-time" },
     "ordering": { "const": "explicit-selection-order" },
     "recordCount": { "type": "integer", "minimum": 1 },
     "landscapeCount": { "type": "integer", "minimum": 0 },
@@ -50,7 +49,7 @@
       "type": "array",
       "minItems": 2,
       "maxItems": 2,
-      "items": { "enum": ["publicationCandidateAt", "manifestFingerprint"] },
+      "items": { "enum": ["publicationCandidateAt", "publishedAt", "manifestFingerprint"] },
       "uniqueItems": true
     },
     "manifestFingerprint": { "$ref": "#/$defs/hash" },
@@ -72,6 +71,17 @@
         "redistributionDecision": { "type": "string", "minLength": 1 },
         "attributionPolicy": { "type": "string", "minLength": 1 },
         "ownershipClaim": { "const": "No ownership of the underlying portrait photography is claimed." }
+      }
+    },
+    "attribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["provider", "url", "notice", "source"],
+      "properties": {
+        "provider": { "const": "The Movie Database (TMDB)" },
+        "url": { "const": "https://www.themoviedb.org/" },
+        "notice": { "const": "This product uses the TMDB API but is not endorsed or certified by TMDB." },
+        "source": { "const": "The Movie Database is the metadata and image source for this collection." }
       }
     },
     "records": {
@@ -118,21 +128,16 @@
         "fallbackUsed",
         "fallbackReason",
         "landscapePath",
-        "landscapeUrlProposal",
         "landscapeHash",
         "landscapeByteCount",
         "landscapePresetId",
         "landscapePresetHash",
         "posterPath",
-        "posterUrlProposal",
         "posterHash",
         "posterByteCount",
         "posterPresetId",
         "posterPresetHash",
-        "rendererMetadataVersion",
-        "ownerReviewStatus",
-        "distributionStatus",
-        "rightsStatus"
+        "rendererMetadataVersion"
       ],
       "properties": {
         "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
@@ -157,12 +162,14 @@
         },
         "landscapePath": { "$ref": "#/$defs/nullablePath" },
         "landscapeUrlProposal": { "$ref": "#/$defs/nullableUrl" },
+        "landscapeUrl": { "$ref": "#/$defs/nullableUrl" },
         "landscapeHash": { "$ref": "#/$defs/nullableHash" },
         "landscapeByteCount": { "type": ["integer", "null"], "minimum": 1 },
         "landscapePresetId": { "type": ["string", "null"] },
         "landscapePresetHash": { "$ref": "#/$defs/nullableHash" },
         "posterPath": { "$ref": "#/$defs/nullablePath" },
         "posterUrlProposal": { "$ref": "#/$defs/nullableUrl" },
+        "posterUrl": { "$ref": "#/$defs/nullableUrl" },
         "posterHash": { "$ref": "#/$defs/nullableHash" },
         "posterByteCount": { "type": ["integer", "null"], "minimum": 1 },
         "posterPresetId": { "type": ["string", "null"] },
