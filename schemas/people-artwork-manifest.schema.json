@@ -27,7 +27,7 @@
     "schemaPath": { "const": "schemas/people-artwork-manifest.schema.json" },
     "publicationCandidateAt": { "type": "string", "format": "date-time" },
     "publishedAt": { "type": "string", "format": "date-time" },
-    "ordering": { "const": "explicit-selection-order" },
+    "ordering": { "enum": ["explicit-selection-order", "tmdb-person-id-ascending"] },
     "recordCount": { "type": "integer", "minimum": 1 },
     "landscapeCount": { "type": "integer", "minimum": 0 },
     "posterCount": { "type": "integer", "minimum": 0 },

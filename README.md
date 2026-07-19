@@ -18,13 +18,13 @@ The batch utility and maintenance policy are documented in `tools/studio-network
 
 The tracked people foundation contains 817 resolved TMDB candidate identities, 523 actor memberships, and 300 director memberships. Six people belong to both categories through one shared registry identity. Proposed rollout is 295 initial, 203 later, and 25 review actors; and 154 initial, 102 later, and 44 review directors.
 
-The published people-artwork collection contains exactly 513 TMDB person identities, with one landscape and one poster WebP per person (513 landscape and 513 poster assets):
+The published people-artwork collection contains exactly 792 TMDB person identities, with one landscape and one poster WebP per person (792 landscape and 792 poster assets):
 
 - landscape: `assets/collection_covers/people/landscape/{tmdbPersonId}.webp`;
 - poster: `assets/collection_covers/people/poster/{tmdbPersonId}.webp`;
 - public metadata: `assets/collection_covers/people/manifest.json`.
 
-The complete 295-person initial actor tier and complete 203-person later actor tier are published. The 25-person review actor tier remains unpublished, so the full 523-actor catalogue is not yet available. Director publication remains limited to people already present in this 513-person category-neutral set; the full 300-director catalogue is not published. Published actor/director overlaps reuse the same physical artwork for a shared TMDB person ID. Future people-artwork publication remains explicitly bounded; the tooling has no network, commit, or push capability.
+The complete 295-person initial actor tier and complete 203-person later actor tier are published. The 25-person review actor tier remains unpublished, so the full 523-actor catalogue is not yet available. The approved 300-person director catalogue is published. Actor/director overlaps reuse the same physical artwork for a shared TMDB person ID, with no category-specific duplicate. Future people-artwork publication remains explicitly bounded; the tooling has no network, commit, or push capability.
 
 The identity model is documented in `data/people/README.md`, and the offline publication workflow is documented in `tools/people-seed/PUBLICATION.md`. Canonical data lives under `data/people/`, strict schemas live under `schemas/`, and validation lives under `tools/people-seed/`.
 

@@ -103,10 +103,10 @@ test("actor-supplement promotion acquires no images and coexists with only the b
   assert.ok(existingGenericFiles.includes("poster"));
   const manifest = JSON.parse(await fs.readFile(path.join(peopleArtworkRoot, "manifest.json"), "utf8"));
   assert.equal(manifest.status, "published");
-  assert.equal(manifest.recordCount, 513);
+  assert.equal(manifest.recordCount, 792);
   for (const formatId of ["landscape", "poster"]) {
     const files = await fs.readdir(path.join(peopleArtworkRoot, formatId));
-    assert.equal(files.length, 513);
+    assert.equal(files.length, 792);
     assert.ok(files.every((name) => /^[1-9][0-9]*\.webp$/i.test(name)));
   }
   const productionManifestCandidates = [
