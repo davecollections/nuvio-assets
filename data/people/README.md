@@ -65,7 +65,7 @@ The ImKaptain data is identity/catalogue cross-check provenance only. Its artwor
 
 ## Artwork and publishing boundary
 
-The identity foundation itself acquired no portrait. A separate, explicitly bounded publication contains exactly 310 numeric people identities, with 310 landscape and 310 poster WebPs plus a public manifest. The complete 295-person initial actor tier is published; the 203 later and 25 review actor memberships remain unpublished. The full 523-actor and 300-director catalogues are not published.
+The identity foundation itself acquired no portrait. A separate, explicitly bounded publication contains exactly 513 numeric people identities, with 513 landscape and 513 poster WebPs plus a public manifest. The complete 295-person initial and 203-person later actor tiers are published; the 25 review actor memberships remain unpublished. The full 523-actor and 300-director catalogues are not published.
 
 The promoted `profilePath` values are relative identity metadata only. A profile path by itself does not indicate the state of any corresponding artwork asset.
 
@@ -77,7 +77,7 @@ assets/collection_covers/people/poster/{tmdb_person_id}.webp
 assets/collection_covers/people/manifest.json
 ```
 
-Actor and director collections reference the same physical person assets for a shared TMDB person ID. Director publication is limited to identities already present in the 310-person category-neutral set. Existing generic people artwork is not a dependency of this workflow. Publication scope must always be explicitly bounded, and the tooling contains no network, commit, or push automation.
+Actor and director collections reference the same physical person assets for a shared TMDB person ID. Director publication is limited to identities already present in the 513-person category-neutral set. Published actor/director overlaps reuse the same artwork. Existing generic people artwork is not a dependency of this workflow. Publication scope must always be explicitly bounded, and the tooling contains no network, commit, or push automation.
 
 The public manifest preserves source and output provenance, exact hashes, dimensions, preset bindings, and final raw asset URLs. TMDB attribution and the repository's third-party artwork licensing exclusion are stated in the root README. See `tools/people-seed/PUBLICATION.md`.
 
@@ -111,4 +111,4 @@ tools/people-seed/.work/people-seed-foundation/owner-review/
 
 Only the original 25 actor and 44 director `review` candidates receive individual blank decision rows. The supplement's ignored promotion-proof review files are informational because all 198 inclusion and tier decisions are already approved.
 
-People artwork remains a separate bounded workflow. The locked 40-person renderer proof remains preserved as historical promotion evidence; publishing the 310-person collection did not rewrite that proof, Stage 3 typography, portrait-source decisions, or fallback decisions.
+People artwork remains a separate bounded workflow. The locked 40-person renderer proof remains preserved as historical promotion evidence; publishing the 513-person collection did not rewrite that proof, Stage 3 typography, portrait-source decisions, or fallback decisions.
