@@ -2,7 +2,7 @@
   "version": "people-landscape-crop-overrides-v1",
   "status": "active",
   "ordering": "tmdb-person-id-ascending",
-  "recordCount": 129,
+  "recordCount": 147,
   "records": [
     {
       "stableKey": "person:4",
@@ -453,6 +453,34 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:793",
+      "tmdbPersonId": 793,
+      "canonicalName": "Luis Buñuel",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/a7wib1eRG6TyonDXpAbF7PZd0f8.jpg",
+      "sourceHash": "a75461fa12c01ee47e22a3183295e9601bf5f1e507d353435bcd7d7761a19982",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 600,
+        "height": 682
+      },
+      "cropScale": {
+        "x": 0.99,
+        "y": 0.989736
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "0f6f880d387b2108159f360051a912638f7b99ac9028f50dc1c313dd3fc3efa9",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:934",
       "tmdbPersonId": 934,
       "canonicalName": "Russell Crowe",
@@ -478,6 +506,34 @@
       "reason": "avoid-unintended-face-crop",
       "evidencePackage": "tools/people-seed/.work/people-initial-actors-candidate/landscape-crop-audit",
       "approvedProofHash": "0ea7b59e3be5443961f8216e72accd5dd20831b562fb5467baedba2295777a4f",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:1032",
+      "tmdbPersonId": 1032,
+      "canonicalName": "Martin Scorsese",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/g3DjfKsgZQWZiw30I20hZVk1oMX.jpg",
+      "sourceHash": "5b877982a3ad9585f0975b5117db7ced658ad5c3f24d1c7e1e0acacbe1d88ca9",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 1000,
+        "height": 1136
+      },
+      "cropScale": {
+        "x": 0.594,
+        "y": 0.59419
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "54767cfa16c31e45aee7e33de48b2286a963be1275aa87d19640dd93fb835506",
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
@@ -789,6 +845,34 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:2226",
+      "tmdbPersonId": 2226,
+      "canonicalName": "Sydney Pollack",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/l6Sq7iEakN4eCeMXyZuloc5VIJO.jpg",
+      "sourceHash": "602f68cd7e818111bf85d49ac9d74bbb5e5ae14834a431d0330c38255d2ff513",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 1519,
+        "height": 1726
+      },
+      "cropScale": {
+        "x": 0.391047,
+        "y": 0.391078
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "30cd6f2b9bd3495a0c5883cc3d9ecc72a64d282d9b2b9de2774b4b3c724ec2da",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:2282",
       "tmdbPersonId": 2282,
       "canonicalName": "Ben Kingsley",
@@ -982,6 +1066,34 @@
       "reason": "avoid-unintended-face-crop",
       "evidencePackage": "tools/people-seed/.work/people-later-actors-candidate/visual-audit",
       "approvedProofHash": "d8c1d8c9f7fb3b76dd0b12ece0d6586f6cdd8e873b71f4378ccb30563ede1e1e",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:3239",
+      "tmdbPersonId": 3239,
+      "canonicalName": "Ernest B. Schoedsack",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/6Sc6QdjxCawnFHdx3P56JT3BzIe.jpg",
+      "sourceHash": "8e21fc2cf1a1b5bcdc04a4609dbe4d30e2d574c1cac25dd841d73b572241be27",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 950,
+        "height": 1080
+      },
+      "cropScale": {
+        "x": 0.625263,
+        "y": 0.625
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "a095e81d4d33d83091daae0209c8750e92e1fdcf03694a0701f62888f614f270",
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
@@ -1430,6 +1542,34 @@
       "reason": "avoid-unintended-face-crop",
       "evidencePackage": "tools/people-seed/.work/people-later-actors-candidate/visual-audit",
       "approvedProofHash": "246c58b0273302d337ca0ace5601dea7ca237aa68d7748bc1534e59aed998457",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:5026",
+      "tmdbPersonId": 5026,
+      "canonicalName": "Akira Kurosawa",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/g2iwSho2vJxVz7cbD1FAKAmPD6A.jpg",
+      "sourceHash": "9092edde568c5483bf55fa28b9c17a4b7dacfeac7b4fc64b66bbf96a025f0b98",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 1000,
+        "height": 1136
+      },
+      "cropScale": {
+        "x": 0.594,
+        "y": 0.59419
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "cd43bc94dc943887e67a6858fe75f89db728d65cca3becc1325a13347dd41108",
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
@@ -1909,6 +2049,34 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:9956",
+      "tmdbPersonId": 9956,
+      "canonicalName": "Chris Marker",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/f3WALvrJGu829oq8N467DnGJuer.jpg",
+      "sourceHash": "b55a9f132b5b57b1671c5679c6290c59b508e9268b7f5c93cef4580d88e4da5d",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 334,
+        "height": 380
+      },
+      "cropScale": {
+        "x": 1.778443,
+        "y": 1.776316
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "6cb2959ed5b7aca8cf9801ff4e177a0b1182f7a613e12819009231ced6fcb679",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:10017",
       "tmdbPersonId": 10017,
       "canonicalName": "Charlton Heston",
@@ -2357,6 +2525,62 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:15189",
+      "tmdbPersonId": 15189,
+      "canonicalName": "Michelangelo Antonioni",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/o9QjZcZBkqQg25IW03WPRQfk9tN.jpg",
+      "sourceHash": "d3bee8e4ed6026d9af36fef1dcf043f4e38b990f31a672f40e8fb78c6cd0317d",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 694,
+        "height": 789
+      },
+      "cropScale": {
+        "x": 0.855908,
+        "y": 0.855513
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "b20089dd858344306176995c284a10a68471cf2080521b512c6b310fff8fa11b",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:15389",
+      "tmdbPersonId": 15389,
+      "canonicalName": "Louis Malle",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/8BKM2iXcr4b8pvx1OOcNsO9wADn.jpg",
+      "sourceHash": "508116d4c72897bb1919d32c5d317a831e53cdb586e2332bc93722944c82540b",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 960,
+        "height": 1091
+      },
+      "cropScale": {
+        "x": 0.61875,
+        "y": 0.618698
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "fbbb0b9c6de2b8bbc3f8fd998cb92249bd3581edb0b862c21805884e982453ad",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:15761",
       "tmdbPersonId": 15761,
       "canonicalName": "Grey DeLisle",
@@ -2581,6 +2805,34 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:18738",
+      "tmdbPersonId": 18738,
+      "canonicalName": "George Stevens",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/mblM3Kg4YbD4Jxil1aCs9qBNt7s.jpg",
+      "sourceHash": "71bc72f1c6de1edeafe05a01721f3854ecffbfddd67113842e2aff6f409aac5e",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 300,
+        "height": 341
+      },
+      "cropScale": {
+        "x": 1.98,
+        "y": 1.979472
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "320c2aa68df90fbe75596b782f30d2abb08a8cef65455080279287c8bc2985ef",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:18918",
       "tmdbPersonId": 18918,
       "canonicalName": "Dwayne Johnson",
@@ -2690,6 +2942,34 @@
       "reason": "avoid-unintended-face-crop",
       "evidencePackage": "tools/people-seed/.work/people-later-actors-candidate/visual-audit",
       "approvedProofHash": "6e98faa9b65af49cb54216d9e65c1dea136114d39b98fddeebc5e4d23be675e7",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:24882",
+      "tmdbPersonId": 24882,
+      "canonicalName": "Jacques Demy",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/5EzvVqngdfzhZCMb8m2EvAsrTj2.jpg",
+      "sourceHash": "0a494f769fa600f80f23f0444970db0389a1d02eb946bee9234bd3ea41901ddd",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 368,
+        "height": 418
+      },
+      "cropScale": {
+        "x": 1.61413,
+        "y": 1.614833
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "364410bf360c5f52b292253d241308873efa76fcc3bb4b5f09697bafea577b7b",
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
@@ -2861,6 +3141,62 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:39009",
+      "tmdbPersonId": 39009,
+      "canonicalName": "Joseph Losey",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/sPcG1jKsfCIViiDRJkB0FzH0PJt.jpg",
+      "sourceHash": "1cd03753e3ffd4bf571966b7c8eae9cda1fcab1bbc5fe40566d7f12f7f76be33",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 1571,
+        "height": 1785
+      },
+      "cropScale": {
+        "x": 0.378103,
+        "y": 0.378151
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "976cb0d7f70ab962f74d807dabbdfe86d1c9107784a77708b66216848dc0ebb0",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:39012",
+      "tmdbPersonId": 39012,
+      "canonicalName": "Peter Bogdanovich",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/m3aMMYzzEbqKEwGOyEPq7Rt1gAj.jpg",
+      "sourceHash": "84a954d4411e6303f7d6f94a1ac7acd33e3bece6666e373bb1ec31c29e076f8f",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 1779,
+        "height": 2022
+      },
+      "cropScale": {
+        "x": 0.333895,
+        "y": 0.333828
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "18de29d80e5f919c3a111368216f132e210b498eb9863390a8f6aa751acc7420",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:40174",
       "tmdbPersonId": 40174,
       "canonicalName": "Lucille Ball",
@@ -2914,6 +3250,62 @@
       "reason": "avoid-unintended-face-crop",
       "evidencePackage": "tools/people-seed/.work/people-later-actors-candidate/visual-audit",
       "approvedProofHash": "ae0bb97e6588684daec4f84307892ad99513c0bcce6387709689e91a4b2aae66",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:45791",
+      "tmdbPersonId": 45791,
+      "canonicalName": "Roy Andersson",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/sFcrQOIWUM1QArvquG3DmVqw3Eu.jpg",
+      "sourceHash": "24c7a72d4bb0c0a5e104c45fce3e7e79ec7afc923e8c351c892ed53cb4acb88a",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 300,
+        "height": 341
+      },
+      "cropScale": {
+        "x": 1.98,
+        "y": 1.979472
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "0d985efdf08b2b4d480ea12318df9c6f2451d9bf12cdae85563d054cf1d47751",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:53914",
+      "tmdbPersonId": 53914,
+      "canonicalName": "Jean Eustache",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/rFedNBniKvCIbxuabF8hBzTyGYk.jpg",
+      "sourceHash": "9486ce245738037f1a794cf3d438a39457a3edabbfaec48dcc64d47c502b67e4",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 304,
+        "height": 345
+      },
+      "cropScale": {
+        "x": 1.953947,
+        "y": 1.956522
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "f75d5b2f2982b15acb775c6017b6d0e3393bfcfe2462915db39fa1587485ad69",
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
@@ -3337,6 +3729,34 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:85637",
+      "tmdbPersonId": 85637,
+      "canonicalName": "Béla Tarr",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/71o40gwwvIeyI52KvIobGqGteXX.jpg",
+      "sourceHash": "2dbb39faae3fa866e33fffcb81e2edcd4a7e85eb6803cb9e8ba42f73ffe2faa7",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 500,
+        "height": 568
+      },
+      "cropScale": {
+        "x": 1.188,
+        "y": 1.18838
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "fb08bc70f1db236abf1c653af72a794c8df6f65a3d2e43f9d4ad70d3921975e4",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:97698",
       "tmdbPersonId": 97698,
       "canonicalName": "Michelle Bauer",
@@ -3446,6 +3866,90 @@
       "reason": "avoid-unintended-face-crop",
       "evidencePackage": "tools/people-seed/.work/people-initial-actors-candidate/landscape-crop-audit",
       "approvedProofHash": "33049568d6b156967b488a4ac8693a84c4da5a99f3e90d88806f77053295b686",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:138006",
+      "tmdbPersonId": 138006,
+      "canonicalName": "Frederick Wiseman",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/h0SIW7kP02MUFv8bqIhXZlibUvM.jpg",
+      "sourceHash": "693e27cecf486e010eae95a799298b99e5182ffd9734356d8777de1eedf9f36e",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 910,
+        "height": 1034
+      },
+      "cropScale": {
+        "x": 0.652747,
+        "y": 0.652805
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "00f8752e6805fd6317da74022c182723d6db8f54480b56fc910415cd7d556dcf",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:141713",
+      "tmdbPersonId": 141713,
+      "canonicalName": "Oleksandr Dovzhenko",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/9rjsOWOpuwxvhogGrxbw8s0oRzD.jpg",
+      "sourceHash": "773d70d38ebc0c86785be6718ed71268b841b72a3ccaf6a520f58c7dc669d050",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 816,
+        "height": 927
+      },
+      "cropScale": {
+        "x": 0.727941,
+        "y": 0.728155
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "73fe10a84a9fd368989b69be29859b62a76f450356e9d24ed5c926ff9057c16e",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:229931",
+      "tmdbPersonId": 229931,
+      "canonicalName": "Asghar Farhadi",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/mCEpFbimAvhiR3P91h5b8UEUhY.jpg",
+      "sourceHash": "cce391427dd6033c1ba636c1f9cf4f1f1503a092559b3c9f3397e42ddb75e3c4",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 1500,
+        "height": 1705
+      },
+      "cropScale": {
+        "x": 0.396,
+        "y": 0.395894
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
+      "approvedProofHash": "5861f30ef27628a8a4ada015760b5e5658bcbc37913e08cf8189e197d3883e0c",
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
