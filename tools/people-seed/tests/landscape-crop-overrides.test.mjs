@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
@@ -16,20 +17,41 @@ const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 const repoRoot = path.resolve(packageRoot, "..", "..");
 const readJson = async (filePath) => JSON.parse(await fs.readFile(filePath, "utf8"));
 
-test("tracked landscape crop overrides validate as exactly 51 unique active identities", async () => {
+const ORIGINAL_OVERRIDE_IDS = new Set([19, 85, 113, 114, 116, 193, 569, 934, 1230, 1810, 1932, 2282, 3149, 3460, 3490, 3636, 3810, 3967, 4068, 4070, 4111, 4135, 4173, 4512, 4587, 5341, 5469, 5563, 6837, 6905, 6968, 7499, 8487, 8930, 10017, 11160, 11288, 12147, 12446, 15152, 16757, 18277, 19384, 40174, 55636, 59410, 73421, 78029, 83271, 117642, 119589]);
+const ORIGINAL_OVERRIDE_RECORDS_HASH = "a88830cb92d652e84d612d1e755c13e1014c6f0b0efd22732f8cef55201dcea5";
+const LATER_ACTOR_EVIDENCE_PACKAGE = "tools/people-seed/.work/people-later-actors-candidate/visual-audit";
+
+test("tracked landscape crop overrides validate as exactly 129 unique active identities", async () => {
   const [document, schema, registry] = await Promise.all([
     readJson(path.join(repoRoot, "data", "people", "landscape-crop-overrides.json")),
     readJson(path.join(repoRoot, "schemas", "landscape-crop-overrides.schema.json")),
     readJson(path.join(repoRoot, "data", "people", "people-registry.json")),
   ]);
   assert.deepEqual(validateLandscapeCropOverrides(document, schema, { registry }), []);
-  assert.equal(document.recordCount, 51);
-  assert.equal(new Set(document.records.map((record) => record.stableKey)).size, 51);
-  assert.equal(new Set(document.records.map((record) => record.tmdbPersonId)).size, 51);
+  assert.equal(document.recordCount, 129);
+  assert.equal(new Set(document.records.map((record) => record.stableKey)).size, 129);
+  assert.equal(new Set(document.records.map((record) => record.tmdbPersonId)).size, 129);
   assert.ok(document.records.every((record) => record.format === "landscape" && record.status === "active"));
 });
 
-test("all 51 Alternative A proof bindings retain the approved 594x675 target geometry", async () => {
+test("the original 51 source-bound override records remain value-for-value unchanged", async () => {
+  const { config } = await loadLandscapeCropOverrides({ repoRoot });
+  const originalRecords = config.records.filter((record) => ORIGINAL_OVERRIDE_IDS.has(record.tmdbPersonId));
+  assert.equal(originalRecords.length, 51);
+  assert.equal(crypto.createHash("sha256").update(JSON.stringify(originalRecords)).digest("hex"), ORIGINAL_OVERRIDE_RECORDS_HASH);
+});
+
+test("the 78 later-actor Alternative A records remain landscape-only and exactly source-bound", async () => {
+  const { config } = await loadLandscapeCropOverrides({ repoRoot });
+  const laterActorRecords = config.records.filter((record) => record.evidencePackage === LATER_ACTOR_EVIDENCE_PACKAGE);
+  assert.equal(laterActorRecords.length, 78);
+  assert.ok(laterActorRecords.every((record) => record.format === "landscape" && record.status === "active"));
+  assert.ok(laterActorRecords.every((record) => /^\/[^\\]+$/u.test(record.sourceProfilePath)));
+  assert.ok(laterActorRecords.every((record) => /^[a-f0-9]{64}$/u.test(record.sourceHash) && /^[a-f0-9]{64}$/u.test(record.approvedProofHash)));
+  assert.ok(laterActorRecords.every((record) => record.reason === "avoid-unintended-face-crop" && record.createdFromAuditVersion === "people-landscape-crop-audit-v1"));
+});
+
+test("all 129 Alternative A proof bindings retain the approved 594x675 target geometry", async () => {
   const { config } = await loadLandscapeCropOverrides({ repoRoot });
   for (const record of config.records) {
     assert.match(record.approvedProofHash, /^[a-f0-9]{64}$/u);
@@ -66,6 +88,10 @@ test("a source mismatch refuses stale coordinates with a stable review error", a
   const person = { stableKey: record.stableKey, tmdbPersonId: record.tmdbPersonId, canonicalName: record.canonicalName };
   assert.throws(
     () => resolveLandscapeCropOverride({ person, source: { available: true, sourceHash: "0".repeat(64), profilePathAttempted: record.sourceProfilePath }, formatId: "landscape", overrideConfiguration: configuration }),
+    (error) => error instanceof LandscapeCropOverrideSourceMismatchError && error.code === "crop-override-source-mismatch" && error.cropOverrideStatus === "source-mismatch",
+  );
+  assert.throws(
+    () => resolveLandscapeCropOverride({ person, source: { available: true, sourceHash: record.sourceHash, profilePathAttempted: "/stale-profile-path.jpg" }, formatId: "landscape", overrideConfiguration: configuration }),
     (error) => error instanceof LandscapeCropOverrideSourceMismatchError && error.code === "crop-override-source-mismatch" && error.cropOverrideStatus === "source-mismatch",
   );
 });

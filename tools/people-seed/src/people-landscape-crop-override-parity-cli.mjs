@@ -11,13 +11,13 @@ import { renderPeopleArtwork } from "./people-artwork/renderer.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "..", "..");
-const candidateDefault = path.join(packageRoot, ".work", "people-initial-actors-candidate");
+const outputDefault = path.join(packageRoot, ".work", "people-later-actors-candidate", "post-override-review", "offline-parity");
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
 
 function parseArguments(argv) {
   const options = {
-    candidateRoot: candidateDefault,
-    outputDir: path.join(candidateDefault, "post-override-review", "offline-parity"),
+    candidateRoot: null,
+    outputDir: outputDefault,
     promoteCandidate: false,
   };
   for (let index = 0; index < argv.length; index += 1) {
@@ -35,44 +35,106 @@ async function hashFile(filePath) {
   return sha256(await fs.readFile(filePath));
 }
 
+function candidateRootForOverride(override) {
+  let current = path.resolve(repoRoot, ...override.evidencePackage.split("/"));
+  while (path.dirname(current) !== current) {
+    if (path.basename(current).endsWith("-candidate")) return current;
+    current = path.dirname(current);
+  }
+  throw new Error(`${override.stableKey}: evidence package is not inside a candidate workspace.`);
+}
+
+async function proofPathForOverride(override) {
+  const evidenceRoot = path.resolve(repoRoot, ...override.evidencePackage.split("/"));
+  const candidates = [
+    path.join(evidenceRoot, "renders", "wider", `${override.tmdbPersonId}.webp`),
+    path.join(evidenceRoot, "proof-renders", "wider", `${override.tmdbPersonId}.webp`),
+  ];
+  for (const candidate of candidates) {
+    try {
+      await fs.access(candidate);
+      return candidate;
+    } catch {}
+  }
+  throw new Error(`${override.stableKey}: approved Alternative A proof is absent from ${override.evidencePackage}.`);
+}
+
+function mergeNetworkAccounting(results) {
+  const total = {
+    profileImageDownloads: 0,
+    tmdbMetadataRequests: 0,
+    personImagesRequests: 0,
+    imageCdnRequests: 0,
+    fontDownloads: 0,
+    sourceCacheHits: 0,
+    generalWebRequests: 0,
+    unauthorisedRequests: 0,
+    attemptedRequests: [],
+  };
+  for (const result of results) {
+    for (const key of Object.keys(total)) {
+      if (key === "attemptedRequests") total.attemptedRequests.push(...result.networkAccounting.attemptedRequests);
+      else total[key] += result.networkAccounting[key];
+    }
+  }
+  return total;
+}
+
 async function main() {
   const options = parseArguments(process.argv.slice(2));
   if (options.help) {
     process.stdout.write("Usage: npm run crop-overrides:verify-local -- [--candidate-root <ignored candidate>] [--output-dir <ignored replay directory>] [--promote-candidate]\n");
     return;
   }
-  const candidateRoot = path.resolve(options.candidateRoot);
+  if (options.promoteCandidate && !options.candidateRoot) throw new Error("--promote-candidate requires one explicit --candidate-root.");
+  const candidateRoot = options.candidateRoot ? path.resolve(options.candidateRoot) : null;
   const outputDir = options.promoteCandidate ? path.join(candidateRoot, "renders") : path.resolve(options.outputDir);
   const reportDir = options.promoteCandidate
     ? path.join(candidateRoot, "post-override-review", "promotion-render")
     : outputDir;
-  const auditRoot = path.join(candidateRoot, "landscape-crop-audit");
   const configuration = await loadLandscapeCropOverrides({ repoRoot });
   const [foundation, decisions] = await Promise.all([
     readPeopleFoundation(repoRoot),
     fs.readFile(path.join(repoRoot, "data", "people", "portrait-source-decisions.json"), "utf8").then(JSON.parse),
   ]);
+  const selectedOverrides = configuration.config.records.filter((record) => !candidateRoot || candidateRootForOverride(record) === candidateRoot);
+  if (!selectedOverrides.length) throw new Error("No tracked crop overrides are bound to the selected candidate workspace.");
   const peopleByKey = new Map(foundation.registry.records.map((person) => [person.stableKey, person]));
-  const people = configuration.config.records.map((record) => {
+  const people = selectedOverrides.map((record) => {
     const person = peopleByKey.get(record.stableKey);
     if (!person) throw new Error(`${record.stableKey}: override identity is absent from the people registry.`);
     return person;
   });
-  const result = await renderPeopleArtwork({
-    people,
-    decisions,
-    sourceCache: path.join(candidateRoot, "source-cache"),
-    outputDir,
-    format: "landscape",
-    offline: true,
-    landscapeCropOverrides: configuration,
-  });
-  await writeRenderMetadata({ metadata: result.metadata, outputDir: reportDir });
-  const renderedByKey = new Map(result.metadata.records.map((record) => [record.stableKey, record]));
+  const groups = new Map();
+  for (const override of selectedOverrides) {
+    const root = candidateRootForOverride(override);
+    if (!groups.has(root)) groups.set(root, []);
+    groups.get(root).push(peopleByKey.get(override.stableKey));
+  }
+  const results = [];
+  for (const [root, selectedPeople] of groups) {
+    results.push(await renderPeopleArtwork({
+      people: selectedPeople,
+      decisions,
+      sourceCache: path.join(root, "source-cache"),
+      outputDir,
+      format: "landscape",
+      offline: true,
+      landscapeCropOverrides: configuration,
+    }));
+  }
+  const metadata = {
+    version: "people-artwork-render-metadata-v1",
+    ordering: "selection-order-then-landscape-poster",
+    recordCount: results.reduce((sum, result) => sum + result.metadata.recordCount, 0),
+    records: results.flatMap((result) => result.metadata.records).sort((left, right) => left.tmdbPersonId - right.tmdbPersonId),
+  };
+  await writeRenderMetadata({ metadata, outputDir: reportDir });
+  const renderedByKey = new Map(metadata.records.map((record) => [record.stableKey, record]));
   const comparisons = [];
-  for (const override of configuration.config.records) {
+  for (const override of selectedOverrides) {
     const rendered = renderedByKey.get(override.stableKey);
-    const proofPath = path.join(auditRoot, "renders", "wider", `${override.tmdbPersonId}.webp`);
+    const proofPath = await proofPathForOverride(override);
     const proofHash = await hashFile(proofPath);
     const expectedBounds = {
       x: override.cropOffsetX,
@@ -112,16 +174,17 @@ async function main() {
     ordering: "tmdb-person-id-ascending",
     offline: true,
     selectionCount: people.length,
-    outputCount: result.metadata.recordCount,
+    outputCount: metadata.recordCount,
     configurationHash: configuration.configHash,
     parityCount: comparisons.filter((item) => item.valid).length,
     mismatchCount: comparisons.filter((item) => !item.valid).length,
-    networkAccounting: result.networkAccounting,
+    candidateRoots: [...groups.keys()].map((root) => path.relative(repoRoot, root).replaceAll("\\", "/")),
+    networkAccounting: mergeNetworkAccounting(results),
     comparisons,
   };
   await fs.writeFile(path.join(reportDir, "crop-override-parity.json"), `${JSON.stringify(report, null, 2)}\n`);
   process.stdout.write(`${JSON.stringify({
-    valid: report.mismatchCount === 0 && report.selectionCount === 51 && report.outputCount === 51,
+    valid: report.mismatchCount === 0 && report.selectionCount === selectedOverrides.length && report.outputCount === selectedOverrides.length,
     selectionCount: report.selectionCount,
     outputCount: report.outputCount,
     parityCount: report.parityCount,

@@ -74,7 +74,7 @@ export async function validatePeopleArtworkConfiguration({ repoRoot, registry })
   }
 
   errors.push(...validateLandscapeCropOverrides(cropOverrides, cropOverrideSchema, { registry }));
-  if (cropOverrides.records.length !== 51 || !cropOverrides.records.every((record) => record.status === "active" && record.format === "landscape")) errors.push("landscape crop overrides must contain exactly 51 active landscape records");
+  if (cropOverrides.records.length !== 129 || !cropOverrides.records.every((record) => record.status === "active" && record.format === "landscape")) errors.push("landscape crop overrides must contain exactly 129 active landscape records");
   for (const record of cropOverrides.records) {
     const person = registryByKey.get(record.stableKey);
     if (!person) continue;
