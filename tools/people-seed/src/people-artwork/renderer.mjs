@@ -3,6 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { runFamilies, verifyFont } from "./font.mjs";
+import { loadLandscapeCropOverrides, resolveLandscapeCropOverride } from "./landscape-crop-overrides.mjs";
 import { loadPeopleArtworkRuntime, PEOPLE_ARTWORK_PACKAGE_ROOT, PEOPLE_ARTWORK_REPO_ROOT } from "./runtime-dependencies.mjs";
 import { resolvePortraitSource } from "./source-resolution.mjs";
 
@@ -111,11 +112,28 @@ function posterOverlay(preset) {
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${preset.canvas.width}" height="${preset.canvas.height}"><defs><linearGradient id="b" x1="0" y1="0" x2="0" y2="1"><stop offset="${gradient.transparentUntilCanvasPercent}%" stop-color="${gradient.bottomColour}" stop-opacity="0"/><stop offset="${gradient.transitionAtCanvasPercent}%" stop-color="${gradient.bottomColour}" stop-opacity="0.35"/><stop offset="100%" stop-color="${gradient.bottomColour}" stop-opacity="${gradient.maximumOpacity}"/></linearGradient><radialGradient id="v"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity="${preset.tonal.vignetteOpacity}"/></radialGradient></defs><rect width="100%" height="100%" fill="url(#b)"/><rect width="100%" height="100%" fill="url(#v)"/></svg>`);
 }
 
-async function buildPortraitBase(source, preset, formatId, sharp) {
-  const crop = cropFor(source, preset, formatId);
-  const target = formatId === "landscape"
-    ? preset.portraitRegion
-    : { x: 0, y: 0, width: preset.canvas.width, height: preset.canvas.height };
+async function buildPortraitBase(source, preset, formatId, sharp, cropOverride = null) {
+  const oriented = orientedDimensions(source);
+  const crop = cropOverride?.used
+    ? {
+        ...cropOverride.record.cropRectangle,
+        orientedSourceWidth: oriented.width,
+        orientedSourceHeight: oriented.height,
+        retainedAreaFraction: round(cropOverride.record.cropRectangle.width * cropOverride.record.cropRectangle.height / (oriented.width * oriented.height)),
+      }
+    : cropFor(source, preset, formatId);
+  assert(crop.left + crop.width <= oriented.width && crop.top + crop.height <= oriented.height, `${source.stableKey ?? "portrait source"}: crop rectangle exceeds the oriented source.`);
+  const target = cropOverride?.used
+    ? {
+        x: cropOverride.record.cropOffsetX,
+        y: cropOverride.record.cropOffsetY,
+        width: Math.round(crop.width * cropOverride.record.cropScale.x),
+        height: Math.round(crop.height * cropOverride.record.cropScale.y),
+      }
+    : formatId === "landscape"
+      ? preset.portraitRegion
+      : { x: 0, y: 0, width: preset.canvas.width, height: preset.canvas.height };
+  assert(target.x + target.width <= preset.canvas.width && target.y + target.height <= preset.canvas.height, "Effective portrait bounds exceed the canvas.");
   const scaleX = target.width / crop.width;
   const scaleY = target.height / crop.height;
   const upscaleFactor = round(Math.max(scaleX, scaleY));
@@ -152,7 +170,16 @@ async function buildPortraitBase(source, preset, formatId, sharp) {
     .composite(composites)
     .png()
     .toBuffer();
-  return { buffer, crop, target, resizeScale: { x: round(scaleX), y: round(scaleY) }, upscaleFactor, grainAmount, grainSeed };
+  return {
+    buffer,
+    crop,
+    target,
+    resizeScale: cropOverride?.used ? cropOverride.record.cropScale : { x: round(scaleX), y: round(scaleY) },
+    upscaleFactor,
+    grainAmount,
+    grainSeed,
+    cropOverride,
+  };
 }
 
 function typographyLayout(preset, fallback) {
@@ -268,9 +295,13 @@ export async function fitTypography(name, preset, runtime, fontRecord, { fallbac
   };
 }
 
-async function renderPortrait({ person, source, formatId, presetRecord, runtime, fontRecord }) {
+async function renderPortrait({ person, source, formatId, presetRecord, runtime, fontRecord, cropOverride = null }) {
   const { preset, presetHash } = presetRecord;
-  const base = await buildPortraitBase(source, preset, formatId, runtime.sharp);
+  if (cropOverride?.used) {
+    assert(cropOverride.record.basePresetId === preset.id, `${person.stableKey}: crop override preset ID mismatch.`);
+    assert(cropOverride.record.basePresetHash === presetHash, `${person.stableKey}: crop override preset hash mismatch.`);
+  }
+  const base = await buildPortraitBase(source, preset, formatId, runtime.sharp, cropOverride);
   const typography = await fitTypography(person.canonicalName, preset, runtime, fontRecord);
   assert(!typography.clipping && typography.lineCount <= 2 && typography.lines.join(" ") === person.canonicalName, `${person.stableKey}/${formatId}: typography validation failed.`);
   const output = await runtime.sharp(base.buffer).composite([{ input: typography.buffer, left: 0, top: 0 }]).webp(preset.output).toBuffer();
@@ -315,7 +346,7 @@ export function assertSafeOutputDirectory(outputDir) {
   return resolved;
 }
 
-function metadataRow({ person, source, formatId, rendered, presetRecord, fontRecord, outputRelativePath, outputHash, byteCount, fallbackUsed }) {
+function metadataRow({ person, source, formatId, rendered, presetRecord, fontRecord, outputRelativePath, outputHash, byteCount, fallbackUsed, cropOverride = null }) {
   const { preset, presetHash } = presetRecord;
   const typography = rendered.typography;
   const base = fallbackUsed ? null : rendered.base;
@@ -349,7 +380,7 @@ function metadataRow({ person, source, formatId, rendered, presetRecord, fontRec
     lineHeight: typography.lineHeight,
     textBounds: typography.textBounds,
     safeMargins: typography.safeMargins,
-    cropMethod: fallbackUsed ? null : preset.crop.strategy,
+    cropMethod: fallbackUsed ? null : cropOverride?.used ? cropOverride.record.cropStrategy : preset.crop.strategy,
     cropRectangle: fallbackUsed ? null : cropCore(base.crop),
     cropRetainedAreaFraction: fallbackUsed ? null : base.crop.retainedAreaFraction,
     resizeScale: fallbackUsed ? null : base.resizeScale,
@@ -363,6 +394,16 @@ function metadataRow({ person, source, formatId, rendered, presetRecord, fontRec
     outputPath: outputRelativePath,
     outputHash,
     byteCount,
+    ...(cropOverride?.used ? {
+      cropOverrideUsed: true,
+      cropOverrideId: cropOverride.id,
+      cropOverrideConfigHash: cropOverride.configHash,
+      cropOverrideSourceHash: cropOverride.record.sourceHash,
+      cropOverrideStatus: cropOverride.status,
+      effectiveCropRectangle: cropCore(base.crop),
+      effectiveCropScale: cropOverride.record.cropScale,
+      effectiveCropOffset: { x: cropOverride.record.cropOffsetX, y: cropOverride.record.cropOffsetY },
+    } : {}),
   };
 }
 
@@ -378,12 +419,16 @@ export async function renderPeopleArtwork({
   fetchImpl = fetch,
   retryDelay,
   runtime: providedRuntime = null,
+  landscapeCropOverrides = null,
 } = {}) {
   const runtime = providedRuntime || loadPeopleArtworkRuntime();
   const presets = await loadPeopleArtworkPresets();
   for (const group of Object.values(presets)) for (const item of Object.values(group)) validateRuntimeAgainstPreset(runtime, item.preset);
   const fontRecord = await verifyFont({ Canvas: runtime.Canvas, FontLibrary: runtime.FontLibrary, names: people.map((person) => person.canonicalName), fontDirectory });
   const formats = format === "both" ? FORMAT_ORDER : [format];
+  const overrideConfiguration = formats.includes("landscape")
+    ? landscapeCropOverrides || await loadLandscapeCropOverrides()
+    : null;
   const resolvedOutput = dryRun ? null : assertSafeOutputDirectory(outputDir);
   const records = [];
   const resolutions = [];
@@ -406,17 +451,20 @@ export async function renderPeopleArtwork({
     });
     if (dryRun) continue;
     for (const formatId of formats) {
+      const cropOverride = formatId === "landscape"
+        ? resolveLandscapeCropOverride({ person, source, formatId, overrideConfiguration })
+        : null;
       const fallbackUsed = !source.available;
       const presetRecord = fallbackUsed ? presets.fallback[formatId] : presets.portrait[formatId];
       const rendered = fallbackUsed
         ? await renderFallback({ person, source, formatId, presetRecord, runtime, fontRecord })
-        : await renderPortrait({ person, source, formatId, presetRecord, runtime, fontRecord });
+        : await renderPortrait({ person, source, formatId, presetRecord, runtime, fontRecord, cropOverride });
       const outputRelativePath = `${formatId}/${person.tmdbPersonId}.webp`;
       const outputPath = path.join(resolvedOutput, outputRelativePath);
       await atomicWrite(outputPath, rendered.output);
       const decoded = await runtime.sharp(rendered.output, { failOn: "error" }).metadata();
       assert(decoded.format === "webp" && decoded.width === rendered.preset.canvas.width && decoded.height === rendered.preset.canvas.height, `${person.stableKey}/${formatId}: output decode failed.`);
-      records.push(metadataRow({ person, source, formatId, rendered, presetRecord, fontRecord, outputRelativePath, outputHash: sha256(rendered.output), byteCount: rendered.output.length, fallbackUsed }));
+      records.push(metadataRow({ person, source, formatId, rendered, presetRecord, fontRecord, outputRelativePath, outputHash: sha256(rendered.output), byteCount: rendered.output.length, fallbackUsed, cropOverride }));
     }
   }
   return {

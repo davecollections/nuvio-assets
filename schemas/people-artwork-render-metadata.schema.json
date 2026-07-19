@@ -59,6 +59,15 @@
         "y": { "type": "number", "minimum": 0 }
       }
     },
+    "offset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "integer", "minimum": 0 },
+        "y": { "type": "integer", "minimum": 0 }
+      }
+    },
     "record": {
       "type": "object",
       "additionalProperties": false,
@@ -106,7 +115,15 @@
         "canvasHeight": { "type": "integer", "minimum": 1 },
         "outputPath": { "type": "string", "minLength": 1 },
         "outputHash": { "$ref": "#/$defs/hash" },
-        "byteCount": { "type": "integer", "minimum": 1 }
+        "byteCount": { "type": "integer", "minimum": 1 },
+        "cropOverrideUsed": { "const": true },
+        "cropOverrideId": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+        "cropOverrideConfigHash": { "$ref": "#/$defs/hash" },
+        "cropOverrideSourceHash": { "$ref": "#/$defs/hash" },
+        "cropOverrideStatus": { "const": "active-source-match" },
+        "effectiveCropRectangle": { "$ref": "#/$defs/crop" },
+        "effectiveCropScale": { "$ref": "#/$defs/scale" },
+        "effectiveCropOffset": { "$ref": "#/$defs/offset" }
       }
     }
   }

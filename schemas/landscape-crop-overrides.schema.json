@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/landscape-crop-overrides.schema.json",
+  "title": "Nuvio source-bound people landscape crop overrides",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "status", "ordering", "recordCount", "records"],
+  "properties": {
+    "version": { "const": "people-landscape-crop-overrides-v1" },
+    "status": { "const": "active" },
+    "ordering": { "const": "tmdb-person-id-ascending" },
+    "recordCount": { "const": 51 },
+    "records": {
+      "type": "array",
+      "minItems": 51,
+      "maxItems": 51,
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "crop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left", "top", "width", "height"],
+      "properties": {
+        "left": { "type": "integer", "minimum": 0 },
+        "top": { "type": "integer", "minimum": 0 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number", "exclusiveMinimum": 0 },
+        "y": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stableKey", "tmdbPersonId", "canonicalName", "format", "status", "sourceProfilePath", "sourceHash", "basePresetId", "basePresetHash", "cropStrategy", "cropRectangle", "cropScale", "cropOffsetX", "cropOffsetY", "reason", "evidencePackage", "approvedProofHash", "createdFromAuditVersion"],
+      "properties": {
+        "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+        "tmdbPersonId": { "type": "integer", "minimum": 1 },
+        "canonicalName": { "type": "string", "minLength": 1 },
+        "format": { "const": "landscape" },
+        "status": { "const": "active" },
+        "sourceProfilePath": { "type": "string", "pattern": "^/[^\\\\]+$" },
+        "sourceHash": { "$ref": "#/$defs/hash" },
+        "basePresetId": { "const": "people-landscape-cormorant-v1" },
+        "basePresetHash": { "$ref": "#/$defs/hash" },
+        "cropStrategy": { "const": "person-specific-source-bound-landscape-v1" },
+        "cropRectangle": { "$ref": "#/$defs/crop" },
+        "cropScale": { "$ref": "#/$defs/scale" },
+        "cropOffsetX": { "type": "integer", "minimum": 0 },
+        "cropOffsetY": { "type": "integer", "minimum": 0 },
+        "reason": { "const": "avoid-unintended-face-crop" },
+        "evidencePackage": { "type": "string", "pattern": "^[^:]*(?:/[^:]*)*$" },
+        "approvedProofHash": { "$ref": "#/$defs/hash" },
+        "createdFromAuditVersion": { "const": "people-landscape-crop-audit-v1" }
+      }
+    }
+  }
+}

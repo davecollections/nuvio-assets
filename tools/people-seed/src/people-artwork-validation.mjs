@@ -3,6 +3,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { validateAgainstSchema } from "./schema-validator.mjs";
+import { validateLandscapeCropOverrides } from "./people-artwork/landscape-crop-overrides.mjs";
+import { resolveApprovedProfile } from "./people-artwork/source-resolution.mjs";
 
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
 const APPROVED_OVERRIDES = Object.freeze({
@@ -25,10 +27,12 @@ function same(left, right) {
 
 export async function readPeopleArtworkConfiguration(repoRoot) {
   const packageRoot = path.join(repoRoot, "tools", "people-seed");
-  const [decisionsRaw, decisionSchemaRaw, metadataSchemaRaw, fontLockRaw, ...presetBuffers] = await Promise.all([
+  const [decisionsRaw, decisionSchemaRaw, metadataSchemaRaw, cropOverridesRaw, cropOverrideSchemaRaw, fontLockRaw, ...presetBuffers] = await Promise.all([
     fs.readFile(path.join(repoRoot, "data", "people", "portrait-source-decisions.json")),
     fs.readFile(path.join(repoRoot, "schemas", "portrait-source-decisions.schema.json")),
     fs.readFile(path.join(repoRoot, "schemas", "people-artwork-render-metadata.schema.json")),
+    fs.readFile(path.join(repoRoot, "data", "people", "landscape-crop-overrides.json")),
+    fs.readFile(path.join(repoRoot, "schemas", "landscape-crop-overrides.schema.json")),
     fs.readFile(path.join(packageRoot, "config", "cormorant-garamond-700.json")),
     ...PRESET_FILES.map((name) => fs.readFile(path.join(packageRoot, "presets", name))),
   ]);
@@ -41,6 +45,9 @@ export async function readPeopleArtworkConfiguration(repoRoot) {
     decisions: JSON.parse(decisionsRaw),
     decisionSchema: JSON.parse(decisionSchemaRaw),
     metadataSchema: JSON.parse(metadataSchemaRaw),
+    cropOverrides: JSON.parse(cropOverridesRaw),
+    cropOverrideSchema: JSON.parse(cropOverrideSchemaRaw),
+    cropOverrideConfigHash: sha256(cropOverridesRaw),
     fontLock: JSON.parse(fontLockRaw),
     presetRecords,
   };
@@ -48,7 +55,7 @@ export async function readPeopleArtworkConfiguration(repoRoot) {
 
 export async function validatePeopleArtworkConfiguration({ repoRoot, registry }) {
   const configuration = await readPeopleArtworkConfiguration(repoRoot);
-  const { decisions, decisionSchema, metadataSchema, fontLock, presetRecords } = configuration;
+  const { decisions, decisionSchema, metadataSchema, cropOverrides, cropOverrideSchema, cropOverrideConfigHash, fontLock, presetRecords } = configuration;
   const errors = validateAgainstSchema(decisions, decisionSchema, "portrait-source-decisions.json");
   if (decisions.recordCount !== decisions.records.length) errors.push("portrait-source-decisions recordCount does not match records length");
   if (decisions.records.length !== 7) errors.push("portrait-source decisions must contain exactly seven records");
@@ -64,6 +71,15 @@ export async function validatePeopleArtworkConfiguration({ repoRoot, registry })
     const person = registryByKey.get(decision.stableKey);
     if (!person || person.tmdbPersonId !== decision.tmdbPersonId || person.canonicalName !== decision.canonicalName) errors.push(`${decision.stableKey}: decision identity binding differs from the people registry`);
     if (person && person.profilePath !== decision.registryProfilePath) errors.push(`${decision.stableKey}: decision registryProfilePath differs from people-registry.json`);
+  }
+
+  errors.push(...validateLandscapeCropOverrides(cropOverrides, cropOverrideSchema, { registry }));
+  if (cropOverrides.records.length !== 51 || !cropOverrides.records.every((record) => record.status === "active" && record.format === "landscape")) errors.push("landscape crop overrides must contain exactly 51 active landscape records");
+  for (const record of cropOverrides.records) {
+    const person = registryByKey.get(record.stableKey);
+    if (!person) continue;
+    const resolved = resolveApprovedProfile(person, decisions);
+    if (resolved.profilePath !== record.sourceProfilePath) errors.push(`${record.stableKey}: crop override sourceProfilePath differs from normal portrait source resolution`);
   }
 
   const expectedPresetIds = PRESET_FILES.map((name) => name.replace(/\.json$/u, ""));
@@ -84,6 +100,10 @@ export async function validatePeopleArtworkConfiguration({ repoRoot, registry })
   if (fallbackPoster.typography.requestedFontSize !== 114 || fallbackPoster.typography.lineHeight !== 100) errors.push("poster fallback 114 px configuration changed");
   if (fontLock.fontSha256 !== "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0" || fontLock.licenceSha256 !== "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956" || fontLock.weight !== 700) errors.push("Cormorant Garamond font lock changed");
   if (metadataSchema.properties?.version?.const !== "people-artwork-render-metadata-v1") errors.push("people artwork metadata contract version changed");
+  const landscapePresetHash = presetRecords["people-landscape-cormorant-v1"].hash;
+  for (const record of cropOverrides.records) {
+    if (record.basePresetId !== "people-landscape-cormorant-v1" || record.basePresetHash !== landscapePresetHash) errors.push(`${record.stableKey}: crop override base preset binding changed`);
+  }
 
   const sourceCode = await fs.readFile(path.join(repoRoot, "tools", "people-seed", "src", "people-artwork", "source-resolution.mjs"), "utf8");
   if (/person\/images|person-images|search\/person|person\/\{person_id\}/iu.test(sourceCode)) errors.push("people renderer contains a prohibited TMDB metadata or person-images endpoint");
@@ -97,6 +117,8 @@ export async function validatePeopleArtworkConfiguration({ repoRoot, registry })
       retainedRegistryCount: retained.length,
       presetHashes: Object.fromEntries(Object.entries(presetRecords).map(([id, record]) => [id, record.hash])),
       metadataContract: "schemas/people-artwork-render-metadata.schema.json",
+      landscapeCropOverrideCount: cropOverrides.records.length,
+      landscapeCropOverrideConfigHash: cropOverrideConfigHash,
       fontHash: fontLock.fontSha256,
       licenceHash: fontLock.licenceSha256,
       offlineDefault: true,

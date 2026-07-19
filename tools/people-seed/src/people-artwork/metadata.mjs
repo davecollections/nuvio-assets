@@ -27,6 +27,18 @@ export async function validateRenderMetadata(metadata) {
     if (record.fallbackUsed !== Boolean(record.fallbackReason)) errors.push(`${record.stableKey}/${record.formatId}: fallback flag and reason disagree`);
     if (record.fallbackUsed && (record.sourcePath !== null || record.sourceHash !== null || record.cropRectangle !== null)) errors.push(`${record.stableKey}/${record.formatId}: fallback metadata embeds portrait state`);
     if (!record.fallbackUsed && (!record.sourceHash || !record.cropRectangle || !record.independentlyGeneratedFromOriginalSource)) errors.push(`${record.stableKey}/${record.formatId}: portrait metadata is incomplete`);
+    const overrideFields = ["cropOverrideId", "cropOverrideConfigHash", "cropOverrideSourceHash", "cropOverrideStatus", "effectiveCropRectangle", "effectiveCropScale", "effectiveCropOffset"];
+    if (record.cropOverrideUsed === true) {
+      if (record.formatId !== "landscape") errors.push(`${record.stableKey}/${record.formatId}: landscape crop override appears on a non-landscape record`);
+      for (const field of overrideFields) if (!Object.hasOwn(record, field)) errors.push(`${record.stableKey}/${record.formatId}: ${field} is required when cropOverrideUsed is true`);
+      if (record.cropOverrideId !== record.stableKey) errors.push(`${record.stableKey}/${record.formatId}: crop override ID differs from the stable key`);
+      if (record.cropOverrideSourceHash !== record.sourceHash) errors.push(`${record.stableKey}/${record.formatId}: crop override source hash differs from the rendered source`);
+      if (JSON.stringify(record.effectiveCropRectangle) !== JSON.stringify(record.cropRectangle)) errors.push(`${record.stableKey}/${record.formatId}: effective crop rectangle differs from the rendered crop`);
+      if (JSON.stringify(record.effectiveCropScale) !== JSON.stringify(record.resizeScale)) errors.push(`${record.stableKey}/${record.formatId}: effective crop scale differs from the rendered scale`);
+      if (record.effectiveCropOffset?.x !== record.portraitBounds?.x || record.effectiveCropOffset?.y !== record.portraitBounds?.y) errors.push(`${record.stableKey}/${record.formatId}: effective crop offset differs from the rendered portrait bounds`);
+    } else if (overrideFields.some((field) => Object.hasOwn(record, field))) {
+      errors.push(`${record.stableKey}/${record.formatId}: crop override fields are present without cropOverrideUsed`);
+    }
   }
   return errors;
 }
@@ -41,6 +53,8 @@ export async function writeRenderMetadata({ metadata, outputDir, jsonName = "ren
     "lineCount", "lineHeight", "textBounds", "safeMargins", "cropMethod", "cropRectangle", "cropRetainedAreaFraction",
     "resizeScale", "upscaleFactor", "portraitBounds", "gradientBounds", "grainSeed", "grainAmount", "canvasWidth", "canvasHeight",
     "outputPath", "outputHash", "byteCount",
+    "cropOverrideUsed", "cropOverrideId", "cropOverrideConfigHash", "cropOverrideSourceHash", "cropOverrideStatus",
+    "effectiveCropRectangle", "effectiveCropScale", "effectiveCropOffset",
   ];
   const jsonPath = path.join(outputDir, jsonName);
   const csvPath = path.join(outputDir, csvName);

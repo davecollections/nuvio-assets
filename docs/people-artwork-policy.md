@@ -23,6 +23,12 @@ The renderer never rewrites registry profile paths. It never searches for an alt
 
 Offline rendering is the default. Portrait acquisition requires `--allow-network`; font acquisition is a separate explicit command. Downloads use timeouts, bounded retries, exact-path validation, atomic cache writes, image validation, and recorded source hashes and dimensions.
 
+## Landscape crop overrides
+
+The global deterministic crop policy remains the default. `data/people/landscape-crop-overrides.json` may define an exceptional person-specific landscape crop when the resolved portrait composition needs it. Each active override is format-specific, bound to the exact portrait path and source hash, and bound to the unchanged landscape preset. A source path or hash change invalidates the coordinates for review; the renderer refuses the stale override instead of searching for another portrait or silently using the default crop.
+
+Poster crops are independent and never read or apply landscape overrides. Overrides use only deterministic crop and resize operations: no generative fill, mirroring, or invented image content is used.
+
 ## Fallbacks
 
 A missing or invalid exact portrait activates the first-class text-only fallback. Landscape begins at 96 px; poster begins at 114 px. Both use a flat dark-warm background, subtle deterministic grain, and the centred canonical name. Fallback artwork contains no portrait, portrait-like image, face, silhouette, initials-only substitution, icon, logo, role label, error message, or additional wording.
