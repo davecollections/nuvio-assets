@@ -247,15 +247,15 @@ The eligibility-50 owner decisions were applied on 2026-07-14. Exactly five ligh
 
 ## Published library and maintenance
 
-Release `studio-network-v1-2026-07-16` was published at `2026-07-16T02:17:14.289Z` in asset commit `a5344e311195bb2d06fa9929669c7f56ad121c2a`:
+The current canonical state includes the original `studio-network-v1-2026-07-16` release plus the exact 20-company `studio-network-christian-studios-supplement-2026-07-19` delta:
 
-- 1,797 company covers under `assets/collection_covers/companies/{tmdb_id}.webp`;
+- 1,817 company covers under `assets/collection_covers/companies/{tmdb_id}.webp`;
 - 569 network covers under `assets/collection_covers/networks/{tmdb_id}.webp`;
-- 2,366 entries in `assets/collection_covers/manifest.json`;
-- manifest SHA-256 `4aff260b404dc6f7fecf63fdaf7de09a3bc87f3af9871e0b83109e2e2e20e312` and byte count 5,438,312;
-- published asset fingerprint `48eff273e92778f1a20801dad7160e05a659c211c5f942d2a35c6b97f055c508` over 26,589,254 WebP bytes.
+- 2,386 entries in `assets/collection_covers/manifest.json`;
+- manifest SHA-256 `45e9baaf1383362179be8775d55daa2a496c45d47522c9746a8a1eb6de09e9f2` and byte count 5,483,386;
+- published asset fingerprint `16bdc61d9c0b260080d4913cc14cf45b68cbc61d8cfb121d251dc716c1f0d8b0` over 26,826,858 WebP bytes.
 
-The publication copied exact approved staged bytes into a temporary release tree, fully validated that tree, installed and fully validated every permanent cover, and only then atomically installed the canonical manifest. Final contact sheets were generated from the installed manifest and permanent files. Release evidence is retained under `.work/publication-release/studio-network-v1-2026-07-16/`.
+The original publication copied exact approved staged bytes into a temporary release tree, fully validated that tree, installed and fully validated every permanent cover, and only then atomically installed the canonical manifest. Its release evidence remains under `.work/publication-release/studio-network-v1-2026-07-16/`. The supplement used the same renderer and production preset in an isolated ignored workspace, preserved all 2,366 original records value-for-value, and added only the 20 reviewed company identities.
 
 Routine maintenance is incremental:
 
