@@ -1,0 +1,244 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/artwork-runtime-lookup.schema.json",
+  "title": "Nuvio published artwork runtime lookup",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "status",
+    "fingerprint",
+    "generatedFrom",
+    "counts",
+    "formats",
+    "companies",
+    "networks",
+    "people"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "status": { "const": "published" },
+    "fingerprint": { "$ref": "#/$defs/hash" },
+    "generatedFrom": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["studioNetworkManifest", "peopleManifest"],
+      "properties": {
+        "studioNetworkManifest": {
+          "$ref": "#/$defs/studioManifestSource"
+        },
+        "peopleManifest": {
+          "$ref": "#/$defs/peopleManifestSource"
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["companies", "networks", "people", "totalEntities", "landscapeAssets", "posterAssets", "totalAssets"],
+      "properties": {
+        "companies": { "$ref": "#/$defs/count" },
+        "networks": { "$ref": "#/$defs/count" },
+        "people": { "$ref": "#/$defs/count" },
+        "totalEntities": { "$ref": "#/$defs/count" },
+        "landscapeAssets": { "$ref": "#/$defs/count" },
+        "posterAssets": { "$ref": "#/$defs/count" },
+        "totalAssets": { "$ref": "#/$defs/count" }
+      }
+    },
+    "formats": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["company", "network", "person"],
+      "properties": {
+        "company": { "$ref": "#/$defs/landscapeOnlyFormat" },
+        "network": { "$ref": "#/$defs/landscapeOnlyFormat" },
+        "person": { "$ref": "#/$defs/peopleFormat" }
+      }
+    },
+    "companies": {
+      "type": "object",
+      "propertyNames": { "$ref": "#/$defs/idKey" },
+      "additionalProperties": { "$ref": "#/$defs/companyEntry" }
+    },
+    "networks": {
+      "type": "object",
+      "propertyNames": { "$ref": "#/$defs/idKey" },
+      "additionalProperties": { "$ref": "#/$defs/networkEntry" }
+    },
+    "people": {
+      "type": "object",
+      "propertyNames": { "$ref": "#/$defs/idKey" },
+      "additionalProperties": { "$ref": "#/$defs/personEntry" }
+    }
+  },
+  "$defs": {
+    "hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "idKey": {
+      "type": "string",
+      "pattern": "^[1-9][0-9]*$"
+    },
+    "landscapeDimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "const": 1200 },
+        "height": { "const": 675 }
+      }
+    },
+    "posterDimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "const": 1000 },
+        "height": { "const": 1500 }
+      }
+    },
+    "landscapeOnlyFormat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["landscape", "poster"],
+      "properties": {
+        "landscape": { "$ref": "#/$defs/landscapeDimensions" },
+        "poster": { "type": "null" }
+      }
+    },
+    "peopleFormat": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["landscape", "poster"],
+      "properties": {
+        "landscape": { "$ref": "#/$defs/landscapeDimensions" },
+        "poster": { "$ref": "#/$defs/posterDimensions" }
+      }
+    },
+    "studioManifestSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "fingerprint"],
+      "properties": {
+        "path": { "const": "assets/collection_covers/manifest.json" },
+        "sha256": { "$ref": "#/$defs/hash" },
+        "fingerprint": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "peopleManifestSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256", "fingerprint"],
+      "properties": {
+        "path": { "const": "assets/collection_covers/people/manifest.json" },
+        "sha256": { "$ref": "#/$defs/hash" },
+        "fingerprint": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "companyLandscapeArtwork": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/companies/[1-9][0-9]*\\.webp$"
+        },
+        "sha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "networkLandscapeArtwork": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/networks/[1-9][0-9]*\\.webp$"
+        },
+        "sha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "peopleLandscapeArtwork": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/people/landscape/[1-9][0-9]*\\.webp$"
+        },
+        "sha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "posterArtwork": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/people/poster/[1-9][0-9]*\\.webp$"
+        },
+        "sha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "companyEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "status", "landscape", "fallbackUsed", "reviewRequired"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1 },
+        "status": { "const": "published" },
+        "landscape": { "$ref": "#/$defs/companyLandscapeArtwork" },
+        "fallbackUsed": { "type": "boolean" },
+        "reviewRequired": { "const": false }
+      }
+    },
+    "networkEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "status", "landscape", "fallbackUsed", "reviewRequired"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1 },
+        "status": { "const": "published" },
+        "landscape": { "$ref": "#/$defs/networkLandscapeArtwork" },
+        "fallbackUsed": { "type": "boolean" },
+        "reviewRequired": { "const": false }
+      }
+    },
+    "personEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "categories", "status", "landscape", "poster", "fallbackUsed", "reviewRequired"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string", "minLength": 1 },
+        "categories": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "enum": ["actor", "director"] }
+        },
+        "status": { "const": "published" },
+        "landscape": { "$ref": "#/$defs/peopleLandscapeArtwork" },
+        "poster": { "$ref": "#/$defs/posterArtwork" },
+        "fallbackUsed": { "type": "boolean" },
+        "reviewRequired": { "const": false }
+      }
+    }
+  }
+}

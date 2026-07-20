@@ -2,6 +2,10 @@
 
 Artwork assets for Nuvio, including posters, backdrops, collection covers, and related artwork.
 
+## Published artwork runtime lookup
+
+Browser clients can perform exact TMDB ID lookups for published company, TV-network, and people artwork through `assets/collection_covers/runtime-lookup.json`. Entries use repository-relative paths and per-asset SHA-256 values; the complete publication manifests remain the audit source of truth. See `docs/artwork-runtime-lookup.md` for the stable raw URL, orientation policy, cache versioning, and a browser example.
+
 ## Studio and network collection covers
 
 The reviewed studio/network library is published by TMDB identity:
