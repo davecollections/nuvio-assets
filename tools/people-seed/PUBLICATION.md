@@ -4,9 +4,9 @@ The people publication workflow is offline and explicitly bounded. It validates 
 
 ## Current publication
 
-The published scope is exactly 792 TMDB person identities. It includes the complete 295-person initial actor tier, the complete 203-person later actor tier, and the approved 300-person director catalogue. Each identity has one 1200 × 675 landscape WebP and one 1000 × 1500 poster WebP, for 1,584 files total and zero fallbacks.
+The published scope contains all 817 registry identities. It includes the complete 523-person actor catalogue and approved 300-person director catalogue across their initial, later, and review tiers. Each identity has one 1200 × 675 landscape WebP and one 1000 × 1500 poster WebP, for 1,634 files total and zero fallbacks.
 
-The 25 review actor memberships remain unpublished, so the complete 523-actor catalogue is not published. All approved director memberships are represented in the public collection.
+All approved actor and director memberships are represented in the public collection. Actor/director overlap remains category-neutral, so a shared identity has one landscape and one poster rather than category-specific duplicates.
 
 Published paths are:
 

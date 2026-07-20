@@ -65,7 +65,7 @@ The ImKaptain data is identity/catalogue cross-check provenance only. Its artwor
 
 ## Artwork and publishing boundary
 
-The identity foundation itself acquired no portrait. A separate, explicitly bounded publication contains exactly 792 numeric people identities, with 792 landscape and 792 poster WebPs plus a public manifest. The complete 295-person initial and 203-person later actor tiers are published; the 25 review actor memberships remain unpublished. The approved 300-person director catalogue is published.
+The identity foundation itself acquired no portrait. A separate, explicitly bounded and validated publication contains all 817 registry identities, with 817 landscape and 817 poster WebPs plus a public manifest and zero published fallbacks. The complete 523-person actor catalogue and approved 300-person director catalogue are published across their initial, later, and review tiers.
 
 The promoted `profilePath` values are relative identity metadata only. A profile path by itself does not indicate the state of any corresponding artwork asset.
 
@@ -111,4 +111,4 @@ tools/people-seed/.work/people-seed-foundation/owner-review/
 
 Only the original 25 actor and 44 director `review` candidates receive individual blank decision rows. The supplement's ignored promotion-proof review files are informational because all 198 inclusion and tier decisions are already approved.
 
-People artwork remains a separate bounded workflow. The locked 40-person renderer proof remains preserved as historical promotion evidence; publishing the 792-person collection did not rewrite that proof, Stage 3 typography, portrait-source decisions, or fallback decisions.
+People artwork remains a separate bounded workflow. The locked 40-person renderer proof remains preserved as historical promotion evidence; publishing the complete 817-person collection did not rewrite that proof, Stage 3 typography, portrait-source decisions, or fallback decisions.

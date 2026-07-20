@@ -2,11 +2,11 @@
   "version": "people-artwork-manifest-v1",
   "status": "published",
   "schemaPath": "schemas/people-artwork-manifest.schema.json",
-  "publishedAt": "2026-07-19T08:47:25.498Z",
+  "publishedAt": "2026-07-20T09:06:41.349Z",
   "ordering": "tmdb-person-id-ascending",
-  "recordCount": 792,
-  "landscapeCount": 792,
-  "posterCount": 792,
+  "recordCount": 817,
+  "landscapeCount": 817,
+  "posterCount": 817,
   "fallbackCount": 0,
   "rendererVersion": "people-artwork-renderer-v1",
   "rendererRuntime": {
@@ -20,7 +20,7 @@
     "publishedAt",
     "manifestFingerprint"
   ],
-  "manifestFingerprint": "996dd00e7e532f1265c22637a374124ec030f27583e73c3a4025e4a9a65d7344",
+  "manifestFingerprint": "8d7ad958e5b86d0cc4c0cc8940466218eeaea7dc2b7953f67c0a880d752557c8",
   "attribution": {
     "provider": "The Movie Database (TMDB)",
     "url": "https://www.themoviedb.org/",
@@ -2871,6 +2871,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:887",
+      "tmdbPersonId": 887,
+      "canonicalName": "Owen Wilson",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/5A46lNOwmpX77jAdhyKxU7e2Hub.jpg",
+      "sourceHash": "bf758915a47254e198f0227254be0fd5a990d53c2d776a967154f5a1cf1f09de",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/887.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/887.webp",
+      "landscapeHash": "65318610fc577d3368789fe549bfa581efc0cd7d51210f2067a86a0ba5054d6e",
+      "landscapeByteCount": 48046,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/887.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/887.webp",
+      "posterHash": "a1e5c89b9dd2a45141d0c1afee08823ff31d81dea20919df12085f0316b46617",
+      "posterByteCount": 140012,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:934",
       "tmdbPersonId": 934,
       "canonicalName": "Russell Crowe",
@@ -2932,6 +2965,39 @@
       "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/955.webp",
       "posterHash": "373648f849ffb2e79d483c3e4ff148097abd9b6f71459bb81e48d630c0dd7e48",
       "posterByteCount": 102626,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:976",
+      "tmdbPersonId": 976,
+      "canonicalName": "Jason Statham",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/pXGSq2UpcDE2NMF8LR56QZf5U1q.jpg",
+      "sourceHash": "76ded15ca2c71d5dd322fc075cd82f43d9786a52defe8a67b2d410458a2330cd",
+      "sourceDimensions": {
+        "width": 1024,
+        "height": 1536
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/976.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/976.webp",
+      "landscapeHash": "7f790533690ef52a93c272895700d169c3650691e881e5998a81af65176f6b1b",
+      "landscapeByteCount": 44458,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/976.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/976.webp",
+      "posterHash": "3c03192a2ee726d8756f91a77d2fdccc733e24ba355e202e65843fe9f82fc512",
+      "posterByteCount": 188824,
       "posterPresetId": "people-poster-cormorant-v1",
       "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
@@ -3064,6 +3130,39 @@
       "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1062.webp",
       "posterHash": "d681595a4df16af0c6dded91d32ddbb1b5421c75b295e0867698262f04696ea3",
       "posterByteCount": 61332,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:1100",
+      "tmdbPersonId": 1100,
+      "canonicalName": "Arnold Schwarzenegger",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/2marNcjIfCUE5Z2HyrcEiJHPbsA.jpg",
+      "sourceHash": "099b699e71a2911efab2cf55f111804abd5775000ac02a52b82aa611ce7d5846",
+      "sourceDimensions": {
+        "width": 500,
+        "height": 750
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/1100.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/1100.webp",
+      "landscapeHash": "5e4188d29573a0afac723f187ec8ec3a9d2d04c2d4bde5d558c9b1f8989edaa0",
+      "landscapeByteCount": 35086,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/1100.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1100.webp",
+      "posterHash": "33de2167ddc944cdb8e00d8cbb06f3ae03dde2071b4daac49918fedee2184252",
+      "posterByteCount": 83950,
       "posterPresetId": "people-poster-cormorant-v1",
       "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
@@ -8382,6 +8481,72 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:4491",
+      "tmdbPersonId": 4491,
+      "canonicalName": "Jennifer Aniston",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/qPXG41rYdUGldZhMhuZFvmpZKRp.jpg",
+      "sourceHash": "2a854b4be8e8de81cc6cee2e588ead7f1181189368bac9f2f6d9a209e67ac0f2",
+      "sourceDimensions": {
+        "width": 682,
+        "height": 1024
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/4491.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/4491.webp",
+      "landscapeHash": "aaa5d4704c99a8faa99c7890af1947be56c92ba2fb5cf3be4de4498ee03d2bc4",
+      "landscapeByteCount": 42076,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/4491.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/4491.webp",
+      "posterHash": "159439667f41768d0e7f87a26fd089381674c9fea1b393222e4a6b0b869a4efe",
+      "posterByteCount": 119504,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:4495",
+      "tmdbPersonId": 4495,
+      "canonicalName": "Steve Carell",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/cS7Cbyff6wFVfUGem497vy9LS7A.jpg",
+      "sourceHash": "2f5e55c86873a71351ccea5b50ca64e010c69bb0f0c9585315aa4559d72146ee",
+      "sourceDimensions": {
+        "width": 1400,
+        "height": 2100
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/4495.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/4495.webp",
+      "landscapeHash": "a1ed1e55d02cfd51926981ca8de2193ffd9838855b5a4f5c39eb666d92448465",
+      "landscapeByteCount": 44288,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/4495.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/4495.webp",
+      "posterHash": "626c3420c744cf134872e33ec8128715a1b12bf4dc0baca09bdbdc8ec65b8783",
+      "posterByteCount": 136892,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:4512",
       "tmdbPersonId": 4512,
       "canonicalName": "James Woods",
@@ -10984,6 +11149,39 @@
       "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/7302.webp",
       "posterHash": "ccce8679780a4eb625d44c5c494ced2e29144dca85dde34fb9f3875339ff5c18",
       "posterByteCount": 63058,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:7399",
+      "tmdbPersonId": 7399,
+      "canonicalName": "Ben Stiller",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/scgpxhI05JpdNXXfmpK6z0rPOWN.jpg",
+      "sourceHash": "71618d75f19cd544cac92c7f8fccd3e95ae2178221ff0326b34dc5df029872c3",
+      "sourceDimensions": {
+        "width": 889,
+        "height": 1333
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/7399.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/7399.webp",
+      "landscapeHash": "fa91cec9cb2c60cb1e1103ffcb851530c1f3f921630d8a963fe43f9c996aee29",
+      "landscapeByteCount": 43054,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/7399.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/7399.webp",
+      "posterHash": "cbf8948f99e4ed270726efbd588d909bab8ba9a7302c540b36cdf673b4ebcb0c",
+      "posterByteCount": 110112,
       "posterPresetId": "people-poster-cormorant-v1",
       "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
@@ -13895,6 +14093,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:11701",
+      "tmdbPersonId": 11701,
+      "canonicalName": "Angelina Jolie",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/bXNxIKcJ5cNNW8QFrBPWcfTSu9x.jpg",
+      "sourceHash": "904253acb63ffd1805ffab7153bb67f47c9b13cb6442c423bff4d6b38d3fd6db",
+      "sourceDimensions": {
+        "width": 600,
+        "height": 900
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/11701.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/11701.webp",
+      "landscapeHash": "a9481e020a2b320328ff4ef3856d10e730638ce4f7189b263ae99a3e9083d239",
+      "landscapeByteCount": 47700,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/11701.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/11701.webp",
+      "posterHash": "557ce013bb6bfa6b9792c3f8a263b3f4e34587117d3b5b91c7c0fc49268d1e77",
+      "posterByteCount": 148170,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:11770",
       "tmdbPersonId": 11770,
       "canonicalName": "John Carpenter",
@@ -15914,6 +16145,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:16483",
+      "tmdbPersonId": 16483,
+      "canonicalName": "Sylvester Stallone",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/gn3pDWthJqR0VDYGViGD3048og7.jpg",
+      "sourceHash": "624ca3b6bccb64cd51687dace7d8ae6b276dd35587317bc3fc4781c8971e1832",
+      "sourceDimensions": {
+        "width": 600,
+        "height": 900
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/16483.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/16483.webp",
+      "landscapeHash": "49d9fe0ebab1f4027a4d35de3a90c26f094720de5505b2c4b89ad025c8838c0e",
+      "landscapeByteCount": 27876,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/16483.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/16483.webp",
+      "posterHash": "268da648bb8a4d39e0bf6caa742ca88a7ea674315406f7690e4c42c7393cb068",
+      "posterByteCount": 62554,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:16501",
       "tmdbPersonId": 16501,
       "canonicalName": "Milo Ventimiglia",
@@ -16640,6 +16904,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:18072",
+      "tmdbPersonId": 18072,
+      "canonicalName": "Michael Herbig",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/93PW1NGTkcYxgCfPfd0m4xa7rHJ.jpg",
+      "sourceHash": "2813d1b23f1be481696826fd5b3a1d01a10cef7735fca3845241ef484721793a",
+      "sourceDimensions": {
+        "width": 400,
+        "height": 600
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/18072.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/18072.webp",
+      "landscapeHash": "911e87a2588e62028e2a6d875dd2402233ea260fa2e99996c42b32a2b2f8453e",
+      "landscapeByteCount": 33484,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/18072.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/18072.webp",
+      "posterHash": "c9ac5d5f56ab2d49e6585f9c6f12ea413d8c9d02e2e31031b2fe034f4b505a0c",
+      "posterByteCount": 79644,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:18082",
       "tmdbPersonId": 18082,
       "canonicalName": "Timothy Olyphant",
@@ -17036,6 +17333,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:18973",
+      "tmdbPersonId": 18973,
+      "canonicalName": "Mila Kunis",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/cJAHQWX9hVadDFx5WTSBIW0VjvP.jpg",
+      "sourceHash": "e1838a154a8508db32a1593e76671370b99f521565a075bcf31e4d8f83285456",
+      "sourceDimensions": {
+        "width": 600,
+        "height": 900
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/18973.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/18973.webp",
+      "landscapeHash": "274ca02c445a6dfd4a853ae15db43108c6f007b83ee37b6620bd9df74a6c79ec",
+      "landscapeByteCount": 34224,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/18973.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/18973.webp",
+      "posterHash": "70efde834410fe4c7be6d16c082c5d06e4d15e0abe193c5d0669da348203b76b",
+      "posterByteCount": 111768,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:18999",
       "tmdbPersonId": 18999,
       "canonicalName": "J.K. Simmons",
@@ -17130,6 +17460,39 @@
       "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/19274.webp",
       "posterHash": "407a63cf66a300fd7f4fcf014edad85c4a3340a54459470ab5052a9ba3938d28",
       "posterByteCount": 168156,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:19292",
+      "tmdbPersonId": 19292,
+      "canonicalName": "Adam Sandler",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/iTMnXrPfC1rmom6a9q4hy6YSJWG.jpg",
+      "sourceHash": "494fb0798c858d9bfe7eca382e4a801536af7318750f5aa2803dfc5b93da8c2c",
+      "sourceDimensions": {
+        "width": 778,
+        "height": 1167
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/19292.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/19292.webp",
+      "landscapeHash": "33bac08445b6b49ea6c99cde0a517d96cb44a0366fe83d5fd454fe8120387713",
+      "landscapeByteCount": 41550,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/19292.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/19292.webp",
+      "posterHash": "215d1a14e1117e2884d425d057684516bdda52197b2b2b914a90bcf66cb7e4cb",
+      "posterByteCount": 123198,
       "posterPresetId": "people-poster-cormorant-v1",
       "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
@@ -17625,6 +17988,39 @@
       "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/20904.webp",
       "posterHash": "d8f17b4a6977cd16ddda92c847dcf91a017ebacc14f44b26cd8c1cd0c408e715",
       "posterByteCount": 69516,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:21007",
+      "tmdbPersonId": 21007,
+      "canonicalName": "Jonah Hill",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/cymlWttB83MsAGR2EkTgANtjeRH.jpg",
+      "sourceHash": "481c9bfc9e17e40b19ecbf55b206b38c360ebc64247c08bc5c065f7bef5bf0b7",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/21007.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/21007.webp",
+      "landscapeHash": "c7dcbee718930ed426283377ffd452497bec940bbbdec14bf4703aed686d9d0d",
+      "landscapeByteCount": 27130,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/21007.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/21007.webp",
+      "posterHash": "6412e2483e58ce4a99ab01a31b712ffdd78f2d92ef17938e4f99efcb03e2eb91",
+      "posterByteCount": 87084,
       "posterPresetId": "people-poster-cormorant-v1",
       "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
@@ -18219,6 +18615,39 @@
       "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/25161.webp",
       "posterHash": "05f9ab9663abe945460c8901c85ffef341d0e5632e214c44cbc817b7c9c427fe",
       "posterByteCount": 104580,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:25541",
+      "tmdbPersonId": 25541,
+      "canonicalName": "Katherine Heigl",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/hjtNdbdy1qn25y5SGl71y8nR0Kg.jpg",
+      "sourceHash": "8e973d350c6aa9199956f4a71c32f6e5a8fdfe4ac3dfd05de697ff1a99e33da6",
+      "sourceDimensions": {
+        "width": 1215,
+        "height": 1824
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/25541.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/25541.webp",
+      "landscapeHash": "a75b6964a439acc4a0dc0f2d0cdbe198530078e3088b83d49d773b720aa908bd",
+      "landscapeByteCount": 60432,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/25541.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/25541.webp",
+      "posterHash": "db94eb37aa82c27195a055ac577d183ece283c543499139eb427b42981c22189",
+      "posterByteCount": 297502,
       "posterPresetId": "people-poster-cormorant-v1",
       "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
@@ -19478,6 +19907,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:38673",
+      "tmdbPersonId": 38673,
+      "canonicalName": "Channing Tatum",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/4TpgnS6l8YUXSne9Av9nda6mjxY.jpg",
+      "sourceHash": "55c27d18177a5533287e43d91f24d5df9580bf9ca0d349f68f8c3964312b0660",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/38673.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/38673.webp",
+      "landscapeHash": "dc45b668b95ee775b86845fb1860cd50c9cb33cd167f7817381b7db86d398d41",
+      "landscapeByteCount": 31000,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/38673.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/38673.webp",
+      "posterHash": "929eb71be337f8ababd6738b38799c12598e8540fd245f80eaa6fb37de2a33d4",
+      "posterByteCount": 101124,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:39009",
       "tmdbPersonId": 39009,
       "canonicalName": "Joseph Losey",
@@ -19940,6 +20402,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:51576",
+      "tmdbPersonId": 51576,
+      "canonicalName": "Chuck Norris",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/m3uLikdhi9qObRvGVHsKX5H93lR.jpg",
+      "sourceHash": "0148070f2e9e704633cc3b522e7754d805e6311785d433095527c90cff518fe7",
+      "sourceDimensions": {
+        "width": 1000,
+        "height": 1500
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/51576.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/51576.webp",
+      "landscapeHash": "efe465cb7244d335253119e00aa8849094f8b6c0f9dbfefbe827752046d99d9a",
+      "landscapeByteCount": 65538,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/51576.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/51576.webp",
+      "posterHash": "9ed36909a6caf7cd0298e73b6a0507fd98cbdc1b3cf887d9cd48829396e48ff9",
+      "posterByteCount": 296544,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:53296",
       "tmdbPersonId": 53296,
       "canonicalName": "Joshua Oppenheimer",
@@ -20166,6 +20661,39 @@
       "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/54830.webp",
       "posterHash": "58cdca791f9bb34dae78c3f5b2a68cca963b0bfc5923c56d9d69f0dc71af1891",
       "posterByteCount": 105598,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:55536",
+      "tmdbPersonId": 55536,
+      "canonicalName": "Melissa McCarthy",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/yl0qva0O4u92fvtItakdvKmKrW9.jpg",
+      "sourceHash": "6a7db8e270a95e5dcd7571625934bc3a78d6ee89ccc9aeb50c05e8c53d71c384",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/55536.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/55536.webp",
+      "landscapeHash": "2673390cd2d2403607aebf8db4c1add16b2c1c4a99bf2f602bee4dc40fb3e5b4",
+      "landscapeByteCount": 40964,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/55536.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/55536.webp",
+      "posterHash": "09d25f657c0ea6633a83d065ff2acb264dbdeae51552ba59311bc05dc4e88913",
+      "posterByteCount": 147446,
       "posterPresetId": "people-poster-cormorant-v1",
       "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
@@ -21354,6 +21882,39 @@
       "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/70035.webp",
       "posterHash": "a3468df869a3f668320ce1ee3fdedec8e1140bdb4f94da1279cc2287512a08f9",
       "posterByteCount": 128574,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:70851",
+      "tmdbPersonId": 70851,
+      "canonicalName": "Jack Black",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/59IhgCtiWI5yTfzPhsjzg7GjCjm.jpg",
+      "sourceHash": "3895015c152a4574465d461faf0307a5df257f903b2896df152dee1814545c4b",
+      "sourceDimensions": {
+        "width": 840,
+        "height": 1259
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/70851.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/70851.webp",
+      "landscapeHash": "a81956da221c21c9b7a95eed4348fda1693890c4f165084696ae45a823d53a7f",
+      "landscapeByteCount": 62210,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/70851.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/70851.webp",
+      "posterHash": "55cc34a825f91955f7023f7bbf304811d8cdb912e5b01ddb9b7069c576a26f50",
+      "posterByteCount": 251404,
       "posterPresetId": "people-poster-cormorant-v1",
       "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
@@ -23339,6 +23900,72 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:112561",
+      "tmdbPersonId": 112561,
+      "canonicalName": "Lily Collins",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/w7ZXE2qRmmdPpUt2hRIaFuyoaNd.jpg",
+      "sourceHash": "45ef3b395ca41a10b06602aef256e402be7ccf6592a0ab3ba9323c40596fdb9f",
+      "sourceDimensions": {
+        "width": 1200,
+        "height": 1800
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/112561.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/112561.webp",
+      "landscapeHash": "d06f26e679d0df4b1d302b84ea31c867af9367bba8cf49e5754f48541df23676",
+      "landscapeByteCount": 59762,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/112561.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/112561.webp",
+      "posterHash": "25882de3a5b169d2ece2a342e269b29430c00f11d10d9bfcbdc4065ba36e402a",
+      "posterByteCount": 289556,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:115440",
+      "tmdbPersonId": 115440,
+      "canonicalName": "Sydney Sweeney",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/qYiaSl0Eb7G3VaxOg8PxExCFwon.jpg",
+      "sourceHash": "362b08fc66ffdd46047b60b490d5a08d0be0408581df81e7ba6511d431da8166",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/115440.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/115440.webp",
+      "landscapeHash": "baa0bf7344a824dc0bd2cd55fe0a644a7c37e2e9958f45974610e63019dba525",
+      "landscapeByteCount": 28200,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/115440.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/115440.webp",
+      "posterHash": "ed54a17ae72af2dbbb4e5033d74c434cb788bc975639c7a60d4bcb9dcc450395",
+      "posterByteCount": 121204,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:117642",
       "tmdbPersonId": 117642,
       "canonicalName": "Jason Momoa",
@@ -24659,6 +25286,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:505710",
+      "tmdbPersonId": 505710,
+      "canonicalName": "Zendaya",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/1qup8tSt95HLbcy2c2xrx4iJNxv.jpg",
+      "sourceHash": "e6c68df2821d3a927d0d5694d66f66db13b7b029351ccc772c513551800e2df0",
+      "sourceDimensions": {
+        "width": 1000,
+        "height": 1500
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/505710.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/505710.webp",
+      "landscapeHash": "58bf6045ec6b2d9261014234252da86c291e25bb9e541a9e07977f1d7f1c0037",
+      "landscapeByteCount": 44122,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/505710.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/505710.webp",
+      "posterHash": "14478435adeb599c9c19266938e1dfe3c5df3e5393c147b0421d28ac65d900a3",
+      "posterByteCount": 168612,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:543530",
       "tmdbPersonId": 543530,
       "canonicalName": "Dave Bautista",
@@ -25154,6 +25814,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:974169",
+      "tmdbPersonId": 974169,
+      "canonicalName": "Jenna Ortega",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/dQb6COORkv8liT5FMtXdHuvjUsb.jpg",
+      "sourceHash": "0d955a9f3f40a458de144719e5d34664b0b070ad9296e7501637493db3338976",
+      "sourceDimensions": {
+        "width": 1127,
+        "height": 1690
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/974169.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/974169.webp",
+      "landscapeHash": "0507d69b87ec762bbd5b8f9769ed5f19f98bcdb2c731c84b7355e45344054854",
+      "landscapeByteCount": 38520,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/974169.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/974169.webp",
+      "posterHash": "22b4ba87ffafceba3c9fc7b5e9a7f0d1317ebb6e0ce8d77fa3be32b123fcd421",
+      "posterByteCount": 110592,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:1007683",
       "tmdbPersonId": 1007683,
       "canonicalName": "Jack Reynor",
@@ -25451,6 +26144,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:1136406",
+      "tmdbPersonId": 1136406,
+      "canonicalName": "Tom Holland",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/xKBAaPIa1c7tzZD3Y0MhBLv4hPE.jpg",
+      "sourceHash": "b5c1ed19349d2f5b3edb0ab0983c9aef97474f6dd633e2300ea4a118d769c923",
+      "sourceDimensions": {
+        "width": 1127,
+        "height": 1690
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/1136406.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/1136406.webp",
+      "landscapeHash": "5cb279e947acb5600dadcba4ae3bfb2eab82563726ea622dbd9c0a78bbefa0d9",
+      "landscapeByteCount": 39918,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/1136406.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1136406.webp",
+      "posterHash": "e04c35841dd34bf6c86417f233fd17d47f614026ea283f9c48247a21b9c44b93",
+      "posterByteCount": 169552,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:1173984",
       "tmdbPersonId": 1173984,
       "canonicalName": "Olivia Cooke",
@@ -25479,6 +26205,39 @@
       "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1173984.webp",
       "posterHash": "ca2a37f2338394f12710763ef988b8093e600eb51b912d08254b7fe73baa4c76",
       "posterByteCount": 83124,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:1190668",
+      "tmdbPersonId": 1190668,
+      "canonicalName": "Timothée Chalamet",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/fI6Zwvwo0KuUMfutTyHCTuWEIrx.jpg",
+      "sourceHash": "44ca1d0a86496fe61c65feba1523627d389067b7b716e8f09c37e58571df863f",
+      "sourceDimensions": {
+        "width": 871,
+        "height": 1307
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/1190668.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/1190668.webp",
+      "landscapeHash": "95dc95073fd1a7b6b5a99441ff4276913aaafa089918cfdee4733321c6e75164",
+      "landscapeByteCount": 33346,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/1190668.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1190668.webp",
+      "posterHash": "6a41daa06c998cdf7752f85bcdddddcab0b0b2c1eb57bdf06650322deb4c76f3",
+      "posterByteCount": 86466,
       "posterPresetId": "people-poster-cormorant-v1",
       "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
@@ -25682,6 +26441,39 @@
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"
     },
     {
+      "stableKey": "person:1356210",
+      "tmdbPersonId": 1356210,
+      "canonicalName": "Millie Bobby Brown",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/k9KGzGDVhXKfOGpoN62MNuXL28q.jpg",
+      "sourceHash": "f512c9ae5fce04bf43dde97669a43a36841c2d7b2d0ceb8b99880a46bdee52c7",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/1356210.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/1356210.webp",
+      "landscapeHash": "55ce5b193ea30123773469fc82333488cddf5dd315f1cd5f0720d4a5d9da4d06",
+      "landscapeByteCount": 25814,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/1356210.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1356210.webp",
+      "posterHash": "6872ac62da9c138b7d02eaa50e88c39348549cc4b4a88f684a4ef4c6b1847a7a",
+      "posterByteCount": 62248,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
       "stableKey": "person:1372369",
       "tmdbPersonId": 1372369,
       "canonicalName": "Samara Weaving",
@@ -25710,6 +26502,39 @@
       "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1372369.webp",
       "posterHash": "5a693c3f8a3e5670e663bc1b188a6e1d448e1e2489731181f9bc94510b540991",
       "posterByteCount": 160428,
+      "posterPresetId": "people-poster-cormorant-v1",
+      "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
+      "rendererMetadataVersion": "people-artwork-render-metadata-v1"
+    },
+    {
+      "stableKey": "person:1373737",
+      "tmdbPersonId": 1373737,
+      "canonicalName": "Florence Pugh",
+      "categoryMembership": [
+        "actor"
+      ],
+      "rolloutTierByCategory": {
+        "actor": "review"
+      },
+      "sourceDecision": "registry-default",
+      "resolvedProfilePath": "/xZtmmhOE3pq4lnm1vmn9KkaW7eT.jpg",
+      "sourceHash": "f01103b1365958e91a0b8d3f7c3148f5fcf8655e133fd591066afb077f90ac4f",
+      "sourceDimensions": {
+        "width": 2000,
+        "height": 3000
+      },
+      "fallbackUsed": false,
+      "fallbackReason": null,
+      "landscapePath": "assets/collection_covers/people/landscape/1373737.webp",
+      "landscapeUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/landscape/1373737.webp",
+      "landscapeHash": "4feb2565800a89218e300bb9e5fbf88100d5ba68c725a54694d8f5197c565ef4",
+      "landscapeByteCount": 29594,
+      "landscapePresetId": "people-landscape-cormorant-v1",
+      "landscapePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "posterPath": "assets/collection_covers/people/poster/1373737.webp",
+      "posterUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/poster/1373737.webp",
+      "posterHash": "a71d1791886f2c484c1f57c28b56c3ac8f0dff40f88c25e2cc2aaf13175af611",
+      "posterByteCount": 78642,
       "posterPresetId": "people-poster-cormorant-v1",
       "posterPresetHash": "77ba30578bf7a6a859530621bf706ddf9ac6945efd479672cf8515d4434efb8d",
       "rendererMetadataVersion": "people-artwork-render-metadata-v1"

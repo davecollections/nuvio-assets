@@ -219,9 +219,9 @@ test("default publication validation accepts the tracked published manifest", ()
   assert.equal(result.candidatePresent, true);
   assert.equal(result.status, "published");
   assert.equal(result.published, true);
-  assert.equal(result.recordCount, 792);
-  assert.equal(result.landscapeCount, 792);
-  assert.equal(result.posterCount, 792);
+  assert.equal(result.recordCount, 817);
+  assert.equal(result.landscapeCount, 817);
+  assert.equal(result.posterCount, 817);
   assert.equal(result.manifestPath, PEOPLE_MANIFEST_RELATIVE_PATH);
   const missing = spawnSync(process.execPath, [validationCli, "--manifest", "tools/people-seed/.work/does-not-exist.json"], { cwd: repoRoot, encoding: "utf8", windowsHide: true });
   assert.notEqual(missing.status, 0);
@@ -508,10 +508,10 @@ test("permanent people artwork contains the exact published formats and unchange
   assert.deepEqual(entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort(), ["landscape", "poster"]);
   const manifest = JSON.parse(await fs.readFile(path.join(repoRoot, PEOPLE_MANIFEST_RELATIVE_PATH), "utf8"));
   assert.equal(manifest.status, "published");
-  assert.equal(manifest.recordCount, 792);
+  assert.equal(manifest.recordCount, 817);
   for (const formatId of ["landscape", "poster"]) {
     const files = await fs.readdir(path.join(repoRoot, PEOPLE_ASSET_RELATIVE_ROOT, formatId));
-    assert.equal(files.length, 792);
+    assert.equal(files.length, 817);
     assert.ok(files.every((name) => /^[1-9][0-9]*\.webp$/u.test(name)));
   }
 });
