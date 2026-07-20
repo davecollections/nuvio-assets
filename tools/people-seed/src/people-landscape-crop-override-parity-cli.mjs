@@ -50,6 +50,16 @@ async function proofPathForOverride(override) {
     path.join(evidenceRoot, "renders", "wider", `${override.tmdbPersonId}.webp`),
     path.join(evidenceRoot, "proof-renders", "wider", `${override.tmdbPersonId}.webp`),
   ];
+  try {
+    const expandedReview = JSON.parse(await fs.readFile(path.join(evidenceRoot, "reports", "expanded-crop-review.json"), "utf8"));
+    const evidenceRecord = expandedReview.records?.find((record) => record.stableKey === override.stableKey);
+    if (evidenceRecord?.alternativeA?.path) {
+      const candidateRoot = candidateRootForOverride(override);
+      const recordedProofPath = path.resolve(candidateRoot, ...evidenceRecord.alternativeA.path.split("/"));
+      const relativeProofPath = path.relative(candidateRoot, recordedProofPath);
+      if (relativeProofPath && !relativeProofPath.startsWith("..") && !path.isAbsolute(relativeProofPath)) candidates.push(recordedProofPath);
+    }
+  } catch {}
   for (const candidate of candidates) {
     try {
       await fs.access(candidate);

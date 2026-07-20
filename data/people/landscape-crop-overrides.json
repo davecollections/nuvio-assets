@@ -2,7 +2,7 @@
   "version": "people-landscape-crop-overrides-v1",
   "status": "active",
   "ordering": "tmdb-person-id-ascending",
-  "recordCount": 147,
+  "recordCount": 154,
   "records": [
     {
       "stableKey": "person:4",
@@ -1825,6 +1825,34 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:7399",
+      "tmdbPersonId": 7399,
+      "canonicalName": "Ben Stiller",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/scgpxhI05JpdNXXfmpK6z0rPOWN.jpg",
+      "sourceHash": "71618d75f19cd544cac92c7f8fccd3e95ae2178221ff0326b34dc5df029872c3",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 889,
+        "height": 1010
+      },
+      "cropScale": {
+        "x": 0.668166,
+        "y": 0.668317
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-review-actors-candidate/visual-review/manual-expanded-review",
+      "approvedProofHash": "fa91cec9cb2c60cb1e1103ffcb851530c1f3f921630d8a963fe43f9c996aee29",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:7499",
       "tmdbPersonId": 7499,
       "canonicalName": "Jared Leto",
@@ -2721,6 +2749,34 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:18072",
+      "tmdbPersonId": 18072,
+      "canonicalName": "Michael Herbig",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/93PW1NGTkcYxgCfPfd0m4xa7rHJ.jpg",
+      "sourceHash": "2813d1b23f1be481696826fd5b3a1d01a10cef7735fca3845241ef484721793a",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 400,
+        "height": 455
+      },
+      "cropScale": {
+        "x": 1.485,
+        "y": 1.483516
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-review-actors-candidate/visual-review/manual-expanded-review",
+      "approvedProofHash": "911e87a2588e62028e2a6d875dd2402233ea260fa2e99996c42b32a2b2f8453e",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:18082",
       "tmdbPersonId": 18082,
       "canonicalName": "Timothy Olyphant",
@@ -2970,6 +3026,34 @@
       "reason": "avoid-unintended-face-crop",
       "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
       "approvedProofHash": "364410bf360c5f52b292253d241308873efa76fcc3bb4b5f09697bafea577b7b",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:25541",
+      "tmdbPersonId": 25541,
+      "canonicalName": "Katherine Heigl",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/hjtNdbdy1qn25y5SGl71y8nR0Kg.jpg",
+      "sourceHash": "8e973d350c6aa9199956f4a71c32f6e5a8fdfe4ac3dfd05de697ff1a99e33da6",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 1215,
+        "height": 1381
+      },
+      "cropScale": {
+        "x": 0.488889,
+        "y": 0.488776
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-review-actors-candidate/visual-review/manual-expanded-review",
+      "approvedProofHash": "a75b6964a439acc4a0dc0f2d0cdbe198530078e3088b83d49d773b720aa908bd",
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
@@ -3278,6 +3362,34 @@
       "reason": "avoid-unintended-face-crop",
       "evidencePackage": "tools/people-seed/.work/people-directors-candidate/visual-review",
       "approvedProofHash": "0d985efdf08b2b4d480ea12318df9c6f2451d9bf12cdae85563d054cf1d47751",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:51576",
+      "tmdbPersonId": 51576,
+      "canonicalName": "Chuck Norris",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/m3uLikdhi9qObRvGVHsKX5H93lR.jpg",
+      "sourceHash": "0148070f2e9e704633cc3b522e7754d805e6311785d433095527c90cff518fe7",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 1000,
+        "height": 1136
+      },
+      "cropScale": {
+        "x": 0.594,
+        "y": 0.59419
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-review-actors-candidate/visual-review/manual-expanded-review",
+      "approvedProofHash": "efe465cb7244d335253119e00aa8849094f8b6c0f9dbfefbe827752046d99d9a",
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
@@ -3813,6 +3925,34 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:112561",
+      "tmdbPersonId": 112561,
+      "canonicalName": "Lily Collins",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/w7ZXE2qRmmdPpUt2hRIaFuyoaNd.jpg",
+      "sourceHash": "45ef3b395ca41a10b06602aef256e402be7ccf6592a0ab3ba9323c40596fdb9f",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 1200,
+        "height": 1364
+      },
+      "cropScale": {
+        "x": 0.495,
+        "y": 0.494868
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-review-actors-candidate/visual-review/manual-expanded-review",
+      "approvedProofHash": "d06f26e679d0df4b1d302b84ea31c867af9367bba8cf49e5754f48541df23676",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:117642",
       "tmdbPersonId": 117642,
       "canonicalName": "Jason Momoa",
@@ -4009,6 +4149,34 @@
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {
+      "stableKey": "person:1190668",
+      "tmdbPersonId": 1190668,
+      "canonicalName": "Timothée Chalamet",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/fI6Zwvwo0KuUMfutTyHCTuWEIrx.jpg",
+      "sourceHash": "44ca1d0a86496fe61c65feba1523627d389067b7b716e8f09c37e58571df863f",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 871,
+        "height": 990
+      },
+      "cropScale": {
+        "x": 0.681975,
+        "y": 0.681818
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-review-actors-candidate/visual-review/manual-expanded-review",
+      "approvedProofHash": "95dc95073fd1a7b6b5a99441ff4276913aaafa089918cfdee4733321c6e75164",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
       "stableKey": "person:1205278",
       "tmdbPersonId": 1205278,
       "canonicalName": "James Norton",
@@ -4090,6 +4258,34 @@
       "reason": "avoid-unintended-face-crop",
       "evidencePackage": "tools/people-seed/.work/people-later-actors-candidate/visual-audit",
       "approvedProofHash": "f02ad534e784666b661436b30ed61bb24ee8a90078e4c8affbba585ace6ac84a",
+      "createdFromAuditVersion": "people-landscape-crop-audit-v1"
+    },
+    {
+      "stableKey": "person:1373737",
+      "tmdbPersonId": 1373737,
+      "canonicalName": "Florence Pugh",
+      "format": "landscape",
+      "status": "active",
+      "sourceProfilePath": "/xZtmmhOE3pq4lnm1vmn9KkaW7eT.jpg",
+      "sourceHash": "f01103b1365958e91a0b8d3f7c3148f5fcf8655e133fd591066afb077f90ac4f",
+      "basePresetId": "people-landscape-cormorant-v1",
+      "basePresetHash": "a94f863b9332332617355fd73265571dc9b3ccf055365674757d76ac2c48faad",
+      "cropStrategy": "person-specific-source-bound-landscape-v1",
+      "cropRectangle": {
+        "left": 0,
+        "top": 0,
+        "width": 2000,
+        "height": 2273
+      },
+      "cropScale": {
+        "x": 0.297,
+        "y": 0.296964
+      },
+      "cropOffsetX": 504,
+      "cropOffsetY": 0,
+      "reason": "avoid-unintended-face-crop",
+      "evidencePackage": "tools/people-seed/.work/people-review-actors-candidate/visual-review/manual-expanded-review",
+      "approvedProofHash": "4feb2565800a89218e300bb9e5fbf88100d5ba68c725a54694d8f5197c565ef4",
       "createdFromAuditVersion": "people-landscape-crop-audit-v1"
     },
     {

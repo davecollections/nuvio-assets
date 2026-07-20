@@ -9,11 +9,11 @@
     "version": { "const": "people-landscape-crop-overrides-v1" },
     "status": { "const": "active" },
     "ordering": { "const": "tmdb-person-id-ascending" },
-    "recordCount": { "const": 147 },
+    "recordCount": { "const": 154 },
     "records": {
       "type": "array",
-      "minItems": 147,
-      "maxItems": 147,
+      "minItems": 154,
+      "maxItems": 154,
       "items": { "$ref": "#/$defs/record" }
     }
   },
