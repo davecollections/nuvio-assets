@@ -1,8 +1,8 @@
 # Studio/network batch project status
 
-**Last verified:** 2026-07-19 AEST (UTC+10), after the bounded Christian Studios company supplement and full preservation verification
+**Last verified:** 2026-07-23 AEST (UTC+10), after the bounded seven-identity studio/service maintenance publication and full preservation verification
 
-**Published release:** `studio-network-christian-studios-supplement-2026-07-19` at `2026-07-19T07:35:25.647Z`, on top of `studio-network-v1-2026-07-16`
+**Published release:** `studio-network-service-maintenance-2026-07-23` at `2026-07-23T00:27:20.244Z`, on top of `studio-network-christian-studios-supplement-2026-07-19` and `studio-network-v1-2026-07-16`
 
 **Asset publication commit:** `a5344e311195bb2d06fa9929669c7f56ad121c2a`
 
@@ -38,9 +38,10 @@ The following stages are complete and present locally:
 - owner application of the remaining 275 safe reason-level decisions without artwork regeneration: 154 approve-as-is rows and 121 retain-current-background rows across 233 records;
 - a full review rebuild to zero pending records and zero unresolved reasons while preserving the persistent production audit history;
 - durable exact-output-hash cover approvals for all 2,366 staged covers and a validated 2,366-entry dry publish plan with zero writes and zero issues.
-- transaction-like publication of all 2,366 approved covers, installation of the canonical manifest only after permanent-file validation, generation of final release contact sheets from the published files, and cleanup of only the ignored artifacts authorised by the validated cleanup plan.
+- transaction-like publication of all 2,366 approved covers, installation of the canonical manifest only after permanent-file validation, generation of final release contact sheets from the published files, and cleanup of only the ignored artifacts authorised by the validated cleanup plan;
+- bounded service maintenance for six exact missing logo identities plus the owner-approved Williams Street Inter fallback, with 2,385 unrelated covers preserved byte-for-byte and four compact-logo size comparisons retained as proof-only ignored artifacts.
 
-The current canonical library contains 1,817 company covers and 569 network covers. The production-v1 staged and approval state remains the original fully reviewed 2,366-record base; the separately owner-preauthorised supplement added exactly 20 explicit company identities without changing that staging state, any network, or any preexisting manifest record value.
+The current canonical library contains 1,820 company covers and 572 network covers. The production-v1 staged and approval state remains the original fully reviewed 2,366-record base; later bounded publications added exactly 23 explicit companies and 3 explicit networks without changing that staging state. The latest maintenance changed only the preexisting `company:6760` record and its WebP.
 
 ## Latest verified source counts
 
@@ -329,18 +330,21 @@ With `npm --prefix tools/studio-network-batch`, the command runs in `tools/studi
 
 ## Publication state
 
-Current canonical state after `studio-network-christian-studios-supplement-2026-07-19`:
+Current canonical state after `studio-network-service-maintenance-2026-07-23`:
 
-- `assets/collection_covers/companies/{tmdb_id}.webp`: 1,817 files;
-- `assets/collection_covers/networks/{tmdb_id}.webp`: 569 files;
-- `assets/collection_covers/manifest.json`: 2,386 entries, 5,483,386 bytes, SHA-256 `45e9baaf1383362179be8775d55daa2a496c45d47522c9746a8a1eb6de09e9f2`;
-- published artwork bytes: 26,826,858;
-- published asset fingerprint: `16bdc61d9c0b260080d4913cc14cf45b68cbc61d8cfb121d251dc716c1f0d8b0`;
+- `assets/collection_covers/companies/{tmdb_id}.webp`: 1,820 files;
+- `assets/collection_covers/networks/{tmdb_id}.webp`: 572 files;
+- `assets/collection_covers/manifest.json`: 2,392 entries, 5,497,729 bytes, SHA-256 `9c7394c0031f74caab7182ba1ab7c1612474f513b0e3a699a6f47b789017fd02`;
+- published artwork bytes: 26,909,836;
+- published asset fingerprint: `f5be421c34b5b0ce8d593d7efb01923bfcd7d3973b28c9ac2a69bc2b6c650935`;
+- runtime lookup: 1,820 companies, 572 networks, 817 people, 3,209 total entities and 4,026 assets; SHA-256 `28f23242be8d18f5f4275a0786e616a997e35d85ec03184412ed8e8bd0a43da4`; fingerprint `9ea6919bce9f319fefc0fb275e65b89d269e85178baa6ec77be5b928cc73a841`;
 - original release contact sheets: 29 company pages, 9 network pages, and 37 combined pages;
 - supplement review sheet: `.work/christian-studios-supplement/contact-sheets/christian-studios-supplement.png`;
+- service maintenance review sheet: `.work/service-studio-maintenance/contact-sheets/part-a-seven-candidates.png`;
+- compact-logo proof sheets: `.work/service-studio-maintenance/proofs/compact-logo-size-comparison.png` and `.work/service-studio-maintenance/proofs/compact-logo-size-thumbnails.png`;
 - ignored-work cleanup: 28 obsolete indexed pages plus 708 other approved reproducible files removed, recovering 90,607,350 bytes;
 - retained historical proof sheets: `eligibility-50-contrast-approved.png`, `mixed-contrast-approved.png`, and `post-expansion-new.png`.
 
-Original release evidence and rollback records are retained under `.work/publication-release/studio-network-v1-2026-07-16/`. Supplement scope, acquisition, candidate, review, manifest-preview, publication, and preservation evidence is retained under `.work/christian-studios-supplement/`. Production staging, original exact approvals, persistent state, source treatments, background decisions, manual-source provenance, every network cover, every preexisting company cover and manifest record, all people assets, the paused director candidate workspace, and the sibling `tmdb-id-lookup` checkout remained unchanged.
+Original release evidence and rollback records are retained under `.work/publication-release/studio-network-v1-2026-07-16/`. Supplement evidence remains under `.work/christian-studios-supplement/`; the latest exact-scope audit, source cache, candidate, proof, manifest-preview, publication, runtime, and preservation evidence remains under `.work/service-studio-maintenance/`. Production staging, original exact approvals, persistent state, source treatments, background decisions, manual-source provenance, all people assets and manifests, the proof-only public company covers, and the sibling `tmdb-id-lookup` checkout remained unchanged.
 
 Automatic eligibility remains independently configured at 50 titles for companies and 50 for networks; `core` remains 100+. A record later falling below the threshold or disappearing from current source data is reported as legacy state and never authorises automatic staged or published asset deletion. Permanent legacy/manual artwork remains protected unless a later task explicitly authorises a narrowly reviewed action.

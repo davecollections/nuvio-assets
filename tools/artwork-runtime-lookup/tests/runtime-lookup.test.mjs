@@ -152,16 +152,16 @@ after(async () => {
 test("generates the current release only from published manifests and verifies every asset", () => {
   const { lookup, assetCount } = currentBuild;
   assert.deepEqual(lookup.counts, {
-    companies: 1817,
-    networks: 569,
+    companies: 1820,
+    networks: 572,
     people: 817,
-    totalEntities: 3203,
-    landscapeAssets: 3203,
+    totalEntities: 3209,
+    landscapeAssets: 3209,
     posterAssets: 817,
-    totalAssets: 4020,
+    totalAssets: 4026,
   });
-  assert.equal(assetCount, 4020);
-  assert.equal(lookup.generatedFrom.studioNetworkManifest.sha256, "45e9baaf1383362179be8775d55daa2a496c45d47522c9746a8a1eb6de09e9f2");
+  assert.equal(assetCount, 4026);
+  assert.equal(lookup.generatedFrom.studioNetworkManifest.sha256, "9c7394c0031f74caab7182ba1ab7c1612474f513b0e3a699a6f47b789017fd02");
   assert.equal(lookup.generatedFrom.peopleManifest.sha256, "74f80ecf75619c39744939ac9e9d45eafb555702774c6e32cc72fcc05332b513");
 });
 
@@ -174,8 +174,10 @@ test("emits exact compact company and network shapes with published fallback sta
   assert.deepEqual(Object.keys(company.landscape), ["path", "sha256"]);
   assert.equal(Object.hasOwn(company, "poster"), false);
   assert.equal(Object.hasOwn(network, "poster"), false);
-  assert.equal(Object.values(companies).filter((entry) => entry.fallbackUsed).length, 485);
+  assert.equal(Object.values(companies).filter((entry) => entry.fallbackUsed).length, 486);
   assert.equal(Object.values(networks).filter((entry) => entry.fallbackUsed).length, 1);
+  assert.equal(companies["6760"].fallbackUsed, true);
+  assert.equal(companies["6760"].landscape.sha256, "6ea668541581a67fbed7932bb4683205b776494b088eecbe7fa64077d3e22ac2");
 });
 
 test("emits actor-only, director-only, and shared-category people in canonical order", () => {
