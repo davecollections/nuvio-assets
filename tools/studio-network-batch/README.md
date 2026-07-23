@@ -247,15 +247,15 @@ The eligibility-50 owner decisions were applied on 2026-07-14. Exactly five ligh
 
 ## Published library and maintenance
 
-The current canonical state includes the original `studio-network-v1-2026-07-16` release, the exact 20-company `studio-network-christian-studios-supplement-2026-07-19` delta, and the bounded seven-identity `studio-network-service-maintenance-2026-07-23` delta:
+The current canonical state includes the original `studio-network-v1-2026-07-16` release, the exact 20-company `studio-network-christian-studios-supplement-2026-07-19` delta, the bounded seven-identity `studio-network-service-maintenance-2026-07-23` delta, and the four-company `studio-network-compact-logo-fit-2026-07-23` replacement delta:
 
 - 1,820 company covers under `assets/collection_covers/companies/{tmdb_id}.webp`;
 - 572 network covers under `assets/collection_covers/networks/{tmdb_id}.webp`;
 - 2,392 entries in `assets/collection_covers/manifest.json`;
-- manifest SHA-256 `9c7394c0031f74caab7182ba1ab7c1612474f513b0e3a699a6f47b789017fd02` and byte count 5,497,729;
-- published asset fingerprint `f5be421c34b5b0ce8d593d7efb01923bfcd7d3973b28c9ac2a69bc2b6c650935` over 26,909,836 WebP bytes.
+- manifest SHA-256 `f712e5ed508d1c5c15baa85fcece8f06e7e96b96cd4e018e9a9bbd3703ecbf4d` and byte count 5,497,782;
+- published asset fingerprint `174dbfb85277f2b624927986658318cbc44a74d1a4dc4d226b8b137a2f3674c8` over 26,936,032 WebP bytes.
 
-The original publication copied exact approved staged bytes into a temporary release tree, fully validated that tree, installed and fully validated every permanent cover, and only then atomically installed the canonical manifest. Its release evidence remains under `.work/publication-release/studio-network-v1-2026-07-16/`. The supplement used the same renderer and production preset in an isolated ignored workspace, preserved all 2,366 original records value-for-value, and added only the 20 reviewed company identities. The service maintenance delta added six exact-ID logo covers, replaced only `company:6760` with its owner-approved deterministic Inter fallback, and left the four compact-logo size alternatives as ignored proofs only.
+The original publication copied exact approved staged bytes into a temporary release tree, fully validated that tree, installed and fully validated every permanent cover, and only then atomically installed the canonical manifest. Its release evidence remains under `.work/publication-release/studio-network-v1-2026-07-16/`. The supplement used the same renderer and production preset in an isolated ignored workspace, preserved all 2,366 original records value-for-value, and added only the 20 reviewed company identities. The service maintenance delta added six exact-ID logo covers and replaced only `company:6760` with its owner-approved deterministic Inter fallback. The compact-logo fit delta regenerated only `company:4`, `company:21`, `company:174`, and `company:2785` at exact byte parity with their approved Alternative B proofs; its source-bound fit configuration does not alter the renderer or production preset.
 
 Routine maintenance is incremental:
 

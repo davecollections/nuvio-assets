@@ -161,7 +161,7 @@ test("generates the current release only from published manifests and verifies e
     totalAssets: 4026,
   });
   assert.equal(assetCount, 4026);
-  assert.equal(lookup.generatedFrom.studioNetworkManifest.sha256, "9c7394c0031f74caab7182ba1ab7c1612474f513b0e3a699a6f47b789017fd02");
+  assert.equal(lookup.generatedFrom.studioNetworkManifest.sha256, "f712e5ed508d1c5c15baa85fcece8f06e7e96b96cd4e018e9a9bbd3703ecbf4d");
   assert.equal(lookup.generatedFrom.peopleManifest.sha256, "74f80ecf75619c39744939ac9e9d45eafb555702774c6e32cc72fcc05332b513");
 });
 

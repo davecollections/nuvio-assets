@@ -1,0 +1,111 @@
+{
+  "version": "compact-logo-fit-v1",
+  "scope": [
+    "company:4",
+    "company:21",
+    "company:174",
+    "company:2785"
+  ],
+  "decisions": [
+    {
+      "stableKey": "company:4",
+      "entityType": "company",
+      "tmdbId": 4,
+      "sourceLogoPath": "/jay6WcMgagAklUt7i9Euwj1pzTF.png",
+      "sourceLogoHash": "d4130f1be43507e97418e1901cc041a773f7c4b369ce4327faeb0698fe7ddcaf",
+      "sourceVisibleBounds": {
+        "left": 0,
+        "top": 0,
+        "width": 1280,
+        "height": 1001
+      },
+      "visibleDimensions": {
+        "width": 518,
+        "height": 405
+      },
+      "placement": {
+        "left": 341,
+        "top": 135
+      },
+      "scalePercent": 125,
+      "background": "light",
+      "outputHash": "0796e856278cf430eccc674ea8dd9ed9231846228d6e86984553a8f1930dbea9",
+      "outputBytes": 19924
+    },
+    {
+      "stableKey": "company:21",
+      "entityType": "company",
+      "tmdbId": 21,
+      "sourceLogoPath": "/usUnaYV6hQnlVAXP6r4HwrlLFPG.png",
+      "sourceLogoHash": "111dee05420a608f8d5cc749c657136b35a10e60def008d74c76b3d2d16a56b6",
+      "sourceVisibleBounds": {
+        "left": 1,
+        "top": 1,
+        "width": 1900,
+        "height": 1223
+      },
+      "visibleDimensions": {
+        "width": 629,
+        "height": 405
+      },
+      "placement": {
+        "left": 285,
+        "top": 135
+      },
+      "scalePercent": 125,
+      "background": "dark",
+      "outputHash": "4779f48ec6032c950cc3918b602fc72bc78b79d3f7d8d1bc93bcfcc3933b9797",
+      "outputBytes": 51636
+    },
+    {
+      "stableKey": "company:174",
+      "entityType": "company",
+      "tmdbId": 174,
+      "sourceLogoPath": "/zhD3hhtKB5qyv7ZeL4uLpNxgMVU.png",
+      "sourceLogoHash": "dbc97908d0e8816fecc4672b1e2d023e8b12aa7787780eb58c8d4b81efd2427a",
+      "sourceVisibleBounds": {
+        "left": 5,
+        "top": 0,
+        "width": 1990,
+        "height": 1837
+      },
+      "visibleDimensions": {
+        "width": 438,
+        "height": 405
+      },
+      "placement": {
+        "left": 381,
+        "top": 135
+      },
+      "scalePercent": 125,
+      "background": "dark",
+      "outputHash": "02106cc7e309e93d8fc80ec8bfab1f4c8151c81efc73c4eb3d1167bdad4fceca",
+      "outputBytes": 26350
+    },
+    {
+      "stableKey": "company:2785",
+      "entityType": "company",
+      "tmdbId": 2785,
+      "sourceLogoPath": "/l5zW8jjmQOCx2dFmvnmbYmqoBmL.png",
+      "sourceLogoHash": "b5df69bd4a84ebbf523e0a486e610358c45954195b4aba5e055b308ce8900616",
+      "sourceVisibleBounds": {
+        "left": 0,
+        "top": 0,
+        "width": 2000,
+        "height": 2798
+      },
+      "visibleDimensions": {
+        "width": 289,
+        "height": 405
+      },
+      "placement": {
+        "left": 455,
+        "top": 135
+      },
+      "scalePercent": 125,
+      "background": "dark",
+      "outputHash": "17b5faf59b535a05f0e4904022371c6188c916a4bdfdc544daeb9083b87a8bfd",
+      "outputBytes": 18096
+    }
+  ]
+}
