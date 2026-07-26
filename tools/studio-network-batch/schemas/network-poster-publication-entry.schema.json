@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/davecollections/nuvio-assets/tools/studio-network-batch/schemas/network-poster-publication-entry.schema.json",
+  "title": "Published network poster metadata",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["stableKey", "entityType", "tmdbId", "canonicalName", "orientation", "publishPath", "outputHash", "byteCount", "width", "height", "format", "background", "renderMode", "sourceLogoPath", "sourceHash", "normalizedPixelHash", "decisionBinding", "approvalBasis", "approvalHash", "rendererVersion", "presetVersion", "releaseId", "publishedAt", "status"],
+  "properties": {
+    "stableKey": { "type": "string", "pattern": "^network:[1-9][0-9]*$" },
+    "entityType": { "const": "network" },
+    "tmdbId": { "type": "integer", "minimum": 1 },
+    "canonicalName": { "type": "string", "minLength": 1 },
+    "orientation": { "const": "poster" },
+    "publishPath": { "type": "string", "pattern": "^assets/collection_covers/networks/poster/[1-9][0-9]*\\.webp$" },
+    "outputHash": { "$ref": "#/$defs/sha256" },
+    "byteCount": { "type": "integer", "minimum": 1 },
+    "width": { "const": 1000 },
+    "height": { "const": 1500 },
+    "format": { "const": "webp" },
+    "background": { "enum": ["dark", "light"] },
+    "renderMode": { "enum": ["generated-logo", "fallback-text"] },
+    "sourceLogoPath": { "type": ["string", "null"] },
+    "sourceHash": { "$ref": "#/$defs/nullableSha256" },
+    "normalizedPixelHash": { "$ref": "#/$defs/nullableSha256" },
+    "decisionBinding": { "type": "object" },
+    "approvalBasis": { "type": "string", "minLength": 1 },
+    "approvalHash": { "$ref": "#/$defs/sha256" },
+    "rendererVersion": { "type": "string", "minLength": 1 },
+    "presetVersion": { "const": "network-poster-variant-b-proof-v1" },
+    "releaseId": { "type": "string", "pattern": "^studio-network-posters-v2-[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+    "publishedAt": { "type": "string", "format": "date-time" },
+    "status": { "const": "published" }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "nullableSha256": {
+      "anyOf": [{ "$ref": "#/$defs/sha256" }, { "type": "null" }]
+    }
+  }
+}

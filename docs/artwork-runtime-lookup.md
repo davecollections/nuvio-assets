@@ -18,7 +18,9 @@ Every artwork path in the lookup is repository-relative. Resolve an asset with `
 
 Look up the exact TMDB numeric ID, represented as a string object key, in one of `companies`, `networks`, or `people`. Company and network IDs remain separate identity namespaces. The matching entry repeats its numeric `id` and includes the canonical published `name`.
 
-Company and network entries are landscape-only 1200×675 WebPs. People entries contain a 1200×675 landscape and a 1000×1500 poster. One people entry may contain `actor`, `director`, or both categories; overlap does not create a duplicate identity or duplicate artwork.
+The currently published lookup is schema v1: company and network entries are landscape-only 1200×675 WebPs, while people entries contain a 1200×675 landscape and a 1000×1500 poster. One people entry may contain `actor`, `director`, or both categories; overlap does not create a duplicate identity or duplicate artwork.
+
+The tracked generator also supports the approved, not-yet-published schema v2 contract. In v2 every network has a required 1000×1500 `poster`, companies remain landscape-only, and people are unchanged. The v1 schema remains frozen at `schemas/artwork-runtime-lookup.schema.json`; v2 uses `schemas/artwork-runtime-lookup-v2.schema.json`. Generation selects the schema from the canonical studio/network manifest version.
 
 The runtime file is generated only from the two complete publication manifests:
 
@@ -70,3 +72,5 @@ npm --prefix tools/artwork-runtime-lookup test
 ```
 
 Build and validation verify both source manifests, every referenced byte count and SHA-256, WebP decoding and dimensions, schema and semantic rules, deterministic ordering, source parity, unique paths, and the embedded fingerprint. The output is minified JSON with one trailing newline and is not rewritten when its bytes are unchanged.
+
+The live manifest and runtime remain v1 until a separately authorised atomic poster release. See [Network poster runtime v2 migration](network-poster-runtime-v2-migration.md).

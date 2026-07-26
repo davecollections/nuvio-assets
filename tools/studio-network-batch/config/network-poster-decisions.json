@@ -1,0 +1,155 @@
+{
+  "version": "network-poster-decisions-v1",
+  "orientation": "poster",
+  "presetVersion": "network-poster-variant-b-proof-v1",
+  "backgroundDecisions": [
+    {
+      "stableKey": "network:48",
+      "entityType": "network",
+      "tmdbId": 48,
+      "name": "TVB Jade",
+      "sourceLogoPath": "/v78f4q6DYdRB8dLj4rQBpqQG8pW.png",
+      "sourceLogoSha256": "4e0da6529b88bfc21519cd84072e90b5c28ced529aff3b4282feafb7d7121228",
+      "background": "light",
+      "approvedOutputSha256": "b7ba2549997efbca1ec801e8d087627ccfabb3e00046eac4a01c5cba2623a84e",
+      "approvedOutputBytes": 9866,
+      "approvalHash": "736a426a730aa95399943c051ef791c58e1751434521023e5ecd54a237263c3a"
+    },
+    {
+      "stableKey": "network:197",
+      "entityType": "network",
+      "tmdbId": 197,
+      "name": "Family Channel",
+      "sourceLogoPath": "/uarlhdBymUYsmk0s4EoAaGtxuB6.png",
+      "sourceLogoSha256": "a24a9880e16a14b2beff10533034f18e9a5060ba121c397c6edd75027c109202",
+      "background": "light",
+      "approvedOutputSha256": "ca3ad23948b34501c37ee02a0565b89286029b0da36f0f57a80584d0ec129381",
+      "approvedOutputBytes": 11172,
+      "approvalHash": "5c6aec1cdb9e20a318db7a88bfc817862cfe980fc22aab394948eb1552b94c2b"
+    },
+    {
+      "stableKey": "network:274",
+      "entityType": "network",
+      "tmdbId": 274,
+      "name": "RTL 4",
+      "sourceLogoPath": "/jJnRnPYp49BrUC44hrtwqGNkaQw.png",
+      "sourceLogoSha256": "7920a9087d526d974a4e41c09e73ada02b89cf0cd20bee6cadccfdbd3754f3fa",
+      "background": "light",
+      "approvedOutputSha256": "b2690c8c56f8a85a617492d31883b64fa7f5a9016fa9c9fc800662de22ea57b7",
+      "approvedOutputBytes": 5890,
+      "approvalHash": "9aed2446e0e0159d1cf8e57efcff72494bfe007b5f9e3c592d24bdd179530314"
+    },
+    {
+      "stableKey": "network:298",
+      "entityType": "network",
+      "tmdbId": 298,
+      "name": "More4",
+      "sourceLogoPath": "/sO1KfGZzrqIiWohoHgzbvvHEAkr.png",
+      "sourceLogoSha256": "c1fab9a47691e86302afaafc59e287ec9e9a7ca3858f983dc4db0c804348fbeb",
+      "background": "light",
+      "approvedOutputSha256": "ad00822eb85e7269f8f2317806d627795d18119317605f0e92a3bba299e72945",
+      "approvedOutputBytes": 10552,
+      "approvalHash": "2b91712a393257471ff9d522639089f4f3fb956573625fdfa59e4efbdb0003b2"
+    },
+    {
+      "stableKey": "network:553",
+      "entityType": "network",
+      "tmdbId": 553,
+      "name": "Sky Arts",
+      "sourceLogoPath": "/jNJA48OhbJjDJtlBhmegJsMcAkH.png",
+      "sourceLogoSha256": "c3329914bd2b79e297f28d6538ac79ed2985d3fe98a77bb221ac5d62fa417720",
+      "background": "light",
+      "approvedOutputSha256": "05c3715e7d7e90636315e529e2bfb228909e8074e114e20e5b5aa0eb651344b9",
+      "approvedOutputBytes": 33630,
+      "approvalHash": "0953f362507033d4906b21b1823110e369601cad5b9ed6d94a83b1c086810f87"
+    },
+    {
+      "stableKey": "network:1028",
+      "entityType": "network",
+      "tmdbId": 1028,
+      "name": "VRT 1",
+      "sourceLogoPath": "/nlcRu8gGckTe83evTTtwbM3SCYz.png",
+      "sourceLogoSha256": "51c6a0a16c65153e125c473a7e72182a5c4b7a2070395462562c3a11272e4014",
+      "background": "light",
+      "approvedOutputSha256": "3b01bdabb7dad5799feee00d85035d11d83bdaea68457a5b979ea715fa0ccc24",
+      "approvedOutputBytes": 11022,
+      "approvalHash": "f9da46fb97b8b93c093804604f71bc59f5423279f858e3b2b64b284c90875f70"
+    },
+    {
+      "stableKey": "network:1073",
+      "entityType": "network",
+      "tmdbId": 1073,
+      "name": "VRT CANVAS",
+      "sourceLogoPath": "/vXJHA7B2Cqe5D8GcM3MCujT8cLj.png",
+      "sourceLogoSha256": "aa237b5084cf1e2c151ee8381b3f3f72901b0e59faaa4ebdf72d291355b7e504",
+      "background": "dark",
+      "approvedOutputSha256": "1e7974553ba3e3fa9f8d73d9f3c6e0c12c0dff8649a7ffddf5b2e0ad243c2526",
+      "approvedOutputBytes": 16768,
+      "approvalHash": "5ceb9a10c5182022787fb706d35d87e5661306eb50340ef7943d3485e21cf38b"
+    },
+    {
+      "stableKey": "network:1977",
+      "entityType": "network",
+      "tmdbId": 1977,
+      "name": "VRT MAX",
+      "sourceLogoPath": "/qCOhHgNVRg6Krn3RV6wxARs9NNC.png",
+      "sourceLogoSha256": "b743ddcd7914b5765cd3e42485f2be8808e659ef6a30423a8f07203a7b0a8b8c",
+      "background": "light",
+      "approvedOutputSha256": "2059a6f5f283c693df5016e21db5fad6a35b90a414edf9c3533e2bbdb547f4a6",
+      "approvedOutputBytes": 12372,
+      "approvalHash": "e90793655e8068c4d18ff6c668d624e7a5c78de53258f297f29c46cb5356f26f"
+    },
+    {
+      "stableKey": "network:5428",
+      "entityType": "network",
+      "tmdbId": 5428,
+      "name": "RTL+",
+      "sourceLogoPath": "/humZHNqA4DZFVXnJ0zQf4CfkAeF.png",
+      "sourceLogoSha256": "e13575caa10e1a9d949787965fc38027c30f59469393b018cf02812787cf70b9",
+      "background": "light",
+      "approvedOutputSha256": "4f2ab08e742f54dc5c1784ca3e9a1e68cd6d5c2e96d6ad2d1b9488ad876adee7",
+      "approvedOutputBytes": 5538,
+      "approvalHash": "aeaf506d1bf2dd36f243e769dae6a4da737d91e4ef7aa830bcf7256abff3c78b"
+    },
+    {
+      "stableKey": "network:7774",
+      "entityType": "network",
+      "tmdbId": 7774,
+      "name": "Amazon MX Player",
+      "sourceLogoPath": "/t57vyAsBAMQ05MEcrm7qdTfUsek.png",
+      "sourceLogoSha256": "1669a175d9494db7fc99c91944362a88a4d9b5344fd241c1c815655df5c73476",
+      "background": "light",
+      "approvedOutputSha256": "71ab168d82d5fd7974dc3ad056ca4295cd8db1730b1cd837f0dc957c45fc0cfb",
+      "approvedOutputBytes": 10556,
+      "approvalHash": "c9ed14be49c51089fa7725895a63174ae23ea570ff59ddca636f5ea7663ef137"
+    },
+    {
+      "stableKey": "network:8020",
+      "entityType": "network",
+      "tmdbId": 8020,
+      "name": "Hong Guo Short Drama",
+      "sourceLogoPath": "/yP91Iu37daPsgzAREN3Og1yEiyt.png",
+      "sourceLogoSha256": "502e5c81a460008aa7b3cec1521d236fd2e54a73ff41aa055ef69b579374ec36",
+      "background": "light",
+      "approvedOutputSha256": "0070fa9f5063d72cd2f24c5571d400afda718cf226777542834a50471a68d57e",
+      "approvedOutputBytes": 13316,
+      "approvalHash": "b24a2de5e21e704abd01c9a38227fa8a6661d9e91a107b8b82e8f97a28513447"
+    }
+  ],
+  "fallbackApprovals": [
+    {
+      "stableKey": "network:184",
+      "entityType": "network",
+      "tmdbId": 184,
+      "name": "Syndication",
+      "fallbackName": "Syndication",
+      "background": "dark",
+      "fontFamily": "Inter",
+      "fontSize": 96,
+      "lineHeight": 113,
+      "approvedOutputSha256": "a57172920fc05f8a9273abe46c8284143a005b93a28adbc82148aabcbcf3b898",
+      "approvedOutputBytes": 7866,
+      "approvalHash": "cbbaf52dc47d297b19d641e94d43177f9c2a766b4365cca59dde60aa894043d2"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/davecollections/nuvio-assets/tools/studio-network-batch/schemas/network-poster-decisions.schema.json",
+  "title": "Network poster decisions",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "orientation", "presetVersion", "backgroundDecisions", "fallbackApprovals"],
+  "properties": {
+    "version": { "const": "network-poster-decisions-v1" },
+    "orientation": { "const": "poster" },
+    "presetVersion": { "const": "network-poster-variant-b-proof-v1" },
+    "backgroundDecisions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/backgroundDecision" }
+    },
+    "fallbackApprovals": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/fallbackApproval" }
+    }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "backgroundDecision": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stableKey", "entityType", "tmdbId", "name", "sourceLogoPath", "sourceLogoSha256", "background", "approvedOutputSha256", "approvedOutputBytes", "approvalHash"],
+      "properties": {
+        "stableKey": { "type": "string", "pattern": "^network:[1-9][0-9]*$" },
+        "entityType": { "const": "network" },
+        "tmdbId": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "sourceLogoPath": { "type": "string", "pattern": "^/[^/]+\\.(png|jpg|jpeg|webp|svg)$" },
+        "sourceLogoSha256": { "$ref": "#/$defs/sha256" },
+        "background": { "enum": ["dark", "light"] },
+        "approvedOutputSha256": { "$ref": "#/$defs/sha256" },
+        "approvedOutputBytes": { "type": "integer", "minimum": 1 },
+        "approvalHash": { "$ref": "#/$defs/sha256" }
+      }
+    },
+    "fallbackApproval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stableKey", "entityType", "tmdbId", "name", "fallbackName", "background", "fontFamily", "fontSize", "lineHeight", "approvedOutputSha256", "approvedOutputBytes", "approvalHash"],
+      "properties": {
+        "stableKey": { "type": "string", "pattern": "^network:[1-9][0-9]*$" },
+        "entityType": { "const": "network" },
+        "tmdbId": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "fallbackName": { "type": "string", "minLength": 1 },
+        "background": { "enum": ["dark", "light"] },
+        "fontFamily": { "const": "Inter" },
+        "fontSize": { "type": "integer", "minimum": 1 },
+        "lineHeight": { "type": "integer", "minimum": 1 },
+        "approvedOutputSha256": { "$ref": "#/$defs/sha256" },
+        "approvedOutputBytes": { "type": "integer", "minimum": 1 },
+        "approvalHash": { "$ref": "#/$defs/sha256" }
+      }
+    }
+  }
+}

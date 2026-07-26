@@ -5,6 +5,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { validateAgainstSchema } from "./schema-validator.mjs";
+import {
+  CANONICAL_MANIFEST_V1,
+  CANONICAL_MANIFEST_V2,
+  validateCanonicalManifest,
+} from "../../studio-network-batch/src/canonical-manifest.mjs";
 
 const requireFromStudioTool = createRequire(new URL("../../studio-network-batch/package.json", import.meta.url));
 const sharp = requireFromStudioTool("sharp");
@@ -12,6 +17,7 @@ const sharp = requireFromStudioTool("sharp");
 export const REPO_ROOT = path.resolve(fileURLToPath(new URL("../../../", import.meta.url)));
 export const RUNTIME_LOOKUP_PATH = "assets/collection_covers/runtime-lookup.json";
 export const RUNTIME_SCHEMA_PATH = "schemas/artwork-runtime-lookup.schema.json";
+export const RUNTIME_SCHEMA_V2_PATH = "schemas/artwork-runtime-lookup-v2.schema.json";
 export const STUDIO_MANIFEST_PATH = "assets/collection_covers/manifest.json";
 export const PEOPLE_MANIFEST_PATH = "assets/collection_covers/people/manifest.json";
 export const REPRESENTATIVE_REPORT_PATH = "tools/artwork-runtime-lookup/.work/representative-records.json";
@@ -82,7 +88,8 @@ function compareCategories(left, right) {
 
 function validateStudioManifest(manifest) {
   assert(manifest && typeof manifest === "object", "Studio/network manifest must be an object");
-  assert(manifest.version === "studio-network-canonical-manifest-v1", "Unsupported studio/network manifest version");
+  assert([CANONICAL_MANIFEST_V1, CANONICAL_MANIFEST_V2].includes(manifest.version), "Unsupported studio/network manifest version");
+  validateCanonicalManifest(manifest);
   assert(manifest.status === "published", "Studio/network manifest must be published");
   assertHash(manifest.publishedAssetFingerprint, "Studio/network manifest fingerprint");
   assertNonNegativeInteger(manifest.entryCount, "Studio/network entryCount");
@@ -138,6 +145,11 @@ function validateStudioManifest(manifest) {
   assert(companies === manifest.companyCount, "Studio/network company count does not match publication metadata");
   assert(networks === manifest.networkCount, "Studio/network network count does not match publication metadata");
   assert(companies + networks === manifest.entryCount, "Studio/network total count does not match publication metadata");
+
+  if (manifest.version === CANONICAL_MANIFEST_V2) {
+    assert(manifest.posterCount === networks, "Studio/network v2 must publish exactly one poster per network");
+    assert(Array.isArray(manifest.posterPublicationMetadata), "Studio/network v2 poster metadata must be an array");
+  }
 }
 
 function validatePeopleManifest(manifest) {
@@ -200,6 +212,16 @@ function toAssetRecords(studioManifest, peopleManifest) {
       width: 1200,
       height: 675,
     })),
+    ...(studioManifest.version === CANONICAL_MANIFEST_V2
+      ? studioManifest.posterPublicationMetadata.map((record) => ({
+          label: `${record.stableKey}:poster`,
+          relativePath: record.publishPath,
+          expectedHash: record.outputHash,
+          expectedBytes: record.byteCount,
+          width: 1000,
+          height: 1500,
+        }))
+      : []),
     ...peopleManifest.records.flatMap((record) => [
       {
         label: `${record.stableKey}:landscape`,
@@ -266,8 +288,8 @@ async function verifyPublishedAssets(assetRecords, repoRoot, concurrency) {
   });
 }
 
-function toStudioEntry(record) {
-  return {
+function toStudioEntry(record, poster = null) {
+  const entry = {
     id: record.tmdbId,
     name: record.canonicalName,
     status: "published",
@@ -278,6 +300,21 @@ function toStudioEntry(record) {
     fallbackUsed: record.renderMode === "missing-logo",
     reviewRequired: false,
   };
+  if (poster) {
+    return {
+      id: entry.id,
+      name: entry.name,
+      status: entry.status,
+      landscape: entry.landscape,
+      poster: {
+        path: poster.publishPath,
+        sha256: poster.outputHash,
+      },
+      fallbackUsed: entry.fallbackUsed || poster.renderMode === "fallback-text",
+      reviewRequired: entry.reviewRequired,
+    };
+  }
+  return entry;
 }
 
 function toPeopleEntry(record) {
@@ -312,20 +349,26 @@ function numericMap(records, idKey, mapper) {
 function createLookup(studioManifest, peopleManifest, sourceHashes) {
   const companyRecords = studioManifest.publicationMetadata.filter((record) => record.entityType === "company");
   const networkRecords = studioManifest.publicationMetadata.filter((record) => record.entityType === "network");
+  const postersById = new Map(
+    (studioManifest.posterPublicationMetadata ?? []).map((record) => [record.tmdbId, record]),
+  );
   const companies = numericMap(companyRecords, "tmdbId", toStudioEntry);
-  const networks = numericMap(networkRecords, "tmdbId", toStudioEntry);
+  const networks = numericMap(networkRecords, "tmdbId", (record) =>
+    toStudioEntry(record, postersById.get(record.tmdbId)));
   const people = numericMap(peopleManifest.records, "tmdbPersonId", toPeopleEntry);
+  const schemaVersion = studioManifest.version === CANONICAL_MANIFEST_V2 ? 2 : 1;
   const counts = {
     companies: companyRecords.length,
     networks: networkRecords.length,
     people: peopleManifest.records.length,
     totalEntities: companyRecords.length + networkRecords.length + peopleManifest.records.length,
     landscapeAssets: companyRecords.length + networkRecords.length + peopleManifest.records.length,
-    posterAssets: peopleManifest.records.length,
-    totalAssets: companyRecords.length + networkRecords.length + (peopleManifest.records.length * 2),
+    posterAssets: peopleManifest.records.length + (schemaVersion === 2 ? networkRecords.length : 0),
+    totalAssets: companyRecords.length + networkRecords.length + (peopleManifest.records.length * 2) +
+      (schemaVersion === 2 ? networkRecords.length : 0),
   };
   const payload = {
-    schemaVersion: 1,
+    schemaVersion,
     status: "published",
     generatedFrom: {
       studioNetworkManifest: {
@@ -347,7 +390,7 @@ function createLookup(studioManifest, peopleManifest, sourceHashes) {
       },
       network: {
         landscape: { width: 1200, height: 675 },
-        poster: null,
+        poster: schemaVersion === 2 ? { width: 1000, height: 1500 } : null,
       },
       person: {
         landscape: { width: 1200, height: 675 },
@@ -378,7 +421,7 @@ function collectRuntimeErrors(lookup) {
   const counts = { companies: 0, networks: 0, people: 0, landscapeAssets: 0, posterAssets: 0 };
   const groups = [
     ["companies", lookup.companies ?? {}, false],
-    ["networks", lookup.networks ?? {}, false],
+    ["networks", lookup.networks ?? {}, lookup.schemaVersion === 2],
     ["people", lookup.people ?? {}, true],
   ];
   for (const [groupName, entries, hasPoster] of groups) {
@@ -402,12 +445,18 @@ function collectRuntimeErrors(lookup) {
         counts.landscapeAssets += 1;
       }
       if (hasPoster && typeof entry?.poster?.path === "string") {
-        const expectedPoster = `assets/collection_covers/people/poster/${id}.webp`;
+        const expectedPoster = groupName === "networks"
+          ? `assets/collection_covers/networks/poster/${id}.webp`
+          : `assets/collection_covers/people/poster/${id}.webp`;
         if (entry.poster.path !== expectedPoster) errors.push(`${groupName}.${key} poster path must be ${expectedPoster}`);
         if (path.isAbsolute(entry.poster.path) || entry.poster.path.includes("://")) errors.push(`${groupName}.${key} poster path is not repository-relative`);
         if (paths.has(entry.poster.path)) errors.push(`Duplicate runtime path ${entry.poster.path}`);
         paths.add(entry.poster.path);
         counts.posterAssets += 1;
+      } else if (hasPoster) {
+        errors.push(`${groupName}.${key} poster is required`);
+      } else if (entry?.poster !== undefined) {
+        errors.push(`${groupName}.${key} poster is unsupported in runtime v${lookup.schemaVersion}`);
       }
       if (hasPoster && Array.isArray(entry?.categories)) {
         if (JSON.stringify(entry.categories) !== JSON.stringify([...entry.categories].sort(compareCategories))) errors.push(`${groupName}.${key} categories are not in actor/director order`);
@@ -430,6 +479,7 @@ function collectRuntimeErrors(lookup) {
 }
 
 export function validateRuntimeLookup(lookup, schema) {
+  assert([1, 2].includes(lookup?.schemaVersion), "Runtime lookup schemaVersion must be 1 or 2");
   const errors = [
     ...validateAgainstSchema(lookup, schema),
     ...collectRuntimeErrors(lookup),
@@ -442,17 +492,21 @@ export async function generateRuntimeLookup({
   repoRoot = REPO_ROOT,
   studioManifestPath = path.join(repoRoot, ...STUDIO_MANIFEST_PATH.split("/")),
   peopleManifestPath = path.join(repoRoot, ...PEOPLE_MANIFEST_PATH.split("/")),
-  schemaPath = path.join(repoRoot, ...RUNTIME_SCHEMA_PATH.split("/")),
+  schemaPath,
   verifyAssets = true,
   assetConcurrency = 6,
 } = {}) {
-  const [studioSource, peopleSource, schemaSource] = await Promise.all([
+  const [studioSource, peopleSource] = await Promise.all([
     readJsonWithBytes(studioManifestPath),
     readJsonWithBytes(peopleManifestPath),
-    readJsonWithBytes(schemaPath),
   ]);
   validateStudioManifest(studioSource.value);
   validatePeopleManifest(peopleSource.value);
+  const selectedSchemaPath = schemaPath ?? path.join(
+    repoRoot,
+    ...(studioSource.value.version === CANONICAL_MANIFEST_V2 ? RUNTIME_SCHEMA_V2_PATH : RUNTIME_SCHEMA_PATH).split("/"),
+  );
+  const schemaSource = await readJsonWithBytes(selectedSchemaPath);
   const assetRecords = toAssetRecords(studioSource.value, peopleSource.value);
   if (verifyAssets) await verifyPublishedAssets(assetRecords, repoRoot, assetConcurrency);
   const lookup = createLookup(studioSource.value, peopleSource.value, {
@@ -491,7 +545,7 @@ export function createRepresentativeReport(lookup) {
   let absentId = 999_999_999;
   while (Object.hasOwn(lookup.companies, String(absentId))) absentId += 1;
   return {
-    schemaVersion: 1,
+    schemaVersion: lookup.schemaVersion,
     lookupFingerprint: lookup.fingerprint,
     generatedFrom: lookup.generatedFrom,
     examples: {

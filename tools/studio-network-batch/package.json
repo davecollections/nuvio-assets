@@ -20,7 +20,8 @@
     "approve-review-reasons": "node src/reason-approval-cli.mjs",
     "approve-staged-covers": "node src/cover-approval-cli.mjs",
     "review-focus": "node src/review-focus-cli.mjs",
-    "opaque-review": "node src/opaque-review-cli.mjs"
+    "opaque-review": "node src/opaque-review-cli.mjs",
+    "poster-publication-dry-run": "node src/network-poster-publication-cli.mjs --dry-run"
   },
   "dependencies": {
     "sharp": "^0.35.3"
