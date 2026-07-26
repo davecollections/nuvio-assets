@@ -17,12 +17,134 @@ import {
 const requireFromStudioTool = createRequire(new URL("../../studio-network-batch/package.json", import.meta.url));
 const sharp = requireFromStudioTool("sharp");
 const schemaSourcePath = path.join(REPO_ROOT, "schemas", "artwork-runtime-lookup.schema.json");
+const schemaV2SourcePath = path.join(REPO_ROOT, "schemas", "artwork-runtime-lookup-v2.schema.json");
+const schemaV2 = JSON.parse(await fs.readFile(schemaV2SourcePath, "utf8"));
+const HASH_PATTERN = /^[a-f0-9]{64}$/u;
+const V1_STUDIO_MANIFEST_SHA256 = "f712e5ed508d1c5c15baa85fcece8f06e7e96b96cd4e018e9a9bbd3703ecbf4d";
+const PEOPLE_MANIFEST_SHA256 = "74f80ecf75619c39744939ac9e9d45eafb555702774c6e32cc72fcc05332b513";
 
 let currentBuild;
 let fixtureRoot;
 
 function hash(bytes) {
   return crypto.createHash("sha256").update(bytes).digest("hex");
+}
+
+function expectedCurrentReleaseCounts(schemaVersion) {
+  assert.ok([1, 2].includes(schemaVersion), `Unsupported current runtime schemaVersion ${schemaVersion}`);
+  return {
+    companies: 1820,
+    networks: 572,
+    people: 817,
+    totalEntities: 3209,
+    landscapeAssets: 3209,
+    posterAssets: schemaVersion === 2 ? 1389 : 817,
+    totalAssets: schemaVersion === 2 ? 4598 : 4026,
+  };
+}
+
+function assertArtwork(artwork, expectedPath) {
+  assert.deepEqual(Object.keys(artwork), ["path", "sha256"]);
+  assert.equal(artwork.path, expectedPath);
+  assert.match(artwork.sha256, HASH_PATTERN);
+}
+
+function assertCurrentReleaseLookup(lookup, { assetCount } = {}) {
+  const expectedCounts = expectedCurrentReleaseCounts(lookup.schemaVersion);
+  const companies = Object.values(lookup.companies);
+  const networks = Object.values(lookup.networks);
+  const people = Object.values(lookup.people);
+  assert.equal(companies.length, expectedCounts.companies);
+  assert.equal(networks.length, expectedCounts.networks);
+  assert.equal(people.length, expectedCounts.people);
+
+  assert.deepEqual(lookup.formats.company, {
+    landscape: { width: 1200, height: 675 },
+    poster: null,
+  });
+  assert.deepEqual(lookup.formats.network, {
+    landscape: { width: 1200, height: 675 },
+    poster: lookup.schemaVersion === 2 ? { width: 1000, height: 1500 } : null,
+  });
+  assert.deepEqual(lookup.formats.person, {
+    landscape: { width: 1200, height: 675 },
+    poster: { width: 1000, height: 1500 },
+  });
+
+  for (const company of companies) {
+    assert.deepEqual(Object.keys(company), [
+      "id", "name", "status", "landscape", "fallbackUsed", "reviewRequired",
+    ]);
+    assertArtwork(company.landscape, `assets/collection_covers/companies/${company.id}.webp`);
+    assert.equal(Object.hasOwn(company, "poster"), false);
+  }
+  for (const network of networks) {
+    const expectedFields = lookup.schemaVersion === 2
+      ? ["id", "name", "status", "landscape", "poster", "fallbackUsed", "reviewRequired"]
+      : ["id", "name", "status", "landscape", "fallbackUsed", "reviewRequired"];
+    assert.deepEqual(Object.keys(network), expectedFields);
+    assertArtwork(network.landscape, `assets/collection_covers/networks/${network.id}.webp`);
+    if (lookup.schemaVersion === 2) {
+      assertArtwork(network.poster, `assets/collection_covers/networks/poster/${network.id}.webp`);
+    } else {
+      assert.equal(Object.hasOwn(network, "poster"), false);
+    }
+  }
+  for (const person of people) {
+    assert.deepEqual(Object.keys(person), [
+      "id", "name", "categories", "status", "landscape", "poster", "fallbackUsed", "reviewRequired",
+    ]);
+    assertArtwork(person.landscape, `assets/collection_covers/people/landscape/${person.id}.webp`);
+    assertArtwork(person.poster, `assets/collection_covers/people/poster/${person.id}.webp`);
+  }
+
+  const derivedCounts = {
+    companies: companies.length,
+    networks: networks.length,
+    people: people.length,
+    totalEntities: companies.length + networks.length + people.length,
+    landscapeAssets: [...companies, ...networks, ...people]
+      .filter((entry) => Object.hasOwn(entry, "landscape")).length,
+    posterAssets: [...companies, ...networks, ...people]
+      .filter((entry) => Object.hasOwn(entry, "poster")).length,
+  };
+  derivedCounts.totalAssets = derivedCounts.landscapeAssets + derivedCounts.posterAssets;
+  assert.deepEqual(derivedCounts, expectedCounts);
+  assert.deepEqual(lookup.counts, derivedCounts);
+  if (assetCount !== undefined) assert.equal(assetCount, derivedCounts.totalAssets);
+
+  assert.match(lookup.generatedFrom.studioNetworkManifest.sha256, HASH_PATTERN);
+  if (lookup.schemaVersion === 1) {
+    assert.equal(lookup.generatedFrom.studioNetworkManifest.sha256, V1_STUDIO_MANIFEST_SHA256);
+  } else {
+    assert.notEqual(lookup.generatedFrom.studioNetworkManifest.sha256, V1_STUDIO_MANIFEST_SHA256);
+  }
+  assert.equal(lookup.generatedFrom.peopleManifest.sha256, PEOPLE_MANIFEST_SHA256);
+}
+
+function createIsolatedCurrentReleaseV2Lookup() {
+  const lookup = structuredClone(currentBuild.lookup);
+  lookup.schemaVersion = 2;
+  lookup.generatedFrom.studioNetworkManifest.sha256 = "c".repeat(64);
+  lookup.generatedFrom.studioNetworkManifest.fingerprint = "d".repeat(64);
+  lookup.formats.network.poster = { width: 1000, height: 1500 };
+  for (const [key, network] of Object.entries(lookup.networks)) {
+    lookup.networks[key] = {
+      id: network.id,
+      name: network.name,
+      status: network.status,
+      landscape: network.landscape,
+      poster: {
+        path: `assets/collection_covers/networks/poster/${network.id}.webp`,
+        sha256: hash(Buffer.from(`network-poster:${network.id}`)),
+      },
+      fallbackUsed: network.fallbackUsed,
+      reviewRequired: network.reviewRequired,
+    };
+  }
+  lookup.counts = expectedCurrentReleaseCounts(2);
+  lookup.fingerprint = calculateLookupFingerprint(lookup);
+  return lookup;
 }
 
 async function writeJson(filePath, value) {
@@ -151,33 +273,63 @@ after(async () => {
 
 test("generates the current release only from published manifests and verifies every asset", () => {
   const { lookup, assetCount } = currentBuild;
-  assert.deepEqual(lookup.counts, {
-    companies: 1820,
-    networks: 572,
-    people: 817,
-    totalEntities: 3209,
-    landscapeAssets: 3209,
-    posterAssets: 817,
-    totalAssets: 4026,
-  });
-  assert.equal(assetCount, 4026);
-  assert.equal(lookup.generatedFrom.studioNetworkManifest.sha256, "f712e5ed508d1c5c15baa85fcece8f06e7e96b96cd4e018e9a9bbd3703ecbf4d");
-  assert.equal(lookup.generatedFrom.peopleManifest.sha256, "74f80ecf75619c39744939ac9e9d45eafb555702774c6e32cc72fcc05332b513");
+  assertCurrentReleaseLookup(lookup, { assetCount });
 });
 
 test("emits exact compact company and network shapes with published fallback state", () => {
   const { companies, networks } = currentBuild.lookup;
   const company = Object.values(companies)[0];
   const network = Object.values(networks)[0];
-  assert.deepEqual(Object.keys(company), ["id", "name", "status", "landscape", "fallbackUsed", "reviewRequired"]);
-  assert.deepEqual(Object.keys(network), ["id", "name", "status", "landscape", "fallbackUsed", "reviewRequired"]);
-  assert.deepEqual(Object.keys(company.landscape), ["path", "sha256"]);
-  assert.equal(Object.hasOwn(company, "poster"), false);
-  assert.equal(Object.hasOwn(network, "poster"), false);
+  assertCurrentReleaseLookup(currentBuild.lookup, { assetCount: currentBuild.assetCount });
+  assert.equal(company.status, "published");
+  assert.equal(network.status, "published");
   assert.equal(Object.values(companies).filter((entry) => entry.fallbackUsed).length, 486);
   assert.equal(Object.values(networks).filter((entry) => entry.fallbackUsed).length, 1);
   assert.equal(companies["6760"].fallbackUsed, true);
   assert.equal(companies["6760"].landscape.sha256, "6ea668541581a67fbed7932bb4683205b776494b088eecbe7fa64077d3e22ac2");
+});
+
+test("strict current-release assertions accept an isolated schema-v2 runtime with 572 mandatory network posters", () => {
+  const lookup = createIsolatedCurrentReleaseV2Lookup();
+  assert.equal(validateRuntimeLookup(lookup, schemaV2), true);
+  assertCurrentReleaseLookup(lookup, { assetCount: 4598 });
+  assert.equal(Object.values(lookup.networks).every((network) =>
+    Object.hasOwn(network, "poster")), true);
+});
+
+test("strict current-release assertions reject malformed schema-v2 network posters", () => {
+  const firstNetworkId = Object.keys(currentBuild.lookup.networks)[0];
+  const cases = [
+    {
+      name: "missing poster",
+      mutate(lookup) {
+        delete lookup.networks[firstNetworkId].poster;
+      },
+      error: /poster is required/u,
+    },
+    {
+      name: "wrong poster path",
+      mutate(lookup) {
+        lookup.networks[firstNetworkId].poster.path =
+          `assets/collection_covers/networks/poster/${Number(firstNetworkId) + 1}.webp`;
+      },
+      error: /poster path must be/u,
+    },
+    {
+      name: "invalid poster SHA-256",
+      mutate(lookup) {
+        lookup.networks[firstNetworkId].poster.sha256 = "INVALID";
+      },
+      error: /must match|SHA-256/iu,
+    },
+  ];
+  for (const { name, mutate, error } of cases) {
+    const lookup = createIsolatedCurrentReleaseV2Lookup();
+    mutate(lookup);
+    lookup.fingerprint = calculateLookupFingerprint(lookup);
+    assert.throws(() => validateRuntimeLookup(lookup, schemaV2), error, name);
+    assert.throws(() => assertCurrentReleaseLookup(lookup, { assetCount: 4598 }), undefined, name);
+  }
 });
 
 test("emits actor-only, director-only, and shared-category people in canonical order", () => {
