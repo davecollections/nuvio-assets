@@ -1,0 +1,60 @@
+{
+  "id": "people-title-logo-cinematic-v1",
+  "version": 1,
+  "status": "proof-candidate",
+  "publicationAuthorised": false,
+  "rendererVersion": "people-title-logo-renderer-v1",
+  "renderer": {
+    "skiaCanvas": "3.0.8",
+    "outputFormat": "png",
+    "colourSpace": "srgb",
+    "alpha": true
+  },
+  "canvas": {
+    "width": 1863,
+    "height": 673
+  },
+  "typography": {
+    "content": "exact-canonical-person-name",
+    "presentationCase": "uppercase-en-US",
+    "family": "Cormorant Garamond",
+    "fontHash": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+    "weight": 700,
+    "requestedFontSize": 170,
+    "minimumFontSize": 88,
+    "fontSizeStep": 2,
+    "lineHeight": 142,
+    "maximumLines": 2,
+    "region": {
+      "x": 181,
+      "y": 72,
+      "width": 1501,
+      "height": 306
+    },
+    "alignment": "center",
+    "wrapRule": "measured-one-line-then-balanced-word-boundary",
+    "colour": "#FFFFFF",
+    "letterSpacing": 0,
+    "minimumCanvasMargin": 72
+  },
+  "divider": {
+    "x": 651,
+    "y": 447,
+    "width": 561,
+    "height": 2,
+    "colour": "#FFFFFF",
+    "opacity": 0.86
+  },
+  "subtitle": {
+    "text": "CINEMATIC COLLECTION",
+    "fontSize": 30,
+    "tracking": 12,
+    "baselineY": 538,
+    "colour": "#FFFFFF"
+  },
+  "output": {
+    "format": "png",
+    "alpha": true,
+    "background": "transparent"
+  }
+}

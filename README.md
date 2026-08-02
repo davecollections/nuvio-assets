@@ -30,6 +30,8 @@ The published people-artwork collection intentionally remains the frozen pre-v3 
 
 That manifest records the earlier 523-actor and 300-director catalogue snapshot. It does not publish the 663 new v3 identities or update its category metadata for the new Actor memberships on existing people Greta Gerwig and Erich von Stroheim. Actor/director overlaps remain category-neutral and reuse the same physical artwork for a shared TMDB person ID, with no category-specific duplicate. People-artwork publication remains explicitly bounded and validated; the tooling has no network, commit, or push capability.
 
+Tracked People v3 preparation tooling can reconcile the exact catalogue/publication delta, render bounded ignored portrait and transparent title-logo proofs, validate a separate additive presentation-manifest candidate, and prepare non-authorising full-generation and atomic-publication plans. Proof acquisition is limited to the selected identities' exact tracked TMDB profile paths. It does not publish assets. The future title-logo path is `assets/collection_covers/people/title-logo/{tmdbPersonId}.png`; the future `assets/collection_covers/people/presentation-manifest.json` will govern title logos and the one shared hero without changing runtime schemaVersion 2. Neither future public path exists at the current 817-person publication boundary.
+
 The identity model is documented in `data/people/README.md`, and the offline publication workflow is documented in `tools/people-seed/PUBLICATION.md`. Canonical data lives under `data/people/`, strict schemas live under `schemas/`, and validation lives under `tools/people-seed/`.
 
 ## TMDB attribution

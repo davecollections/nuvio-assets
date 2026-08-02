@@ -73,6 +73,8 @@ The identity foundation itself acquired no portrait. A separate, explicitly boun
 
 The promoted `profilePath` values are relative identity metadata only. A profile path by itself does not indicate the state of any corresponding artwork asset.
 
+The exact v3 readiness audit currently identifies 663 catalogue-only identities: 496 have usable tracked profile paths requiring bounded source acquisition and 167 have no usable tracked profile path and therefore require fallback or owner investigation. No existing approved local source-cache entry applies to that delta. These counts are audit evidence, not publication authority; the tooling recalculates the exact ID sets from tracked catalogue, manifest, runtime, and physical-file state.
+
 Published physical paths are:
 
 ```text
@@ -80,6 +82,8 @@ assets/collection_covers/people/landscape/{tmdb_person_id}.webp
 assets/collection_covers/people/poster/{tmdb_person_id}.webp
 assets/collection_covers/people/manifest.json
 ```
+
+Future presentation assets remain ungenerated and unpublished. The prepared contract keeps transparent `title-logo/{tmdb_person_id}.png` files and the single existing `people hero backdrop.jpg` in a separate additive `presentation-manifest.json`; runtime schemaVersion 2 continues to resolve only Poster and Landscape assets. Automatic title-logo wrapping uses the locked Cormorant Garamond 700 font and `tools/people-seed/presets/people-title-logo-cinematic-v1.json`. Any exceptional line break must be exact-ID-bound and schema-valid in `data/people/title-logo-line-break-overrides.json`.
 
 Actor and director collections reference the same physical person assets for a shared TMDB person ID. Published actor/director overlaps reuse the same category-neutral artwork and do not create category-specific duplicates. Existing generic people artwork is not a dependency of this workflow. Publication scope must always be explicitly bounded, and the tooling contains no network, commit, or push automation.
 
@@ -95,6 +99,8 @@ The strict schemas are:
 - `schemas/actor-owner-supplement.schema.json`
 - `schemas/people-owner-supplement-v3.schema.json`
 - `schemas/people-artwork-manifest.schema.json`
+- `schemas/people-presentation-manifest.schema.json`
+- `schemas/people-title-logo-line-break-overrides.schema.json`
 
 Run the fully offline checks from the repository root:
 
@@ -105,6 +111,18 @@ npm --prefix tools/people-seed run check-actor-supplement
 npm --prefix tools/people-seed run validate-people-owner-supplement-v3
 npm --prefix tools/people-seed run check-people-owner-supplement-v3
 ```
+
+The staged v3 artwork preparation modes are explicit and must use one unique ignored attempt root. Run audit first, acquire only the representative proof sources, generate the two-run proof, then prepare plans and verify the protected public state:
+
+```powershell
+npm --prefix tools/people-seed run artwork-v3:audit -- --attempt-root tools/people-seed/.work/people-v3-artwork-proof/attempt-YYYYMMDDTHHMMSSZ
+npm --prefix tools/people-seed run artwork-v3:acquire-proof-sources -- --attempt-root tools/people-seed/.work/people-v3-artwork-proof/attempt-YYYYMMDDTHHMMSSZ
+npm --prefix tools/people-seed run artwork-v3:proof -- --attempt-root tools/people-seed/.work/people-v3-artwork-proof/attempt-YYYYMMDDTHHMMSSZ
+npm --prefix tools/people-seed run artwork-v3:plan -- --attempt-root tools/people-seed/.work/people-v3-artwork-proof/attempt-YYYYMMDDTHHMMSSZ
+npm --prefix tools/people-seed run artwork-v3:verify-protected -- --attempt-root tools/people-seed/.work/people-v3-artwork-proof/attempt-YYYYMMDDTHHMMSSZ
+```
+
+These modes guard all outputs below ignored `.work`, do not authorise the complete 1,480-title-logo or 663-pair generation, and do not write the public People manifest, runtime lookup, presentation manifest, or permanent artwork.
 
 The validator enforces cross-file identity, ordering, rollout, source-occurrence, shared-person, portability, and protected-path rules that JSON Schema cannot express alone.
 

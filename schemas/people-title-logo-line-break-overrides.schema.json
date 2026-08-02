@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/people-title-logo-line-break-overrides.schema.json",
+  "title": "Nuvio People title-logo manual line-break overrides",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "status", "ordering", "recordCount", "records"],
+  "properties": {
+    "version": { "const": "people-title-logo-line-break-overrides-v1" },
+    "status": { "const": "active" },
+    "ordering": { "const": "tmdb-person-id-ascending" },
+    "recordCount": { "type": "integer", "minimum": 0 },
+    "records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "$defs": {
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stableKey", "tmdbPersonId", "canonicalName", "lines", "reason", "status"],
+      "properties": {
+        "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+        "tmdbPersonId": { "type": "integer", "minimum": 1 },
+        "canonicalName": { "type": "string", "minLength": 1 },
+        "lines": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "reason": { "type": "string", "minLength": 1 },
+        "status": { "const": "active" }
+      }
+    }
+  }
+}
