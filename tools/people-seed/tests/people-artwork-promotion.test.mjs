@@ -87,16 +87,16 @@ function response({ ok = true, status = 200, contentType = "image/jpeg", bytes =
   };
 }
 
-test("committed people foundation retains the exact promotion baseline", async () => {
+test("committed people foundation retains the promoted v3 catalogue boundary", async () => {
   const foundation = await readPeopleFoundation(repoRoot);
-  assert.equal(foundation.registry.records.length, 817);
-  assert.equal(foundation.actors.records.length, 523);
-  assert.equal(foundation.directors.records.length, 300);
-  assert.equal(foundation.sources.sources.length, 13);
-  assert.equal(foundation.registry.records.flatMap((record) => record.sourceMemberships).length, 1069);
+  assert.equal(foundation.registry.records.length, 1480);
+  assert.equal(foundation.actors.records.length, 1071);
+  assert.equal(foundation.directors.records.length, 418);
+  assert.equal(foundation.sources.sources.length, 15);
+  assert.equal(foundation.registry.records.flatMap((record) => record.sourceMemberships).length, 1735);
   assert.deepEqual(
     Object.fromEntries(["initial", "later", "review"].map((tier) => [tier, foundation.actors.records.filter((record) => record.rolloutTier === tier).length])),
-    { initial: 295, later: 203, review: 25 },
+    { initial: 843, later: 203, review: 25 },
   );
 });
 

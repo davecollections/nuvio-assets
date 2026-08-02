@@ -31,6 +31,7 @@ import {
   validatePeopleArtworkManifest,
   zeroNetworkAccounting,
 } from "../src/people-publication.mjs";
+import { readPeopleFoundation } from "../src/people-validation.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "../..");
@@ -513,5 +514,30 @@ test("permanent people artwork contains the exact published formats and unchange
     const files = await fs.readdir(path.join(repoRoot, PEOPLE_ASSET_RELATIVE_ROOT, formatId));
     assert.equal(files.length, 817);
     assert.ok(files.every((name) => /^[1-9][0-9]*\.webp$/u.test(name)));
+  }
+});
+
+test("published artwork remains the intentional frozen 817-person subset of the v3 catalogue", async () => {
+  const [foundation, manifest] = await Promise.all([
+    readPeopleFoundation(repoRoot),
+    fs.readFile(path.join(repoRoot, PEOPLE_MANIFEST_RELATIVE_PATH), "utf8").then(JSON.parse),
+  ]);
+  const registryIds = new Set(foundation.registry.records.map((record) => record.tmdbPersonId));
+  const manifestIds = new Set(manifest.records.map((record) => record.tmdbPersonId));
+  assert.equal(registryIds.size, 1480);
+  assert.equal(manifestIds.size, 817);
+  assert.ok(manifest.records.every((record) => registryIds.has(record.tmdbPersonId)));
+  assert.equal([...registryIds].filter((id) => !manifestIds.has(id)).length, 663);
+  const registryById = new Map(foundation.registry.records.map((record) => [record.tmdbPersonId, record]));
+  const categorySnapshotDriftIds = [];
+  for (const record of manifest.records) {
+    if (JSON.stringify(record.categoryMembership) !== JSON.stringify(registryById.get(record.tmdbPersonId).categoryMembership)) {
+      categorySnapshotDriftIds.push(record.tmdbPersonId);
+    }
+  }
+  assert.deepEqual(categorySnapshotDriftIds, [8630, 45400]);
+  for (const id of [8630, 45400]) {
+    assert.deepEqual(manifest.records.find((record) => record.tmdbPersonId === id).categoryMembership, ["director"]);
+    assert.deepEqual(foundation.registry.records.find((record) => record.tmdbPersonId === id).categoryMembership, ["actor", "director"]);
   }
 });

@@ -20,15 +20,15 @@ The batch utility and maintenance policy are documented in `tools/studio-network
 
 ## People collection artwork
 
-The tracked people foundation contains 817 resolved TMDB candidate identities, 523 actor memberships, and 300 director memberships. Six people belong to both categories through one shared registry identity. Proposed rollout is 295 initial, 203 later, and 25 review actors; and 154 initial, 102 later, and 44 review directors.
+The tracked People v3 catalogue contains 1,480 resolved TMDB candidate identities, 1,071 actor memberships, and 418 director memberships. Nine people belong to both categories through one shared registry identity. Rollout is 843 initial, 203 later, and 25 review actors; and 272 initial, 102 later, and 44 review directors.
 
-The published people-artwork collection contains all 817 registry identities, with one landscape and one poster WebP per person (817 landscape and 817 poster assets) and zero published fallbacks:
+The published people-artwork collection intentionally remains the frozen pre-v3 817-person subset, with one landscape and one poster WebP per published person (817 landscape and 817 poster assets) and zero published fallbacks:
 
 - landscape: `assets/collection_covers/people/landscape/{tmdbPersonId}.webp`;
 - poster: `assets/collection_covers/people/poster/{tmdbPersonId}.webp`;
 - public metadata: `assets/collection_covers/people/manifest.json`.
 
-The complete 523-person actor catalogue is published across its initial, later, and review tiers, and the approved 300-person director catalogue is published across its initial, later, and review tiers. Actor/director overlaps remain category-neutral and reuse the same physical artwork for a shared TMDB person ID, with no category-specific duplicate. People-artwork publication remains explicitly bounded and validated; the tooling has no network, commit, or push capability.
+That manifest records the earlier 523-actor and 300-director catalogue snapshot. It does not publish the 663 new v3 identities or update its category metadata for the new Actor memberships on existing people Greta Gerwig and Erich von Stroheim. Actor/director overlaps remain category-neutral and reuse the same physical artwork for a shared TMDB person ID, with no category-specific duplicate. People-artwork publication remains explicitly bounded and validated; the tooling has no network, commit, or push capability.
 
 The identity model is documented in `data/people/README.md`, and the offline publication workflow is documented in `tools/people-seed/PUBLICATION.md`. Canonical data lives under `data/people/`, strict schemas live under `schemas/`, and validation lives under `tools/people-seed/`.
 

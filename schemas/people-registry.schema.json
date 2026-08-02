@@ -53,15 +53,15 @@
             "uniqueItems": true,
             "items": { "type": "string", "minLength": 1 }
           },
-          "knownForDepartment": { "enum": ["Acting", "Directing", "Production", "Writing"] },
+          "knownForDepartment": { "enum": [null, "Acting", "Directing", "Production", "Writing"] },
           "profilePath": {
             "type": ["string", "null"],
             "pattern": "^/[A-Za-z0-9_-]+\\.(jpg|jpeg|png|webp)$"
           },
-          "actorCreditCount": { "type": "integer", "minimum": 0 },
-          "directorCreditCount": { "type": "integer", "minimum": 0 },
+          "actorCreditCount": { "type": ["integer", "null"], "minimum": 0 },
+          "directorCreditCount": { "type": ["integer", "null"], "minimum": 0 },
           "activityYearRange": {
-            "type": "object",
+            "type": ["object", "null"],
             "additionalProperties": false,
             "required": ["first", "last"],
             "properties": {
@@ -81,7 +81,10 @@
               "exact-explicit-id",
               "high-confidence-name-and-career-match",
               "high-confidence-exact-name-and-career-match",
-              "high-confidence-disambiguated-name-and-career-match"
+              "high-confidence-disambiguated-name-and-career-match",
+              "high",
+              "medium",
+              "owner-approved-exact-tmdb-person-id"
             ]
           },
           "identityEvidence": {
@@ -104,6 +107,8 @@
                     "filmaholic-top100-actors-2026",
                     "imdb-starmeter-2026-07-18",
                     "owner-actor-supplement-2026-07",
+                    "owner-people-v3-actors-2026-08",
+                    "owner-people-v3-directors-2026-08",
                     "ranker-current-famous-actors-2026",
                     "ranker-actors",
                     "tspdt-21c-directors",

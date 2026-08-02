@@ -1,0 +1,408 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/people-owner-supplement-v3.schema.json",
+  "title": "Nuvio tracked owner-approved People supplement v3",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trackedSupplementVersion",
+    "promotedAt",
+    "authoritativeSource",
+    "promotionMapping",
+    "package"
+  ],
+  "properties": {
+    "trackedSupplementVersion": { "const": "people-owner-supplement-v3" },
+    "promotedAt": { "const": "2026-08-02T04:41:32.516Z" },
+    "authoritativeSource": { "$ref": "#/$defs/authoritativeSource" },
+    "promotionMapping": { "$ref": "#/$defs/promotionMapping" },
+    "package": { "$ref": "#/$defs/authoritativePackage" }
+  },
+  "$defs": {
+    "authoritativeSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["filename", "repositoryRelativePath", "auditWorkspace", "sha256"],
+      "properties": {
+        "filename": { "const": "final-owner-approved-people-v3.json" },
+        "repositoryRelativePath": {
+          "const": "tools/people-seed/.work/actor-gap-audit-v2/attempt-20260802T011012Z-complete-actor-triage/final-owner-approved-people-v3.json"
+        },
+        "auditWorkspace": {
+          "const": "tools/people-seed/.work/actor-gap-audit-v2/attempt-20260802T011012Z-complete-actor-triage"
+        },
+        "sha256": { "const": "4cfa65603935726d21fef8ce6919f344e6ab834f7a8b730711415ecef730d650" }
+      }
+    },
+    "promotionMapping": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identityAuthority",
+        "stableKeyFormat",
+        "unsupportedAliasSentinels",
+        "profilePathPolicy",
+        "categoryActionPolicy",
+        "selectionBasis",
+        "categorySourceIds",
+        "sourceType"
+      ],
+      "properties": {
+        "identityAuthority": { "const": "exact-tmdb-person-id" },
+        "stableKeyFormat": { "const": "person:{tmdbPersonId}" },
+        "unsupportedAliasSentinels": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": { "const": "-" }
+        },
+        "profilePathPolicy": { "const": "preserve-relative-or-null" },
+        "categoryActionPolicy": { "const": "exact-approved-add-membership-pairs" },
+        "selectionBasis": { "const": "owner-approved-v3" },
+        "categorySourceIds": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["actor", "director"],
+          "properties": {
+            "actor": { "const": "owner-people-v3-actors-2026-08" },
+            "director": { "const": "owner-people-v3-directors-2026-08" }
+          }
+        },
+        "sourceType": { "const": "owner-approved-membership-package" }
+      }
+    },
+    "authoritativePackage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "version",
+        "decisionRecordedOn",
+        "status",
+        "ordering",
+        "identityRule",
+        "rolloutPolicy",
+        "authoritativeForFutureTrackedPromotion",
+        "trackedPromotionAuthorized",
+        "sourcePolicy",
+        "sourceInventory",
+        "baseline",
+        "counts",
+        "approvalPackageOverlapPeople",
+        "projectedOverlapPeople",
+        "recordCount",
+        "records"
+      ],
+      "properties": {
+        "version": { "const": "nuvio-owner-approved-people-v3" },
+        "decisionRecordedOn": { "const": "2026-08-02" },
+        "status": { "const": "owner-approved-in-principle-final-review-closed" },
+        "ordering": { "const": "tmdb-person-id-ascending" },
+        "identityRule": {
+          "const": "One record per exact TMDB Person ID with independent Actor and Director membership actions on one shared identity."
+        },
+        "rolloutPolicy": { "const": "Every approved category membership in this package is include + initial." },
+        "authoritativeForFutureTrackedPromotion": { "const": true },
+        "trackedPromotionAuthorized": { "const": false },
+        "sourcePolicy": { "$ref": "#/$defs/sourcePolicy" },
+        "sourceInventory": {
+          "type": "array",
+          "minItems": 16,
+          "maxItems": 16,
+          "items": { "$ref": "#/$defs/sourceInventoryRecord" }
+        },
+        "baseline": { "$ref": "#/$defs/baseline" },
+        "counts": { "$ref": "#/$defs/counts" },
+        "approvalPackageOverlapPeople": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "items": { "$ref": "#/$defs/personSummary" }
+        },
+        "projectedOverlapPeople": {
+          "type": "array",
+          "minItems": 9,
+          "maxItems": 9,
+          "items": { "$ref": "#/$defs/projectedOverlapPerson" }
+        },
+        "recordCount": { "const": 665 },
+        "records": {
+          "type": "array",
+          "minItems": 665,
+          "maxItems": 665,
+          "items": { "$ref": "#/$defs/personRecord" }
+        }
+      }
+    },
+    "sourcePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["membershipInputs", "excludedInput", "nonRecommendedMasterRecordsExcluded"],
+      "properties": {
+        "membershipInputs": {
+          "const": "Authoritative v2 approval package plus exact owner-approved Batch 1–6 decision records only."
+        },
+        "excludedInput": {
+          "const": "approved-prior-candidates.json is incomplete intermediate evidence and was not used."
+        },
+        "nonRecommendedMasterRecordsExcluded": { "const": true }
+      }
+    },
+    "sourceInventoryRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["role", "path", "sha256"],
+      "properties": {
+        "role": {
+          "enum": [
+            "authoritative-prior-membership-input",
+            "authoritative-prior-actor-rollout-corroboration",
+            "authoritative-owner-reviewed-actor-batch-input",
+            "authoritative-approval-input-generated-in-this-run",
+            "identity-and-review-metadata-only",
+            "identity-metadata-only",
+            "tracked-baseline-read-only"
+          ]
+        },
+        "path": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+$" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "baseline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "actorMemberships",
+        "directorMemberships",
+        "uniquePeople",
+        "actorDirectorOverlaps",
+        "overlapPeople"
+      ],
+      "properties": {
+        "actorMemberships": { "const": 523 },
+        "directorMemberships": { "const": 300 },
+        "uniquePeople": { "const": 817 },
+        "actorDirectorOverlaps": { "const": 6 },
+        "overlapPeople": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "items": { "$ref": "#/$defs/personSummary" }
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "approvedActorMembershipAdditions",
+        "approvedDirectorMembershipAdditions",
+        "totalNewCategoryMemberships",
+        "uniqueIdentitiesInApprovalPackage",
+        "netNewRegistryIdentities",
+        "existingRegistryMembershipOnlyAdditions",
+        "approvalPackageActorDirectorOverlapCount",
+        "projectedActorMemberships",
+        "projectedDirectorMemberships",
+        "projectedUniquePeople",
+        "projectedActorDirectorOverlaps"
+      ],
+      "properties": {
+        "approvedActorMembershipAdditions": { "const": 548 },
+        "approvedDirectorMembershipAdditions": { "const": 118 },
+        "totalNewCategoryMemberships": { "const": 666 },
+        "uniqueIdentitiesInApprovalPackage": { "const": 665 },
+        "netNewRegistryIdentities": { "const": 663 },
+        "existingRegistryMembershipOnlyAdditions": { "const": 2 },
+        "approvalPackageActorDirectorOverlapCount": { "const": 1 },
+        "projectedActorMemberships": { "const": 1071 },
+        "projectedDirectorMemberships": { "const": 418 },
+        "projectedUniquePeople": { "const": 1480 },
+        "projectedActorDirectorOverlaps": { "const": 9 }
+      }
+    },
+    "personSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tmdbPersonId", "canonicalName"],
+      "properties": {
+        "tmdbPersonId": { "type": "integer", "minimum": 1 },
+        "canonicalName": { "type": "string", "minLength": 1 }
+      }
+    },
+    "projectedOverlapPerson": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tmdbPersonId", "canonicalName", "overlapBasis"],
+      "properties": {
+        "tmdbPersonId": { "type": "integer", "minimum": 1 },
+        "canonicalName": { "type": "string", "minLength": 1 },
+        "overlapBasis": {
+          "enum": [
+            "existing-actor-and-director-memberships",
+            "approved-new-actor-and-director-memberships-on-one-new-person",
+            "existing-director-membership-plus-approved-actor-membership"
+          ]
+        }
+      }
+    },
+    "personRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableKey",
+        "tmdbPersonId",
+        "canonicalName",
+        "aliases",
+        "approvedCategories",
+        "categoryMembershipActions",
+        "currentRegistryStatus",
+        "currentCategoryMemberships",
+        "currentActorMembership",
+        "currentDirectorMembership",
+        "personIdentityAction",
+        "createsNetNewPersonIdentity",
+        "addsActorMembershipToExistingPerson",
+        "addsDirectorMembershipToExistingPerson",
+        "addsBothNewCategoryMemberships",
+        "ownerDecision",
+        "recommendedRollout",
+        "approvalSources",
+        "sourceProvenance",
+        "profilePath",
+        "identityConfidence",
+        "notes"
+      ],
+      "properties": {
+        "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+        "tmdbPersonId": { "type": "integer", "minimum": 1 },
+        "canonicalName": { "type": "string", "minLength": 1 },
+        "aliases": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "approvedCategories": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "enum": ["actor", "director"] }
+        },
+        "categoryMembershipActions": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "uniqueItems": true,
+          "items": { "$ref": "#/$defs/categoryMembershipAction" }
+        },
+        "currentRegistryStatus": { "enum": ["absent", "present:director"] },
+        "currentCategoryMemberships": {
+          "type": "array",
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["actor", "director"] }
+        },
+        "currentActorMembership": { "type": "boolean" },
+        "currentDirectorMembership": { "type": "boolean" },
+        "personIdentityAction": { "enum": ["create-new-person", "reuse-existing-person"] },
+        "createsNetNewPersonIdentity": { "type": "boolean" },
+        "addsActorMembershipToExistingPerson": { "type": "boolean" },
+        "addsDirectorMembershipToExistingPerson": { "type": "boolean" },
+        "addsBothNewCategoryMemberships": { "type": "boolean" },
+        "ownerDecision": { "const": "include" },
+        "recommendedRollout": { "const": "initial" },
+        "approvalSources": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": { "$ref": "#/$defs/approvalSource" }
+        },
+        "sourceProvenance": { "$ref": "#/$defs/sourceProvenance" },
+        "profilePath": {
+          "type": ["string", "null"],
+          "pattern": "^/[A-Za-z0-9_-]+\\.(jpg|jpeg|png|webp)$"
+        },
+        "identityConfidence": {
+          "enum": [
+            "high",
+            "medium",
+            "owner-approved-exact-tmdb-person-id",
+            "high-confidence-name-and-career-match"
+          ]
+        },
+        "notes": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "categoryMembershipAction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "currentMembership", "action"],
+      "properties": {
+        "category": { "enum": ["actor", "director"] },
+        "currentMembership": { "const": false },
+        "action": { "const": "add-membership" }
+      }
+    },
+    "approvalSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceType", "sourcePath", "sourceSha256", "approvedCategories"],
+      "properties": {
+        "sourceType": { "enum": ["authoritative-v2", "owner-reviewed-actor-batch"] },
+        "sourcePath": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+$" },
+        "sourceSha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "approvalSource": {
+          "enum": [
+            "owner-approved-all-imdb-candidates-2026-08-02",
+            "owner-explicit-id-2026-08-02",
+            "owner-request-2026-08-02-imdb-director-list",
+            "owner-request-include-supplied-collection-2026-08-02",
+            "prior-owner-approved-batch"
+          ]
+        },
+        "sourceAttempt": { "type": ["string", "null"], "minLength": 1 },
+        "approvalBatch": { "type": "integer", "minimum": 1, "maximum": 6 },
+        "batchReviewOrder": { "type": "integer", "minimum": 1 },
+        "sourcePriorityOrder": { "type": "integer", "minimum": 1 },
+        "approvedCategories": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 1,
+          "uniqueItems": true,
+          "items": { "enum": ["actor", "director"] }
+        }
+      }
+    },
+    "sourceProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["identityMetadataSourcePaths", "sourceMemberships"],
+      "properties": {
+        "identityMetadataSourcePaths": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[A-Za-z0-9._/-]+$" }
+        },
+        "sourceMemberships": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "imdb-list-ls058011111",
+              "imkaptain-directors",
+              "owner-request-2026-08-02-imdb-director-list",
+              "tmdb-official-person-page",
+              "tspdt-directors",
+              "wikidata-p345-p4985-crosswalk"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

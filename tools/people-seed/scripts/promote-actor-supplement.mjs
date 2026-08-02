@@ -219,6 +219,7 @@ async function promote({ checkOnly = false } = {}) {
     readPeopleFoundation(repoRoot),
     readJson(supplementPath),
   ]);
+  assert(checkOnly || !current.ownerSupplementV3, "Historical Actor supplement write/proof mode is closed after People v3 promotion; use --check or --verify-build.");
   const merged = mergeActorSupplementFoundation({
     registry: current.registry,
     actors: current.actors,
@@ -226,7 +227,12 @@ async function promote({ checkOnly = false } = {}) {
     sources: current.sources,
     supplement,
   });
-  const validation = validatePeopleFoundation({ ...merged, supplement, schemas: current.schemas });
+  const validation = validatePeopleFoundation({
+    ...merged,
+    supplement,
+    ownerSupplementV3: current.ownerSupplementV3,
+    schemas: current.schemas,
+  });
   assert(validation.errors.length === 0, `Promoted foundation is invalid:\n${validation.errors.join("\n")}`);
   const serialized = Object.fromEntries(Object.entries(canonicalFiles).map(([key]) => [key, json(merged[key])]));
   if (checkOnly) {

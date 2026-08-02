@@ -1,8 +1,8 @@
 {
   "version": "people-sources-v1",
-  "generatedAt": "2026-07-17T14:00:00.000Z",
+  "generatedAt": "2026-08-02T04:41:32.516Z",
   "ordering": "source-id-ascending",
-  "sourceCount": 13,
+  "sourceCount": 15,
   "sources": [
     {
       "sourceId": "filmaholic-top100-actors-2026",
@@ -125,6 +125,48 @@
       "completenessStatement": "All 198 additions were explicitly approved for inclusion; the proposed split of 95 initial and 103 later actors was subsequently approved with zero review additions.",
       "knownLimitations": [
         "Inclusion and rollout are owner catalogue decisions, not an objective ranking of performers."
+      ],
+      "rankingDynamicWarning": null
+    },
+    {
+      "sourceId": "owner-people-v3-actors-2026-08",
+      "displayTitle": "Nuvio owner-approved People v3 Actor memberships",
+      "sourceType": "owner-approved-membership-package",
+      "sourceUrl": null,
+      "sourceFile": "data/people/people-owner-supplement-v3.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": null,
+      "sourceHash": {
+        "algorithm": "sha256",
+        "value": "4cfa65603935726d21fef8ce6919f344e6ab834f7a8b730711415ecef730d650",
+        "scope": "complete authoritative package payload embedded in the tracked People owner supplement v3"
+      },
+      "extractionMethod": "Promoted only exact owner-approved Actor membership actions from the hash-bound tracked People v3 package.",
+      "completenessStatement": "All 548 approved Actor membership actions are represented without a fabricated source rank or retrieval timestamp.",
+      "knownLimitations": [
+        "Catalogue membership approval is not portrait, artwork, manifest, runtime, or publication approval.",
+        "Unavailable career snapshot metadata remains null and must not be inferred from category membership."
+      ],
+      "rankingDynamicWarning": null
+    },
+    {
+      "sourceId": "owner-people-v3-directors-2026-08",
+      "displayTitle": "Nuvio owner-approved People v3 Director memberships",
+      "sourceType": "owner-approved-membership-package",
+      "sourceUrl": null,
+      "sourceFile": "data/people/people-owner-supplement-v3.json",
+      "publicationOrSnapshotYear": 2026,
+      "retrievalTimestamp": null,
+      "sourceHash": {
+        "algorithm": "sha256",
+        "value": "4cfa65603935726d21fef8ce6919f344e6ab834f7a8b730711415ecef730d650",
+        "scope": "complete authoritative package payload embedded in the tracked People owner supplement v3"
+      },
+      "extractionMethod": "Promoted only exact owner-approved Director membership actions from the hash-bound tracked People v3 package.",
+      "completenessStatement": "All 118 approved Director membership actions are represented without a fabricated source rank or retrieval timestamp.",
+      "knownLimitations": [
+        "Catalogue membership approval is not portrait, artwork, manifest, runtime, or publication approval.",
+        "Unavailable career snapshot metadata remains null and must not be inferred from category membership."
       ],
       "rankingDynamicWarning": null
     },

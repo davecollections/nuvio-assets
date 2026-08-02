@@ -4,11 +4,12 @@ This directory contains Nuvio's durable TMDB-ID-first people candidate data. It 
 
 ## Files and responsibilities
 
-- `people-registry.json` contains each of the 817 resolved TMDB people exactly once. It owns shared identity metadata, relative TMDB profile-path metadata, identity evidence, category membership, and all 1,069 preserved source occurrences.
-- `actors-seed.json` contains 523 category-specific actor memberships: the original 325 proposals plus 198 owner-approved supplement additions.
-- `directors-seed.json` contains 300 category-specific director memberships and their proposed rollout and selection signals.
+- `people-registry.json` contains each of the 1,480 resolved TMDB people exactly once. It owns shared identity metadata, relative-or-null TMDB profile-path metadata, identity evidence, category membership, and all 1,735 preserved source occurrences.
+- `actors-seed.json` contains 1,071 category-specific actor memberships: the original 325 proposals, 198 historical owner-approved supplement additions, and 548 owner-approved v3 additions.
+- `directors-seed.json` contains 418 category-specific director memberships: the original 300 proposals plus 118 owner-approved v3 additions.
 - `actor-owner-supplement.json` is the durable, schema-validated record of the 198 approved actor additions, their resolved identities, owner decisions, rollout tiers, provenance, and planning-only specialty tags.
-- `sources.json` records 13 source snapshots, cross-checks, and owner-decision provenance records, their retrieval metadata, hashes where available, extraction boundaries, and known limitations.
+- `people-owner-supplement-v3.json` preserves the exact 665-identity, 666-category-action owner-approved v3 package, its authoritative source SHA-256, its audit-workspace path, and the deterministic mapping into active catalogue data. It does not replace or modify the historical Actor supplement.
+- `sources.json` records 15 source snapshots, cross-checks, and owner-decision provenance records, their retrieval metadata, hashes where available, extraction boundaries, and known limitations.
 
 The registry deliberately has no global rollout tier or global category selection tier. A person can have different actor and director treatment, so rollout, recommendation, selection basis, and owner decision belong to the category membership records.
 
@@ -16,19 +17,19 @@ The registry deliberately has no global rollout tier or global category selectio
 
 Every stable key is `person:{tmdbPersonId}` and every person appears once in the registry. Actor and director records reference that key and ID rather than duplicating profile metadata.
 
-Six current people belong to both categories: Orson Welles, Clint Eastwood, Buster Keaton, Gene Kelly, Charlie Chaplin, and Mel Brooks. Each has one registry record, one actor membership, and one director membership. Their two category records remain independent; neither category's rollout status becomes a global property of the person.
+Nine current people belong to both categories: Orson Welles (40), Clint Eastwood (190), Roberto Benigni (4818), Erich von Stroheim (8630), Buster Keaton (8635), Gene Kelly (13294), Charlie Chaplin (13848), Mel Brooks (14639), and Greta Gerwig (45400). Each has one registry record, one actor membership, and one director membership. Their two category records remain independent; neither category's rollout status becomes a global property of the person.
 
-All 817 registry identities retain the category-neutral `reviewStatus: candidate`; that status never approves portrait artwork or publication. The original 325 actor memberships and all 300 director memberships remain `selectionStatus: proposed` with blank owner decisions. The 198 supplement actor memberships are different: their catalogue inclusion and initial/later tier were explicitly approved, so they use `selectionStatus: owner-decided` and `ownerDecision: include`. This approval still does not approve final ordering, portrait sourcing, cover artwork, or publication.
+All 1,480 registry identities retain the category-neutral `reviewStatus: candidate`; that status never approves portrait artwork or publication. The original 325 actor memberships and 300 director memberships remain `selectionStatus: proposed` with blank owner decisions. The historical 198-person Actor supplement retains its approved initial/later decisions. Every v3 category action uses `selectionStatus: owner-decided`, `ownerDecision: include`, and initial rollout. These catalogue decisions still do not approve final ordering, portrait sourcing, cover artwork, manifest membership, runtime availability, or publication.
 
 ## Rollout tiers
 
 Rollout tiers divide a future review workload without claiming artistic superiority:
 
-- `initial`: first rollout — 295 actors and 154 directors;
+- `initial`: first rollout — 843 actors and 272 directors;
 - `later`: later rollout — 203 actors and 102 directors;
 - `review`: individual owner selection remains required — 25 actors and 44 directors.
 
-The actor totals include 95 approved initial additions and 103 approved later additions. No supplement actor was assigned to review. The original 25 actor and 44 director review candidates were not silently approved.
+The historical Actor supplement contributes 95 initial and 103 later memberships. People v3 contributes 548 initial Actor and 118 initial Director memberships, with no later, review, held, or ask-owner decisions. The original 25 actor and 44 director review candidates were not silently approved.
 
 ## Selection basis
 
@@ -40,9 +41,10 @@ The actor totals include 95 approved initial additions and 103 approved later ad
 - `cross-source`: present in more than one relevant source;
 - `external-supplement`: proposed from a bounded external cross-check rather than the category's ranking source;
 - `modern-supplement`: supported by the bounded TSPDT 21st-century source while absent from its all-time top 250;
-- `owner-added`: explicit owner-approved actor supplement provenance; used by all 198 promoted additions.
+- `owner-added`: explicit historical owner-approved Actor supplement provenance; used by all 198 earlier additions;
+- `owner-approved-v3`: exact hash-bound owner approval provenance; used by all 548 Actor and 118 Director v3 actions.
 
-The 25 ImKaptain-only actor candidates use `external-supplement`; they are not inferred to be modern merely because they appear in that cross-check. The 43 TSPDT 21st-century-only director candidates retain `modern-supplement`. Greta Gerwig remains an `external-supplement` review candidate. Multiple-source evidence is separately represented by `cross-source`.
+The 25 ImKaptain-only actor candidates use `external-supplement`; they are not inferred to be modern merely because they appear in that cross-check. The 43 TSPDT 21st-century-only director candidates retain `modern-supplement`. Greta Gerwig's Director membership remains an `external-supplement` review candidate. Multiple-source evidence is separately represented by `cross-source`.
 
 ## Source provenance and ranking semantics
 
@@ -61,11 +63,13 @@ The 198-person actor supplement was approved after a bounded comparison of a cur
 
 Unavailable response hashes and ranks remain null; none was fabricated. The tracked supplement preserves the five approved canonical-name normalisations and retains each relevant owner-supplied spelling as an alias.
 
+The category-neutral People v3 supplement embeds the authoritative package verbatim and binds it to SHA-256 `4cfa65603935726d21fef8ce6919f344e6ab834f7a8b730711415ecef730d650`. Exact set reconciliation adds 663 registry identities, adds Actor membership to existing Greta Gerwig and Erich von Stroheim identities, and creates Roberto Benigni once with both Actor and Director membership. Two category-scoped owner-package source records preserve all 666 actions with `sourceRank: null` and `retrievalTimestamp: null`; no source rank or retrieval event was invented. The authoritative package's 32 literal `"-"` alias placeholders remain in the supplement as source evidence but are excluded by the declared mapping from active registry aliases. Other aliases and relative-or-null profile paths are preserved exactly. Career snapshot fields unavailable in the authority remain null rather than being inferred.
+
 The ImKaptain data is identity/catalogue cross-check provenance only. Its artwork fields were not promoted. Its 20 MDBList catalogue IDs remain strings under `secondaryCatalogIds`; none is treated as a TMDB person ID. Tracked people data contains no full portrait URL, external artwork URL, API credential, response token, or local absolute path. `profilePath` is relative TMDB metadata only.
 
 ## Artwork and publishing boundary
 
-The identity foundation itself acquired no portrait. A separate, explicitly bounded and validated publication contains all 817 registry identities, with 817 landscape and 817 poster WebPs plus a public manifest and zero published fallbacks. The complete 523-person actor catalogue and approved 300-person director catalogue are published across their initial, later, and review tiers.
+The identity foundation itself acquired no portrait. A separate, explicitly bounded and validated publication remains frozen at the earlier 817-person snapshot, with 817 landscape and 817 poster WebPs plus a public manifest and zero published fallbacks. It intentionally excludes all 663 net-new v3 identities. Greta Gerwig and Erich von Stroheim already have published artwork as Directors, but the frozen manifest does not yet contain their new Actor memberships. The 1,480-person catalogue must not be described as illustrated, runtime-ready, or published until a separately authorised atomic artwork publication.
 
 The promoted `profilePath` values are relative identity metadata only. A profile path by itself does not indicate the state of any corresponding artwork asset.
 
@@ -89,6 +93,7 @@ The strict schemas are:
 - `schemas/people-seed.schema.json`
 - `schemas/people-sources.schema.json`
 - `schemas/actor-owner-supplement.schema.json`
+- `schemas/people-owner-supplement-v3.schema.json`
 - `schemas/people-artwork-manifest.schema.json`
 
 Run the fully offline checks from the repository root:
@@ -97,11 +102,13 @@ Run the fully offline checks from the repository root:
 npm --prefix tools/people-seed test
 npm --prefix tools/people-seed run validate
 npm --prefix tools/people-seed run check-actor-supplement
+npm --prefix tools/people-seed run validate-people-owner-supplement-v3
+npm --prefix tools/people-seed run check-people-owner-supplement-v3
 ```
 
 The validator enforces cross-file identity, ordering, rollout, source-occurrence, shared-person, portability, and protected-path rules that JSON Schema cannot express alone.
 
-`npm --prefix tools/people-seed run build-foundation` deterministically rebuilds the original foundation inputs and then merges `actor-owner-supplement.json`. This prevents a future rebuild from dropping the approved additions. The narrower promotion command is idempotent and rejects supplement overlap, unsupported source IDs, duplicate identities, duplicate actor memberships, unapproved decisions, and tier drift.
+`npm --prefix tools/people-seed run build-foundation` deterministically rebuilds the original foundation inputs, merges the historical `actor-owner-supplement.json`, and then merges `people-owner-supplement-v3.json`. This prevents a future rebuild from dropping either approved workstream. The v3 validator compares the complete embedded package meaning and canonical bytes with the exact authoritative hash when the ignored authority is available; it also rejects identity/action drift, unsupported identifier namespaces, incorrect current-state classification, duplicate identities or categories, and non-initial or non-include decisions.
 
 `npm --prefix tools/people-seed run verify-actor-supplement-build` performs two complete rebuilds in disposable directories, requires byte-identical replay and exact parity with the tracked foundation, and never points the builder at active tracked People files. The builder also preserves the exact-ID correction from commit `18e0748`: the invalid source alias `markiplier` is excluded only from TMDB person `115440` (Sydney Sweeney). Alias corrections are keyed only by exact TMDB Person ID, never by record position or display name.
 
@@ -113,4 +120,6 @@ tools/people-seed/.work/people-seed-foundation/owner-review/
 
 Only the original 25 actor and 44 director `review` candidates receive individual blank decision rows. The supplement's ignored promotion-proof review files are informational because all 198 inclusion and tier decisions are already approved.
 
-People artwork remains a separate bounded workflow. The locked 40-person renderer proof remains preserved as historical promotion evidence; publishing the complete 817-person collection did not rewrite that proof, Stage 3 typography, portrait-source decisions, or fallback decisions.
+People v3 promotion previews and the tracked-diff review package are generated below `tools/people-seed/.work/people-catalogue-v3-promotion/`. They prove two-run byte parity, exact category-action accounting, preservation of every prior identity and membership, and the artwork/publication boundary without writing artwork.
+
+People artwork remains a separate bounded workflow. The locked 40-person renderer proof remains preserved as historical promotion evidence; publishing the frozen 817-person collection did not rewrite that proof, Stage 3 typography, portrait-source decisions, or fallback decisions.

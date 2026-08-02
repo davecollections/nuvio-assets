@@ -7,6 +7,7 @@ import { fileURLToPath } from "node:url";
 import { sourceMembershipFingerprint, validatePeopleFoundation } from "../src/people-validation.mjs";
 import { mergeActorSupplementFoundation } from "../src/actor-supplement-promotion.mjs";
 import { foundationAliasesForPerson } from "../src/foundation-build-verification.mjs";
+import { mergePeopleOwnerSupplementV3Foundation } from "../src/people-owner-supplement-v3-promotion.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "../..");
@@ -373,6 +374,8 @@ async function main() {
     sourcesSchema,
     supplement,
     supplementSchema,
+    ownerSupplementV3,
+    ownerSupplementV3Schema,
   ] = await Promise.all([
     fs.readFile(paths.registryDraft),
     readJson(paths.registryDraft),
@@ -393,6 +396,8 @@ async function main() {
     readJson(path.join(repoRoot, "schemas", "people-sources.schema.json")),
     readJson(path.join(dataRoot, "actor-owner-supplement.json")),
     readJson(path.join(repoRoot, "schemas", "actor-owner-supplement.schema.json")),
+    readJson(path.join(dataRoot, "people-owner-supplement-v3.json")),
+    readJson(path.join(repoRoot, "schemas", "people-owner-supplement-v3.schema.json")),
   ]);
 
   assert(summary.registryCount === 619, "Completed summary registry count changed.");
@@ -414,12 +419,16 @@ async function main() {
     imkEvidence,
     registryDraftHash: sha256(registryDraftRaw),
   });
-  const { registry, actors, directors, sources } = mergeActorSupplementFoundation({
+  const historicalFoundation = mergeActorSupplementFoundation({
     registry: baseRegistry,
     actors: baseActors,
     directors: baseDirectors,
     sources: baseSources,
     supplement,
+  });
+  const { registry, actors, directors, sources } = mergePeopleOwnerSupplementV3Foundation({
+    ...historicalFoundation,
+    supplement: ownerSupplementV3,
   });
   const registryById = new Map(registry.records.map((record) => [record.tmdbPersonId, record]));
 
@@ -429,7 +438,14 @@ async function main() {
     directors,
     sources,
     supplement,
-    schemas: { registry: registrySchema, seed: seedSchema, sources: sourcesSchema, supplement: supplementSchema },
+    ownerSupplementV3,
+    schemas: {
+      registry: registrySchema,
+      seed: seedSchema,
+      sources: sourcesSchema,
+      supplement: supplementSchema,
+      ownerSupplementV3: ownerSupplementV3Schema,
+    },
   });
   if (validation.errors.length) throw new Error(`Generated foundation failed validation:\n${validation.errors.map((error) => `- ${error}`).join("\n")}`);
 

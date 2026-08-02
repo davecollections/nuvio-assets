@@ -4,9 +4,9 @@ The people publication workflow is offline and explicitly bounded. It validates 
 
 ## Current publication
 
-The published scope contains all 817 registry identities. It includes the complete 523-person actor catalogue and approved 300-person director catalogue across their initial, later, and review tiers. Each identity has one 1200 × 675 landscape WebP and one 1000 × 1500 poster WebP, for 1,634 files total and zero fallbacks.
+The published scope is the frozen pre-v3 snapshot of 817 of the current 1,480 registry identities. It records the earlier 523-person Actor and 300-person Director catalogue state across their initial, later, and review tiers. Each published identity has one 1200 × 675 landscape WebP and one 1000 × 1500 poster WebP, for 1,634 files total and zero fallbacks.
 
-All approved actor and director memberships are represented in the public collection. Actor/director overlap remains category-neutral, so a shared identity has one landscape and one poster rather than category-specific duplicates.
+The manifest intentionally excludes the 663 net-new People v3 identities. It also retains Director-only membership metadata for already illustrated Greta Gerwig (45400) and Erich von Stroheim (8630); their newly approved Actor memberships exist only in the tracked catalogue until a later atomic publication. Actor/director overlap remains category-neutral, so a shared identity has one landscape and one poster rather than category-specific duplicates.
 
 Published paths are:
 

@@ -25,6 +25,7 @@ function clone(foundation) {
     directors: foundation.directors,
     sources: foundation.sources,
     supplement: foundation.supplement,
+    ownerSupplementV3: foundation.ownerSupplementV3,
     schemas: foundation.schemas,
   });
 }
@@ -52,12 +53,12 @@ integration("canonical people foundation validates fully offline", async () => {
   try {
     const result = validatePeopleFoundation(foundation);
     assert.deepEqual(result.errors, []);
-    assert.equal(result.summary.registryCount, 817);
-    assert.equal(result.summary.actorCount, 523);
-    assert.equal(result.summary.directorCount, 300);
-    assert.equal(result.summary.sharedCount, 6);
-    assert.deepEqual(result.summary.actorRollout, { initial: 295, later: 203, review: 25 });
-    assert.deepEqual(result.summary.directorRollout, { initial: 154, later: 102, review: 44 });
+    assert.equal(result.summary.registryCount, 1480);
+    assert.equal(result.summary.actorCount, 1071);
+    assert.equal(result.summary.directorCount, 418);
+    assert.equal(result.summary.sharedCount, 9);
+    assert.deepEqual(result.summary.actorRollout, { initial: 843, later: 203, review: 25 });
+    assert.deepEqual(result.summary.directorRollout, { initial: 272, later: 102, review: 44 });
   } finally {
     globalThis.fetch = previousFetch;
   }
@@ -100,7 +101,7 @@ integration("missing registry memberships and duplicate category memberships are
 integration("dual actor-director identities keep one registry record and separate category rollout", async () => {
   const foundation = await readPeopleFoundation(repoRoot);
   const shared = foundation.registry.records.filter((record) => record.categoryMembership.length === 2);
-  assert.equal(shared.length, 6);
+  assert.equal(shared.length, 9);
   for (const person of shared) {
     assert.equal(foundation.actors.records.filter((record) => record.tmdbPersonId === person.tmdbPersonId).length, 1);
     assert.equal(foundation.directors.records.filter((record) => record.tmdbPersonId === person.tmdbPersonId).length, 1);
@@ -156,7 +157,16 @@ integration("selection policy preserves original proposals and explicit suppleme
   const promoted = foundation.actors.records.filter((record) => record.selectionBasis.includes("owner-added"));
   assert.equal(promoted.length, 198);
   assert.ok(promoted.every((record) => record.ownerDecision === "include" && record.selectionStatus === "owner-decided"));
-  const original = [...foundation.actors.records.filter((record) => !record.selectionBasis.includes("owner-added")), ...foundation.directors.records];
+  const v3Actors = foundation.actors.records.filter((record) => record.selectionBasis.includes("owner-approved-v3"));
+  const v3Directors = foundation.directors.records.filter((record) => record.selectionBasis.includes("owner-approved-v3"));
+  assert.equal(v3Actors.length, 548);
+  assert.equal(v3Directors.length, 118);
+  assert.ok([...v3Actors, ...v3Directors].every((record) => record.rolloutTier === "initial" && record.ownerDecision === "include" && record.selectionStatus === "owner-decided"));
+  const original = [
+    ...foundation.actors.records.filter((record) => !record.selectionBasis.includes("owner-added") && !record.selectionBasis.includes("owner-approved-v3")),
+    ...foundation.directors.records.filter((record) => !record.selectionBasis.includes("owner-approved-v3")),
+  ];
+  assert.equal(original.length, 625);
   assert.ok(original.every((record) => record.ownerDecision === null && record.selectionStatus === "proposed"));
 });
 
