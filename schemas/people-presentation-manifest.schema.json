@@ -13,6 +13,7 @@
     "recordCount",
     "titleLogoCount",
     "sharedHero",
+    "selectedVariantId",
     "rendererVersion",
     "titleLogoPreset",
     "fontEvidence",
@@ -30,13 +31,14 @@
     "recordCount": { "type": "integer", "minimum": 1 },
     "titleLogoCount": { "type": "integer", "minimum": 1 },
     "sharedHero": { "$ref": "#/$defs/sharedHero" },
-    "rendererVersion": { "const": "people-title-logo-renderer-v1" },
+    "selectedVariantId": { "enum": ["variant-a-name-only", "variant-b-nuvio-accent", "variant-c-nuvio-accent-collection"] },
+    "rendererVersion": { "type": "string", "pattern": "^people-title-logo-renderer-v[1-9][0-9]*$" },
     "titleLogoPreset": {
       "type": "object",
       "additionalProperties": false,
       "required": ["id", "sha256", "width", "height"],
       "properties": {
-        "id": { "const": "people-title-logo-cinematic-v1" },
+        "id": { "type": "string", "pattern": "^people-title-logo-[a-z0-9-]+-v[1-9][0-9]*$" },
         "sha256": { "$ref": "#/$defs/hash" },
         "width": { "const": 1863 },
         "height": { "const": 673 }

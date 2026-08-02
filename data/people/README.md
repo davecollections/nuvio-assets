@@ -83,7 +83,7 @@ assets/collection_covers/people/poster/{tmdb_person_id}.webp
 assets/collection_covers/people/manifest.json
 ```
 
-Future presentation assets remain ungenerated and unpublished. The prepared contract keeps transparent `title-logo/{tmdb_person_id}.png` files and the single existing `people hero backdrop.jpg` in a separate additive `presentation-manifest.json`; runtime schemaVersion 2 continues to resolve only Poster and Landscape assets. Automatic title-logo wrapping uses the locked Cormorant Garamond 700 font and `tools/people-seed/presets/people-title-logo-cinematic-v1.json`. Any exceptional line break must be exact-ID-bound and schema-valid in `data/people/title-logo-line-break-overrides.json`.
+Future presentation assets remain ungenerated and unpublished. The prepared contract keeps transparent `title-logo/{tmdb_person_id}.png` files and the single existing `people hero backdrop.jpg` in a separate additive `presentation-manifest.json`; runtime schemaVersion 2 continues to resolve only Poster and Landscape assets. The A/B/C proof variants use the locked Cormorant Garamond 700 name font and `tools/people-seed/presets/people-title-logo-nuvio-variants-v2.json`; no permanent variant is selected. Any exceptional line break must be exact-ID-bound and schema-valid in `data/people/title-logo-line-break-overrides.json`.
 
 Actor and director collections reference the same physical person assets for a shared TMDB person ID. Published actor/director overlaps reuse the same category-neutral artwork and do not create category-specific duplicates. Existing generic people artwork is not a dependency of this workflow. Publication scope must always be explicitly bounded, and the tooling contains no network, commit, or push automation.
 

@@ -24,6 +24,7 @@
     "artwork-v3:proof": "node scripts/people-v3-artwork.mjs --proof",
     "artwork-v3:plan": "node scripts/people-v3-artwork.mjs --plan",
     "artwork-v3:verify-protected": "node scripts/people-v3-artwork.mjs --verify-protected",
+    "artwork-v3:correction": "node scripts/people-v3-artwork-correction.mjs",
     "renderer-help": "node src/render-people-cli.mjs --help",
     "render-people-offline": "node src/render-people-cli.mjs --offline",
     "validate-renderer": "node src/people-artwork-validation-cli.mjs",

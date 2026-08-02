@@ -28,6 +28,7 @@ import {
 import { loadPeopleArtworkRuntime } from "../src/people-artwork/runtime-dependencies.mjs";
 import {
   TITLE_LOGO_PROOF_IDENTITIES,
+  TITLE_LOGO_VARIANT_IDS,
   assertPeopleV3ProofPath,
   loadTitleLogoConfiguration,
   prepareTitleLogoRenderer,
@@ -73,14 +74,19 @@ test("title-logo renderer is transparent, exact-size, and preserves the full pro
   const configuration = await loadTitleLogoConfiguration({ registry: foundation.registry });
   const prepared = await prepareTitleLogoRenderer({ people, configuration, runtime });
   for (const person of people) {
-    const rendered = await renderTitleLogo({ person, ...prepared });
-    assert.equal(rendered.record.presentationName, person.canonicalName.toLocaleUpperCase("en-US"));
-    assert.equal(rendered.record.canonicalNameLines.join(" "), person.canonicalName);
-    assert.equal(rendered.record.canvasWidth, 1863);
-    assert.equal(rendered.record.canvasHeight, 673);
-    assert.equal(rendered.record.alphaTransparent, true);
-    assert.ok(Object.values(rendered.record.safeMargins).every((value) => value >= rendered.record.minimumCanvasMargin));
+    for (const variantId of TITLE_LOGO_VARIANT_IDS) {
+      const rendered = await renderTitleLogo({ person, variantId, ...prepared });
+      assert.equal(rendered.record.presentationName, person.canonicalName.toLocaleUpperCase("en-US"));
+      assert.equal(rendered.record.canonicalNameLines.join(" "), person.canonicalName);
+      assert.equal(rendered.record.canvasWidth, 1863);
+      assert.equal(rendered.record.canvasHeight, 673);
+      assert.equal(rendered.record.alphaTransparent, true);
+      assert.equal(rendered.record.permanentSelection, false);
+      assert.equal(rendered.record.collectionText, variantId === "variant-c-nuvio-accent-collection" ? "COLLECTION" : null);
+      assert.ok(Object.values(rendered.record.safeMargins).every((value) => value >= rendered.record.minimumCanvasMargin));
+    }
   }
+  await assert.rejects(() => renderTitleLogo({ person: people[0], ...prepared }), /explicit A\/B\/C/u);
 });
 
 test("two fresh-process complete title-logo proof replays are byte-identical", async () => {
@@ -92,7 +98,10 @@ test("two fresh-process complete title-logo proof replays are byte-identical", a
   })).stdout);
   const first = await run();
   const second = await run();
-  assert.equal(first.recordCount, TITLE_LOGO_PROOF_IDENTITIES.length);
+  assert.equal(first.personCount, TITLE_LOGO_PROOF_IDENTITIES.length);
+  assert.equal(first.variantCount, TITLE_LOGO_VARIANT_IDS.length);
+  assert.equal(first.recordCount, TITLE_LOGO_PROOF_IDENTITIES.length * TITLE_LOGO_VARIANT_IDS.length);
+  assert.equal(first.designDecisionStatus, "unselected");
   assert.deepEqual(first, second);
 });
 
@@ -100,6 +109,9 @@ test("additive presentation manifest validates and its fingerprint excludes only
   const people = selectTitleLogoProofPeople(foundation).slice(0, 2).sort((left, right) => left.tmdbPersonId - right.tmdbPersonId);
   const configuration = await loadTitleLogoConfiguration({ registry: foundation.registry });
   const titleLogoMetadata = {
+    rendererVersion: "people-title-logo-renderer-v2",
+    presetId: configuration.preset.id,
+    personCount: people.length,
     recordCount: people.length,
     presetHash: configuration.presetHash,
     fontHash: configuration.fontLock.fontSha256,
@@ -109,6 +121,7 @@ test("additive presentation manifest validates and its fingerprint excludes only
       tmdbPersonId: person.tmdbPersonId,
       canonicalName: person.canonicalName,
       categories: person.categoryMembership,
+      variantId: "variant-b-nuvio-accent",
       outputHash: String(index + 1).repeat(64),
       canvasWidth: 1863,
       canvasHeight: 673,
@@ -121,8 +134,10 @@ test("additive presentation manifest validates and its fingerprint excludes only
   };
   const hero = await inspectSharedPeopleHero({ repoRoot, sharp: runtime.sharp });
   const schema = await loadPeoplePresentationManifestSchema({ repoRoot });
-  const candidate = buildPeoplePresentationManifest({ titleLogoMetadata, sharedHero: hero, generatedAt });
+  assert.throws(() => buildPeoplePresentationManifest({ titleLogoMetadata, sharedHero: hero, generatedAt }), /explicit reviewed title-logo variant/u);
+  const candidate = buildPeoplePresentationManifest({ titleLogoMetadata, selectedVariantId: "variant-b-nuvio-accent", sharedHero: hero, generatedAt });
   assert.deepEqual(validatePeoplePresentationManifest(candidate, schema, { expectedPeople: people, expectedHero: hero }), []);
+  assert.equal(candidate.selectedVariantId, "variant-b-nuvio-accent");
   const timestampChanged = structuredClone(candidate);
   timestampChanged.generatedAt = "2026-08-03T05:00:00.000Z";
   assert.equal(calculatePresentationManifestFingerprint(timestampChanged), candidate.manifestFingerprint);
@@ -130,6 +145,17 @@ test("additive presentation manifest validates and its fingerprint excludes only
   contentChanged.records[0].canonicalName = "Wrong";
   assert.notEqual(calculatePresentationManifestFingerprint(contentChanged), candidate.manifestFingerprint);
   assert.equal(candidate.sharedHero.repositoryPath, "assets/collection_covers/people/people hero backdrop.jpg");
+});
+
+test("active title-logo proof tooling contains no simulated hero or client composition path", async () => {
+  const [proofModule, proofCli, correctionModule] = await Promise.all([
+    fs.readFile(path.join(repoRoot, "tools", "people-seed", "src", "people-v3-artwork-proof.mjs"), "utf8"),
+    fs.readFile(path.join(repoRoot, "tools", "people-seed", "scripts", "people-v3-artwork.mjs"), "utf8"),
+    fs.readFile(path.join(repoRoot, "tools", "people-seed", "src", "people-title-logo-proof.mjs"), "utf8"),
+  ]);
+  const activeProofCode = `${proofModule}\n${proofCli}\n${correctionModule}`;
+  assert.doesNotMatch(activeProofCode, /generateCombinedPresentationMockups|sharedHeroSheets|composition-proofs|kind\s*===\s*["']hero["']/u);
+  await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "presets", "people-title-logo-cinematic-v1.json")));
 });
 
 test("current artwork-readiness audit reconciles the exact 663-person delta without inventing sources", async () => {

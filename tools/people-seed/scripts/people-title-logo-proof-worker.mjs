@@ -4,6 +4,7 @@ import path from "node:path";
 
 import { readPeopleFoundation } from "../src/people-validation.mjs";
 import {
+  TITLE_LOGO_VARIANT_IDS,
   assertPeopleV3ProofPath,
   loadTitleLogoConfiguration,
   prepareTitleLogoRenderer,
@@ -52,8 +53,10 @@ async function main() {
   });
   if (options.hashOnly) {
     const records = [];
-    for (const person of people) records.push((await renderTitleLogo({ person, ...prepared })).record);
-    process.stdout.write(`${JSON.stringify({ recordCount: records.length, records })}\n`);
+    for (const variantId of TITLE_LOGO_VARIANT_IDS) {
+      for (const person of people) records.push((await renderTitleLogo({ person, variantId, ...prepared })).record);
+    }
+    process.stdout.write(`${JSON.stringify({ designDecisionStatus: "unselected", permanentVariantSelected: false, personCount: people.length, variantCount: TITLE_LOGO_VARIANT_IDS.length, recordCount: records.length, records })}\n`);
     return;
   }
   assert(options.outputDir, "--output-dir is required unless --hash-only is selected.");

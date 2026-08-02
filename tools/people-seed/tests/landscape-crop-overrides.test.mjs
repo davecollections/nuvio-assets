@@ -12,6 +12,10 @@ import {
   validateLandscapeCropOverrides,
 } from "../src/people-artwork/landscape-crop-overrides.mjs";
 import { cropFor, loadPeopleArtworkPresets } from "../src/people-artwork/renderer.mjs";
+import {
+  loadLandscapeChinSafeProofOverrides,
+  validateLandscapeChinSafeProofOverrides,
+} from "../src/people-v3-landscape-correction.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "..", "..");
@@ -28,6 +32,7 @@ const REVIEW_ACTOR_EVIDENCE_PACKAGE = "tools/people-seed/.work/people-review-act
 const REVIEW_ACTOR_OVERRIDE_IDS = [7399, 18072, 25541, 51576, 112561, 1190668, 1373737];
 const REVIEW_ACTOR_OVERRIDE_RECORDS_HASH = "86372d8f4f0e0a1ebd0e008fe538c799781c4f7939d0a53de82eab5f6de64757";
 const ORIGINAL_147_OVERRIDE_RECORDS_HASH = "f7a3653a55f52b33401c866c68039fbbb012faca5604f3b4e700378a4c506619";
+const CHIN_SAFE_PROOF_IDS = [32, 47, 63, 65, 655, 1164, 3829, 21041, 56734, 60561, 70131, 77234, 121529];
 
 test("tracked landscape crop overrides validate as exactly 154 unique active identities", async () => {
   const [document, schema, registry] = await Promise.all([
@@ -107,6 +112,40 @@ test("all 154 Alternative A proof bindings retain the approved 594x675 target ge
     assert.equal(record.cropOffsetX, 504, record.stableKey);
     assert.equal(record.cropOffsetY, 0, record.stableKey);
   }
+});
+
+test("the 13 Landscape chin-safe corrections are exact, source-bound proof candidates only", async () => {
+  const [registry, schema, configuration, production] = await Promise.all([
+    readJson(path.join(repoRoot, "data", "people", "people-registry.json")),
+    readJson(path.join(repoRoot, "schemas", "people-landscape-chin-safe-proof-overrides.schema.json")),
+    loadLandscapeChinSafeProofOverrides({ repoRoot }),
+    loadLandscapeCropOverrides({ repoRoot }),
+  ]);
+  assert.deepEqual(validateLandscapeChinSafeProofOverrides(configuration.config, schema, { registry }), []);
+  assert.equal(configuration.allowProofCandidate, true);
+  assert.equal(configuration.config.publicationAuthorised, false);
+  assert.deepEqual(configuration.config.records.map((record) => record.tmdbPersonId), CHIN_SAFE_PROOF_IDS);
+  assert.deepEqual(configuration.config.records.filter((record) => record.prototypeTier === "tier-1-slight").map((record) => record.tmdbPersonId), [63, 56734, 60561, 70131]);
+  assert.equal(configuration.config.records.filter((record) => record.prototypeTier === "tier-2-moderate").length, 9);
+  assert.ok(configuration.config.records.every((record) => record.format === "landscape" && record.status === "proof-candidate"));
+  assert.ok(configuration.config.records.every((record) => /^[a-f0-9]{64}$/u.test(record.sourceHash) && /^[a-f0-9]{64}$/u.test(record.proofOutputHash)));
+  assert.ok(configuration.config.records.every((record) => record.cropOffsetX + Math.round(record.cropRectangle.width * record.cropScale.x) === 1098));
+  assert.ok(CHIN_SAFE_PROOF_IDS.every((id) => !production.byStableKey.has(`person:${id}`)), "Proof corrections must not enter the active production override file.");
+});
+
+test("chin-safe proof overrides apply only to the exact reviewed Landscape source", async () => {
+  const configuration = await loadLandscapeChinSafeProofOverrides({ repoRoot });
+  const record = configuration.config.records[0];
+  const person = { stableKey: record.stableKey, tmdbPersonId: record.tmdbPersonId, canonicalName: record.canonicalName };
+  const source = { available: true, sourceHash: record.sourceHash, profilePathAttempted: record.sourceProfilePath };
+  const landscape = resolveLandscapeCropOverride({ person, source, formatId: "landscape", overrideConfiguration: configuration });
+  assert.equal(landscape.used, true);
+  assert.equal(landscape.status, "proof-candidate-source-match");
+  assert.deepEqual(resolveLandscapeCropOverride({ person, source, formatId: "poster", overrideConfiguration: configuration }), { used: false, status: "not-applicable-format" });
+  assert.throws(
+    () => resolveLandscapeCropOverride({ person, source: { ...source, sourceHash: "0".repeat(64) }, formatId: "landscape", overrideConfiguration: configuration }),
+    (error) => error instanceof LandscapeCropOverrideSourceMismatchError && error.code === "crop-override-source-mismatch",
+  );
 });
 
 test("override configuration hashing is deterministic over exact tracked bytes", async () => {

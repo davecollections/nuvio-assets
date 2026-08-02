@@ -70,7 +70,8 @@ export class LandscapeCropOverrideSourceMismatchError extends Error {
 export function resolveLandscapeCropOverride({ person, source, formatId, overrideConfiguration }) {
   if (formatId !== "landscape") return { used: false, status: "not-applicable-format" };
   const record = overrideConfiguration.byStableKey.get(person.stableKey);
-  if (!record || record.status !== "active") return { used: false, status: "not-configured" };
+  const proofCandidate = overrideConfiguration.allowProofCandidate === true && record?.status === "proof-candidate";
+  if (!record || (record.status !== "active" && !proofCandidate)) return { used: false, status: "not-configured" };
   assert(record.tmdbPersonId === person.tmdbPersonId && record.canonicalName === person.canonicalName, `${person.stableKey}: crop override identity mismatch`);
   if (!source?.available || source.sourceHash !== record.sourceHash || source.profilePathAttempted !== record.sourceProfilePath) {
     throw new LandscapeCropOverrideSourceMismatchError({ person, record, source });
@@ -78,7 +79,7 @@ export function resolveLandscapeCropOverride({ person, source, formatId, overrid
   return {
     used: true,
     id: record.stableKey,
-    status: "active-source-match",
+    status: proofCandidate ? "proof-candidate-source-match" : "active-source-match",
     configHash: overrideConfiguration.configHash,
     record,
   };

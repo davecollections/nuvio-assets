@@ -1,16 +1,8 @@
 import crypto from "node:crypto";
-import { execFile } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { promisify } from "node:util";
 
 import { readPeopleFoundation } from "./people-validation.mjs";
-import {
-  buildPeoplePresentationManifest,
-  inspectSharedPeopleHero,
-  loadPeoplePresentationManifestSchema,
-  writePeoplePresentationManifestCandidate,
-} from "./people-presentation-manifest.mjs";
 import { stableStringify } from "./people-publication.mjs";
 import { validateRenderMetadata, writeRenderMetadata } from "./people-artwork/metadata.mjs";
 import { renderPeopleArtwork } from "./people-artwork/renderer.mjs";
@@ -18,11 +10,9 @@ import { loadPeopleArtworkRuntime, PEOPLE_ARTWORK_REPO_ROOT } from "./people-art
 import { resolvePortraitSource } from "./people-artwork/source-resolution.mjs";
 import {
   assertPeopleV3ProofPath,
-  compareTitleLogoReplay,
   loadTitleLogoConfiguration,
   prepareTitleLogoRenderer,
   selectTitleLogoProofPeople,
-  validateTitleLogoMetadata,
 } from "./people-artwork/title-logo.mjs";
 
 export const PEOPLE_V3_PORTRAIT_PROOF_SELECTION = Object.freeze([
@@ -49,7 +39,6 @@ export const PEOPLE_V3_PORTRAIT_PROOF_SELECTION = Object.freeze([
 ]);
 
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
-const execFileAsync = promisify(execFile);
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
@@ -76,82 +65,6 @@ async function matchingFiles(directory, pattern) {
     .filter((entry) => entry.isFile() && pattern.test(entry.name))
     .map((entry) => path.join(directory, entry.name))
     .sort((left, right) => left.localeCompare(right, "en"));
-}
-
-async function nextTitleLogoReplayRoot(root) {
-  const titleRoot = path.join(root, "title-logos");
-  if (!(await exists(path.join(titleRoot, "run-1"))) && !(await exists(path.join(titleRoot, "run-2")))) return titleRoot;
-  for (let index = 2; index < 100; index += 1) {
-    const candidate = path.join(titleRoot, `replay-attempt-${String(index).padStart(2, "0")}`);
-    if (!(await exists(path.join(candidate, "run-1"))) && !(await exists(path.join(candidate, "run-2")))) return candidate;
-  }
-  throw new Error("No unused title-logo replay workspace remains below this proof attempt.");
-}
-
-async function renderTitleLogoSetInFreshProcess({ outputDir, generatedAt, fontDirectory = null } = {}) {
-  const workerPath = path.join(PEOPLE_ARTWORK_REPO_ROOT, "tools", "people-seed", "scripts", "people-title-logo-proof-worker.mjs");
-  const arguments_ = [workerPath, "--output-dir", outputDir, "--generated-at", generatedAt];
-  if (fontDirectory) arguments_.push("--font-dir", fontDirectory);
-  const { stdout, stderr } = await execFileAsync(process.execPath, arguments_, {
-    cwd: PEOPLE_ARTWORK_REPO_ROOT,
-    windowsHide: true,
-    maxBuffer: 4 * 1024 * 1024,
-  });
-  if (stderr.trim()) throw new Error(`Title-logo proof worker emitted unexpected stderr:\n${stderr.trim()}`);
-  const result = JSON.parse(stdout);
-  const metadata = await readJson(result.metadataPath);
-  return { metadata, metadataPath: result.metadataPath, outputDir: result.outputDir };
-}
-
-async function completedTitleLogoReplayRoot(root) {
-  const titleRoot = path.join(root, "title-logos");
-  if (!(await exists(titleRoot))) return null;
-  const entries = await fs.readdir(titleRoot, { withFileTypes: true });
-  const candidates = [
-    titleRoot,
-    ...entries.filter((entry) => entry.isDirectory() && /^replay-attempt-[0-9]{2}$/u.test(entry.name)).map((entry) => path.join(titleRoot, entry.name)),
-  ].sort((left, right) => right.localeCompare(left, "en"));
-  for (const candidate of candidates) if (await exists(path.join(candidate, "deterministic-replay.json"))) return candidate;
-  return null;
-}
-
-async function loadCompletedTitleLogoProof({ root, context, runtime, fontDirectory }) {
-  const replayRoot = await completedTitleLogoReplayRoot(root);
-  if (!replayRoot) return null;
-  const first = { outputDir: path.join(replayRoot, "run-1"), metadataPath: path.join(replayRoot, "run-1", "renderer-metadata.json") };
-  const second = { outputDir: path.join(replayRoot, "run-2"), metadataPath: path.join(replayRoot, "run-2", "renderer-metadata.json") };
-  [first.metadata, second.metadata] = await Promise.all([readJson(first.metadataPath), readJson(second.metadataPath)]);
-  for (const result of [first, second]) {
-    const errors = validateTitleLogoMetadata(result.metadata, context.titleLogoPeople);
-    assert(errors.length === 0, `Completed title-logo proof metadata is invalid:\n${errors.map((error) => `- ${error}`).join("\n")}`);
-    for (const record of result.metadata.records) {
-      const output = await fs.readFile(path.join(result.outputDir, "individual", record.proofFileName));
-      assert(output.length === record.byteCount && sha256(output) === record.outputHash, `${record.stableKey}: completed title-logo proof artifact differs from its metadata.`);
-    }
-  }
-  const replay = compareTitleLogoReplay(first, second);
-  assert(replay.byteIdentical && replay.metadataIdentical && replay.comparisons.every((record) => record.byteIdentical), "Completed title-logo proof no longer passes deterministic replay.");
-  const configuration = await loadTitleLogoConfiguration({ registry: context.foundation.registry });
-  const prepared = await prepareTitleLogoRenderer({ people: context.titleLogoPeople, configuration, runtime, fontDirectory });
-  const hero = await inspectSharedPeopleHero({ repoRoot: PEOPLE_ARTWORK_REPO_ROOT, sharp: runtime.sharp });
-  const reviewSheets = await generateTitleLogoReviewSheets({ replayRoot, context, first, hero, runtime, prepared });
-  const presentationPath = path.join(root, "candidates", "presentation-manifest.proof.json");
-  assert(await exists(presentationPath), "Completed title-logo proof lacks its additive presentation-manifest candidate.");
-  return {
-    first,
-    second,
-    replay,
-    replayRoot,
-    replayPath: path.join(replayRoot, "deterministic-replay.json"),
-    ...reviewSheets,
-    wrapJsonPath: path.join(replayRoot, "line-wrap-report.json"),
-    wrapMarkdownPath: path.join(replayRoot, "line-wrap-report.md"),
-    presentationPath,
-    presentation: await readJson(presentationPath),
-    hero,
-    prepared,
-    resumed: true,
-  };
 }
 
 function categoryMembership(tmdbPersonId, actorIds, directorIds) {
@@ -278,29 +191,6 @@ function labelBuffer({ runtime, fontRecord, width, height, text, subtitle = null
   return canvas.toBuffer("png");
 }
 
-function checkerboardSvg(width, height) {
-  return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}"><defs><pattern id="c" width="32" height="32" patternUnits="userSpaceOnUse"><rect width="32" height="32" fill="#d8d8d8"/><rect width="16" height="16" fill="#a8a8a8"/><rect x="16" y="16" width="16" height="16" fill="#a8a8a8"/></pattern></defs><rect width="100%" height="100%" fill="url(#c)"/></svg>`);
-}
-
-async function titleLogoCell({ logoPath, person, kind, width, imageHeight, labelHeight, heroPath, runtime, fontRecord }) {
-  const logo = await runtime.sharp(logoPath).resize(width - 32, imageHeight - 24, {
-    fit: "contain",
-    withoutEnlargement: true,
-    background: { r: 0, g: 0, b: 0, alpha: 0 },
-  }).png().toBuffer();
-  let background;
-  if (kind === "checkerboard") background = checkerboardSvg(width, imageHeight);
-  else if (kind === "hero") {
-    background = await runtime.sharp(heroPath).resize(width, imageHeight, { fit: "cover", position: "centre" }).modulate({ brightness: 0.62 }).jpeg({ quality: 90 }).toBuffer();
-  } else {
-    background = await runtime.sharp({ create: { width, height: imageHeight, channels: 3, background: "#24211f" } }).png().toBuffer();
-  }
-  const logoMetadata = await runtime.sharp(logo).metadata();
-  const image = await runtime.sharp(background).composite([{ input: logo, left: Math.round((width - logoMetadata.width) / 2), top: Math.round((imageHeight - logoMetadata.height) / 2) }]).png().toBuffer();
-  const label = await labelBuffer({ runtime, fontRecord, width, height: labelHeight, text: `${person.tmdbPersonId} · ${person.canonicalName}`, subtitle: person.categoryMembership.join(" + ") });
-  return runtime.sharp({ create: { width, height: imageHeight + labelHeight, channels: 3, background: "#151515" } }).composite([{ input: image, left: 0, top: 0 }, { input: label, left: 0, top: imageHeight }]).png().toBuffer();
-}
-
 async function imageContactCell({ imagePath, person, width, imageHeight, labelHeight, runtime, fontRecord }) {
   const image = await runtime.sharp(imagePath).resize(width - 16, imageHeight - 16, { fit: "contain", background: "#211e1b" }).png().toBuffer();
   const metadata = await runtime.sharp(image).metadata();
@@ -325,35 +215,6 @@ async function composePagedSheets({ cells, outputDir, baseName, columns, rows, c
   return paths;
 }
 
-async function generateTitleLogoReviewSheets({ replayRoot, context, first, hero, runtime, prepared }) {
-  const contactRoot = path.join(replayRoot, "contact-sheets-v2");
-  const existing = {
-    checkerboardSheets: await matchingFiles(contactRoot, /^checkerboard-page-[0-9]{2}\.png$/u),
-    sharedHeroSheets: await matchingFiles(contactRoot, /^shared-hero-page-[0-9]{2}\.png$/u),
-    typographySheets: await matchingFiles(contactRoot, /^typography-close-up-page-[0-9]{2}\.png$/u),
-  };
-  if (existing.checkerboardSheets.length === 1 && existing.sharedHeroSheets.length === 1 && existing.typographySheets.length === 1) return existing;
-  assert(!(await exists(contactRoot)), `Corrected title-logo review-sheet workspace is incomplete and will not be overwritten: ${contactRoot}`);
-  const heroPath = path.join(PEOPLE_ARTWORK_REPO_ROOT, hero.repositoryPath);
-  const titleRecordsById = new Map(first.metadata.records.map((record) => [record.tmdbPersonId, record]));
-  const titleRoot = path.join(first.outputDir, "individual");
-  const checkerCells = [];
-  const heroCells = [];
-  const closeupCells = [];
-  for (const person of context.titleLogoPeople) {
-    const logoPath = path.join(titleRoot, `${person.tmdbPersonId}.png`);
-    checkerCells.push(await titleLogoCell({ logoPath, person, kind: "checkerboard", width: 440, imageHeight: 160, labelHeight: 58, heroPath, runtime, fontRecord: prepared.fontRecord }));
-    heroCells.push(await titleLogoCell({ logoPath, person, kind: "hero", width: 440, imageHeight: 248, labelHeight: 58, heroPath, runtime, fontRecord: prepared.fontRecord }));
-    closeupCells.push(await titleLogoCell({ logoPath, person, kind: "closeup", width: 900, imageHeight: 320, labelHeight: 58, heroPath, runtime, fontRecord: prepared.fontRecord }));
-    assert(titleRecordsById.has(person.tmdbPersonId), `${person.stableKey}: title-logo metadata is missing.`);
-  }
-  return {
-    checkerboardSheets: await composePagedSheets({ cells: checkerCells, outputDir: contactRoot, baseName: "checkerboard", columns: 4, rows: 4, cellWidth: 440, cellHeight: 218, runtime }),
-    sharedHeroSheets: await composePagedSheets({ cells: heroCells, outputDir: contactRoot, baseName: "shared-hero", columns: 4, rows: 4, cellWidth: 440, cellHeight: 306, runtime }),
-    typographySheets: await composePagedSheets({ cells: closeupCells, outputDir: contactRoot, baseName: "typography-close-up", columns: 2, rows: 8, cellWidth: 900, cellHeight: 378, runtime }),
-  };
-}
-
 async function generatePortraitReviewSheets({ root, renderablePeople, first, runtime, prepared }) {
   const contactRoot = path.join(root, "portrait-proof", "contact-sheets-v2");
   const existing = {
@@ -371,63 +232,6 @@ async function generatePortraitReviewSheets({ root, renderablePeople, first, run
   return {
     posterSheets: await composePagedSheets({ cells: posterCells, outputDir: contactRoot, baseName: "poster", columns: 4, rows: 4, cellWidth: 300, cellHeight: 510, runtime }),
     landscapeSheets: await composePagedSheets({ cells: landscapeCells, outputDir: contactRoot, baseName: "landscape", columns: 4, rows: 4, cellWidth: 360, cellHeight: 263, runtime }),
-  };
-}
-
-function lineWrapMarkdown(metadata) {
-  const lines = [
-    "# People v3 title-logo line-wrap report",
-    "",
-    `Preset: ${metadata.presetId} (${metadata.presetHash})`,
-    `Manual override count: ${metadata.records.filter((record) => record.lineBreakSource === "manual-exact-id-override").length}`,
-    "",
-    "| TMDB ID | Canonical name | Presentation lines | Font px | Source |",
-    "| ---: | --- | --- | ---: | --- |",
-    ...metadata.records.map((record) => `| ${record.tmdbPersonId} | ${record.canonicalName.replaceAll("|", "\\|")} | ${record.presentationLines.join(" / ").replaceAll("|", "\\|")} | ${record.finalFontSize} | ${record.lineBreakSource} |`),
-    "",
-  ];
-  return `${lines.join("\n")}\n`;
-}
-
-export async function generateTitleLogoProof({ attemptRoot, context, generatedAt, runtime: providedRuntime = null, fontDirectory = null } = {}) {
-  const root = assertPeopleV3ProofPath(attemptRoot);
-  const runtime = providedRuntime || loadPeopleArtworkRuntime();
-  const completed = await loadCompletedTitleLogoProof({ root, context, runtime, fontDirectory });
-  if (completed) return completed;
-  const replayRoot = await nextTitleLogoReplayRoot(root);
-  const first = await renderTitleLogoSetInFreshProcess({ outputDir: path.join(replayRoot, "run-1"), generatedAt, fontDirectory });
-  const second = await renderTitleLogoSetInFreshProcess({ outputDir: path.join(replayRoot, "run-2"), generatedAt, fontDirectory });
-  const replay = compareTitleLogoReplay(first, second);
-  assert(replay.byteIdentical && replay.metadataIdentical && replay.comparisons.every((record) => record.byteIdentical), "Title-logo proof replay differs between the two fresh-process complete runs.");
-  const configuration = await loadTitleLogoConfiguration({ registry: context.foundation.registry });
-  const prepared = await prepareTitleLogoRenderer({ people: context.titleLogoPeople, configuration, runtime, fontDirectory });
-  const replayPath = path.join(replayRoot, "deterministic-replay.json");
-  await atomicWrite(replayPath, `${JSON.stringify({ version: "people-title-logo-replay-v1", generatedAt, ...replay }, null, 2)}\n`);
-  const hero = await inspectSharedPeopleHero({ repoRoot: PEOPLE_ARTWORK_REPO_ROOT, sharp: runtime.sharp });
-  const reviewSheets = await generateTitleLogoReviewSheets({ replayRoot, context, first, hero, runtime, prepared });
-  const wrapJsonPath = path.join(replayRoot, "line-wrap-report.json");
-  const wrapMarkdownPath = path.join(replayRoot, "line-wrap-report.md");
-  await Promise.all([
-    atomicWrite(wrapJsonPath, `${JSON.stringify({ version: "people-title-logo-line-wrap-report-v1", generatedAt, presetId: first.metadata.presetId, presetHash: first.metadata.presetHash, overrideConfigHash: first.metadata.overrideConfigHash, manualOverrideCount: first.metadata.records.filter((record) => record.lineBreakSource === "manual-exact-id-override").length, records: first.metadata.records.map((record) => ({ tmdbPersonId: record.tmdbPersonId, canonicalName: record.canonicalName, presentationLines: record.presentationLines, finalFontSize: record.finalFontSize, lineBreakSource: record.lineBreakSource, safeMargins: record.safeMargins })) }, null, 2)}\n`),
-    atomicWrite(wrapMarkdownPath, lineWrapMarkdown(first.metadata)),
-  ]);
-  const schema = await loadPeoplePresentationManifestSchema();
-  const presentationManifest = buildPeoplePresentationManifest({ titleLogoMetadata: first.metadata, sharedHero: hero, generatedAt, status: "proof-candidate" });
-  const presentationPath = path.join(root, "candidates", "presentation-manifest.proof.json");
-  const presentation = await writePeoplePresentationManifestCandidate({ manifest: presentationManifest, outputPath: presentationPath, schema, expectedPeople: context.titleLogoPeople, expectedHero: hero });
-  return {
-    first,
-    second,
-    replay,
-    replayRoot,
-    replayPath,
-    ...reviewSheets,
-    wrapJsonPath,
-    wrapMarkdownPath,
-    presentationPath,
-    presentation,
-    hero,
-    prepared,
   };
 }
 
@@ -548,76 +352,6 @@ export async function generatePortraitProof({ attemptRoot, context, acquisition 
   const prepared = await prepareTitleLogoRenderer({ people: renderablePeople, configuration, runtime, fontDirectory });
   const reviewSheets = await generatePortraitReviewSheets({ root, renderablePeople, first, runtime, prepared });
   return { first, second, replay, replayPath, findings, findingsPath, ...reviewSheets, renderablePeople, investigationPeople: context.portraitPeople.filter((person) => !availableIds.has(person.tmdbPersonId)), prepared };
-}
-
-async function compositionMockup({ person, posterPath, landscapePath, logoPath, heroPath, runtime, fontRecord }) {
-  const width = 1920;
-  const height = 1080;
-  const hero = await runtime.sharp(heroPath).resize(width, height, { fit: "cover", position: "centre" }).modulate({ brightness: 0.48 }).jpeg({ quality: 92 }).toBuffer();
-  const poster = await runtime.sharp(posterPath).resize(390, 585, { fit: "cover" }).png().toBuffer();
-  const landscape = await runtime.sharp(landscapePath).resize(520, 293, { fit: "cover" }).png().toBuffer();
-  const logo = await runtime.sharp(logoPath).resize(1050, 380, { fit: "contain" }).png().toBuffer();
-  const label = await labelBuffer({ runtime, fontRecord, width: 1920, height: 72, text: `COMPOSITION PROOF — NOT NUVIO CLIENT · ${person.tmdbPersonId} · ${person.canonicalName}`, subtitle: "coverImageUrl + titleLogoUrl + shared heroBackdropUrl" });
-  return runtime.sharp(hero).composite([
-    { input: poster, left: 120, top: 170 },
-    { input: landscape, left: 1270, top: 700 },
-    { input: logo, left: 670, top: 160 },
-    { input: label, left: 0, top: 0 },
-  ]).png().toBuffer();
-}
-
-export async function generateCombinedPresentationMockups({ attemptRoot, context, titleProof, portraitProof, runtime: providedRuntime = null } = {}) {
-  const root = assertPeopleV3ProofPath(attemptRoot);
-  const runtime = providedRuntime || loadPeopleArtworkRuntime();
-  const selectedIds = [47, 1164, 3829, 56734, 77234];
-  const portraitIds = new Set(portraitProof.renderablePeople.map((person) => person.tmdbPersonId));
-  const peopleById = new Map(context.portraitPeople.map((person) => [person.tmdbPersonId, person]));
-  assert(selectedIds.every((id) => portraitIds.has(id)), "Combined presentation mockup selection lacks a rendered portrait proof.");
-  const baseMockupRoot = path.join(root, "composition-proofs");
-  const existingRoots = [baseMockupRoot];
-  if (await exists(baseMockupRoot)) existingRoots.push(...(await fs.readdir(baseMockupRoot, { withFileTypes: true })).filter((entry) => entry.isDirectory() && /^retry-[0-9]{2}$/u.test(entry.name)).map((entry) => path.join(baseMockupRoot, entry.name)));
-  for (const candidate of existingRoots.sort((left, right) => right.localeCompare(left, "en"))) {
-    const candidatePaths = selectedIds.map((id) => path.join(candidate, `${id}.png`));
-    const contactSheets = await matchingFiles(candidate, /^composition-proofs-page-[0-9]{2}\.png$/u);
-    const candidateFilesExist = (await Promise.all(candidatePaths.map((filePath) => exists(filePath)))).every(Boolean);
-    if (candidateFilesExist && contactSheets.length === 1 && await exists(path.join(candidate, "README.md"))) {
-      return { paths: candidatePaths, contactSheets, reportPath: path.join(candidate, "README.md"), resumed: true };
-    }
-  }
-  let mockupRoot = baseMockupRoot;
-  if ((await matchingFiles(baseMockupRoot, /^[0-9]+\.png$/u)).length > 0) {
-    for (let index = 2; index < 100; index += 1) {
-      const candidate = path.join(baseMockupRoot, `retry-${String(index).padStart(2, "0")}`);
-      if (!(await exists(candidate))) { mockupRoot = candidate; break; }
-    }
-  }
-  await fs.mkdir(mockupRoot, { recursive: true });
-  const paths = [];
-  const heroPath = path.join(PEOPLE_ARTWORK_REPO_ROOT, "assets", "collection_covers", "people", "people hero backdrop.jpg");
-  for (const tmdbPersonId of selectedIds) {
-    const person = peopleById.get(tmdbPersonId);
-    const buffer = await compositionMockup({
-      person,
-      posterPath: path.join(portraitProof.first.outputDir, "poster", `${tmdbPersonId}.webp`),
-      landscapePath: path.join(portraitProof.first.outputDir, "landscape", `${tmdbPersonId}.webp`),
-      logoPath: path.join(titleProof.first.outputDir, "individual", `${tmdbPersonId}.png`),
-      heroPath,
-      runtime,
-      fontRecord: titleProof.prepared.fontRecord,
-    });
-    const outputPath = path.join(mockupRoot, `${tmdbPersonId}.png`);
-    await atomicWrite(outputPath, buffer);
-    paths.push(outputPath);
-  }
-  const contactCells = [];
-  for (const outputPath of paths) {
-    const image = await runtime.sharp(outputPath).resize(640, 360, { fit: "contain" }).png().toBuffer();
-    contactCells.push(image);
-  }
-  const contactSheets = await composePagedSheets({ cells: contactCells, outputDir: mockupRoot, baseName: "composition-proofs", columns: 2, rows: 3, cellWidth: 640, cellHeight: 360, runtime });
-  const reportPath = path.join(mockupRoot, "README.md");
-  await atomicWrite(reportPath, `# People v3 combined presentation composition proofs\n\nThese ignored mockups combine the existing three-field concept: runtime coverImageUrl, transparent titleLogoUrl, and the shared heroBackdropUrl. They are design evidence only and do not claim exact Nuvio client layout.\n`);
-  return { paths, contactSheets, reportPath };
 }
 
 export async function readPortraitAcquisitionFromAttempt(attemptRoot) {

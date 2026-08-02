@@ -5,9 +5,8 @@ import { sha256, stableStringify } from "./people-publication.mjs";
 import { validateAgainstSchema } from "./schema-validator.mjs";
 import { PEOPLE_ARTWORK_REPO_ROOT } from "./people-artwork/runtime-dependencies.mjs";
 import {
-  PEOPLE_TITLE_LOGO_PRESET_ID,
   PEOPLE_TITLE_LOGO_PUBLIC_ROOT,
-  PEOPLE_TITLE_LOGO_RENDERER_VERSION,
+  TITLE_LOGO_VARIANT_IDS,
 } from "./people-artwork/title-logo.mjs";
 
 export const PEOPLE_PRESENTATION_MANIFEST_VERSION = "people-presentation-manifest-v1";
@@ -55,9 +54,12 @@ export async function inspectSharedPeopleHero({ repoRoot = PEOPLE_ARTWORK_REPO_R
   };
 }
 
-export function buildPeoplePresentationManifest({ titleLogoMetadata, sharedHero, generatedAt, status = "proof-candidate" } = {}) {
+export function buildPeoplePresentationManifest({ titleLogoMetadata, selectedVariantId, sharedHero, generatedAt, status = "proof-candidate" } = {}) {
   assert(titleLogoMetadata?.recordCount > 0 && Array.isArray(titleLogoMetadata.records), "Title-logo metadata is required to build a presentation manifest.");
-  const records = [...titleLogoMetadata.records]
+  assert(TITLE_LOGO_VARIANT_IDS.includes(selectedVariantId), "An explicit reviewed title-logo variant selection is required to build a presentation manifest.");
+  const selectedRecords = titleLogoMetadata.records.filter((record) => record.variantId === selectedVariantId);
+  assert(selectedRecords.length > 0 && selectedRecords.length === titleLogoMetadata.personCount, "Selected title-logo variant records are incomplete.");
+  const records = [...selectedRecords]
     .sort((left, right) => left.tmdbPersonId - right.tmdbPersonId)
     .map((record) => ({
       stableKey: record.stableKey,
@@ -81,12 +83,13 @@ export function buildPeoplePresentationManifest({ titleLogoMetadata, sharedHero,
     recordCount: records.length,
     titleLogoCount: records.length,
     sharedHero,
-    rendererVersion: PEOPLE_TITLE_LOGO_RENDERER_VERSION,
+    selectedVariantId,
+    rendererVersion: titleLogoMetadata.rendererVersion,
     titleLogoPreset: {
-      id: PEOPLE_TITLE_LOGO_PRESET_ID,
+      id: titleLogoMetadata.presetId,
       sha256: titleLogoMetadata.presetHash,
-      width: 1863,
-      height: 673,
+      width: selectedRecords[0].canvasWidth,
+      height: selectedRecords[0].canvasHeight,
     },
     fontEvidence: {
       family: titleLogoMetadata.records[0].fontFamily,
