@@ -13,6 +13,7 @@ import {
   prepareTrackedActorSupplement,
   validateActorSupplement,
 } from "../src/actor-supplement-promotion.mjs";
+import { verifyIsolatedFoundationBuild } from "../src/foundation-build-verification.mjs";
 import { readPeopleFoundation, validatePeopleFoundation } from "../src/people-validation.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -246,16 +247,24 @@ async function promote({ checkOnly = false } = {}) {
 }
 
 async function verifyBuild() {
-  const before = await Promise.all(Object.values(canonicalFiles).map((name) => fs.readFile(path.join(dataRoot, name), "utf8")));
-  await execFileAsync(process.execPath, [path.join(packageRoot, "scripts", "build-foundation.mjs")], { cwd: repoRoot, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 });
-  const after = await Promise.all(Object.values(canonicalFiles).map((name) => fs.readFile(path.join(dataRoot, name), "utf8")));
-  const comparisons = Object.values(canonicalFiles).map((name, index) => ({ path: `data/people/${name}`, beforeSha256: sha256(before[index]), rebuildSha256: sha256(after[index]), identical: before[index] === after[index] }));
+  const result = await verifyIsolatedFoundationBuild({
+    trackedDirectory: dataRoot,
+    fileNames: Object.values(canonicalFiles),
+    runBuild: async ({ outputDirectory, reviewDirectory }) => {
+      await execFileAsync(process.execPath, [
+        path.join(packageRoot, "scripts", "build-foundation.mjs"),
+        "--output-dir",
+        outputDirectory,
+        "--review-dir",
+        reviewDirectory,
+      ], { cwd: repoRoot, encoding: "utf8", maxBuffer: 16 * 1024 * 1024 });
+    },
+  });
   const foundation = await readPeopleFoundation(repoRoot);
   const validation = validatePeopleFoundation(foundation);
-  assert(comparisons.every((item) => item.identical), "Tracked full rebuild did not reproduce the promoted canonical files.");
   assert(validation.errors.length === 0, `Rebuilt foundation is invalid:\n${validation.errors.join("\n")}`);
-  await writeJson("reports/build-reproducibility.json", { deterministicMerge: true, idempotentMerge: true, trackedSupplement: "data/people/actor-owner-supplement.json", trackedBuildCommand: "npm --prefix tools/people-seed run build-foundation", fullBuildParityVerified: true, offline: true, comparisons });
-  process.stdout.write(json({ fullBuildParityVerified: true, offline: true, comparisons }));
+  await writeJson("reports/build-reproducibility.json", { deterministicMerge: true, idempotentMerge: true, isolatedBuildRuns: result.buildRuns, trackedFilesUnchanged: result.trackedFilesUnchanged, trackedSupplement: "data/people/actor-owner-supplement.json", trackedBuildCommand: "npm --prefix tools/people-seed run build-foundation", fullBuildParityVerified: true, offline: true, comparisons: result.comparisons });
+  process.stdout.write(json({ fullBuildParityVerified: true, offline: true, isolated: true, buildRuns: result.buildRuns, replayByteIdentical: result.replayByteIdentical, trackedFilesUnchanged: result.trackedFilesUnchanged, comparisons: result.comparisons }));
 }
 
 const args = new Set(process.argv.slice(2));

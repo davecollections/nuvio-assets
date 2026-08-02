@@ -63,6 +63,14 @@ integration("canonical people foundation validates fully offline", async () => {
   }
 });
 
+integration("exact-ID validation rejects the invalid Sydney Sweeney source alias", async () => {
+  const foundation = clone(await readPeopleFoundation(repoRoot));
+  const sydney = foundation.registry.records.find((record) => record.tmdbPersonId === 115440);
+  assert.equal(sydney.stableKey, "person:115440");
+  sydney.alsoKnownAs.unshift("markiplier");
+  assert.match(messages(validatePeopleFoundation(foundation)), /person:115440: aliases contain an exact-ID invalid source value/);
+});
+
 integration("invalid stable keys and duplicate registry IDs are rejected", async () => {
   const foundation = await readPeopleFoundation(repoRoot);
   const invalidKey = clone(foundation);

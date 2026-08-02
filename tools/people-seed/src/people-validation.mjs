@@ -7,6 +7,7 @@ import {
   ACTOR_SUPPLEMENT_COUNTS,
   validateActorSupplement,
 } from "./actor-supplement-promotion.mjs";
+import { foundationAliasesForPerson } from "./foundation-build-verification.mjs";
 
 export const EXPECTED_COUNTS = Object.freeze({
   registry: 817,
@@ -257,6 +258,7 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
     addIf(errors, record.profilePath !== null, `${record.stableKey}: profile-path metadata must be present`);
     addIf(errors, record.activityYearRange.first <= record.activityYearRange.last, `${record.stableKey}: activity year range is reversed`);
     addIf(errors, sameJson(record.sourceMemberships, [...record.sourceMemberships].sort(sourceMembershipComparator)), `${record.stableKey}: source memberships must be deterministically ordered`);
+    addIf(errors, sameJson(record.alsoKnownAs, foundationAliasesForPerson(record.tmdbPersonId, record.alsoKnownAs)), `${record.stableKey}: aliases contain an exact-ID invalid source value`);
   }
 
   const sourceMemberships = registry.records.flatMap((record) => record.sourceMemberships);

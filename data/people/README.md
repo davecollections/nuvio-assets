@@ -103,6 +103,8 @@ The validator enforces cross-file identity, ordering, rollout, source-occurrence
 
 `npm --prefix tools/people-seed run build-foundation` deterministically rebuilds the original foundation inputs and then merges `actor-owner-supplement.json`. This prevents a future rebuild from dropping the approved additions. The narrower promotion command is idempotent and rejects supplement overlap, unsupported source IDs, duplicate identities, duplicate actor memberships, unapproved decisions, and tier drift.
 
+`npm --prefix tools/people-seed run verify-actor-supplement-build` performs two complete rebuilds in disposable directories, requires byte-identical replay and exact parity with the tracked foundation, and never points the builder at active tracked People files. The builder also preserves the exact-ID correction from commit `18e0748`: the invalid source alias `markiplier` is excluded only from TMDB person `115440` (Sydney Sweeney). Alias corrections are keyed only by exact TMDB Person ID, never by record position or display name.
+
 Blank, ignored owner-review templates are generated under:
 
 ```text
