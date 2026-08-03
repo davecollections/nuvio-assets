@@ -205,7 +205,8 @@ export async function refreshMissingProfileMetadata({ runRoot, fetchImpl = fetch
   const credential = tmdbCredential();
   assert(credential, "TMDB_API_READ_TOKEN, TMDB_READ_ACCESS_TOKEN, or TMDB_API_KEY is required for exact-ID missing-profile refresh; no credential value is written to evidence.");
   const directory = workspacePath(context.root, "profile-refresh", "checkpoints");
-  const missing = context.audit.records.filter((record) => record.missingTrackedProfilePath).map((record) => context.people.find((person) => person.tmdbPersonId === record.tmdbPersonId));
+  const missing = context.audit.records.filter((record) => record.profilePathAvailable === false).map((record) => context.people.find((person) => person.tmdbPersonId === record.tmdbPersonId));
+  assert(missing.length === context.audit.summary.missingProfilePaths && missing.length === 167, "Exact-ID missing-profile selection differs from the readiness boundary.");
   for (const person of missing) {
     const checkpoint = path.join(directory, `${person.tmdbPersonId}.json`);
     if (await exists(checkpoint)) continue;
