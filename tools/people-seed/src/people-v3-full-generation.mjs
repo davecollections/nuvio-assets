@@ -1,6 +1,8 @@
 import crypto from "node:crypto";
+import { execFile } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
+import { promisify } from "node:util";
 
 import { calculateLookupFingerprint, validateRuntimeLookup } from "../../artwork-runtime-lookup/src/runtime-lookup.mjs";
 import {
@@ -14,7 +16,6 @@ import {
   assertPeopleV3ProofPath,
   compareTitleLogoReplay,
   loadTitleLogoConfiguration,
-  renderTitleLogoSet,
   validateTitleLogoMetadata,
 } from "./people-artwork/title-logo.mjs";
 import { renderPeopleArtwork } from "./people-artwork/renderer.mjs";
@@ -38,6 +39,7 @@ export const PEOPLE_V3_FULL_GENERATION_VERSION = "people-v3-full-generation-v1";
 const PROFILE_PATH = /^\/[A-Za-z0-9_-]+\.jpg$/u;
 const TRANSIENT_HTTP = new Set([408, 425, 429, 500, 502, 503, 504]);
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
+const execFileAsync = promisify(execFile);
 
 function assert(condition, message) {
   if (!condition) throw new Error(message);
@@ -426,6 +428,23 @@ async function validateTitleRun(run, people) {
   return { outputDir: run, metadataPath, metadata };
 }
 
+async function renderTitleRunInFreshProcess({ context, outputDir }) {
+  const workerPath = path.join(PEOPLE_ARTWORK_REPO_ROOT, "tools", "people-seed", "scripts", "people-title-logo-proof-worker.mjs");
+  const selectionPath = path.join(context.root, "inputs", "people.json");
+  const { stdout } = await execFileAsync(process.execPath, [
+    workerPath,
+    "--output-dir", posixRelative(PEOPLE_ARTWORK_REPO_ROOT, outputDir),
+    "--generated-at", context.workspace.generatedAt,
+    "--people-json", posixRelative(PEOPLE_ARTWORK_REPO_ROOT, selectionPath),
+  ], { cwd: PEOPLE_ARTWORK_REPO_ROOT, windowsHide: true, maxBuffer: 8 * 1024 * 1024 });
+  const processEvidence = JSON.parse(stdout);
+  assert(processEvidence.freshProcess === true && Number.isInteger(processEvidence.workerPid), "Title-logo worker did not return fresh-process evidence.");
+  await writeJson(path.join(outputDir, "fresh-process.json"), processEvidence);
+  const run = await validateTitleRun(outputDir, context.people);
+  assert(run, `Fresh-process title-logo run failed validation: ${outputDir}`);
+  return { ...run, processEvidence };
+}
+
 export async function renderFullGenerationTitleLogos({ runRoot } = {}) {
   const context = await loadFullGenerationContext({ runRoot });
   const configuration = await loadTitleLogoConfiguration({ registry: context.foundation.registry });
@@ -434,8 +453,14 @@ export async function renderFullGenerationTitleLogos({ runRoot } = {}) {
   await fs.mkdir(replayRoot, { recursive: true });
   const run1Path = path.join(replayRoot, "run-1");
   const run2Path = path.join(replayRoot, "run-2");
-  const run1 = await validateTitleRun(run1Path, context.people) || await renderTitleLogoSet({ people: context.people, outputDir: run1Path, generatedAt: context.workspace.generatedAt });
-  const run2 = await validateTitleRun(run2Path, context.people) || await renderTitleLogoSet({ people: context.people, outputDir: run2Path, generatedAt: context.workspace.generatedAt });
+  const existingRun1 = await validateTitleRun(run1Path, context.people);
+  const existingRun2 = await validateTitleRun(run2Path, context.people);
+  const run1 = existingRun1 || await renderTitleRunInFreshProcess({ context, outputDir: run1Path });
+  const run2 = existingRun2 || await renderTitleRunInFreshProcess({ context, outputDir: run2Path });
+  const processEvidence = {
+    run1: run1.processEvidence || await readJson(path.join(run1Path, "fresh-process.json")),
+    run2: run2.processEvidence || await readJson(path.join(run2Path, "fresh-process.json")),
+  };
   const replay = compareTitleLogoReplay(run1, run2);
   assert(replay.byteIdentical && replay.metadataIdentical && replay.comparisons.length === 1480 && replay.comparisons.every((record) => record.byteIdentical), "Complete title-logo replay is not byte-identical.");
   const report = {
@@ -450,6 +475,8 @@ export async function renderFullGenerationTitleLogos({ runRoot } = {}) {
     outputCountPerRun: run1.metadata.recordCount,
     byteIdentical: replay.byteIdentical,
     metadataIdentical: replay.metadataIdentical,
+    freshProcessReplay: processEvidence.run1.freshProcess === true && processEvidence.run2.freshProcess === true,
+    workerPids: [processEvidence.run1.workerPid, processEvidence.run2.workerPid],
     comparisons: replay.comparisons,
   };
   await writeJson(path.join(replayRoot, "replay.json"), report);
