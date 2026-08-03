@@ -4,38 +4,26 @@ import path from "node:path";
 
 import { stableStringify } from "../people-publication.mjs";
 import { validateAgainstSchema } from "../schema-validator.mjs";
-import { runFamilies, verifyFont, verifyLimelightFont } from "./font.mjs";
+import { runFamilies, verifyFont } from "./font.mjs";
 import { loadPeopleArtworkRuntime, PEOPLE_ARTWORK_PACKAGE_ROOT, PEOPLE_ARTWORK_REPO_ROOT } from "./runtime-dependencies.mjs";
 
-export const PEOPLE_TITLE_LOGO_RENDERER_VERSION = "people-title-logo-renderer-v3";
-export const PEOPLE_TITLE_LOGO_PRESET_ID = "people-title-logo-collection-options-v3";
-export const PEOPLE_TITLE_LOGO_PRESET_PATH = "tools/people-seed/presets/people-title-logo-collection-options-v3.json";
-export const PEOPLE_TITLE_LOGO_LIMELIGHT_LOCK_PATH = "tools/people-seed/config/limelight-400.json";
+export const PEOPLE_TITLE_LOGO_RENDERER_VERSION = "people-title-logo-renderer-v4";
+export const PEOPLE_TITLE_LOGO_PRESET_ID = "people-title-logo-cormorant-spacing-v4";
+export const PEOPLE_TITLE_LOGO_PRESET_PATH = "tools/people-seed/presets/people-title-logo-cormorant-spacing-v4.json";
 export const PEOPLE_TITLE_LOGO_OVERRIDE_PATH = "data/people/title-logo-line-break-overrides.json";
 export const PEOPLE_TITLE_LOGO_OVERRIDE_SCHEMA_PATH = "schemas/people-title-logo-line-break-overrides.schema.json";
 export const PEOPLE_TITLE_LOGO_PUBLIC_ROOT = "assets/collection_covers/people/title-logo";
 export const TITLE_LOGO_OPTION_IDS = Object.freeze([
-  "option-d1-subtle",
-  "option-d2-hollywood",
+  "gap-60",
+  "gap-70",
+  "gap-80",
 ]);
 
 export const TITLE_LOGO_PROOF_IDENTITIES = Object.freeze([
   Object.freeze([47, "Björk"]),
-  Object.freeze([655, "John Rhys-Davies"]),
-  Object.freeze([1164, "F. Murray Abraham"]),
-  Object.freeze([3829, "Jean-Paul Belmondo"]),
-  Object.freeze([6730, "Sacha Baron Cohen"]),
-  Object.freeze([8892, "Olivia Newton-John"]),
-  Object.freeze([8630, "Erich von Stroheim"]),
-  Object.freeze([13848, "Charlie Chaplin"]),
-  Object.freeze([21041, "Shohreh Aghdashloo"]),
   Object.freeze([45400, "Greta Gerwig"]),
   Object.freeze([56734, "Chloë Grace Moretz"]),
-  Object.freeze([60561, "Mo'Nique"]),
-  Object.freeze([70131, "Tatsuya Nakadai"]),
   Object.freeze([77234, "Priyanka Chopra Jonas"]),
-  Object.freeze([121529, "Léa Seydoux"]),
-  Object.freeze([2230991, "Daisy Edgar-Jones"]),
 ]);
 
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
@@ -87,13 +75,11 @@ function validatePreset(preset) {
   assert(preset.id === PEOPLE_TITLE_LOGO_PRESET_ID && preset.rendererVersion === PEOPLE_TITLE_LOGO_RENDERER_VERSION, "Title-logo preset identity or renderer version changed.");
   assert(preset.canvas.width === 1863 && preset.canvas.height === 673 && preset.output.alpha === true, "Title-logo preset must remain 1863x673 transparent PNG.");
   assert(stableStringify(Object.keys(preset)) === stableStringify(["id", "version", "status", "publicationAuthorised", "rendererVersion", "renderer", "canvas", "typography", "collection", "options", "output"]), "Title-logo preset contains an unsupported top-level design field.");
-  assert(stableStringify(preset.options.map((option) => option.id)) === stableStringify(TITLE_LOGO_OPTION_IDS), "Title-logo proof options differ from D1/D2.");
-  assert(preset.options.every((option) => stableStringify(Object.keys(option)) === stableStringify(["id", "label", "nameRegion", "collectionStyle"])), "Title-logo options may contain only name and COLLECTION layout fields.");
-  assert(preset.collection.text === "COLLECTION" && preset.collection.family === "Limelight" && preset.collection.weight === 400, "The fixed COLLECTION treatment must use Limelight 400.");
-  const [d1, d2] = preset.options;
-  assert(d2.collectionStyle.fontSize > d1.collectionStyle.fontSize, "D2 COLLECTION must be larger than D1.");
-  assert(d2.collectionStyle.tracking < d1.collectionStyle.tracking, "D2 COLLECTION tracking must be tighter than D1.");
-  assert(d2.collectionStyle.topY < d1.collectionStyle.topY, "D2 COLLECTION must sit closer to the Person name than D1.");
+  assert(stableStringify(preset.options.map((option) => option.id)) === stableStringify(TITLE_LOGO_OPTION_IDS), "Title-logo proof options must be the exact 60/70/80 px gaps.");
+  assert(preset.options.every((option) => stableStringify(Object.keys(option)) === stableStringify(["id", "label", "clearGap"])), "Title-logo spacing options may contain only an ID, label, and clear gap.");
+  assert(stableStringify(preset.options.map((option) => option.clearGap)) === stableStringify([60, 70, 80]), "Title-logo clear gaps differ from 60/70/80 px.");
+  assert(preset.collection.text === "COLLECTION" && preset.collection.family === preset.typography.family && preset.collection.weight === 500, "The fixed COLLECTION treatment must use locked Cormorant Garamond 500.");
+  assert(preset.collection.fontHash === preset.typography.fontHash && preset.collection.verticalPositioning === "visible-name-bottom-plus-clear-gap", "COLLECTION must use the Person-name font file and visible-name-relative positioning.");
   assert(stableStringify({ sharp: preset.renderer.sharp, libvips: preset.renderer.libvips, pango: preset.renderer.pango, skiaCanvas: preset.renderer.skiaCanvas }) === stableStringify({ sharp: "0.35.3", libvips: "8.18.3", pango: "1.57.1", skiaCanvas: "3.0.8" }), "Title-logo renderer dependency lock changed.");
 }
 
@@ -102,24 +88,22 @@ export async function loadTitleLogoConfiguration({ repoRoot = PEOPLE_ARTWORK_REP
   const overridePath = path.join(repoRoot, PEOPLE_TITLE_LOGO_OVERRIDE_PATH);
   const overrideSchemaPath = path.join(repoRoot, PEOPLE_TITLE_LOGO_OVERRIDE_SCHEMA_PATH);
   const fontLockPath = path.join(PEOPLE_ARTWORK_PACKAGE_ROOT, "config", "cormorant-garamond-700.json");
-  const limelightLockPath = path.join(repoRoot, PEOPLE_TITLE_LOGO_LIMELIGHT_LOCK_PATH);
-  const [presetBuffer, overrideBuffer, schemaBuffer, fontLockBuffer, limelightLockBuffer] = await Promise.all([
+  const [presetBuffer, overrideBuffer, schemaBuffer, fontLockBuffer] = await Promise.all([
     fs.readFile(presetPath),
     fs.readFile(overridePath),
     fs.readFile(overrideSchemaPath),
     fs.readFile(fontLockPath),
-    fs.readFile(limelightLockPath),
   ]);
   const preset = JSON.parse(presetBuffer);
   const overrides = JSON.parse(overrideBuffer);
   const overrideSchema = JSON.parse(schemaBuffer);
-  const limelightLock = JSON.parse(limelightLockBuffer);
+  const fontLock = JSON.parse(fontLockBuffer);
   const errors = validateTitleLogoOverrides(overrides, overrideSchema, { registry });
   if (errors.length) throw new Error(`Title-logo overrides failed validation:\n${errors.map((error) => `- ${error}`).join("\n")}`);
   validatePreset(preset);
-  assert(limelightLock.version === "people-limelight-400-lock-v1" && limelightLock.publicationAuthorised === false && limelightLock.fontModified === false, "Limelight must remain an unmodified proof font lock.");
-  assert(limelightLock.family === preset.collection.family && limelightLock.weight === preset.collection.weight && limelightLock.fontSha256 === preset.collection.fontHash && limelightLock.licenceSha256 === preset.collection.licenceHash, "Title-logo preset differs from the exact Limelight lock.");
-  assert(limelightLock.usageBinding.rendererVersion === PEOPLE_TITLE_LOGO_RENDERER_VERSION && limelightLock.usageBinding.text === "COLLECTION" && limelightLock.usageBinding.personNameUsePermitted === false, "Limelight usage is not bound exclusively to COLLECTION.");
+  assert(fontLock.family === preset.typography.family && fontLock.fontSha256 === preset.typography.fontHash, "Person-name typography differs from the exact Cormorant lock.");
+  assert(fontLock.family === preset.collection.family && fontLock.fontSha256 === preset.collection.fontHash && fontLock.licenceSha256 === preset.collection.licenceHash, "COLLECTION differs from the exact Cormorant lock.");
+  assert(fontLock.weightAxis.minimum <= preset.collection.weight && fontLock.weightAxis.maximum >= preset.collection.weight, "Cormorant COLLECTION weight is outside the locked variable-font axis.");
   return {
     preset,
     presetPath,
@@ -128,11 +112,8 @@ export async function loadTitleLogoConfiguration({ repoRoot = PEOPLE_ARTWORK_REP
     overridePath,
     overrideHash: sha256(overrideBuffer),
     overridesById: new Map(overrides.records.map((record) => [record.tmdbPersonId, record])),
-    fontLock: JSON.parse(fontLockBuffer),
+    fontLock,
     fontLockHash: sha256(fontLockBuffer),
-    limelightLock,
-    limelightLockPath,
-    limelightLockHash: sha256(limelightLockBuffer),
   };
 }
 
@@ -213,12 +194,18 @@ export async function prepareTitleLogoRenderer({ people, configuration = null, r
   const resolvedConfiguration = configuration || await loadTitleLogoConfiguration();
   const rendererVersions = { ...runtime.versions, pango: runtime.sharp.versions.pango };
   for (const dependency of ["sharp", "libvips", "pango", "skiaCanvas"]) assert(rendererVersions[dependency] === resolvedConfiguration.preset.renderer[dependency], `Title-logo ${dependency} runtime must be ${resolvedConfiguration.preset.renderer[dependency]}.`);
-  const glyphTexts = people.map((person) => person.canonicalName.toLocaleUpperCase("en-US"));
-  const fontRecord = await verifyFont({ Canvas: runtime.Canvas, FontLibrary: runtime.FontLibrary, names: glyphTexts, fontDirectory });
+  const glyphTexts = [...people.map((person) => person.canonicalName.toLocaleUpperCase("en-US")), resolvedConfiguration.preset.collection.text];
+  const fontRecord = await verifyFont({
+    Canvas: runtime.Canvas,
+    FontLibrary: runtime.FontLibrary,
+    names: glyphTexts,
+    requiredWeights: [resolvedConfiguration.preset.collection.weight, resolvedConfiguration.preset.typography.weight],
+    fontDirectory,
+  });
   assert(fontRecord.fontHash === resolvedConfiguration.preset.typography.fontHash, "Title-logo preset name-font hash differs from the locked People cover font.");
-  const limelightRecord = await verifyLimelightFont({ Canvas: runtime.Canvas, FontLibrary: runtime.FontLibrary, names: [resolvedConfiguration.preset.collection.text] });
-  assert(limelightRecord.fontHash === resolvedConfiguration.preset.collection.fontHash && limelightRecord.licenceHash === resolvedConfiguration.preset.collection.licenceHash, "Title-logo COLLECTION font differs from the exact Limelight lock.");
-  return { runtime, configuration: resolvedConfiguration, fontRecord, limelightRecord, rendererVersions };
+  assert(fontRecord.fontHash === resolvedConfiguration.preset.collection.fontHash && fontRecord.licenceHash === resolvedConfiguration.preset.collection.licenceHash, "Title-logo COLLECTION font differs from the exact Cormorant lock.");
+  assert(fontRecord.verifiedWeights.includes(resolvedConfiguration.preset.collection.weight), "Locked Cormorant COLLECTION weight was not verified.");
+  return { runtime, configuration: resolvedConfiguration, fontRecord, rendererVersions };
 }
 
 function optionById(preset, optionId) {
@@ -235,26 +222,51 @@ function unionBounds(bounds) {
   return { x: round(minX), y: round(minY), width: round(maxX - minX), height: round(maxY - minY) };
 }
 
-async function renderCollectionLayer(runtime, preset, option, limelightRecord) {
-  const style = option.collectionStyle;
+async function alphaVisibleBounds(runtime, buffer) {
+  const { data, info } = await runtime.sharp(buffer).ensureAlpha().raw().toBuffer({ resolveWithObject: true });
+  let minX = info.width;
+  let minY = info.height;
+  let maxX = -1;
+  let maxY = -1;
+  for (let y = 0; y < info.height; y += 1) {
+    for (let x = 0; x < info.width; x += 1) {
+      if (data[(y * info.width + x) * info.channels + 3] === 0) continue;
+      minX = Math.min(minX, x);
+      minY = Math.min(minY, y);
+      maxX = Math.max(maxX, x);
+      maxY = Math.max(maxY, y);
+    }
+  }
+  assert(maxX >= minX && maxY >= minY, "Rendered title-logo layer contains no visible pixels.");
+  return { x: minX, y: minY, width: maxX - minX + 1, height: maxY - minY + 1 };
+}
+
+async function renderCollectionLayer(runtime, preset, option, fontRecord, nameBottom) {
+  const style = preset.collection;
   const tracking = Math.round(style.tracking * 1024);
   const size = Math.round(style.fontSize * 1024);
-  const markup = `<span foreground="${preset.collection.colour}" font_family="${limelightRecord.family}" font_weight="${limelightRecord.weight}" size="${size}" letter_spacing="${tracking}">${preset.collection.text}</span>`;
+  const markup = `<span foreground="${style.colour}" font_family="${fontRecord.family}" font_weight="${style.weight}" size="${size}" letter_spacing="${tracking}">${style.text}</span>`;
   const buffer = await runtime.sharp({
     text: {
       text: markup,
-      font: `${limelightRecord.family} ${style.fontSize}`,
-      fontfile: limelightRecord.fontPath,
+      font: `${fontRecord.family} ${style.fontSize}`,
+      fontfile: fontRecord.fontPath,
       rgba: true,
       dpi: 72,
     },
   }).png({ compressionLevel: 9, adaptiveFiltering: false, palette: false }).toBuffer();
   const metadata = await runtime.sharp(buffer).metadata();
-  assert(metadata.format === "png" && metadata.hasAlpha === true && metadata.width > 0 && metadata.height > 0, "Locked Limelight COLLECTION label did not render as transparent PNG.");
-  const left = Math.round((preset.canvas.width - metadata.width) / 2);
+  assert(metadata.format === "png" && metadata.hasAlpha === true && metadata.width > 0 && metadata.height > 0, "Locked Cormorant COLLECTION label did not render as transparent PNG.");
+  const localVisible = await alphaVisibleBounds(runtime, buffer);
+  const visibleTop = nameBottom + option.clearGap;
+  const placement = {
+    x: Math.round((preset.canvas.width - localVisible.width) / 2 - localVisible.x),
+    y: Math.round(visibleTop - localVisible.y),
+  };
   return {
     buffer,
-    bounds: { x: left, y: style.topY, width: metadata.width, height: metadata.height },
+    placement,
+    bounds: { x: placement.x + localVisible.x, y: visibleTop, width: localVisible.width, height: localVisible.height },
   };
 }
 
@@ -280,30 +292,27 @@ async function renderNameLayers(runtime, preset, plan, chosen, measuredBounds, f
     const metadata = await runtime.sharp(buffer).metadata();
     assert(metadata.format === "png" && metadata.hasAlpha === true && metadata.width > 0 && metadata.height > 0, "Locked People name font did not render as a transparent Pango layer.");
     const measured = measuredBounds[index];
-    const bounds = {
+    const placement = {
       x: Math.round(preset.canvas.width / 2 - metadata.width / 2),
       y: Math.round(measured.y + measured.height / 2 - metadata.height / 2),
-      width: metadata.width,
-      height: metadata.height,
-      baseline: measured.baseline,
     };
+    const localVisible = await alphaVisibleBounds(runtime, buffer);
+    const bounds = { x: placement.x + localVisible.x, y: placement.y + localVisible.y, width: localVisible.width, height: localVisible.height, baseline: measured.baseline };
     assert(bounds.x >= preset.typography.minimumCanvasMargin && bounds.x + bounds.width <= preset.canvas.width - preset.typography.minimumCanvasMargin, "Locked People name Pango layer exceeds the horizontal safe region.");
-    layers.push({ buffer, bounds });
+    layers.push({ buffer, placement, bounds });
   }
   return layers;
 }
 
-function resetExactTitleFontState(runtime, fontRecord, limelightRecord) {
+function resetExactTitleFontState(runtime, fontRecord) {
   runtime.FontLibrary.reset();
   runtime.FontLibrary.use(fontRecord.registrationAlias, fontRecord.fontPath);
-  assert(runtime.FontLibrary.has(fontRecord.registrationAlias), "Locked People name font registration was lost before title rendering.");
-  runtime.FontLibrary.use(limelightRecord.registrationAlias, limelightRecord.fontPath);
-  assert(runtime.FontLibrary.has(limelightRecord.registrationAlias), "Locked Limelight registration was lost before title rendering.");
+  assert(runtime.FontLibrary.has(fontRecord.registrationAlias), "Locked Cormorant registration was lost before title rendering.");
 }
 
-export async function renderTitleLogo({ person, optionId, runtime, configuration, fontRecord, limelightRecord } = {}) {
-  assert(optionId, "An explicit D1/D2 title-logo proof option is required; no permanent option is selected.");
-  resetExactTitleFontState(runtime, fontRecord, limelightRecord);
+export async function renderTitleLogo({ person, optionId, runtime, configuration, fontRecord } = {}) {
+  assert(optionId, "An explicit 60/70/80 px title-logo spacing option is required; no permanent spacing is selected.");
+  resetExactTitleFontState(runtime, fontRecord);
   const { preset } = configuration;
   const option = optionById(preset, optionId);
   const plan = linePlan(person, preset, configuration, runtime, fontRecord);
@@ -311,7 +320,7 @@ export async function renderTitleLogo({ person, optionId, runtime, configuration
   assert(plan.presentationLines.join(" ") === plan.presentationName, `${person.stableKey}: uppercase title-logo lines changed the canonical name.`);
   assert(plan.presentationLines.length <= preset.typography.maximumLines, `${person.stableKey}: title-logo exceeds the maximum line count.`);
   const chosen = fitLines(plan, preset, runtime, fontRecord);
-  const region = option.nameRegion;
+  const region = preset.typography.region;
   const top = region.y + (region.height - chosen.height) / 2;
   const measuredLineBounds = chosen.measures.map((measure, index) => {
     const x = Math.round(region.x + (region.width - measure.width) / 2);
@@ -320,13 +329,13 @@ export async function renderTitleLogo({ person, optionId, runtime, configuration
   });
   const nameLayers = await renderNameLayers(runtime, preset, plan, chosen, measuredLineBounds, fontRecord);
   const lineBounds = nameLayers.map((layer) => layer.bounds);
-  const collectionLayer = await renderCollectionLayer(runtime, preset, option, limelightRecord);
+  const nameBottom = Math.max(...lineBounds.map((bound) => bound.y + bound.height));
+  const collectionLayer = await renderCollectionLayer(runtime, preset, option, fontRecord, nameBottom);
   const collectionBounds = collectionLayer.bounds;
   const allBounds = [...lineBounds, collectionBounds];
   const contentBounds = unionBounds(allBounds);
-  const nameBottom = Math.max(...lineBounds.map((bound) => bound.y + bound.height));
   const verticalGap = round(collectionBounds.y - nameBottom);
-  assert(verticalGap > 0, `${person.stableKey}/${optionId}: COLLECTION must remain below the Person name.`);
+  assert(verticalGap === option.clearGap, `${person.stableKey}/${optionId}: COLLECTION clear gap differs from ${option.clearGap}px.`);
   const safeMargins = {
     left: round(contentBounds.x),
     right: round(preset.canvas.width - contentBounds.x - contentBounds.width),
@@ -336,8 +345,8 @@ export async function renderTitleLogo({ person, optionId, runtime, configuration
   assert(Object.values(safeMargins).every((value) => value >= preset.typography.minimumCanvasMargin), `${person.stableKey}/${optionId}: title-logo content violates the minimum canvas margin.`);
   const canonicalBase = runtime.sharp({ create: { width: preset.canvas.width, height: preset.canvas.height, channels: 4, background: { r: 255, g: 255, b: 255, alpha: 0 } } });
   const overlays = [
-    ...nameLayers.map((layer) => ({ input: layer.buffer, left: layer.bounds.x, top: layer.bounds.y })),
-    { input: collectionLayer.buffer, left: collectionLayer.bounds.x, top: collectionLayer.bounds.y },
+    ...nameLayers.map((layer) => ({ input: layer.buffer, left: layer.placement.x, top: layer.placement.y })),
+    { input: collectionLayer.buffer, left: collectionLayer.placement.x, top: collectionLayer.placement.y },
   ];
   const output = await canonicalBase.composite(overlays).png({ compressionLevel: 9, adaptiveFiltering: false, palette: false }).toBuffer();
   const decoded = await runtime.sharp(output, { failOn: "error" }).metadata();
@@ -366,19 +375,20 @@ export async function renderTitleLogo({ person, optionId, runtime, configuration
       minimumCanvasMargin: preset.typography.minimumCanvasMargin,
       collectionText: preset.collection.text,
       collectionBounds,
-      collectionFontSize: option.collectionStyle.fontSize,
-      collectionTracking: option.collectionStyle.tracking,
-      collectionTopY: option.collectionStyle.topY,
+      collectionFontSize: preset.collection.fontSize,
+      collectionTracking: preset.collection.tracking,
+      collectionTopY: collectionBounds.y,
+      requestedClearGap: option.clearGap,
       verticalGap,
-      collectionFontFamily: limelightRecord.family,
-      collectionFontWeight: limelightRecord.weight,
-      collectionFontHash: limelightRecord.fontHash,
-      collectionFontLockHash: configuration.limelightLockHash,
-      collectionLicence: limelightRecord.licence,
-      collectionLicenceHash: limelightRecord.licenceHash,
-      collectionMetadataHash: limelightRecord.metadataHash,
-      collectionSourceRevision: limelightRecord.fontSourceRevision,
-      collectionRendererBinding: limelightRecord.rendererBinding,
+      collectionPositioning: preset.collection.verticalPositioning,
+      collectionFontFamily: fontRecord.family,
+      collectionFontWeight: preset.collection.weight,
+      collectionFontHash: fontRecord.fontHash,
+      collectionFontLockHash: configuration.fontLockHash,
+      collectionLicence: fontRecord.licence,
+      collectionLicenceHash: fontRecord.licenceHash,
+      collectionSourceRevision: fontRecord.fontSourceRevision,
+      collectionUsesNameFontFile: true,
       graphicElementCount: 0,
       rendererVersion: PEOPLE_TITLE_LOGO_RENDERER_VERSION,
       presetId: preset.id,
@@ -409,7 +419,7 @@ function titleLogoMetadataFingerprint(metadata) {
 
 export function validateTitleLogoMetadata(metadata, expectedPeople = null) {
   const errors = [];
-  if (metadata?.version !== "people-title-logo-render-metadata-v3") errors.push("title-logo metadata version mismatch");
+  if (metadata?.version !== "people-title-logo-render-metadata-v4") errors.push("title-logo metadata version mismatch");
   if (metadata?.rendererVersion !== PEOPLE_TITLE_LOGO_RENDERER_VERSION) errors.push("title-logo renderer version mismatch");
   if (stableStringify(metadata?.rendererVersions) !== stableStringify({ sharp: "0.35.3", libvips: "8.18.3", skiaCanvas: "3.0.8", pango: "1.57.1" })) errors.push("title-logo renderer dependency versions mismatch");
   if (metadata?.designDecisionStatus !== "unselected") errors.push("title-logo proof must not select a permanent design option");
@@ -420,7 +430,7 @@ export function validateTitleLogoMetadata(metadata, expectedPeople = null) {
     const key = `${record.optionId}:${record.tmdbPersonId}`;
     if (keys.has(key)) errors.push(`${key}: duplicate title-logo metadata identity/option`);
     keys.add(key);
-    if (!TITLE_LOGO_OPTION_IDS.includes(record.optionId)) errors.push(`${key}: unknown D1/D2 option`);
+    if (!TITLE_LOGO_OPTION_IDS.includes(record.optionId)) errors.push(`${key}: unknown 60/70/80 px spacing option`);
     if (record.permanentSelection !== false) errors.push(`${key}: proof record selects a permanent design`);
     if (record.stableKey !== `person:${record.tmdbPersonId}`) errors.push(`${record.stableKey}: title-logo metadata identity mismatch`);
     if (record.canonicalNameLines?.join(" ") !== record.canonicalName) errors.push(`${record.stableKey}: title-logo canonical lines changed the name`);
@@ -429,15 +439,17 @@ export function validateTitleLogoMetadata(metadata, expectedPeople = null) {
     if (record.canvasWidth !== 1863 || record.canvasHeight !== 673 || record.alphaTransparent !== true) errors.push(`${key}: title-logo format mismatch`);
     if (!/^[a-f0-9]{64}$/u.test(record.outputHash || "") || !Number.isInteger(record.byteCount) || record.byteCount <= 0) errors.push(`${key}: title-logo output evidence is incomplete`);
     if (Object.values(record.safeMargins || {}).some((value) => value < record.minimumCanvasMargin)) errors.push(`${key}: title-logo safe margin is below the preset minimum`);
-    if (record.collectionText !== "COLLECTION" || record.collectionFontFamily !== "Limelight" || record.collectionFontWeight !== 400) errors.push(`${key}: fixed COLLECTION evidence is incomplete`);
-    if (!/^[a-f0-9]{64}$/u.test(record.collectionFontHash || "") || !/^[a-f0-9]{64}$/u.test(record.collectionLicenceHash || "") || !/^[a-f0-9]{64}$/u.test(record.collectionFontLockHash || "")) errors.push(`${key}: Limelight lock evidence is incomplete`);
+    if (record.collectionText !== "COLLECTION" || record.collectionFontFamily !== "Cormorant Garamond" || record.collectionFontWeight !== 500) errors.push(`${key}: fixed Cormorant COLLECTION evidence is incomplete`);
+    if (record.collectionFontHash !== record.fontHash || record.collectionFontLockHash !== record.fontLockHash || record.collectionUsesNameFontFile !== true) errors.push(`${key}: COLLECTION does not use the exact Person-name font file and lock`);
+    if (!/^[a-f0-9]{64}$/u.test(record.collectionFontHash || "") || !/^[a-f0-9]{64}$/u.test(record.collectionLicenceHash || "") || !/^[a-f0-9]{64}$/u.test(record.collectionFontLockHash || "")) errors.push(`${key}: Cormorant lock evidence is incomplete`);
     if (record.graphicElementCount !== 0) errors.push(`${key}: title-logo contains an unsupported graphic element`);
-    if (!(record.verticalGap > 0)) errors.push(`${key}: COLLECTION does not remain below the Person name`);
+    const expectedGap = Number(record.optionId?.replace("gap-", ""));
+    if (record.verticalGap !== expectedGap || record.requestedClearGap !== expectedGap || record.collectionPositioning !== "visible-name-bottom-plus-clear-gap") errors.push(`${key}: COLLECTION is not positioned at the exact visible-name-relative gap`);
   }
   if (expectedPeople) {
     const expected = TITLE_LOGO_OPTION_IDS.flatMap((optionId) => expectedPeople.map((person) => [optionId, person.tmdbPersonId, person.canonicalName]));
     const actual = metadata.records.map((record) => [record.optionId, record.tmdbPersonId, record.canonicalName]);
-    if (stableStringify(actual) !== stableStringify(expected)) errors.push("title-logo metadata identities differ from the exact D1/D2 proof set");
+    if (stableStringify(actual) !== stableStringify(expected)) errors.push("title-logo metadata identities differ from the exact four-person 60/70/80 px proof set");
   }
   if (metadata?.metadataFingerprint !== titleLogoMetadataFingerprint(metadata)) errors.push("title-logo metadata fingerprint mismatch");
   return errors;
@@ -455,11 +467,11 @@ export async function renderTitleLogoSet({ people, outputDir, generatedAt, fontD
     }
   }
   const metadata = {
-    version: "people-title-logo-render-metadata-v3",
+    version: "people-title-logo-render-metadata-v4",
     rendererVersion: PEOPLE_TITLE_LOGO_RENDERER_VERSION,
     rendererVersions: preparedRenderer.rendererVersions,
     generatedAt,
-    ordering: "option-d1-d2-then-proof-specification-order",
+    ordering: "gap-60-70-80-then-proof-specification-order",
     designDecisionStatus: "unselected",
     permanentOptionSelected: false,
     personCount: people.length,
@@ -470,10 +482,10 @@ export async function renderTitleLogoSet({ people, outputDir, generatedAt, fontD
     overrideConfigHash: preparedRenderer.configuration.overrideHash,
     fontLockHash: preparedRenderer.configuration.fontLockHash,
     fontHash: preparedRenderer.fontRecord.fontHash,
-    collectionFontLockHash: preparedRenderer.configuration.limelightLockHash,
-    collectionFontHash: preparedRenderer.limelightRecord.fontHash,
-    collectionLicenceHash: preparedRenderer.limelightRecord.licenceHash,
-    collectionMetadataHash: preparedRenderer.limelightRecord.metadataHash,
+    verifiedFontWeights: preparedRenderer.fontRecord.verifiedWeights,
+    collectionFontLockHash: preparedRenderer.configuration.fontLockHash,
+    collectionFontHash: preparedRenderer.fontRecord.fontHash,
+    collectionLicenceHash: preparedRenderer.fontRecord.licenceHash,
     testedOptionIds: TITLE_LOGO_OPTION_IDS,
     graphicElementCount: 0,
     records,

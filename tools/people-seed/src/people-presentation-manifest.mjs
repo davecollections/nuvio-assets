@@ -56,7 +56,7 @@ export async function inspectSharedPeopleHero({ repoRoot = PEOPLE_ARTWORK_REPO_R
 
 export function buildPeoplePresentationManifest({ titleLogoMetadata, titleLogoOptionId, permanentSelection = false, sharedHero, generatedAt, status = "proof-candidate" } = {}) {
   assert(titleLogoMetadata?.recordCount > 0 && Array.isArray(titleLogoMetadata.records), "Title-logo metadata is required to build a presentation manifest.");
-  assert(TITLE_LOGO_OPTION_IDS.includes(titleLogoOptionId), "An explicit D1/D2 title-logo proof option is required to build a presentation manifest proof.");
+  assert(TITLE_LOGO_OPTION_IDS.includes(titleLogoOptionId), "An explicit 60/70/80 px title-logo spacing option is required to build a presentation manifest proof.");
   assert(status === "proof-candidate" ? permanentSelection === false : permanentSelection === true, "Permanent title-logo selection status differs from the presentation-manifest stage.");
   const selectedRecords = titleLogoMetadata.records.filter((record) => record.optionId === titleLogoOptionId);
   assert(selectedRecords.length > 0 && selectedRecords.length === titleLogoMetadata.personCount, "Title-logo option records are incomplete.");
@@ -102,15 +102,14 @@ export function buildPeoplePresentationManifest({ titleLogoMetadata, titleLogoOp
     },
     collectionFontEvidence: {
       family: selectedRecords[0].collectionFontFamily,
-      style: "normal",
       weight: selectedRecords[0].collectionFontWeight,
       fontSha256: titleLogoMetadata.collectionFontHash,
       fontLockSha256: titleLogoMetadata.collectionFontLockHash,
       licence: selectedRecords[0].collectionLicence,
       licenceSha256: titleLogoMetadata.collectionLicenceHash,
-      metadataSha256: titleLogoMetadata.collectionMetadataHash,
       sourceRevision: selectedRecords[0].collectionSourceRevision,
       usage: "COLLECTION only",
+      sameFileAsNameFont: selectedRecords[0].collectionUsesNameFontFile,
     },
     fingerprintExcludes: ["generatedAt", "publishedAt", "manifestFingerprint"],
     manifestFingerprint: null,
@@ -129,6 +128,7 @@ export function validatePeoplePresentationManifest(manifest, schema, { expectedP
   if (manifest?.recordCount !== manifest?.records?.length) errors.push("presentation manifest recordCount must equal records length");
   if (manifest?.titleLogoCount !== manifest?.records?.length) errors.push("presentation manifest titleLogoCount must equal records length");
   if (manifest?.status === "proof-candidate" && manifest?.permanentSelection !== false) errors.push("presentation proof must not select a permanent title-logo option");
+  if (manifest?.collectionFontEvidence?.fontSha256 !== manifest?.fontEvidence?.fontSha256 || manifest?.collectionFontEvidence?.fontLockSha256 !== manifest?.fontEvidence?.fontLockSha256 || manifest?.collectionFontEvidence?.sameFileAsNameFont !== true) errors.push("presentation COLLECTION font evidence must reuse the exact Person-name Cormorant file and lock");
   const ids = new Set();
   const paths = new Set();
   for (const [index, record] of (Array.isArray(manifest?.records) ? manifest.records : []).entries()) {

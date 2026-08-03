@@ -42,8 +42,8 @@ async function latestTitleProofReport(attemptRoot) {
   const titleRoot = path.join(attemptRoot, "title-logos");
   const candidates = [{ path: path.join(titleRoot, "correction-proof-report.json"), order: 1 }];
   for (const entry of await fs.readdir(titleRoot, { withFileTypes: true })) {
-    const match = entry.isDirectory() ? /^replay-attempt-([0-9]{2})$/u.exec(entry.name) : null;
-    if (match) candidates.push({ path: path.join(titleRoot, entry.name, "correction-proof-report.json"), order: Number(match[1]) });
+    const match = entry.isDirectory() ? /^(replay|spacing-proof)-attempt-([0-9]{2})$/u.exec(entry.name) : null;
+    if (match) candidates.push({ path: path.join(titleRoot, entry.name, "correction-proof-report.json"), order: (match[1] === "spacing-proof" ? 100 : 0) + Number(match[2]) });
   }
   candidates.sort((left, right) => right.order - left.order);
   for (const candidate of candidates) if (await exists(candidate.path)) return candidate.path;
@@ -86,7 +86,7 @@ Required:
 
 Modes:
   --init                    Create a unique ignored correction attempt
-  --title-proof             Render D1/D2 COLLECTION title-logo proofs and fresh-process replay
+  --title-proof             Render the four-person Cormorant 60/70/80 px spacing proof and replay
   --landscape-prototypes    Render the existing 17 Landscapes at three controlled zoom-out tiers
   --landscape-proof         Render the tracked exact-ID correction candidates twice
   --verify-hero             Validate, but do not composite or alter, the shared People hero

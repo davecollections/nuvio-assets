@@ -5,7 +5,6 @@ import path from "node:path";
 import { PEOPLE_ARTWORK_PACKAGE_ROOT, PEOPLE_ARTWORK_REPO_ROOT } from "./runtime-dependencies.mjs";
 
 const lockPath = path.join(PEOPLE_ARTWORK_PACKAGE_ROOT, "config", "cormorant-garamond-700.json");
-const limelightLockPath = path.join(PEOPLE_ARTWORK_PACKAGE_ROOT, "config", "limelight-400.json");
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
 
 async function exists(filePath) {
@@ -14,10 +13,6 @@ async function exists(filePath) {
 
 export async function readFontLock() {
   return JSON.parse(await fs.readFile(lockPath, "utf8"));
-}
-
-export async function readLimelightFontLock() {
-  return JSON.parse(await fs.readFile(limelightLockPath, "utf8"));
 }
 
 export function parseFvar(buffer) {
@@ -69,23 +64,7 @@ export async function discoverFontCache({ fontDirectory = null } = {}) {
   throw new Error(`Approved Cormorant Garamond cache is unavailable. Run npm --prefix tools/people-seed run acquire-people-font -- --font-dir <ignored-cache-dir>. Checked:\n${candidates.map((item) => `- ${item}`).join("\n")}`);
 }
 
-export async function discoverLimelightFontCache({ fontDirectory = null } = {}) {
-  const lock = await readLimelightFontLock();
-  const candidates = [
-    fontDirectory,
-    process.env.NUVIO_LIMELIGHT_FONT_DIR,
-    path.join(PEOPLE_ARTWORK_PACKAGE_ROOT, ".work", "fonts", lock.cacheDirectoryName),
-  ].filter(Boolean).map((item) => path.resolve(item));
-  for (const directory of candidates) {
-    const fontPath = path.join(directory, lock.fontFileName);
-    const licencePath = path.join(directory, lock.licenceFileName);
-    const metadataPath = path.join(directory, lock.metadataFileName);
-    if (await exists(fontPath) && await exists(licencePath) && await exists(metadataPath)) return { directory, fontPath, licencePath, metadataPath, candidates };
-  }
-  throw new Error(`Approved Limelight cache is unavailable. Run npm --prefix tools/people-seed run acquire-limelight-font -- --font-dir tools/people-seed/.work/fonts/limelight. Checked:\n${candidates.map((item) => `- ${item}`).join("\n")}`);
-}
-
-export async function verifyFont({ Canvas, FontLibrary, names = [], fontDirectory = null } = {}) {
+export async function verifyFont({ Canvas, FontLibrary, names = [], requiredWeights = null, fontDirectory = null } = {}) {
   const lock = await readFontLock();
   const cache = await discoverFontCache({ fontDirectory });
   const [fontBuffer, licenceBuffer] = await Promise.all([fs.readFile(cache.fontPath), fs.readFile(cache.licencePath)]);
@@ -95,21 +74,22 @@ export async function verifyFont({ Canvas, FontLibrary, names = [], fontDirector
   if (licenceHash !== lock.licenceSha256) throw new Error(`Cormorant licence hash mismatch: ${licenceHash}`);
   const variation = parseFvar(fontBuffer);
   const weightAxis = variation.axes.find((axis) => axis.tag === lock.weightAxis.tag);
-  if (!weightAxis || weightAxis.minimum > lock.weight || weightAxis.maximum < lock.weight) {
-    throw new Error("Cormorant Garamond genuine weight 700 is unavailable.");
-  }
+  const weights = [...new Set(requiredWeights || [lock.weight])].sort((left, right) => left - right);
+  if (!weightAxis || weights.some((weight) => weightAxis.minimum > weight || weightAxis.maximum < weight)) throw new Error(`Cormorant Garamond required weights are unavailable: ${weights.join(", ")}.`);
   FontLibrary.reset();
   const loaded = FontLibrary.use(lock.registrationAlias, cache.fontPath);
   if (!FontLibrary.has(lock.registrationAlias)) throw new Error("Exact cached Cormorant font registration failed.");
   const glyphCoverage = [];
-  for (const text of [...new Set(names)].sort((left, right) => left.localeCompare(right))) {
-    const canvas = new Canvas(3200, 300);
-    const context = canvas.getContext("2d");
-    context.font = `${lock.weight} 96px "${lock.registrationAlias}"`;
-    const families = runFamilies(context.measureText(text));
-    const covered = families.length > 0 && families.every((family) => family === lock.family);
-    if (!covered) throw new Error(`Required glyph fallback detected for ${text}: ${families.join(", ")}`);
-    glyphCoverage.push({ text, families, covered });
+  for (const weight of weights) {
+    for (const text of [...new Set(names)].sort((left, right) => left.localeCompare(right))) {
+      const canvas = new Canvas(3200, 300);
+      const context = canvas.getContext("2d");
+      context.font = `${weight} 96px "${lock.registrationAlias}"`;
+      const families = runFamilies(context.measureText(text));
+      const covered = families.length > 0 && families.every((family) => family === lock.family);
+      if (!covered) throw new Error(`Required glyph fallback detected for ${text} at weight ${weight}: ${families.join(", ")}`);
+      glyphCoverage.push({ text, weight, families, covered });
+    }
   }
   return {
     valid: true,
@@ -117,71 +97,17 @@ export async function verifyFont({ Canvas, FontLibrary, names = [], fontDirector
     registrationAlias: lock.registrationAlias,
     weight: lock.weight,
     genuineWeight700: true,
+    verifiedWeights: weights,
     fontHash,
+    licence: lock.licence,
     licenceHash,
+    fontSourceRevision: lock.fontSourceRevision,
+    fontSourceUrl: lock.fontSourceUrl,
+    licenceSourceUrl: lock.licenceSourceUrl,
     variation,
     glyphCoverage,
     fontPath: cache.fontPath,
     licencePath: cache.licencePath,
-    loaded,
-  };
-}
-
-export async function verifyLimelightFont({ Canvas, FontLibrary, names = ["COLLECTION"], fontDirectory = null } = {}) {
-  const lock = await readLimelightFontLock();
-  const cache = await discoverLimelightFontCache({ fontDirectory });
-  const [fontBuffer, licenceBuffer, metadataBuffer] = await Promise.all([
-    fs.readFile(cache.fontPath),
-    fs.readFile(cache.licencePath),
-    fs.readFile(cache.metadataPath),
-  ]);
-  const fontHash = sha256(fontBuffer);
-  const licenceHash = sha256(licenceBuffer);
-  const metadataHash = sha256(metadataBuffer);
-  if (fontHash !== lock.fontSha256 || fontBuffer.length !== lock.fontByteCount) throw new Error(`Limelight font lock mismatch: ${fontHash}/${fontBuffer.length}`);
-  if (licenceHash !== lock.licenceSha256 || licenceBuffer.length !== lock.licenceByteCount) throw new Error(`Limelight licence lock mismatch: ${licenceHash}/${licenceBuffer.length}`);
-  if (metadataHash !== lock.metadataSha256) throw new Error(`Limelight metadata lock mismatch: ${metadataHash}`);
-  const metadataText = metadataBuffer.toString("utf8");
-  if (!metadataText.includes('name: "Limelight"') || !metadataText.includes("weight: 400") || !metadataText.includes('filename: "Limelight-Regular.ttf"') || !metadataText.includes('license: "OFL"')) {
-    throw new Error("Limelight authoritative metadata identity differs from the tracked lock.");
-  }
-  if (!licenceBuffer.toString("utf8").includes("SIL OPEN FONT LICENSE Version 1.1")) throw new Error("Limelight OFL-1.1 licence text is unavailable.");
-  FontLibrary.reset();
-  const loaded = FontLibrary.use(lock.registrationAlias, cache.fontPath);
-  if (!FontLibrary.has(lock.registrationAlias)) throw new Error("Exact cached Limelight font registration failed.");
-  const glyphCoverage = [];
-  for (const text of [...new Set(names)].sort((left, right) => left.localeCompare(right))) {
-    const canvas = new Canvas(2000, 300);
-    const context = canvas.getContext("2d");
-    context.font = `${lock.weight} 96px "${lock.registrationAlias}"`;
-    const families = runFamilies(context.measureText(text));
-    const covered = families.length > 0 && families.every((family) => family === lock.family);
-    if (!covered) throw new Error(`Limelight glyph fallback detected for ${text}: ${families.join(", ")}`);
-    glyphCoverage.push({ text, families, covered });
-  }
-  return {
-    valid: true,
-    family: lock.family,
-    registrationAlias: lock.registrationAlias,
-    style: lock.style,
-    weight: lock.weight,
-    fontHash,
-    fontByteCount: fontBuffer.length,
-    licence: lock.licence,
-    licenceHash,
-    licenceByteCount: licenceBuffer.length,
-    metadataHash,
-    fontSourceRevision: lock.fontSourceRevision,
-    fontSourceUrl: lock.fontSourceUrl,
-    licenceSourceUrl: lock.licenceSourceUrl,
-    metadataSourceUrl: lock.metadataSourceUrl,
-    fontModified: lock.fontModified,
-    usageBinding: lock.usageBinding,
-    rendererBinding: lock.rendererBinding,
-    glyphCoverage,
-    fontPath: cache.fontPath,
-    licencePath: cache.licencePath,
-    metadataPath: cache.metadataPath,
     loaded,
   };
 }
@@ -219,38 +145,6 @@ export async function acquireFont({ fontDirectory, fetchImpl = fetch } = {}) {
   const licencePath = path.join(destination, lock.licenceFileName);
   await Promise.all([atomicWrite(fontPath, fontBuffer), atomicWrite(licencePath, licenceBuffer)]);
   return { acquired: true, networkRequests: 2, destination, fontPath, licencePath, fontHash: lock.fontSha256, licenceHash: lock.licenceSha256 };
-}
-
-export async function acquireLimelightFont({ fontDirectory, fetchImpl = fetch } = {}) {
-  if (!fontDirectory) throw new Error("Explicit --font-dir is required for Limelight font acquisition.");
-  const lock = await readLimelightFontLock();
-  const destination = path.resolve(fontDirectory);
-  const [fontBuffer, licenceBuffer, metadataBuffer] = await Promise.all([
-    downloadExact(lock.fontSourceUrl, lock.fontSha256, fetchImpl),
-    downloadExact(lock.licenceSourceUrl, lock.licenceSha256, fetchImpl),
-    downloadExact(lock.metadataSourceUrl, lock.metadataSha256, fetchImpl),
-  ]);
-  if (fontBuffer.length !== lock.fontByteCount || licenceBuffer.length !== lock.licenceByteCount) throw new Error("Limelight acquisition byte counts differ from the tracked lock.");
-  const fontPath = path.join(destination, lock.fontFileName);
-  const licencePath = path.join(destination, lock.licenceFileName);
-  const metadataPath = path.join(destination, lock.metadataFileName);
-  await Promise.all([
-    atomicWrite(fontPath, fontBuffer),
-    atomicWrite(licencePath, licenceBuffer),
-    atomicWrite(metadataPath, metadataBuffer),
-  ]);
-  return {
-    acquired: true,
-    networkRequests: 3,
-    destination,
-    fontPath,
-    licencePath,
-    metadataPath,
-    fontHash: lock.fontSha256,
-    licenceHash: lock.licenceSha256,
-    metadataHash: lock.metadataSha256,
-    sourceRevision: lock.fontSourceRevision,
-  };
 }
 
 export { runFamilies };

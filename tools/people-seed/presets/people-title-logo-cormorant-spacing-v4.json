@@ -1,9 +1,9 @@
 {
-  "id": "people-title-logo-collection-options-v3",
-  "version": 3,
-  "status": "proof-candidate",
+  "id": "people-title-logo-cormorant-spacing-v4",
+  "version": 4,
+  "status": "spacing-proof-candidate",
   "publicationAuthorised": false,
-  "rendererVersion": "people-title-logo-renderer-v3",
+  "rendererVersion": "people-title-logo-renderer-v4",
   "renderer": {
     "sharp": "0.35.3",
     "libvips": "8.18.3",
@@ -42,34 +42,32 @@
   },
   "collection": {
     "text": "COLLECTION",
-    "family": "Limelight",
-    "weight": 400,
-    "fontHash": "f5bf8a9159adfc5b9c756c85d812a4fd1299b8916fefdf39ad4b24ade6d8d0cf",
+    "family": "Cormorant Garamond",
+    "weight": 500,
+    "fontHash": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
     "licence": "OFL-1.1",
-    "licenceHash": "6b53fb03a50914cc382f4d025ee595c17c43f24ae870f840bc51969d3e316c7e",
+    "licenceHash": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+    "fontSize": 54,
+    "tracking": 6,
     "colour": "#FFFFFF",
-    "role": "fixed-secondary-title"
+    "role": "fixed-secondary-title",
+    "verticalPositioning": "visible-name-bottom-plus-clear-gap"
   },
   "options": [
     {
-      "id": "option-d1-subtle",
-      "label": "D1 — subtle",
-      "nameRegion": { "x": 181, "y": 72, "width": 1501, "height": 306 },
-      "collectionStyle": {
-        "fontSize": 40,
-        "tracking": 8,
-        "topY": 505
-      }
+      "id": "gap-60",
+      "label": "60 px clear gap",
+      "clearGap": 60
     },
     {
-      "id": "option-d2-hollywood",
-      "label": "D2 — stronger Hollywood",
-      "nameRegion": { "x": 181, "y": 72, "width": 1501, "height": 306 },
-      "collectionStyle": {
-        "fontSize": 50,
-        "tracking": 5,
-        "topY": 476
-      }
+      "id": "gap-70",
+      "label": "70 px clear gap",
+      "clearGap": 70
+    },
+    {
+      "id": "gap-80",
+      "label": "80 px clear gap",
+      "clearGap": 80
     }
   ],
   "output": {

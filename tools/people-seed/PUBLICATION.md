@@ -53,12 +53,11 @@ npm --prefix tools/people-seed test
 npm --prefix tools/people-seed run validate
 npm --prefix tools/people-seed run artwork:validate
 npm --prefix tools/people-seed run artwork:font-check
-npm --prefix tools/people-seed run verify-limelight-font
 ```
 
 Commit and push are always separate manual operations outside the publication tooling. Future publication must remain an explicit bounded selection.
 
-The v3 title-logo proof command renders the exact 16-person D1/D2 set in two fresh processes and requires byte-identical PNGs and metadata. Both options use the exact Cormorant Garamond 700 Person-name lock and the exact unmodified Limelight 400 lock for the fixed word `COLLECTION`; the proof cannot select a permanent option. The representative portrait proof renders each approved source independently to Poster and Landscape in two complete runs. Restart-safe proof retries preserve earlier evidence rather than deleting or overwriting it. The planning mode only records the exact later scope and atomic order; it cannot publish.
+The final title-logo spacing proof renders Björk, Greta Gerwig, Chloë Grace Moretz, and Priyanka Chopra Jonas at exact 60, 70, and 80 px clear gaps in two fresh processes and requires byte-identical PNGs and metadata. The exact locked Cormorant Garamond variable-font file supplies the 700-weight Person name and 500-weight fixed word `COLLECTION`; the proof cannot select a permanent spacing. COLLECTION placement is derived from the visible rendered Person-name bottom, not a fixed canvas Y coordinate. The representative portrait proof renders each approved source independently to Poster and Landscape in two complete runs. Restart-safe proof retries preserve earlier evidence rather than deleting or overwriting it. The planning mode only records the exact later scope and atomic order; it cannot publish.
 
 ## Attribution, licensing, and asset requests
 

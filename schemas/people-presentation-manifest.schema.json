@@ -33,7 +33,7 @@
     "recordCount": { "type": "integer", "minimum": 1 },
     "titleLogoCount": { "type": "integer", "minimum": 1 },
     "sharedHero": { "$ref": "#/$defs/sharedHero" },
-    "titleLogoOptionId": { "enum": ["option-d1-subtle", "option-d2-hollywood"] },
+    "titleLogoOptionId": { "enum": ["gap-60", "gap-70", "gap-80"] },
     "permanentSelection": { "type": "boolean" },
     "rendererVersion": { "type": "string", "pattern": "^people-title-logo-renderer-v[1-9][0-9]*$" },
     "titleLogoPreset": {
@@ -62,18 +62,17 @@
     "collectionFontEvidence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["family", "style", "weight", "fontSha256", "fontLockSha256", "licence", "licenceSha256", "metadataSha256", "sourceRevision", "usage"],
+      "required": ["family", "weight", "fontSha256", "fontLockSha256", "licence", "licenceSha256", "sourceRevision", "usage", "sameFileAsNameFont"],
       "properties": {
-        "family": { "const": "Limelight" },
-        "style": { "const": "normal" },
-        "weight": { "const": 400 },
+        "family": { "const": "Cormorant Garamond" },
+        "weight": { "const": 500 },
         "fontSha256": { "$ref": "#/$defs/hash" },
         "fontLockSha256": { "$ref": "#/$defs/hash" },
         "licence": { "const": "OFL-1.1" },
         "licenceSha256": { "$ref": "#/$defs/hash" },
-        "metadataSha256": { "$ref": "#/$defs/hash" },
         "sourceRevision": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
-        "usage": { "const": "COLLECTION only" }
+        "usage": { "const": "COLLECTION only" },
+        "sameFileAsNameFont": { "const": true }
       }
     },
     "fingerprintExcludes": {

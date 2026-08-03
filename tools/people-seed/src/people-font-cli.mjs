@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import path from "node:path";
 
-import { acquireFont, acquireLimelightFont, verifyFont, verifyLimelightFont } from "./people-artwork/font.mjs";
+import { acquireFont, verifyFont } from "./people-artwork/font.mjs";
 import { loadPeopleArtworkRuntime } from "./people-artwork/runtime-dependencies.mjs";
 
 function option(name) {
@@ -17,21 +17,19 @@ async function main() {
     process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
     return;
   }
-  if (command === "acquire-limelight") {
-    const result = await acquireLimelightFont({ fontDirectory });
-    process.stdout.write(`${JSON.stringify(result, null, 2)}\n`);
-    return;
-  }
-  if (command !== "verify" && command !== "verify-limelight") throw new Error("Use people-font-cli.mjs verify|acquire|verify-limelight|acquire-limelight [--font-dir <ignored-cache-dir>].");
+  if (command !== "verify") throw new Error("Use people-font-cli.mjs verify|acquire [--font-dir <ignored-cache-dir>].");
   const runtime = loadPeopleArtworkRuntime();
-  const result = command === "verify-limelight"
-    ? await verifyLimelightFont({ Canvas: runtime.Canvas, FontLibrary: runtime.FontLibrary, names: ["COLLECTION"], fontDirectory: fontDirectory ? path.resolve(fontDirectory) : null })
-    : await verifyFont({ Canvas: runtime.Canvas, FontLibrary: runtime.FontLibrary, names: ["Céline Sciamma", "Max Ophüls", "Djibril Diop Mambéty", "F. W. Murnau"], fontDirectory: fontDirectory ? path.resolve(fontDirectory) : null });
+  const result = await verifyFont({
+    Canvas: runtime.Canvas,
+    FontLibrary: runtime.FontLibrary,
+    names: ["Céline Sciamma", "Max Ophüls", "Djibril Diop Mambéty", "F. W. Murnau", "COLLECTION"],
+    requiredWeights: [500, 700],
+    fontDirectory: fontDirectory ? path.resolve(fontDirectory) : null,
+  });
   process.stdout.write(`${JSON.stringify({
     ...result,
     fontPath: result.fontPath.replaceAll("\\", "/"),
     licencePath: result.licencePath.replaceAll("\\", "/"),
-    ...(result.metadataPath ? { metadataPath: result.metadataPath.replaceAll("\\", "/") } : {}),
   }, null, 2)}\n`);
 }
 
