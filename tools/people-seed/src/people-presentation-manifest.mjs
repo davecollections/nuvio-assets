@@ -6,7 +6,7 @@ import { validateAgainstSchema } from "./schema-validator.mjs";
 import { PEOPLE_ARTWORK_REPO_ROOT } from "./people-artwork/runtime-dependencies.mjs";
 import {
   PEOPLE_TITLE_LOGO_PUBLIC_ROOT,
-  TITLE_LOGO_OPTION_IDS,
+  TITLE_LOGO_DESIGN_ID,
 } from "./people-artwork/title-logo.mjs";
 
 export const PEOPLE_PRESENTATION_MANIFEST_VERSION = "people-presentation-manifest-v1";
@@ -54,12 +54,12 @@ export async function inspectSharedPeopleHero({ repoRoot = PEOPLE_ARTWORK_REPO_R
   };
 }
 
-export function buildPeoplePresentationManifest({ titleLogoMetadata, titleLogoOptionId, permanentSelection = false, sharedHero, generatedAt, status = "proof-candidate" } = {}) {
+export function buildPeoplePresentationManifest({ titleLogoMetadata, titleLogoDesignId, permanentSelection = true, sharedHero, generatedAt, status = "proof-candidate" } = {}) {
   assert(titleLogoMetadata?.recordCount > 0 && Array.isArray(titleLogoMetadata.records), "Title-logo metadata is required to build a presentation manifest.");
-  assert(TITLE_LOGO_OPTION_IDS.includes(titleLogoOptionId), "An explicit 60/70/80 px title-logo spacing option is required to build a presentation manifest proof.");
-  assert(status === "proof-candidate" ? permanentSelection === false : permanentSelection === true, "Permanent title-logo selection status differs from the presentation-manifest stage.");
-  const selectedRecords = titleLogoMetadata.records.filter((record) => record.optionId === titleLogoOptionId);
-  assert(selectedRecords.length > 0 && selectedRecords.length === titleLogoMetadata.personCount, "Title-logo option records are incomplete.");
+  assert(titleLogoDesignId === TITLE_LOGO_DESIGN_ID, "The presentation manifest must bind the approved production title-logo design.");
+  assert(permanentSelection === true && titleLogoMetadata.designDecisionStatus === "production-locked", "The presentation manifest must preserve the permanent 60 px title-logo selection.");
+  const selectedRecords = titleLogoMetadata.records.filter((record) => record.designId === titleLogoDesignId);
+  assert(selectedRecords.length > 0 && selectedRecords.length === titleLogoMetadata.personCount, "Production title-logo records are incomplete.");
   const records = [...selectedRecords]
     .sort((left, right) => left.tmdbPersonId - right.tmdbPersonId)
     .map((record) => ({
@@ -84,7 +84,7 @@ export function buildPeoplePresentationManifest({ titleLogoMetadata, titleLogoOp
     recordCount: records.length,
     titleLogoCount: records.length,
     sharedHero,
-    titleLogoOptionId,
+    titleLogoDesignId,
     permanentSelection,
     rendererVersion: titleLogoMetadata.rendererVersion,
     titleLogoPreset: {
@@ -127,7 +127,7 @@ export function validatePeoplePresentationManifest(manifest, schema, { expectedP
   const errors = validateAgainstSchema(manifest, schema, "people-presentation-manifest.json");
   if (manifest?.recordCount !== manifest?.records?.length) errors.push("presentation manifest recordCount must equal records length");
   if (manifest?.titleLogoCount !== manifest?.records?.length) errors.push("presentation manifest titleLogoCount must equal records length");
-  if (manifest?.status === "proof-candidate" && manifest?.permanentSelection !== false) errors.push("presentation proof must not select a permanent title-logo option");
+  if (manifest?.titleLogoDesignId !== TITLE_LOGO_DESIGN_ID || manifest?.permanentSelection !== true) errors.push("presentation manifest must bind the approved production title-logo design");
   if (manifest?.collectionFontEvidence?.fontSha256 !== manifest?.fontEvidence?.fontSha256 || manifest?.collectionFontEvidence?.fontLockSha256 !== manifest?.fontEvidence?.fontLockSha256 || manifest?.collectionFontEvidence?.sameFileAsNameFont !== true) errors.push("presentation COLLECTION font evidence must reuse the exact Person-name Cormorant file and lock");
   const ids = new Set();
   const paths = new Set();

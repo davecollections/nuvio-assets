@@ -28,7 +28,7 @@ import {
 import { loadPeopleArtworkRuntime } from "../src/people-artwork/runtime-dependencies.mjs";
 import {
   TITLE_LOGO_PROOF_IDENTITIES,
-  TITLE_LOGO_OPTION_IDS,
+  TITLE_LOGO_DESIGN_ID,
   assertPeopleV3ProofPath,
   loadTitleLogoConfiguration,
   prepareTitleLogoRenderer,
@@ -69,19 +69,19 @@ test("manual title-logo line-break overrides are empty by default and fail close
   assert.match(validateTitleLogoOverrides(invalid, schema, { registry: foundation.registry }).join("\n"), /do not preserve|duplicate|ascending/u);
 });
 
-test("title-logo renderer uses one locked Cormorant file and exact visible-name-relative 60/70/80 px gaps", async () => {
+test("title-logo renderer locks one Cormorant production design at the exact visible-name-relative 60 px gap", async () => {
   const people = selectTitleLogoProofPeople(foundation);
   const configuration = await loadTitleLogoConfiguration({ registry: foundation.registry });
   const prepared = await prepareTitleLogoRenderer({ people, configuration, runtime });
   for (const person of people) {
-    for (const optionId of TITLE_LOGO_OPTION_IDS) {
-      const rendered = await renderTitleLogo({ person, optionId, ...prepared });
+      const rendered = await renderTitleLogo({ person, ...prepared });
       assert.equal(rendered.record.presentationName, person.canonicalName.toLocaleUpperCase("en-US"));
       assert.equal(rendered.record.canonicalNameLines.join(" "), person.canonicalName);
       assert.equal(rendered.record.canvasWidth, 1863);
       assert.equal(rendered.record.canvasHeight, 673);
       assert.equal(rendered.record.alphaTransparent, true);
-      assert.equal(rendered.record.permanentSelection, false);
+      assert.equal(rendered.record.permanentSelection, true);
+      assert.equal(rendered.record.designId, TITLE_LOGO_DESIGN_ID);
       assert.equal(rendered.record.collectionText, "COLLECTION");
       assert.equal(rendered.record.collectionFontFamily, "Cormorant Garamond");
       assert.equal(rendered.record.collectionFontWeight, 500);
@@ -92,21 +92,19 @@ test("title-logo renderer uses one locked Cormorant file and exact visible-name-
       assert.equal(rendered.record.collectionUsesNameFontFile, true);
       assert.equal(rendered.record.collectionFontSize, 54);
       assert.equal(rendered.record.collectionTracking, 6);
-      assert.equal(rendered.record.verticalGap, Number(optionId.replace("gap-", "")));
+      assert.equal(rendered.record.verticalGap, 60);
       assert.equal(rendered.record.requestedClearGap, rendered.record.verticalGap);
       assert.equal(rendered.record.graphicElementCount, 0);
       assert.ok(Object.values(rendered.record.safeMargins).every((value) => value >= rendered.record.minimumCanvasMargin));
-    }
   }
   assert.deepEqual(prepared.fontRecord.verifiedWeights, [500, 700]);
-  assert.deepEqual(configuration.preset.options.map((option) => option.clearGap), [60, 70, 80]);
-  assert.deepEqual(await Promise.all(people.map(async (person) => [person.canonicalName, (await renderTitleLogo({ person, optionId: "gap-70", ...prepared })).record.presentationLines.length])), [
+  assert.deepEqual(configuration.preset.design, { id: TITLE_LOGO_DESIGN_ID, label: "Production-locked Cormorant title logo", clearGap: 60 });
+  assert.deepEqual(await Promise.all(people.map(async (person) => [person.canonicalName, (await renderTitleLogo({ person, ...prepared })).record.presentationLines.length])), [
     ["Björk", 1],
     ["Greta Gerwig", 1],
     ["Chloë Grace Moretz", 2],
     ["Priyanka Chopra Jonas", 2],
   ]);
-  await assert.rejects(() => renderTitleLogo({ person: people[0], ...prepared }), /explicit 60\/70\/80 px/u);
 });
 
 test("two fresh-process complete title-logo proof replays are byte-identical", async () => {
@@ -119,9 +117,10 @@ test("two fresh-process complete title-logo proof replays are byte-identical", a
   const first = await run();
   const second = await run();
   assert.equal(first.personCount, TITLE_LOGO_PROOF_IDENTITIES.length);
-  assert.equal(first.optionCount, TITLE_LOGO_OPTION_IDS.length);
-  assert.equal(first.recordCount, TITLE_LOGO_PROOF_IDENTITIES.length * TITLE_LOGO_OPTION_IDS.length);
-  assert.equal(first.designDecisionStatus, "unselected");
+  assert.equal(first.designCount, 1);
+  assert.equal(first.recordCount, TITLE_LOGO_PROOF_IDENTITIES.length);
+  assert.equal(first.designDecisionStatus, "production-locked");
+  assert.equal(first.permanentDesignSelected, true);
   assert.deepEqual(first, second);
 });
 
@@ -129,7 +128,8 @@ test("additive presentation manifest validates and its fingerprint excludes only
   const people = selectTitleLogoProofPeople(foundation).slice(0, 2).sort((left, right) => left.tmdbPersonId - right.tmdbPersonId);
   const configuration = await loadTitleLogoConfiguration({ registry: foundation.registry });
   const titleLogoMetadata = {
-    rendererVersion: "people-title-logo-renderer-v4",
+    rendererVersion: "people-title-logo-renderer-v5",
+    designDecisionStatus: "production-locked",
     presetId: configuration.preset.id,
     personCount: people.length,
     recordCount: people.length,
@@ -144,7 +144,7 @@ test("additive presentation manifest validates and its fingerprint excludes only
       tmdbPersonId: person.tmdbPersonId,
       canonicalName: person.canonicalName,
       categories: person.categoryMembership,
-      optionId: "gap-70",
+      designId: TITLE_LOGO_DESIGN_ID,
       outputHash: String(index + 1).repeat(64),
       canvasWidth: 1863,
       canvasHeight: 673,
@@ -162,11 +162,11 @@ test("additive presentation manifest validates and its fingerprint excludes only
   };
   const hero = await inspectSharedPeopleHero({ repoRoot, sharp: runtime.sharp });
   const schema = await loadPeoplePresentationManifestSchema({ repoRoot });
-  assert.throws(() => buildPeoplePresentationManifest({ titleLogoMetadata, sharedHero: hero, generatedAt }), /explicit 60\/70\/80 px/u);
-  const candidate = buildPeoplePresentationManifest({ titleLogoMetadata, titleLogoOptionId: "gap-70", permanentSelection: false, sharedHero: hero, generatedAt });
+  assert.throws(() => buildPeoplePresentationManifest({ titleLogoMetadata, sharedHero: hero, generatedAt }), /approved production title-logo design/u);
+  const candidate = buildPeoplePresentationManifest({ titleLogoMetadata, titleLogoDesignId: TITLE_LOGO_DESIGN_ID, permanentSelection: true, sharedHero: hero, generatedAt });
   assert.deepEqual(validatePeoplePresentationManifest(candidate, schema, { expectedPeople: people, expectedHero: hero }), []);
-  assert.equal(candidate.titleLogoOptionId, "gap-70");
-  assert.equal(candidate.permanentSelection, false);
+  assert.equal(candidate.titleLogoDesignId, TITLE_LOGO_DESIGN_ID);
+  assert.equal(candidate.permanentSelection, true);
   const timestampChanged = structuredClone(candidate);
   timestampChanged.generatedAt = "2026-08-03T05:00:00.000Z";
   assert.equal(calculatePresentationManifestFingerprint(timestampChanged), candidate.manifestFingerprint);
@@ -182,21 +182,18 @@ test("active title-logo proof tooling contains no simulated hero or client compo
     fs.readFile(path.join(repoRoot, "tools", "people-seed", "scripts", "people-v3-artwork.mjs"), "utf8"),
     fs.readFile(path.join(repoRoot, "tools", "people-seed", "src", "people-title-logo-proof.mjs"), "utf8"),
     fs.readFile(path.join(repoRoot, "tools", "people-seed", "src", "people-artwork", "title-logo.mjs"), "utf8"),
-    fs.readFile(path.join(repoRoot, "tools", "people-seed", "presets", "people-title-logo-cormorant-spacing-v4.json"), "utf8").then(JSON.parse),
+    fs.readFile(path.join(repoRoot, "tools", "people-seed", "presets", "people-title-logo-cormorant-production-v1.json"), "utf8").then(JSON.parse),
   ]);
   const activeProofCode = `${proofModule}\n${proofCli}\n${correctionModule}`;
   assert.doesNotMatch(activeProofCode, /generateCombinedPresentationMockups|sharedHeroSheets|composition-proofs|kind\s*===\s*["']hero["']/u);
-  assert.deepEqual(Object.keys(titlePreset), ["id", "version", "status", "publicationAuthorised", "rendererVersion", "renderer", "canvas", "typography", "collection", "options", "output"]);
-  assert.deepEqual(titlePreset.options.map((option) => Object.keys(option)), [
-    ["id", "label", "clearGap"],
-    ["id", "label", "clearGap"],
-    ["id", "label", "clearGap"],
-  ]);
+  assert.deepEqual(Object.keys(titlePreset), ["id", "version", "status", "publicationAuthorised", "rendererVersion", "renderer", "canvas", "typography", "collection", "design", "output"]);
+  assert.deepEqual(titlePreset.design, { id: TITLE_LOGO_DESIGN_ID, label: "Production-locked Cormorant title logo", clearGap: 60 });
   assert.doesNotMatch(titleRenderer, /draw(?:Accent|Divider|Ornament)|stepped|lozenge|taper/iu);
   assert.doesNotMatch(`${titleRenderer}\n${JSON.stringify(titlePreset)}`, /Limelight/u);
   await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "presets", "people-title-logo-cinematic-v1.json")));
   await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "presets", "people-title-logo-nuvio-variants-v2.json")));
   await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "presets", "people-title-logo-collection-options-v3.json")));
+  await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "presets", "people-title-logo-cormorant-spacing-v4.json")));
   await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "config", "people-title-logo-secondary-fonts.json")));
   await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "config", "limelight-400.json")));
 });
@@ -258,8 +255,10 @@ test("full-generation and atomic-publication plans retain exact counts and remai
   assert.equal(atomicPlan.rollback.existing817PortraitPairs.includes("never overwritten"), true);
 });
 
-test("proof output guard accepts only ignored People v3 attempts and rejects permanent artwork", () => {
+test("output guard accepts only ignored People v3 proof or full-generation runs and rejects permanent artwork", () => {
   const attempt = path.join(repoRoot, "tools", "people-seed", ".work", "people-v3-artwork-proof", "attempt-20260802T050000Z");
+  const generation = path.join(repoRoot, "tools", "people-seed", ".work", "people-v3-full-generation", "run-20260803T100000Z");
   assert.equal(assertPeopleV3ProofPath(attempt), attempt);
-  assert.throws(() => assertPeopleV3ProofPath(path.join(repoRoot, "assets", "collection_covers", "people", "title-logo")), /must remain in a unique ignored attempt workspace/u);
+  assert.equal(assertPeopleV3ProofPath(generation), generation);
+  assert.throws(() => assertPeopleV3ProofPath(path.join(repoRoot, "assets", "collection_covers", "people", "title-logo")), /must remain in a unique ignored proof or full-generation workspace/u);
 });

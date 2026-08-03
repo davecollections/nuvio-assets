@@ -7,17 +7,13 @@ import { validateAgainstSchema } from "../schema-validator.mjs";
 import { runFamilies, verifyFont } from "./font.mjs";
 import { loadPeopleArtworkRuntime, PEOPLE_ARTWORK_PACKAGE_ROOT, PEOPLE_ARTWORK_REPO_ROOT } from "./runtime-dependencies.mjs";
 
-export const PEOPLE_TITLE_LOGO_RENDERER_VERSION = "people-title-logo-renderer-v4";
-export const PEOPLE_TITLE_LOGO_PRESET_ID = "people-title-logo-cormorant-spacing-v4";
-export const PEOPLE_TITLE_LOGO_PRESET_PATH = "tools/people-seed/presets/people-title-logo-cormorant-spacing-v4.json";
+export const PEOPLE_TITLE_LOGO_RENDERER_VERSION = "people-title-logo-renderer-v5";
+export const PEOPLE_TITLE_LOGO_PRESET_ID = "people-title-logo-cormorant-production-v1";
+export const PEOPLE_TITLE_LOGO_PRESET_PATH = "tools/people-seed/presets/people-title-logo-cormorant-production-v1.json";
 export const PEOPLE_TITLE_LOGO_OVERRIDE_PATH = "data/people/title-logo-line-break-overrides.json";
 export const PEOPLE_TITLE_LOGO_OVERRIDE_SCHEMA_PATH = "schemas/people-title-logo-line-break-overrides.schema.json";
 export const PEOPLE_TITLE_LOGO_PUBLIC_ROOT = "assets/collection_covers/people/title-logo";
-export const TITLE_LOGO_OPTION_IDS = Object.freeze([
-  "gap-60",
-  "gap-70",
-  "gap-80",
-]);
+export const TITLE_LOGO_DESIGN_ID = "cormorant-60";
 
 export const TITLE_LOGO_PROOF_IDENTITIES = Object.freeze([
   Object.freeze([47, "Björk"]),
@@ -44,7 +40,8 @@ async function atomicWrite(filePath, content) {
 export function assertPeopleV3ProofPath(targetPath, { repoRoot = PEOPLE_ARTWORK_REPO_ROOT } = {}) {
   const resolved = path.resolve(targetPath);
   const relative = path.relative(repoRoot, resolved).replaceAll("\\", "/");
-  assert(/^tools\/people-seed\/\.work\/people-v3-artwork-proof\/attempt-[0-9]{8}T[0-9]{6}Z(?:\/|$)/u.test(relative), `People v3 proof output must remain in a unique ignored attempt workspace: ${resolved}`);
+  const allowed = /^(?:tools\/people-seed\/\.work\/people-v3-artwork-proof\/attempt-[0-9]{8}T[0-9]{6}Z|tools\/people-seed\/\.work\/people-v3-full-generation\/run-[0-9]{8}T[0-9]{6}Z)(?:\/|$)/u;
+  assert(allowed.test(relative), `People v3 output must remain in a unique ignored proof or full-generation workspace: ${resolved}`);
   return resolved;
 }
 
@@ -74,10 +71,10 @@ export function validateTitleLogoOverrides(document, schema, { registry = null }
 function validatePreset(preset) {
   assert(preset.id === PEOPLE_TITLE_LOGO_PRESET_ID && preset.rendererVersion === PEOPLE_TITLE_LOGO_RENDERER_VERSION, "Title-logo preset identity or renderer version changed.");
   assert(preset.canvas.width === 1863 && preset.canvas.height === 673 && preset.output.alpha === true, "Title-logo preset must remain 1863x673 transparent PNG.");
-  assert(stableStringify(Object.keys(preset)) === stableStringify(["id", "version", "status", "publicationAuthorised", "rendererVersion", "renderer", "canvas", "typography", "collection", "options", "output"]), "Title-logo preset contains an unsupported top-level design field.");
-  assert(stableStringify(preset.options.map((option) => option.id)) === stableStringify(TITLE_LOGO_OPTION_IDS), "Title-logo proof options must be the exact 60/70/80 px gaps.");
-  assert(preset.options.every((option) => stableStringify(Object.keys(option)) === stableStringify(["id", "label", "clearGap"])), "Title-logo spacing options may contain only an ID, label, and clear gap.");
-  assert(stableStringify(preset.options.map((option) => option.clearGap)) === stableStringify([60, 70, 80]), "Title-logo clear gaps differ from 60/70/80 px.");
+  assert(preset.status === "production-locked" && preset.publicationAuthorised === true, "Title-logo preset must be the owner-approved production lock.");
+  assert(stableStringify(Object.keys(preset)) === stableStringify(["id", "version", "status", "publicationAuthorised", "rendererVersion", "renderer", "canvas", "typography", "collection", "design", "output"]), "Title-logo preset contains an unsupported top-level design field.");
+  assert(stableStringify(Object.keys(preset.design)) === stableStringify(["id", "label", "clearGap"]), "The production title-logo design may contain only an ID, label, and clear gap.");
+  assert(preset.design.id === TITLE_LOGO_DESIGN_ID && preset.design.clearGap === 60, "The production title-logo design must be the approved exact 60 px lock.");
   assert(preset.collection.text === "COLLECTION" && preset.collection.family === preset.typography.family && preset.collection.weight === 500, "The fixed COLLECTION treatment must use locked Cormorant Garamond 500.");
   assert(preset.collection.fontHash === preset.typography.fontHash && preset.collection.verticalPositioning === "visible-name-bottom-plus-clear-gap", "COLLECTION must use the Person-name font file and visible-name-relative positioning.");
   assert(stableStringify({ sharp: preset.renderer.sharp, libvips: preset.renderer.libvips, pango: preset.renderer.pango, skiaCanvas: preset.renderer.skiaCanvas }) === stableStringify({ sharp: "0.35.3", libvips: "8.18.3", pango: "1.57.1", skiaCanvas: "3.0.8" }), "Title-logo renderer dependency lock changed.");
@@ -208,12 +205,6 @@ export async function prepareTitleLogoRenderer({ people, configuration = null, r
   return { runtime, configuration: resolvedConfiguration, fontRecord, rendererVersions };
 }
 
-function optionById(preset, optionId) {
-  const option = preset.options.find((record) => record.id === optionId);
-  assert(option, `Unknown title-logo proof option: ${optionId}`);
-  return option;
-}
-
 function unionBounds(bounds) {
   const minX = Math.min(...bounds.map((bound) => bound.x));
   const minY = Math.min(...bounds.map((bound) => bound.y));
@@ -241,7 +232,7 @@ async function alphaVisibleBounds(runtime, buffer) {
   return { x: minX, y: minY, width: maxX - minX + 1, height: maxY - minY + 1 };
 }
 
-async function renderCollectionLayer(runtime, preset, option, fontRecord, nameBottom) {
+async function renderCollectionLayer(runtime, preset, fontRecord, nameBottom) {
   const style = preset.collection;
   const tracking = Math.round(style.tracking * 1024);
   const size = Math.round(style.fontSize * 1024);
@@ -258,7 +249,7 @@ async function renderCollectionLayer(runtime, preset, option, fontRecord, nameBo
   const metadata = await runtime.sharp(buffer).metadata();
   assert(metadata.format === "png" && metadata.hasAlpha === true && metadata.width > 0 && metadata.height > 0, "Locked Cormorant COLLECTION label did not render as transparent PNG.");
   const localVisible = await alphaVisibleBounds(runtime, buffer);
-  const visibleTop = nameBottom + option.clearGap;
+  const visibleTop = nameBottom + preset.design.clearGap;
   const placement = {
     x: Math.round((preset.canvas.width - localVisible.width) / 2 - localVisible.x),
     y: Math.round(visibleTop - localVisible.y),
@@ -310,11 +301,10 @@ function resetExactTitleFontState(runtime, fontRecord) {
   assert(runtime.FontLibrary.has(fontRecord.registrationAlias), "Locked Cormorant registration was lost before title rendering.");
 }
 
-export async function renderTitleLogo({ person, optionId, runtime, configuration, fontRecord } = {}) {
-  assert(optionId, "An explicit 60/70/80 px title-logo spacing option is required; no permanent spacing is selected.");
+export async function renderTitleLogo({ person, runtime, configuration, fontRecord } = {}) {
   resetExactTitleFontState(runtime, fontRecord);
   const { preset } = configuration;
-  const option = optionById(preset, optionId);
+  const design = preset.design;
   const plan = linePlan(person, preset, configuration, runtime, fontRecord);
   assert(plan.canonicalLines.join(" ") === person.canonicalName, `${person.stableKey}: title-logo lines changed the canonical name.`);
   assert(plan.presentationLines.join(" ") === plan.presentationName, `${person.stableKey}: uppercase title-logo lines changed the canonical name.`);
@@ -330,19 +320,19 @@ export async function renderTitleLogo({ person, optionId, runtime, configuration
   const nameLayers = await renderNameLayers(runtime, preset, plan, chosen, measuredLineBounds, fontRecord);
   const lineBounds = nameLayers.map((layer) => layer.bounds);
   const nameBottom = Math.max(...lineBounds.map((bound) => bound.y + bound.height));
-  const collectionLayer = await renderCollectionLayer(runtime, preset, option, fontRecord, nameBottom);
+  const collectionLayer = await renderCollectionLayer(runtime, preset, fontRecord, nameBottom);
   const collectionBounds = collectionLayer.bounds;
   const allBounds = [...lineBounds, collectionBounds];
   const contentBounds = unionBounds(allBounds);
   const verticalGap = round(collectionBounds.y - nameBottom);
-  assert(verticalGap === option.clearGap, `${person.stableKey}/${optionId}: COLLECTION clear gap differs from ${option.clearGap}px.`);
+  assert(verticalGap === design.clearGap, `${person.stableKey}: COLLECTION clear gap differs from ${design.clearGap}px.`);
   const safeMargins = {
     left: round(contentBounds.x),
     right: round(preset.canvas.width - contentBounds.x - contentBounds.width),
     top: round(contentBounds.y),
     bottom: round(preset.canvas.height - contentBounds.y - contentBounds.height),
   };
-  assert(Object.values(safeMargins).every((value) => value >= preset.typography.minimumCanvasMargin), `${person.stableKey}/${optionId}: title-logo content violates the minimum canvas margin.`);
+  assert(Object.values(safeMargins).every((value) => value >= preset.typography.minimumCanvasMargin), `${person.stableKey}: title-logo content violates the minimum canvas margin.`);
   const canonicalBase = runtime.sharp({ create: { width: preset.canvas.width, height: preset.canvas.height, channels: 4, background: { r: 255, g: 255, b: 255, alpha: 0 } } });
   const overlays = [
     ...nameLayers.map((layer) => ({ input: layer.buffer, left: layer.placement.x, top: layer.placement.y })),
@@ -350,7 +340,7 @@ export async function renderTitleLogo({ person, optionId, runtime, configuration
   ];
   const output = await canonicalBase.composite(overlays).png({ compressionLevel: 9, adaptiveFiltering: false, palette: false }).toBuffer();
   const decoded = await runtime.sharp(output, { failOn: "error" }).metadata();
-  assert(decoded.format === "png" && decoded.width === 1863 && decoded.height === 673 && decoded.hasAlpha === true && decoded.channels === 4, `${person.stableKey}/${optionId}: title-logo output is not exact 1863x673 RGBA PNG.`);
+  assert(decoded.format === "png" && decoded.width === 1863 && decoded.height === 673 && decoded.hasAlpha === true && decoded.channels === 4, `${person.stableKey}: title-logo output is not exact 1863x673 RGBA PNG.`);
   return {
     output,
     record: {
@@ -359,9 +349,9 @@ export async function renderTitleLogo({ person, optionId, runtime, configuration
       canonicalName: person.canonicalName,
       presentationName: plan.presentationName,
       categories: [...person.categoryMembership],
-      optionId,
-      optionLabel: option.label,
-      permanentSelection: false,
+      designId: design.id,
+      designLabel: design.label,
+      permanentSelection: true,
       lineBreakSource: plan.source,
       manualOverrideId: plan.override?.stableKey || null,
       canonicalNameLines: plan.canonicalLines,
@@ -378,7 +368,7 @@ export async function renderTitleLogo({ person, optionId, runtime, configuration
       collectionFontSize: preset.collection.fontSize,
       collectionTracking: preset.collection.tracking,
       collectionTopY: collectionBounds.y,
-      requestedClearGap: option.clearGap,
+      requestedClearGap: design.clearGap,
       verticalGap,
       collectionPositioning: preset.collection.verticalPositioning,
       collectionFontFamily: fontRecord.family,
@@ -403,7 +393,7 @@ export async function renderTitleLogo({ person, optionId, runtime, configuration
       colourSpace: "srgb",
       alphaTransparent: true,
       alphaCanonicalization: ALPHA_CANONICALIZATION,
-      futureRepositoryPath: null,
+      futureRepositoryPath: `${PEOPLE_TITLE_LOGO_PUBLIC_ROOT}/${person.tmdbPersonId}.png`,
       proofFileName: `${person.tmdbPersonId}.png`,
       outputHash: sha256(output),
       byteCount: output.length,
@@ -419,19 +409,18 @@ function titleLogoMetadataFingerprint(metadata) {
 
 export function validateTitleLogoMetadata(metadata, expectedPeople = null) {
   const errors = [];
-  if (metadata?.version !== "people-title-logo-render-metadata-v4") errors.push("title-logo metadata version mismatch");
+  if (metadata?.version !== "people-title-logo-render-metadata-v5") errors.push("title-logo metadata version mismatch");
   if (metadata?.rendererVersion !== PEOPLE_TITLE_LOGO_RENDERER_VERSION) errors.push("title-logo renderer version mismatch");
   if (stableStringify(metadata?.rendererVersions) !== stableStringify({ sharp: "0.35.3", libvips: "8.18.3", skiaCanvas: "3.0.8", pango: "1.57.1" })) errors.push("title-logo renderer dependency versions mismatch");
-  if (metadata?.designDecisionStatus !== "unselected") errors.push("title-logo proof must not select a permanent design option");
+  if (metadata?.designDecisionStatus !== "production-locked" || metadata?.permanentDesignSelected !== true) errors.push("title-logo metadata must bind the approved production design");
   if (metadata?.recordCount !== metadata?.records?.length) errors.push("title-logo metadata recordCount mismatch");
-  if (metadata?.personCount * metadata?.optionCount !== metadata?.recordCount) errors.push("title-logo person/option counts do not reconcile");
+  if (metadata?.personCount !== metadata?.recordCount || metadata?.designCount !== 1) errors.push("title-logo person/design counts do not reconcile");
   const keys = new Set();
   for (const record of (Array.isArray(metadata?.records) ? metadata.records : [])) {
-    const key = `${record.optionId}:${record.tmdbPersonId}`;
-    if (keys.has(key)) errors.push(`${key}: duplicate title-logo metadata identity/option`);
+    const key = String(record.tmdbPersonId);
+    if (keys.has(key)) errors.push(`${key}: duplicate title-logo metadata identity`);
     keys.add(key);
-    if (!TITLE_LOGO_OPTION_IDS.includes(record.optionId)) errors.push(`${key}: unknown 60/70/80 px spacing option`);
-    if (record.permanentSelection !== false) errors.push(`${key}: proof record selects a permanent design`);
+    if (record.designId !== TITLE_LOGO_DESIGN_ID || record.permanentSelection !== true) errors.push(`${key}: title-logo record does not bind the production design`);
     if (record.stableKey !== `person:${record.tmdbPersonId}`) errors.push(`${record.stableKey}: title-logo metadata identity mismatch`);
     if (record.canonicalNameLines?.join(" ") !== record.canonicalName) errors.push(`${record.stableKey}: title-logo canonical lines changed the name`);
     if (record.presentationLines?.join(" ") !== record.presentationName) errors.push(`${record.stableKey}: title-logo presentation lines changed the name`);
@@ -443,13 +432,13 @@ export function validateTitleLogoMetadata(metadata, expectedPeople = null) {
     if (record.collectionFontHash !== record.fontHash || record.collectionFontLockHash !== record.fontLockHash || record.collectionUsesNameFontFile !== true) errors.push(`${key}: COLLECTION does not use the exact Person-name font file and lock`);
     if (!/^[a-f0-9]{64}$/u.test(record.collectionFontHash || "") || !/^[a-f0-9]{64}$/u.test(record.collectionLicenceHash || "") || !/^[a-f0-9]{64}$/u.test(record.collectionFontLockHash || "")) errors.push(`${key}: Cormorant lock evidence is incomplete`);
     if (record.graphicElementCount !== 0) errors.push(`${key}: title-logo contains an unsupported graphic element`);
-    const expectedGap = Number(record.optionId?.replace("gap-", ""));
-    if (record.verticalGap !== expectedGap || record.requestedClearGap !== expectedGap || record.collectionPositioning !== "visible-name-bottom-plus-clear-gap") errors.push(`${key}: COLLECTION is not positioned at the exact visible-name-relative gap`);
+    if (record.verticalGap !== 60 || record.requestedClearGap !== 60 || record.collectionPositioning !== "visible-name-bottom-plus-clear-gap") errors.push(`${key}: COLLECTION is not positioned at the exact production-locked 60 px visible-name-relative gap`);
+    if (record.futureRepositoryPath !== `${PEOPLE_TITLE_LOGO_PUBLIC_ROOT}/${record.tmdbPersonId}.png`) errors.push(`${key}: future title-logo path is not the exact numeric production path`);
   }
   if (expectedPeople) {
-    const expected = TITLE_LOGO_OPTION_IDS.flatMap((optionId) => expectedPeople.map((person) => [optionId, person.tmdbPersonId, person.canonicalName]));
-    const actual = metadata.records.map((record) => [record.optionId, record.tmdbPersonId, record.canonicalName]);
-    if (stableStringify(actual) !== stableStringify(expected)) errors.push("title-logo metadata identities differ from the exact four-person 60/70/80 px proof set");
+    const expected = expectedPeople.map((person) => [person.tmdbPersonId, person.canonicalName]);
+    const actual = metadata.records.map((record) => [record.tmdbPersonId, record.canonicalName]);
+    if (stableStringify(actual) !== stableStringify(expected)) errors.push("title-logo metadata identities differ from the expected People selection");
   }
   if (metadata?.metadataFingerprint !== titleLogoMetadataFingerprint(metadata)) errors.push("title-logo metadata fingerprint mismatch");
   return errors;
@@ -459,24 +448,23 @@ export async function renderTitleLogoSet({ people, outputDir, generatedAt, fontD
   const resolvedOutput = assertPeopleV3ProofPath(outputDir);
   const preparedRenderer = prepared || await prepareTitleLogoRenderer({ people, fontDirectory });
   const records = [];
-  for (const optionId of TITLE_LOGO_OPTION_IDS) {
-    for (const person of people) {
-      const rendered = await renderTitleLogo({ person, optionId, ...preparedRenderer });
-      await atomicWrite(path.join(resolvedOutput, optionId, "individual", rendered.record.proofFileName), rendered.output);
-      records.push(rendered.record);
-    }
+  for (const person of people) {
+    const rendered = await renderTitleLogo({ person, ...preparedRenderer });
+    await atomicWrite(path.join(resolvedOutput, "individual", rendered.record.proofFileName), rendered.output);
+    records.push(rendered.record);
   }
   const metadata = {
-    version: "people-title-logo-render-metadata-v4",
+    version: "people-title-logo-render-metadata-v5",
     rendererVersion: PEOPLE_TITLE_LOGO_RENDERER_VERSION,
     rendererVersions: preparedRenderer.rendererVersions,
     generatedAt,
-    ordering: "gap-60-70-80-then-proof-specification-order",
-    designDecisionStatus: "unselected",
-    permanentOptionSelected: false,
+    ordering: "tmdb-person-id-ascending",
+    designDecisionStatus: "production-locked",
+    permanentDesignSelected: true,
     personCount: people.length,
-    optionCount: TITLE_LOGO_OPTION_IDS.length,
+    designCount: 1,
     recordCount: records.length,
+    designId: TITLE_LOGO_DESIGN_ID,
     presetId: preparedRenderer.configuration.preset.id,
     presetHash: preparedRenderer.configuration.presetHash,
     overrideConfigHash: preparedRenderer.configuration.overrideHash,
@@ -486,7 +474,7 @@ export async function renderTitleLogoSet({ people, outputDir, generatedAt, fontD
     collectionFontLockHash: preparedRenderer.configuration.fontLockHash,
     collectionFontHash: preparedRenderer.fontRecord.fontHash,
     collectionLicenceHash: preparedRenderer.fontRecord.licenceHash,
-    testedOptionIds: TITLE_LOGO_OPTION_IDS,
+    clearGap: 60,
     graphicElementCount: 0,
     records,
     metadataFingerprint: null,
@@ -501,10 +489,10 @@ export async function renderTitleLogoSet({ people, outputDir, generatedAt, fontD
 
 export function compareTitleLogoReplay(first, second) {
   return {
-    byteIdentical: stableStringify(first.metadata.records.map((record) => [record.optionId, record.tmdbPersonId, record.outputHash, record.byteCount])) === stableStringify(second.metadata.records.map((record) => [record.optionId, record.tmdbPersonId, record.outputHash, record.byteCount])),
+    byteIdentical: stableStringify(first.metadata.records.map((record) => [record.tmdbPersonId, record.outputHash, record.byteCount])) === stableStringify(second.metadata.records.map((record) => [record.tmdbPersonId, record.outputHash, record.byteCount])),
     metadataIdentical: stableStringify(first.metadata) === stableStringify(second.metadata),
     comparisons: first.metadata.records.map((record, index) => ({
-      optionId: record.optionId,
+      designId: record.designId,
       tmdbPersonId: record.tmdbPersonId,
       canonicalName: record.canonicalName,
       firstHash: record.outputHash,

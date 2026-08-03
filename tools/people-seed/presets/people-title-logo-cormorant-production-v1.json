@@ -1,9 +1,9 @@
 {
-  "id": "people-title-logo-cormorant-spacing-v4",
-  "version": 4,
-  "status": "spacing-proof-candidate",
-  "publicationAuthorised": false,
-  "rendererVersion": "people-title-logo-renderer-v4",
+  "id": "people-title-logo-cormorant-production-v1",
+  "version": 1,
+  "status": "production-locked",
+  "publicationAuthorised": true,
+  "rendererVersion": "people-title-logo-renderer-v5",
   "renderer": {
     "sharp": "0.35.3",
     "libvips": "8.18.3",
@@ -53,23 +53,11 @@
     "role": "fixed-secondary-title",
     "verticalPositioning": "visible-name-bottom-plus-clear-gap"
   },
-  "options": [
-    {
-      "id": "gap-60",
-      "label": "60 px clear gap",
-      "clearGap": 60
-    },
-    {
-      "id": "gap-70",
-      "label": "70 px clear gap",
-      "clearGap": 70
-    },
-    {
-      "id": "gap-80",
-      "label": "80 px clear gap",
-      "clearGap": 80
-    }
-  ],
+  "design": {
+    "id": "cormorant-60",
+    "label": "Production-locked Cormorant title logo",
+    "clearGap": 60
+  },
   "output": {
     "format": "png",
     "alpha": true,

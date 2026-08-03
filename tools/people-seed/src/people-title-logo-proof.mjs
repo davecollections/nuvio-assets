@@ -4,9 +4,8 @@ import fs from "node:fs/promises";
 import path from "node:path";
 import { promisify } from "node:util";
 
-import { stableStringify } from "./people-publication.mjs";
 import {
-  TITLE_LOGO_OPTION_IDS,
+  TITLE_LOGO_DESIGN_ID,
   assertPeopleV3ProofPath,
   compareTitleLogoReplay,
   loadTitleLogoConfiguration,
@@ -94,22 +93,22 @@ async function runFreshWorker({ outputDir, generatedAt, fontDirectory }) {
   return { outputDir, metadataPath, metadata: JSON.parse(await fs.readFile(metadataPath, "utf8")) };
 }
 
-async function nextSpacingProofRoot(root) {
+async function nextProductionLockProofRoot(root) {
   const titleRoot = path.join(root, "title-logos");
   for (let index = 1; index < 100; index += 1) {
-    const candidate = path.join(titleRoot, `spacing-proof-attempt-${String(index).padStart(2, "0")}`);
+    const candidate = path.join(titleRoot, `production-lock-attempt-${String(index).padStart(2, "0")}`);
     if (!(await fs.access(candidate).then(() => true).catch(() => false))) return candidate;
   }
-  throw new Error("No unused title-logo spacing-proof workspace remains; existing ignored evidence will not be overwritten.");
+  throw new Error("No unused title-logo production-lock workspace remains; existing ignored evidence will not be overwritten.");
 }
 
 async function verifyRenderedSet(result, people) {
   const errors = validateTitleLogoMetadata(result.metadata, people);
   assert(errors.length === 0, `Title-logo proof metadata failed validation:\n${errors.map((error) => `- ${error}`).join("\n")}`);
   for (const record of result.metadata.records) {
-    const outputPath = path.join(result.outputDir, record.optionId, "individual", record.proofFileName);
+    const outputPath = path.join(result.outputDir, "individual", record.proofFileName);
     const output = await fs.readFile(outputPath);
-    assert(output.length === record.byteCount && sha256(output) === record.outputHash, `${record.optionId}/${record.stableKey}: title-logo artifact differs from metadata.`);
+    assert(output.length === record.byteCount && sha256(output) === record.outputHash, `${record.stableKey}: title-logo artifact differs from metadata.`);
   }
 }
 
@@ -118,21 +117,19 @@ async function comparisonSheets({ proofRoot, first, people, runtime }) {
   for (const background of ["checkerboard", "dark"]) {
     const cells = [];
     for (const person of people) {
-      for (const optionId of TITLE_LOGO_OPTION_IDS) {
-        const record = first.metadata.records.find((item) => item.optionId === optionId && item.tmdbPersonId === person.tmdbPersonId);
-        assert(record, `${person.stableKey}/${optionId}: spacing-proof record is unavailable.`);
-        const logo = await fs.readFile(path.join(first.outputDir, optionId, "individual", `${person.tmdbPersonId}.png`));
-        cells.push(await spacingCell({ logo, person, record, background, width: 620, imageHeight: 236, labelHeight: 64, runtime }));
-      }
+      const record = first.metadata.records.find((item) => item.tmdbPersonId === person.tmdbPersonId);
+      assert(record, `${person.stableKey}: production-lock record is unavailable.`);
+      const logo = await fs.readFile(path.join(first.outputDir, "individual", `${person.tmdbPersonId}.png`));
+      cells.push(await spacingCell({ logo, person, record, background, width: 620, imageHeight: 236, labelHeight: 64, runtime }));
     }
     sheets.push(await composeSheet({
       cells,
-      columns: 3,
-      rows: 4,
+      columns: 2,
+      rows: 2,
       cellWidth: 620,
       cellHeight: 300,
-      header: `Cormorant COLLECTION spacing · 60 / 70 / 80 px · ${background === "dark" ? "neutral dark" : "transparent checkerboard"} · no permanent spacing selected`,
-      outputPath: path.join(proofRoot, "contact-sheets", `cormorant-spacing-comparison-${background}.png`),
+      header: `Production-locked Cormorant title logo · exact 60 px clear gap · ${background === "dark" ? "neutral dark" : "transparent checkerboard"}`,
+      outputPath: path.join(proofRoot, "contact-sheets", `cormorant-production-lock-${background}.png`),
       runtime,
     }));
   }
@@ -144,38 +141,35 @@ async function validatePresentationProofs({ first, people, runtime, generatedAt 
     inspectSharedPeopleHero({ repoRoot: PEOPLE_ARTWORK_REPO_ROOT, sharp: runtime.sharp }),
     loadPeoplePresentationManifestSchema({ repoRoot: PEOPLE_ARTWORK_REPO_ROOT }),
   ]);
-  return TITLE_LOGO_OPTION_IDS.map((optionId) => {
-    const manifest = buildPeoplePresentationManifest({ titleLogoMetadata: first.metadata, titleLogoOptionId: optionId, permanentSelection: false, sharedHero, generatedAt });
-    const errors = validatePeoplePresentationManifest(manifest, schema, { expectedPeople: people, expectedHero: sharedHero });
-    assert(errors.length === 0, `${optionId}: presentation-manifest proof failed validation:\n${errors.join("\n")}`);
-    return { optionId, manifestFingerprint: manifest.manifestFingerprint, valid: true, permanentSelection: false };
-  });
+  const manifest = buildPeoplePresentationManifest({ titleLogoMetadata: first.metadata, titleLogoDesignId: TITLE_LOGO_DESIGN_ID, permanentSelection: true, sharedHero, generatedAt });
+  const errors = validatePeoplePresentationManifest(manifest, schema, { expectedPeople: people, expectedHero: sharedHero });
+  assert(errors.length === 0, `${TITLE_LOGO_DESIGN_ID}: presentation-manifest proof failed validation:\n${errors.join("\n")}`);
+  return [{ designId: TITLE_LOGO_DESIGN_ID, manifestFingerprint: manifest.manifestFingerprint, valid: true, permanentSelection: true }];
 }
 
 function buildLineWrapReport({ first, people, configuration, generatedAt }) {
   const records = people.map((person) => {
-    const options = TITLE_LOGO_OPTION_IDS.map((optionId) => first.metadata.records.find((record) => record.optionId === optionId && record.tmdbPersonId === person.tmdbPersonId));
-    const reference = options[0];
+    const reference = first.metadata.records.find((record) => record.tmdbPersonId === person.tmdbPersonId);
     return {
       tmdbPersonId: person.tmdbPersonId,
       canonicalName: person.canonicalName,
       presentationLines: reference.presentationLines,
       finalNameFontSize: reference.finalFontSize,
       lineBreakSource: reference.lineBreakSource,
-      namePlanIdenticalAcrossOptions: options.every((record) => stableStringify(record.presentationLines) === stableStringify(reference.presentationLines) && record.finalFontSize === reference.finalFontSize),
-      options: Object.fromEntries(options.map((record) => [record.optionId, {
-        requestedClearGap: record.requestedClearGap,
-        measuredClearGap: record.verticalGap,
-        nameVisibleBottom: Math.max(...record.lineBounds.map((bound) => bound.y + bound.height)),
-        collectionVisibleTop: record.collectionBounds.y,
-        collectionFontSize: record.collectionFontSize,
-        collectionTracking: record.collectionTracking,
-        safeMargins: record.safeMargins,
-      }])),
+      productionDesign: {
+        designId: reference.designId,
+        requestedClearGap: reference.requestedClearGap,
+        measuredClearGap: reference.verticalGap,
+        nameVisibleBottom: Math.max(...reference.lineBounds.map((bound) => bound.y + bound.height)),
+        collectionVisibleTop: reference.collectionBounds.y,
+        collectionFontSize: reference.collectionFontSize,
+        collectionTracking: reference.collectionTracking,
+        safeMargins: reference.safeMargins,
+      },
     };
   });
   return {
-    version: "people-title-logo-cormorant-spacing-report-v1",
+    version: "people-title-logo-cormorant-production-lock-report-v1",
     generatedAt,
     presetId: first.metadata.presetId,
     presetHash: first.metadata.presetHash,
@@ -194,7 +188,7 @@ function buildLineWrapReport({ first, people, configuration, generatedAt }) {
       licenceSha256: configuration.fontLock.licenceSha256,
       weightAxis: configuration.fontLock.weightAxis,
     },
-    testedClearGaps: configuration.preset.options.map((option) => option.clearGap),
+    productionClearGap: configuration.preset.design.clearGap,
     records,
   };
 }
@@ -202,7 +196,7 @@ function buildLineWrapReport({ first, people, configuration, generatedAt }) {
 export async function generateTitleLogoCorrectionProof({ attemptRoot, people, generatedAt, runtime: providedRuntime = null, fontDirectory = null } = {}) {
   const root = assertPeopleV3ProofPath(attemptRoot);
   const runtime = providedRuntime || loadPeopleArtworkRuntime();
-  const proofRoot = await nextSpacingProofRoot(root);
+  const proofRoot = await nextProductionLockProofRoot(root);
   const run1 = path.join(proofRoot, "run-1");
   const run2 = path.join(proofRoot, "run-2");
   await fs.access(root);
@@ -210,25 +204,25 @@ export async function generateTitleLogoCorrectionProof({ attemptRoot, people, ge
   const second = await runFreshWorker({ outputDir: run2, generatedAt, fontDirectory });
   await Promise.all([verifyRenderedSet(first, people), verifyRenderedSet(second, people)]);
   const replay = compareTitleLogoReplay(first, second);
-  assert(replay.byteIdentical && replay.metadataIdentical && replay.comparisons.every((record) => record.byteIdentical), "Fresh-process 60/70/80 px spacing replay is not byte-identical.");
+  assert(replay.byteIdentical && replay.metadataIdentical && replay.comparisons.every((record) => record.byteIdentical), "Fresh-process production-locked 60 px replay is not byte-identical.");
   const replayPath = path.join(proofRoot, "deterministic-replay.json");
-  await atomicWrite(replayPath, `${JSON.stringify({ version: "people-title-logo-spacing-replay-v1", generatedAt, ...replay }, null, 2)}\n`);
+  await atomicWrite(replayPath, `${JSON.stringify({ version: "people-title-logo-production-lock-replay-v1", generatedAt, ...replay }, null, 2)}\n`);
   const configuration = await loadTitleLogoConfiguration();
   const prepared = await prepareTitleLogoRenderer({ people, configuration, runtime, fontDirectory });
   const sheets = await comparisonSheets({ proofRoot, first, people, runtime });
   const presentationProofs = await validatePresentationProofs({ first, people, runtime, generatedAt });
   const lineWrapReport = buildLineWrapReport({ first, people, configuration, generatedAt });
-  const lineWrapPath = path.join(proofRoot, "line-wrap-and-spacing-report.json");
+  const lineWrapPath = path.join(proofRoot, "line-wrap-and-production-lock-report.json");
   await atomicWrite(lineWrapPath, `${JSON.stringify(lineWrapReport, null, 2)}\n`);
   const report = {
-    version: "people-title-logo-final-cormorant-spacing-proof-v1",
+    version: "people-title-logo-final-cormorant-production-lock-proof-v1",
     generatedAt,
-    status: "owner-spacing-review-required",
+    status: "production-locked",
     publicationAuthorised: false,
-    permanentSpacingSelected: false,
+    permanentSpacingSelected: true,
     personCount: people.length,
-    optionIds: TITLE_LOGO_OPTION_IDS,
-    clearGaps: configuration.preset.options.map((option) => option.clearGap),
+    designId: TITLE_LOGO_DESIGN_ID,
+    clearGap: configuration.preset.design.clearGap,
     individualPngCountPerRun: first.metadata.recordCount,
     graphicElementCount: 0,
     typography: lineWrapReport.typography,
