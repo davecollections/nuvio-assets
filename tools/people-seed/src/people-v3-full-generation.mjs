@@ -941,6 +941,13 @@ export async function updateActualAtomicPublicationPlan({ runRoot } = {}) {
     byteSummary([titleRoot]),
     byteSummary([path.join(context.root, "candidate-manifests")]),
   ]);
+  const [currentPeopleManifest, currentRuntimeLookup] = await Promise.all([
+    fs.stat(path.join(PEOPLE_ARTWORK_REPO_ROOT, "assets", "collection_covers", "people", "manifest.json")),
+    fs.stat(path.join(PEOPLE_ARTWORK_REPO_ROOT, "assets", "collection_covers", "runtime-lookup.json")),
+  ]);
+  const replacementMetadataDeltaBytes = (bundle.peopleManifest.byteCount - currentPeopleManifest.size)
+    + (bundle.runtime.byteCount - currentRuntimeLookup.size)
+    + bundle.presentationManifest.byteCount;
   const growth = {
     newPortraitFiles: portraitBytes.fileCount,
     newPortraitBytes: portraitBytes.byteCount,
@@ -948,7 +955,10 @@ export async function updateActualAtomicPublicationPlan({ runRoot } = {}) {
     titleLogoBytes: titleBytes.byteCount,
     candidateManifestFiles: manifestBytes.fileCount,
     candidateManifestBytes: manifestBytes.byteCount,
-    projectedRepositoryGrowthBytes: portraitBytes.byteCount + titleBytes.byteCount + bundle.presentationManifest.byteCount,
+    currentPeopleManifestBytes: currentPeopleManifest.size,
+    currentRuntimeLookupBytes: currentRuntimeLookup.size,
+    replacementMetadataDeltaBytes,
+    projectedRepositoryGrowthBytes: portraitBytes.byteCount + titleBytes.byteCount + replacementMetadataDeltaBytes,
   };
   const plan = {
     version: "people-v3-atomic-publication-plan-v2-actual-candidates",
