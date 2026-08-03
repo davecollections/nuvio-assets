@@ -901,7 +901,7 @@ export async function validateFullGeneration({ runRoot } = {}) {
     physicalFiles: physical.valid && physical.portraitRecordCount === 2960 && physical.titleLogoRecordCount === 1480,
     exactCategories: manifest.records.every((record) => stableStringify(record.categoryMembership) === stableStringify(context.people.find((person) => person.tmdbPersonId === record.tmdbPersonId).categoryMembership)),
     overlaps: overlapIds.length === 9 && overlapIds.every((id) => manifest.records.find((record) => record.tmdbPersonId === id)?.categoryMembership.length === 2),
-    cropOverrideHash: cropOverrides.configHash === "cb0453de2ea1213577b2b3d4bcc177696d65264bbafd31a9bf96620a13e2177a" && cropOverrides.records.length === 167,
+    cropOverrideHash: cropOverrides.configHash === "cb0453de2ea1213577b2b3d4bcc177696d65264bbafd31a9bf96620a13e2177a" && cropOverrides.config.records.length === 167,
     reviewPackage: review.groups.titleCheckerboard.itemCount === 1480 && review.groups.titleDark.itemCount === 1480 && review.groups.posters.itemCount === 663 && review.groups.landscapes.itemCount === 663,
     protectedParity: protectedParity.unchanged,
     sharedHero: stableStringify(hero) === stableStringify(protectedAfter.hero),
