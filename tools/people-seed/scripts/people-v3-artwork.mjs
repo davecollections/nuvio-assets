@@ -99,8 +99,8 @@ Required:
 Modes (select one):
   --audit                       Create a new attempt and exact offline readiness audit
   --acquire-portrait-sources    Acquire only the exact 20-person proof selection's available tracked TMDB profile paths
-  --proof                       Generate two offline A/B/C title-logo and Portrait proof runs plus review sheets
-  --plan                        Plan only after a separately reviewed title-logo variant is explicitly selected
+  --proof                       Generate two offline D1/D2 title-logo and Portrait proof runs plus review sheets
+  --plan                        Plan only after a separately reviewed title-logo option is explicitly selected
   --verify-protected            Re-hash protected permanent artwork and compare with the attempt baseline
 
 Optional:
@@ -158,9 +158,9 @@ async function runProof({ attemptRoot, generatedAt, runtime, fontDirectory }) {
     version: "people-v3-artwork-proof-summary-v2",
     generatedAt,
     titleLogoIdentityCount: titleProof.first.metadata.personCount,
-    titleLogoVariantCount: titleProof.first.metadata.variantCount,
+    titleLogoOptionCount: titleProof.first.metadata.optionCount,
     titleLogoPngCountPerRun: titleProof.first.metadata.recordCount,
-    titleLogoPermanentVariantSelected: false,
+    titleLogoPermanentOptionSelected: false,
     titleLogoByteIdenticalReplay: titleProof.replay.byteIdentical,
     titleLogoMetadataIdenticalReplay: titleProof.replay.metadataIdentical,
     titleLogoManualOverrideCount: titleProof.first.metadata.records.filter((record) => record.lineBreakSource === "manual-exact-id-override").length,
@@ -175,7 +175,8 @@ async function runProof({ attemptRoot, generatedAt, runtime, fontDirectory }) {
     portraitFirstMetadata: portraitProof.first.written.jsonPath,
     titleLogoCorrectionReport: titleProof.reportPath,
     titleLogoContactSheets: titleProof.sheets.map((record) => record.path),
-    titleLogoOptionPrototypeMetadata: titleProof.prototypes.metadataPath,
+    titleLogoFontEvidence: titleProof.fontEvidence.outputPath,
+    titleLogoOutputInventory: titleProof.inventory.outputPath,
     portraitPosterSheets: portraitProof.posterSheets,
     portraitLandscapeSheets: portraitProof.landscapeSheets,
   };
@@ -186,7 +187,7 @@ async function runProof({ attemptRoot, generatedAt, runtime, fontDirectory }) {
 
 async function runPlan({ attemptRoot, generatedAt }) {
   const proofSummary = await readJson(await latestProofSummaryPath(attemptRoot));
-  assert(proofSummary.titleLogoPermanentVariantSelected === true && proofSummary.presentationManifestCandidate, "Full-generation planning remains deferred until Dave explicitly selects a title-logo variant and a matching presentation-manifest candidate is built.");
+  assert(proofSummary.titleLogoPermanentOptionSelected === true && proofSummary.presentationManifestCandidate, "Full-generation planning remains deferred until Dave explicitly selects a title-logo option and a matching presentation-manifest candidate is built.");
   const [audit, titleLogoMetadata, portraitMetadata, context] = await Promise.all([
     readJson(path.join(attemptRoot, "readiness", "people-v3-artwork-readiness.json")),
     readJson(proofSummary.titleLogoFirstMetadata),

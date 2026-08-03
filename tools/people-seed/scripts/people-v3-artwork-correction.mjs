@@ -86,7 +86,7 @@ Required:
 
 Modes:
   --init                    Create a unique ignored correction attempt
-  --title-proof             Render A/B/C title-logo proofs and fresh-process replay
+  --title-proof             Render D1/D2 COLLECTION title-logo proofs and fresh-process replay
   --landscape-prototypes    Render the existing 17 Landscapes at three controlled zoom-out tiers
   --landscape-proof         Render the tracked exact-ID correction candidates twice
   --verify-hero             Validate, but do not composite or alter, the shared People hero
@@ -148,7 +148,7 @@ async function main() {
       hero: path.join(attemptRoot, "validation", "shared-hero.json"),
     };
     const [title, landscape, hero] = await Promise.all(Object.values(paths).map((filePath) => fs.readFile(filePath, "utf8").then(JSON.parse)));
-    const summary = { version: "people-v3-artwork-correction-summary-v1", generatedAt, valid: true, publicationAuthorised: false, permanentTitleVariantSelected: false, title, landscape, hero };
+    const summary = { version: "people-v3-artwork-correction-summary-v1", generatedAt, valid: true, publicationAuthorised: false, permanentTitleOptionSelected: false, title, landscape, hero };
     const summaryPath = path.join(attemptRoot, "correction-summary.json");
     await atomicWrite(summaryPath, `${JSON.stringify(summary, null, 2)}\n`);
     process.stdout.write(`${JSON.stringify({ mode: options.mode, valid: true, summaryPath }, null, 2)}\n`);

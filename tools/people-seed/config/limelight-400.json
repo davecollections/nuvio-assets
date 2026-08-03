@@ -1,0 +1,39 @@
+{
+  "version": "people-limelight-400-lock-v1",
+  "status": "proof-font-lock",
+  "publicationAuthorised": false,
+  "family": "Limelight",
+  "registrationAlias": "NuvioTitleCollectionLimelight",
+  "style": "normal",
+  "weight": 400,
+  "fontFileName": "Limelight-Regular.ttf",
+  "fontSha256": "f5bf8a9159adfc5b9c756c85d812a4fd1299b8916fefdf39ad4b24ade6d8d0cf",
+  "fontByteCount": 132292,
+  "fontSourceRevision": "26c5c976d82d50c24a8f0a7ac455e0a7c639c226",
+  "fontSourceUrl": "https://raw.githubusercontent.com/google/fonts/26c5c976d82d50c24a8f0a7ac455e0a7c639c226/ofl/limelight/Limelight-Regular.ttf",
+  "metadataFileName": "METADATA.pb",
+  "metadataSha256": "ea20170615fe028b2ce7bdccb7bfdb5a39a36deedac10a4b04bf973c7ca8bf15",
+  "metadataSourceUrl": "https://raw.githubusercontent.com/google/fonts/26c5c976d82d50c24a8f0a7ac455e0a7c639c226/ofl/limelight/METADATA.pb",
+  "licence": "OFL-1.1",
+  "licenceFileName": "OFL.txt",
+  "licenceSha256": "6b53fb03a50914cc382f4d025ee595c17c43f24ae870f840bc51969d3e316c7e",
+  "licenceByteCount": 4399,
+  "licenceSourceUrl": "https://raw.githubusercontent.com/google/fonts/26c5c976d82d50c24a8f0a7ac455e0a7c639c226/ofl/limelight/OFL.txt",
+  "cacheDirectoryName": "limelight",
+  "automaticAcquisition": false,
+  "windowsInstallation": false,
+  "fontModified": false,
+  "usageBinding": {
+    "rendererVersion": "people-title-logo-renderer-v3",
+    "role": "fixed-collection-subtitle-only",
+    "text": "COLLECTION",
+    "personNameUsePermitted": false
+  },
+  "rendererBinding": {
+    "sharp": "0.35.3",
+    "libvips": "8.18.3",
+    "pango": "1.57.1",
+    "skiaCanvas": "3.0.8",
+    "fontLoading": "explicit-fontfile-no-os-font"
+  }
+}

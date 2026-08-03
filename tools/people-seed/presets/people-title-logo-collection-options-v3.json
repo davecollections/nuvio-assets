@@ -1,0 +1,80 @@
+{
+  "id": "people-title-logo-collection-options-v3",
+  "version": 3,
+  "status": "proof-candidate",
+  "publicationAuthorised": false,
+  "rendererVersion": "people-title-logo-renderer-v3",
+  "renderer": {
+    "sharp": "0.35.3",
+    "libvips": "8.18.3",
+    "pango": "1.57.1",
+    "skiaCanvas": "3.0.8",
+    "outputFormat": "png",
+    "colourSpace": "srgb",
+    "alpha": true
+  },
+  "canvas": {
+    "width": 1863,
+    "height": 673
+  },
+  "typography": {
+    "content": "exact-canonical-person-name",
+    "presentationCase": "uppercase-en-US",
+    "family": "Cormorant Garamond",
+    "fontHash": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+    "weight": 700,
+    "requestedFontSize": 170,
+    "minimumFontSize": 88,
+    "fontSizeStep": 2,
+    "lineHeight": 142,
+    "maximumLines": 2,
+    "region": {
+      "x": 181,
+      "y": 72,
+      "width": 1501,
+      "height": 306
+    },
+    "alignment": "center",
+    "wrapRule": "measured-one-line-then-balanced-word-boundary",
+    "colour": "#FFFFFF",
+    "letterSpacing": 0,
+    "minimumCanvasMargin": 72
+  },
+  "collection": {
+    "text": "COLLECTION",
+    "family": "Limelight",
+    "weight": 400,
+    "fontHash": "f5bf8a9159adfc5b9c756c85d812a4fd1299b8916fefdf39ad4b24ade6d8d0cf",
+    "licence": "OFL-1.1",
+    "licenceHash": "6b53fb03a50914cc382f4d025ee595c17c43f24ae870f840bc51969d3e316c7e",
+    "colour": "#FFFFFF",
+    "role": "fixed-secondary-title"
+  },
+  "options": [
+    {
+      "id": "option-d1-subtle",
+      "label": "D1 — subtle",
+      "nameRegion": { "x": 181, "y": 72, "width": 1501, "height": 306 },
+      "collectionStyle": {
+        "fontSize": 40,
+        "tracking": 8,
+        "topY": 505
+      }
+    },
+    {
+      "id": "option-d2-hollywood",
+      "label": "D2 — stronger Hollywood",
+      "nameRegion": { "x": 181, "y": 72, "width": 1501, "height": 306 },
+      "collectionStyle": {
+        "fontSize": 50,
+        "tracking": 5,
+        "topY": 476
+      }
+    }
+  ],
+  "output": {
+    "format": "png",
+    "alpha": true,
+    "background": "transparent"
+  }
+}

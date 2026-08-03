@@ -28,7 +28,7 @@ import {
 import { loadPeopleArtworkRuntime } from "../src/people-artwork/runtime-dependencies.mjs";
 import {
   TITLE_LOGO_PROOF_IDENTITIES,
-  TITLE_LOGO_VARIANT_IDS,
+  TITLE_LOGO_OPTION_IDS,
   assertPeopleV3ProofPath,
   loadTitleLogoConfiguration,
   prepareTitleLogoRenderer,
@@ -44,7 +44,7 @@ const manifest = JSON.parse(await fs.readFile(path.join(repoRoot, "assets", "col
 const runtime = loadPeopleArtworkRuntime();
 const execFileAsync = promisify(execFile);
 
-test("title-logo proof identities bind the exact tracked IDs, names, accents, punctuation, and categories", () => {
+test("title-logo proof identities bind the exact tracked IDs, names, punctuation, and categories", () => {
   const people = selectTitleLogoProofPeople(foundation);
   assert.deepEqual(people.map((person) => [person.tmdbPersonId, person.canonicalName]), TITLE_LOGO_PROOF_IDENTITIES);
   assert.deepEqual(people.find((person) => person.tmdbPersonId === 8630).categoryMembership, ["actor", "director"]);
@@ -74,19 +74,30 @@ test("title-logo renderer is transparent, exact-size, and preserves the full pro
   const configuration = await loadTitleLogoConfiguration({ registry: foundation.registry });
   const prepared = await prepareTitleLogoRenderer({ people, configuration, runtime });
   for (const person of people) {
-    for (const variantId of TITLE_LOGO_VARIANT_IDS) {
-      const rendered = await renderTitleLogo({ person, variantId, ...prepared });
+    for (const optionId of TITLE_LOGO_OPTION_IDS) {
+      const rendered = await renderTitleLogo({ person, optionId, ...prepared });
       assert.equal(rendered.record.presentationName, person.canonicalName.toLocaleUpperCase("en-US"));
       assert.equal(rendered.record.canonicalNameLines.join(" "), person.canonicalName);
       assert.equal(rendered.record.canvasWidth, 1863);
       assert.equal(rendered.record.canvasHeight, 673);
       assert.equal(rendered.record.alphaTransparent, true);
       assert.equal(rendered.record.permanentSelection, false);
-      assert.equal(rendered.record.collectionText, variantId === "variant-c-nuvio-accent-collection" ? "COLLECTION" : null);
+      assert.equal(rendered.record.collectionText, "COLLECTION");
+      assert.equal(rendered.record.collectionFontFamily, "Limelight");
+      assert.equal(rendered.record.collectionFontWeight, 400);
+      assert.equal(rendered.record.collectionFontHash, configuration.limelightLock.fontSha256);
+      assert.equal(rendered.record.collectionLicenceHash, configuration.limelightLock.licenceSha256);
+      assert.equal(rendered.record.graphicElementCount, 0);
       assert.ok(Object.values(rendered.record.safeMargins).every((value) => value >= rendered.record.minimumCanvasMargin));
     }
   }
-  await assert.rejects(() => renderTitleLogo({ person: people[0], ...prepared }), /explicit A\/B\/C/u);
+  assert.equal(configuration.preset.options[0].collectionStyle.fontSize, 40);
+  assert.equal(configuration.preset.options[0].collectionStyle.tracking, 8);
+  assert.equal(configuration.preset.options[0].collectionStyle.topY, 505);
+  assert.equal(configuration.preset.options[1].collectionStyle.fontSize, 50);
+  assert.equal(configuration.preset.options[1].collectionStyle.tracking, 5);
+  assert.equal(configuration.preset.options[1].collectionStyle.topY, 476);
+  await assert.rejects(() => renderTitleLogo({ person: people[0], ...prepared }), /explicit D1\/D2/u);
 });
 
 test("two fresh-process complete title-logo proof replays are byte-identical", async () => {
@@ -99,8 +110,8 @@ test("two fresh-process complete title-logo proof replays are byte-identical", a
   const first = await run();
   const second = await run();
   assert.equal(first.personCount, TITLE_LOGO_PROOF_IDENTITIES.length);
-  assert.equal(first.variantCount, TITLE_LOGO_VARIANT_IDS.length);
-  assert.equal(first.recordCount, TITLE_LOGO_PROOF_IDENTITIES.length * TITLE_LOGO_VARIANT_IDS.length);
+  assert.equal(first.optionCount, TITLE_LOGO_OPTION_IDS.length);
+  assert.equal(first.recordCount, TITLE_LOGO_PROOF_IDENTITIES.length * TITLE_LOGO_OPTION_IDS.length);
   assert.equal(first.designDecisionStatus, "unselected");
   assert.deepEqual(first, second);
 });
@@ -109,19 +120,23 @@ test("additive presentation manifest validates and its fingerprint excludes only
   const people = selectTitleLogoProofPeople(foundation).slice(0, 2).sort((left, right) => left.tmdbPersonId - right.tmdbPersonId);
   const configuration = await loadTitleLogoConfiguration({ registry: foundation.registry });
   const titleLogoMetadata = {
-    rendererVersion: "people-title-logo-renderer-v2",
+    rendererVersion: "people-title-logo-renderer-v3",
     presetId: configuration.preset.id,
     personCount: people.length,
     recordCount: people.length,
     presetHash: configuration.presetHash,
     fontHash: configuration.fontLock.fontSha256,
     fontLockHash: configuration.fontLockHash,
+    collectionFontHash: configuration.limelightLock.fontSha256,
+    collectionFontLockHash: configuration.limelightLockHash,
+    collectionLicenceHash: configuration.limelightLock.licenceSha256,
+    collectionMetadataHash: configuration.limelightLock.metadataSha256,
     records: people.map((person, index) => ({
       stableKey: person.stableKey,
       tmdbPersonId: person.tmdbPersonId,
       canonicalName: person.canonicalName,
       categories: person.categoryMembership,
-      variantId: "variant-b-nuvio-accent",
+      optionId: "option-d1-subtle",
       outputHash: String(index + 1).repeat(64),
       canvasWidth: 1863,
       canvasHeight: 673,
@@ -130,14 +145,19 @@ test("additive presentation manifest validates and its fingerprint excludes only
       fontFamily: "Cormorant Garamond",
       fontWeight: 700,
       licenceHash: configuration.fontLock.licenceSha256,
+      collectionFontFamily: "Limelight",
+      collectionFontWeight: 400,
+      collectionLicence: "OFL-1.1",
+      collectionSourceRevision: configuration.limelightLock.fontSourceRevision,
     })),
   };
   const hero = await inspectSharedPeopleHero({ repoRoot, sharp: runtime.sharp });
   const schema = await loadPeoplePresentationManifestSchema({ repoRoot });
-  assert.throws(() => buildPeoplePresentationManifest({ titleLogoMetadata, sharedHero: hero, generatedAt }), /explicit reviewed title-logo variant/u);
-  const candidate = buildPeoplePresentationManifest({ titleLogoMetadata, selectedVariantId: "variant-b-nuvio-accent", sharedHero: hero, generatedAt });
+  assert.throws(() => buildPeoplePresentationManifest({ titleLogoMetadata, sharedHero: hero, generatedAt }), /explicit D1\/D2/u);
+  const candidate = buildPeoplePresentationManifest({ titleLogoMetadata, titleLogoOptionId: "option-d1-subtle", permanentSelection: false, sharedHero: hero, generatedAt });
   assert.deepEqual(validatePeoplePresentationManifest(candidate, schema, { expectedPeople: people, expectedHero: hero }), []);
-  assert.equal(candidate.selectedVariantId, "variant-b-nuvio-accent");
+  assert.equal(candidate.titleLogoOptionId, "option-d1-subtle");
+  assert.equal(candidate.permanentSelection, false);
   const timestampChanged = structuredClone(candidate);
   timestampChanged.generatedAt = "2026-08-03T05:00:00.000Z";
   assert.equal(calculatePresentationManifestFingerprint(timestampChanged), candidate.manifestFingerprint);
@@ -148,14 +168,24 @@ test("additive presentation manifest validates and its fingerprint excludes only
 });
 
 test("active title-logo proof tooling contains no simulated hero or client composition path", async () => {
-  const [proofModule, proofCli, correctionModule] = await Promise.all([
+  const [proofModule, proofCli, correctionModule, titleRenderer, titlePreset] = await Promise.all([
     fs.readFile(path.join(repoRoot, "tools", "people-seed", "src", "people-v3-artwork-proof.mjs"), "utf8"),
     fs.readFile(path.join(repoRoot, "tools", "people-seed", "scripts", "people-v3-artwork.mjs"), "utf8"),
     fs.readFile(path.join(repoRoot, "tools", "people-seed", "src", "people-title-logo-proof.mjs"), "utf8"),
+    fs.readFile(path.join(repoRoot, "tools", "people-seed", "src", "people-artwork", "title-logo.mjs"), "utf8"),
+    fs.readFile(path.join(repoRoot, "tools", "people-seed", "presets", "people-title-logo-collection-options-v3.json"), "utf8").then(JSON.parse),
   ]);
   const activeProofCode = `${proofModule}\n${proofCli}\n${correctionModule}`;
   assert.doesNotMatch(activeProofCode, /generateCombinedPresentationMockups|sharedHeroSheets|composition-proofs|kind\s*===\s*["']hero["']/u);
+  assert.deepEqual(Object.keys(titlePreset), ["id", "version", "status", "publicationAuthorised", "rendererVersion", "renderer", "canvas", "typography", "collection", "options", "output"]);
+  assert.deepEqual(titlePreset.options.map((option) => Object.keys(option)), [
+    ["id", "label", "nameRegion", "collectionStyle"],
+    ["id", "label", "nameRegion", "collectionStyle"],
+  ]);
+  assert.doesNotMatch(titleRenderer, /draw(?:Accent|Divider|Ornament)|stepped|lozenge|taper/iu);
   await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "presets", "people-title-logo-cinematic-v1.json")));
+  await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "presets", "people-title-logo-nuvio-variants-v2.json")));
+  await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "config", "people-title-logo-secondary-fonts.json")));
 });
 
 test("current artwork-readiness audit reconciles the exact 663-person delta without inventing sources", async () => {

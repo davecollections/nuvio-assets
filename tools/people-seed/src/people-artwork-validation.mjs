@@ -3,7 +3,11 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { validateAgainstSchema } from "./schema-validator.mjs";
-import { validateLandscapeCropOverrides } from "./people-artwork/landscape-crop-overrides.mjs";
+import {
+  loadLandscapeCropOverrides,
+  validateLandscapeChinSafeOverrides,
+  validateLandscapeCropOverrides,
+} from "./people-artwork/landscape-crop-overrides.mjs";
 import { resolveApprovedProfile } from "./people-artwork/source-resolution.mjs";
 
 const sha256 = (value) => crypto.createHash("sha256").update(value).digest("hex");
@@ -27,12 +31,14 @@ function same(left, right) {
 
 export async function readPeopleArtworkConfiguration(repoRoot) {
   const packageRoot = path.join(repoRoot, "tools", "people-seed");
-  const [decisionsRaw, decisionSchemaRaw, metadataSchemaRaw, cropOverridesRaw, cropOverrideSchemaRaw, fontLockRaw, ...presetBuffers] = await Promise.all([
+  const [decisionsRaw, decisionSchemaRaw, metadataSchemaRaw, cropOverridesRaw, cropOverrideSchemaRaw, chinSafeOverridesRaw, chinSafeOverrideSchemaRaw, fontLockRaw, ...presetBuffers] = await Promise.all([
     fs.readFile(path.join(repoRoot, "data", "people", "portrait-source-decisions.json")),
     fs.readFile(path.join(repoRoot, "schemas", "portrait-source-decisions.schema.json")),
     fs.readFile(path.join(repoRoot, "schemas", "people-artwork-render-metadata.schema.json")),
     fs.readFile(path.join(repoRoot, "data", "people", "landscape-crop-overrides.json")),
     fs.readFile(path.join(repoRoot, "schemas", "landscape-crop-overrides.schema.json")),
+    fs.readFile(path.join(repoRoot, "data", "people", "landscape-chin-safe-overrides.json")),
+    fs.readFile(path.join(repoRoot, "schemas", "people-landscape-chin-safe-overrides.schema.json")),
     fs.readFile(path.join(packageRoot, "config", "cormorant-garamond-700.json")),
     ...PRESET_FILES.map((name) => fs.readFile(path.join(packageRoot, "presets", name))),
   ]);
@@ -48,6 +54,8 @@ export async function readPeopleArtworkConfiguration(repoRoot) {
     cropOverrides: JSON.parse(cropOverridesRaw),
     cropOverrideSchema: JSON.parse(cropOverrideSchemaRaw),
     cropOverrideConfigHash: sha256(cropOverridesRaw),
+    chinSafeOverrides: JSON.parse(chinSafeOverridesRaw),
+    chinSafeOverrideSchema: JSON.parse(chinSafeOverrideSchemaRaw),
     fontLock: JSON.parse(fontLockRaw),
     presetRecords,
   };
@@ -55,7 +63,8 @@ export async function readPeopleArtworkConfiguration(repoRoot) {
 
 export async function validatePeopleArtworkConfiguration({ repoRoot, registry }) {
   const configuration = await readPeopleArtworkConfiguration(repoRoot);
-  const { decisions, decisionSchema, metadataSchema, cropOverrides, cropOverrideSchema, cropOverrideConfigHash, fontLock, presetRecords } = configuration;
+  const { decisions, decisionSchema, metadataSchema, cropOverrides, cropOverrideSchema, chinSafeOverrides, chinSafeOverrideSchema, fontLock, presetRecords } = configuration;
+  const cropOverrideConfiguration = await loadLandscapeCropOverrides({ repoRoot, registry });
   const errors = validateAgainstSchema(decisions, decisionSchema, "portrait-source-decisions.json");
   if (decisions.recordCount !== decisions.records.length) errors.push("portrait-source-decisions recordCount does not match records length");
   if (decisions.records.length !== 7) errors.push("portrait-source decisions must contain exactly seven records");
@@ -74,8 +83,9 @@ export async function validatePeopleArtworkConfiguration({ repoRoot, registry })
   }
 
   errors.push(...validateLandscapeCropOverrides(cropOverrides, cropOverrideSchema, { registry }));
-  if (cropOverrides.records.length !== 154 || !cropOverrides.records.every((record) => record.status === "active" && record.format === "landscape")) errors.push("landscape crop overrides must contain exactly 154 active landscape records");
-  for (const record of cropOverrides.records) {
+  errors.push(...validateLandscapeChinSafeOverrides(chinSafeOverrides, chinSafeOverrideSchema, { registry }));
+  if (cropOverrideConfiguration.config.records.length !== 167 || !cropOverrideConfiguration.config.records.every((record) => record.status === "active" && record.format === "landscape")) errors.push("landscape crop overrides must contain exactly 167 active landscape records");
+  for (const record of cropOverrideConfiguration.config.records) {
     const person = registryByKey.get(record.stableKey);
     if (!person) continue;
     const resolved = resolveApprovedProfile(person, decisions);
@@ -101,7 +111,7 @@ export async function validatePeopleArtworkConfiguration({ repoRoot, registry })
   if (fontLock.fontSha256 !== "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0" || fontLock.licenceSha256 !== "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956" || fontLock.weight !== 700) errors.push("Cormorant Garamond font lock changed");
   if (metadataSchema.properties?.version?.const !== "people-artwork-render-metadata-v1") errors.push("people artwork metadata contract version changed");
   const landscapePresetHash = presetRecords["people-landscape-cormorant-v1"].hash;
-  for (const record of cropOverrides.records) {
+  for (const record of cropOverrideConfiguration.config.records) {
     if (record.basePresetId !== "people-landscape-cormorant-v1" || record.basePresetHash !== landscapePresetHash) errors.push(`${record.stableKey}: crop override base preset binding changed`);
   }
 
@@ -117,8 +127,8 @@ export async function validatePeopleArtworkConfiguration({ repoRoot, registry })
       retainedRegistryCount: retained.length,
       presetHashes: Object.fromEntries(Object.entries(presetRecords).map(([id, record]) => [id, record.hash])),
       metadataContract: "schemas/people-artwork-render-metadata.schema.json",
-      landscapeCropOverrideCount: cropOverrides.records.length,
-      landscapeCropOverrideConfigHash: cropOverrideConfigHash,
+      landscapeCropOverrideCount: cropOverrideConfiguration.config.records.length,
+      landscapeCropOverrideConfigHash: cropOverrideConfiguration.configHash,
       fontHash: fontLock.fontSha256,
       licenceHash: fontLock.licenceSha256,
       offlineDefault: true,

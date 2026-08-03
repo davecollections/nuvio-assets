@@ -13,10 +13,12 @@
     "recordCount",
     "titleLogoCount",
     "sharedHero",
-    "selectedVariantId",
+    "titleLogoOptionId",
+    "permanentSelection",
     "rendererVersion",
     "titleLogoPreset",
     "fontEvidence",
+    "collectionFontEvidence",
     "fingerprintExcludes",
     "manifestFingerprint",
     "records"
@@ -31,7 +33,8 @@
     "recordCount": { "type": "integer", "minimum": 1 },
     "titleLogoCount": { "type": "integer", "minimum": 1 },
     "sharedHero": { "$ref": "#/$defs/sharedHero" },
-    "selectedVariantId": { "enum": ["variant-a-name-only", "variant-b-nuvio-accent", "variant-c-nuvio-accent-collection"] },
+    "titleLogoOptionId": { "enum": ["option-d1-subtle", "option-d2-hollywood"] },
+    "permanentSelection": { "type": "boolean" },
     "rendererVersion": { "type": "string", "pattern": "^people-title-logo-renderer-v[1-9][0-9]*$" },
     "titleLogoPreset": {
       "type": "object",
@@ -54,6 +57,23 @@
         "fontSha256": { "$ref": "#/$defs/hash" },
         "fontLockSha256": { "$ref": "#/$defs/hash" },
         "licenceSha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "collectionFontEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "style", "weight", "fontSha256", "fontLockSha256", "licence", "licenceSha256", "metadataSha256", "sourceRevision", "usage"],
+      "properties": {
+        "family": { "const": "Limelight" },
+        "style": { "const": "normal" },
+        "weight": { "const": 400 },
+        "fontSha256": { "$ref": "#/$defs/hash" },
+        "fontLockSha256": { "$ref": "#/$defs/hash" },
+        "licence": { "const": "OFL-1.1" },
+        "licenceSha256": { "$ref": "#/$defs/hash" },
+        "metadataSha256": { "$ref": "#/$defs/hash" },
+        "sourceRevision": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "usage": { "const": "COLLECTION only" }
       }
     },
     "fingerprintExcludes": {

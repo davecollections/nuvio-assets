@@ -83,7 +83,9 @@ assets/collection_covers/people/poster/{tmdb_person_id}.webp
 assets/collection_covers/people/manifest.json
 ```
 
-Future presentation assets remain ungenerated and unpublished. The prepared contract keeps transparent `title-logo/{tmdb_person_id}.png` files and the single existing `people hero backdrop.jpg` in a separate additive `presentation-manifest.json`; runtime schemaVersion 2 continues to resolve only Poster and Landscape assets. The A/B/C proof variants use the locked Cormorant Garamond 700 name font and `tools/people-seed/presets/people-title-logo-nuvio-variants-v2.json`; no permanent variant is selected. Any exceptional line break must be exact-ID-bound and schema-valid in `data/people/title-logo-line-break-overrides.json`.
+Future presentation assets remain ungenerated and unpublished. The prepared contract keeps transparent `title-logo/{tmdb_person_id}.png` files and the single existing `people hero backdrop.jpg` in a separate additive `presentation-manifest.json`; runtime schemaVersion 2 continues to resolve only Poster and Landscape assets. The final focused proof uses the locked Cormorant Garamond 700 Person name plus the fixed word `COLLECTION` in the exact locked, unmodified Limelight 400 font. D1 and D2 in `tools/people-seed/presets/people-title-logo-collection-options-v3.json` differ only in COLLECTION scale, tracking, and vertical spacing; no permanent option is selected. No graphic element is part of the title-logo contract. Any exceptional line break must be exact-ID-bound and schema-valid in `data/people/title-logo-line-break-overrides.json`.
+
+The 13 owner-approved chin-safe Landscape corrections are active, source-bound additions in `data/people/landscape-chin-safe-overrides.json`. They are merged with the unchanged original 154-record Landscape override file by the shared resolver, preserving the locked right edge and top alignment while ensuring chin, jawline, beard, and neck breathing room. They never apply to Poster rendering.
 
 Actor and director collections reference the same physical person assets for a shared TMDB person ID. Published actor/director overlaps reuse the same category-neutral artwork and do not create category-specific duplicates. Existing generic people artwork is not a dependency of this workflow. Publication scope must always be explicitly bounded, and the tooling contains no network, commit, or push automation.
 
@@ -100,6 +102,7 @@ The strict schemas are:
 - `schemas/people-owner-supplement-v3.schema.json`
 - `schemas/people-artwork-manifest.schema.json`
 - `schemas/people-presentation-manifest.schema.json`
+- `schemas/people-landscape-chin-safe-overrides.schema.json`
 - `schemas/people-title-logo-line-break-overrides.schema.json`
 
 Run the fully offline checks from the repository root:

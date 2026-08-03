@@ -6,7 +6,7 @@ import { validateAgainstSchema } from "./schema-validator.mjs";
 import { PEOPLE_ARTWORK_REPO_ROOT } from "./people-artwork/runtime-dependencies.mjs";
 import {
   PEOPLE_TITLE_LOGO_PUBLIC_ROOT,
-  TITLE_LOGO_VARIANT_IDS,
+  TITLE_LOGO_OPTION_IDS,
 } from "./people-artwork/title-logo.mjs";
 
 export const PEOPLE_PRESENTATION_MANIFEST_VERSION = "people-presentation-manifest-v1";
@@ -54,11 +54,12 @@ export async function inspectSharedPeopleHero({ repoRoot = PEOPLE_ARTWORK_REPO_R
   };
 }
 
-export function buildPeoplePresentationManifest({ titleLogoMetadata, selectedVariantId, sharedHero, generatedAt, status = "proof-candidate" } = {}) {
+export function buildPeoplePresentationManifest({ titleLogoMetadata, titleLogoOptionId, permanentSelection = false, sharedHero, generatedAt, status = "proof-candidate" } = {}) {
   assert(titleLogoMetadata?.recordCount > 0 && Array.isArray(titleLogoMetadata.records), "Title-logo metadata is required to build a presentation manifest.");
-  assert(TITLE_LOGO_VARIANT_IDS.includes(selectedVariantId), "An explicit reviewed title-logo variant selection is required to build a presentation manifest.");
-  const selectedRecords = titleLogoMetadata.records.filter((record) => record.variantId === selectedVariantId);
-  assert(selectedRecords.length > 0 && selectedRecords.length === titleLogoMetadata.personCount, "Selected title-logo variant records are incomplete.");
+  assert(TITLE_LOGO_OPTION_IDS.includes(titleLogoOptionId), "An explicit D1/D2 title-logo proof option is required to build a presentation manifest proof.");
+  assert(status === "proof-candidate" ? permanentSelection === false : permanentSelection === true, "Permanent title-logo selection status differs from the presentation-manifest stage.");
+  const selectedRecords = titleLogoMetadata.records.filter((record) => record.optionId === titleLogoOptionId);
+  assert(selectedRecords.length > 0 && selectedRecords.length === titleLogoMetadata.personCount, "Title-logo option records are incomplete.");
   const records = [...selectedRecords]
     .sort((left, right) => left.tmdbPersonId - right.tmdbPersonId)
     .map((record) => ({
@@ -83,7 +84,8 @@ export function buildPeoplePresentationManifest({ titleLogoMetadata, selectedVar
     recordCount: records.length,
     titleLogoCount: records.length,
     sharedHero,
-    selectedVariantId,
+    titleLogoOptionId,
+    permanentSelection,
     rendererVersion: titleLogoMetadata.rendererVersion,
     titleLogoPreset: {
       id: titleLogoMetadata.presetId,
@@ -97,6 +99,18 @@ export function buildPeoplePresentationManifest({ titleLogoMetadata, selectedVar
       fontSha256: titleLogoMetadata.fontHash,
       fontLockSha256: titleLogoMetadata.fontLockHash,
       licenceSha256: titleLogoMetadata.records[0].licenceHash,
+    },
+    collectionFontEvidence: {
+      family: selectedRecords[0].collectionFontFamily,
+      style: "normal",
+      weight: selectedRecords[0].collectionFontWeight,
+      fontSha256: titleLogoMetadata.collectionFontHash,
+      fontLockSha256: titleLogoMetadata.collectionFontLockHash,
+      licence: selectedRecords[0].collectionLicence,
+      licenceSha256: titleLogoMetadata.collectionLicenceHash,
+      metadataSha256: titleLogoMetadata.collectionMetadataHash,
+      sourceRevision: selectedRecords[0].collectionSourceRevision,
+      usage: "COLLECTION only",
     },
     fingerprintExcludes: ["generatedAt", "publishedAt", "manifestFingerprint"],
     manifestFingerprint: null,
@@ -114,6 +128,7 @@ export function validatePeoplePresentationManifest(manifest, schema, { expectedP
   const errors = validateAgainstSchema(manifest, schema, "people-presentation-manifest.json");
   if (manifest?.recordCount !== manifest?.records?.length) errors.push("presentation manifest recordCount must equal records length");
   if (manifest?.titleLogoCount !== manifest?.records?.length) errors.push("presentation manifest titleLogoCount must equal records length");
+  if (manifest?.status === "proof-candidate" && manifest?.permanentSelection !== false) errors.push("presentation proof must not select a permanent title-logo option");
   const ids = new Set();
   const paths = new Set();
   for (const [index, record] of (Array.isArray(manifest?.records) ? manifest.records : []).entries()) {

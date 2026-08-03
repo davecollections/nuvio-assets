@@ -53,11 +53,12 @@ npm --prefix tools/people-seed test
 npm --prefix tools/people-seed run validate
 npm --prefix tools/people-seed run artwork:validate
 npm --prefix tools/people-seed run artwork:font-check
+npm --prefix tools/people-seed run verify-limelight-font
 ```
 
 Commit and push are always separate manual operations outside the publication tooling. Future publication must remain an explicit bounded selection.
 
-The v3 proof command renders the exact 16-title-logo set in two fresh processes and requires byte-identical PNGs and metadata. The representative portrait proof renders each approved source independently to Poster and Landscape in two complete runs. Restart-safe proof retries preserve earlier evidence rather than deleting or overwriting it. The planning mode only records the exact later scope and atomic order; it cannot publish.
+The v3 title-logo proof command renders the exact 16-person D1/D2 set in two fresh processes and requires byte-identical PNGs and metadata. Both options use the exact Cormorant Garamond 700 Person-name lock and the exact unmodified Limelight 400 lock for the fixed word `COLLECTION`; the proof cannot select a permanent option. The representative portrait proof renders each approved source independently to Poster and Landscape in two complete runs. Restart-safe proof retries preserve earlier evidence rather than deleting or overwriting it. The planning mode only records the exact later scope and atomic order; it cannot publish.
 
 ## Attribution, licensing, and asset requests
 

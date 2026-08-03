@@ -1,14 +1,13 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://nuvio.example/schemas/people-landscape-chin-safe-proof-overrides.schema.json",
-  "title": "Nuvio source-bound People Landscape chin-safe proof overrides",
+  "$id": "https://nuvio.example/schemas/people-landscape-chin-safe-overrides.schema.json",
+  "title": "Nuvio source-bound approved People Landscape chin-safe overrides",
   "type": "object",
   "additionalProperties": false,
-  "required": ["version", "status", "publicationAuthorised", "ordering", "recordCount", "records"],
+  "required": ["version", "status", "ordering", "recordCount", "records"],
   "properties": {
-    "version": { "const": "people-landscape-chin-safe-proof-overrides-v1" },
-    "status": { "const": "proof-candidate" },
-    "publicationAuthorised": { "const": false },
+    "version": { "const": "people-landscape-chin-safe-overrides-v1" },
+    "status": { "const": "active" },
     "ordering": { "const": "tmdb-person-id-ascending" },
     "recordCount": { "const": 13 },
     "records": {
@@ -43,13 +42,13 @@
     "record": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["stableKey", "tmdbPersonId", "canonicalName", "format", "status", "sourceProfilePath", "sourceHash", "basePresetId", "basePresetHash", "cropStrategy", "cropRectangle", "cropScale", "cropOffsetX", "cropOffsetY", "reason", "evidencePackage", "proofOutputHash", "createdFromAuditVersion", "prototypeTier"],
+      "required": ["stableKey", "tmdbPersonId", "canonicalName", "format", "status", "sourceProfilePath", "sourceHash", "basePresetId", "basePresetHash", "cropStrategy", "cropRectangle", "cropScale", "cropOffsetX", "cropOffsetY", "reason", "evidencePackage", "approvedProofHash", "createdFromAuditVersion", "prototypeTier"],
       "properties": {
         "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
         "tmdbPersonId": { "type": "integer", "minimum": 1 },
         "canonicalName": { "type": "string", "minLength": 1 },
         "format": { "const": "landscape" },
-        "status": { "const": "proof-candidate" },
+        "status": { "const": "active" },
         "sourceProfilePath": { "type": "string", "pattern": "^/[^\\\\]+$" },
         "sourceHash": { "$ref": "#/$defs/hash" },
         "basePresetId": { "const": "people-landscape-cormorant-v1" },
@@ -60,8 +59,8 @@
         "cropOffsetX": { "enum": [504, 558] },
         "cropOffsetY": { "const": 0 },
         "reason": { "const": "chin-jaw-neck-breathing-room" },
-        "evidencePackage": { "const": "tools/people-seed/.work/people-v3-artwork-proof/attempt-20260802T062411Z/landscape-correction/prototypes" },
-        "proofOutputHash": { "$ref": "#/$defs/hash" },
+        "evidencePackage": { "const": "tools/people-seed/.work/people-v3-artwork-proof/attempt-20260802T062411Z/landscape-correction/proof-attempt-02" },
+        "approvedProofHash": { "$ref": "#/$defs/hash" },
         "createdFromAuditVersion": { "const": "people-v3-landscape-chin-safe-audit-v1" },
         "prototypeTier": { "enum": ["tier-1-slight", "tier-2-moderate"] }
       }

@@ -32,6 +32,8 @@
     "verify-people-font": "node src/people-font-cli.mjs verify",
     "artwork:font-check": "node src/people-font-cli.mjs verify",
     "acquire-people-font": "node src/people-font-cli.mjs acquire",
+    "verify-limelight-font": "node src/people-font-cli.mjs verify-limelight",
+    "acquire-limelight-font": "node src/people-font-cli.mjs acquire-limelight",
     "publication": "node src/people-publication-cli.mjs",
     "publication:finalize": "node src/people-publication-finalize-cli.mjs",
     "publication:validate": "node src/people-publication-validation-cli.mjs",

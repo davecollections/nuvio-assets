@@ -3,15 +3,13 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 import { stableStringify } from "./people-publication.mjs";
-import { validateAgainstSchema } from "./schema-validator.mjs";
 import { loadPeopleV3ProofContext } from "./people-v3-artwork-proof.mjs";
+import { loadLandscapeChinSafeOverrides } from "./people-artwork/landscape-crop-overrides.mjs";
 import { writeRenderMetadata, validateRenderMetadata } from "./people-artwork/metadata.mjs";
 import { loadPeopleArtworkPresets, renderPeopleArtwork } from "./people-artwork/renderer.mjs";
 import { loadPeopleArtworkRuntime, PEOPLE_ARTWORK_REPO_ROOT } from "./people-artwork/runtime-dependencies.mjs";
 import { assertPeopleV3ProofPath } from "./people-artwork/title-logo.mjs";
 
-export const LANDSCAPE_CHIN_SAFE_PROOF_CONFIG_PATH = "data/people/landscape-chin-safe-proof-overrides.json";
-export const LANDSCAPE_CHIN_SAFE_PROOF_SCHEMA_PATH = "schemas/people-landscape-chin-safe-proof-overrides.schema.json";
 export const LANDSCAPE_PROTOTYPE_TIERS = Object.freeze([
   Object.freeze({ id: "tier-1-slight", targetWidth: 594, targetHeight: 675, targetRight: 1098, label: "Tier 1 · 594×675 · 75.8% height retained" }),
   Object.freeze({ id: "tier-2-moderate", targetWidth: 540, targetHeight: 675, targetRight: 1098, label: "Tier 2 · 540×675 · 83.3% height retained" }),
@@ -129,7 +127,7 @@ function tierOverrideRecord({ person, acquisitionRecord, tier, presetRecord, evi
     cropOffsetY: 0,
     reason: "chin-jaw-neck-breathing-room",
     evidencePackage,
-    proofOutputHash: null,
+    approvedProofHash: null,
     createdFromAuditVersion: "people-v3-landscape-chin-safe-audit-v1",
     prototypeTier: tier.id,
   };
@@ -219,46 +217,6 @@ export async function generateLandscapeCropPrototypes({ attemptRoot, sourceAttem
   return { report, reportPath, sheets, evidence, runs };
 }
 
-export function validateLandscapeChinSafeProofOverrides(document, schema, { registry = null } = {}) {
-  const errors = validateAgainstSchema(document, schema, "landscape-chin-safe-proof-overrides.json");
-  if (document?.recordCount !== document?.records?.length) errors.push("chin-safe proof override recordCount must equal records length");
-  const registryByKey = registry ? new Map(registry.records.map((record) => [record.stableKey, record])) : null;
-  const ids = new Set();
-  for (const [index, record] of (document?.records || []).entries()) {
-    if (ids.has(record.tmdbPersonId)) errors.push(`${record.tmdbPersonId}: duplicate chin-safe proof override`);
-    ids.add(record.tmdbPersonId);
-    if (index > 0 && document.records[index - 1].tmdbPersonId >= record.tmdbPersonId) errors.push("chin-safe proof overrides must use ascending TMDB Person ID order");
-    if (record.stableKey !== `person:${record.tmdbPersonId}`) errors.push(`${record.stableKey}: stable key and TMDB Person ID differ`);
-    if (registryByKey) {
-      const person = registryByKey.get(record.stableKey);
-      if (!person || person.tmdbPersonId !== record.tmdbPersonId || person.canonicalName !== record.canonicalName) errors.push(`${record.stableKey}: proof override differs from the People registry`);
-    }
-    const targetWidth = Math.round(record.cropRectangle.width * record.cropScale.x);
-    const targetHeight = Math.round(record.cropRectangle.height * record.cropScale.y);
-    if (targetHeight !== 675 || ![504, 540, 594].includes(targetWidth)) errors.push(`${record.stableKey}: proof override is outside the reviewed zoom-out tiers`);
-    if (record.cropOffsetX + targetWidth !== 1098 || record.cropOffsetY !== 0) errors.push(`${record.stableKey}: proof override changed the locked right edge or top alignment`);
-  }
-  return errors;
-}
-
-export async function loadLandscapeChinSafeProofOverrides({ repoRoot = PEOPLE_ARTWORK_REPO_ROOT, registry = null } = {}) {
-  const configPath = path.join(repoRoot, LANDSCAPE_CHIN_SAFE_PROOF_CONFIG_PATH);
-  const schemaPath = path.join(repoRoot, LANDSCAPE_CHIN_SAFE_PROOF_SCHEMA_PATH);
-  const [buffer, schemaBuffer] = await Promise.all([fs.readFile(configPath), fs.readFile(schemaPath)]);
-  const config = JSON.parse(buffer);
-  const schema = JSON.parse(schemaBuffer);
-  const errors = validateLandscapeChinSafeProofOverrides(config, schema, { registry });
-  if (errors.length) throw new Error(`Landscape chin-safe proof overrides failed validation:\n${errors.map((error) => `- ${error}`).join("\n")}`);
-  return {
-    config,
-    configHash: sha256(buffer),
-    configPath,
-    schemaPath,
-    byStableKey: new Map(config.records.map((record) => [record.stableKey, record])),
-    allowProofCandidate: true,
-  };
-}
-
 function compareLandscapeReplay(first, second) {
   const comparisons = first.metadata.records.map((record, index) => ({
     stableKey: record.stableKey,
@@ -279,7 +237,7 @@ export async function generateLandscapeCorrectionProof({ attemptRoot, sourceAtte
   const root = assertPeopleV3ProofPath(attemptRoot);
   const runtime = providedRuntime || loadPeopleArtworkRuntime();
   const evidence = await loadSourceEvidence(sourceAttemptRoot);
-  const configuration = await loadLandscapeChinSafeProofOverrides({ registry: evidence.context.foundation.registry });
+  const configuration = await loadLandscapeChinSafeOverrides({ registry: evidence.context.foundation.registry });
   const proofBase = path.join(root, "landscape-correction");
   let correctionRoot = path.join(proofBase, "proof");
   if (await exists(correctionRoot)) {
@@ -306,7 +264,7 @@ export async function generateLandscapeCorrectionProof({ attemptRoot, sourceAtte
     const after = corrected.get(person.tmdbPersonId);
     if (changedIds.has(person.tmdbPersonId)) {
       const override = configuration.byStableKey.get(person.stableKey);
-      assert(after.outputHash === override.proofOutputHash, `${person.stableKey}: corrected output is not bound to the tracked reviewed proof hash.`);
+      assert(after.outputHash === override.approvedProofHash, `${person.stableKey}: corrected output is not bound to the tracked reviewed proof hash.`);
       assert(after.outputHash !== before.outputHash, `${person.stableKey}: configured correction did not change Landscape bytes.`);
       changed.push({ person, before, after, override });
     } else {
@@ -366,7 +324,7 @@ export async function generateLandscapeCorrectionProof({ attemptRoot, sourceAtte
       beforeScale: before.resizeScale,
       afterScale: after.resizeScale,
       afterOffset: after.portraitBounds,
-      reviewedProofHashBound: after.outputHash === override.proofOutputHash,
+      reviewedProofHashBound: after.outputHash === override.approvedProofHash,
     })),
     posterEvidence: posterPaths,
     run1Metadata: posixRelative(root, first.written.jsonPath),
