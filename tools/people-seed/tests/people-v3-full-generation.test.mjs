@@ -19,6 +19,7 @@ test("full-generation staging remains exact-ID-only, ignored, resumable, and non
   assert.match(source, /execFileAsync\(process\.execPath/u);
   assert.match(source, /freshProcessReplay/u);
   assert.match(source, /profilePathAvailable === false/u);
+  assert.match(source, /\(\?:\^\|\["'\]\)\[A-Za-z\]:/u);
   assert.match(cli, /--review-title-logos/u);
   assert.match(source, /publicationAuthorised:\s*false/u);
   assert.doesNotMatch(`${source}\n${cli}`, /tmdb-id-lookup|search\/person|person\/images|person-images|face.?match|general.?web.?search/iu);

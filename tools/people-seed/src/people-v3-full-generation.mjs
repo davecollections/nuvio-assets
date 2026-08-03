@@ -600,7 +600,7 @@ export async function buildFullGenerationCandidates({ runRoot } = {}) {
   const presentationFile = await writeCandidateFile(path.join(candidateRoot, "presentation-manifest.json"), presentation);
 
   const publicJson = [manifest, runtime, presentation];
-  const unsafePatterns = [/[A-Za-z]:[\\/]/u, /(?:TMDB_API_KEY|TMDB_API_READ_TOKEN|Authorization|Bearer\s+)/iu];
+  const unsafePatterns = [/(?:^|["'])[A-Za-z]:[\\/]/u, /(?:^|["'])\\\\[^\\]/u, /(?:TMDB_API_KEY|TMDB_API_READ_TOKEN|Authorization|Bearer\s+)/iu];
   const unsafe = publicJson.flatMap((value, index) => unsafePatterns.filter((pattern) => pattern.test(JSON.stringify(value))).map((pattern) => ({ documentIndex: index, pattern: String(pattern) })));
   assert(unsafe.length === 0, "Candidate public JSON contains an absolute local path or secret marker.");
   const report = {
