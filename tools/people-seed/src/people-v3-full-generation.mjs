@@ -690,9 +690,10 @@ async function reviewCell({ item, width, mediaHeight, labelHeight, fit, backgrou
   return runtime.sharp({ create: { width, height: mediaHeight + labelHeight, channels: 4, background: "#111419" } }).composite([{ input: media, left: 0, top: 0 }, { input: label, left: 0, top: mediaHeight }]).png().toBuffer();
 }
 
-async function validSheetIndex(indexPath, root) {
+async function validSheetIndex(indexPath, root, reviewFingerprint) {
   if (!(await exists(indexPath))) return null;
   const index = await readJson(indexPath);
+  if (index.reviewFingerprint && index.reviewFingerprint !== reviewFingerprint) return null;
   for (const page of index.pages || []) {
     const filePath = path.join(root, page.path);
     if (!(await exists(filePath))) return null;
@@ -705,7 +706,8 @@ async function validSheetIndex(indexPath, root) {
 async function renderReviewGroup({ root, groupRelativePath, title, items, columns, rows, cellWidth, mediaHeight, labelHeight, fit = "cover", background = "#181b20", runtime }) {
   const groupRoot = path.join(root, groupRelativePath);
   const indexPath = path.join(groupRoot, "index.json");
-  const existing = await validSheetIndex(indexPath, root);
+  const reviewFingerprint = sha256(Buffer.from(stableStringify(items.map((item) => ({ source: posixRelative(root, item.filePath), expectedHash: item.expectedHash || null, primary: item.primary, secondary: item.secondary, warning: item.warning })))));
+  const existing = await validSheetIndex(indexPath, root, reviewFingerprint);
   if (existing && existing.itemCount === items.length) return existing;
   await fs.mkdir(groupRoot, { recursive: true });
   const pageSize = columns * rows;
@@ -725,7 +727,7 @@ async function renderReviewGroup({ root, groupRelativePath, title, items, column
     await atomicWrite(pagePath, output);
     pages.push({ path: posixRelative(root, pagePath), sha256: sha256(output), byteCount: output.length, width, height, itemCount: pageItems.length });
   }
-  const index = { version: "people-v3-review-sheet-index-v1", generatedAt: (await readJson(path.join(root, "workspace.json"))).generatedAt, title, itemCount: items.length, pageSize, pageCount: pages.length, pages };
+  const index = { version: "people-v3-review-sheet-index-v1", generatedAt: (await readJson(path.join(root, "workspace.json"))).generatedAt, title, reviewFingerprint, itemCount: items.length, pageSize, pageCount: pages.length, pages };
   await writeJson(indexPath, index);
   return index;
 }
@@ -735,21 +737,22 @@ function portraitRiskGroups(portraitReport) {
   const people = new Map(portraitReport.records.map((record) => [record.tmdbPersonId, record]));
   const fallbackIds = [...new Set(portraitReport.records.filter((record) => record.fallbackUsed).map((record) => record.tmdbPersonId))];
   const majorUpscales = landscapes.filter((record) => Number(record.upscaleFactor || 0) > 2);
-  const lowResolution = landscapes.filter((record) => !record.fallbackUsed && (record.sourceWidth < 800 || record.sourceHeight < 800));
+  const lowResolution = landscapes.filter((record) => !record.fallbackUsed && (record.sourceWidth < 600 || record.sourceHeight < 800 || Number(record.upscaleFactor || 0) > 2));
   const unusualAspect = landscapes.filter((record) => !record.fallbackUsed && (record.sourceWidth / record.sourceHeight < 0.45 || record.sourceWidth / record.sourceHeight > 1));
-  const tightCrop = landscapes.filter((record) => !record.fallbackUsed && Number(record.cropRetainedAreaFraction || 1) < 0.7);
-  const highRisk = [...new Map([...majorUpscales, ...lowResolution, ...unusualAspect, ...tightCrop].map((record) => [record.tmdbPersonId, record])).values()].sort((left, right) => left.tmdbPersonId - right.tmdbPersonId);
-  return { people, fallbackIds, majorUpscales, lowResolution, unusualAspect, tightCrop, highRisk };
+  const tightCrop = landscapes.filter((record) => !record.fallbackUsed && Number(record.cropRetainedAreaFraction || 1) < 0.67);
+  const approvedChinSafeOverrides = landscapes.filter((record) => record.cropOverrideUsed === true);
+  const highRisk = [...new Map([...approvedChinSafeOverrides, ...unusualAspect, ...tightCrop].map((record) => [record.tmdbPersonId, record])).values()].sort((left, right) => left.tmdbPersonId - right.tmdbPersonId);
+  return { people, fallbackIds, majorUpscales, lowResolution, unusualAspect, tightCrop, approvedChinSafeOverrides, highRisk };
 }
 
 function titleItem(person, filePath, record) {
-  return { filePath, primary: `${person.tmdbPersonId} · ${person.canonicalName}`, secondary: `${record.presentationLines.length} line${record.presentationLines.length === 1 ? "" : "s"} · ${record.finalFontSize}px · gap ${record.verticalGap}px`, warning: false };
+  return { filePath, expectedHash: record.outputHash, primary: `${person.tmdbPersonId} · ${person.canonicalName}`, secondary: `${record.presentationLines.length} line${record.presentationLines.length === 1 ? "" : "s"} · ${record.finalFontSize}px · gap ${record.verticalGap}px`, warning: false };
 }
 
 function portraitItem(person, filePath, record, flags = []) {
   const fallback = record?.fallbackUsed ? `fallback: ${record.fallbackReason}` : null;
   const risk = [...flags, fallback].filter(Boolean).join(" · ");
-  return { filePath, primary: `${person.tmdbPersonId} · ${person.canonicalName}`, secondary: risk || `${record?.sourceWidth || "?"}×${record?.sourceHeight || "?"} source`, warning: Boolean(risk) };
+  return { filePath, expectedHash: record?.outputHash || null, primary: `${person.tmdbPersonId} · ${person.canonicalName}`, secondary: risk || `${record?.sourceWidth || "?"}×${record?.sourceHeight || "?"} source`, warning: Boolean(risk) };
 }
 
 export async function generateFullGenerationTitleLogoReview({ runRoot } = {}) {
@@ -786,12 +789,13 @@ export async function generateFullGenerationReviewPackage({ runRoot } = {}) {
     const flags = [];
     if (risks.majorUpscales.some((record) => record.tmdbPersonId === person.tmdbPersonId)) flags.push("upscale >2×");
     if (risks.lowResolution.some((record) => record.tmdbPersonId === person.tmdbPersonId)) flags.push("low resolution");
-    if (risks.tightCrop.some((record) => record.tmdbPersonId === person.tmdbPersonId)) flags.push("tight crop");
+    if (risks.tightCrop.some((record) => record.tmdbPersonId === person.tmdbPersonId)) flags.push("tight crop outlier");
     if (risks.unusualAspect.some((record) => record.tmdbPersonId === person.tmdbPersonId)) flags.push("unusual aspect");
+    if (risks.approvedChinSafeOverrides.some((record) => record.tmdbPersonId === person.tmdbPersonId)) flags.push("approved chin-safe override");
     return flags;
   };
-  groups.posters = await renderReviewGroup({ root: context.root, groupRelativePath: "review/posters/all", title: "All 663 new Poster candidates", items: portraitItems("poster", deltaPeople, flagsFor), columns: 8, rows: 8, cellWidth: 180, mediaHeight: 270, labelHeight: 54, runtime: context.runtime });
-  groups.landscapes = await renderReviewGroup({ root: context.root, groupRelativePath: "review/landscapes/all", title: "All 663 new Landscape candidates", items: portraitItems("landscape", deltaPeople, flagsFor), columns: 8, rows: 8, cellWidth: 240, mediaHeight: 135, labelHeight: 54, runtime: context.runtime });
+  groups.posters = await renderReviewGroup({ root: context.root, groupRelativePath: "review/posters/all-v2", title: "All 663 new Poster candidates", items: portraitItems("poster", deltaPeople, flagsFor), columns: 8, rows: 8, cellWidth: 180, mediaHeight: 270, labelHeight: 54, runtime: context.runtime });
+  groups.landscapes = await renderReviewGroup({ root: context.root, groupRelativePath: "review/landscapes/all-v2", title: "All 663 new Landscape candidates", items: portraitItems("landscape", deltaPeople, flagsFor), columns: 8, rows: 8, cellWidth: 240, mediaHeight: 135, labelHeight: 54, runtime: context.runtime });
   const selectedByIds = (ids) => ids.map((id) => peopleById.get(id)).filter(Boolean);
   const recoveredPeople = selectedByIds(refreshReport.records.filter((record) => record.status === "recovered").map((record) => record.tmdbPersonId));
   const missingPeople = selectedByIds(refreshReport.records.filter((record) => record.status === "still-missing").map((record) => record.tmdbPersonId));
@@ -804,9 +808,9 @@ export async function generateFullGenerationReviewPackage({ runRoot } = {}) {
   groups.stillMissing = await renderReviewGroup({ root: context.root, groupRelativePath: "review/sources/still-missing", title: "Still-missing exact-ID sources", items: portraitItems("poster", missingPeople, () => ["still missing after TMDB details refresh"]), columns: 8, rows: 8, cellWidth: 180, mediaHeight: 270, labelHeight: 54, runtime: context.runtime });
   groups.fallbacks = await renderReviewGroup({ root: context.root, groupRelativePath: "review/exceptions/fallbacks", title: "Fallback candidates · owner review required", items: portraitItems("poster", fallbackPeople, () => ["fallback candidate"]), columns: 8, rows: 8, cellWidth: 180, mediaHeight: 270, labelHeight: 54, runtime: context.runtime });
   groups.unresolved = await renderReviewGroup({ root: context.root, groupRelativePath: "review/exceptions/unresolved", title: "Unresolved identities", items: portraitItems("poster", unresolvedPeople, () => ["unresolved"]), columns: 8, rows: 8, cellWidth: 180, mediaHeight: 270, labelHeight: 54, runtime: context.runtime });
-  groups.highRiskCrops = await renderReviewGroup({ root: context.root, groupRelativePath: "review/landscapes/high-risk", title: "High-risk Landscape crop candidates", items: portraitItems("landscape", highRiskPeople, flagsFor), columns: 8, rows: 8, cellWidth: 240, mediaHeight: 135, labelHeight: 54, runtime: context.runtime });
+  groups.highRiskCrops = await renderReviewGroup({ root: context.root, groupRelativePath: "review/landscapes/high-risk-crop-v2", title: "High-risk Landscape crop candidates", items: portraitItems("landscape", highRiskPeople, flagsFor), columns: 8, rows: 8, cellWidth: 240, mediaHeight: 135, labelHeight: 54, runtime: context.runtime });
   groups.majorUpscales = await renderReviewGroup({ root: context.root, groupRelativePath: "review/quality/major-upscales", title: "Major upscale candidates", items: portraitItems("landscape", majorPeople, flagsFor), columns: 8, rows: 8, cellWidth: 240, mediaHeight: 135, labelHeight: 54, runtime: context.runtime });
-  groups.lowResolution = await renderReviewGroup({ root: context.root, groupRelativePath: "review/quality/low-resolution", title: "Low-resolution source candidates", items: portraitItems("landscape", lowPeople, flagsFor), columns: 8, rows: 8, cellWidth: 240, mediaHeight: 135, labelHeight: 54, runtime: context.runtime });
+  groups.lowResolution = await renderReviewGroup({ root: context.root, groupRelativePath: "review/quality/low-resolution-v2", title: "Low-resolution source candidates", items: portraitItems("landscape", lowPeople, flagsFor), columns: 8, rows: 8, cellWidth: 240, mediaHeight: 135, labelHeight: 54, runtime: context.runtime });
   const overlapPeople = context.people.filter((person) => person.categoryMembership.length === 2);
   const publicIds = new Set(context.publicManifest.records.map((record) => record.tmdbPersonId));
   const overlapItems = overlapPeople.map((person) => ({ filePath: publicIds.has(person.tmdbPersonId) ? path.join(PEOPLE_ARTWORK_REPO_ROOT, "assets", "collection_covers", "people", "poster", `${person.tmdbPersonId}.webp`) : path.join(context.root, "candidates", "people", "poster", `${person.tmdbPersonId}.webp`), primary: `${person.tmdbPersonId} · ${person.canonicalName}`, secondary: "actor + director", warning: false }));
