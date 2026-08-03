@@ -751,26 +751,36 @@ function portraitItem(person, filePath, record, flags = []) {
   return { filePath, primary: `${person.tmdbPersonId} · ${person.canonicalName}`, secondary: risk || `${record?.sourceWidth || "?"}×${record?.sourceHeight || "?"} source`, warning: Boolean(risk) };
 }
 
+export async function generateFullGenerationTitleLogoReview({ runRoot } = {}) {
+  const context = await loadFullGenerationContext({ runRoot });
+  const title = await latestTitleLogoRun(context);
+  const titleById = new Map(title.run1.metadata.records.map((record) => [record.tmdbPersonId, record]));
+  const itemFor = (person) => titleItem(person, path.join(title.run1.outputDir, "individual", `${person.tmdbPersonId}.png`), titleById.get(person.tmdbPersonId));
+  const titleItems = context.people.map(itemFor);
+  const longest = [...context.people].sort((left, right) => [...right.canonicalName].length - [...left.canonicalName].length || left.tmdbPersonId - right.tmdbPersonId).slice(0, 64);
+  const punctuation = context.people.filter((person) => /[^\x20-\x7e]|['’.-]/u.test(person.canonicalName));
+  const groups = {};
+  groups.titleCheckerboard = await renderReviewGroup({ root: context.root, groupRelativePath: "review/title-logos/checkerboard", title: "All production title logos · checkerboard", items: titleItems, columns: 4, rows: 8, cellWidth: 360, mediaHeight: 150, labelHeight: 54, fit: "inside", background: "checkerboard", runtime: context.runtime });
+  groups.titleDark = await renderReviewGroup({ root: context.root, groupRelativePath: "review/title-logos/neutral-dark", title: "All production title logos · neutral dark", items: titleItems, columns: 4, rows: 8, cellWidth: 360, mediaHeight: 150, labelHeight: 54, fit: "inside", background: "#181b20", runtime: context.runtime });
+  groups.titleLongest = await renderReviewGroup({ root: context.root, groupRelativePath: "review/title-logos/longest-names", title: "Title-logo longest-name subset", items: longest.map(itemFor), columns: 4, rows: 8, cellWidth: 360, mediaHeight: 150, labelHeight: 54, fit: "inside", background: "#181b20", runtime: context.runtime });
+  groups.titlePunctuation = await renderReviewGroup({ root: context.root, groupRelativePath: "review/title-logos/punctuation-accents", title: "Title-logo punctuation and accent subset", items: punctuation.map(itemFor), columns: 4, rows: 8, cellWidth: 360, mediaHeight: 150, labelHeight: 54, fit: "inside", background: "#181b20", runtime: context.runtime });
+  const report = { version: "people-v3-title-logo-owner-review-v1", generatedAt: context.workspace.generatedAt, groups };
+  await writeJson(path.join(context.root, "review", "title-logos", "index.json"), report);
+  return { context, title, groups, report };
+}
+
 export async function generateFullGenerationReviewPackage({ runRoot } = {}) {
   const context = await loadFullGenerationContext({ runRoot });
   const portraitReport = await readJson(path.join(context.root, "portrait-render", "report.json"));
   const sourceReport = await readJson(path.join(context.root, "source-acquisition", "report.json"));
   const refreshReport = await readJson(path.join(context.root, "profile-refresh", "report.json"));
-  const title = await latestTitleLogoRun(context);
   const risks = portraitRiskGroups(portraitReport);
   const peopleById = new Map(context.people.map((person) => [person.tmdbPersonId, person]));
   const metadataByIdFormat = new Map(portraitReport.records.map((record) => [`${record.tmdbPersonId}:${record.formatId}`, record]));
-  const titleById = new Map(title.run1.metadata.records.map((record) => [record.tmdbPersonId, record]));
-  const titleItems = context.people.map((person) => titleItem(person, path.join(title.run1.outputDir, "individual", `${person.tmdbPersonId}.png`), titleById.get(person.tmdbPersonId)));
   const deltaPeople = context.audit.records.map((record) => peopleById.get(record.tmdbPersonId));
   const portraitItems = (formatId, selectedPeople = deltaPeople, flagFor = () => []) => selectedPeople.map((person) => portraitItem(person, path.join(context.root, "candidates", "people", formatId, `${person.tmdbPersonId}.webp`), metadataByIdFormat.get(`${person.tmdbPersonId}:${formatId}`), flagFor(person)));
-  const groups = {};
-  groups.titleCheckerboard = await renderReviewGroup({ root: context.root, groupRelativePath: "review/title-logos/checkerboard", title: "All production title logos · checkerboard", items: titleItems, columns: 4, rows: 8, cellWidth: 360, mediaHeight: 150, labelHeight: 54, fit: "inside", background: "checkerboard", runtime: context.runtime });
-  groups.titleDark = await renderReviewGroup({ root: context.root, groupRelativePath: "review/title-logos/neutral-dark", title: "All production title logos · neutral dark", items: titleItems, columns: 4, rows: 8, cellWidth: 360, mediaHeight: 150, labelHeight: 54, fit: "inside", background: "#181b20", runtime: context.runtime });
-  const longest = [...context.people].sort((left, right) => [...right.canonicalName].length - [...left.canonicalName].length || left.tmdbPersonId - right.tmdbPersonId).slice(0, 64);
-  const punctuation = context.people.filter((person) => /[^\x20-\x7e]|['’.-]/u.test(person.canonicalName));
-  groups.titleLongest = await renderReviewGroup({ root: context.root, groupRelativePath: "review/title-logos/longest-names", title: "Title-logo longest-name subset", items: longest.map((person) => titleItem(person, path.join(title.run1.outputDir, "individual", `${person.tmdbPersonId}.png`), titleById.get(person.tmdbPersonId))), columns: 4, rows: 8, cellWidth: 360, mediaHeight: 150, labelHeight: 54, fit: "inside", background: "#181b20", runtime: context.runtime });
-  groups.titlePunctuation = await renderReviewGroup({ root: context.root, groupRelativePath: "review/title-logos/punctuation-accents", title: "Title-logo punctuation and accent subset", items: punctuation.map((person) => titleItem(person, path.join(title.run1.outputDir, "individual", `${person.tmdbPersonId}.png`), titleById.get(person.tmdbPersonId))), columns: 4, rows: 8, cellWidth: 360, mediaHeight: 150, labelHeight: 54, fit: "inside", background: "#181b20", runtime: context.runtime });
+  const titleReview = await generateFullGenerationTitleLogoReview({ runRoot: context.root });
+  const groups = { ...titleReview.groups };
   const flagsFor = (person) => {
     const flags = [];
     if (risks.majorUpscales.some((record) => record.tmdbPersonId === person.tmdbPersonId)) flags.push("upscale >2×");

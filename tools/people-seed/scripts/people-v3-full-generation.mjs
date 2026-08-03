@@ -4,6 +4,7 @@ import path from "node:path";
 import {
   acquireFullGenerationSources,
   buildFullGenerationCandidates,
+  generateFullGenerationTitleLogoReview,
   generateFullGenerationReviewPackage,
   initialiseFullGenerationWorkspace,
   refreshMissingProfileMetadata,
@@ -29,6 +30,7 @@ function parseArguments(argv) {
     ["--render-title-logos", "titles"],
     ["--build-candidates", "candidates"],
     ["--physical-validation", "physical"],
+    ["--review-title-logos", "title-review"],
     ["--review-package", "review"],
     ["--validate", "validate"],
     ["--update-plan", "plan"],
@@ -66,6 +68,7 @@ Modes:
   --render-title-logos   Render and replay all 1,480 production-locked title logos
   --build-candidates     Build People, runtime and presentation manifest candidates
   --physical-validation Validate all existing and candidate physical files
+  --review-title-logos   Build all title-logo checkerboard/dark review sheets independently
   --review-package       Build complete paginated owner-review sheets and exception reports
   --validate             Run complete staged-candidate and protected-parity validation
   --update-plan          Write the actual-hash atomic-publication plan and stop before publication
@@ -83,6 +86,7 @@ function summary(mode, result) {
   if (mode === "titles") return { mode, runRoot: result.context.root, replayRoot: result.replayRoot, personCount: result.report.personCount, byteIdentical: result.report.byteIdentical, metadataIdentical: result.report.metadataIdentical };
   if (mode === "candidates") return { mode, runRoot: result.context.root, report: result.report };
   if (mode === "physical") return { mode, runRoot: result.context.root, valid: result.report.valid, portraitRecordCount: result.report.portraitRecordCount, titleLogoRecordCount: result.report.titleLogoRecordCount };
+  if (mode === "title-review") return { mode, runRoot: result.context.root, groups: result.groups };
   if (mode === "review") return { mode, runRoot: result.context.root, reportCounts: result.report.reportCounts, groups: result.groups };
   if (mode === "validate") return { mode, runRoot: result.context.root, ...result.report };
   if (mode === "plan") return { mode, runRoot: result.context.root, planFingerprint: result.plan.planFingerprint, growth: result.growth };
@@ -103,6 +107,7 @@ async function main() {
   else if (options.mode === "titles") result = await renderFullGenerationTitleLogos({ runRoot });
   else if (options.mode === "candidates") result = await buildFullGenerationCandidates({ runRoot });
   else if (options.mode === "physical") result = await validateFullGenerationPhysicalFiles({ runRoot });
+  else if (options.mode === "title-review") result = await generateFullGenerationTitleLogoReview({ runRoot });
   else if (options.mode === "review") result = await generateFullGenerationReviewPackage({ runRoot });
   else if (options.mode === "validate") result = await validateFullGeneration({ runRoot });
   else if (options.mode === "plan") result = await updateActualAtomicPublicationPlan({ runRoot });
