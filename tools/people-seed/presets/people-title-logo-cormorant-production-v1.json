@@ -1,0 +1,66 @@
+{
+  "id": "people-title-logo-cormorant-production-v1",
+  "version": 1,
+  "status": "production-locked",
+  "publicationAuthorised": true,
+  "rendererVersion": "people-title-logo-renderer-v5",
+  "renderer": {
+    "sharp": "0.35.3",
+    "libvips": "8.18.3",
+    "pango": "1.57.1",
+    "skiaCanvas": "3.0.8",
+    "outputFormat": "png",
+    "colourSpace": "srgb",
+    "alpha": true
+  },
+  "canvas": {
+    "width": 1863,
+    "height": 673
+  },
+  "typography": {
+    "content": "exact-canonical-person-name",
+    "presentationCase": "uppercase-en-US",
+    "family": "Cormorant Garamond",
+    "fontHash": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+    "weight": 700,
+    "requestedFontSize": 170,
+    "minimumFontSize": 88,
+    "fontSizeStep": 2,
+    "lineHeight": 142,
+    "maximumLines": 2,
+    "region": {
+      "x": 181,
+      "y": 72,
+      "width": 1501,
+      "height": 306
+    },
+    "alignment": "center",
+    "wrapRule": "measured-one-line-then-balanced-word-boundary",
+    "colour": "#FFFFFF",
+    "letterSpacing": 0,
+    "minimumCanvasMargin": 72
+  },
+  "collection": {
+    "text": "COLLECTION",
+    "family": "Cormorant Garamond",
+    "weight": 500,
+    "fontHash": "b20b7d9626dd956b2c5e558692ad328b1f19e3275e2782db4fa07670d83f35e0",
+    "licence": "OFL-1.1",
+    "licenceHash": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956",
+    "fontSize": 54,
+    "tracking": 6,
+    "colour": "#FFFFFF",
+    "role": "fixed-secondary-title",
+    "verticalPositioning": "visible-name-bottom-plus-clear-gap"
+  },
+  "design": {
+    "id": "cormorant-60",
+    "label": "Production-locked Cormorant title logo",
+    "clearGap": 60
+  },
+  "output": {
+    "format": "png",
+    "alpha": true,
+    "background": "transparent"
+  }
+}

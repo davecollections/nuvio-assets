@@ -35,6 +35,50 @@ async function hashFile(filePath) {
   return sha256(await fs.readFile(filePath));
 }
 
+async function verifyPublishedOverrides(configuration) {
+  const manifest = JSON.parse(await fs.readFile(path.join(repoRoot, "assets", "collection_covers", "people", "manifest.json"), "utf8"));
+  const manifestById = new Map(manifest.records.map((record) => [record.tmdbPersonId, record]));
+  const comparisons = [];
+  for (const override of configuration.config.records) {
+    const record = manifestById.get(override.tmdbPersonId);
+    const publicPath = path.join(repoRoot, "assets", "collection_covers", "people", "landscape", `${override.tmdbPersonId}.webp`);
+    const outputHash = await hashFile(publicPath);
+    const checks = {
+      identity: record?.stableKey === override.stableKey && record?.canonicalName === override.canonicalName,
+      sourcePath: record?.resolvedProfilePath === override.sourceProfilePath,
+      sourceHash: record?.sourceHash === override.sourceHash,
+      preset: record?.landscapePresetId === override.basePresetId && record?.landscapePresetHash === override.basePresetHash,
+      manifestOutputHash: record?.landscapeHash === override.approvedProofHash,
+      permanentOutputHash: outputHash === override.approvedProofHash,
+      numericPath: record?.landscapePath === `assets/collection_covers/people/landscape/${override.tmdbPersonId}.webp`,
+      noFallback: record?.fallbackUsed === false,
+    };
+    comparisons.push({
+      stableKey: override.stableKey,
+      tmdbPersonId: override.tmdbPersonId,
+      canonicalName: override.canonicalName,
+      approvedProofHash: override.approvedProofHash,
+      outputHash,
+      checks,
+      valid: Object.values(checks).every(Boolean),
+    });
+  }
+  const report = {
+    version: "people-landscape-crop-override-published-parity-v1",
+    offline: true,
+    writeFree: true,
+    selectionCount: comparisons.length,
+    outputCount: comparisons.length,
+    configurationHash: configuration.configHash,
+    parityCount: comparisons.filter((item) => item.valid).length,
+    mismatchCount: comparisons.filter((item) => !item.valid).length,
+    valid: comparisons.every((item) => item.valid),
+    comparisons,
+  };
+  if (!report.valid) throw new Error(`Published crop-override parity failed for ${report.mismatchCount} record(s).\n${JSON.stringify(report, null, 2)}`);
+  process.stdout.write(`${JSON.stringify(report, null, 2)}\n`);
+}
+
 function candidateRootForOverride(override) {
   let current = path.resolve(repoRoot, ...override.evidencePackage.split("/"));
   while (path.dirname(current) !== current) {
@@ -103,6 +147,10 @@ async function main() {
     ? path.join(candidateRoot, "post-override-review", "promotion-render")
     : outputDir;
   const configuration = await loadLandscapeCropOverrides({ repoRoot });
+  if (!options.candidateRoot && !options.promoteCandidate) {
+    await verifyPublishedOverrides(configuration);
+    return;
+  }
   const [foundation, decisions] = await Promise.all([
     readPeopleFoundation(repoRoot),
     fs.readFile(path.join(repoRoot, "data", "people", "portrait-source-decisions.json"), "utf8").then(JSON.parse),

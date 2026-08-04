@@ -7,27 +7,38 @@ import {
   ACTOR_SUPPLEMENT_COUNTS,
   validateActorSupplement,
 } from "./actor-supplement-promotion.mjs";
+import { foundationAliasesForPerson } from "./foundation-build-verification.mjs";
+import {
+  V3_ACTOR_SOURCE_ID,
+  V3_DIRECTOR_SOURCE_ID,
+  activeAliasesForV3Record,
+  validatePeopleOwnerSupplementV3,
+  validatePromotedPeopleOwnerSupplementV3Foundation,
+} from "./people-owner-supplement-v3-promotion.mjs";
 
 export const EXPECTED_COUNTS = Object.freeze({
-  registry: 817,
-  actor: 523,
-  director: 300,
-  shared: 6,
-  sourceMemberships: 1069,
+  registry: 1480,
+  actor: 1071,
+  director: 418,
+  shared: 9,
+  sourceMemberships: 1735,
 });
 
 export const EXPECTED_ROLLOUT = Object.freeze({
-  actor: Object.freeze({ initial: 295, later: 203, review: 25 }),
-  director: Object.freeze({ initial: 154, later: 102, review: 44 }),
+  actor: Object.freeze({ initial: 843, later: 203, review: 25 }),
+  director: Object.freeze({ initial: 272, later: 102, review: 44 }),
 });
 
-const EXPECTED_SHARED_NAMES = [
-  "Buster Keaton",
-  "Charlie Chaplin",
-  "Clint Eastwood",
-  "Gene Kelly",
-  "Mel Brooks",
-  "Orson Welles",
+const EXPECTED_SHARED_PEOPLE = [
+  { tmdbPersonId: 40, canonicalName: "Orson Welles" },
+  { tmdbPersonId: 190, canonicalName: "Clint Eastwood" },
+  { tmdbPersonId: 4818, canonicalName: "Roberto Benigni" },
+  { tmdbPersonId: 8630, canonicalName: "Erich von Stroheim" },
+  { tmdbPersonId: 8635, canonicalName: "Buster Keaton" },
+  { tmdbPersonId: 13294, canonicalName: "Gene Kelly" },
+  { tmdbPersonId: 13848, canonicalName: "Charlie Chaplin" },
+  { tmdbPersonId: 14639, canonicalName: "Mel Brooks" },
+  { tmdbPersonId: 45400, canonicalName: "Greta Gerwig" },
 ];
 
 const EXPECTED_SOURCE_COUNTS = Object.freeze({
@@ -36,6 +47,8 @@ const EXPECTED_SOURCE_COUNTS = Object.freeze({
   "imkaptain-actors": 58,
   "imkaptain-directors": 20,
   "owner-actor-supplement-2026-07": 198,
+  "owner-people-v3-actors-2026-08": 548,
+  "owner-people-v3-directors-2026-08": 118,
   "ranker-actors": 300,
   "ranker-current-famous-actors-2026": 25,
   "tspdt-21c-directors": 102,
@@ -50,6 +63,8 @@ const EXPECTED_SOURCE_IDS = [
   "imkaptain-actors",
   "imkaptain-directors",
   "owner-actor-supplement-2026-07",
+  "owner-people-v3-actors-2026-08",
+  "owner-people-v3-directors-2026-08",
   "ranker-actors",
   "ranker-current-famous-actors-2026",
   "tmdb-identity-resolution",
@@ -63,10 +78,11 @@ const ACTOR_SOURCES = new Set([
   "imdb-starmeter-2026-07-18",
   "imkaptain-actors",
   "owner-actor-supplement-2026-07",
+  "owner-people-v3-actors-2026-08",
   "ranker-actors",
   "ranker-current-famous-actors-2026",
 ]);
-const DIRECTOR_SOURCES = new Set(["imkaptain-directors", "tspdt-21c-directors", "tspdt-directors"]);
+const DIRECTOR_SOURCES = new Set(["imkaptain-directors", "owner-people-v3-directors-2026-08", "tspdt-21c-directors", "tspdt-directors"]);
 const BASIS_ORDER = [
   "ranker-core",
   "tspdt-all-time",
@@ -75,6 +91,7 @@ const BASIS_ORDER = [
   "external-supplement",
   "modern-supplement",
   "owner-added",
+  "owner-approved-v3",
 ];
 
 function sameJson(left, right) {
@@ -129,6 +146,7 @@ function expectedSourceRanks(memberships) {
 function expectedSelectionBasis(category, memberships) {
   const sourceIds = new Set(memberships.map((membership) => membership.sourceId));
   const basis = [];
+  if (sourceIds.has(category === "actor" ? V3_ACTOR_SOURCE_ID : V3_DIRECTOR_SOURCE_ID)) return ["owner-approved-v3"];
   if (category === "actor") {
     if (sourceIds.has("owner-actor-supplement-2026-07")) return ["owner-added"];
     if (sourceIds.has("ranker-actors")) basis.push("ranker-core");
@@ -209,8 +227,8 @@ function validateCategory(errors, document, category, registryById) {
       "manual-selection-review": "review",
     }[record.recommendedAction];
     addIf(errors, record.rolloutTier === expectedTier, `${category} ${record.stableKey}: rollout tier does not match recommendation`);
-    const ownerApprovedSupplement = category === "actor"
-      && memberships.some((membership) => membership.sourceId === "owner-actor-supplement-2026-07");
+    const ownerApprovedSupplement = memberships.some((membership) => membership.sourceId === (category === "actor" ? V3_ACTOR_SOURCE_ID : V3_DIRECTOR_SOURCE_ID))
+      || (category === "actor" && memberships.some((membership) => membership.sourceId === "owner-actor-supplement-2026-07"));
     addIf(errors, record.selectionStatus === (ownerApprovedSupplement ? "owner-decided" : "proposed"), `${category} ${record.stableKey}: selection status does not match owner-approval policy`);
     addIf(errors, record.ownerDecision === (ownerApprovedSupplement ? "include" : null), `${category} ${record.stableKey}: owner decision does not match owner-approval policy`);
     addIf(errors, record.ownerNote === "", `${category} ${record.stableKey}: owner note must remain blank`);
@@ -222,7 +240,7 @@ function validateCategory(errors, document, category, registryById) {
   addIf(errors, sameJson(rollout, EXPECTED_ROLLOUT[category]), `${category} rollout counts do not match the authorised proposal`);
 }
 
-export function validatePeopleFoundation({ registry, actors, directors, sources, supplement = null, schemas = null, rawDocuments = null }) {
+export function validatePeopleFoundation({ registry, actors, directors, sources, supplement = null, ownerSupplementV3 = null, schemas = null, rawDocuments = null }) {
   const errors = [];
   if (schemas) {
     errors.push(...validateAgainstSchema(registry, schemas.registry, "people-registry.json"));
@@ -230,6 +248,7 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
     errors.push(...validateAgainstSchema(directors, schemas.seed, "directors-seed.json"));
     errors.push(...validateAgainstSchema(sources, schemas.sources, "sources.json"));
     if (supplement && schemas.supplement) errors.push(...validateActorSupplement(supplement, schemas.supplement).errors);
+    if (ownerSupplementV3 && schemas.ownerSupplementV3) errors.push(...validatePeopleOwnerSupplementV3(ownerSupplementV3, { schema: schemas.ownerSupplementV3 }).errors);
   }
   if (rawDocuments) {
     for (const [name, document] of Object.entries({
@@ -238,6 +257,7 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
       "directors-seed.json": directors,
       "sources.json": sources,
       ...(supplement ? { "actor-owner-supplement.json": supplement } : {}),
+      ...(ownerSupplementV3 ? { "people-owner-supplement-v3.json": ownerSupplementV3 } : {}),
     })) {
       addIf(errors, rawDocuments[name] === `${JSON.stringify(document, null, 2)}\n`, `${name}: JSON serialization is not deterministic`);
     }
@@ -251,12 +271,27 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
   addIf(errors, new Set(registryKeys).size === registryKeys.length, "registry must not duplicate stable keys");
   addIf(errors, registryIds.every((id, index) => index === 0 || registryIds[index - 1] < id), "registry must use numeric TMDB-ID ordering");
 
+  const v3Records = ownerSupplementV3?.package?.records ?? [];
+  const v3ById = new Map(v3Records.map((record) => [record.tmdbPersonId, record]));
+  const v3NetNewIds = new Set(v3Records.filter((record) => record.createsNetNewPersonIdentity).map((record) => record.tmdbPersonId));
+
   for (const record of registry.records) {
     addIf(errors, record.stableKey === `person:${record.tmdbPersonId}`, `${record.stableKey}: stable key must equal person:{tmdbPersonId}`);
     addIf(errors, record.reviewStatus === "candidate", `${record.stableKey}: registry status must remain candidate`);
-    addIf(errors, record.profilePath !== null, `${record.stableKey}: profile-path metadata must be present`);
-    addIf(errors, record.activityYearRange.first <= record.activityYearRange.last, `${record.stableKey}: activity year range is reversed`);
+    if (v3NetNewIds.has(record.tmdbPersonId)) {
+      addIf(errors, record.knownForDepartment === null, `${record.stableKey}: unavailable v3 department metadata must remain null`);
+      addIf(errors, record.actorCreditCount === null && record.directorCreditCount === null, `${record.stableKey}: unavailable v3 credit counts must remain null`);
+      addIf(errors, record.activityYearRange === null, `${record.stableKey}: unavailable v3 activity range must remain null`);
+      addIf(errors, record.profilePath === v3ById.get(record.tmdbPersonId)?.profilePath, `${record.stableKey}: v3 profile-path metadata must be preserved exactly`);
+    } else {
+      addIf(errors, record.knownForDepartment !== null, `${record.stableKey}: historical department metadata must be present`);
+      addIf(errors, Number.isInteger(record.actorCreditCount) && Number.isInteger(record.directorCreditCount), `${record.stableKey}: historical credit counts must be present`);
+      addIf(errors, record.profilePath !== null, `${record.stableKey}: historical profile-path metadata must be present`);
+      addIf(errors, record.activityYearRange !== null, `${record.stableKey}: historical activity range must be present`);
+      if (record.activityYearRange) addIf(errors, record.activityYearRange.first <= record.activityYearRange.last, `${record.stableKey}: activity year range is reversed`);
+    }
     addIf(errors, sameJson(record.sourceMemberships, [...record.sourceMemberships].sort(sourceMembershipComparator)), `${record.stableKey}: source memberships must be deterministically ordered`);
+    addIf(errors, sameJson(record.alsoKnownAs, foundationAliasesForPerson(record.tmdbPersonId, record.alsoKnownAs)), `${record.stableKey}: aliases contain an exact-ID invalid source value`);
   }
 
   const sourceMemberships = registry.records.flatMap((record) => record.sourceMemberships);
@@ -276,7 +311,7 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
   const directorIds = new Set(directors.records.map((record) => record.tmdbPersonId));
   const shared = registry.records.filter((record) => actorIds.has(record.tmdbPersonId) && directorIds.has(record.tmdbPersonId));
   addIf(errors, shared.length === EXPECTED_COUNTS.shared, `shared actor/director count must be ${EXPECTED_COUNTS.shared}`);
-  addIf(errors, sameJson(shared.map((record) => record.canonicalName).sort(), EXPECTED_SHARED_NAMES), "shared actor/director identities do not match the resolved draft" );
+  addIf(errors, sameJson(shared.map(({ tmdbPersonId, canonicalName }) => ({ tmdbPersonId, canonicalName })), EXPECTED_SHARED_PEOPLE), "shared actor/director identities do not match the exact approved ID set" );
 
   for (const record of registry.records) {
     const expectedCategories = [
@@ -304,9 +339,46 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
     const supplementIds = new Set(supplement.records.map((record) => record.tmdbPersonId));
     addIf(errors, promotedActors.every((record) => supplementIds.has(record.tmdbPersonId)), "promoted actors must match the tracked supplement identities");
     addIf(errors, supplementIds.size === promotedActors.length, "every tracked supplement identity must have one actor membership");
-    addIf(errors, supplement.promotedAt === registry.generatedAt, "tracked supplement promotion timestamp must match canonical document timestamps");
   } else {
     errors.push("tracked actor supplement must be provided for foundation validation");
+  }
+
+  const v3ActorIds = v3Records.flatMap((record) => record.categoryMembershipActions
+    .filter((action) => action.category === "actor")
+    .map(() => record.tmdbPersonId));
+  const v3DirectorIds = v3Records.flatMap((record) => record.categoryMembershipActions
+    .filter((action) => action.category === "director")
+    .map(() => record.tmdbPersonId));
+  const v3Actors = actors.records.filter((record) => record.selectionBasis.includes("owner-approved-v3"));
+  const v3Directors = directors.records.filter((record) => record.selectionBasis.includes("owner-approved-v3"));
+  if (ownerSupplementV3) {
+    const exactProjection = validatePromotedPeopleOwnerSupplementV3Foundation({
+      registry,
+      actors,
+      directors,
+      sources,
+      supplement: ownerSupplementV3,
+    });
+    errors.push(...exactProjection.errors.map((error) => `People v3 exact projection: ${error}`));
+    addIf(errors, sameJson(v3Actors.map((record) => record.tmdbPersonId), v3ActorIds), "v3 Actor memberships must match every authoritative Actor action exactly");
+    addIf(errors, sameJson(v3Directors.map((record) => record.tmdbPersonId), v3DirectorIds), "v3 Director memberships must match every authoritative Director action exactly");
+    addIf(errors, v3Actors.length === 548 && v3Directors.length === 118, "v3 category memberships must total 548 Actor and 118 Director actions");
+    addIf(errors, [...v3Actors, ...v3Directors].every((record) => record.rolloutTier === "initial" && record.recommendedAction === "include-initial"), "every v3 membership must remain initial rollout");
+    addIf(errors, [...v3Actors, ...v3Directors].every((record) => record.selectionStatus === "owner-decided" && record.ownerDecision === "include"), "every v3 membership must retain owner include approval");
+    for (const sourceRecord of v3Records) {
+      const registryRecord = registry.records.find((record) => record.tmdbPersonId === sourceRecord.tmdbPersonId);
+      addIf(errors, Boolean(registryRecord), `${sourceRecord.stableKey}: v3 identity is missing from registry`);
+      if (!registryRecord) continue;
+      addIf(errors, registryRecord.stableKey === sourceRecord.stableKey && registryRecord.canonicalName === sourceRecord.canonicalName, `${sourceRecord.stableKey}: v3 canonical identity conflicts with registry`);
+      addIf(errors, sameJson(registryRecord.alsoKnownAs, activeAliasesForV3Record(sourceRecord, ownerSupplementV3.promotionMapping)), `${sourceRecord.stableKey}: v3 aliases do not match the declared active mapping`);
+      addIf(errors, registryRecord.identityConfidence === sourceRecord.identityConfidence, `${sourceRecord.stableKey}: v3 identity confidence changed`);
+      for (const action of sourceRecord.categoryMembershipActions) {
+        const sourceId = action.category === "actor" ? V3_ACTOR_SOURCE_ID : V3_DIRECTOR_SOURCE_ID;
+        addIf(errors, registryRecord.sourceMemberships.filter((membership) => membership.sourceId === sourceId).length === 1, `${sourceRecord.stableKey}: v3 ${action.category} provenance must occur exactly once`);
+      }
+    }
+  } else {
+    errors.push("tracked People owner supplement v3 must be provided for foundation validation");
   }
 
   const tspdtAllTime = sourceMemberships.filter((membership) => membership.sourceId === "tspdt-directors");
@@ -339,11 +411,11 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
   if (michaelPowell) addIf(errors, sameJson(michaelPowell.sourceRanks["tspdt-directors"], [35, 210]), "Michael Powell must retain both TSPDT source ranks 35 and 210");
 
   addIf(errors, sources.sourceCount === sources.sources.length, "source registry sourceCount must equal sources length");
-  addIf(errors, sources.sources.length === EXPECTED_SOURCE_IDS.length, "source registry must contain 13 required sources");
+  addIf(errors, sources.sources.length === EXPECTED_SOURCE_IDS.length, `source registry must contain ${EXPECTED_SOURCE_IDS.length} required sources`);
   addIf(errors, sameJson(sources.sources.map((source) => source.sourceId), EXPECTED_SOURCE_IDS), "source registry must use deterministic source-ID ordering and include every required source");
   addIf(errors, registry.generatedAt === actors.generatedAt && actors.generatedAt === directors.generatedAt && directors.generatedAt === sources.generatedAt, "all canonical files must share the completed-build timestamp");
 
-  for (const document of [registry, actors, directors, sources, ...(supplement ? [supplement] : [])]) {
+  for (const document of [registry, actors, directors, sources, ...(supplement ? [supplement] : []), ...(ownerSupplementV3 ? [ownerSupplementV3] : [])]) {
     inspectPortableValues(document, errors);
     inspectForbiddenKeys(document, errors);
   }
@@ -361,6 +433,8 @@ export function validatePeopleFoundation({ registry, actors, directors, sources,
       sourceMembershipFingerprint: registry.sourceMembershipFingerprint,
       sourceCount: sources.sources.length,
       supplementCount: supplement?.records.length ?? 0,
+      ownerSupplementV3Count: v3Records.length,
+      ownerSupplementV3CategoryActionCount: v3ActorIds.length + v3DirectorIds.length,
     },
   };
 }
@@ -374,7 +448,9 @@ export function validateChangedPaths(paths) {
   const protectedFiles = new Set(["assets/collection_covers/manifest.json"]);
   const peopleRoot = "assets/collection_covers/people/";
   const allowedPeoplePublicationPath = (item) => item === `${peopleRoot}manifest.json`
-    || new RegExp(`^${peopleRoot}(?:landscape|poster)/[1-9][0-9]*\\.webp$`, "u").test(item);
+    || item === `${peopleRoot}presentation-manifest.json`
+    || new RegExp(`^${peopleRoot}(?:landscape|poster)/[1-9][0-9]*\\.webp$`, "u").test(item)
+    || new RegExp(`^${peopleRoot}title-logo/[1-9][0-9]*\\.png$`, "u").test(item);
   return paths.map((item) => item.replaceAll("\\", "/")).filter((item) => (
     protectedFiles.has(item)
     || protectedPrefixes.some((prefix) => item.startsWith(prefix))
@@ -385,6 +461,8 @@ export function validateChangedPaths(paths) {
 export async function validatePeopleAssetBoundary(repoRoot) {
   const peopleRoot = path.join(repoRoot, "assets", "collection_covers", "people");
   const manifestPath = path.join(peopleRoot, "manifest.json");
+  const presentationManifestPath = path.join(peopleRoot, "presentation-manifest.json");
+  const titleLogoRoot = path.join(peopleRoot, "title-logo");
   const errors = [];
   let entries = [];
   try {
@@ -394,8 +472,8 @@ export async function validatePeopleAssetBoundary(repoRoot) {
   }
   for (const entry of entries) {
     if (entry.isFile() && /^[1-9][0-9]*\.webp$/i.test(entry.name)) errors.push(`people portrait asset exists unexpectedly: assets/collection_covers/people/${entry.name}`);
-    if (entry.isFile() && /manifest.*\.json$|people.*manifest.*\.json$/i.test(entry.name) && entry.name !== "manifest.json") errors.push(`unrecognised people artwork manifest: assets/collection_covers/people/${entry.name}`);
-    if (entry.isDirectory() && !new Set(["landscape", "poster"]).has(entry.name)) errors.push(`unrecognised people artwork directory: assets/collection_covers/people/${entry.name}`);
+    if (entry.isFile() && /manifest.*\.json$|people.*manifest.*\.json$/i.test(entry.name) && !new Set(["manifest.json", "presentation-manifest.json"]).has(entry.name)) errors.push(`unrecognised people artwork manifest: assets/collection_covers/people/${entry.name}`);
+    if (entry.isDirectory() && !new Set(["landscape", "poster", "title-logo"]).has(entry.name)) errors.push(`unrecognised people artwork directory: assets/collection_covers/people/${entry.name}`);
   }
   const manifestExists = await fs.access(manifestPath).then(() => true, () => false);
   const formatAssetCount = (await Promise.all(["landscape", "poster"].map(async (formatId) => {
@@ -412,6 +490,60 @@ export async function validatePeopleAssetBoundary(repoRoot) {
     const result = await validateTrackedPeopleManifest({ repoRoot, manifestPath });
     for (const error of [...result.manifestValidation.errors, ...result.pathValidation.errors]) errors.push(`people publication manifest: ${error}`);
   }
+  const presentationManifestExists = await fs.access(presentationManifestPath).then(() => true, () => false);
+  const titleLogoEntries = await fs.readdir(titleLogoRoot, { withFileTypes: true }).catch((error) => {
+    if (error.code === "ENOENT") return [];
+    throw error;
+  });
+  if (!presentationManifestExists && titleLogoEntries.length > 0) errors.push("people title logos require assets/collection_covers/people/presentation-manifest.json");
+  if (presentationManifestExists) {
+    const [
+      presentation,
+      registry,
+      {
+        inspectSharedPeopleHero,
+        loadPeoplePresentationManifestSchema,
+        validatePeoplePresentationManifest,
+      },
+      { loadPeopleArtworkRuntime },
+    ] = await Promise.all([
+      fs.readFile(presentationManifestPath, "utf8").then(JSON.parse),
+      fs.readFile(path.join(repoRoot, "data", "people", "people-registry.json"), "utf8").then(JSON.parse),
+      import("./people-presentation-manifest.mjs"),
+      import("./people-artwork/runtime-dependencies.mjs"),
+    ]);
+    const runtime = loadPeopleArtworkRuntime();
+    const [schema, hero] = await Promise.all([
+      loadPeoplePresentationManifestSchema({ repoRoot }),
+      inspectSharedPeopleHero({ repoRoot, sharp: runtime.sharp }),
+    ]);
+    for (const error of validatePeoplePresentationManifest(presentation, schema, { expectedPeople: registry.records, expectedHero: hero })) {
+      errors.push(`people presentation manifest: ${error}`);
+    }
+    const expectedNames = new Set(presentation.records.map((record) => `${record.tmdbPersonId}.png`));
+    for (const entry of titleLogoEntries) {
+      if (!entry.isFile() || !expectedNames.has(entry.name)) errors.push(`unexpected people title-logo path: assets/collection_covers/people/title-logo/${entry.name}`);
+    }
+    if (titleLogoEntries.length !== presentation.titleLogoCount) errors.push("people title-logo physical count differs from the presentation manifest");
+    const records = new Map(presentation.records.map((record) => [`${record.tmdbPersonId}.png`, record]));
+    for (let offset = 0; offset < titleLogoEntries.length; offset += 32) {
+      await Promise.all(titleLogoEntries.slice(offset, offset + 32).filter((entry) => entry.isFile() && records.has(entry.name)).map(async (entry) => {
+        const record = records.get(entry.name);
+        const filePath = path.join(titleLogoRoot, entry.name);
+        const buffer = await fs.readFile(filePath);
+        const actualHash = createHash("sha256").update(buffer).digest("hex");
+        let metadata = null;
+        try {
+          metadata = await runtime.sharp(buffer, { failOn: "error" }).metadata();
+        } catch (error) {
+          errors.push(`people title-logo ${entry.name}: decode failed: ${error.message}`);
+        }
+        if (actualHash !== record.titleLogoSha256 || buffer.length !== record.byteCount || metadata?.format !== "png" || metadata?.width !== record.dimensions.width || metadata?.height !== record.dimensions.height || metadata?.hasAlpha !== true) {
+          errors.push(`people title-logo ${entry.name}: hash, byte, PNG, dimensions or alpha validation failed`);
+        }
+      }));
+    }
+  }
   return errors;
 }
 
@@ -424,6 +556,7 @@ export async function readPeopleFoundation(repoRoot) {
     directors: "directors-seed.json",
     sources: "sources.json",
     supplement: "actor-owner-supplement.json",
+    ownerSupplementV3: "people-owner-supplement-v3.json",
   };
   const rawDocuments = {};
   const documents = {};
@@ -432,15 +565,16 @@ export async function readPeopleFoundation(repoRoot) {
     rawDocuments[name] = raw;
     documents[key] = JSON.parse(raw);
   }));
-  const [registrySchema, seedSchema, sourcesSchema, supplementSchema] = await Promise.all([
+  const [registrySchema, seedSchema, sourcesSchema, supplementSchema, ownerSupplementV3Schema] = await Promise.all([
     fs.readFile(path.join(schemaRoot, "people-registry.schema.json"), "utf8").then(JSON.parse),
     fs.readFile(path.join(schemaRoot, "people-seed.schema.json"), "utf8").then(JSON.parse),
     fs.readFile(path.join(schemaRoot, "people-sources.schema.json"), "utf8").then(JSON.parse),
     fs.readFile(path.join(schemaRoot, "actor-owner-supplement.schema.json"), "utf8").then(JSON.parse),
+    fs.readFile(path.join(schemaRoot, "people-owner-supplement-v3.schema.json"), "utf8").then(JSON.parse),
   ]);
   return {
     ...documents,
-    schemas: { registry: registrySchema, seed: seedSchema, sources: sourcesSchema, supplement: supplementSchema },
+    schemas: { registry: registrySchema, seed: seedSchema, sources: sourcesSchema, supplement: supplementSchema, ownerSupplementV3: ownerSupplementV3Schema },
     rawDocuments,
   };
 }

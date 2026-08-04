@@ -40,6 +40,8 @@
               "imdb-popular-celebrities-ls052283250",
               "imdb-starmeter-2026-07-18",
               "owner-actor-supplement-2026-07",
+              "owner-people-v3-actors-2026-08",
+              "owner-people-v3-directors-2026-08",
               "ranker-actors",
               "ranker-current-famous-actors-2026",
               "tmdb-identity-resolution",
@@ -59,7 +61,8 @@
               "editorial-ranked-list",
               "dynamic-weekly-popularity-chart",
               "encyclopedic-commercial-table",
-              "owner-decision-after-cross-source-comparison"
+              "owner-decision-after-cross-source-comparison",
+              "owner-approved-membership-package"
             ]
           },
           "sourceUrl": { "type": ["string", "null"], "pattern": "^https://" },
@@ -68,7 +71,7 @@
             "pattern": "^[A-Za-z0-9._/-]+$"
           },
           "publicationOrSnapshotYear": { "type": "integer", "minimum": 1900, "maximum": 2100 },
-          "retrievalTimestamp": { "type": "string", "format": "date-time" },
+          "retrievalTimestamp": { "type": ["string", "null"], "format": "date-time" },
           "sourceHash": {
             "type": ["object", "null"],
             "additionalProperties": false,

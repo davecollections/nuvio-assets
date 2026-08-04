@@ -1,0 +1,10 @@
+/data/people/people-registry.json text eol=lf
+/data/people/actors-seed.json text eol=lf
+/data/people/directors-seed.json text eol=lf
+/data/people/sources.json text eol=lf
+/data/people/actor-owner-supplement.json text eol=lf
+/data/people/people-owner-supplement-v3.json text eol=lf
+/data/people/title-logo-line-break-overrides.json text eol=lf
+/schemas/people-presentation-manifest.schema.json text eol=lf
+/schemas/people-title-logo-line-break-overrides.schema.json text eol=lf
+/tools/people-seed/presets/people-title-logo-cinematic-v1.json text eol=lf

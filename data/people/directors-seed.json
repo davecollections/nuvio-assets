@@ -1,10 +1,10 @@
 {
   "version": "people-seed-v1",
-  "generatedAt": "2026-07-17T14:00:00.000Z",
+  "generatedAt": "2026-08-02T04:41:32.516Z",
   "status": "proposed-candidate-rollout",
   "category": "director",
   "ordering": "tmdb-person-id-ascending",
-  "recordCount": 300,
+  "recordCount": 418,
   "records": [
     {
       "stableKey": "person:1",
@@ -46,6 +46,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:8",
+      "tmdbPersonId": 8,
+      "canonicalName": "Lee Unkrich",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:24",
       "tmdbPersonId": 24,
       "canonicalName": "Robert Zemeckis",
@@ -62,6 +77,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:39",
+      "tmdbPersonId": 39,
+      "canonicalName": "Sam Mendes",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -105,6 +135,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:59",
+      "tmdbPersonId": 59,
+      "canonicalName": "Luc Besson",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -504,6 +549,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:628",
+      "tmdbPersonId": 628,
+      "canonicalName": "Isao Takahata",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:638",
       "tmdbPersonId": 638,
       "canonicalName": "Michael Mann",
@@ -542,6 +602,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:814",
+      "tmdbPersonId": 814,
+      "canonicalName": "Tony Kaye",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:834",
       "tmdbPersonId": 834,
       "canonicalName": "Otto Preminger",
@@ -558,6 +633,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:956",
+      "tmdbPersonId": 956,
+      "canonicalName": "Guy Ritchie",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -582,6 +672,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1090",
+      "tmdbPersonId": 1090,
+      "canonicalName": "John McTiernan",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -891,6 +996,66 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1927",
+      "tmdbPersonId": 1927,
+      "canonicalName": "Blake Edwards",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2034",
+      "tmdbPersonId": 2034,
+      "canonicalName": "Danny Boyle",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2036",
+      "tmdbPersonId": 2036,
+      "canonicalName": "Alex Garland",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:2127",
+      "tmdbPersonId": 2127,
+      "canonicalName": "James Wan",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1277,6 +1442,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:3317",
+      "tmdbPersonId": 3317,
+      "canonicalName": "Takeshi Kitano",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:3556",
       "tmdbPersonId": 3556,
       "canonicalName": "Roman Polanski",
@@ -1293,6 +1473,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:3632",
+      "tmdbPersonId": 3632,
+      "canonicalName": "Richard Brooks",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1358,6 +1553,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:4027",
+      "tmdbPersonId": 4027,
+      "canonicalName": "Frank Darabont",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:4065",
       "tmdbPersonId": 4065,
       "canonicalName": "Fred Zinnemann",
@@ -1374,6 +1584,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4081",
+      "tmdbPersonId": 4081,
+      "canonicalName": "Stanley Kramer",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1472,6 +1697,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:4453",
+      "tmdbPersonId": 4453,
+      "canonicalName": "Thomas Vinterberg",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:4762",
       "tmdbPersonId": 4762,
       "canonicalName": "Paul Thomas Anderson",
@@ -1493,6 +1733,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:4818",
+      "tmdbPersonId": 4818,
+      "canonicalName": "Roberto Benigni",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1572,6 +1827,36 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:5125",
+      "tmdbPersonId": 5125,
+      "canonicalName": "Fatih Akin",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5140",
+      "tmdbPersonId": 5140,
+      "canonicalName": "Wes Craven",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:5216",
       "tmdbPersonId": 5216,
       "canonicalName": "Gus Van Sant",
@@ -1617,6 +1902,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:5306",
+      "tmdbPersonId": 5306,
+      "canonicalName": "Lasse Hallström",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -1788,6 +2088,36 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:6046",
+      "tmdbPersonId": 6046,
+      "canonicalName": "Roland Emmerich",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:6159",
+      "tmdbPersonId": 6159,
+      "canonicalName": "Ron Howard",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:6349",
       "tmdbPersonId": 6349,
       "canonicalName": "Alan J. Pakula",
@@ -1932,6 +2262,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:7087",
+      "tmdbPersonId": 7087,
+      "canonicalName": "Brad Bird",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:7467",
       "tmdbPersonId": 7467,
       "canonicalName": "David Fincher",
@@ -1953,6 +2298,36 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7501",
+      "tmdbPersonId": 7501,
+      "canonicalName": "Ronald Neame",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:7623",
+      "tmdbPersonId": 7623,
+      "canonicalName": "Sam Raimi",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2033,6 +2408,36 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:8557",
+      "tmdbPersonId": 8557,
+      "canonicalName": "Fernando Meirelles",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8559",
+      "tmdbPersonId": 8559,
+      "canonicalName": "Kátia Lund",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:8630",
       "tmdbPersonId": 8630,
       "canonicalName": "Erich von Stroheim",
@@ -2068,6 +2473,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:8636",
+      "tmdbPersonId": 8636,
+      "canonicalName": "Cecil B. DeMille",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2109,6 +2529,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:9032",
+      "tmdbPersonId": 9032,
+      "canonicalName": "Bryan Singer",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:9049",
       "tmdbPersonId": 9049,
       "canonicalName": "Victor Fleming",
@@ -2128,6 +2563,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:9054",
+      "tmdbPersonId": 9054,
+      "canonicalName": "Mervyn LeRoy",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:9076",
       "tmdbPersonId": 9076,
       "canonicalName": "F. W. Murnau",
@@ -2144,6 +2594,36 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9168",
+      "tmdbPersonId": 9168,
+      "canonicalName": "Alan Parker",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9181",
+      "tmdbPersonId": 9181,
+      "canonicalName": "Edward Zwick",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2182,6 +2662,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:9577",
+      "tmdbPersonId": 9577,
+      "canonicalName": "George Roy Hill",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2476,6 +2971,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:10707",
+      "tmdbPersonId": 10707,
+      "canonicalName": "Terry Jones",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:10757",
       "tmdbPersonId": 10757,
       "canonicalName": "Jane Campion",
@@ -2500,6 +3010,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:10790",
+      "tmdbPersonId": 10790,
+      "canonicalName": "Sam Wood",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:10828",
       "tmdbPersonId": 10828,
       "canonicalName": "Guillermo del Toro",
@@ -2521,6 +3046,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:10930",
+      "tmdbPersonId": 10930,
+      "canonicalName": "Irvin Kershner",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2587,6 +3127,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:11401",
+      "tmdbPersonId": 11401,
+      "canonicalName": "John Woo",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:11435",
       "tmdbPersonId": 11435,
       "canonicalName": "Howard Hawks",
@@ -2641,6 +3196,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:11720",
+      "tmdbPersonId": 11720,
+      "canonicalName": "Jiří Menzel",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2718,6 +3288,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:12180",
+      "tmdbPersonId": 12180,
+      "canonicalName": "Mamoru Oshii",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2803,6 +3388,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:13265",
+      "tmdbPersonId": 13265,
+      "canonicalName": "Franklin J. Schaffner",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:13284",
       "tmdbPersonId": 13284,
       "canonicalName": "Stanley Donen",
@@ -2838,6 +3438,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:13776",
+      "tmdbPersonId": 13776,
+      "canonicalName": "John Frankenheimer",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -2917,6 +3532,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:14227",
+      "tmdbPersonId": 14227,
+      "canonicalName": "Jules Dassin",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:14353",
       "tmdbPersonId": 14353,
       "canonicalName": "Max Ophüls",
@@ -2957,6 +3587,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14520",
+      "tmdbPersonId": 14520,
+      "canonicalName": "John Sturges",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3015,6 +3660,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:14643",
+      "tmdbPersonId": 14643,
+      "canonicalName": "William A. Wellman",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3148,6 +3808,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:15217",
+      "tmdbPersonId": 15217,
+      "canonicalName": "Zack Snyder",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3549,6 +4224,36 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:20718",
+      "tmdbPersonId": 20718,
+      "canonicalName": "Claude Berri",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:21305",
+      "tmdbPersonId": 21305,
+      "canonicalName": "Lloyd Bacon",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:21678",
       "tmdbPersonId": 21678,
       "canonicalName": "Olivier Assayas",
@@ -3590,6 +4295,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:23442",
+      "tmdbPersonId": 23442,
+      "canonicalName": "Vladimir Menshov",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3655,6 +4375,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:25598",
+      "tmdbPersonId": 25598,
+      "canonicalName": "Paul Greengrass",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:25645",
       "tmdbPersonId": 25645,
       "canonicalName": "Hirokazu Kore-eda",
@@ -3714,6 +4449,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:27436",
+      "tmdbPersonId": 27436,
+      "canonicalName": "Costa-Gavras",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3899,6 +4649,66 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:31497",
+      "tmdbPersonId": 31497,
+      "canonicalName": "John Cromwell",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:31894",
+      "tmdbPersonId": 31894,
+      "canonicalName": "Ettore Scola",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:32375",
+      "tmdbPersonId": 32375,
+      "canonicalName": "Mario Monicelli",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:32427",
+      "tmdbPersonId": 32427,
+      "canonicalName": "W.S. Van Dyke",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:33166",
       "tmdbPersonId": 33166,
       "canonicalName": "René Clair",
@@ -3915,6 +4725,51 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:33727",
+      "tmdbPersonId": 33727,
+      "canonicalName": "Kaneto Shindō",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:34740",
+      "tmdbPersonId": 34740,
+      "canonicalName": "Edmund Goulding",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:35770",
+      "tmdbPersonId": 35770,
+      "canonicalName": "Yash Chopra",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -3937,6 +4792,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:37362",
+      "tmdbPersonId": 37362,
+      "canonicalName": "Henry King",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:37493",
       "tmdbPersonId": 37493,
       "canonicalName": "Luis García Berlanga",
@@ -3953,6 +4823,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:37630",
+      "tmdbPersonId": 37630,
+      "canonicalName": "Shekhar Kapur",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4191,6 +5076,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:49214",
+      "tmdbPersonId": 49214,
+      "canonicalName": "William Dieterle",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:53296",
       "tmdbPersonId": 53296,
       "canonicalName": "Joshua Oppenheimer",
@@ -4211,6 +5111,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:53334",
+      "tmdbPersonId": 53334,
+      "canonicalName": "Jim Sheridan",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:53914",
       "tmdbPersonId": 53914,
       "canonicalName": "Jean Eustache",
@@ -4227,6 +5142,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:55520",
+      "tmdbPersonId": 55520,
+      "canonicalName": "Nae Caranfil",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4408,6 +5338,36 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:66203",
+      "tmdbPersonId": 66203,
+      "canonicalName": "Moustapha Akkad",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:66633",
+      "tmdbPersonId": 66633,
+      "canonicalName": "Vince Gilligan",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:66728",
       "tmdbPersonId": 66728,
       "canonicalName": "Jonathan Glazer",
@@ -4535,6 +5495,36 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:70235",
+      "tmdbPersonId": 70235,
+      "canonicalName": "Marco Tullio Giordana",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:70579",
+      "tmdbPersonId": 70579,
+      "canonicalName": "Serdar Akar",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:70864",
       "tmdbPersonId": 70864,
       "canonicalName": "Robert Hamer",
@@ -4551,6 +5541,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:70877",
+      "tmdbPersonId": 70877,
+      "canonicalName": "Dušan Kovačević",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4595,6 +5600,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:72496",
+      "tmdbPersonId": 72496,
+      "canonicalName": "Yōji Yamada",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4656,6 +5676,81 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:76447",
+      "tmdbPersonId": 76447,
+      "canonicalName": "Shimit Amin",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:76813",
+      "tmdbPersonId": 76813,
+      "canonicalName": "Ram Gopal Varma",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:76978",
+      "tmdbPersonId": 76978,
+      "canonicalName": "Masaki Kobayashi",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:77301",
+      "tmdbPersonId": 77301,
+      "canonicalName": "Jiang Wen",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:77921",
+      "tmdbPersonId": 77921,
+      "canonicalName": "Hideaki Anno",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:78157",
       "tmdbPersonId": 78157,
       "canonicalName": "Lindsay Anderson",
@@ -4675,6 +5770,81 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:78747",
+      "tmdbPersonId": 78747,
+      "canonicalName": "Mani Ratnam",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:78751",
+      "tmdbPersonId": 78751,
+      "canonicalName": "Ashutosh Gowariker",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:78916",
+      "tmdbPersonId": 78916,
+      "canonicalName": "Farhan Akhtar",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:80702",
+      "tmdbPersonId": 80702,
+      "canonicalName": "Kenji Misumi",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:81273",
+      "tmdbPersonId": 81273,
+      "canonicalName": "Yasuzō Masumura",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:81749",
       "tmdbPersonId": 81749,
       "canonicalName": "Manoel de Oliveira",
@@ -4691,6 +5861,36 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:82413",
+      "tmdbPersonId": 82413,
+      "canonicalName": "Jack Conway",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:82796",
+      "tmdbPersonId": 82796,
+      "canonicalName": "Nikita Mikhalkov",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4737,6 +5937,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:84714",
+      "tmdbPersonId": 84714,
+      "canonicalName": "Juan José Campanella",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:85637",
       "tmdbPersonId": 85637,
       "canonicalName": "Béla Tarr",
@@ -4758,6 +5973,36 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:85670",
+      "tmdbPersonId": 85670,
+      "canonicalName": "Anurag Kashyap",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:85675",
+      "tmdbPersonId": 85675,
+      "canonicalName": "Rajkumar Hirani",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4796,6 +6041,51 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:87550",
+      "tmdbPersonId": 87550,
+      "canonicalName": "Vishal Bhardwaj",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:87772",
+      "tmdbPersonId": 87772,
+      "canonicalName": "Rajkumar Santoshi",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:88809",
+      "tmdbPersonId": 88809,
+      "canonicalName": "Hrishikesh Mukherjee",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4877,6 +6167,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:95040",
+      "tmdbPersonId": 95040,
+      "canonicalName": "Pietro Germi",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -4976,6 +6281,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:96801",
+      "tmdbPersonId": 96801,
+      "canonicalName": "Hiroshi Teshigahara",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:96813",
       "tmdbPersonId": 96813,
       "canonicalName": "Maya Deren",
@@ -5014,6 +6334,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:97278",
+      "tmdbPersonId": 97278,
+      "canonicalName": "Atıf Yılmaz",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:97755",
       "tmdbPersonId": 97755,
       "canonicalName": "Charles Burnett",
@@ -5030,6 +6365,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:98835",
+      "tmdbPersonId": 98835,
+      "canonicalName": "Georgiy Daneliya",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5130,6 +6480,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:107669",
+      "tmdbPersonId": 107669,
+      "canonicalName": "Eldar Ryazanov",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:107762",
       "tmdbPersonId": 107762,
       "canonicalName": "Aleksandr Sokurov",
@@ -5170,6 +6535,81 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:109083",
+      "tmdbPersonId": 109083,
+      "canonicalName": "Ertem Eğilmez",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:109445",
+      "tmdbPersonId": 109445,
+      "canonicalName": "Yavuz Turgul",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:110519",
+      "tmdbPersonId": 110519,
+      "canonicalName": "Yoshishige Yoshida",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:110695",
+      "tmdbPersonId": 110695,
+      "canonicalName": "Majid Majidi",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:110968",
+      "tmdbPersonId": 110968,
+      "canonicalName": "Dragan Bjelogrlić",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5214,6 +6654,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:120227",
+      "tmdbPersonId": 120227,
+      "canonicalName": "Dariush Mehrjui",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5273,6 +6728,21 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:122969",
+      "tmdbPersonId": 122969,
+      "canonicalName": "Edward Sedgwick",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5371,6 +6841,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:136495",
+      "tmdbPersonId": 136495,
+      "canonicalName": "Damien Chazelle",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:137427",
       "tmdbPersonId": 137427,
       "canonicalName": "Denis Villeneuve",
@@ -5411,6 +6896,21 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:138781",
+      "tmdbPersonId": 138781,
+      "canonicalName": "Robert Eggers",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:141713",
       "tmdbPersonId": 141713,
       "canonicalName": "Oleksandr Dovzhenko",
@@ -5446,6 +6946,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:142857",
+      "tmdbPersonId": 142857,
+      "canonicalName": "Çağan Irmak",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5525,6 +7040,36 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:145518",
+      "tmdbPersonId": 145518,
+      "canonicalName": "Zeki Demirkubuz",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:148895",
+      "tmdbPersonId": 148895,
+      "canonicalName": "Nesli Çölgeçen",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:150512",
       "tmdbPersonId": 150512,
       "canonicalName": "Miguel Gomes",
@@ -5566,6 +7111,21 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:213379",
+      "tmdbPersonId": 213379,
+      "canonicalName": "Srđan Dragojević",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5644,6 +7204,36 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:253085",
+      "tmdbPersonId": 253085,
+      "canonicalName": "Goran Marković",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:253414",
+      "tmdbPersonId": 253414,
+      "canonicalName": "Slobodan Šijan",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5752,6 +7342,51 @@
       "ownerNote": ""
     },
     {
+      "stableKey": "person:550227",
+      "tmdbPersonId": 550227,
+      "canonicalName": "Orhan Aksoy",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:551463",
+      "tmdbPersonId": 551463,
+      "canonicalName": "Mike Flanagan",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:556839",
+      "tmdbPersonId": 556839,
+      "canonicalName": "Zeki Ökten",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
       "stableKey": "person:557134",
       "tmdbPersonId": 557134,
       "canonicalName": "Ousmane Sembène",
@@ -5807,6 +7442,51 @@
       "recommendedAction": "manual-selection-review",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:590243",
+      "tmdbPersonId": 590243,
+      "canonicalName": "Božidar 'Bota' Nikolić",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:591600",
+      "tmdbPersonId": 591600,
+      "canonicalName": "Damián Szifron",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:592762",
+      "tmdbPersonId": 592762,
+      "canonicalName": "Lucian Pintilie",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -5904,6 +7584,21 @@
       "recommendedAction": "include-initial",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1009298",
+      "tmdbPersonId": 1009298,
+      "canonicalName": "Goran Paskaljević",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {
@@ -6007,6 +7702,81 @@
       "recommendedAction": "include-later",
       "selectionStatus": "proposed",
       "ownerDecision": null,
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1145520",
+      "tmdbPersonId": 1145520,
+      "canonicalName": "Ari Aster",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1190421",
+      "tmdbPersonId": 1190421,
+      "canonicalName": "Leonid Gaidai",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1252934",
+      "tmdbPersonId": 1252934,
+      "canonicalName": "Emerald Fennell",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1317730",
+      "tmdbPersonId": 1317730,
+      "canonicalName": "Daniel Scheinert",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
+      "ownerNote": ""
+    },
+    {
+      "stableKey": "person:1331163",
+      "tmdbPersonId": 1331163,
+      "canonicalName": "Sam Esmail",
+      "category": "director",
+      "rolloutTier": "initial",
+      "selectionBasis": [
+        "owner-approved-v3"
+      ],
+      "sourceRanks": {},
+      "recommendedAction": "include-initial",
+      "selectionStatus": "owner-decided",
+      "ownerDecision": "include",
       "ownerNote": ""
     },
     {

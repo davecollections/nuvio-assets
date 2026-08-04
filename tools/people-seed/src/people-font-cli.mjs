@@ -19,8 +19,18 @@ async function main() {
   }
   if (command !== "verify") throw new Error("Use people-font-cli.mjs verify|acquire [--font-dir <ignored-cache-dir>].");
   const runtime = loadPeopleArtworkRuntime();
-  const result = await verifyFont({ Canvas: runtime.Canvas, FontLibrary: runtime.FontLibrary, names: ["Céline Sciamma", "Max Ophüls", "Djibril Diop Mambéty", "F. W. Murnau"], fontDirectory: fontDirectory ? path.resolve(fontDirectory) : null });
-  process.stdout.write(`${JSON.stringify({ ...result, fontPath: result.fontPath.replaceAll("\\", "/"), licencePath: result.licencePath.replaceAll("\\", "/") }, null, 2)}\n`);
+  const result = await verifyFont({
+    Canvas: runtime.Canvas,
+    FontLibrary: runtime.FontLibrary,
+    names: ["Céline Sciamma", "Max Ophüls", "Djibril Diop Mambéty", "F. W. Murnau", "COLLECTION"],
+    requiredWeights: [500, 700],
+    fontDirectory: fontDirectory ? path.resolve(fontDirectory) : null,
+  });
+  process.stdout.write(`${JSON.stringify({
+    ...result,
+    fontPath: result.fontPath.replaceAll("\\", "/"),
+    licencePath: result.licencePath.replaceAll("\\", "/"),
+  }, null, 2)}\n`);
 }
 
 main().catch((error) => {

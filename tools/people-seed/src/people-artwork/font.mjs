@@ -64,7 +64,7 @@ export async function discoverFontCache({ fontDirectory = null } = {}) {
   throw new Error(`Approved Cormorant Garamond cache is unavailable. Run npm --prefix tools/people-seed run acquire-people-font -- --font-dir <ignored-cache-dir>. Checked:\n${candidates.map((item) => `- ${item}`).join("\n")}`);
 }
 
-export async function verifyFont({ Canvas, FontLibrary, names = [], fontDirectory = null } = {}) {
+export async function verifyFont({ Canvas, FontLibrary, names = [], requiredWeights = null, fontDirectory = null } = {}) {
   const lock = await readFontLock();
   const cache = await discoverFontCache({ fontDirectory });
   const [fontBuffer, licenceBuffer] = await Promise.all([fs.readFile(cache.fontPath), fs.readFile(cache.licencePath)]);
@@ -74,21 +74,22 @@ export async function verifyFont({ Canvas, FontLibrary, names = [], fontDirector
   if (licenceHash !== lock.licenceSha256) throw new Error(`Cormorant licence hash mismatch: ${licenceHash}`);
   const variation = parseFvar(fontBuffer);
   const weightAxis = variation.axes.find((axis) => axis.tag === lock.weightAxis.tag);
-  if (!weightAxis || weightAxis.minimum > lock.weight || weightAxis.maximum < lock.weight) {
-    throw new Error("Cormorant Garamond genuine weight 700 is unavailable.");
-  }
+  const weights = [...new Set(requiredWeights || [lock.weight])].sort((left, right) => left - right);
+  if (!weightAxis || weights.some((weight) => weightAxis.minimum > weight || weightAxis.maximum < weight)) throw new Error(`Cormorant Garamond required weights are unavailable: ${weights.join(", ")}.`);
   FontLibrary.reset();
   const loaded = FontLibrary.use(lock.registrationAlias, cache.fontPath);
   if (!FontLibrary.has(lock.registrationAlias)) throw new Error("Exact cached Cormorant font registration failed.");
   const glyphCoverage = [];
-  for (const text of [...new Set(names)].sort((left, right) => left.localeCompare(right))) {
-    const canvas = new Canvas(3200, 300);
-    const context = canvas.getContext("2d");
-    context.font = `${lock.weight} 96px "${lock.registrationAlias}"`;
-    const families = runFamilies(context.measureText(text));
-    const covered = families.length > 0 && families.every((family) => family === lock.family);
-    if (!covered) throw new Error(`Required glyph fallback detected for ${text}: ${families.join(", ")}`);
-    glyphCoverage.push({ text, families, covered });
+  for (const weight of weights) {
+    for (const text of [...new Set(names)].sort((left, right) => left.localeCompare(right))) {
+      const canvas = new Canvas(3200, 300);
+      const context = canvas.getContext("2d");
+      context.font = `${weight} 96px "${lock.registrationAlias}"`;
+      const families = runFamilies(context.measureText(text));
+      const covered = families.length > 0 && families.every((family) => family === lock.family);
+      if (!covered) throw new Error(`Required glyph fallback detected for ${text} at weight ${weight}: ${families.join(", ")}`);
+      glyphCoverage.push({ text, weight, families, covered });
+    }
   }
   return {
     valid: true,
@@ -96,8 +97,13 @@ export async function verifyFont({ Canvas, FontLibrary, names = [], fontDirector
     registrationAlias: lock.registrationAlias,
     weight: lock.weight,
     genuineWeight700: true,
+    verifiedWeights: weights,
     fontHash,
+    licence: lock.licence,
     licenceHash,
+    fontSourceRevision: lock.fontSourceRevision,
+    fontSourceUrl: lock.fontSourceUrl,
+    licenceSourceUrl: lock.licenceSourceUrl,
     variation,
     glyphCoverage,
     fontPath: cache.fontPath,

@@ -4,9 +4,9 @@ The people publication workflow is offline and explicitly bounded. It validates 
 
 ## Current publication
 
-The published scope contains all 817 registry identities. It includes the complete 523-person actor catalogue and approved 300-person director catalogue across their initial, later, and review tiers. Each identity has one 1200 × 675 landscape WebP and one 1000 × 1500 poster WebP, for 1,634 files total and zero fallbacks.
+The published scope is the frozen pre-v3 snapshot of 817 of the current 1,480 registry identities. It records the earlier 523-person Actor and 300-person Director catalogue state across their initial, later, and review tiers. Each published identity has one 1200 × 675 landscape WebP and one 1000 × 1500 poster WebP, for 1,634 files total and zero fallbacks.
 
-All approved actor and director memberships are represented in the public collection. Actor/director overlap remains category-neutral, so a shared identity has one landscape and one poster rather than category-specific duplicates.
+The manifest intentionally excludes the 663 net-new People v3 identities. It also retains Director-only membership metadata for already illustrated Greta Gerwig (45400) and Erich von Stroheim (8630); their newly approved Actor memberships exist only in the tracked catalogue until a later atomic publication. Actor/director overlap remains category-neutral, so a shared identity has one landscape and one poster rather than category-specific duplicates.
 
 Published paths are:
 
@@ -18,11 +18,28 @@ assets/collection_covers/people/manifest.json
 
 Actor and director memberships reuse the same category-neutral person identity. Already-published overlaps, including later-tier actors who also have director memberships, do not receive category-specific duplicate artwork.
 
+The tracked v3 preparation system does not change this publication. It produces exact readiness evidence, a bounded ignored portrait/title-logo proof, and non-authorising continuation plans. The complete 663 new portrait pairs, 1,480 title logos, category refreshes, and public manifest/runtime changes remain blocked on owner visual approval and a later explicit atomic-publication instruction.
+
+Owner review provisionally approved the 663 Poster candidates and all 1,480 production title logos, while rejecting the first complete 663-Landscape candidate set for repeated lower-face cutoff. The Landscape correction workflow preserves that rejected set as before evidence, gives all existing exact-ID crop decisions precedence, then applies the approved `tier-1-slight` geometry as the net-new default. It writes only to `landscape-correction/chin-safe-v1` beneath the ignored full-generation workspace and generates complete all-v3, before/after, chin-zone, and residual-risk review packages. This staging decision does not authorise permanent publication.
+
 ## Manifest contract
 
 `schemas/people-artwork-manifest.schema.json` validates candidate, commit-ready, and published manifests. The published manifest retains identity, category membership, source decisions, source paths, source hashes and dimensions, asset paths, final raw URLs, asset hashes and byte counts, renderer metadata, preset bindings, font bindings, deterministic ordering, and TMDB attribution.
 
 Published records omit internal workflow fields. `publishedAt` is the only timestamp excluded from the published manifest fingerprint; the fingerprint itself is also excluded. Replaying finalization with the same source manifest and fixed timestamp must reproduce identical records, ordering, URLs, counts, and fingerprint.
+
+## Additive presentation contract
+
+Poster and Landscape resolution remains in runtime schemaVersion 2. The prepared `schemas/people-presentation-manifest.schema.json` is a separate additive contract for future transparent title logos and the existing shared People hero. It records the hero once at manifest level and binds each exact Person identity to title-logo dimensions, hashes, bytes, review status, and distribution status. Existing runtime consumers can ignore it safely.
+
+The future public paths are:
+
+```text
+assets/collection_covers/people/title-logo/{tmdbPersonId}.png
+assets/collection_covers/people/presentation-manifest.json
+```
+
+They are not currently published. Proof candidates and generated review media must remain under `tools/people-seed/.work/people-v3-artwork-proof/attempt-*/`.
 
 ## Bounded offline workflow
 
@@ -41,6 +58,8 @@ npm --prefix tools/people-seed run artwork:font-check
 ```
 
 Commit and push are always separate manual operations outside the publication tooling. Future publication must remain an explicit bounded selection.
+
+The production title-logo design is locked to the exact 60 px clear gap approved from the Björk, Greta Gerwig, Chloë Grace Moretz, and Priyanka Chopra Jonas proof. The exact locked Cormorant Garamond variable-font file supplies the 700-weight Person name and 500-weight, 54 px, 6 px-tracked fixed word `COLLECTION`. COLLECTION placement is derived from the visible rendered Person-name bottom, not a fixed canvas Y coordinate. The retired 70/80 px and Limelight proofs remain ignored historical evidence only. The representative portrait proof renders each approved source independently to Poster and Landscape in two complete runs. Restart-safe proof retries preserve earlier evidence rather than deleting or overwriting it. Candidate generation and planning cannot publish.
 
 ## Attribution, licensing, and asset requests
 

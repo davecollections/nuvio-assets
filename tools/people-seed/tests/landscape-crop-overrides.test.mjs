@@ -7,11 +7,20 @@ import { fileURLToPath } from "node:url";
 
 import {
   LandscapeCropOverrideSourceMismatchError,
+  loadLandscapeChinSafeOverrides,
   loadLandscapeCropOverrides,
   resolveLandscapeCropOverride,
+  validateLandscapeChinSafeOverrides,
   validateLandscapeCropOverrides,
 } from "../src/people-artwork/landscape-crop-overrides.mjs";
-import { cropFor, loadPeopleArtworkPresets } from "../src/people-artwork/renderer.mjs";
+import {
+  PEOPLE_LANDSCAPE_DEFAULT_CROP_POLICY_HASH,
+  PEOPLE_LANDSCAPE_DEFAULT_CROP_POLICY_ID,
+  PEOPLE_LANDSCAPE_TIER_1_SLIGHT,
+  resolvePeopleLandscapeDefaultCrop,
+} from "../src/people-artwork/landscape-default-crop.mjs";
+import { cropFor, loadPeopleArtworkPresets, resolveLandscapeCropTreatment } from "../src/people-artwork/renderer.mjs";
+import { classifyLandscapeResidualRisk } from "../src/people-v3-landscape-rerender.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "..", "..");
@@ -28,8 +37,9 @@ const REVIEW_ACTOR_EVIDENCE_PACKAGE = "tools/people-seed/.work/people-review-act
 const REVIEW_ACTOR_OVERRIDE_IDS = [7399, 18072, 25541, 51576, 112561, 1190668, 1373737];
 const REVIEW_ACTOR_OVERRIDE_RECORDS_HASH = "86372d8f4f0e0a1ebd0e008fe538c799781c4f7939d0a53de82eab5f6de64757";
 const ORIGINAL_147_OVERRIDE_RECORDS_HASH = "f7a3653a55f52b33401c866c68039fbbb012faca5604f3b4e700378a4c506619";
+const CHIN_SAFE_PROOF_IDS = [32, 47, 63, 65, 655, 1164, 3829, 21041, 56734, 60561, 70131, 77234, 121529];
 
-test("tracked landscape crop overrides validate as exactly 154 unique active identities", async () => {
+test("tracked landscape crop overrides preserve the original 154 and load the approved 13 as an active supplement", async () => {
   const [document, schema, registry] = await Promise.all([
     readJson(path.join(repoRoot, "data", "people", "landscape-crop-overrides.json")),
     readJson(path.join(repoRoot, "schemas", "landscape-crop-overrides.schema.json")),
@@ -40,6 +50,12 @@ test("tracked landscape crop overrides validate as exactly 154 unique active ide
   assert.equal(new Set(document.records.map((record) => record.stableKey)).size, 154);
   assert.equal(new Set(document.records.map((record) => record.tmdbPersonId)).size, 154);
   assert.ok(document.records.every((record) => record.format === "landscape" && record.status === "active"));
+  const active = await loadLandscapeCropOverrides({ repoRoot, registry });
+  assert.equal(active.config.recordCount, 167);
+  assert.equal(active.config.baseRecordCount, 154);
+  assert.equal(active.config.chinSafeRecordCount, 13);
+  assert.equal(new Set(active.config.records.map((record) => record.stableKey)).size, 167);
+  assert.ok(active.config.records.every((record) => record.format === "landscape" && record.status === "active"));
 });
 
 test("the original 51 source-bound override records remain value-for-value unchanged", async () => {
@@ -61,14 +77,14 @@ test("the 78 later-actor Alternative A records remain landscape-only and exactly
 
 test("all 129 pre-director override records remain value-for-value unchanged", async () => {
   const { config } = await loadLandscapeCropOverrides({ repoRoot });
-  const records = config.records.filter((record) => record.evidencePackage !== DIRECTOR_EVIDENCE_PACKAGE && record.evidencePackage !== REVIEW_ACTOR_EVIDENCE_PACKAGE);
+  const records = config.records.filter((record) => record.createdFromAuditVersion === "people-landscape-crop-audit-v1" && record.evidencePackage !== DIRECTOR_EVIDENCE_PACKAGE && record.evidencePackage !== REVIEW_ACTOR_EVIDENCE_PACKAGE);
   assert.equal(records.length, 129);
   assert.equal(crypto.createHash("sha256").update(JSON.stringify(records)).digest("hex"), PRE_DIRECTOR_OVERRIDE_RECORDS_HASH);
 });
 
 test("all original 147 crop override records remain serialized value-for-value unchanged", async () => {
   const { config } = await loadLandscapeCropOverrides({ repoRoot });
-  const records = config.records.filter((record) => record.evidencePackage !== REVIEW_ACTOR_EVIDENCE_PACKAGE);
+  const records = config.records.filter((record) => record.createdFromAuditVersion === "people-landscape-crop-audit-v1" && record.evidencePackage !== REVIEW_ACTOR_EVIDENCE_PACKAGE);
   assert.equal(records.length, 147);
   assert.equal(crypto.createHash("sha256").update(JSON.stringify(records)).digest("hex"), ORIGINAL_147_OVERRIDE_RECORDS_HASH);
 });
@@ -97,9 +113,11 @@ test("the 18 approved director Alternative A records remain exact and source-bou
   assert.ok(records.every((record) => record.reason === "avoid-unintended-face-crop" && record.createdFromAuditVersion === "people-landscape-crop-audit-v1"));
 });
 
-test("all 154 Alternative A proof bindings retain the approved 594x675 target geometry", async () => {
+test("all original 154 Alternative A proof bindings retain the approved 594x675 target geometry", async () => {
   const { config } = await loadLandscapeCropOverrides({ repoRoot });
-  for (const record of config.records) {
+  const originalRecords = config.records.filter((record) => record.createdFromAuditVersion === "people-landscape-crop-audit-v1");
+  assert.equal(originalRecords.length, 154);
+  for (const record of originalRecords) {
     assert.match(record.approvedProofHash, /^[a-f0-9]{64}$/u);
     assert.match(record.sourceHash, /^[a-f0-9]{64}$/u);
     assert.equal(Math.round(record.cropRectangle.width * record.cropScale.x), 594, record.stableKey);
@@ -107,6 +125,38 @@ test("all 154 Alternative A proof bindings retain the approved 594x675 target ge
     assert.equal(record.cropOffsetX, 504, record.stableKey);
     assert.equal(record.cropOffsetY, 0, record.stableKey);
   }
+});
+
+test("the 13 Landscape chin-safe corrections are exact, source-bound active decisions", async () => {
+  const [registry, schema, configuration, production] = await Promise.all([
+    readJson(path.join(repoRoot, "data", "people", "people-registry.json")),
+    readJson(path.join(repoRoot, "schemas", "people-landscape-chin-safe-overrides.schema.json")),
+    loadLandscapeChinSafeOverrides({ repoRoot }),
+    loadLandscapeCropOverrides({ repoRoot }),
+  ]);
+  assert.deepEqual(validateLandscapeChinSafeOverrides(configuration.config, schema, { registry }), []);
+  assert.deepEqual(configuration.config.records.map((record) => record.tmdbPersonId), CHIN_SAFE_PROOF_IDS);
+  assert.deepEqual(configuration.config.records.filter((record) => record.prototypeTier === "tier-1-slight").map((record) => record.tmdbPersonId), [63, 56734, 60561, 70131]);
+  assert.equal(configuration.config.records.filter((record) => record.prototypeTier === "tier-2-moderate").length, 9);
+  assert.ok(configuration.config.records.every((record) => record.format === "landscape" && record.status === "active"));
+  assert.ok(configuration.config.records.every((record) => /^[a-f0-9]{64}$/u.test(record.sourceHash) && /^[a-f0-9]{64}$/u.test(record.approvedProofHash)));
+  assert.ok(configuration.config.records.every((record) => record.cropOffsetX + Math.round(record.cropRectangle.width * record.cropScale.x) === 1098));
+  assert.ok(CHIN_SAFE_PROOF_IDS.every((id) => production.byStableKey.has(`person:${id}`)), "Approved chin-safe corrections must enter the active full-generation resolver.");
+});
+
+test("chin-safe overrides apply only to the exact reviewed Landscape source", async () => {
+  const configuration = await loadLandscapeChinSafeOverrides({ repoRoot });
+  const record = configuration.config.records[0];
+  const person = { stableKey: record.stableKey, tmdbPersonId: record.tmdbPersonId, canonicalName: record.canonicalName };
+  const source = { available: true, sourceHash: record.sourceHash, profilePathAttempted: record.sourceProfilePath };
+  const landscape = resolveLandscapeCropOverride({ person, source, formatId: "landscape", overrideConfiguration: configuration });
+  assert.equal(landscape.used, true);
+  assert.equal(landscape.status, "active-source-match");
+  assert.deepEqual(resolveLandscapeCropOverride({ person, source, formatId: "poster", overrideConfiguration: configuration }), { used: false, status: "not-applicable-format" });
+  assert.throws(
+    () => resolveLandscapeCropOverride({ person, source: { ...source, sourceHash: "0".repeat(64) }, formatId: "landscape", overrideConfiguration: configuration }),
+    (error) => error instanceof LandscapeCropOverrideSourceMismatchError && error.code === "crop-override-source-mismatch",
+  );
 });
 
 test("override configuration hashing is deterministic over exact tracked bytes", async () => {
@@ -155,6 +205,65 @@ test("default crop behaviour and the global landscape preset remain unchanged", 
     orientedSourceHeight: 1187,
     retainedAreaFraction: 0.6816,
   });
+});
+
+test("the net-new Landscape default reuses the approved tier-1-slight geometry", async () => {
+  const presets = await loadPeopleArtworkPresets();
+  const person = { stableKey: "person:999999", tmdbPersonId: 999999, canonicalName: "Candidate Person" };
+  const source = { available: true, width: 800, height: 1200, exifOrientation: 1, sourceHash: "1".repeat(64), profilePathAttempted: "/candidate.jpg" };
+  const treatment = resolvePeopleLandscapeDefaultCrop({ person, source, formatId: "landscape", presetRecord: presets.portrait.landscape });
+  assert.equal(treatment.used, true);
+  assert.equal(treatment.status, "active-tier-1-slight");
+  assert.equal(treatment.policyId, PEOPLE_LANDSCAPE_DEFAULT_CROP_POLICY_ID);
+  assert.equal(treatment.policyHash, PEOPLE_LANDSCAPE_DEFAULT_CROP_POLICY_HASH);
+  assert.deepEqual(PEOPLE_LANDSCAPE_TIER_1_SLIGHT, { id: "tier-1-slight", targetWidth: 594, targetHeight: 675, targetRight: 1098, targetTop: 0 });
+  assert.deepEqual(treatment.record.cropRectangle, { left: 0, top: 0, width: 800, height: 909 });
+  assert.equal(Math.round(treatment.record.cropRectangle.width * treatment.record.cropScale.x), 594);
+  assert.equal(Math.round(treatment.record.cropRectangle.height * treatment.record.cropScale.y), 675);
+  assert.equal(treatment.record.cropOffsetX, 504);
+  assert.equal(treatment.record.cropOffsetY, 0);
+});
+
+test("source-bound maximum retains the full available vertical source area", async () => {
+  const presets = await loadPeopleArtworkPresets();
+  const person = { stableKey: "person:999998", tmdbPersonId: 999998, canonicalName: "Wide Candidate" };
+  const source = { available: true, width: 1000, height: 1000, exifOrientation: 1, sourceHash: "2".repeat(64), profilePathAttempted: "/wide.jpg" };
+  const treatment = resolvePeopleLandscapeDefaultCrop({ person, source, formatId: "landscape", presetRecord: presets.portrait.landscape });
+  assert.equal(treatment.status, "source-bound-maximum");
+  assert.equal(treatment.sourceBoundLimited, true);
+  assert.deepEqual(treatment.record.cropRectangle, { left: 60, top: 0, width: 880, height: 1000 });
+  assert.equal(Math.round(treatment.record.cropRectangle.width * treatment.record.cropScale.x), 594);
+  assert.equal(Math.round(treatment.record.cropRectangle.height * treatment.record.cropScale.y), 675);
+});
+
+test("exact-ID crop decisions retain precedence over the net-new default", async () => {
+  const [configuration, presets] = await Promise.all([loadLandscapeCropOverrides({ repoRoot }), loadPeopleArtworkPresets()]);
+  const record = configuration.config.records[0];
+  const person = { stableKey: record.stableKey, tmdbPersonId: record.tmdbPersonId, canonicalName: record.canonicalName };
+  const source = { available: true, width: record.cropRectangle.width, height: record.cropRectangle.height + 100, sourceHash: record.sourceHash, profilePathAttempted: record.sourceProfilePath };
+  const treatment = resolveLandscapeCropTreatment({ person, source, formatId: "landscape", overrideConfiguration: configuration, defaultPolicyId: PEOPLE_LANDSCAPE_DEFAULT_CROP_POLICY_ID, presetRecord: presets.portrait.landscape });
+  assert.equal(treatment.treatmentKind, "exact-override");
+  assert.equal(treatment.configHash, "cb0453de2ea1213577b2b3d4bcc177696d65264bbafd31a9bf96620a13e2177a");
+  assert.equal(treatment.record, record);
+});
+
+test("residual-risk classification evaluates geometry and source quality rather than override presence", () => {
+  const safe = {
+    fallbackUsed: false,
+    sourceWidth: 800,
+    sourceHeight: 1200,
+    upscaleFactor: 0.75,
+    cropRetainedAreaFraction: 0.76,
+    cropRectangle: { left: 0, top: 0, width: 800, height: 909 },
+    portraitBounds: { x: 504, y: 0, width: 594, height: 675 },
+    landscapeDefaultCropStatus: "active-tier-1-slight",
+  };
+  const before = { cropRectangle: { left: 0, top: 0, width: 800, height: 818 } };
+  assert.deepEqual(classifyLandscapeResidualRisk(safe, before), []);
+  const risky = { ...safe, sourceWidth: 400, sourceHeight: 600, upscaleFactor: 2.4, cropRetainedAreaFraction: 0.6, landscapeDefaultCropStatus: "source-bound-maximum" };
+  assert.deepEqual(classifyLandscapeResidualRisk(risky, before), ["source-bounds-limited-tier-1", "low-resolution-source", "major-upscale-over-2x", "especially-tight-source-crop"]);
+  const exact = { ...safe, landscapeDefaultCropStatus: undefined, cropOverrideUsed: true };
+  assert.deepEqual(classifyLandscapeResidualRisk(exact, before), [], "an exact override alone must not be classified as high risk");
 });
 
 test("renderer policy contains no alternate discovery, generative processing, or mirroring", async () => {

@@ -280,10 +280,17 @@ export function mergeActorSupplementFoundation({ registry, actors, directors, so
   const baseRegistryRecords = registry.records.filter((record) => !supplementIds.has(record.tmdbPersonId));
   const baseActorRecords = actors.records.filter((record) => !supplementIds.has(record.tmdbPersonId));
   const baseSources = sources.sources.filter((source) => !supplementSourceIds.has(source.sourceId));
-  assert(baseRegistryRecords.length === 619, `Promotion base registry must contain 619 identities, found ${baseRegistryRecords.length}.`);
-  assert(baseActorRecords.length === 325, `Promotion base actor seed must contain 325 memberships, found ${baseActorRecords.length}.`);
-  assert(directors.records.length === 300, `Director seed must remain 300 memberships, found ${directors.records.length}.`);
-  assert(baseSources.length === 6, `Promotion base source registry must contain six records, found ${baseSources.length}.`);
+  const supportedBases = [
+    { registry: 619, actors: 325, directors: 300, sources: 6 },
+    { registry: 1282, actors: 873, directors: 418, sources: 8 },
+  ];
+  const baseShape = {
+    registry: baseRegistryRecords.length,
+    actors: baseActorRecords.length,
+    directors: directors.records.length,
+    sources: baseSources.length,
+  };
+  assert(supportedBases.some((candidate) => sameJson(candidate, baseShape)), `Unsupported historical Actor supplement base shape ${JSON.stringify(baseShape)}.`);
   const baseRegistryIds = new Set(baseRegistryRecords.map((record) => record.tmdbPersonId));
   const baseActorIds = new Set(baseActorRecords.map((record) => record.tmdbPersonId));
   assert(supplement.records.every((record) => !baseRegistryIds.has(record.tmdbPersonId)), "Supplement overlaps the original people registry.");
@@ -321,11 +328,13 @@ export function mergeActorSupplementFoundation({ registry, actors, directors, so
   const registryRecords = [...baseRegistryRecords, ...registryAdditions].sort((left, right) => left.tmdbPersonId - right.tmdbPersonId);
   const actorRecords = [...baseActorRecords, ...actorAdditions].sort((left, right) => left.tmdbPersonId - right.tmdbPersonId);
   const sourceRecords = [...baseSources, ...supplement.sources].sort((left, right) => left.sourceId.localeCompare(right.sourceId));
+  const generatedAt = [registry.generatedAt, actors.generatedAt, directors.generatedAt, sources.generatedAt, supplement.promotedAt]
+    .reduce((latest, candidate) => Date.parse(candidate) > Date.parse(latest) ? candidate : latest);
 
   return {
     registry: {
       ...registry,
-      generatedAt: supplement.promotedAt,
+      generatedAt,
       recordCount: registryRecords.length,
       sourceMembershipCount: registryRecords.reduce((sum, record) => sum + record.sourceMemberships.length, 0),
       sourceMembershipFingerprint: fingerprint(registryRecords),
@@ -333,18 +342,18 @@ export function mergeActorSupplementFoundation({ registry, actors, directors, so
     },
     actors: {
       ...actors,
-      generatedAt: supplement.promotedAt,
+      generatedAt,
       recordCount: actorRecords.length,
       records: actorRecords,
     },
     directors: {
       ...directors,
-      generatedAt: supplement.promotedAt,
+      generatedAt,
       records: directors.records,
     },
     sources: {
       ...sources,
-      generatedAt: supplement.promotedAt,
+      generatedAt,
       sourceCount: sourceRecords.length,
       sources: sourceRecords,
     },

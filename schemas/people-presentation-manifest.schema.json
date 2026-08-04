@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/people-presentation-manifest.schema.json",
+  "title": "Nuvio People additive presentation manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "status",
+    "schemaPath",
+    "generatedAt",
+    "ordering",
+    "recordCount",
+    "titleLogoCount",
+    "sharedHero",
+    "titleLogoDesignId",
+    "permanentSelection",
+    "rendererVersion",
+    "titleLogoPreset",
+    "fontEvidence",
+    "collectionFontEvidence",
+    "fingerprintExcludes",
+    "manifestFingerprint",
+    "records"
+  ],
+  "properties": {
+    "version": { "const": "people-presentation-manifest-v1" },
+    "status": { "enum": ["proof-candidate", "publication-candidate", "published"] },
+    "schemaPath": { "const": "schemas/people-presentation-manifest.schema.json" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "publishedAt": { "type": "string", "format": "date-time" },
+    "ordering": { "const": "tmdb-person-id-ascending" },
+    "recordCount": { "type": "integer", "minimum": 1 },
+    "titleLogoCount": { "type": "integer", "minimum": 1 },
+    "sharedHero": { "$ref": "#/$defs/sharedHero" },
+    "titleLogoDesignId": { "const": "cormorant-60" },
+    "permanentSelection": { "const": true },
+    "rendererVersion": { "type": "string", "pattern": "^people-title-logo-renderer-v[1-9][0-9]*$" },
+    "titleLogoPreset": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "sha256", "width", "height"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^people-title-logo-[a-z0-9-]+-v[1-9][0-9]*$" },
+        "sha256": { "$ref": "#/$defs/hash" },
+        "width": { "const": 1863 },
+        "height": { "const": 673 }
+      }
+    },
+    "fontEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "weight", "fontSha256", "fontLockSha256", "licenceSha256"],
+      "properties": {
+        "family": { "const": "Cormorant Garamond" },
+        "weight": { "const": 700 },
+        "fontSha256": { "$ref": "#/$defs/hash" },
+        "fontLockSha256": { "$ref": "#/$defs/hash" },
+        "licenceSha256": { "$ref": "#/$defs/hash" }
+      }
+    },
+    "collectionFontEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["family", "weight", "fontSha256", "fontLockSha256", "licence", "licenceSha256", "sourceRevision", "usage", "sameFileAsNameFont"],
+      "properties": {
+        "family": { "const": "Cormorant Garamond" },
+        "weight": { "const": 500 },
+        "fontSha256": { "$ref": "#/$defs/hash" },
+        "fontLockSha256": { "$ref": "#/$defs/hash" },
+        "licence": { "const": "OFL-1.1" },
+        "licenceSha256": { "$ref": "#/$defs/hash" },
+        "sourceRevision": { "type": "string", "pattern": "^[a-f0-9]{40}$" },
+        "usage": { "const": "COLLECTION only" },
+        "sameFileAsNameFont": { "const": true }
+      }
+    },
+    "fingerprintExcludes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "enum": ["generatedAt", "publishedAt", "manifestFingerprint"] },
+      "uniqueItems": true
+    },
+    "manifestFingerprint": { "$ref": "#/$defs/hash" },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "dimensions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["width", "height"],
+      "properties": {
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "sharedHero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repositoryPath", "heroBackdropUrl", "sha256", "dimensions", "byteCount"],
+      "properties": {
+        "repositoryPath": { "const": "assets/collection_covers/people/people hero backdrop.jpg" },
+        "heroBackdropUrl": { "const": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/people/people%20hero%20backdrop.jpg" },
+        "sha256": { "$ref": "#/$defs/hash" },
+        "dimensions": { "$ref": "#/$defs/dimensions" },
+        "byteCount": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableKey",
+        "tmdbPersonId",
+        "canonicalName",
+        "categories",
+        "titleLogoPath",
+        "titleLogoUrl",
+        "titleLogoSha256",
+        "dimensions",
+        "byteCount",
+        "ownerReviewStatus",
+        "distributionStatus"
+      ],
+      "properties": {
+        "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+        "tmdbPersonId": { "type": "integer", "minimum": 1 },
+        "canonicalName": { "type": "string", "minLength": 1 },
+        "categories": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 2,
+          "items": { "enum": ["actor", "director"] },
+          "uniqueItems": true
+        },
+        "titleLogoPath": { "type": "string", "pattern": "^assets/collection_covers/people/title-logo/[1-9][0-9]*\\.png$" },
+        "titleLogoUrl": { "type": "string", "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/people/title-logo/[1-9][0-9]*\\.png$" },
+        "titleLogoSha256": { "$ref": "#/$defs/hash" },
+        "dimensions": { "$ref": "#/$defs/dimensions" },
+        "byteCount": { "type": "integer", "minimum": 1 },
+        "ownerReviewStatus": { "enum": ["pending", "approved", "revision-required"] },
+        "distributionStatus": { "enum": ["proof-only", "publication-candidate", "published"] }
+      }
+    }
+  }
+}

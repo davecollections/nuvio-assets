@@ -39,6 +39,17 @@ export async function validateRenderMetadata(metadata) {
     } else if (overrideFields.some((field) => Object.hasOwn(record, field))) {
       errors.push(`${record.stableKey}/${record.formatId}: crop override fields are present without cropOverrideUsed`);
     }
+    const defaultCropFields = ["landscapeDefaultCropPolicyId", "landscapeDefaultCropPolicyHash", "landscapeDefaultCropStatus", "landscapeDefaultCropTier", "landscapeDefaultCropSourceHash", "landscapeDefaultCropSourceBoundLimited"];
+    const hasDefaultCrop = defaultCropFields.some((field) => Object.hasOwn(record, field));
+    if (hasDefaultCrop) {
+      for (const field of defaultCropFields) if (!Object.hasOwn(record, field)) errors.push(`${record.stableKey}/${record.formatId}: ${field} is required when the default Landscape crop policy is recorded`);
+      if (record.formatId !== "landscape") errors.push(`${record.stableKey}/${record.formatId}: default Landscape crop policy appears on a non-landscape record`);
+      if (record.cropOverrideUsed === true) errors.push(`${record.stableKey}/${record.formatId}: exact override and default Landscape crop policy cannot both apply`);
+      if (["active-tier-1-slight", "source-bound-maximum"].includes(record.landscapeDefaultCropStatus)) {
+        if (record.landscapeDefaultCropSourceHash !== record.sourceHash || record.landscapeDefaultCropTier !== "tier-1-slight") errors.push(`${record.stableKey}/${record.formatId}: applied default crop policy is not bound to the rendered source and tier`);
+      }
+      if (record.landscapeDefaultCropStatus === "source-unavailable-fallback" && (!record.fallbackUsed || record.landscapeDefaultCropSourceHash !== null || record.landscapeDefaultCropTier !== null)) errors.push(`${record.stableKey}/${record.formatId}: source-unavailable default crop policy metadata is inconsistent`);
+    }
   }
   return errors;
 }
@@ -55,6 +66,8 @@ export async function writeRenderMetadata({ metadata, outputDir, jsonName = "ren
     "outputPath", "outputHash", "byteCount",
     "cropOverrideUsed", "cropOverrideId", "cropOverrideConfigHash", "cropOverrideSourceHash", "cropOverrideStatus",
     "effectiveCropRectangle", "effectiveCropScale", "effectiveCropOffset",
+    "landscapeDefaultCropPolicyId", "landscapeDefaultCropPolicyHash", "landscapeDefaultCropStatus",
+    "landscapeDefaultCropTier", "landscapeDefaultCropSourceHash", "landscapeDefaultCropSourceBoundLimited",
   ];
   const jsonPath = path.join(outputDir, jsonName);
   const csvPath = path.join(outputDir, csvName);

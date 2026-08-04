@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/people-landscape-chin-safe-overrides.schema.json",
+  "title": "Nuvio source-bound approved People Landscape chin-safe overrides",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "status", "ordering", "recordCount", "records"],
+  "properties": {
+    "version": { "const": "people-landscape-chin-safe-overrides-v1" },
+    "status": { "const": "active" },
+    "ordering": { "const": "tmdb-person-id-ascending" },
+    "recordCount": { "const": 13 },
+    "records": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13,
+      "items": { "$ref": "#/$defs/record" }
+    }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "crop": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["left", "top", "width", "height"],
+      "properties": {
+        "left": { "const": 0 },
+        "top": { "const": 0 },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "scale": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["x", "y"],
+      "properties": {
+        "x": { "type": "number", "exclusiveMinimum": 0 },
+        "y": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
+    "record": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stableKey", "tmdbPersonId", "canonicalName", "format", "status", "sourceProfilePath", "sourceHash", "basePresetId", "basePresetHash", "cropStrategy", "cropRectangle", "cropScale", "cropOffsetX", "cropOffsetY", "reason", "evidencePackage", "approvedProofHash", "createdFromAuditVersion", "prototypeTier"],
+      "properties": {
+        "stableKey": { "type": "string", "pattern": "^person:[1-9][0-9]*$" },
+        "tmdbPersonId": { "type": "integer", "minimum": 1 },
+        "canonicalName": { "type": "string", "minLength": 1 },
+        "format": { "const": "landscape" },
+        "status": { "const": "active" },
+        "sourceProfilePath": { "type": "string", "pattern": "^/[^\\\\]+$" },
+        "sourceHash": { "$ref": "#/$defs/hash" },
+        "basePresetId": { "const": "people-landscape-cormorant-v1" },
+        "basePresetHash": { "$ref": "#/$defs/hash" },
+        "cropStrategy": { "const": "person-specific-source-bound-landscape-v1" },
+        "cropRectangle": { "$ref": "#/$defs/crop" },
+        "cropScale": { "$ref": "#/$defs/scale" },
+        "cropOffsetX": { "enum": [504, 558] },
+        "cropOffsetY": { "const": 0 },
+        "reason": { "const": "chin-jaw-neck-breathing-room" },
+        "evidencePackage": { "const": "tools/people-seed/.work/people-v3-artwork-proof/attempt-20260802T062411Z/landscape-correction/proof-attempt-02" },
+        "approvedProofHash": { "$ref": "#/$defs/hash" },
+        "createdFromAuditVersion": { "const": "people-v3-landscape-chin-safe-audit-v1" },
+        "prototypeTier": { "enum": ["tier-1-slight", "tier-2-moderate"] }
+      }
+    }
+  }
+}

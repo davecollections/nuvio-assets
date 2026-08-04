@@ -140,6 +140,7 @@ export async function capturePublicationPreservationState({ repoRoot = PEOPLE_AR
     "data/people/directors-seed.json",
     "data/people/sources.json",
     "data/people/actor-owner-supplement.json",
+    "data/people/people-owner-supplement-v3.json",
     "data/people/portrait-source-decisions.json",
     "tools/people-seed/src/people-artwork/renderer.mjs",
     "tools/people-seed/src/people-artwork/source-resolution.mjs",

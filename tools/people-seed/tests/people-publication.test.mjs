@@ -31,6 +31,7 @@ import {
   validatePeopleArtworkManifest,
   zeroNetworkAccounting,
 } from "../src/people-publication.mjs";
+import { readPeopleFoundation } from "../src/people-validation.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "../..");
@@ -211,17 +212,17 @@ test("render parity rejects approved evidence rows outside the explicit rendered
   }
 });
 
-test("default publication validation accepts the tracked published manifest", () => {
+test("default publication validation accepts the tracked v3 publication manifest", () => {
   const output = execFileSync(process.execPath, [validationCli], { cwd: repoRoot, encoding: "utf8", windowsHide: true });
   const result = JSON.parse(output);
   assert.equal(result.valid, true);
   assert.equal(result.frameworkAvailable, true);
   assert.equal(result.candidatePresent, true);
-  assert.equal(result.status, "published");
-  assert.equal(result.published, true);
-  assert.equal(result.recordCount, 817);
-  assert.equal(result.landscapeCount, 817);
-  assert.equal(result.posterCount, 817);
+  assert.equal(result.status, "publication-candidate");
+  assert.equal(result.published, false);
+  assert.equal(result.recordCount, 1480);
+  assert.equal(result.landscapeCount, 1480);
+  assert.equal(result.posterCount, 1480);
   assert.equal(result.manifestPath, PEOPLE_MANIFEST_RELATIVE_PATH);
   const missing = spawnSync(process.execPath, [validationCli, "--manifest", "tools/people-seed/.work/does-not-exist.json"], { cwd: repoRoot, encoding: "utf8", windowsHide: true });
   assert.notEqual(missing.status, 0);
@@ -500,18 +501,43 @@ test("publication implementation contains no network opt-in, full-catalogue shor
   assert.match(source, /offline:\s*true/u);
 });
 
-test("permanent people artwork contains the exact published formats and unchanged legacy generic JPGs", async () => {
+test("permanent people artwork contains the exact v3 formats and unchanged legacy generic JPGs", async () => {
   const expected = ["actor hero.jpg", "actors.jpg", "director hero.jpg", "directors.jpg", "jane_austen_collection.jpg", "people hero backdrop.jpg", "people.jpg"];
   const entries = await fs.readdir(path.join(repoRoot, PEOPLE_ASSET_RELATIVE_ROOT), { withFileTypes: true });
   assert.deepEqual(entries.filter((entry) => entry.isFile() && entry.name.endsWith(".jpg")).map((entry) => entry.name).sort(), expected.sort());
   assert.equal(entries.some((entry) => entry.isFile() && entry.name === "manifest.json"), true);
-  assert.deepEqual(entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort(), ["landscape", "poster"]);
+  assert.equal(entries.some((entry) => entry.isFile() && entry.name === "presentation-manifest.json"), true);
+  assert.deepEqual(entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort(), ["landscape", "poster", "title-logo"]);
   const manifest = JSON.parse(await fs.readFile(path.join(repoRoot, PEOPLE_MANIFEST_RELATIVE_PATH), "utf8"));
-  assert.equal(manifest.status, "published");
-  assert.equal(manifest.recordCount, 817);
+  assert.equal(manifest.status, "publication-candidate");
+  assert.equal(manifest.recordCount, 1480);
   for (const formatId of ["landscape", "poster"]) {
     const files = await fs.readdir(path.join(repoRoot, PEOPLE_ASSET_RELATIVE_ROOT, formatId));
-    assert.equal(files.length, 817);
+    assert.equal(files.length, 1480);
     assert.ok(files.every((name) => /^[1-9][0-9]*\.webp$/u.test(name)));
   }
+  const titleLogos = await fs.readdir(path.join(repoRoot, PEOPLE_ASSET_RELATIVE_ROOT, "title-logo"));
+  assert.equal(titleLogos.length, 1480);
+  assert.ok(titleLogos.every((name) => /^[1-9][0-9]*\.png$/u.test(name)));
+});
+
+test("published artwork covers the complete exact-category v3 catalogue", async () => {
+  const [foundation, manifest] = await Promise.all([
+    readPeopleFoundation(repoRoot),
+    fs.readFile(path.join(repoRoot, PEOPLE_MANIFEST_RELATIVE_PATH), "utf8").then(JSON.parse),
+  ]);
+  const registryIds = new Set(foundation.registry.records.map((record) => record.tmdbPersonId));
+  const manifestIds = new Set(manifest.records.map((record) => record.tmdbPersonId));
+  assert.equal(registryIds.size, 1480);
+  assert.equal(manifestIds.size, 1480);
+  assert.ok(manifest.records.every((record) => registryIds.has(record.tmdbPersonId)));
+  assert.equal([...registryIds].filter((id) => !manifestIds.has(id)).length, 0);
+  const registryById = new Map(foundation.registry.records.map((record) => [record.tmdbPersonId, record]));
+  const categorySnapshotDriftIds = [];
+  for (const record of manifest.records) {
+    if (JSON.stringify(record.categoryMembership) !== JSON.stringify(registryById.get(record.tmdbPersonId).categoryMembership)) {
+      categorySnapshotDriftIds.push(record.tmdbPersonId);
+    }
+  }
+  assert.deepEqual(categorySnapshotDriftIds, []);
 });

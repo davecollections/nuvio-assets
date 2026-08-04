@@ -6,12 +6,28 @@ import { fileURLToPath } from "node:url";
 
 import { sourceMembershipFingerprint, validatePeopleFoundation } from "../src/people-validation.mjs";
 import { mergeActorSupplementFoundation } from "../src/actor-supplement-promotion.mjs";
+import { foundationAliasesForPerson } from "../src/foundation-build-verification.mjs";
+import { mergePeopleOwnerSupplementV3Foundation } from "../src/people-owner-supplement-v3-promotion.mjs";
 
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const repoRoot = path.resolve(packageRoot, "../..");
 const buildRoot = path.join(packageRoot, ".work", "people-seed-build");
 const dataRoot = path.join(repoRoot, "data", "people");
 const reviewRoot = path.join(packageRoot, ".work", "people-seed-foundation", "owner-review");
+
+function optionValue(args, name) {
+  const index = args.indexOf(name);
+  if (index === -1) return null;
+  const value = args[index + 1];
+  assert(value && !value.startsWith("--"), `${name} requires a path.`);
+  return path.resolve(process.cwd(), value);
+}
+
+const outputDataOption = optionValue(process.argv.slice(2), "--output-dir");
+const outputReviewOption = optionValue(process.argv.slice(2), "--review-dir");
+assert(Boolean(outputDataOption) === Boolean(outputReviewOption), "--output-dir and --review-dir must be provided together.");
+const outputDataRoot = outputDataOption ?? dataRoot;
+const outputReviewRoot = outputReviewOption ?? reviewRoot;
 
 const paths = {
   registryDraft: path.join(buildRoot, "drafts", "people-registry.draft.json"),
@@ -151,7 +167,7 @@ function registryDocument(draft) {
     stableKey: record.stableKey,
     tmdbPersonId: record.tmdbPersonId,
     canonicalName: record.canonicalName,
-    alsoKnownAs: [...record.alsoKnownAs],
+    alsoKnownAs: foundationAliasesForPerson(record.tmdbPersonId, record.alsoKnownAs),
     knownForDepartment: record.knownForDepartment,
     profilePath: record.profilePath,
     actorCreditCount: record.actorCreditCount,
@@ -358,6 +374,8 @@ async function main() {
     sourcesSchema,
     supplement,
     supplementSchema,
+    ownerSupplementV3,
+    ownerSupplementV3Schema,
   ] = await Promise.all([
     fs.readFile(paths.registryDraft),
     readJson(paths.registryDraft),
@@ -378,6 +396,8 @@ async function main() {
     readJson(path.join(repoRoot, "schemas", "people-sources.schema.json")),
     readJson(path.join(dataRoot, "actor-owner-supplement.json")),
     readJson(path.join(repoRoot, "schemas", "actor-owner-supplement.schema.json")),
+    readJson(path.join(dataRoot, "people-owner-supplement-v3.json")),
+    readJson(path.join(repoRoot, "schemas", "people-owner-supplement-v3.schema.json")),
   ]);
 
   assert(summary.registryCount === 619, "Completed summary registry count changed.");
@@ -399,12 +419,16 @@ async function main() {
     imkEvidence,
     registryDraftHash: sha256(registryDraftRaw),
   });
-  const { registry, actors, directors, sources } = mergeActorSupplementFoundation({
+  const historicalFoundation = mergeActorSupplementFoundation({
     registry: baseRegistry,
     actors: baseActors,
     directors: baseDirectors,
     sources: baseSources,
     supplement,
+  });
+  const { registry, actors, directors, sources } = mergePeopleOwnerSupplementV3Foundation({
+    ...historicalFoundation,
+    supplement: ownerSupplementV3,
   });
   const registryById = new Map(registry.records.map((record) => [record.tmdbPersonId, record]));
 
@@ -414,18 +438,25 @@ async function main() {
     directors,
     sources,
     supplement,
-    schemas: { registry: registrySchema, seed: seedSchema, sources: sourcesSchema, supplement: supplementSchema },
+    ownerSupplementV3,
+    schemas: {
+      registry: registrySchema,
+      seed: seedSchema,
+      sources: sourcesSchema,
+      supplement: supplementSchema,
+      ownerSupplementV3: ownerSupplementV3Schema,
+    },
   });
   if (validation.errors.length) throw new Error(`Generated foundation failed validation:\n${validation.errors.map((error) => `- ${error}`).join("\n")}`);
 
   await Promise.all([
-    atomicWrite(path.join(dataRoot, "people-registry.json"), `${JSON.stringify(registry, null, 2)}\n`),
-    atomicWrite(path.join(dataRoot, "actors-seed.json"), `${JSON.stringify(actors, null, 2)}\n`),
-    atomicWrite(path.join(dataRoot, "directors-seed.json"), `${JSON.stringify(directors, null, 2)}\n`),
-    atomicWrite(path.join(dataRoot, "sources.json"), `${JSON.stringify(sources, null, 2)}\n`),
-    atomicWrite(path.join(reviewRoot, "actor-supplement-decisions.csv"), reviewTemplate(actors, registryById)),
-    atomicWrite(path.join(reviewRoot, "director-supplement-decisions.csv"), reviewTemplate(directors, registryById)),
-    atomicWrite(path.join(reviewRoot, "rollout-summary.csv"), rolloutSummary(actors, directors)),
+    atomicWrite(path.join(outputDataRoot, "people-registry.json"), `${JSON.stringify(registry, null, 2)}\n`),
+    atomicWrite(path.join(outputDataRoot, "actors-seed.json"), `${JSON.stringify(actors, null, 2)}\n`),
+    atomicWrite(path.join(outputDataRoot, "directors-seed.json"), `${JSON.stringify(directors, null, 2)}\n`),
+    atomicWrite(path.join(outputDataRoot, "sources.json"), `${JSON.stringify(sources, null, 2)}\n`),
+    atomicWrite(path.join(outputReviewRoot, "actor-supplement-decisions.csv"), reviewTemplate(actors, registryById)),
+    atomicWrite(path.join(outputReviewRoot, "director-supplement-decisions.csv"), reviewTemplate(directors, registryById)),
+    atomicWrite(path.join(outputReviewRoot, "rollout-summary.csv"), rolloutSummary(actors, directors)),
   ]);
 
   process.stdout.write(`${JSON.stringify({
@@ -439,7 +470,7 @@ async function main() {
     reviewTemplates: {
       actorRows: actors.records.filter((record) => record.rolloutTier === "review").length,
       directorRows: directors.records.filter((record) => record.rolloutTier === "review").length,
-      outputRoot: path.relative(repoRoot, reviewRoot).replaceAll("\\", "/"),
+      outputRoot: path.relative(repoRoot, outputReviewRoot).replaceAll("\\", "/"),
     },
   }, null, 2)}\n`);
 }

@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
@@ -16,6 +17,7 @@ const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 const repoRoot = path.resolve(packageRoot, "../..");
 const foundation = await readPeopleFoundation(repoRoot);
 const supplementIds = new Set(foundation.supplement.records.map((record) => record.tmdbPersonId));
+const historicalSupplementPath = path.join(repoRoot, "data", "people", "actor-owner-supplement.json");
 
 test("tracked supplement has the exact approved schema, decisions, tiers, and identities", () => {
   const result = validateActorSupplement(foundation.supplement, foundation.schemas.supplement);
@@ -29,6 +31,11 @@ test("tracked supplement has the exact approved schema, decisions, tiers, and id
   assert.equal(foundation.supplement.approvedEvidence.sha256, APPROVED_EVIDENCE_SHA256);
   assert.equal(new Set(foundation.supplement.records.map((record) => normalisePersonName(record.suppliedName))).size, 198);
   assert.equal(new Set(foundation.supplement.records.map((record) => record.tmdbPersonId)).size, 198);
+});
+
+test("historical 198-person supplement remains byte-identical", async () => {
+  const bytes = await fs.readFile(historicalSupplementPath);
+  assert.equal(createHash("sha256").update(bytes).digest("hex"), "4acfd5fc421626fa60d0af716142cb3ed75d9a64b8c8e24c300b5a0d5ae51a33");
 });
 
 test("approved canonical differences retain the owner spelling as an alias", () => {
@@ -50,7 +57,7 @@ test("supplement sources are declared and memberships preserve approved evidence
   const declared = new Set(foundation.sources.sources.map((source) => source.sourceId));
   const memberships = foundation.supplement.records.flatMap((record) => record.sourceMemberships);
   assert.equal(foundation.supplement.sources.length, 7);
-  assert.equal(foundation.sources.sources.length, 13);
+  assert.equal(foundation.sources.sources.length, 15);
   assert.equal(memberships.length, 332);
   assert.ok(memberships.every((membership) => declared.has(membership.sourceId)));
   assert.ok(foundation.supplement.records.every((record) => record.sourceMemberships.some((membership) => membership.sourceId === "owner-actor-supplement-2026-07")));
@@ -67,13 +74,13 @@ test("supplement validation rejects duplicate identities and unsupported source 
 });
 
 test("promotion adds 198 non-overlapping actors and preserves final foundation invariants", () => {
-  const originalActors = foundation.actors.records.filter((record) => !record.selectionBasis.includes("owner-added"));
+  const originalActors = foundation.actors.records.filter((record) => !record.selectionBasis.includes("owner-added") && !record.selectionBasis.includes("owner-approved-v3"));
   assert.equal(originalActors.length, 325);
   assert.ok(originalActors.every((record) => !supplementIds.has(record.tmdbPersonId)));
-  assert.equal(foundation.actors.records.length, 523);
-  assert.equal(foundation.registry.records.length, 817);
-  assert.equal(foundation.directors.records.length, 300);
-  assert.equal(foundation.registry.records.filter((record) => record.categoryMembership.length === 2).length, 6);
+  assert.equal(foundation.actors.records.length, 1071);
+  assert.equal(foundation.registry.records.length, 1480);
+  assert.equal(foundation.directors.records.length, 418);
+  assert.equal(foundation.registry.records.filter((record) => record.categoryMembership.length === 2).length, 9);
   assert.deepEqual(validatePeopleFoundation(foundation).errors, []);
 });
 
@@ -93,22 +100,27 @@ test("promotion merge is deterministic and idempotent", () => {
   assert.deepEqual(first.sources, foundation.sources);
 });
 
-test("actor-supplement promotion acquires no images and coexists with only the bounded published artwork", async () => {
+test("actor-supplement promotion acquires no images and coexists with the complete v3 artwork", async () => {
   assert.deepEqual(await validatePeopleAssetBoundary(repoRoot), []);
   const peopleArtworkRoot = path.join(repoRoot, "assets", "collection_covers", "people");
   const existingGenericFiles = await fs.readdir(peopleArtworkRoot);
   assert.ok(existingGenericFiles.every((name) => !/^[1-9][0-9]*\.webp$/i.test(name)));
   assert.ok(existingGenericFiles.includes("manifest.json"));
+  assert.ok(existingGenericFiles.includes("presentation-manifest.json"));
   assert.ok(existingGenericFiles.includes("landscape"));
   assert.ok(existingGenericFiles.includes("poster"));
+  assert.ok(existingGenericFiles.includes("title-logo"));
   const manifest = JSON.parse(await fs.readFile(path.join(peopleArtworkRoot, "manifest.json"), "utf8"));
-  assert.equal(manifest.status, "published");
-  assert.equal(manifest.recordCount, 817);
+  assert.equal(manifest.status, "publication-candidate");
+  assert.equal(manifest.recordCount, 1480);
   for (const formatId of ["landscape", "poster"]) {
     const files = await fs.readdir(path.join(peopleArtworkRoot, formatId));
-    assert.equal(files.length, 817);
+    assert.equal(files.length, 1480);
     assert.ok(files.every((name) => /^[1-9][0-9]*\.webp$/i.test(name)));
   }
+  const titleLogos = await fs.readdir(path.join(peopleArtworkRoot, "title-logo"));
+  assert.equal(titleLogos.length, 1480);
+  assert.ok(titleLogos.every((name) => /^[1-9][0-9]*\.png$/i.test(name)));
   const productionManifestCandidates = [
     path.join(repoRoot, "assets", "collection_covers", "people-manifest.json"),
     path.join(repoRoot, "data", "people", "artwork-manifest.json"),
