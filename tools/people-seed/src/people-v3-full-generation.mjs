@@ -19,6 +19,7 @@ import {
   validateTitleLogoMetadata,
 } from "./people-artwork/title-logo.mjs";
 import { renderPeopleArtwork } from "./people-artwork/renderer.mjs";
+import { PEOPLE_LANDSCAPE_DEFAULT_CROP_POLICY_ID } from "./people-artwork/landscape-default-crop.mjs";
 import { loadLandscapeCropOverrides } from "./people-artwork/landscape-crop-overrides.mjs";
 import { resolvePortraitSource } from "./people-artwork/source-resolution.mjs";
 import { loadPeopleArtworkRuntime, PEOPLE_ARTWORK_REPO_ROOT } from "./people-artwork/runtime-dependencies.mjs";
@@ -246,7 +247,7 @@ export async function refreshMissingProfileMetadata({ runRoot, fetchImpl = fetch
   return { context, report };
 }
 
-async function effectivePeopleForDelta(context) {
+export async function effectivePeopleForDelta(context) {
   const refreshPath = path.join(context.root, "profile-refresh", "report.json");
   const refresh = await exists(refreshPath) ? await readJson(refreshPath) : null;
   const refreshById = new Map((refresh?.records || []).map((record) => [record.tmdbPersonId, record]));
@@ -257,7 +258,7 @@ async function effectivePeopleForDelta(context) {
   });
 }
 
-function decisionsForEffectivePerson(person, decisions) {
+export function decisionsForEffectivePerson(person, decisions) {
   if (person.profilePath === person.trackedProfilePath) return decisions;
   return { ...decisions, recordCount: decisions.records.filter((record) => record.stableKey !== person.stableKey).length, records: decisions.records.filter((record) => record.stableKey !== person.stableKey) };
 }
@@ -353,6 +354,7 @@ export async function renderFullGenerationPortraits({ runRoot } = {}) {
         format: "both",
         offline: true,
         runtime: context.runtime,
+        landscapeDefaultCropPolicy: PEOPLE_LANDSCAPE_DEFAULT_CROP_POLICY_ID,
       });
       for (const record of result.metadata.records) {
         if (record.fallbackUsed && sourceEvidence?.fallbackReason) {

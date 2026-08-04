@@ -20,6 +20,8 @@ Actor and director memberships reuse the same category-neutral person identity. 
 
 The tracked v3 preparation system does not change this publication. It produces exact readiness evidence, a bounded ignored portrait/title-logo proof, and non-authorising continuation plans. The complete 663 new portrait pairs, 1,480 title logos, category refreshes, and public manifest/runtime changes remain blocked on owner visual approval and a later explicit atomic-publication instruction.
 
+Owner review provisionally approved the 663 Poster candidates and all 1,480 production title logos, while rejecting the first complete 663-Landscape candidate set for repeated lower-face cutoff. The Landscape correction workflow preserves that rejected set as before evidence, gives all existing exact-ID crop decisions precedence, then applies the approved `tier-1-slight` geometry as the net-new default. It writes only to `landscape-correction/chin-safe-v1` beneath the ignored full-generation workspace and generates complete all-v3, before/after, chin-zone, and residual-risk review packages. This staging decision does not authorise permanent publication.
+
 ## Manifest contract
 
 `schemas/people-artwork-manifest.schema.json` validates candidate, commit-ready, and published manifests. The published manifest retains identity, category membership, source decisions, source paths, source hashes and dimensions, asset paths, final raw URLs, asset hashes and byte counts, renderer metadata, preset bindings, font bindings, deterministic ordering, and TMDB attribution.

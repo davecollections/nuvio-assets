@@ -123,7 +123,13 @@
         "cropOverrideStatus": { "enum": ["active-source-match", "proof-candidate-source-match"] },
         "effectiveCropRectangle": { "$ref": "#/$defs/crop" },
         "effectiveCropScale": { "$ref": "#/$defs/scale" },
-        "effectiveCropOffset": { "$ref": "#/$defs/offset" }
+        "effectiveCropOffset": { "$ref": "#/$defs/offset" },
+        "landscapeDefaultCropPolicyId": { "const": "people-landscape-default-chin-safe-v1" },
+        "landscapeDefaultCropPolicyHash": { "$ref": "#/$defs/hash" },
+        "landscapeDefaultCropStatus": { "enum": ["active-tier-1-slight", "source-bound-maximum", "source-unavailable-fallback"] },
+        "landscapeDefaultCropTier": { "type": ["string", "null"], "enum": ["tier-1-slight", null] },
+        "landscapeDefaultCropSourceHash": { "$ref": "#/$defs/nullableHash" },
+        "landscapeDefaultCropSourceBoundLimited": { "type": "boolean" }
       }
     }
   }

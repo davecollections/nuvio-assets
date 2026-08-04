@@ -87,6 +87,8 @@ Future presentation assets remain ungenerated and unpublished. The prepared cont
 
 The 13 owner-approved chin-safe Landscape corrections are active, source-bound additions in `data/people/landscape-chin-safe-overrides.json`. They are merged with the unchanged original 154-record Landscape override file by the shared resolver, preserving the locked right edge and top alignment while ensuring chin, jawline, beard, and neck breathing room. They never apply to Poster rendering.
 
+For net-new People Landscape staging, `people-landscape-default-chin-safe-v1` now reuses the approved `tier-1-slight` 594×675 placement as the default after the active exact-ID resolver has run. Exact overrides always win and retain the 167-record active-set hash; the default policy is not a mechanism for creating new permanent exact-ID decisions. If the full tier window exceeds a source boundary, the policy uses the maximum safe top-aligned source area and records that limitation for residual review. Source-less fallbacks remain deterministic text assets. Published People, Posters, title logos, and the global Landscape preset are unaffected unless a bounded net-new staging workflow opts into this policy.
+
 Actor and director collections reference the same physical person assets for a shared TMDB person ID. Published actor/director overlaps reuse the same category-neutral artwork and do not create category-specific duplicates. Existing generic people artwork is not a dependency of this workflow. Publication scope must always be explicitly bounded, and the tooling contains no network, commit, or push automation.
 
 The public manifest preserves source and output provenance, exact hashes, dimensions, preset bindings, and final raw asset URLs. TMDB attribution and the repository's third-party artwork licensing exclusion are stated in the root README. See `tools/people-seed/PUBLICATION.md`.
@@ -114,6 +116,14 @@ npm --prefix tools/people-seed run check-actor-supplement
 npm --prefix tools/people-seed run validate-people-owner-supplement-v3
 npm --prefix tools/people-seed run check-people-owner-supplement-v3
 ```
+
+After a complete ignored v3 workspace exists, the owner-reviewed Landscape-only correction is run offline and remains resumable below its versioned correction directory:
+
+```powershell
+npm --prefix tools/people-seed run artwork-v3:landscape-correction -- --all --run-root tools/people-seed/.work/people-v3-full-generation/run-YYYYMMDDTHHMMSSZ
+```
+
+This mode renders only the 663 net-new Landscapes twice, reuses the approved Poster/title evidence, copies the presentation candidate byte-for-byte, rebuilds dependent ignored candidates and review indexes, and stops before publication.
 
 The staged v3 artwork preparation modes are explicit and must use one unique ignored attempt root. Run audit first, acquire only the representative proof sources, generate the two-run proof, then prepare plans and verify the protected public state:
 

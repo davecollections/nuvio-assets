@@ -4,6 +4,9 @@ import path from "node:path";
 
 import { runFamilies, verifyFont } from "./font.mjs";
 import { loadLandscapeCropOverrides, resolveLandscapeCropOverride } from "./landscape-crop-overrides.mjs";
+import {
+  resolvePeopleLandscapeDefaultCrop,
+} from "./landscape-default-crop.mjs";
 import { loadPeopleArtworkRuntime, PEOPLE_ARTWORK_PACKAGE_ROOT, PEOPLE_ARTWORK_REPO_ROOT } from "./runtime-dependencies.mjs";
 import { resolvePortraitSource } from "./source-resolution.mjs";
 
@@ -394,7 +397,7 @@ function metadataRow({ person, source, formatId, rendered, presetRecord, fontRec
     outputPath: outputRelativePath,
     outputHash,
     byteCount,
-    ...(cropOverride?.used ? {
+    ...(cropOverride?.used && cropOverride.treatmentKind !== "default-policy" ? {
       cropOverrideUsed: true,
       cropOverrideId: cropOverride.id,
       cropOverrideConfigHash: cropOverride.configHash,
@@ -404,7 +407,26 @@ function metadataRow({ person, source, formatId, rendered, presetRecord, fontRec
       effectiveCropScale: cropOverride.record.cropScale,
       effectiveCropOffset: { x: cropOverride.record.cropOffsetX, y: cropOverride.record.cropOffsetY },
     } : {}),
+    ...(cropOverride?.treatmentKind === "default-policy" ? {
+      landscapeDefaultCropPolicyId: cropOverride.policyId,
+      landscapeDefaultCropPolicyHash: cropOverride.policyHash,
+      landscapeDefaultCropStatus: cropOverride.status,
+      landscapeDefaultCropTier: cropOverride.used ? cropOverride.record.prototypeTier : null,
+      landscapeDefaultCropSourceHash: cropOverride.used ? cropOverride.record.sourceHash : null,
+      landscapeDefaultCropSourceBoundLimited: cropOverride.used ? cropOverride.sourceBoundLimited : false,
+    } : {}),
   };
+}
+
+export function resolveLandscapeCropTreatment({ person, source, formatId, overrideConfiguration, defaultPolicyId = null, presetRecord } = {}) {
+  const exactCropOverride = formatId === "landscape"
+    ? resolveLandscapeCropOverride({ person, source, formatId, overrideConfiguration })
+    : null;
+  if (exactCropOverride?.used) return { ...exactCropOverride, treatmentKind: "exact-override" };
+  if (formatId === "landscape" && defaultPolicyId) {
+    return resolvePeopleLandscapeDefaultCrop({ person, source, formatId, presetRecord, policyId: defaultPolicyId });
+  }
+  return exactCropOverride;
 }
 
 export async function renderPeopleArtwork({
@@ -420,6 +442,7 @@ export async function renderPeopleArtwork({
   retryDelay,
   runtime: providedRuntime = null,
   landscapeCropOverrides = null,
+  landscapeDefaultCropPolicy = null,
 } = {}) {
   const runtime = providedRuntime || loadPeopleArtworkRuntime();
   const presets = await loadPeopleArtworkPresets();
@@ -451,9 +474,7 @@ export async function renderPeopleArtwork({
     });
     if (dryRun) continue;
     for (const formatId of formats) {
-      const cropOverride = formatId === "landscape"
-        ? resolveLandscapeCropOverride({ person, source, formatId, overrideConfiguration })
-        : null;
+      const cropOverride = resolveLandscapeCropTreatment({ person, source, formatId, overrideConfiguration, defaultPolicyId: landscapeDefaultCropPolicy, presetRecord: presets.portrait.landscape });
       const fallbackUsed = !source.available;
       const presetRecord = fallbackUsed ? presets.fallback[formatId] : presets.portrait[formatId];
       const rendered = fallbackUsed
