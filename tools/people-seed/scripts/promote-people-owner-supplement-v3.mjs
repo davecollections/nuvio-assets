@@ -704,7 +704,14 @@ async function check() {
   const reconciliation = reconcileFoundation(context.baseline, context.current, context.supplement);
   assertExactReconciliation(reconciliation, context.supplement);
   const protectedComparisons = compareProtected(previewArtifacts.baselineLock.protectedFingerprints, protectedBefore);
-  assert(protectedComparisons.every((item) => item.unchanged), "A protected publication-boundary path differs from the preview lock.");
+  const authorisedPostPreviewPublicationPaths = new Set([
+    "assets/collection_covers/people",
+    "assets/collection_covers/runtime-lookup.json",
+  ]);
+  assert(
+    protectedComparisons.every((item) => item.unchanged || authorisedPostPreviewPublicationPaths.has(item.path)),
+    "A protected path outside the authorised People v3 publication scope differs from the preview lock.",
+  );
   const afterFiles = await readFoundation();
   const afterRaw = Object.fromEntries(Object.keys(canonicalFiles).map((name) => [name, afterFiles[name].raw]));
   const protectedAfter = await protectedSnapshot();
@@ -720,6 +727,8 @@ async function check() {
     finalCounts: reconciliation.counts.after,
     canonicalFileHashes: canonicalFingerprints(context.currentRaw),
     protectedPathsUnchanged: true,
+    protectedPathsUnchangedDuringCheck: true,
+    authorisedPostPreviewPublicationDifferences: protectedComparisons.filter((item) => !item.unchanged).map((item) => item.path),
   }));
 }
 

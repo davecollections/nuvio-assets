@@ -448,7 +448,9 @@ export function validateChangedPaths(paths) {
   const protectedFiles = new Set(["assets/collection_covers/manifest.json"]);
   const peopleRoot = "assets/collection_covers/people/";
   const allowedPeoplePublicationPath = (item) => item === `${peopleRoot}manifest.json`
-    || new RegExp(`^${peopleRoot}(?:landscape|poster)/[1-9][0-9]*\\.webp$`, "u").test(item);
+    || item === `${peopleRoot}presentation-manifest.json`
+    || new RegExp(`^${peopleRoot}(?:landscape|poster)/[1-9][0-9]*\\.webp$`, "u").test(item)
+    || new RegExp(`^${peopleRoot}title-logo/[1-9][0-9]*\\.png$`, "u").test(item);
   return paths.map((item) => item.replaceAll("\\", "/")).filter((item) => (
     protectedFiles.has(item)
     || protectedPrefixes.some((prefix) => item.startsWith(prefix))
@@ -459,6 +461,8 @@ export function validateChangedPaths(paths) {
 export async function validatePeopleAssetBoundary(repoRoot) {
   const peopleRoot = path.join(repoRoot, "assets", "collection_covers", "people");
   const manifestPath = path.join(peopleRoot, "manifest.json");
+  const presentationManifestPath = path.join(peopleRoot, "presentation-manifest.json");
+  const titleLogoRoot = path.join(peopleRoot, "title-logo");
   const errors = [];
   let entries = [];
   try {
@@ -468,8 +472,8 @@ export async function validatePeopleAssetBoundary(repoRoot) {
   }
   for (const entry of entries) {
     if (entry.isFile() && /^[1-9][0-9]*\.webp$/i.test(entry.name)) errors.push(`people portrait asset exists unexpectedly: assets/collection_covers/people/${entry.name}`);
-    if (entry.isFile() && /manifest.*\.json$|people.*manifest.*\.json$/i.test(entry.name) && entry.name !== "manifest.json") errors.push(`unrecognised people artwork manifest: assets/collection_covers/people/${entry.name}`);
-    if (entry.isDirectory() && !new Set(["landscape", "poster"]).has(entry.name)) errors.push(`unrecognised people artwork directory: assets/collection_covers/people/${entry.name}`);
+    if (entry.isFile() && /manifest.*\.json$|people.*manifest.*\.json$/i.test(entry.name) && !new Set(["manifest.json", "presentation-manifest.json"]).has(entry.name)) errors.push(`unrecognised people artwork manifest: assets/collection_covers/people/${entry.name}`);
+    if (entry.isDirectory() && !new Set(["landscape", "poster", "title-logo"]).has(entry.name)) errors.push(`unrecognised people artwork directory: assets/collection_covers/people/${entry.name}`);
   }
   const manifestExists = await fs.access(manifestPath).then(() => true, () => false);
   const formatAssetCount = (await Promise.all(["landscape", "poster"].map(async (formatId) => {
@@ -485,6 +489,60 @@ export async function validatePeopleAssetBoundary(repoRoot) {
     const { validateTrackedPeopleManifest } = await import("./people-publication.mjs");
     const result = await validateTrackedPeopleManifest({ repoRoot, manifestPath });
     for (const error of [...result.manifestValidation.errors, ...result.pathValidation.errors]) errors.push(`people publication manifest: ${error}`);
+  }
+  const presentationManifestExists = await fs.access(presentationManifestPath).then(() => true, () => false);
+  const titleLogoEntries = await fs.readdir(titleLogoRoot, { withFileTypes: true }).catch((error) => {
+    if (error.code === "ENOENT") return [];
+    throw error;
+  });
+  if (!presentationManifestExists && titleLogoEntries.length > 0) errors.push("people title logos require assets/collection_covers/people/presentation-manifest.json");
+  if (presentationManifestExists) {
+    const [
+      presentation,
+      registry,
+      {
+        inspectSharedPeopleHero,
+        loadPeoplePresentationManifestSchema,
+        validatePeoplePresentationManifest,
+      },
+      { loadPeopleArtworkRuntime },
+    ] = await Promise.all([
+      fs.readFile(presentationManifestPath, "utf8").then(JSON.parse),
+      fs.readFile(path.join(repoRoot, "data", "people", "people-registry.json"), "utf8").then(JSON.parse),
+      import("./people-presentation-manifest.mjs"),
+      import("./people-artwork/runtime-dependencies.mjs"),
+    ]);
+    const runtime = loadPeopleArtworkRuntime();
+    const [schema, hero] = await Promise.all([
+      loadPeoplePresentationManifestSchema({ repoRoot }),
+      inspectSharedPeopleHero({ repoRoot, sharp: runtime.sharp }),
+    ]);
+    for (const error of validatePeoplePresentationManifest(presentation, schema, { expectedPeople: registry.records, expectedHero: hero })) {
+      errors.push(`people presentation manifest: ${error}`);
+    }
+    const expectedNames = new Set(presentation.records.map((record) => `${record.tmdbPersonId}.png`));
+    for (const entry of titleLogoEntries) {
+      if (!entry.isFile() || !expectedNames.has(entry.name)) errors.push(`unexpected people title-logo path: assets/collection_covers/people/title-logo/${entry.name}`);
+    }
+    if (titleLogoEntries.length !== presentation.titleLogoCount) errors.push("people title-logo physical count differs from the presentation manifest");
+    const records = new Map(presentation.records.map((record) => [`${record.tmdbPersonId}.png`, record]));
+    for (let offset = 0; offset < titleLogoEntries.length; offset += 32) {
+      await Promise.all(titleLogoEntries.slice(offset, offset + 32).filter((entry) => entry.isFile() && records.has(entry.name)).map(async (entry) => {
+        const record = records.get(entry.name);
+        const filePath = path.join(titleLogoRoot, entry.name);
+        const buffer = await fs.readFile(filePath);
+        const actualHash = createHash("sha256").update(buffer).digest("hex");
+        let metadata = null;
+        try {
+          metadata = await runtime.sharp(buffer, { failOn: "error" }).metadata();
+        } catch (error) {
+          errors.push(`people title-logo ${entry.name}: decode failed: ${error.message}`);
+        }
+        if (actualHash !== record.titleLogoSha256 || buffer.length !== record.byteCount || metadata?.format !== "png" || metadata?.width !== record.dimensions.width || metadata?.height !== record.dimensions.height || metadata?.hasAlpha !== true) {
+          errors.push(`people title-logo ${entry.name}: hash, byte, PNG, dimensions or alpha validation failed`);
+        }
+      }));
+    }
   }
   return errors;
 }

@@ -185,8 +185,10 @@ test("write-boundary validation protects studio/network and unrecognised people 
   assert.equal(errors.length, 4);
   assert.deepEqual(validateChangedPaths([
     "assets/collection_covers/people/manifest.json",
+    "assets/collection_covers/people/presentation-manifest.json",
     "assets/collection_covers/people/landscape/123.webp",
     "assets/collection_covers/people/poster/123.webp",
+    "assets/collection_covers/people/title-logo/123.png",
   ]), []);
   if (foundationAvailable) assert.deepEqual(await validatePeopleAssetBoundary(repoRoot), []);
 });

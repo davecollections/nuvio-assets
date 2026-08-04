@@ -17,10 +17,7 @@ import {
   buildPeopleV3ArtworkReadinessAudit,
   validatePeopleV3ArtworkReadinessAudit,
 } from "../src/people-v3-artwork-readiness.mjs";
-import {
-  buildAtomicPublicationPlan,
-  buildPeopleV3FullGenerationPlan,
-} from "../src/people-v3-artwork-planning.mjs";
+import { buildPeopleV3FullGenerationPlan } from "../src/people-v3-artwork-planning.mjs";
 import {
   PEOPLE_V3_PORTRAIT_PROOF_SELECTION,
   selectPortraitProofPeople,
@@ -198,35 +195,38 @@ test("active title-logo proof tooling contains no simulated hero or client compo
   await assert.rejects(fs.access(path.join(repoRoot, "tools", "people-seed", "config", "limelight-400.json")));
 });
 
-test("current artwork-readiness audit reconciles the exact 663-person delta without inventing sources", async () => {
+test("current artwork-readiness audit closes the published v3 delta without inventing sources", async () => {
   const audit = await buildPeopleV3ArtworkReadinessAudit({ repoRoot, generatedAt, runtime });
   assert.deepEqual(validatePeopleV3ArtworkReadinessAudit(audit), []);
   assert.deepEqual(audit.summary, {
     cataloguePeople: 1480,
-    publishedManifestPeople: 817,
-    runtimePeople: 817,
-    catalogueOnlyPeople: 663,
-    existingPublishedPeople: 817,
-    usableProfilePaths: 496,
-    missingProfilePaths: 167,
+    publishedManifestPeople: 1480,
+    runtimePeople: 1480,
+    catalogueOnlyPeople: 0,
+    existingPublishedPeople: 1480,
+    usableProfilePaths: 0,
+    missingProfilePaths: 0,
     usableExistingSourceCacheEntries: 0,
-    sourcesRequiringAcquisition: 496,
-    expectedFallbackCandidates: 167,
-    recordsRequiringManualInvestigation: 167,
+    sourcesRequiringAcquisition: 0,
+    expectedFallbackCandidates: 0,
+    recordsRequiringManualInvestigation: 0,
     applicableExistingCropOverrides: 0,
-    newLandscapeAssetsRequired: 663,
-    newPosterAssetsRequired: 663,
-    newPortraitAssetsRequired: 1326,
+    newLandscapeAssetsRequired: 0,
+    newPosterAssetsRequired: 0,
+    newPortraitAssetsRequired: 0,
     projectedTitleLogoAssets: 1480,
   });
-  assert.deepEqual(audit.reconciliation.categoryMetadataChanges.map((record) => record.tmdbPersonId), [8630, 45400]);
+  assert.deepEqual(audit.reconciliation.categoryMetadataChanges.map((record) => record.tmdbPersonId), []);
   assert.deepEqual(audit.futureRuntimeCounts, { companies: 1820, networks: 572, people: 1480, totalEntities: 3872, landscapeAssets: 3872, posterAssets: 2052, totalAssets: 5924, presentationTitleLogosExcludedFromRuntimeTotals: 1480 });
   assert.equal(audit.sharedHero.sha256, "5d63ec7bf3c80d2b7437411d67471747749e136e5924840715fb85a49c62a840");
   assert.deepEqual(audit.sharedHero.dimensions, { width: 1695, height: 928 });
 });
 
-test("representative portrait selection is exact, catalogue-only, and retains unavailable mandatory identities for investigation", () => {
-  const people = selectPortraitProofPeople({ ...foundation, manifest });
+test("representative portrait selection remains exact and rejects already-published identities", () => {
+  assert.throws(() => selectPortraitProofPeople({ ...foundation, manifest }), /already published/u);
+  const proofIds = new Set(PEOPLE_V3_PORTRAIT_PROOF_SELECTION.map((record) => record.tmdbPersonId));
+  const historicalManifest = { ...manifest, records: manifest.records.filter((record) => !proofIds.has(record.tmdbPersonId)) };
+  const people = selectPortraitProofPeople({ ...foundation, manifest: historicalManifest });
   assert.deepEqual(people.map((person) => [person.tmdbPersonId, person.canonicalName]), PEOPLE_V3_PORTRAIT_PROOF_SELECTION.map((record) => [record.tmdbPersonId, record.canonicalName]));
   assert.equal(people.length, 20);
   assert.deepEqual(people.filter((person) => !person.profilePath).map((person) => person.tmdbPersonId), [8, 56446, 62861]);
@@ -234,25 +234,16 @@ test("representative portrait selection is exact, catalogue-only, and retains un
   assert.deepEqual(people.find((person) => person.tmdbPersonId === 8).categoryMembership, ["director"]);
 });
 
-test("full-generation and atomic-publication plans retain exact counts and remain non-authorising", async () => {
+test("full-generation planning fails closed after the v3 publication delta is complete", async () => {
   const audit = await buildPeopleV3ArtworkReadinessAudit({ repoRoot, generatedAt, runtime });
-  const generationPlan = buildPeopleV3FullGenerationPlan({
+  assert.throws(() => buildPeopleV3FullGenerationPlan({
     audit,
     registry: foundation.registry,
     titleLogoMetadata: { recordCount: 1, records: [{ byteCount: 40000 }] },
     portraitMetadata: { records: [{ formatId: "landscape", byteCount: 40000 }, { formatId: "poster", byteCount: 100000 }] },
     presentationCandidateByteCount: 16000,
     generatedAt,
-  });
-  assert.equal(generationPlan.counts.totalNewPublicFiles, 2807);
-  assert.equal(generationPlan.counts.existingPortraitFilesPreserved, 1634);
-  assert.equal(generationPlan.exactScope.portraitAcquisitionPersonIds.length, 496);
-  assert.equal(generationPlan.exactScope.fallbackOrInvestigationPersonIds.length, 167);
-  assert.equal(generationPlan.exactScope.titleLogoPersonIds.length, 1480);
-  const atomicPlan = buildAtomicPublicationPlan({ generationPlan, protectedState: audit.protectedState, generatedAt });
-  assert.equal(atomicPlan.status, "not-authorised");
-  assert.match(atomicPlan.order.map((record) => record.action).join("\n"), /atomically/u);
-  assert.equal(atomicPlan.rollback.existing817PortraitPairs.includes("never overwritten"), true);
+  }), /requires the exact reconciled v3 catalogue and artwork delta/u);
 });
 
 test("output guard accepts only ignored People v3 proof or full-generation runs and rejects permanent artwork", () => {
