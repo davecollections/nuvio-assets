@@ -1,0 +1,15 @@
+{
+  "name": "@nuvio/watch-provider-registry",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Deterministic manual TMDB Watch Provider registry tooling.",
+  "type": "module",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "test": "node --test",
+    "check": "node src/cli.mjs check",
+    "refresh": "node src/cli.mjs refresh"
+  }
+}
