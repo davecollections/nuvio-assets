@@ -1,12 +1,12 @@
 {
   "schemaVersion": 2,
   "status": "published",
-  "fingerprint": "af9c1699d8dac512d6d583566c7134d67e04af55a5a1e1c6f581a45b7e097905",
+  "fingerprint": "1835e059c3df9974568b740f29580dab7fd8aaa07087567d180196cd433ba7f9",
   "generatedFrom": {
     "studioNetworkManifest": {
       "path": "assets/collection_covers/manifest.json",
-      "sha256": "e4e0b541904384ff2ba9bb258a773eddeb954ae052f56f27aa0008d0bf6a68b8",
-      "fingerprint": "ab4f7ef844adbe46804bfb5cefb51633bf02c58a38f3f5a3df1ec1311e17425d"
+      "sha256": "168b158e22e30f25852fd0da099a301ad8df5329886c7b4f986954ad8406f8f4",
+      "fingerprint": "f991c86906a85357735c9c27eb7528f1027d8358b5f35287ba82cb63bca85467"
     },
     "peopleManifest": {
       "path": "assets/collection_covers/people/manifest.json",
@@ -15,13 +15,13 @@
     }
   },
   "counts": {
-    "companies": 1820,
+    "companies": 1826,
     "networks": 572,
     "people": 1480,
-    "totalEntities": 3872,
-    "landscapeAssets": 3872,
+    "totalEntities": 3878,
+    "landscapeAssets": 3878,
     "posterAssets": 2052,
-    "totalAssets": 5924
+    "totalAssets": 5930
   },
   "formats": {
     "company": {
@@ -3958,6 +3958,17 @@
       "fallbackUsed": false,
       "reviewRequired": false
     },
+    "2849": {
+      "id": 2849,
+      "name": "BONES",
+      "status": "published",
+      "landscape": {
+        "path": "assets/collection_covers/companies/2849.webp",
+        "sha256": "705f17f9f125ea76c188d4ddbc6c283d92ccdfc5819f832f02636da9a0b52fe6"
+      },
+      "fallbackUsed": false,
+      "reviewRequired": false
+    },
     "2865": {
       "id": 2865,
       "name": "Insight Film Studios",
@@ -5806,6 +5817,17 @@
       "fallbackUsed": false,
       "reviewRequired": false
     },
+    "5438": {
+      "id": 5438,
+      "name": "Kyoto Animation",
+      "status": "published",
+      "landscape": {
+        "path": "assets/collection_covers/companies/5438.webp",
+        "sha256": "50a169825eac451de6f62f6161ce53bd6ff9187b9e599b81943cd92c058d0cb1"
+      },
+      "fallbackUsed": false,
+      "reviewRequired": false
+    },
     "5439": {
       "id": 5439,
       "name": "Consejo Nacional para la Cultura y las Artes",
@@ -6011,6 +6033,17 @@
       "landscape": {
         "path": "assets/collection_covers/companies/5846.webp",
         "sha256": "21a322cb56a8134fda4a5ae23bb2f1f2c2dc2a0a97046004102573714d945226"
+      },
+      "fallbackUsed": false,
+      "reviewRequired": false
+    },
+    "5887": {
+      "id": 5887,
+      "name": "ufotable",
+      "status": "published",
+      "landscape": {
+        "path": "assets/collection_covers/companies/5887.webp",
+        "sha256": "1258a547398954c4dbcbdbb6ffab348723225a1885a13057556edafee89a3d3b"
       },
       "fallbackUsed": false,
       "reviewRequired": false
@@ -11889,6 +11922,17 @@
       "fallbackUsed": false,
       "reviewRequired": false
     },
+    "21444": {
+      "id": 21444,
+      "name": "MAPPA",
+      "status": "published",
+      "landscape": {
+        "path": "assets/collection_covers/companies/21444.webp",
+        "sha256": "b8968c3c7c2a2ab639c93767f95f2063734b463b38e4672b49fce19e63415199"
+      },
+      "fallbackUsed": false,
+      "reviewRequired": false
+    },
     "21485": {
       "id": 21485,
       "name": "University of Southern California, School of Cinematic Arts",
@@ -13106,6 +13150,17 @@
       "landscape": {
         "path": "assets/collection_covers/companies/31052.webp",
         "sha256": "aadadadd7758546eddaf4a8dc40d2a1f60d31d200ced3976e56246c0c74e7d90"
+      },
+      "fallbackUsed": false,
+      "reviewRequired": false
+    },
+    "31058": {
+      "id": 31058,
+      "name": "WIT STUDIO",
+      "status": "published",
+      "landscape": {
+        "path": "assets/collection_covers/companies/31058.webp",
+        "sha256": "99e39b49ed3484600e4dc4a894ec1b1fa15d6afaabf2b9eb5181e9e7ae8db7d0"
       },
       "fallbackUsed": false,
       "reviewRequired": false
@@ -14428,6 +14483,17 @@
         "sha256": "86800bebbe9c347c811ca6f52cd93e0dfecc3988fce73e340d520779d43e29b6"
       },
       "fallbackUsed": true,
+      "reviewRequired": false
+    },
+    "50908": {
+      "id": 50908,
+      "name": "TRIGGER",
+      "status": "published",
+      "landscape": {
+        "path": "assets/collection_covers/companies/50908.webp",
+        "sha256": "90878a72069777f798b566ee3283df774b4ef6a2bed1e9b877d6c93e6da5a7c7"
+      },
+      "fallbackUsed": false,
       "reviewRequired": false
     },
     "51415": {

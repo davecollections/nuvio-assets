@@ -1,8 +1,8 @@
 # Studio/network batch project status
 
-**Last verified:** 2026-08-12 AEST (UTC+10), after the exact ABC iview light-background replacement and full runtime/public-tree preservation verification
+**Last verified:** 2026-08-12 AEST (UTC+10), after the exact six-company anime-studio addition and full runtime/public-tree preservation verification
 
-**Latest local publication delta:** `studio-network-abc-iview-background-fix-2026-08-12` at `2026-08-12T09:01:47.637Z` (working tree only; not committed or pushed), on top of the current v2 network-poster and People v3 publication state
+**Latest publication delta:** `studio-network-anime-studios-six-2026-08-12` at `2026-08-12T09:57:14.508Z`, adding exactly six approved anime-studio company covers on top of ABC iview PR #5 merge commit `8fa5925`
 
 **Previous maintenance commit:** `a35bceeb63abfb5cc60649126f2ece2b4102b6a3`
 
@@ -42,9 +42,9 @@ The following stages are complete and present locally:
 - bounded service maintenance for six exact missing logo identities plus the owner-approved Williams Street Inter fallback, with 2,385 unrelated covers preserved byte-for-byte and four compact-logo size comparisons retained as proof-only ignored artifacts.
 - owner application of the exact Alternative B proof for `company:4`, `company:21`, `company:174`, and `company:2785`, with exact regenerated-proof byte parity, 2,388 unrelated covers preserved, and the global renderer and production preset unchanged.
 - source-hash-bound correction of `network:1327` (ABC iview) from dark to light, with its exact replacement approval recorded independently, only its public WebP/manifest record/runtime record changed, 7,529 unrelated public files preserved, and all 5,924 runtime-referenced assets hash-checked and fully decoded;
-- staging-only generation of six explicit below-threshold anime studios (`company:2849`, `company:5438`, `company:5887`, `company:21444`, `company:31058`, and `company:50908`); these six remain unapproved and unpublished.
+- owner approval and transaction-like local publication of six explicit below-threshold anime studios (`company:2849`, `company:5438`, `company:5887`, `company:21444`, `company:31058`, and `company:50908`), with six additions, no replacements/removals, 7,530 unrelated public files preserved, and all 5,930 runtime-referenced assets hash-checked and fully decoded.
 
-The current canonical library contains 1,820 company covers and 572 network covers. Production-v1 staging currently contains the original 2,366-record base plus six unapproved explicit anime-studio candidates. The original approval state still covers 2,366 identities, with only ABC iview's entry incrementally refreshed to its exact corrected output hash. The latest local replacement changed only the preexisting ABC iview network record and WebP.
+The current branch state contains 1,826 company covers and 572 network covers. Production-v1 staging contains the original 2,366-record base plus six approved explicit anime-studio additions. Exact cover approval state contains 2,372 identities; ABC iview retains its incremental replacement approval and the six additions retain their own exact owner-approval source and timestamp.
 
 ## Latest verified source counts
 
@@ -62,7 +62,7 @@ All 2,366 currently eligible source records are now present in persistent produc
 
 - Preset: `production-v1`
 - Location: `.work/staging/production-v1/`
-- Staged WebP files: 2,372 (1,803 companies, 569 networks), including six unapproved explicit anime-studio candidates
+- Staged WebP files: 2,372 (1,803 companies, 569 networks), including six approved explicit anime-studio additions
 - Current failed state records: 0
 - Current staged bytes: 26,654,986 total
 - Current staged file size: 10,457-byte median; 2,258–39,004-byte range
@@ -70,9 +70,9 @@ All 2,366 currently eligible source records are now present in persistent produc
 - Output treatments: 1,891 image/logo-backed; 478 missing-logo Inter fallbacks; 3 owner-approved Inter text treatments
 - Combined staged content fingerprint: `b37fc6f28836091df213a8ab53f0ce29fc52eb17a3a4c986d8597937a1b7898b`
 - Combined staged modification-time fingerprint: `3be0789d218aa4a782e3a9dc58f098f7d2ecd7d97cd6c7b51f61bc7150100e0f`
-- Final assets published: yes, in release `studio-network-v1-2026-07-16`
+- Final assets published: yes; latest delta is `studio-network-anime-studios-six-2026-08-12`
 
-The persistent current state is `.work/reports/production-v1/run-state.json`. The reconciled top-level `entities.jsonl` contains all 2,366 primary records. The post-expansion single-key run retained all previous 2,365 outputs byte-for-byte with their modification times.
+The persistent current state is `.work/reports/production-v1/run-state.json` and contains 2,372 primary records: the 2,366 automatically eligible base plus six explicit additions. The post-expansion single-key run retained all previous 2,365 outputs byte-for-byte with their modification times.
 
 ## Inter status
 
@@ -108,7 +108,7 @@ Those rows covered 233 unique records. The five old proposal rows for `company:1
 
 The persistent `run-state.json` remains byte-for-byte unchanged and therefore still records the original 233 records / 275 flags as historical audit metadata. `review-prep` now applies the current exact-hash generic and source-hash-bound background resolutions in memory before building its live queue. The resulting draft is `[]`, the checklist has only its header, and no new review sheet is referenced by the current index.
 
-All 2,366 staged covers also have durable cover-level approval in `config/review-state.json`. The schema-validated records bind stable key, identity, canonical name, publish target, output hash, byte count, 1200×675 WebP metadata, approval source, and reviewed date. Validation fully decoded all 2,366 files and produced a dry 2,366-entry publish plan with zero issues and zero writes.
+All 2,372 staged covers have durable cover-level approval in `config/review-state.json`. The schema-validated records bind stable key, identity, canonical name, publish target, output hash, byte count, 1200×675 WebP metadata, approval source, and reviewed date. The six anime-studio entries were incrementally added after exact visual approval. Preparation fully decoded all 2,372 files and produced an exact six-addition manifest/runtime preview with zero permanent writes.
 
 Relevant paths:
 
@@ -333,14 +333,14 @@ With `npm --prefix tools/studio-network-batch`, the command runs in `tools/studi
 
 ## Publication state
 
-Current canonical state after the local working-tree replacement `studio-network-abc-iview-background-fix-2026-08-12` (not committed or pushed):
+Current canonical state after delta `studio-network-anime-studios-six-2026-08-12`:
 
-- `assets/collection_covers/companies/{tmdb_id}.webp`: 1,820 files;
+- `assets/collection_covers/companies/{tmdb_id}.webp`: 1,826 files;
 - `assets/collection_covers/networks/{tmdb_id}.webp`: 572 files;
-- `assets/collection_covers/manifest.json`: 2,392 entries, 6,352,008 bytes, SHA-256 `e4e0b541904384ff2ba9bb258a773eddeb954ae052f56f27aa0008d0bf6a68b8`;
-- published landscape artwork bytes: 26,937,260; landscape fingerprint `40b776f1913ecc757fe34d20ccf917d3c3077465fabe6ede22b86d1633f13e7a`;
-- combined manifest published-asset fingerprint: `ab4f7ef844adbe46804bfb5cefb51633bf02c58a38f3f5a3df1ec1311e17425d`;
-- runtime lookup: 1,820 companies, 572 networks, 1,480 people, 3,872 total entities and 5,924 assets; 1,768,595 bytes; SHA-256 `d7c89d5a1431fe8c87a5fd0673b2f366b26931080962de37032a8104278ec5ab`; fingerprint `af9c1699d8dac512d6d583566c7134d67e04af55a5a1e1c6f581a45b7e097905`;
+- `assets/collection_covers/manifest.json`: 2,398 entries, 6,366,250 bytes, SHA-256 `168b158e22e30f25852fd0da099a301ad8df5329886c7b4f986954ad8406f8f4`;
+- published landscape artwork bytes: 27,001,764; landscape fingerprint `0d3274a0d9baeae7228d591310c7f20d50ac57e509a5a250605af2566d0f7afc`;
+- combined manifest published-asset fingerprint: `f991c86906a85357735c9c27eb7528f1027d8358b5f35287ba82cb63bca85467`;
+- runtime lookup: 1,826 companies, 572 networks, 1,480 people, 3,878 total entities and 5,930 assets; 1,770,598 bytes; SHA-256 `313f856bce03d36ccea105c6ebdaf0ad030bf6c93114f0030bf5acec8406d691`; fingerprint `1835e059c3df9974568b740f29580dab7fd8aaa07087567d180196cd433ba7f9`;
 - original release contact sheets: 29 company pages, 9 network pages, and 37 combined pages;
 - supplement review sheet: `.work/christian-studios-supplement/contact-sheets/christian-studios-supplement.png`;
 - service maintenance review sheet: `.work/service-studio-maintenance/contact-sheets/part-a-seven-candidates.png`;

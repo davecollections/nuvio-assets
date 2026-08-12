@@ -104,19 +104,32 @@ test("cover approvals fully decode and produce a write-free publish plan", async
   );
 });
 
-test("production cover approval state covers exactly 2,366 company and network identities", async () => {
+test("production cover approval state covers exactly 2,372 company and network identities", async () => {
   const [stateDocument, schema] = await Promise.all([
     fs.readFile(path.join(packageRoot, "config", "review-state.json"), "utf8").then(JSON.parse),
     fs.readFile(path.join(packageRoot, "schemas", "review-state.schema.json"), "utf8").then(JSON.parse),
   ]);
   const state = validateCoverApprovalStateAgainstSchema(stateDocument, schema);
-  assert.equal(state.approvalCount, 2366);
-  assert.equal(state.approvals.filter((approval) => approval.entityType === "company").length, 1797);
+  assert.equal(state.approvalCount, 2372);
+  assert.equal(state.approvals.filter((approval) => approval.entityType === "company").length, 1803);
   assert.equal(state.approvals.filter((approval) => approval.entityType === "network").length, 569);
-  assert.equal(new Set(state.approvals.map((approval) => approval.publishTarget)).size, 2366);
+  assert.equal(new Set(state.approvals.map((approval) => approval.publishTarget)).size, 2372);
   const abcIview = state.approvals.find((approval) => approval.stableKey === "network:1327");
   assert.equal(abcIview.approvedOutputHash, "7d6805a41f856f07a144f494cc49bbe399b062ad40f700107f3334e18ce69fde");
   assert.equal(abcIview.approvalSource, "owner-approved-abc-iview-light-background-2026-08-12");
+  const animeStudios = new Map([
+    ["company:2849", "705f17f9f125ea76c188d4ddbc6c283d92ccdfc5819f832f02636da9a0b52fe6"],
+    ["company:5438", "50a169825eac451de6f62f6161ce53bd6ff9187b9e599b81943cd92c058d0cb1"],
+    ["company:5887", "1258a547398954c4dbcbdbb6ffab348723225a1885a13057556edafee89a3d3b"],
+    ["company:21444", "b8968c3c7c2a2ab639c93767f95f2063734b463b38e4672b49fce19e63415199"],
+    ["company:31058", "99e39b49ed3484600e4dc4a894ec1b1fa15d6afaabf2b9eb5181e9e7ae8db7d0"],
+    ["company:50908", "90878a72069777f798b566ee3283df774b4ef6a2bed1e9b877d6c93e6da5a7c7"],
+  ]);
+  for (const [stableKey, approvedOutputHash] of animeStudios) {
+    const approval = state.approvals.find((item) => item.stableKey === stableKey);
+    assert.equal(approval.approvedOutputHash, approvedOutputHash);
+    assert.equal(approval.approvalSource, "owner-approved-anime-studio-covers-2026-08-12");
+  }
   assert.throws(() => validateCoverApprovalStateAgainstSchema(state, {
     ...schema,
     properties: { ...schema.properties, version: { const: "wrong-version" } },
