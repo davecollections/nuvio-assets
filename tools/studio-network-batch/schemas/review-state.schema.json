@@ -8,8 +8,16 @@
   "required": ["version", "reviewedAt", "approvalSource", "approvalCount", "approvals"],
   "properties": {
     "version": { "const": "studio-network-cover-approvals-v1" },
-    "reviewedAt": { "type": "string", "format": "date-time" },
-    "approvalSource": { "type": "string", "minLength": 1 },
+    "reviewedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Review timestamp for the original approval-state batch; incrementally refreshed entries retain their own reviewedAt values."
+    },
+    "approvalSource": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Approval source for the original approval-state batch; incrementally refreshed entries retain their own approvalSource values."
+    },
     "approvalCount": { "type": "integer", "minimum": 1 },
     "approvals": {
       "type": "array",

@@ -71,6 +71,21 @@ test("cover approvals require zero unresolved reasons and deterministic exact-ou
     approvalSource: APPROVAL_SOURCE,
   }), /zero unresolved/);
   assert.throws(() => validateCoverApprovalState({ ...state, approvals: [{ ...state.approvals[0], width: 1 }] }), /1200x675/);
+  const incrementallyApproved = {
+    ...state,
+    approvals: [{
+      ...state.approvals[0],
+      approvedOutputHash: "b".repeat(64),
+      approvalSource: "owner-approved-incremental-replacement-2026-08-12",
+      reviewedAt: "2026-08-12T08:51:18.864Z",
+    }],
+  };
+  assert.equal(validateCoverApprovalState(incrementallyApproved).approvals[0].approvalSource,
+    "owner-approved-incremental-replacement-2026-08-12");
+  assert.throws(() => validateCoverApprovalState({
+    ...incrementallyApproved,
+    approvals: [{ ...incrementallyApproved.approvals[0], approvalSource: "" }],
+  }), /non-empty approvalSource/);
 });
 
 test("cover approvals fully decode and produce a write-free publish plan", async (context) => {
@@ -99,6 +114,9 @@ test("production cover approval state covers exactly 2,366 company and network i
   assert.equal(state.approvals.filter((approval) => approval.entityType === "company").length, 1797);
   assert.equal(state.approvals.filter((approval) => approval.entityType === "network").length, 569);
   assert.equal(new Set(state.approvals.map((approval) => approval.publishTarget)).size, 2366);
+  const abcIview = state.approvals.find((approval) => approval.stableKey === "network:1327");
+  assert.equal(abcIview.approvedOutputHash, "7d6805a41f856f07a144f494cc49bbe399b062ad40f700107f3334e18ce69fde");
+  assert.equal(abcIview.approvalSource, "owner-approved-abc-iview-light-background-2026-08-12");
   assert.throws(() => validateCoverApprovalStateAgainstSchema(state, {
     ...schema,
     properties: { ...schema.properties, version: { const: "wrong-version" } },

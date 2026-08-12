@@ -1,12 +1,12 @@
 {
   "schemaVersion": 2,
   "status": "published",
-  "fingerprint": "edc8813537d2fe8e2bbec35127d296b5b5fc872b7c2219053c801e441cd77b98",
+  "fingerprint": "af9c1699d8dac512d6d583566c7134d67e04af55a5a1e1c6f581a45b7e097905",
   "generatedFrom": {
     "studioNetworkManifest": {
       "path": "assets/collection_covers/manifest.json",
-      "sha256": "9c214428194d24653892177919f60d3e070b6f5d9491aac4bd70045bae5c7079",
-      "fingerprint": "b1460d79e4ecc73a836676c85a1294bd424af4d58c69014e352073b830d4098c"
+      "sha256": "e4e0b541904384ff2ba9bb258a773eddeb954ae052f56f27aa0008d0bf6a68b8",
+      "fingerprint": "ab4f7ef844adbe46804bfb5cefb51633bf02c58a38f3f5a3df1ec1311e17425d"
     },
     "peopleManifest": {
       "path": "assets/collection_covers/people/manifest.json",
@@ -25346,7 +25346,7 @@
       "status": "published",
       "landscape": {
         "path": "assets/collection_covers/networks/1327.webp",
-        "sha256": "117657f6b581844b01a8681faa6b6f7d0a21c4760c3871fbc821162656a6c0e7"
+        "sha256": "7d6805a41f856f07a144f494cc49bbe399b062ad40f700107f3334e18ce69fde"
       },
       "poster": {
         "path": "assets/collection_covers/networks/poster/1327.webp",

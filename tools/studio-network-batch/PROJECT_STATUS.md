@@ -1,8 +1,8 @@
 # Studio/network batch project status
 
-**Last verified:** 2026-07-23 AEST (UTC+10), after the exact four-company Alternative B compact-logo publication and full preservation verification
+**Last verified:** 2026-08-12 AEST (UTC+10), after the exact ABC iview light-background replacement and full runtime/public-tree preservation verification
 
-**Published release:** `studio-network-compact-logo-fit-2026-07-23` at `2026-07-23T01:01:39.239Z`, on top of `studio-network-service-maintenance-2026-07-23`, `studio-network-christian-studios-supplement-2026-07-19`, and `studio-network-v1-2026-07-16`
+**Latest local publication delta:** `studio-network-abc-iview-background-fix-2026-08-12` at `2026-08-12T09:01:47.637Z` (working tree only; not committed or pushed), on top of the current v2 network-poster and People v3 publication state
 
 **Previous maintenance commit:** `a35bceeb63abfb5cc60649126f2ece2b4102b6a3`
 
@@ -41,8 +41,10 @@ The following stages are complete and present locally:
 - transaction-like publication of all 2,366 approved covers, installation of the canonical manifest only after permanent-file validation, generation of final release contact sheets from the published files, and cleanup of only the ignored artifacts authorised by the validated cleanup plan;
 - bounded service maintenance for six exact missing logo identities plus the owner-approved Williams Street Inter fallback, with 2,385 unrelated covers preserved byte-for-byte and four compact-logo size comparisons retained as proof-only ignored artifacts.
 - owner application of the exact Alternative B proof for `company:4`, `company:21`, `company:174`, and `company:2785`, with exact regenerated-proof byte parity, 2,388 unrelated covers preserved, and the global renderer and production preset unchanged.
+- source-hash-bound correction of `network:1327` (ABC iview) from dark to light, with its exact replacement approval recorded independently, only its public WebP/manifest record/runtime record changed, 7,529 unrelated public files preserved, and all 5,924 runtime-referenced assets hash-checked and fully decoded;
+- staging-only generation of six explicit below-threshold anime studios (`company:2849`, `company:5438`, `company:5887`, `company:21444`, `company:31058`, and `company:50908`); these six remain unapproved and unpublished.
 
-The current canonical library contains 1,820 company covers and 572 network covers. The production-v1 staged and approval state remains the original fully reviewed 2,366-record base; later bounded publications added exactly 23 explicit companies and 3 explicit networks without changing that staging state. The latest replacement release changed only the four preexisting compact-logo company records and WebPs.
+The current canonical library contains 1,820 company covers and 572 network covers. Production-v1 staging currently contains the original 2,366-record base plus six unapproved explicit anime-studio candidates. The original approval state still covers 2,366 identities, with only ABC iview's entry incrementally refreshed to its exact corrected output hash. The latest local replacement changed only the preexisting ABC iview network record and WebP.
 
 ## Latest verified source counts
 
@@ -60,14 +62,14 @@ All 2,366 currently eligible source records are now present in persistent produc
 
 - Preset: `production-v1`
 - Location: `.work/staging/production-v1/`
-- Staged WebP files: 2,366 (1,797 companies, 569 networks)
+- Staged WebP files: 2,372 (1,803 companies, 569 networks), including six unapproved explicit anime-studio candidates
 - Current failed state records: 0
-- Current staged bytes: 26,589,254 total
-- Current staged file size: 10,458-byte median; 2,258–39,004-byte range
-- Background split: 1,142 dark; 1,224 light
-- Output treatments: 1,885 image/logo-backed; 478 missing-logo Inter fallbacks; 3 owner-approved Inter text treatments
-- Combined staged content fingerprint: `48eff273e92778f1a20801dad7160e05a659c211c5f942d2a35c6b97f055c508`
-- Combined staged modification-time fingerprint: `fb1454694062842d5301a0768791cbaeab11e89ce382272bab8adaca19775951`
+- Current staged bytes: 26,654,986 total
+- Current staged file size: 10,457-byte median; 2,258–39,004-byte range
+- Background split: 1,142 dark; 1,230 light
+- Output treatments: 1,891 image/logo-backed; 478 missing-logo Inter fallbacks; 3 owner-approved Inter text treatments
+- Combined staged content fingerprint: `b37fc6f28836091df213a8ab53f0ce29fc52eb17a3a4c986d8597937a1b7898b`
+- Combined staged modification-time fingerprint: `3be0789d218aa4a782e3a9dc58f098f7d2ecd7d97cd6c7b51f61bc7150100e0f`
 - Final assets published: yes, in release `studio-network-v1-2026-07-16`
 
 The persistent current state is `.work/reports/production-v1/run-state.json`. The reconciled top-level `entities.jsonl` contains all 2,366 primary records. The post-expansion single-key run retained all previous 2,365 outputs byte-for-byte with their modification times.
@@ -331,14 +333,14 @@ With `npm --prefix tools/studio-network-batch`, the command runs in `tools/studi
 
 ## Publication state
 
-Current canonical state after `studio-network-compact-logo-fit-2026-07-23`:
+Current canonical state after the local working-tree replacement `studio-network-abc-iview-background-fix-2026-08-12` (not committed or pushed):
 
 - `assets/collection_covers/companies/{tmdb_id}.webp`: 1,820 files;
 - `assets/collection_covers/networks/{tmdb_id}.webp`: 572 files;
-- `assets/collection_covers/manifest.json`: 2,392 entries, 5,497,782 bytes, SHA-256 `f712e5ed508d1c5c15baa85fcece8f06e7e96b96cd4e018e9a9bbd3703ecbf4d`;
-- published artwork bytes: 26,936,032;
-- published asset fingerprint: `174dbfb85277f2b624927986658318cbc44a74d1a4dc4d226b8b137a2f3674c8`;
-- runtime lookup: 1,820 companies, 572 networks, 817 people, 3,209 total entities and 4,026 assets; SHA-256 `0de10eb9841571480faafa838ecfce86fe0fe20cc8aabc097b29e610cd64ada4`; fingerprint `fd4045032ee173ceedfdb1d7a27d30429844b249d5ba29bfd75911966e887138`;
+- `assets/collection_covers/manifest.json`: 2,392 entries, 6,352,008 bytes, SHA-256 `e4e0b541904384ff2ba9bb258a773eddeb954ae052f56f27aa0008d0bf6a68b8`;
+- published landscape artwork bytes: 26,937,260; landscape fingerprint `40b776f1913ecc757fe34d20ccf917d3c3077465fabe6ede22b86d1633f13e7a`;
+- combined manifest published-asset fingerprint: `ab4f7ef844adbe46804bfb5cefb51633bf02c58a38f3f5a3df1ec1311e17425d`;
+- runtime lookup: 1,820 companies, 572 networks, 1,480 people, 3,872 total entities and 5,924 assets; 1,768,595 bytes; SHA-256 `d7c89d5a1431fe8c87a5fd0673b2f366b26931080962de37032a8104278ec5ab`; fingerprint `af9c1699d8dac512d6d583566c7134d67e04af55a5a1e1c6f581a45b7e097905`;
 - original release contact sheets: 29 company pages, 9 network pages, and 37 combined pages;
 - supplement review sheet: `.work/christian-studios-supplement/contact-sheets/christian-studios-supplement.png`;
 - service maintenance review sheet: `.work/service-studio-maintenance/contact-sheets/part-a-seven-candidates.png`;

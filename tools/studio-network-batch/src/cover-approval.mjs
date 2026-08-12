@@ -101,8 +101,8 @@ export function validateCoverApprovalState(state) {
     if (approval.approvalStatus !== "approved") {
       throw new Error(`Cover approvals[${index}] is not approved.`);
     }
-    if (approval.approvalSource !== state.approvalSource || approval.reviewedAt !== state.reviewedAt) {
-      throw new Error(`Cover approvals[${index}] does not match the state approval metadata.`);
+    if (typeof approval.approvalSource !== "string" || !approval.approvalSource.trim()) {
+      throw new Error(`Cover approvals[${index}] requires a non-empty approvalSource.`);
     }
     assertDateTime(approval.reviewedAt, `Cover approvals[${index}].reviewedAt`);
     if (seen.has(approval.stableKey)) throw new Error(`Duplicate cover approval ${approval.stableKey}.`);

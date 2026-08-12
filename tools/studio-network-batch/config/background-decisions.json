@@ -168,6 +168,13 @@
     "name": "NTV"
   },
   {
+    "stableKey": "network:1327",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "5075cc4d25dd74370e7a7ecb8e6f0a1d156682b9e4f8951e86cd959f83c470f9",
+    "reason": "Owner-reviewed mixed-contrast logo",
+    "name": "ABC iview"
+  },
+  {
     "stableKey": "network:1795",
     "backgroundPreset": "light",
     "sourceLogoHash": "30f6958a8c3ebc2e355953464e371d10b64a5a4c59d9951368fc0cb7c32fb13d",
