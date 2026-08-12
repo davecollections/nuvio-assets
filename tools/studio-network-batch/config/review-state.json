@@ -2,7 +2,7 @@
   "version": "studio-network-cover-approvals-v1",
   "reviewedAt": "2026-07-15T23:29:25.301Z",
   "approvalSource": "owner-approved-final-review-2026-07-16",
-  "approvalCount": 2366,
+  "approvalCount": 2372,
   "approvals": [
     {
       "stableKey": "company:1",
@@ -5315,6 +5315,21 @@
       "reviewedAt": "2026-07-15T23:29:25.301Z"
     },
     {
+      "stableKey": "company:2849",
+      "entityType": "company",
+      "tmdbId": 2849,
+      "canonicalNameAtApproval": "BONES",
+      "publishTarget": "assets/collection_covers/companies/2849.webp",
+      "approvedOutputHash": "705f17f9f125ea76c188d4ddbc6c283d92ccdfc5819f832f02636da9a0b52fe6",
+      "approvedByteCount": 8996,
+      "width": 1200,
+      "height": 675,
+      "format": "webp",
+      "approvalStatus": "approved",
+      "approvalSource": "owner-approved-anime-studio-covers-2026-08-12",
+      "reviewedAt": "2026-08-12T09:51:18.343Z"
+    },
+    {
       "stableKey": "company:2865",
       "entityType": "company",
       "tmdbId": 2865,
@@ -7775,6 +7790,21 @@
       "reviewedAt": "2026-07-15T23:29:25.301Z"
     },
     {
+      "stableKey": "company:5438",
+      "entityType": "company",
+      "tmdbId": 5438,
+      "canonicalNameAtApproval": "Kyoto Animation",
+      "publishTarget": "assets/collection_covers/companies/5438.webp",
+      "approvedOutputHash": "50a169825eac451de6f62f6161ce53bd6ff9187b9e599b81943cd92c058d0cb1",
+      "approvedByteCount": 15580,
+      "width": 1200,
+      "height": 675,
+      "format": "webp",
+      "approvalStatus": "approved",
+      "approvalSource": "owner-approved-anime-studio-covers-2026-08-12",
+      "reviewedAt": "2026-08-12T09:51:18.343Z"
+    },
+    {
       "stableKey": "company:5439",
       "entityType": "company",
       "tmdbId": 5439,
@@ -8058,6 +8088,21 @@
       "approvalStatus": "approved",
       "approvalSource": "owner-approved-final-review-2026-07-16",
       "reviewedAt": "2026-07-15T23:29:25.301Z"
+    },
+    {
+      "stableKey": "company:5887",
+      "entityType": "company",
+      "tmdbId": 5887,
+      "canonicalNameAtApproval": "ufotable",
+      "publishTarget": "assets/collection_covers/companies/5887.webp",
+      "approvedOutputHash": "1258a547398954c4dbcbdbb6ffab348723225a1885a13057556edafee89a3d3b",
+      "approvedByteCount": 14956,
+      "width": 1200,
+      "height": 675,
+      "format": "webp",
+      "approvalStatus": "approved",
+      "approvalSource": "owner-approved-anime-studio-covers-2026-08-12",
+      "reviewedAt": "2026-08-12T09:51:18.343Z"
     },
     {
       "stableKey": "company:5896",
@@ -16025,6 +16070,21 @@
       "reviewedAt": "2026-07-15T23:29:25.301Z"
     },
     {
+      "stableKey": "company:21444",
+      "entityType": "company",
+      "tmdbId": 21444,
+      "canonicalNameAtApproval": "MAPPA",
+      "publishTarget": "assets/collection_covers/companies/21444.webp",
+      "approvedOutputHash": "b8968c3c7c2a2ab639c93767f95f2063734b463b38e4672b49fce19e63415199",
+      "approvedByteCount": 8048,
+      "width": 1200,
+      "height": 675,
+      "format": "webp",
+      "approvalStatus": "approved",
+      "approvalSource": "owner-approved-anime-studio-covers-2026-08-12",
+      "reviewedAt": "2026-08-12T09:51:18.343Z"
+    },
+    {
       "stableKey": "company:21485",
       "entityType": "company",
       "tmdbId": 21485,
@@ -17643,6 +17703,21 @@
       "approvalStatus": "approved",
       "approvalSource": "owner-approved-final-review-2026-07-16",
       "reviewedAt": "2026-07-15T23:29:25.301Z"
+    },
+    {
+      "stableKey": "company:31058",
+      "entityType": "company",
+      "tmdbId": 31058,
+      "canonicalNameAtApproval": "WIT STUDIO",
+      "publishTarget": "assets/collection_covers/companies/31058.webp",
+      "approvedOutputHash": "99e39b49ed3484600e4dc4a894ec1b1fa15d6afaabf2b9eb5181e9e7ae8db7d0",
+      "approvedByteCount": 10362,
+      "width": 1200,
+      "height": 675,
+      "format": "webp",
+      "approvalStatus": "approved",
+      "approvalSource": "owner-approved-anime-studio-covers-2026-08-12",
+      "reviewedAt": "2026-08-12T09:51:18.343Z"
     },
     {
       "stableKey": "company:31123",
@@ -19413,6 +19488,21 @@
       "approvalStatus": "approved",
       "approvalSource": "owner-approved-final-review-2026-07-16",
       "reviewedAt": "2026-07-15T23:29:25.301Z"
+    },
+    {
+      "stableKey": "company:50908",
+      "entityType": "company",
+      "tmdbId": 50908,
+      "canonicalNameAtApproval": "TRIGGER",
+      "publishTarget": "assets/collection_covers/companies/50908.webp",
+      "approvedOutputHash": "90878a72069777f798b566ee3283df774b4ef6a2bed1e9b877d6c93e6da5a7c7",
+      "approvedByteCount": 6562,
+      "width": 1200,
+      "height": 675,
+      "format": "webp",
+      "approvalStatus": "approved",
+      "approvalSource": "owner-approved-anime-studio-covers-2026-08-12",
+      "reviewedAt": "2026-08-12T09:51:18.343Z"
     },
     {
       "stableKey": "company:51415",

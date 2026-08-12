@@ -158,7 +158,10 @@ if (options.write) {
 } else {
   state = validateCoverApprovalState(JSON.parse(await fs.readFile(approvalPath, "utf8")));
 }
-if (state.approvalCount !== 2366) throw new Error(`Expected 2,366 cover approvals, found ${state.approvalCount}.`);
+const expectedApprovalCount = effectiveRecords.length;
+if (state.approvalCount !== expectedApprovalCount) {
+  throw new Error(`Expected ${expectedApprovalCount.toLocaleString("en-US")} cover approvals, found ${state.approvalCount}.`);
+}
 validateCoverApprovalStateAgainstSchema(state, approvalSchema);
 
 const validation = await validateCoverApprovalStateAgainstStaging({
@@ -167,7 +170,7 @@ const validation = await validateCoverApprovalStateAgainstStaging({
   stagingRoot,
 });
 const publishPlan = await buildPublishPlan({ records: effectiveRecords, reviewEntries: state.approvals, repoRoot });
-if (!publishPlan.dryRun || publishPlan.writesPerformed || publishPlan.approvedCount !== 2366 || publishPlan.issueCount) {
+if (!publishPlan.dryRun || publishPlan.writesPerformed || publishPlan.approvedCount !== expectedApprovalCount || publishPlan.issueCount) {
   throw new Error(`Dry publish plan failed validation: ${publishPlan.approvedCount} entries, ${publishPlan.issueCount} issues.`);
 }
 
