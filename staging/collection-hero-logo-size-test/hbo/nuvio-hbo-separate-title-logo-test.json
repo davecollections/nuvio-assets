@@ -1,0 +1,60 @@
+[
+  {
+    "id": "collection-HBOSEPARATETITLELOGOTEST",
+    "title": "HBO Separate Title Logo Test",
+    "folders": [
+      {
+        "id": "folder-HBOSEPARATETITLELOGO",
+        "title": "HBO — Separate Title Logo",
+        "sources": [
+          {
+            "title": "Popular Series",
+            "sortBy": "popularity.desc",
+            "tmdbId": null,
+            "filters": {
+              "withNetworks": "49",
+              "withOriginalLanguage": "en",
+              "voteCountGte": 40,
+              "vote_count.gte": 40
+            },
+            "provider": "tmdb",
+            "mediaType": "TV",
+            "tmdbSourceType": "DISCOVER",
+            "id": "src-HBO-SEPARATE-POPULAR",
+            "genre": "Popular Series",
+            "name": "Popular Series"
+          },
+          {
+            "title": "Recent Series",
+            "sortBy": "popularity.desc",
+            "tmdbId": null,
+            "filters": {
+              "withNetworks": "49",
+              "releaseDateGte": "2024-01-01",
+              "withOriginalLanguage": "en",
+              "voteCountGte": 40,
+              "vote_count.gte": 40
+            },
+            "provider": "tmdb",
+            "mediaType": "TV",
+            "tmdbSourceType": "DISCOVER",
+            "id": "src-HBO-SEPARATE-RECENT",
+            "genre": "Recent Series",
+            "name": "Recent Series"
+          }
+        ],
+        "hideTitle": true,
+        "tileShape": "POSTER",
+        "titleLogoUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/refs/heads/work/collection-hero-logo-size-test/staging/collection-hero-logo-size-test/hbo/hbo-title-logo.png",
+        "coverImageUrl": "https://imkaptain.github.io/nuvio-assets/assets/images/aaf5b516.webp",
+        "catalogSources": [],
+        "focusGifEnabled": false,
+        "heroBackdropUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/refs/heads/work/collection-hero-logo-size-test/staging/collection-hero-logo-size-test/hbo/hbo-hero-no-logo.webp"
+      }
+    ],
+    "pinToTop": true,
+    "viewMode": "TABBED_GRID",
+    "showAllTab": true,
+    "focusGlowEnabled": true
+  }
+]
