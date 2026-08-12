@@ -1,0 +1,329 @@
+name: Refresh TMDB Watch Provider registry
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 3,17 * *"
+
+concurrency:
+  group: watch-provider-registry-refresh
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Reject manual dispatch outside main
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          DISPATCH_REF: ${{ github.ref }}
+        run: |
+          if [[ "$DISPATCH_REF" != "refs/heads/main" ]]; then
+            echo "::error::Manual refresh must be dispatched from main."
+            exit 1
+          fi
+
+      - name: Check out current main
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Node.js
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: "22"
+          package-manager-cache: false
+
+      - name: Inspect remote automation state
+        id: preflight
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUTOMATION_BRANCH: automation/watch-provider-registry-refresh
+          COMMIT_SUBJECT: Refresh TMDB Watch Provider registry
+          PR_TITLE: Refresh TMDB Watch Provider registry
+          REGISTRY_PATH: data/watch-providers/registry.json
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          fail() {
+            echo "::error::$*" >&2
+            exit 1
+          }
+
+          verify_machine_commit() {
+            local sha="$1"
+            local metadata parent_count
+            local -a commit_files
+
+            metadata="$(git show -s --format='%an%x1f%ae%x1f%cn%x1f%ce%x1f%s' "$sha")"
+            [[ "$metadata" == "github-actions[bot]"$'\x1f'"41898282+github-actions[bot]@users.noreply.github.com"$'\x1f'"github-actions[bot]"$'\x1f'"41898282+github-actions[bot]@users.noreply.github.com"$'\x1f'"$COMMIT_SUBJECT" ]] ||
+              fail "The automation branch tip does not have the expected bot identity and commit subject."
+
+            parent_count="$(git rev-list --parents -n 1 "$sha" | awk '{ print NF - 1 }')"
+            [[ "$parent_count" == "1" ]] || fail "The automation branch tip is not one single-parent automation commit."
+
+            mapfile -t commit_files < <(git diff-tree --no-commit-id --name-only -r "$sha")
+            [[ "${#commit_files[@]}" == "1" && "${commit_files[0]}" == "$REGISTRY_PATH" ]] ||
+              fail "The automation commit changes files other than the canonical registry."
+          }
+
+          git fetch --no-tags origin "+refs/heads/main:refs/remotes/origin/main"
+          git checkout --detach refs/remotes/origin/main
+          main_sha="$(git rev-parse HEAD)"
+
+          remote_line="$(git ls-remote --heads origin "refs/heads/$AUTOMATION_BRANCH")"
+          remote_sha="${remote_line%%[[:space:]]*}"
+          branch_exists=false
+          if [[ -n "$remote_line" ]]; then
+            branch_exists=true
+            git fetch --no-tags origin "+refs/heads/$AUTOMATION_BRANCH:refs/remotes/origin/$AUTOMATION_BRANCH"
+            [[ "$(git rev-parse "refs/remotes/origin/$AUTOMATION_BRANCH")" == "$remote_sha" ]] ||
+              fail "The fetched automation branch does not match its observed remote SHA."
+          fi
+
+          prs_path="$RUNNER_TEMP/watch-provider-refresh-prs.json"
+          gh api --method GET "repos/$GITHUB_REPOSITORY/pulls" \
+            -f state=open \
+            -f base=main \
+            -f "head=$GITHUB_REPOSITORY_OWNER:$AUTOMATION_BRANCH" \
+            -f per_page=100 > "$prs_path"
+
+          pr_count="$(jq 'length' "$prs_path")"
+          (( pr_count <= 1 )) || fail "More than one open refresh PR exists for the automation branch."
+
+          pr_number=""
+          pr_head_sha=""
+          if (( pr_count == 1 )); then
+            pr_number="$(jq -r '.[0].number' "$prs_path")"
+            pr_head_sha="$(jq -r '.[0].head.sha' "$prs_path")"
+            [[ "$(jq -r '.[0].head.ref' "$prs_path")" == "$AUTOMATION_BRANCH" ]] || fail "The open refresh PR has an unexpected head branch."
+            [[ "$(jq -r '.[0].base.ref' "$prs_path")" == "main" ]] || fail "The open refresh PR has an unexpected base branch."
+            [[ "$(jq -r '.[0].title' "$prs_path")" == "$PR_TITLE" ]] || fail "The open refresh PR has an unexpected title."
+          fi
+
+          if [[ "$branch_exists" == "false" ]]; then
+            (( pr_count == 0 )) || fail "An open refresh PR exists but its remote automation branch is absent."
+          else
+            verify_machine_commit "$remote_sha"
+            if (( pr_count == 0 )); then
+              git merge-base --is-ancestor "$remote_sha" "$main_sha" ||
+                fail "The automation branch exists without an open PR and is not an expected old commit contained in main."
+            else
+              [[ "$pr_head_sha" == "$remote_sha" ]] || fail "The open refresh PR head does not match the observed automation branch SHA."
+              git merge-base --is-ancestor "$remote_sha" "$main_sha" &&
+                fail "The open refresh PR points to an automation commit already contained in main."
+              merge_base="$(git merge-base "$main_sha" "$remote_sha")"
+              [[ "$(git rev-list --count "$merge_base..$remote_sha")" == "1" ]] ||
+                fail "The open refresh proposal contains unexpected additional commits."
+              mapfile -t proposal_files < <(git diff --name-only "$merge_base..$remote_sha")
+              [[ "${#proposal_files[@]}" == "1" && "${proposal_files[0]}" == "$REGISTRY_PATH" ]] ||
+                fail "The open refresh proposal changes files other than the canonical registry."
+            fi
+          fi
+
+          {
+            echo "main_sha=$main_sha"
+            echo "branch_exists=$branch_exists"
+            echo "remote_sha=$remote_sha"
+            echo "pr_count=$pr_count"
+            echo "pr_number=$pr_number"
+            echo "pr_head_sha=$pr_head_sha"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Refresh canonical registry
+        id: refresh
+        env:
+          NUVIO_PEOPLE_SERVICE_TOKEN: ${{ secrets.NUVIO_PEOPLE_SERVICE_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "${NUVIO_PEOPLE_SERVICE_TOKEN:-}" ]]; then
+            echo "::error::Expected Actions secret NUVIO_PEOPLE_SERVICE_TOKEN is not configured."
+            exit 1
+          fi
+
+          summary_path="$RUNNER_TEMP/watch-provider-refresh-summary.json"
+          npm --prefix tools/watch-provider-registry run refresh > "$summary_path"
+
+          node - "$summary_path" <<'NODE'
+          const fs = require("node:fs");
+          const summaryPath = process.argv[2];
+          const text = fs.readFileSync(summaryPath, "utf8");
+          const summary = JSON.parse(text);
+          const expectedKeys = [
+            "canonicalByteSize",
+            "canonicalCounts",
+            "changed",
+            "crossMediaIdentityConflicts",
+            "deterministicByteParity",
+            "mapOnlyRegionCodes",
+            "mode",
+            "semanticChanges",
+            "sourceCounts",
+            "upstreamRequestCount",
+            "wrote",
+          ];
+          if (JSON.stringify(Object.keys(summary).sort()) !== JSON.stringify(expectedKeys)) {
+            throw new Error("Refresh summary fields changed; refusing to log or publish it.");
+          }
+          if (summary.upstreamRequestCount !== 3) {
+            throw new Error("Refresh did not report exactly three upstream requests.");
+          }
+          if (text.includes(process.env.NUVIO_PEOPLE_SERVICE_TOKEN)) {
+            throw new Error("Refresh summary unexpectedly contains secret material.");
+          }
+          NODE
+
+          cat "$summary_path"
+          echo "summary_path=$summary_path" >> "$GITHUB_OUTPUT"
+
+      - name: Validate refreshed registry
+        run: npm --prefix tools/watch-provider-registry run check
+
+      - name: Gate publication on the canonical Git diff
+        id: gate
+        env:
+          OPEN_PR_COUNT: ${{ steps.preflight.outputs.pr_count }}
+          REGISTRY_PATH: data/watch-providers/registry.json
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -t tracked_changes < <(git diff --name-only --diff-filter=ACDMRTUXB HEAD --)
+          mapfile -t untracked_files < <(git ls-files --others --exclude-standard)
+
+          if (( ${#untracked_files[@]} != 0 )); then
+            echo "::error::Refresh created unexpected untracked files: ${untracked_files[*]}"
+            exit 1
+          fi
+          if (( ${#tracked_changes[@]} > 1 )); then
+            echo "::error::Refresh changed unexpected tracked files: ${tracked_changes[*]}"
+            exit 1
+          fi
+          if (( ${#tracked_changes[@]} == 1 )) && [[ "${tracked_changes[0]}" != "$REGISTRY_PATH" ]]; then
+            echo "::error::Refresh changed unexpected tracked files: ${tracked_changes[*]}"
+            exit 1
+          fi
+
+          if git diff --quiet HEAD -- "$REGISTRY_PATH"; then
+            if [[ "$OPEN_PR_COUNT" == "1" ]]; then
+              echo "::error::The newest source matches main while a refresh PR remains open; owner review is required."
+              exit 1
+            fi
+            echo "Registry is unchanged; no commit, push, PR, or comment will be created."
+            echo "registry_changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git diff --check -- "$REGISTRY_PATH"
+            echo "registry_changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish changed registry for owner review
+        if: steps.gate.outputs.registry_changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          AUTOMATION_BRANCH: automation/watch-provider-registry-refresh
+          COMMIT_SUBJECT: Refresh TMDB Watch Provider registry
+          PR_TITLE: Refresh TMDB Watch Provider registry
+          REGISTRY_PATH: data/watch-providers/registry.json
+          PREFLIGHT_MAIN_SHA: ${{ steps.preflight.outputs.main_sha }}
+          PREFLIGHT_BRANCH_EXISTS: ${{ steps.preflight.outputs.branch_exists }}
+          PREFLIGHT_REMOTE_SHA: ${{ steps.preflight.outputs.remote_sha }}
+          PREFLIGHT_PR_COUNT: ${{ steps.preflight.outputs.pr_count }}
+          PREFLIGHT_PR_NUMBER: ${{ steps.preflight.outputs.pr_number }}
+          PREFLIGHT_PR_HEAD_SHA: ${{ steps.preflight.outputs.pr_head_sha }}
+          SUMMARY_PATH: ${{ steps.refresh.outputs.summary_path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          fail() {
+            echo "::error::$*" >&2
+            exit 1
+          }
+
+          git fetch --no-tags origin "+refs/heads/main:refs/remotes/origin/main"
+          [[ "$(git rev-parse refs/remotes/origin/main)" == "$PREFLIGHT_MAIN_SHA" ]] ||
+            fail "Remote main advanced after preflight; rerun from the new canonical base."
+
+          current_remote_line="$(git ls-remote --heads origin "refs/heads/$AUTOMATION_BRANCH")"
+          current_remote_sha="${current_remote_line%%[[:space:]]*}"
+          if [[ "$PREFLIGHT_BRANCH_EXISTS" == "true" ]]; then
+            [[ "$current_remote_sha" == "$PREFLIGHT_REMOTE_SHA" ]] || fail "The automation branch changed after preflight."
+          else
+            [[ -z "$current_remote_line" ]] || fail "The automation branch appeared after preflight."
+          fi
+
+          current_prs_path="$RUNNER_TEMP/watch-provider-refresh-prs-current.json"
+          gh api --method GET "repos/$GITHUB_REPOSITORY/pulls" \
+            -f state=open \
+            -f base=main \
+            -f "head=$GITHUB_REPOSITORY_OWNER:$AUTOMATION_BRANCH" \
+            -f per_page=100 > "$current_prs_path"
+          [[ "$(jq 'length' "$current_prs_path")" == "$PREFLIGHT_PR_COUNT" ]] || fail "Refresh PR state changed after preflight."
+          if [[ "$PREFLIGHT_PR_COUNT" == "1" ]]; then
+            [[ "$(jq -r '.[0].number' "$current_prs_path")" == "$PREFLIGHT_PR_NUMBER" ]] || fail "The refresh PR number changed after preflight."
+            [[ "$(jq -r '.[0].head.sha' "$current_prs_path")" == "$PREFLIGHT_PR_HEAD_SHA" ]] || fail "The refresh PR head changed after preflight."
+            [[ "$(jq -r '.[0].title' "$current_prs_path")" == "$PR_TITLE" ]] || fail "The refresh PR title changed after preflight."
+          fi
+
+          summarize_types() {
+            local selector="$1"
+            jq -r "$selector | to_entries | if length == 0 then \"none\" else map(\"\(.key)=\(.value)\") | join(\", \") end" "$SUMMARY_PATH"
+          }
+
+          meaningful="$(summarize_types '.semanticChanges.meaningful.byType')"
+          informational="$(summarize_types '.semanticChanges.informational.byType')"
+          map_only="$(jq -r '.mapOnlyRegionCodes | if length == 0 then "none" else join(", ") end' "$SUMMARY_PATH")"
+          body_path="$RUNNER_TEMP/watch-provider-refresh-pr-body.md"
+          cat > "$body_path" <<EOF
+          This pull request was generated by the deterministic Watch Provider registry tooling.
+
+          - Canonical Regions: $(jq -r '.canonicalCounts.regions' "$SUMMARY_PATH")
+          - Providers: $(jq -r '.canonicalCounts.providers' "$SUMMARY_PATH")
+          - Movie-only: $(jq -r '.canonicalCounts.movieOnly' "$SUMMARY_PATH")
+          - TV-only: $(jq -r '.canonicalCounts.tvOnly' "$SUMMARY_PATH")
+          - Both Movie and TV: $(jq -r '.canonicalCounts.both' "$SUMMARY_PATH")
+          - Meaningful changes: $(jq -r '.semanticChanges.meaningful.total' "$SUMMARY_PATH") ($meaningful)
+          - Informational changes: $(jq -r '.semanticChanges.informational.total' "$SUMMARY_PATH") ($informational)
+          - Map-only Region diagnostics: $map_only
+
+          Owner review is required. This automation does not merge or enable auto-merge.
+          When accepting this recurring refresh PR, use GitHub's **merge commit** method; do not squash or rebase it. This preserves the exact machine-generated commit in `main` history for the next branch-safety check.
+          EOF
+          sed -i 's/^          //' "$body_path"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- "$REGISTRY_PATH"
+          mapfile -t staged_files < <(git diff --cached --name-only)
+          [[ "${#staged_files[@]}" == "1" && "${staged_files[0]}" == "$REGISTRY_PATH" ]] ||
+            fail "The candidate commit contains files other than the canonical registry."
+          git commit -m "$COMMIT_SUBJECT"
+
+          target_ref="refs/heads/$AUTOMATION_BRANCH"
+          if [[ "$PREFLIGHT_BRANCH_EXISTS" == "true" ]]; then
+            git push "--force-with-lease=$target_ref:$PREFLIGHT_REMOTE_SHA" origin "HEAD:$target_ref"
+          else
+            git push origin "HEAD:$target_ref"
+          fi
+
+          if [[ "$PREFLIGHT_PR_COUNT" == "1" ]]; then
+            gh api --method PATCH "repos/$GITHUB_REPOSITORY/pulls/$PREFLIGHT_PR_NUMBER" \
+              -f "title=$PR_TITLE" \
+              -F "body=@$body_path" > /dev/null
+            echo "Updated refresh PR #$PREFLIGHT_PR_NUMBER for owner review."
+          else
+            gh api --method POST "repos/$GITHUB_REPOSITORY/pulls" \
+              -f "title=$PR_TITLE" \
+              -f "head=$AUTOMATION_BRANCH" \
+              -f base=main \
+              -F "body=@$body_path" > /dev/null
+            echo "Created one refresh PR for owner review."
+          fi
