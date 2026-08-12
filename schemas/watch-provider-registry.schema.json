@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/watch-provider-registry.schema.json",
+  "title": "Nuvio TMDB Watch Provider registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "regions", "providers"],
+  "properties": {
+    "version": { "const": "watch-provider-registry-v1" },
+    "regions": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/region" }
+    },
+    "providers": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/provider" }
+    }
+  },
+  "$defs": {
+    "regionCode": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$"
+    },
+    "region": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "englishName", "nativeName"],
+      "properties": {
+        "code": { "$ref": "#/$defs/regionCode" },
+        "englishName": { "type": "string", "minLength": 1 },
+        "nativeName": { "type": "string", "minLength": 1 }
+      }
+    },
+    "regionalPriorities": {
+      "type": "object",
+      "propertyNames": { "$ref": "#/$defs/regionCode" },
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "mediaMember": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["displayPriority", "regionalPriorities"],
+      "properties": {
+        "displayPriority": { "type": "integer", "minimum": 0 },
+        "regionalPriorities": { "$ref": "#/$defs/regionalPriorities" }
+      }
+    },
+    "media": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "movie": { "$ref": "#/$defs/mediaMember" },
+        "tv": { "$ref": "#/$defs/mediaMember" }
+      }
+    },
+    "provider": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["stableKey", "tmdbWatchProviderId", "name", "logoPath", "media"],
+      "properties": {
+        "stableKey": {
+          "type": "string",
+          "pattern": "^provider:[1-9][0-9]*$"
+        },
+        "tmdbWatchProviderId": { "type": "integer", "minimum": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "logoPath": {
+          "type": ["string", "null"],
+          "pattern": "^/[A-Za-z0-9_-]+\\.(jpg|jpeg|png|webp)$"
+        },
+        "media": { "$ref": "#/$defs/media" }
+      }
+    }
+  }
+}

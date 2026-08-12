@@ -5,6 +5,7 @@
 /data/people/actor-owner-supplement.json text eol=lf
 /data/people/people-owner-supplement-v3.json text eol=lf
 /data/people/title-logo-line-break-overrides.json text eol=lf
+/data/watch-providers/registry.json text eol=lf
 /schemas/people-presentation-manifest.schema.json text eol=lf
 /schemas/people-title-logo-line-break-overrides.schema.json text eol=lf
 /tools/people-seed/presets/people-title-logo-cinematic-v1.json text eol=lf
