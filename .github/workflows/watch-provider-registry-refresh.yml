@@ -151,7 +151,7 @@ jobs:
           fi
 
           summary_path="$RUNNER_TEMP/watch-provider-refresh-summary.json"
-          npm --prefix tools/watch-provider-registry run refresh > "$summary_path"
+          npm --silent --prefix tools/watch-provider-registry run refresh > "$summary_path"
 
           node - "$summary_path" <<'NODE'
           const fs = require("node:fs");
