@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { spawnSync } from "node:child_process";
 import fs from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
@@ -6,7 +7,7 @@ import { fileURLToPath } from "node:url";
 
 const repoRoot = path.resolve(fileURLToPath(new URL("../../../", import.meta.url)));
 const workflowPath = path.join(repoRoot, ".github", "workflows", "watch-provider-registry-refresh.yml");
-const workflow = await fs.readFile(workflowPath, "utf8");
+const workflow = (await fs.readFile(workflowPath, "utf8")).replaceAll("\r\n", "\n");
 
 function occurrences(pattern) {
   return [...workflow.matchAll(pattern)].length;
@@ -52,16 +53,45 @@ test("manual dispatch and checkout always use canonical main", () => {
   assert.match(workflow, /Remote main advanced after preflight/u);
 });
 
-test("existing A1 refresh runs once, is secret-scoped, and is followed by check", () => {
-  const refreshCommand = "npm --prefix tools/watch-provider-registry run refresh";
+test("existing A1 refresh runs once in silent mode, is secret-scoped, and is followed by check", () => {
+  const refreshCommand = "npm --silent --prefix tools/watch-provider-registry run refresh";
+  const nonSilentRefreshCommand = "npm --prefix tools/watch-provider-registry run refresh";
   const checkCommand = "npm --prefix tools/watch-provider-registry run check";
   assert.equal(workflow.split(refreshCommand).length - 1, 1);
+  assert.equal(workflow.split(nonSilentRefreshCommand).length - 1, 0);
   assert.equal(workflow.split(checkCommand).length - 1, 1);
   assert.ok(workflow.indexOf(checkCommand) > workflow.indexOf(refreshCommand));
   assert.equal(occurrences(/\$\{\{ secrets\.NUVIO_PEOPLE_SERVICE_TOKEN \}\}/gu), 1);
   assert.match(workflow, /env:\n          NUVIO_PEOPLE_SERVICE_TOKEN: \$\{\{ secrets\.NUVIO_PEOPLE_SERVICE_TOKEN \}\}/u);
   assert.match(workflow, /summary_path="\$RUNNER_TEMP\/watch-provider-refresh-summary\.json"/u);
   assert.doesNotMatch(workflow, /upload-artifact|artifacts\//u);
+});
+
+test("npm silent check stdout is one directly parseable JSON document", () => {
+  const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
+  const result = spawnSync(
+    npmCommand,
+    ["--silent", "--prefix", "tools/watch-provider-registry", "run", "check"],
+    {
+      cwd: repoRoot,
+      encoding: "utf8",
+      shell: process.platform === "win32",
+    },
+  );
+
+  assert.ifError(result.error);
+  assert.equal(result.status, 0, result.stderr);
+  assert.doesNotMatch(result.stdout, /^> /mu);
+
+  const summary = JSON.parse(result.stdout);
+  assert.equal(summary.mode, "check");
+  assert.equal(summary.deterministicByteParity, true);
+  assert.ok(Number.isInteger(summary.canonicalByteSize) && summary.canonicalByteSize > 0);
+  assert.deepEqual(Object.keys(summary.canonicalCounts).sort(), ["both", "movieOnly", "providers", "regions", "tvOnly"]);
+  assert.equal(
+    summary.canonicalCounts.movieOnly + summary.canonicalCounts.tvOnly + summary.canonicalCounts.both,
+    summary.canonicalCounts.providers,
+  );
 });
 
 test("actual canonical Git state gates publication and rejects extra files", () => {
