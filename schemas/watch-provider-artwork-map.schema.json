@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nuvio.example/schemas/watch-provider-artwork-map.schema.json",
+  "title": "Nuvio TMDB Watch Provider artwork map",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "providers"],
+  "properties": {
+    "version": { "const": "watch-provider-artwork-map-v1" },
+    "providers": {
+      "type": "object",
+      "propertyNames": {
+        "pattern": "^provider:[1-9][0-9]*$"
+      },
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "^assets/collection_covers/(companies|networks|providers)/[1-9][0-9]*\\.webp$"
+      }
+    }
+  }
+}

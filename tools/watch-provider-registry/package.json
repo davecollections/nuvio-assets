@@ -10,6 +10,7 @@
   "scripts": {
     "test": "node --test",
     "check": "node src/cli.mjs check",
+    "artwork-check": "node src/cli.mjs artwork-check",
     "refresh": "node src/cli.mjs refresh"
   }
 }

@@ -7,7 +7,22 @@ Run the offline checks from the repository root:
 ```powershell
 npm --prefix tools/watch-provider-registry test
 npm --prefix tools/watch-provider-registry run check
+npm --prefix tools/watch-provider-registry run artwork-check
 ```
+
+## Artwork mapping
+
+`data/watch-providers/artwork-map.json` is the curated Watch Provider artwork contract. Each `provider:<id>` key maps directly to a repository-relative company, network, or provider artwork path. Absence means the provider is unmapped and awaiting artwork review; shared paths are valid.
+
+Run `npm --prefix tools/watch-provider-registry run artwork-check` after registry refreshes or mapping edits. It validates the map and lists unmapped providers with their media coverage and TMDB `logoPath`. Maintenance remains: inspect TMDB artwork, prepare a provider cover only if required, save it as `assets/collection_covers/providers/{providerId}.webp`, add the direct mapping, and rerun the check. The provider-specific path is a reserved convention only; this tool does not create provider artwork or publication infrastructure.
+
+V2 consumes the JSON directly:
+
+```js
+const path = artworkMap.providers[`provider:${providerId}`];
+```
+
+Mapped values are repository-relative. Consumers prepend a configurable repository or CDN asset base URL; no additional generated lookup is required.
 
 The live refresh reads `NUVIO_PEOPLE_SERVICE_TOKEN` from the current process, makes exactly the three catalogue requests defined by issue #7, validates the complete candidate in memory, and atomically writes only changed canonical LF bytes:
 
