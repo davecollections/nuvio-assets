@@ -425,7 +425,7 @@ export async function fetchSourcePayloads({ serviceToken, fetchImpl = globalThis
   };
 }
 
-async function readJson(filePath, label) {
+export async function readJson(filePath, label) {
   let bytes;
   try {
     bytes = await fs.readFile(filePath);
