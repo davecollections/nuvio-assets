@@ -86,6 +86,8 @@ A title-count-only movement must not force artwork regeneration while the entity
 
 Eligibility tiers are `core` for counts at least 100, `expanded-threshold` for automatically eligible counts below 100, `curated-exception` for a future owner-approved below-threshold key, and `explicit` for an ineligible ID processed only through an explicit request. Falling below the automatic threshold never authorises deletion of an existing staged or published asset.
 
+Owner standing decision (2026-08-16): when an unmapped Watch Provider has an exact, verified Network-ID identity, the provider may reuse that Network artwork and the required Network assets may be processed and published as an explicit below-threshold exception. Preserve the normal deterministic staging, exact-output approval, canonical-manifest/runtime, and publication-preservation gates. This decision does not authorise fuzzy brand matches, unrelated Network publication, or broad `--all` generation.
+
 Report exactly which records were generated, regenerated, skipped, or failed.
 
 ## Review rules

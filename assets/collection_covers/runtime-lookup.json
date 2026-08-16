@@ -1,12 +1,12 @@
 {
   "schemaVersion": 2,
   "status": "published",
-  "fingerprint": "1835e059c3df9974568b740f29580dab7fd8aaa07087567d180196cd433ba7f9",
+  "fingerprint": "3bc0521b996b9682467c00e34fbe0c3aeb38c4676c248746c85d37c2f4cb1d94",
   "generatedFrom": {
     "studioNetworkManifest": {
       "path": "assets/collection_covers/manifest.json",
-      "sha256": "168b158e22e30f25852fd0da099a301ad8df5329886c7b4f986954ad8406f8f4",
-      "fingerprint": "f991c86906a85357735c9c27eb7528f1027d8358b5f35287ba82cb63bca85467"
+      "sha256": "201cf1182e4ff5a15bb9536ec9b29f25fa3970de5c9941fe7a8e64d9ddafe07d",
+      "fingerprint": "536afb3fbd58375e2e7b4a5bf892f678b3439128ec3a0a5bdd69d313c8708329"
     },
     "peopleManifest": {
       "path": "assets/collection_covers/people/manifest.json",
@@ -16,12 +16,12 @@
   },
   "counts": {
     "companies": 1826,
-    "networks": 572,
+    "networks": 573,
     "people": 1480,
-    "totalEntities": 3878,
-    "landscapeAssets": 3878,
-    "posterAssets": 2052,
-    "totalAssets": 5930
+    "totalEntities": 3879,
+    "landscapeAssets": 3879,
+    "posterAssets": 2053,
+    "totalAssets": 5932
   },
   "formats": {
     "company": {
@@ -27202,6 +27202,21 @@
       "poster": {
         "path": "assets/collection_covers/networks/poster/3658.webp",
         "sha256": "d843ba7f82b03d1507b7267545b34b03eef59f8b8d9d47ef0dd25ff6a911e947"
+      },
+      "fallbackUsed": false,
+      "reviewRequired": false
+    },
+    "3664": {
+      "id": 3664,
+      "name": "tv5unis.ca",
+      "status": "published",
+      "landscape": {
+        "path": "assets/collection_covers/networks/3664.webp",
+        "sha256": "82ea7ea0d622015689bd6549379f5ff28b0a52c0694c44b1ae56f5752e94adf8"
+      },
+      "poster": {
+        "path": "assets/collection_covers/networks/poster/3664.webp",
+        "sha256": "720c074506653208a84224e18a9b401adfebe96939be149dae82a1a366c383a7"
       },
       "fallbackUsed": false,
       "reviewRequired": false

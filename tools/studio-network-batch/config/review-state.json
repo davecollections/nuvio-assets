@@ -2,7 +2,7 @@
   "version": "studio-network-cover-approvals-v1",
   "reviewedAt": "2026-07-15T23:29:25.301Z",
   "approvalSource": "owner-approved-final-review-2026-07-16",
-  "approvalCount": 2372,
+  "approvalCount": 2373,
   "approvals": [
     {
       "stableKey": "company:1",
@@ -34068,6 +34068,21 @@
       "approvalStatus": "approved",
       "approvalSource": "owner-approved-final-review-2026-07-16",
       "reviewedAt": "2026-07-15T23:29:25.301Z"
+    },
+    {
+      "stableKey": "network:3664",
+      "entityType": "network",
+      "tmdbId": 3664,
+      "canonicalNameAtApproval": "tv5unis.ca",
+      "publishTarget": "assets/collection_covers/networks/3664.webp",
+      "approvedOutputHash": "82ea7ea0d622015689bd6549379f5ff28b0a52c0694c44b1ae56f5752e94adf8",
+      "approvedByteCount": 6684,
+      "width": 1200,
+      "height": 675,
+      "format": "webp",
+      "approvalStatus": "approved",
+      "approvalSource": "owner-approved-provider-required-network-artwork-2026-08-16",
+      "reviewedAt": "2026-08-16T06:57:00.260Z"
     },
     {
       "stableKey": "network:3674",

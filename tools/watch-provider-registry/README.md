@@ -14,6 +14,10 @@ npm --prefix tools/watch-provider-registry run artwork-check
 
 `data/watch-providers/artwork-map.json` is the curated Watch Provider artwork contract. Each `provider:<id>` key maps directly to a repository-relative company, network, or provider artwork path. Absence means the provider is unmapped and awaiting artwork review; shared paths are valid.
 
+Prefer an existing published Network cover whenever it accurately represents the provider service or its core service brand. Distribution suffixes such as `Amazon Channel` and `Apple TV Channel` do not require separate provider artwork when the underlying service already has suitable published Network artwork. A small or low-quality TMDB Watch Provider logo does not override a suitable existing Network cover. Use provider-specific artwork only when no accurate published reusable cover exists or the owner explicitly requires a distinct treatment.
+
+The automatic studio/network title-count threshold controls unattended batch eligibility; it does not block an exact provider-driven Network identity. Under the standing owner decision recorded on 2026-08-16, any unmapped provider may use an existing exact Network ID, and the required Network artwork may be staged and published as an explicit below-threshold exception when it is not already public. The normal exact-identity, deterministic staging, review, hash binding, canonical-manifest, runtime, and preservation gates still apply; this does not authorise fuzzy brand matches or bulk publication without verified provider-to-Network identity.
+
 Run `npm --prefix tools/watch-provider-registry run artwork-check` after registry refreshes or mapping edits. It validates the map and lists unmapped providers with their media coverage and TMDB `logoPath`. Maintenance remains: inspect TMDB artwork, prepare a provider cover only if required, save it as `assets/collection_covers/providers/{providerId}.webp`, add the direct mapping, and rerun the check. The provider-specific path is a reserved convention only; this tool does not create provider artwork or publication infrastructure.
 
 V2 consumes the JSON directly:
