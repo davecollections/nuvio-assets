@@ -1,8 +1,8 @@
 # Studio/network batch project status
 
-**Last verified:** 2026-08-16 AEST (UTC+10), after the exact provider-driven `network:3664` landscape/poster addition and full runtime/public-tree preservation verification
+**Last verified:** 2026-08-16 AEST (UTC+10), after the approved 87-Network Watch Provider batch, two light-background corrections, and full runtime/public-tree preservation verification
 
-**Latest publication delta:** `studio-network-watch-provider-tv5-unis-2026-08-16` at `2026-08-16T07:01:14.014Z`, adding exactly the approved below-threshold `network:3664` landscape and its schema-required poster for Watch Provider `provider:2665`
+**Latest publication delta:** `studio-network-watch-provider-batch-2026-08-16` at `2026-08-16T08:10:00.680Z`, adding 87 approved Network landscapes and posters, correcting only the `network:7774` and `network:8020` landscapes to light, and adding 110 exact provider mappings
 
 **Previous maintenance commit:** `a35bceeb63abfb5cc60649126f2ece2b4102b6a3`
 
@@ -44,8 +44,9 @@ The following stages are complete and present locally:
 - source-hash-bound correction of `network:1327` (ABC iview) from dark to light, with its exact replacement approval recorded independently, only its public WebP/manifest record/runtime record changed, 7,529 unrelated public files preserved, and all 5,924 runtime-referenced assets hash-checked and fully decoded;
 - owner approval and transaction-like local publication of six explicit below-threshold anime studios (`company:2849`, `company:5438`, `company:5887`, `company:21444`, `company:31058`, and `company:50908`), with six additions, no replacements/removals, 7,530 unrelated public files preserved, and all 5,930 runtime-referenced assets hash-checked and fully decoded.
 - owner approval and transaction-like local publication of explicit below-threshold `network:3664` (`tv5unis.ca`) for Watch Provider `provider:2665` (`TV5 Unis`), adding exactly one landscape and one required poster, with no replacements/removals, 7,536 unrelated public files preserved, and all 5,932 runtime-referenced assets hash-checked and fully decoded.
+- owner approval and transaction-like publication of the exact 87-Network Watch Provider batch: 87 landscape/poster pairs added, only the existing `network:7774` and `network:8020` landscapes replaced with their approved light variants, 110 provider mappings added, no removals, 7,536 unrelated public files preserved, and all 6,106 runtime-referenced assets hash-checked and fully decoded.
 
-The current branch state contains 1,826 company covers and 573 network covers. Production-v1 staging contains the original 2,366-record base plus six approved explicit anime-studio additions and the explicit `network:3664` addition. Exact cover approval state contains 2,373 identities; ABC iview retains its incremental replacement approval, the six anime additions retain their own exact owner-approval source and timestamp, and Network 3664 is bound to the 2026-08-16 provider-required exception approval.
+The current branch state contains 1,826 company covers and 660 network covers. Production-v1 staging contains 2,460 identities: 1,803 companies and 657 Networks, including the 87 new provider-required Networks. Exact cover approval state also contains 2,460 identities; the two corrected Networks and all new Networks bind their stable identities to the exact reviewed output hashes.
 
 ## Latest verified source counts
 
@@ -63,17 +64,16 @@ All 2,366 currently eligible source records are now present in persistent produc
 
 - Preset: `production-v1`
 - Location: `.work/staging/production-v1/`
-- Staged WebP files: 2,372 (1,803 companies, 569 networks), including six approved explicit anime-studio additions
+- Staged WebP files: 2,460 (1,803 companies, 657 networks)
 - Current failed state records: 0
-- Current staged bytes: 26,654,986 total
-- Current staged file size: 10,457-byte median; 2,258–39,004-byte range
-- Background split: 1,142 dark; 1,230 light
-- Output treatments: 1,891 image/logo-backed; 478 missing-logo Inter fallbacks; 3 owner-approved Inter text treatments
-- Combined staged content fingerprint: `b37fc6f28836091df213a8ab53f0ce29fc52eb17a3a4c986d8597937a1b7898b`
-- Combined staged modification-time fingerprint: `3be0789d218aa4a782e3a9dc58f098f7d2ecd7d97cd6c7b51f61bc7150100e0f`
-- Final assets published: yes; latest delta is `studio-network-anime-studios-six-2026-08-12`
+- Current staged bytes: 27,647,648 total
+- Current staged file size: 10,436-byte median; 2,258–39,004-byte range
+- Background split: 1,174 dark; 1,286 light
+- Combined staged content fingerprint: `19d5fa8aa4deaf400abcb0bd6ffde59bdc37df432c6cdced9e9737485ff880f8`
+- Combined staged modification-time fingerprint: `0eb716813a4de63f4a9d59f8ef6a9e49fce1eb77b1d173c31ebd6573b3f786b7`
+- Final assets published: yes; latest delta is `studio-network-watch-provider-batch-2026-08-16`
 
-The persistent current state is `.work/reports/production-v1/run-state.json` and contains 2,372 primary records: the 2,366 automatically eligible base plus six explicit additions. The post-expansion single-key run retained all previous 2,365 outputs byte-for-byte with their modification times.
+The persistent current state is `.work/reports/production-v1/run-state.json` and contains 2,460 primary records. The approved batch retained 85 reviewed new outputs byte-for-byte, regenerated only the two reviewed background switches, and separately regenerated the two owner-requested existing-Network corrections.
 
 ## Inter status
 
@@ -334,14 +334,15 @@ With `npm --prefix tools/studio-network-batch`, the command runs in `tools/studi
 
 ## Publication state
 
-Current canonical state after delta `studio-network-watch-provider-tv5-unis-2026-08-16`:
+Current canonical state after delta `studio-network-watch-provider-batch-2026-08-16`:
 
 - `assets/collection_covers/companies/{tmdb_id}.webp`: 1,826 files;
-- `assets/collection_covers/networks/{tmdb_id}.webp`: 573 files;
-- `assets/collection_covers/manifest.json`: 2,399 entries, 6,370,152 bytes, SHA-256 `201cf1182e4ff5a15bb9536ec9b29f25fa3970de5c9941fe7a8e64d9ddafe07d`;
-- published landscape artwork bytes: 27,008,448; landscape fingerprint `2f2411e76cd29ad39295e030ad292a0443310d20ff392e8c0be33fe65e4f9b7f`;
-- combined manifest published-asset fingerprint: `536afb3fbd58375e2e7b4a5bf892f678b3439128ec3a0a5bdd69d313c8708329`;
-- runtime lookup: 1,826 companies, 573 networks, 1,480 people, 3,879 total entities and 5,932 assets; 1,771,113 bytes; SHA-256 `84d0abb8081a557b798bb8e21da9b7226193cdc072611a5f009d95ec7dfcc94a`; fingerprint `3bc0521b996b9682467c00e34fbe0c3aeb38c4676c248746c85d37c2f4cb1d94`;
+- `assets/collection_covers/networks/{tmdb_id}.webp`: 660 files;
+- `assets/collection_covers/manifest.json`: 2,486 entries, 6,708,800 bytes, SHA-256 `c2fe29424944e8f3d576ea628333e2944cae2986275de47e3b013d67a7d603cb`;
+- published landscape artwork bytes: 27,994,426; landscape fingerprint `fc2617c9dab3ee2847ade10419e1ee1b005e94572b24eae255ad674a94bec2d2`;
+- combined manifest published-asset fingerprint: `2e4058dce226329545da60524703fb883096cdc27176859b233de79fcc8247e4`;
+- runtime lookup: 1,826 companies, 660 networks, 1,480 people, 3,966 total entities and 6,106 assets; 1,815,750 bytes; SHA-256 `1a6fe5e19778b0c67e88411e71384ecfa25a12ba914db9c3db6ca5baaa509335`; fingerprint `2dc3a5f5c39d140ca661410fadea43f1381d34f2743ae192365f341ca4caa946`;
+- Watch Provider artwork: 881 total, 351 mapped, 530 unmapped, 0 broken; `provider:149` and `provider:175` remain unmapped;
 - original release contact sheets: 29 company pages, 9 network pages, and 37 combined pages;
 - supplement review sheet: `.work/christian-studios-supplement/contact-sheets/christian-studios-supplement.png`;
 - service maintenance review sheet: `.work/service-studio-maintenance/contact-sheets/part-a-seven-candidates.png`;
@@ -349,6 +350,6 @@ Current canonical state after delta `studio-network-watch-provider-tv5-unis-2026
 - ignored-work cleanup: 28 obsolete indexed pages plus 708 other approved reproducible files removed, recovering 90,607,350 bytes;
 - retained historical proof sheets: `eligibility-50-contrast-approved.png`, `mixed-contrast-approved.png`, and `post-expansion-new.png`.
 
-Original release evidence and rollback records are retained under `.work/publication-release/studio-network-v1-2026-07-16/`. Supplement evidence remains under `.work/christian-studios-supplement/`; service-maintenance evidence remains under `.work/service-studio-maintenance/`; and the Network 3664 approval, poster generation, previews, backup, publication receipt, and preservation validation remain under `.work/plans/watch-provider-network-3664-2026-08-16/`. All existing public artwork, all People assets/manifests, and the sibling `tmdb-id-lookup` source caches remained unchanged.
+Original release evidence and rollback records are retained under `.work/publication-release/studio-network-v1-2026-07-16/`. Supplement evidence remains under `.work/christian-studios-supplement/`; service-maintenance evidence remains under `.work/service-studio-maintenance/`; Network 3664 evidence remains under `.work/plans/watch-provider-network-3664-2026-08-16/`; and this batch's approvals, poster sheets, previews, backups, publication receipt, and preservation validation remain under `.work/plans/watch-provider-network-batch-2026-08-16/`. Apart from the explicitly approved `network:7774` and `network:8020` landscape corrections, all existing public artwork remained unchanged; all People assets/manifests and sibling `tmdb-id-lookup` source caches remained unchanged.
 
 Automatic eligibility remains independently configured at 50 titles for companies and 50 for networks; `core` remains 100+. The standing 2026-08-16 owner decision allows an exact verified provider-to-Network identity to be processed and published as an explicit below-threshold exception while retaining the normal staging, review, hash-binding, canonical-manifest/runtime, and preservation gates. A record later falling below the threshold or disappearing from current source data is reported as legacy state and never authorises automatic staged or published asset deletion.

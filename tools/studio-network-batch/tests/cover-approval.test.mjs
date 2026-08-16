@@ -104,16 +104,16 @@ test("cover approvals fully decode and produce a write-free publish plan", async
   );
 });
 
-test("production cover approval state covers exactly 2,373 company and network identities", async () => {
+test("production cover approval state covers exactly 2,460 company and network identities", async () => {
   const [stateDocument, schema] = await Promise.all([
     fs.readFile(path.join(packageRoot, "config", "review-state.json"), "utf8").then(JSON.parse),
     fs.readFile(path.join(packageRoot, "schemas", "review-state.schema.json"), "utf8").then(JSON.parse),
   ]);
   const state = validateCoverApprovalStateAgainstSchema(stateDocument, schema);
-  assert.equal(state.approvalCount, 2373);
+  assert.equal(state.approvalCount, 2460);
   assert.equal(state.approvals.filter((approval) => approval.entityType === "company").length, 1803);
-  assert.equal(state.approvals.filter((approval) => approval.entityType === "network").length, 570);
-  assert.equal(new Set(state.approvals.map((approval) => approval.publishTarget)).size, 2373);
+  assert.equal(state.approvals.filter((approval) => approval.entityType === "network").length, 657);
+  assert.equal(new Set(state.approvals.map((approval) => approval.publishTarget)).size, 2460);
   const abcIview = state.approvals.find((approval) => approval.stableKey === "network:1327");
   assert.equal(abcIview.approvedOutputHash, "7d6805a41f856f07a144f494cc49bbe399b062ad40f700107f3334e18ce69fde");
   assert.equal(abcIview.approvalSource, "owner-approved-abc-iview-light-background-2026-08-12");
@@ -133,6 +133,15 @@ test("production cover approval state covers exactly 2,373 company and network i
   const tv5Unis = state.approvals.find((approval) => approval.stableKey === "network:3664");
   assert.equal(tv5Unis.approvedOutputHash, "82ea7ea0d622015689bd6549379f5ff28b0a52c0694c44b1ae56f5752e94adf8");
   assert.equal(tv5Unis.approvalSource, "owner-approved-provider-required-network-artwork-2026-08-16");
+  const correctedNetworks = new Map([
+    ["network:7774", "0605e07400e96d5dbc0bcb4adf3d71e976348c7476ab0b75b58b826ed1d3ae85"],
+    ["network:8020", "a978941c83b6ffc733458700e96a894cf0727c7afcb427f0ac985d73adc199d1"],
+  ]);
+  for (const [stableKey, approvedOutputHash] of correctedNetworks) {
+    const approval = state.approvals.find((item) => item.stableKey === stableKey);
+    assert.equal(approval.approvedOutputHash, approvedOutputHash);
+    assert.equal(approval.approvalSource, "owner-approved-provider-network-batch-2026-08-16");
+  }
   assert.throws(() => validateCoverApprovalStateAgainstSchema(state, {
     ...schema,
     properties: { ...schema.properties, version: { const: "wrong-version" } },

@@ -782,5 +782,12 @@
     "sourceLogoHash": "cfb0906a138b1537c24329660738cc632a384f371bbd083c82bb87612565d3df",
     "reason": "Owner approved final publication-readiness background",
     "name": "3Cat"
+  },
+  {
+    "stableKey": "network:9268",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "1688cce78347b9c534de9f1c7caab4222927c8e18ce310b0a602068f22a1d73e",
+    "reason": "Owner approved provider-required Network background",
+    "name": "Ryan and Friends Plus"
   }
 ]
