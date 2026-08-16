@@ -104,16 +104,16 @@ test("cover approvals fully decode and produce a write-free publish plan", async
   );
 });
 
-test("production cover approval state covers exactly 2,372 company and network identities", async () => {
+test("production cover approval state covers exactly 2,373 company and network identities", async () => {
   const [stateDocument, schema] = await Promise.all([
     fs.readFile(path.join(packageRoot, "config", "review-state.json"), "utf8").then(JSON.parse),
     fs.readFile(path.join(packageRoot, "schemas", "review-state.schema.json"), "utf8").then(JSON.parse),
   ]);
   const state = validateCoverApprovalStateAgainstSchema(stateDocument, schema);
-  assert.equal(state.approvalCount, 2372);
+  assert.equal(state.approvalCount, 2373);
   assert.equal(state.approvals.filter((approval) => approval.entityType === "company").length, 1803);
-  assert.equal(state.approvals.filter((approval) => approval.entityType === "network").length, 569);
-  assert.equal(new Set(state.approvals.map((approval) => approval.publishTarget)).size, 2372);
+  assert.equal(state.approvals.filter((approval) => approval.entityType === "network").length, 570);
+  assert.equal(new Set(state.approvals.map((approval) => approval.publishTarget)).size, 2373);
   const abcIview = state.approvals.find((approval) => approval.stableKey === "network:1327");
   assert.equal(abcIview.approvedOutputHash, "7d6805a41f856f07a144f494cc49bbe399b062ad40f700107f3334e18ce69fde");
   assert.equal(abcIview.approvalSource, "owner-approved-abc-iview-light-background-2026-08-12");
@@ -130,6 +130,9 @@ test("production cover approval state covers exactly 2,372 company and network i
     assert.equal(approval.approvedOutputHash, approvedOutputHash);
     assert.equal(approval.approvalSource, "owner-approved-anime-studio-covers-2026-08-12");
   }
+  const tv5Unis = state.approvals.find((approval) => approval.stableKey === "network:3664");
+  assert.equal(tv5Unis.approvedOutputHash, "82ea7ea0d622015689bd6549379f5ff28b0a52c0694c44b1ae56f5752e94adf8");
+  assert.equal(tv5Unis.approvalSource, "owner-approved-provider-required-network-artwork-2026-08-16");
   assert.throws(() => validateCoverApprovalStateAgainstSchema(state, {
     ...schema,
     properties: { ...schema.properties, version: { const: "wrong-version" } },
