@@ -55,16 +55,21 @@ function configuration(manualDecisions = [], reviewResolutions = []) {
   };
 }
 
-test("production configuration loads 30 hash-bound decisions and 112 background resolutions", async () => {
+test("production configuration loads 34 hash-bound decisions and 113 background resolutions", async () => {
   const loaded = await loadBackgroundDecisionConfiguration(packageRoot, preset);
   assert.equal(loaded.version, "hybrid-dark-component-v1");
-  assert.equal(loaded.manualDecisions.length, 30);
-  assert.equal(loaded.reviewResolutions.length, 112);
+  assert.equal(loaded.manualDecisions.length, 34);
+  assert.equal(loaded.reviewResolutions.length, 113);
   assert.equal(loaded.manualByKey.get("company:880").backgroundPreset, "light");
   assert.equal(loaded.manualByKey.get("company:1385").backgroundPreset, "dark");
   assert.equal(loaded.manualByKey.get("network:1327").backgroundPreset, "light");
   assert.equal(loaded.manualByKey.get("network:4440").backgroundPreset, "light");
   assert.equal(loaded.manualByKey.get("network:4883").backgroundPreset, "light");
+  assert.equal(loaded.manualByKey.get("network:6739").backgroundPreset, "light");
+  assert.equal(loaded.manualByKey.get("network:7536").backgroundPreset, "dark");
+  assert.equal(loaded.manualByKey.get("network:7774").backgroundPreset, "light");
+  assert.equal(loaded.manualByKey.get("network:8020").backgroundPreset, "light");
+  assert.equal(loaded.resolutionByKey.get("network:9268").backgroundPreset, "dark");
 });
 
 test("all three approved automatic signatures switch and all 12 controls remain unchanged", () => {

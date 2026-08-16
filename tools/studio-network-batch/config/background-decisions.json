@@ -208,5 +208,33 @@
     "sourceLogoHash": "ccf525844288b5349bdcb790067abb4acf981ffccf268b0af9613cefd9a8a952",
     "reason": "Owner-reviewed eligibility-50 contrast comparison",
     "name": "discovery+"
+  },
+  {
+    "stableKey": "network:6739",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "6c589b49a35bfc9a0a030e6d44ed852e9df454762d1483631d6813ddfa2ae679",
+    "reason": "Owner-approved provider-required Network background",
+    "name": "TV2 Øst"
+  },
+  {
+    "stableKey": "network:7536",
+    "backgroundPreset": "dark",
+    "sourceLogoHash": "c84ba4196b5c589ff1e4b6e92b8b7ea2bb3777cede90da39b25041fdbc2dcfc6",
+    "reason": "Owner-approved provider-required Network background",
+    "name": "EPIC ON"
+  },
+  {
+    "stableKey": "network:7774",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "1669a175d9494db7fc99c91944362a88a4d9b5344fd241c1c815655df5c73476",
+    "reason": "Owner-approved Network background correction",
+    "name": "Amazon MX Player"
+  },
+  {
+    "stableKey": "network:8020",
+    "backgroundPreset": "light",
+    "sourceLogoHash": "502e5c81a460008aa7b3cec1521d236fd2e54a73ff41aa055ef69b579374ec36",
+    "reason": "Owner-approved Network background correction",
+    "name": "Hong Guo Short Drama"
   }
 ]
