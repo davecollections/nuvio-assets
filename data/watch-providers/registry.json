@@ -717,7 +717,7 @@
             "BR": 9,
             "BY": 2,
             "BZ": 5,
-            "CA": 7,
+            "CA": 6,
             "CH": 6,
             "CL": 5,
             "CO": 6,
@@ -791,7 +791,7 @@
             "BR": 9,
             "BY": 2,
             "BZ": 5,
-            "CA": 7,
+            "CA": 6,
             "CH": 6,
             "CL": 5,
             "CO": 6,
@@ -861,7 +861,7 @@
       "logoPath": "/8z7rC8uIDaTM91X0ZfkRf04ydj2.jpg",
       "media": {
         "movie": {
-          "displayPriority": 4,
+          "displayPriority": 2,
           "regionalPriorities": {
             "AE": 5,
             "AO": 2,
@@ -875,14 +875,14 @@
             "BR": 14,
             "BY": 3,
             "BZ": 6,
-            "CA": 8,
+            "CA": 7,
             "CH": 7,
             "CL": 6,
             "CO": 5,
             "CR": 21,
             "CY": 5,
             "CZ": 6,
-            "DE": 10,
+            "DE": 9,
             "DK": 8,
             "EC": 10,
             "EE": 6,
@@ -937,7 +937,7 @@
           }
         },
         "tv": {
-          "displayPriority": 4,
+          "displayPriority": 2,
           "regionalPriorities": {
             "AE": 5,
             "AO": 2,
@@ -951,14 +951,14 @@
             "BR": 14,
             "BY": 3,
             "BZ": 6,
-            "CA": 8,
+            "CA": 7,
             "CH": 7,
             "CL": 6,
             "CO": 5,
             "CR": 21,
             "CY": 5,
             "CZ": 6,
-            "DE": 10,
+            "DE": 9,
             "DK": 8,
             "EC": 10,
             "EE": 6,
@@ -1084,7 +1084,7 @@
             "ES": 0,
             "FI": 0,
             "FJ": 0,
-            "FR": 1,
+            "FR": 0,
             "GB": 0,
             "GF": 0,
             "GG": 0,
@@ -1167,7 +1167,7 @@
             "TZ": 0,
             "UA": 0,
             "UG": 0,
-            "US": 2,
+            "US": 0,
             "UY": 0,
             "VE": 0,
             "YE": 0,
@@ -1220,7 +1220,7 @@
             "ES": 0,
             "FI": 0,
             "FJ": 0,
-            "FR": 1,
+            "FR": 0,
             "GB": 0,
             "GF": 0,
             "GG": 0,
@@ -1303,7 +1303,7 @@
             "TZ": 0,
             "UA": 0,
             "UG": 0,
-            "US": 2,
+            "US": 0,
             "UY": 0,
             "VE": 0,
             "YE": 0,
@@ -1321,23 +1321,23 @@
       "logoPath": "/pvske1MyAoymrs5bguRfVqYiM9a.jpg",
       "media": {
         "movie": {
-          "displayPriority": 4,
+          "displayPriority": 3,
           "regionalPriorities": {
             "AT": 1,
             "DE": 1,
             "GB": 1,
             "JP": 1,
-            "US": 4
+            "US": 3
           }
         },
         "tv": {
-          "displayPriority": 4,
+          "displayPriority": 3,
           "regionalPriorities": {
             "AT": 1,
             "DE": 1,
             "GB": 1,
             "JP": 1,
-            "US": 4
+            "US": 3
           }
         }
       }
@@ -1357,12 +1357,12 @@
             "BE": 34,
             "BG": 30,
             "BR": 13,
-            "CA": 56,
+            "CA": 55,
             "CH": 74,
             "CL": 56,
             "CO": 57,
             "CZ": 42,
-            "DE": 8,
+            "DE": 7,
             "DK": 48,
             "EC": 41,
             "EE": 34,
@@ -1412,12 +1412,12 @@
             "BE": 34,
             "BG": 30,
             "BR": 13,
-            "CA": 56,
+            "CA": 55,
             "CH": 74,
             "CL": 56,
             "CO": 57,
             "CZ": 42,
-            "DE": 8,
+            "DE": 7,
             "DK": 48,
             "EC": 41,
             "EE": 34,
@@ -1467,7 +1467,7 @@
       "logoPath": "/x570VpH2C9EKDf1riP83rYc5dnL.jpg",
       "media": {
         "movie": {
-          "displayPriority": 30,
+          "displayPriority": 8,
           "regionalPriorities": {
             "AD": 29,
             "AE": 23,
@@ -1489,7 +1489,7 @@
             "BS": 29,
             "BY": 10,
             "BZ": 14,
-            "CA": 36,
+            "CA": 35,
             "CD": 5,
             "CH": 68,
             "CI": 28,
@@ -1501,7 +1501,7 @@
             "CV": 16,
             "CY": 13,
             "CZ": 36,
-            "DE": 25,
+            "DE": 28,
             "DK": 45,
             "DO": 35,
             "DZ": 30,
@@ -1609,7 +1609,7 @@
           }
         },
         "tv": {
-          "displayPriority": 30,
+          "displayPriority": 8,
           "regionalPriorities": {
             "AD": 29,
             "AE": 23,
@@ -1631,7 +1631,7 @@
             "BS": 29,
             "BY": 10,
             "BZ": 14,
-            "CA": 36,
+            "CA": 35,
             "CD": 5,
             "CH": 68,
             "CI": 28,
@@ -1643,7 +1643,7 @@
             "CV": 16,
             "CY": 13,
             "CZ": 36,
-            "DE": 25,
+            "DE": 28,
             "DK": 45,
             "DO": 35,
             "DZ": 30,
@@ -1845,7 +1845,7 @@
         "movie": {
           "displayPriority": 47,
           "regionalPriorities": {
-            "CA": 31,
+            "CA": 30,
             "US": 47
           }
         }
@@ -1858,11 +1858,11 @@
       "logoPath": "/4bKgwiotEIN6wiZNQhQfjp7qPCk.jpg",
       "media": {
         "movie": {
-          "displayPriority": 26,
+          "displayPriority": 29,
           "regionalPriorities": {
             "AT": 11,
             "CH": 11,
-            "DE": 26
+            "DE": 29
           }
         }
       }
@@ -1877,7 +1877,7 @@
           "displayPriority": 6,
           "regionalPriorities": {
             "AT": 9,
-            "DE": 15,
+            "DE": 13,
             "GB": 13,
             "IE": 9,
             "IT": 6
@@ -1887,7 +1887,7 @@
           "displayPriority": 6,
           "regionalPriorities": {
             "AT": 9,
-            "DE": 15,
+            "DE": 13,
             "GB": 13,
             "IE": 9,
             "IT": 6
@@ -1902,15 +1902,15 @@
       "logoPath": "/9r5zFWuYnwjzO1JrNjSbLQwUc3P.jpg",
       "media": {
         "movie": {
-          "displayPriority": 14,
+          "displayPriority": 12,
           "regionalPriorities": {
-            "DE": 14
+            "DE": 12
           }
         },
         "tv": {
-          "displayPriority": 14,
+          "displayPriority": 12,
           "regionalPriorities": {
-            "DE": 14
+            "DE": 12
           }
         }
       }
@@ -1922,11 +1922,11 @@
       "logoPath": "/m0zZQjEHcp8np3lkMdMZE9QRwjA.jpg",
       "media": {
         "movie": {
-          "displayPriority": 22,
+          "displayPriority": 26,
           "regionalPriorities": {
             "AT": 12,
             "CH": 14,
-            "DE": 22
+            "DE": 26
           }
         }
       }
@@ -1967,7 +1967,7 @@
             "CH": 10,
             "CY": 6,
             "CZ": 29,
-            "DE": 17,
+            "DE": 22,
             "DK": 13,
             "ES": 9,
             "FI": 12,
@@ -2003,7 +2003,7 @@
             "CH": 10,
             "CY": 6,
             "CZ": 29,
-            "DE": 17,
+            "DE": 22,
             "DK": 13,
             "ES": 9,
             "FI": 12,
@@ -2354,7 +2354,7 @@
           "displayPriority": 346,
           "regionalPriorities": {
             "AU": 26,
-            "CA": 20,
+            "CA": 19,
             "GB": 10,
             "IN": 14,
             "MX": 14,
@@ -2365,7 +2365,7 @@
           "displayPriority": 346,
           "regionalPriorities": {
             "AU": 26,
-            "CA": 20,
+            "CA": 19,
             "GB": 10,
             "IN": 14,
             "MX": 14,
@@ -2521,7 +2521,7 @@
           "regionalPriorities": {
             "AR": 61,
             "AU": 28,
-            "CA": 32,
+            "CA": 31,
             "CO": 35,
             "DK": 14,
             "GB": 51,
@@ -2537,7 +2537,7 @@
           "regionalPriorities": {
             "AR": 61,
             "AU": 28,
-            "CA": 32,
+            "CA": 31,
             "CO": 35,
             "DK": 14,
             "GB": 51,
@@ -2580,7 +2580,7 @@
           "displayPriority": 53,
           "regionalPriorities": {
             "AU": 33,
-            "CA": 34,
+            "CA": 33,
             "GB": 24,
             "IE": 13,
             "NZ": 17,
@@ -2591,7 +2591,7 @@
           "displayPriority": 53,
           "regionalPriorities": {
             "AU": 33,
-            "CA": 34,
+            "CA": 33,
             "GB": 24,
             "IE": 13,
             "NZ": 17,
@@ -2613,10 +2613,10 @@
             "AU": 27,
             "BG": 11,
             "BO": 12,
-            "CA": 38,
+            "CA": 37,
             "CH": 12,
             "CR": 10,
-            "DE": 29,
+            "DE": 31,
             "DK": 10,
             "EE": 7,
             "ES": 19,
@@ -3147,7 +3147,7 @@
           "regionalPriorities": {
             "AT": 19,
             "CH": 15,
-            "DE": 16,
+            "DE": 20,
             "GB": 18,
             "IE": 10
           }
@@ -3157,7 +3157,7 @@
           "regionalPriorities": {
             "AT": 19,
             "CH": 15,
-            "DE": 16,
+            "DE": 20,
             "GB": 18,
             "IE": 10
           }
@@ -3191,19 +3191,19 @@
       "logoPath": "/82hFfWsPYtyskBrnkL8Y36vHcVf.jpg",
       "media": {
         "movie": {
-          "displayPriority": 19,
+          "displayPriority": 23,
           "regionalPriorities": {
             "AT": 15,
             "CH": 9,
-            "DE": 19
+            "DE": 23
           }
         },
         "tv": {
-          "displayPriority": 19,
+          "displayPriority": 23,
           "regionalPriorities": {
             "AT": 15,
             "CH": 9,
-            "DE": 19
+            "DE": 23
           }
         }
       }
@@ -3269,15 +3269,15 @@
       "logoPath": "/4bIKO5tqPgko0135wL9GhMsb1wv.jpg",
       "media": {
         "movie": {
-          "displayPriority": 19,
+          "displayPriority": 12,
           "regionalPriorities": {
-            "CA": 19
+            "CA": 12
           }
         },
         "tv": {
-          "displayPriority": 19,
+          "displayPriority": 12,
           "regionalPriorities": {
-            "CA": 19
+            "CA": 12
           }
         }
       }
@@ -3291,14 +3291,14 @@
         "movie": {
           "displayPriority": 55,
           "regionalPriorities": {
-            "CA": 33,
+            "CA": 32,
             "US": 55
           }
         },
         "tv": {
           "displayPriority": 55,
           "regionalPriorities": {
-            "CA": 33,
+            "CA": 32,
             "US": 55
           }
         }
@@ -3414,7 +3414,7 @@
           "displayPriority": 58,
           "regionalPriorities": {
             "AU": 11,
-            "CA": 42,
+            "CA": 41,
             "DK": 32,
             "FI": 32,
             "NO": 33,
@@ -3427,7 +3427,7 @@
           "displayPriority": 58,
           "regionalPriorities": {
             "AU": 11,
-            "CA": 42,
+            "CA": 41,
             "DK": 32,
             "FI": 32,
             "NO": 33,
@@ -3623,9 +3623,9 @@
           "regionalPriorities": {
             "AT": 16,
             "AU": 25,
-            "CA": 40,
+            "CA": 39,
             "CH": 16,
-            "DE": 27,
+            "DE": 30,
             "DK": 11,
             "EE": 8,
             "GB": 30,
@@ -3651,9 +3651,9 @@
           "regionalPriorities": {
             "AT": 16,
             "AU": 25,
-            "CA": 40,
+            "CA": 39,
             "CH": 16,
-            "DE": 27,
+            "DE": 30,
             "DK": 11,
             "EE": 8,
             "GB": 30,
@@ -3683,15 +3683,15 @@
       "logoPath": "/nCsFBTEmlCMc5NA4fwPuluTz6AO.jpg",
       "media": {
         "movie": {
-          "displayPriority": 23,
+          "displayPriority": 15,
           "regionalPriorities": {
-            "DE": 23
+            "DE": 15
           }
         },
         "tv": {
-          "displayPriority": 23,
+          "displayPriority": 15,
           "regionalPriorities": {
-            "DE": 23
+            "DE": 15
           }
         }
       }
@@ -3703,15 +3703,15 @@
       "logoPath": "/qsOM361vYHE7pcNFG7bCJHyievG.jpg",
       "media": {
         "movie": {
-          "displayPriority": 29,
+          "displayPriority": 28,
           "regionalPriorities": {
-            "CA": 29
+            "CA": 28
           }
         },
         "tv": {
-          "displayPriority": 29,
+          "displayPriority": 28,
           "regionalPriorities": {
-            "CA": 29
+            "CA": 28
           }
         }
       }
@@ -3742,9 +3742,9 @@
             "AT": 13,
             "AU": 16,
             "BE": 10,
-            "CA": 37,
+            "CA": 36,
             "CH": 17,
-            "DE": 20,
+            "DE": 24,
             "DK": 12,
             "ES": 20,
             "FI": 8,
@@ -3771,9 +3771,9 @@
             "AT": 13,
             "AU": 16,
             "BE": 10,
-            "CA": 37,
+            "CA": 36,
             "CH": 17,
-            "DE": 20,
+            "DE": 24,
             "DK": 12,
             "ES": 20,
             "FI": 8,
@@ -3818,7 +3818,7 @@
       "logoPath": "/oR1aNm1Qu9jQBkW4VrGPWhqbC3P.jpg",
       "media": {
         "movie": {
-          "displayPriority": 9,
+          "displayPriority": 6,
           "regionalPriorities": {
             "AD": 8,
             "AL": 9,
@@ -3834,14 +3834,14 @@
             "BO": 14,
             "BR": 16,
             "BS": 7,
-            "CA": 50,
+            "CA": 49,
             "CH": 20,
             "CI": 7,
             "CL": 11,
             "CO": 11,
             "CR": 8,
             "CZ": 7,
-            "DE": 38,
+            "DE": 40,
             "DK": 17,
             "DO": 8,
             "DZ": 6,
@@ -3921,7 +3921,7 @@
           }
         },
         "tv": {
-          "displayPriority": 9,
+          "displayPriority": 6,
           "regionalPriorities": {
             "AD": 8,
             "AL": 9,
@@ -3937,14 +3937,14 @@
             "BO": 14,
             "BR": 16,
             "BS": 7,
-            "CA": 50,
+            "CA": 49,
             "CH": 20,
             "CI": 7,
             "CL": 11,
             "CO": 11,
             "CR": 8,
             "CZ": 7,
-            "DE": 38,
+            "DE": 40,
             "DK": 17,
             "DO": 8,
             "DZ": 6,
@@ -4056,9 +4056,9 @@
           "regionalPriorities": {
             "AT": 61,
             "AU": 22,
-            "CA": 35,
+            "CA": 34,
             "CH": 48,
-            "DE": 11,
+            "DE": 10,
             "FR": 16,
             "GB": 23,
             "IN": 11,
@@ -4072,9 +4072,9 @@
           "regionalPriorities": {
             "AT": 61,
             "AU": 22,
-            "CA": 35,
+            "CA": 34,
             "CH": 48,
-            "DE": 11,
+            "DE": 10,
             "FR": 16,
             "GB": 23,
             "IN": 11,
@@ -4115,7 +4115,7 @@
           "displayPriority": 86,
           "regionalPriorities": {
             "AU": 29,
-            "CA": 27,
+            "CA": 26,
             "ES": 39,
             "GB": 52,
             "GG": 63,
@@ -4128,7 +4128,7 @@
           "displayPriority": 86,
           "regionalPriorities": {
             "AU": 29,
-            "CA": 27,
+            "CA": 26,
             "ES": 39,
             "GB": 52,
             "GG": 63,
@@ -4149,7 +4149,7 @@
           "displayPriority": 87,
           "regionalPriorities": {
             "AU": 73,
-            "CA": 26,
+            "CA": 25,
             "GB": 36,
             "GG": 66,
             "SE": 56,
@@ -4160,7 +4160,7 @@
           "displayPriority": 87,
           "regionalPriorities": {
             "AU": 73,
-            "CA": 26,
+            "CA": 25,
             "GB": 36,
             "GG": 66,
             "SE": 56,
@@ -4208,14 +4208,14 @@
             "BR": 61,
             "CL": 40,
             "CO": 41,
-            "DE": 32,
+            "DE": 34,
             "ES": 37,
             "FI": 51,
             "FR": 41,
             "GB": 37,
             "GG": 57,
             "IE": 56,
-            "IN": 61,
+            "IN": 59,
             "IT": 48,
             "MX": 58,
             "NL": 62,
@@ -4234,14 +4234,14 @@
             "BR": 61,
             "CL": 40,
             "CO": 41,
-            "DE": 32,
+            "DE": 34,
             "ES": 37,
             "FI": 51,
             "FR": 41,
             "GB": 37,
             "GG": 57,
             "IE": 56,
-            "IN": 61,
+            "IN": 59,
             "IT": 48,
             "MX": 58,
             "NL": 62,
@@ -4283,7 +4283,7 @@
           "displayPriority": 83,
           "regionalPriorities": {
             "AU": 34,
-            "CA": 28,
+            "CA": 27,
             "GB": 66,
             "GG": 65,
             "US": 83
@@ -4293,7 +4293,7 @@
           "displayPriority": 83,
           "regionalPriorities": {
             "AU": 34,
-            "CA": 28,
+            "CA": 27,
             "GB": 66,
             "GG": 65,
             "US": 83
@@ -4310,7 +4310,7 @@
         "movie": {
           "displayPriority": 91,
           "regionalPriorities": {
-            "CA": 23,
+            "CA": 22,
             "GB": 81,
             "US": 91
           }
@@ -4318,7 +4318,7 @@
         "tv": {
           "displayPriority": 91,
           "regionalPriorities": {
-            "CA": 23,
+            "CA": 22,
             "GB": 81,
             "US": 91
           }
@@ -4415,7 +4415,7 @@
           "displayPriority": 36,
           "regionalPriorities": {
             "AU": 64,
-            "CA": 9,
+            "CA": 8,
             "NZ": 36,
             "US": 36
           }
@@ -4424,7 +4424,7 @@
           "displayPriority": 36,
           "regionalPriorities": {
             "AU": 64,
-            "CA": 9,
+            "CA": 8,
             "NZ": 36,
             "US": 36
           }
@@ -4438,15 +4438,15 @@
       "logoPath": "/avItehPq07h5nKCJgwNTxl6OD0y.jpg",
       "media": {
         "movie": {
-          "displayPriority": 24,
+          "displayPriority": 27,
           "regionalPriorities": {
-            "DE": 24
+            "DE": 27
           }
         },
         "tv": {
-          "displayPriority": 24,
+          "displayPriority": 27,
           "regionalPriorities": {
-            "DE": 24
+            "DE": 27
           }
         }
       }
@@ -4486,7 +4486,7 @@
             "CA": 5,
             "CH": 49,
             "CZ": 30,
-            "DE": 21,
+            "DE": 25,
             "DK": 5,
             "ES": 13,
             "FI": 5,
@@ -4529,15 +4529,15 @@
       "logoPath": "/ewOptMVIYcOadMGGJz8DJueH2bH.jpg",
       "media": {
         "movie": {
-          "displayPriority": 6,
+          "displayPriority": 14,
           "regionalPriorities": {
-            "CA": 6
+            "CA": 14
           }
         },
         "tv": {
-          "displayPriority": 6,
+          "displayPriority": 14,
           "regionalPriorities": {
-            "CA": 6
+            "CA": 14
           }
         }
       }
@@ -4723,7 +4723,7 @@
           "regionalPriorities": {
             "AT": 65,
             "CH": 51,
-            "DE": 28,
+            "DE": 46,
             "ES": 68,
             "FR": 10,
             "GB": 102,
@@ -4737,7 +4737,7 @@
           "regionalPriorities": {
             "AT": 65,
             "CH": 51,
-            "DE": 28,
+            "DE": 46,
             "ES": 68,
             "FR": 10,
             "GB": 102,
@@ -4841,7 +4841,7 @@
         "movie": {
           "displayPriority": 10,
           "regionalPriorities": {
-            "CA": 90,
+            "CA": 88,
             "ES": 10,
             "US": 10
           }
@@ -4849,7 +4849,7 @@
         "tv": {
           "displayPriority": 10,
           "regionalPriorities": {
-            "CA": 90,
+            "CA": 88,
             "ES": 10,
             "US": 10
           }
@@ -4865,14 +4865,14 @@
         "movie": {
           "displayPriority": 40,
           "regionalPriorities": {
-            "CA": 21,
+            "CA": 20,
             "US": 40
           }
         },
         "tv": {
           "displayPriority": 40,
           "regionalPriorities": {
-            "CA": 21,
+            "CA": 20,
             "US": 40
           }
         }
@@ -4987,7 +4987,7 @@
       "logoPath": "/fzN5Jok5Ig1eJ7gyNGoMhnLSCfh.jpg",
       "media": {
         "movie": {
-          "displayPriority": 24,
+          "displayPriority": 12,
           "regionalPriorities": {
             "AD": 24,
             "AE": 17,
@@ -5009,7 +5009,7 @@
             "BS": 24,
             "BY": 6,
             "BZ": 9,
-            "CA": 39,
+            "CA": 38,
             "CD": 1,
             "CH": 43,
             "CI": 24,
@@ -5019,7 +5019,7 @@
             "CV": 12,
             "CY": 9,
             "CZ": 24,
-            "DE": 7,
+            "DE": 6,
             "DK": 37,
             "DO": 28,
             "DZ": 26,
@@ -5120,7 +5120,7 @@
           }
         },
         "tv": {
-          "displayPriority": 24,
+          "displayPriority": 12,
           "regionalPriorities": {
             "AD": 24,
             "AE": 17,
@@ -5142,7 +5142,7 @@
             "BS": 24,
             "BY": 6,
             "BZ": 9,
-            "CA": 39,
+            "CA": 38,
             "CD": 1,
             "CH": 43,
             "CI": 24,
@@ -5152,7 +5152,7 @@
             "CV": 12,
             "CY": 9,
             "CZ": 24,
-            "DE": 7,
+            "DE": 6,
             "DK": 37,
             "DO": 28,
             "DZ": 26,
@@ -5275,17 +5275,17 @@
       "logoPath": "/jhhFTFVWjKVi2JjDYoqoI4dHsmL.jpg",
       "media": {
         "movie": {
-          "displayPriority": 60,
+          "displayPriority": 58,
           "regionalPriorities": {
-            "DE": 31,
-            "IN": 60
+            "DE": 33,
+            "IN": 58
           }
         },
         "tv": {
-          "displayPriority": 60,
+          "displayPriority": 58,
           "regionalPriorities": {
-            "DE": 31,
-            "IN": 60
+            "DE": 33,
+            "IN": 58
           }
         }
       }
@@ -5297,15 +5297,15 @@
       "logoPath": "/FtIkEXYkqTxKwCwLK79yKJW8i7.jpg",
       "media": {
         "movie": {
-          "displayPriority": 30,
+          "displayPriority": 32,
           "regionalPriorities": {
-            "DE": 30
+            "DE": 32
           }
         },
         "tv": {
-          "displayPriority": 30,
+          "displayPriority": 32,
           "regionalPriorities": {
-            "DE": 30
+            "DE": 32
           }
         }
       }
@@ -5417,14 +5417,14 @@
         "movie": {
           "displayPriority": 70,
           "regionalPriorities": {
-            "CA": 22,
+            "CA": 21,
             "US": 70
           }
         },
         "tv": {
           "displayPriority": 70,
           "regionalPriorities": {
-            "CA": 22,
+            "CA": 21,
             "US": 70
           }
         }
@@ -5462,7 +5462,7 @@
             "AT": 122,
             "AU": 74,
             "BE": 48,
-            "CA": 25,
+            "CA": 24,
             "DE": 179,
             "ES": 36,
             "FI": 50,
@@ -5484,7 +5484,7 @@
             "AT": 122,
             "AU": 74,
             "BE": 48,
-            "CA": 25,
+            "CA": 24,
             "DE": 179,
             "ES": 36,
             "FI": 50,
@@ -5543,19 +5543,19 @@
       "logoPath": "/dB8G41Q6tSL5NBisrIeqByfepBc.jpg",
       "media": {
         "movie": {
-          "displayPriority": 23,
+          "displayPriority": 19,
           "regionalPriorities": {
             "AR": 25,
             "AT": 36,
             "BO": 22,
             "BR": 33,
-            "CA": 97,
+            "CA": 95,
             "CH": 33,
             "CL": 22,
             "CO": 23,
             "CR": 23,
             "CZ": 17,
-            "DE": 59,
+            "DE": 62,
             "DK": 33,
             "DO": 20,
             "EC": 22,
@@ -5579,19 +5579,19 @@
           }
         },
         "tv": {
-          "displayPriority": 23,
+          "displayPriority": 19,
           "regionalPriorities": {
             "AR": 25,
             "AT": 36,
             "BO": 22,
             "BR": 33,
-            "CA": 97,
+            "CA": 95,
             "CH": 33,
             "CL": 22,
             "CO": 23,
             "CR": 23,
             "CZ": 17,
-            "DE": 59,
+            "DE": 62,
             "DK": 33,
             "DO": 20,
             "EC": 22,
@@ -5623,17 +5623,17 @@
       "logoPath": "/3tKojIkk9QpkDUeU8HgpHQ9Jb2v.jpg",
       "media": {
         "movie": {
-          "displayPriority": 12,
+          "displayPriority": 11,
           "regionalPriorities": {
             "AT": 69,
-            "DE": 12
+            "DE": 11
           }
         },
         "tv": {
-          "displayPriority": 12,
+          "displayPriority": 11,
           "regionalPriorities": {
             "AT": 69,
-            "DE": 12
+            "DE": 11
           }
         }
       }
@@ -5665,7 +5665,7 @@
       "logoPath": "/6KEQzITx2RrCAQt5Nw9WrL1OI8z.jpg",
       "media": {
         "movie": {
-          "displayPriority": 8,
+          "displayPriority": 3,
           "regionalPriorities": {
             "AD": 6,
             "AE": 7,
@@ -5683,7 +5683,7 @@
             "BO": 27,
             "BR": 41,
             "BS": 6,
-            "CA": 44,
+            "CA": 43,
             "CH": 41,
             "CI": 5,
             "CL": 27,
@@ -5692,7 +5692,7 @@
             "CU": 3,
             "CV": 5,
             "CZ": 22,
-            "DE": 81,
+            "DE": 83,
             "DK": 36,
             "DO": 7,
             "DZ": 5,
@@ -5790,7 +5790,7 @@
           }
         },
         "tv": {
-          "displayPriority": 8,
+          "displayPriority": 3,
           "regionalPriorities": {
             "AD": 6,
             "AE": 7,
@@ -5808,7 +5808,7 @@
             "BO": 27,
             "BR": 41,
             "BS": 6,
-            "CA": 44,
+            "CA": 43,
             "CH": 41,
             "CI": 5,
             "CL": 27,
@@ -5817,7 +5817,7 @@
             "CU": 3,
             "CV": 5,
             "CZ": 22,
-            "DE": 81,
+            "DE": 83,
             "DK": 36,
             "DO": 7,
             "DZ": 5,
@@ -5923,12 +5923,12 @@
       "logoPath": "/1syoSwH2yIskHUqeOiK9re8AMJC.jpg",
       "media": {
         "movie": {
-          "displayPriority": 86,
+          "displayPriority": 84,
           "regionalPriorities": {
             "AT": 25,
             "BE": 16,
             "DE": 45,
-            "FR": 86
+            "FR": 84
           }
         }
       }
@@ -5980,15 +5980,15 @@
       "logoPath": "/a7O0Z1uhFjgGydRrgT6ucBisP4K.jpg",
       "media": {
         "movie": {
-          "displayPriority": 43,
+          "displayPriority": 42,
           "regionalPriorities": {
-            "CA": 43
+            "CA": 42
           }
         },
         "tv": {
-          "displayPriority": 43,
+          "displayPriority": 42,
           "regionalPriorities": {
-            "CA": 43
+            "CA": 42
           }
         }
       }
@@ -6015,14 +6015,14 @@
             "BO": 17,
             "BR": 32,
             "BS": 17,
-            "CA": 66,
+            "CA": 64,
             "CH": 31,
             "CI": 15,
             "CL": 21,
             "CO": 22,
             "CR": 18,
             "CZ": 16,
-            "DE": 58,
+            "DE": 61,
             "DK": 26,
             "DO": 18,
             "DZ": 15,
@@ -6117,14 +6117,14 @@
             "BO": 17,
             "BR": 32,
             "BS": 17,
-            "CA": 66,
+            "CA": 64,
             "CH": 31,
             "CI": 15,
             "CL": 21,
             "CO": 22,
             "CR": 18,
             "CZ": 16,
-            "DE": 58,
+            "DE": 61,
             "DK": 26,
             "DO": 18,
             "DZ": 15,
@@ -6294,14 +6294,14 @@
         "movie": {
           "displayPriority": 94,
           "regionalPriorities": {
-            "CA": 30,
+            "CA": 29,
             "US": 94
           }
         },
         "tv": {
           "displayPriority": 94,
           "regionalPriorities": {
-            "CA": 30,
+            "CA": 29,
             "US": 94
           }
         }
@@ -6354,15 +6354,15 @@
       "logoPath": "/ni0t0Bj4HRAQ9f6zSv1Bl9MDjLK.jpg",
       "media": {
         "movie": {
-          "displayPriority": 34,
+          "displayPriority": 36,
           "regionalPriorities": {
-            "DE": 34
+            "DE": 36
           }
         },
         "tv": {
-          "displayPriority": 34,
+          "displayPriority": 36,
           "regionalPriorities": {
-            "DE": 34
+            "DE": 36
           }
         }
       }
@@ -6374,7 +6374,7 @@
       "logoPath": "/97yvRBw1GzX7fXprcF80er19ot.jpg",
       "media": {
         "movie": {
-          "displayPriority": 2,
+          "displayPriority": 3,
           "regionalPriorities": {
             "AD": 2,
             "AL": 2,
@@ -6445,13 +6445,13 @@
             "TR": 2,
             "TT": 3,
             "TW": 3,
-            "US": 3,
+            "US": 5,
             "UY": 2,
             "VE": 3
           }
         },
         "tv": {
-          "displayPriority": 2,
+          "displayPriority": 3,
           "regionalPriorities": {
             "AD": 2,
             "AL": 2,
@@ -6522,7 +6522,7 @@
             "TR": 2,
             "TT": 3,
             "TW": 3,
-            "US": 3,
+            "US": 5,
             "UY": 2,
             "VE": 3
           }
@@ -6606,7 +6606,7 @@
       "logoPath": "/73uV3YooOA8gD9YQTXFj2XakZWA.jpg",
       "media": {
         "movie": {
-          "displayPriority": 22,
+          "displayPriority": 18,
           "regionalPriorities": {
             "AD": 17,
             "AL": 18,
@@ -6615,9 +6615,9 @@
             "BH": 18,
             "BM": 19,
             "BS": 18,
-            "CA": 89,
+            "CA": 87,
             "CI": 14,
-            "DE": 36,
+            "DE": 38,
             "DO": 19,
             "DZ": 16,
             "EG": 20,
@@ -6661,7 +6661,7 @@
           }
         },
         "tv": {
-          "displayPriority": 22,
+          "displayPriority": 18,
           "regionalPriorities": {
             "AD": 17,
             "AL": 18,
@@ -6670,9 +6670,9 @@
             "BH": 18,
             "BM": 19,
             "BS": 18,
-            "CA": 89,
+            "CA": 87,
             "CI": 14,
-            "DE": 36,
+            "DE": 38,
             "DO": 19,
             "DZ": 16,
             "EG": 20,
@@ -6738,10 +6738,10 @@
       "logoPath": "/yTwdlHzReo6l9HLWrZqEaEUECBt.jpg",
       "media": {
         "movie": {
-          "displayPriority": 35,
+          "displayPriority": 37,
           "regionalPriorities": {
             "CH": 19,
-            "DE": 35
+            "DE": 37
           }
         }
       }
@@ -6837,7 +6837,7 @@
             "TW": 2,
             "UA": 1,
             "UG": 2,
-            "US": 5,
+            "US": 4,
             "VE": 2,
             "ZA": 2
           }
@@ -6927,7 +6927,7 @@
             "TW": 2,
             "UA": 1,
             "UG": 2,
-            "US": 5,
+            "US": 4,
             "VE": 2,
             "ZA": 2
           }
@@ -7271,7 +7271,7 @@
           "regionalPriorities": {
             "BE": 15,
             "CH": 13,
-            "DE": 109,
+            "DE": 110,
             "FR": 22,
             "LU": 18,
             "NL": 12
@@ -7282,7 +7282,7 @@
           "regionalPriorities": {
             "BE": 15,
             "CH": 13,
-            "DE": 109,
+            "DE": 110,
             "FR": 22,
             "LU": 18,
             "NL": 12
@@ -7321,7 +7321,7 @@
       "logoPath": "/ozMgkAAoi6aDI5ce8KKA2k8TGvB.jpg",
       "media": {
         "movie": {
-          "displayPriority": 6,
+          "displayPriority": 2,
           "regionalPriorities": {
             "AD": 3,
             "AL": 3,
@@ -7372,7 +7372,7 @@
           }
         },
         "tv": {
-          "displayPriority": 6,
+          "displayPriority": 2,
           "regionalPriorities": {
             "AD": 3,
             "AL": 3,
@@ -7625,17 +7625,17 @@
       "logoPath": "/5aHLriu21FRDGlxY5zbzyEuoSvA.jpg",
       "media": {
         "movie": {
-          "displayPriority": 37,
+          "displayPriority": 39,
           "regionalPriorities": {
             "AT": 70,
-            "DE": 37
+            "DE": 39
           }
         },
         "tv": {
-          "displayPriority": 37,
+          "displayPriority": 39,
           "regionalPriorities": {
             "AT": 70,
-            "DE": 37
+            "DE": 39
           }
         }
       }
@@ -7715,14 +7715,14 @@
         "movie": {
           "displayPriority": 82,
           "regionalPriorities": {
-            "CA": 45,
+            "CA": 44,
             "US": 82
           }
         },
         "tv": {
           "displayPriority": 82,
           "regionalPriorities": {
-            "CA": 45,
+            "CA": 44,
             "US": 82
           }
         }
@@ -7737,14 +7737,14 @@
         "movie": {
           "displayPriority": 74,
           "regionalPriorities": {
-            "CA": 80,
+            "CA": 78,
             "US": 74
           }
         },
         "tv": {
           "displayPriority": 74,
           "regionalPriorities": {
-            "CA": 80,
+            "CA": 78,
             "US": 74
           }
         }
@@ -7794,7 +7794,7 @@
         "movie": {
           "displayPriority": 80,
           "regionalPriorities": {
-            "CA": 47,
+            "CA": 46,
             "US": 80
           }
         }
@@ -7909,15 +7909,15 @@
       "logoPath": "/zwTo48JWc9FNCgJ1ADPAfkhYUuA.jpg",
       "media": {
         "movie": {
-          "displayPriority": 48,
+          "displayPriority": 47,
           "regionalPriorities": {
-            "CA": 48
+            "CA": 47
           }
         },
         "tv": {
-          "displayPriority": 48,
+          "displayPriority": 47,
           "regionalPriorities": {
-            "CA": 48
+            "CA": 47
           }
         }
       }
@@ -7969,7 +7969,7 @@
       "logoPath": "/x6nRFzF32hCzMHaVM4RHRo7lsgS.jpg",
       "media": {
         "movie": {
-          "displayPriority": 14,
+          "displayPriority": 13,
           "regionalPriorities": {
             "AD": 14,
             "AL": 15,
@@ -7985,14 +7985,14 @@
             "BO": 10,
             "BR": 29,
             "BS": 13,
-            "CA": 63,
+            "CA": 61,
             "CH": 28,
             "CI": 11,
             "CL": 18,
             "CO": 19,
             "CR": 12,
             "CZ": 13,
-            "DE": 55,
+            "DE": 58,
             "DK": 23,
             "DO": 14,
             "DZ": 12,
@@ -8070,7 +8070,7 @@
           }
         },
         "tv": {
-          "displayPriority": 14,
+          "displayPriority": 13,
           "regionalPriorities": {
             "AD": 14,
             "AL": 15,
@@ -8086,14 +8086,14 @@
             "BO": 10,
             "BR": 29,
             "BS": 13,
-            "CA": 63,
+            "CA": 61,
             "CH": 28,
             "CI": 11,
             "CL": 18,
             "CO": 19,
             "CR": 12,
             "CZ": 13,
-            "DE": 55,
+            "DE": 58,
             "DK": 23,
             "DO": 14,
             "DZ": 12,
@@ -8181,14 +8181,14 @@
         "movie": {
           "displayPriority": 78,
           "regionalPriorities": {
-            "CA": 49,
+            "CA": 48,
             "US": 78
           }
         },
         "tv": {
           "displayPriority": 78,
           "regionalPriorities": {
-            "CA": 49,
+            "CA": 48,
             "US": 78
           }
         }
@@ -8243,15 +8243,15 @@
       "logoPath": "/o2qiZykonJuLglxwBbtUbHu4wIO.jpg",
       "media": {
         "movie": {
-          "displayPriority": 46,
+          "displayPriority": 45,
           "regionalPriorities": {
-            "CA": 46
+            "CA": 45
           }
         },
         "tv": {
-          "displayPriority": 46,
+          "displayPriority": 45,
           "regionalPriorities": {
-            "CA": 46
+            "CA": 45
           }
         }
       }
@@ -8317,7 +8317,7 @@
       "logoPath": "/jwRPknT20dfU1GeVqbcDXFyvtdG.jpg",
       "media": {
         "movie": {
-          "displayPriority": 13,
+          "displayPriority": 9,
           "regionalPriorities": {
             "AR": 12,
             "BO": 21,
@@ -8340,7 +8340,7 @@
           }
         },
         "tv": {
-          "displayPriority": 13,
+          "displayPriority": 9,
           "regionalPriorities": {
             "AR": 12,
             "BO": 21,
@@ -8432,7 +8432,7 @@
             "AU": 89,
             "BE": 47,
             "BR": 76,
-            "CA": 132,
+            "CA": 130,
             "CH": 66,
             "CL": 12,
             "CO": 14,
@@ -8442,7 +8442,7 @@
             "ES": 78,
             "FI": 48,
             "FJ": 12,
-            "FR": 85,
+            "FR": 83,
             "GB": 152,
             "GR": 27,
             "HR": 37,
@@ -8472,7 +8472,7 @@
             "AU": 89,
             "BE": 47,
             "BR": 76,
-            "CA": 132,
+            "CA": 130,
             "CH": 66,
             "CL": 12,
             "CO": 14,
@@ -8482,7 +8482,7 @@
             "ES": 78,
             "FI": 48,
             "FJ": 12,
-            "FR": 85,
+            "FR": 83,
             "GB": 152,
             "GR": 27,
             "HR": 37,
@@ -8563,15 +8563,15 @@
       "logoPath": "/cQjWvOiKRPeSuWRNGegcBjyqVbR.jpg",
       "media": {
         "movie": {
-          "displayPriority": 51,
+          "displayPriority": 50,
           "regionalPriorities": {
-            "CA": 51
+            "CA": 50
           }
         },
         "tv": {
-          "displayPriority": 51,
+          "displayPriority": 50,
           "regionalPriorities": {
-            "CA": 51
+            "CA": 50
           }
         }
       }
@@ -8643,7 +8643,7 @@
       "logoPath": "/5zqbck5mo8PuVbGu2ngBUdn5Yga.jpg",
       "media": {
         "movie": {
-          "displayPriority": 10,
+          "displayPriority": 8,
           "regionalPriorities": {
             "AR": 15,
             "AT": 24,
@@ -8655,13 +8655,13 @@
             "BO": 9,
             "BR": 19,
             "BS": 9,
-            "CA": 52,
+            "CA": 51,
             "CH": 21,
             "CL": 13,
             "CO": 14,
             "CR": 13,
             "CZ": 8,
-            "DE": 40,
+            "DE": 42,
             "DK": 18,
             "DO": 10,
             "DZ": 8,
@@ -8727,7 +8727,7 @@
           }
         },
         "tv": {
-          "displayPriority": 10,
+          "displayPriority": 8,
           "regionalPriorities": {
             "AR": 15,
             "AT": 24,
@@ -8739,13 +8739,13 @@
             "BO": 9,
             "BR": 19,
             "BS": 9,
-            "CA": 52,
+            "CA": 51,
             "CH": 21,
             "CL": 13,
             "CO": 14,
             "CR": 13,
             "CZ": 8,
-            "DE": 40,
+            "DE": 42,
             "DK": 18,
             "DO": 10,
             "DZ": 8,
@@ -8853,15 +8853,15 @@
       "logoPath": "/ntvIffmJe7ZO1SSobwSx8ABAZFG.jpg",
       "media": {
         "movie": {
-          "displayPriority": 39,
+          "displayPriority": 41,
           "regionalPriorities": {
-            "DE": 39
+            "DE": 41
           }
         },
         "tv": {
-          "displayPriority": 39,
+          "displayPriority": 41,
           "regionalPriorities": {
-            "DE": 39
+            "DE": 41
           }
         }
       }
@@ -8873,15 +8873,15 @@
       "logoPath": "/eptSSZPhXJllBI8QywFDmgOMNkU.jpg",
       "media": {
         "movie": {
-          "displayPriority": 41,
+          "displayPriority": 43,
           "regionalPriorities": {
-            "DE": 41
+            "DE": 43
           }
         },
         "tv": {
-          "displayPriority": 41,
+          "displayPriority": 43,
           "regionalPriorities": {
-            "DE": 41
+            "DE": 43
           }
         }
       }
@@ -8893,9 +8893,9 @@
       "logoPath": "/eBt8WXNGuJGBgQ28W88Y3eTAWsD.jpg",
       "media": {
         "movie": {
-          "displayPriority": 42,
+          "displayPriority": 44,
           "regionalPriorities": {
-            "DE": 42
+            "DE": 44
           }
         }
       }
@@ -9001,15 +9001,15 @@
       "logoPath": "/yQhSfwOzTF9EATdq47LlRFghmiO.jpg",
       "media": {
         "movie": {
-          "displayPriority": 53,
+          "displayPriority": 52,
           "regionalPriorities": {
-            "CA": 53
+            "CA": 52
           }
         },
         "tv": {
-          "displayPriority": 53,
+          "displayPriority": 52,
           "regionalPriorities": {
-            "CA": 53
+            "CA": 52
           }
         }
       }
@@ -9128,7 +9128,7 @@
           "displayPriority": 28,
           "regionalPriorities": {
             "BA": 23,
-            "DE": 44,
+            "DE": 47,
             "EG": 19,
             "IL": 22,
             "NG": 20,
@@ -9359,9 +9359,9 @@
       "logoPath": "/qwRq7klF8EijYs7XgvxSaYd6v6w.jpg",
       "media": {
         "movie": {
-          "displayPriority": 70,
+          "displayPriority": 111,
           "regionalPriorities": {
-            "FR": 70
+            "FR": 111
           }
         }
       }
@@ -9375,14 +9375,14 @@
         "movie": {
           "displayPriority": 116,
           "regionalPriorities": {
-            "CA": 55,
+            "CA": 54,
             "US": 116
           }
         },
         "tv": {
           "displayPriority": 116,
           "regionalPriorities": {
-            "CA": 55,
+            "CA": 54,
             "US": 116
           }
         }
@@ -9404,26 +9404,6 @@
           "displayPriority": 24,
           "regionalPriorities": {
             "IN": 24
-          }
-        }
-      }
-    },
-    {
-      "stableKey": "provider:516",
-      "tmdbWatchProviderId": 516,
-      "name": "Noovo",
-      "logoPath": "/ss6JfWLwwrIjO1AfEsBy8GYM1EU.jpg",
-      "media": {
-        "movie": {
-          "displayPriority": 57,
-          "regionalPriorities": {
-            "CA": 57
-          }
-        },
-        "tv": {
-          "displayPriority": 57,
-          "regionalPriorities": {
-            "CA": 57
           }
         }
       }
@@ -9452,7 +9432,7 @@
           "displayPriority": 158,
           "regionalPriorities": {
             "BR": 85,
-            "CA": 113,
+            "CA": 111,
             "US": 158
           }
         },
@@ -9460,7 +9440,7 @@
           "displayPriority": 158,
           "regionalPriorities": {
             "BR": 85,
-            "CA": 113,
+            "CA": 111,
             "US": 158
           }
         }
@@ -9473,11 +9453,11 @@
       "logoPath": "/3kmmwlTET45ryW7azWfFJ0Piwll.jpg",
       "media": {
         "movie": {
-          "displayPriority": 43,
+          "displayPriority": 45,
           "regionalPriorities": {
             "AT": 23,
             "CH": 22,
-            "DE": 43
+            "DE": 45
           }
         }
       }
@@ -9492,7 +9472,7 @@
           "displayPriority": 21,
           "regionalPriorities": {
             "AT": 52,
-            "DE": 88,
+            "DE": 89,
             "DK": 42,
             "ES": 38,
             "FI": 32,
@@ -9508,7 +9488,7 @@
           "displayPriority": 21,
           "regionalPriorities": {
             "AT": 52,
-            "DE": 88,
+            "DE": 89,
             "DK": 42,
             "ES": 38,
             "FI": 32,
@@ -9529,15 +9509,15 @@
       "logoPath": "/7wADjxAylhGGqWYNz86jGOQSoZG.jpg",
       "media": {
         "movie": {
-          "displayPriority": 54,
+          "displayPriority": 53,
           "regionalPriorities": {
-            "CA": 54
+            "CA": 53
           }
         },
         "tv": {
-          "displayPriority": 54,
+          "displayPriority": 53,
           "regionalPriorities": {
-            "CA": 54
+            "CA": 53
           }
         }
       }
@@ -9552,7 +9532,7 @@
           "displayPriority": 31,
           "regionalPriorities": {
             "AU": 51,
-            "CA": 86,
+            "CA": 84,
             "NZ": 33,
             "US": 31
           }
@@ -9561,7 +9541,7 @@
           "displayPriority": 31,
           "regionalPriorities": {
             "AU": 51,
-            "CA": 86,
+            "CA": 84,
             "NZ": 33,
             "US": 31
           }
@@ -9578,7 +9558,7 @@
           "displayPriority": 28,
           "regionalPriorities": {
             "AU": 52,
-            "CA": 85,
+            "CA": 83,
             "ES": 56,
             "US": 28
           }
@@ -9587,7 +9567,7 @@
           "displayPriority": 28,
           "regionalPriorities": {
             "AU": 52,
-            "CA": 85,
+            "CA": 83,
             "ES": 56,
             "US": 28
           }
@@ -9603,7 +9583,7 @@
         "movie": {
           "displayPriority": 362,
           "regionalPriorities": {
-            "CA": 146,
+            "CA": 144,
             "GB": 173,
             "US": 362
           }
@@ -9611,7 +9591,7 @@
         "tv": {
           "displayPriority": 362,
           "regionalPriorities": {
-            "CA": 146,
+            "CA": 144,
             "GB": 173,
             "US": 362
           }
@@ -9625,19 +9605,19 @@
       "logoPath": "/h5DcR0J2EESLitnhR8xLG1QymTE.jpg",
       "media": {
         "movie": {
-          "displayPriority": 3,
+          "displayPriority": 7,
           "regionalPriorities": {
             "AR": 7,
             "AT": 48,
             "AU": 8,
             "BO": 6,
             "BR": 7,
-            "CA": 10,
+            "CA": 9,
             "CH": 42,
             "CL": 7,
             "CO": 8,
             "CR": 7,
-            "DE": 9,
+            "DE": 8,
             "DO": 25,
             "EC": 5,
             "FR": 53,
@@ -9658,19 +9638,19 @@
           }
         },
         "tv": {
-          "displayPriority": 3,
+          "displayPriority": 7,
           "regionalPriorities": {
             "AR": 7,
             "AT": 48,
             "AU": 8,
             "BO": 6,
             "BR": 7,
-            "CA": 10,
+            "CA": 9,
             "CH": 42,
             "CL": 7,
             "CO": 8,
             "CR": 7,
-            "DE": 9,
+            "DE": 8,
             "DO": 25,
             "EC": 5,
             "FR": 53,
@@ -9699,7 +9679,7 @@
       "logoPath": "/8WerMI8XcZXqPpkHTZNtzMzousF.jpg",
       "media": {
         "movie": {
-          "displayPriority": 14,
+          "displayPriority": 9,
           "regionalPriorities": {
             "AD": 10,
             "AL": 11,
@@ -9708,7 +9688,7 @@
             "BH": 10,
             "BM": 10,
             "BS": 10,
-            "CA": 88,
+            "CA": 86,
             "CI": 8,
             "DO": 11,
             "DZ": 9,
@@ -9750,7 +9730,7 @@
           }
         },
         "tv": {
-          "displayPriority": 14,
+          "displayPriority": 9,
           "regionalPriorities": {
             "AD": 10,
             "AL": 11,
@@ -9759,7 +9739,7 @@
             "BH": 10,
             "BM": 10,
             "BS": 10,
-            "CA": 88,
+            "CA": 86,
             "CI": 8,
             "DO": 11,
             "DZ": 9,
@@ -9809,17 +9789,17 @@
       "logoPath": "/9MABvFilVMUAV86vLUgBgeM5LQQ.jpg",
       "media": {
         "movie": {
-          "displayPriority": 45,
+          "displayPriority": 48,
           "regionalPriorities": {
             "AT": 25,
-            "DE": 45
+            "DE": 48
           }
         },
         "tv": {
-          "displayPriority": 45,
+          "displayPriority": 48,
           "regionalPriorities": {
             "AT": 25,
-            "DE": 45
+            "DE": 48
           }
         }
       }
@@ -9831,7 +9811,7 @@
       "logoPath": "/jQMOpRluniNQSEp6V7IvtKxXMW.jpg",
       "media": {
         "movie": {
-          "displayPriority": 11,
+          "displayPriority": 7,
           "regionalPriorities": {
             "AD": 7,
             "AL": 7,
@@ -9890,19 +9870,19 @@
       "logoPath": "/ugus0p8BGGhE8sxhwAjJz2o8jyy.jpg",
       "media": {
         "movie": {
-          "displayPriority": 47,
+          "displayPriority": 50,
           "regionalPriorities": {
             "AT": 26,
             "CH": 23,
-            "DE": 47
+            "DE": 50
           }
         },
         "tv": {
-          "displayPriority": 47,
+          "displayPriority": 50,
           "regionalPriorities": {
             "AT": 26,
             "CH": 23,
-            "DE": 47
+            "DE": 50
           }
         }
       }
@@ -9914,7 +9894,7 @@
       "logoPath": "/vLZKlXUNDcZR7ilvfY9Wr9k80FZ.jpg",
       "media": {
         "movie": {
-          "displayPriority": 26,
+          "displayPriority": 5,
           "regionalPriorities": {
             "AD": 26,
             "AG": 13,
@@ -9935,7 +9915,7 @@
             "BS": 26,
             "BY": 7,
             "BZ": 11,
-            "CA": 81,
+            "CA": 79,
             "CH": 46,
             "CI": 25,
             "CL": 32,
@@ -9945,7 +9925,7 @@
             "CV": 13,
             "CY": 10,
             "CZ": 28,
-            "DE": 48,
+            "DE": 51,
             "DK": 39,
             "DO": 32,
             "DZ": 27,
@@ -10050,7 +10030,7 @@
           }
         },
         "tv": {
-          "displayPriority": 26,
+          "displayPriority": 5,
           "regionalPriorities": {
             "AD": 26,
             "AG": 13,
@@ -10071,7 +10051,7 @@
             "BS": 26,
             "BY": 7,
             "BZ": 11,
-            "CA": 81,
+            "CA": 79,
             "CH": 46,
             "CI": 25,
             "CL": 32,
@@ -10081,7 +10061,7 @@
             "CV": 13,
             "CY": 10,
             "CZ": 28,
-            "DE": 48,
+            "DE": 51,
             "DK": 39,
             "DO": 32,
             "DZ": 27,
@@ -10253,7 +10233,7 @@
             "AT": 58,
             "BE": 35,
             "CH": 45,
-            "DE": 50,
+            "DE": 53,
             "FR": 66,
             "LI": 27,
             "LU": 11
@@ -10265,7 +10245,7 @@
             "AT": 58,
             "BE": 35,
             "CH": 45,
-            "DE": 50,
+            "DE": 53,
             "FR": 66,
             "LI": 27,
             "LU": 11
@@ -10300,7 +10280,7 @@
       "logoPath": "/6dET59jNU0ADysghEjl8Unuc7Ca.jpg",
       "media": {
         "movie": {
-          "displayPriority": 11,
+          "displayPriority": 10,
           "regionalPriorities": {
             "AD": 13,
             "AL": 14,
@@ -10312,14 +10292,14 @@
             "BM": 11,
             "BO": 7,
             "BR": 24,
-            "CA": 58,
+            "CA": 56,
             "CH": 24,
             "CI": 10,
             "CL": 14,
             "CO": 15,
             "CR": 15,
             "CZ": 9,
-            "DE": 49,
+            "DE": 52,
             "DK": 19,
             "EC": 14,
             "EE": 12,
@@ -10379,7 +10359,7 @@
           }
         },
         "tv": {
-          "displayPriority": 11,
+          "displayPriority": 10,
           "regionalPriorities": {
             "AD": 13,
             "AL": 14,
@@ -10391,14 +10371,14 @@
             "BM": 11,
             "BO": 7,
             "BR": 24,
-            "CA": 58,
+            "CA": 56,
             "CH": 24,
             "CI": 10,
             "CL": 14,
             "CO": 15,
             "CR": 15,
             "CZ": 9,
-            "DE": 49,
+            "DE": 52,
             "DK": 19,
             "EC": 14,
             "EE": 12,
@@ -10482,7 +10462,7 @@
         "movie": {
           "displayPriority": 28,
           "regionalPriorities": {
-            "CA": 59,
+            "CA": 57,
             "FR": 28
           }
         }
@@ -10495,7 +10475,7 @@
       "logoPath": "/mSH24WQcRDJ2fsL5iucXqqRnSRb.jpg",
       "media": {
         "movie": {
-          "displayPriority": 12,
+          "displayPriority": 11,
           "regionalPriorities": {
             "AD": 11,
             "AL": 12,
@@ -10510,13 +10490,13 @@
             "BO": 15,
             "BR": 25,
             "BS": 11,
-            "CA": 60,
+            "CA": 58,
             "CH": 25,
             "CL": 15,
             "CO": 16,
             "CR": 16,
             "CZ": 10,
-            "DE": 51,
+            "DE": 54,
             "DK": 20,
             "DO": 12,
             "DZ": 10,
@@ -10595,7 +10575,7 @@
           }
         },
         "tv": {
-          "displayPriority": 12,
+          "displayPriority": 11,
           "regionalPriorities": {
             "AD": 11,
             "AL": 12,
@@ -10610,13 +10590,13 @@
             "BO": 15,
             "BR": 25,
             "BS": 11,
-            "CA": 60,
+            "CA": 58,
             "CH": 25,
             "CL": 15,
             "CO": 16,
             "CR": 16,
             "CZ": 10,
-            "DE": 51,
+            "DE": 54,
             "DK": 20,
             "DO": 12,
             "DZ": 10,
@@ -10739,7 +10719,7 @@
       "logoPath": "/6IYZ4NjwPikxN7J9cfSmuyeHeMm.jpg",
       "media": {
         "movie": {
-          "displayPriority": 16,
+          "displayPriority": 12,
           "regionalPriorities": {
             "AD": 12,
             "AL": 13,
@@ -10755,14 +10735,14 @@
             "BO": 8,
             "BR": 26,
             "BS": 12,
-            "CA": 61,
+            "CA": 59,
             "CH": 26,
             "CI": 9,
             "CL": 17,
             "CO": 17,
             "CR": 14,
             "CZ": 11,
-            "DE": 52,
+            "DE": 55,
             "DK": 21,
             "DO": 13,
             "DZ": 11,
@@ -10842,7 +10822,7 @@
           }
         },
         "tv": {
-          "displayPriority": 16,
+          "displayPriority": 12,
           "regionalPriorities": {
             "AD": 12,
             "AL": 13,
@@ -10858,14 +10838,14 @@
             "BO": 8,
             "BR": 26,
             "BS": 12,
-            "CA": 61,
+            "CA": 59,
             "CH": 26,
             "CI": 9,
             "CL": 17,
             "CO": 17,
             "CR": 14,
             "CZ": 11,
-            "DE": 52,
+            "DE": 55,
             "DK": 21,
             "DO": 13,
             "DZ": 11,
@@ -10987,7 +10967,7 @@
       "logoPath": "/eUBxtrqO26wAJfYOZJOzhQEo3mm.jpg",
       "media": {
         "movie": {
-          "displayPriority": 13,
+          "displayPriority": 14,
           "regionalPriorities": {
             "AD": 15,
             "AL": 16,
@@ -11002,14 +10982,14 @@
             "BO": 16,
             "BR": 27,
             "BS": 14,
-            "CA": 62,
+            "CA": 60,
             "CH": 27,
             "CI": 12,
             "CL": 16,
             "CO": 18,
             "CR": 17,
             "CZ": 12,
-            "DE": 53,
+            "DE": 56,
             "DK": 22,
             "DO": 15,
             "DZ": 13,
@@ -11143,7 +11123,7 @@
           "displayPriority": 132,
           "regionalPriorities": {
             "BR": 28,
-            "DE": 54,
+            "DE": 57,
             "GB": 50,
             "IN": 32,
             "US": 132
@@ -11194,14 +11174,14 @@
             "BO": 13,
             "BR": 30,
             "BS": 15,
-            "CA": 64,
+            "CA": 62,
             "CH": 29,
             "CI": 13,
             "CL": 19,
             "CO": 20,
             "CR": 9,
             "CZ": 14,
-            "DE": 56,
+            "DE": 59,
             "DK": 24,
             "DO": 16,
             "DZ": 14,
@@ -11302,13 +11282,13 @@
             "BO": 11,
             "BR": 31,
             "BS": 16,
-            "CA": 65,
+            "CA": 63,
             "CH": 30,
             "CL": 20,
             "CO": 21,
             "CR": 11,
             "CZ": 15,
-            "DE": 57,
+            "DE": 60,
             "DK": 25,
             "DO": 17,
             "EC": 20,
@@ -11500,7 +11480,7 @@
         "movie": {
           "displayPriority": 200,
           "regionalPriorities": {
-            "CA": 110,
+            "CA": 108,
             "US": 200
           }
         }
@@ -11533,7 +11513,7 @@
       "logoPath": "/c4eVkfMna2VzHzZ8N2vWXUnMrlD.jpg",
       "media": {
         "movie": {
-          "displayPriority": 24,
+          "displayPriority": 19,
           "regionalPriorities": {
             "AD": 21,
             "AL": 22,
@@ -11542,7 +11522,7 @@
             "BH": 19,
             "BM": 20,
             "BS": 19,
-            "CA": 67,
+            "CA": 65,
             "CI": 16,
             "DO": 21,
             "DZ": 17,
@@ -11586,7 +11566,7 @@
           }
         },
         "tv": {
-          "displayPriority": 24,
+          "displayPriority": 19,
           "regionalPriorities": {
             "AD": 21,
             "AL": 22,
@@ -11595,7 +11575,7 @@
             "BH": 19,
             "BM": 20,
             "BS": 19,
-            "CA": 67,
+            "CA": 65,
             "CI": 16,
             "DO": 21,
             "DZ": 17,
@@ -11653,10 +11633,10 @@
             "AT": 49,
             "AU": 9,
             "BR": 36,
-            "CA": 12,
+            "CA": 11,
             "CL": 41,
             "CO": 42,
-            "DE": 85,
+            "DE": 14,
             "FR": 56,
             "GB": 75,
             "GG": 64,
@@ -11673,10 +11653,10 @@
             "AT": 49,
             "AU": 9,
             "BR": 36,
-            "CA": 12,
+            "CA": 11,
             "CL": 41,
             "CO": 42,
-            "DE": 85,
+            "DE": 14,
             "FR": 56,
             "GB": 75,
             "GG": 64,
@@ -11719,12 +11699,12 @@
           "regionalPriorities": {
             "AT": 146,
             "BR": 62,
-            "CA": 116,
+            "CA": 114,
             "CH": 69,
-            "DE": 84,
+            "DE": 86,
             "GB": 60,
             "GG": 68,
-            "IN": 62,
+            "IN": 60,
             "IT": 22,
             "LI": 36,
             "LU": 20,
@@ -11737,12 +11717,12 @@
           "regionalPriorities": {
             "AT": 146,
             "BR": 62,
-            "CA": 116,
+            "CA": 114,
             "CH": 69,
-            "DE": 84,
+            "DE": 86,
             "GB": 60,
             "GG": 68,
-            "IN": 62,
+            "IN": 60,
             "IT": 22,
             "LI": 36,
             "LU": 20,
@@ -11773,10 +11753,10 @@
       "logoPath": "/tw81Wj2gaVL30O7CvzfsqTLMxQg.jpg",
       "media": {
         "movie": {
-          "displayPriority": 68,
+          "displayPriority": 66,
           "regionalPriorities": {
             "AU": 95,
-            "CA": 68
+            "CA": 66
           }
         }
       }
@@ -11794,7 +11774,7 @@
             "AU": 58,
             "BE": 50,
             "BR": 84,
-            "CA": 70,
+            "CA": 68,
             "CL": 54,
             "CO": 55,
             "DE": 206,
@@ -11820,7 +11800,7 @@
             "AU": 58,
             "BE": 50,
             "BR": 84,
-            "CA": 70,
+            "CA": 68,
             "CL": 54,
             "CO": 55,
             "DE": 206,
@@ -11850,14 +11830,14 @@
         "movie": {
           "displayPriority": 73,
           "regionalPriorities": {
-            "CA": 69,
+            "CA": 67,
             "JP": 73
           }
         },
         "tv": {
           "displayPriority": 73,
           "regionalPriorities": {
-            "CA": 69,
+            "CA": 67,
             "JP": 73
           }
         }
@@ -11954,7 +11934,7 @@
           "displayPriority": 175,
           "regionalPriorities": {
             "AT": 59,
-            "DE": 101,
+            "DE": 102,
             "GB": 62,
             "GG": 70,
             "US": 175
@@ -12072,7 +12052,7 @@
             "DE": 220,
             "FI": 61,
             "GB": 58,
-            "IN": 63,
+            "IN": 61,
             "NL": 74,
             "NZ": 62,
             "SE": 64,
@@ -12087,7 +12067,7 @@
             "DE": 220,
             "FI": 61,
             "GB": 58,
-            "IN": 63,
+            "IN": 61,
             "NL": 74,
             "NZ": 62,
             "SE": 64,
@@ -12103,17 +12083,17 @@
       "logoPath": "/91oRDZySWtw60ei006uQ45gmjXD.jpg",
       "media": {
         "movie": {
-          "displayPriority": 64,
+          "displayPriority": 62,
           "regionalPriorities": {
             "GB": 59,
-            "IN": 64
+            "IN": 62
           }
         },
         "tv": {
-          "displayPriority": 64,
+          "displayPriority": 62,
           "regionalPriorities": {
             "GB": 59,
-            "IN": 64
+            "IN": 62
           }
         }
       }
@@ -12125,15 +12105,15 @@
       "logoPath": "/5W6vTKE684EhdITeMUjdcTIBGdh.jpg",
       "media": {
         "movie": {
-          "displayPriority": 72,
+          "displayPriority": 70,
           "regionalPriorities": {
-            "CA": 72
+            "CA": 70
           }
         },
         "tv": {
-          "displayPriority": 72,
+          "displayPriority": 70,
           "regionalPriorities": {
-            "CA": 72
+            "CA": 70
           }
         }
       }
@@ -12145,15 +12125,15 @@
       "logoPath": "/djTJ7pAkIhmPaN3eTA6wTUrphNG.jpg",
       "media": {
         "movie": {
-          "displayPriority": 73,
+          "displayPriority": 71,
           "regionalPriorities": {
-            "CA": 73
+            "CA": 71
           }
         },
         "tv": {
-          "displayPriority": 73,
+          "displayPriority": 71,
           "regionalPriorities": {
-            "CA": 73
+            "CA": 71
           }
         }
       }
@@ -12170,8 +12150,8 @@
             "AT": 133,
             "AU": 77,
             "BE": 42,
-            "CA": 74,
-            "DE": 90,
+            "CA": 72,
+            "DE": 91,
             "ES": 38,
             "GB": 89,
             "GG": 45,
@@ -12188,8 +12168,8 @@
             "AT": 133,
             "AU": 77,
             "BE": 42,
-            "CA": 74,
-            "DE": 90,
+            "CA": 72,
+            "DE": 91,
             "ES": 38,
             "GB": 89,
             "GG": 45,
@@ -12214,12 +12194,12 @@
             "AT": 144,
             "AU": 76,
             "BR": 37,
-            "CA": 75,
+            "CA": 73,
             "CL": 53,
             "CO": 54,
             "DE": 199,
             "ES": 57,
-            "FR": 89,
+            "FR": 87,
             "GB": 153,
             "GG": 58,
             "MX": 35,
@@ -12234,12 +12214,12 @@
             "AT": 144,
             "AU": 76,
             "BR": 37,
-            "CA": 75,
+            "CA": 73,
             "CL": 53,
             "CO": 54,
             "DE": 199,
             "ES": 57,
-            "FR": 89,
+            "FR": 87,
             "GB": 153,
             "GG": 58,
             "MX": 35,
@@ -12257,15 +12237,15 @@
       "logoPath": "/bEgGGEDgBczZcZRJ6x1MtTym2LV.jpg",
       "media": {
         "movie": {
-          "displayPriority": 76,
+          "displayPriority": 74,
           "regionalPriorities": {
-            "CA": 76
+            "CA": 74
           }
         },
         "tv": {
-          "displayPriority": 76,
+          "displayPriority": 74,
           "regionalPriorities": {
-            "CA": 76
+            "CA": 74
           }
         }
       }
@@ -12277,15 +12257,15 @@
       "logoPath": "/2WEzLLWbvMLHSNkAjYrIeDOmLJM.jpg",
       "media": {
         "movie": {
-          "displayPriority": 77,
+          "displayPriority": 75,
           "regionalPriorities": {
-            "CA": 77
+            "CA": 75
           }
         },
         "tv": {
-          "displayPriority": 77,
+          "displayPriority": 75,
           "regionalPriorities": {
-            "CA": 77
+            "CA": 75
           }
         }
       }
@@ -12301,7 +12281,7 @@
           "regionalPriorities": {
             "AT": 145,
             "AU": 93,
-            "CA": 78,
+            "CA": 76,
             "DE": 200,
             "NZ": 50
           }
@@ -12315,15 +12295,15 @@
       "logoPath": "/srLngtBaRGooYsVgkvzkGCwbZHA.jpg",
       "media": {
         "movie": {
-          "displayPriority": 79,
+          "displayPriority": 77,
           "regionalPriorities": {
-            "CA": 79
+            "CA": 77
           }
         },
         "tv": {
-          "displayPriority": 79,
+          "displayPriority": 77,
           "regionalPriorities": {
-            "CA": 79
+            "CA": 77
           }
         }
       }
@@ -12339,7 +12319,7 @@
           "regionalPriorities": {
             "AT": 55,
             "CH": 63,
-            "DE": 77,
+            "DE": 16,
             "GB": 19,
             "GG": 31,
             "GI": 27,
@@ -12353,7 +12333,7 @@
           "regionalPriorities": {
             "AT": 55,
             "CH": 63,
-            "DE": 77,
+            "DE": 16,
             "GB": 19,
             "GG": 31,
             "GI": 27,
@@ -12892,7 +12872,7 @@
       "logoPath": "/fwx5Ed64TkfWiRH1SOSkc4781Ts.jpg",
       "media": {
         "movie": {
-          "displayPriority": 18,
+          "displayPriority": 6,
           "regionalPriorities": {
             "AD": 19,
             "AE": 10,
@@ -12909,7 +12889,7 @@
             "BM": 22,
             "BO": 23,
             "BR": 34,
-            "CA": 82,
+            "CA": 80,
             "CH": 34,
             "CI": 18,
             "CL": 23,
@@ -12918,7 +12898,7 @@
             "CU": 6,
             "CV": 7,
             "CZ": 18,
-            "DE": 61,
+            "DE": 64,
             "DK": 29,
             "DO": 22,
             "DZ": 19,
@@ -13022,9 +13002,9 @@
       "logoPath": "/iM7Ed1d7mYT3DQWSqLoW3tIN4uS.jpg",
       "media": {
         "movie": {
-          "displayPriority": 60,
+          "displayPriority": 63,
           "regionalPriorities": {
-            "DE": 60
+            "DE": 63
           }
         }
       }
@@ -13036,15 +13016,9 @@
       "logoPath": "/coWnECpOyKLWMTSlXkfT2PhLs9E.jpg",
       "media": {
         "movie": {
-          "displayPriority": 62,
+          "displayPriority": 65,
           "regionalPriorities": {
-            "DE": 62
-          }
-        },
-        "tv": {
-          "displayPriority": 62,
-          "regionalPriorities": {
-            "DE": 62
+            "DE": 65
           }
         }
       }
@@ -13058,14 +13032,14 @@
         "movie": {
           "displayPriority": 45,
           "regionalPriorities": {
-            "DE": 64,
+            "DE": 67,
             "PL": 45
           }
         },
         "tv": {
           "displayPriority": 45,
           "regionalPriorities": {
-            "DE": 64,
+            "DE": 67,
             "PL": 45
           }
         }
@@ -13080,14 +13054,14 @@
         "movie": {
           "displayPriority": 28,
           "regionalPriorities": {
-            "DE": 65,
+            "DE": 68,
             "PL": 28
           }
         },
         "tv": {
           "displayPriority": 28,
           "regionalPriorities": {
-            "DE": 65,
+            "DE": 68,
             "PL": 28
           }
         }
@@ -13166,15 +13140,15 @@
       "logoPath": "/7Zy6GqC8lQEvfBlWC1bJcaJzPRd.jpg",
       "media": {
         "movie": {
-          "displayPriority": 63,
+          "displayPriority": 66,
           "regionalPriorities": {
-            "DE": 63
+            "DE": 66
           }
         },
         "tv": {
-          "displayPriority": 63,
+          "displayPriority": 66,
           "regionalPriorities": {
-            "DE": 63
+            "DE": 66
           }
         }
       }
@@ -13186,11 +13160,11 @@
       "logoPath": "/tnQ5PGryncrVxE9bK6nxif82wtd.jpg",
       "media": {
         "movie": {
-          "displayPriority": 46,
+          "displayPriority": 49,
           "regionalPriorities": {
             "AT": 116,
             "CH": 61,
-            "DE": 46
+            "DE": 49
           }
         }
       }
@@ -13207,7 +13181,7 @@
             "AR": 47,
             "AU": 96,
             "BE": 52,
-            "CA": 133,
+            "CA": 131,
             "DK": 46,
             "FR": 64,
             "GB": 72,
@@ -13233,7 +13207,7 @@
           "regionalPriorities": {
             "AR": 42,
             "AU": 86,
-            "CA": 128,
+            "CA": 126,
             "CL": 47,
             "CO": 48,
             "ES": 41,
@@ -13299,7 +13273,7 @@
       "logoPath": "/uauVx3dGWt0GICqdMCBYJObd3Mo.jpg",
       "media": {
         "movie": {
-          "displayPriority": 19,
+          "displayPriority": 7,
           "regionalPriorities": {
             "AD": 20,
             "AE": 11,
@@ -13317,7 +13291,7 @@
             "BO": 24,
             "BR": 38,
             "BS": 21,
-            "CA": 83,
+            "CA": 81,
             "CH": 35,
             "CI": 19,
             "CL": 24,
@@ -13326,7 +13300,7 @@
             "CU": 8,
             "CV": 9,
             "CZ": 19,
-            "DE": 67,
+            "DE": 70,
             "DK": 30,
             "DO": 23,
             "DZ": 20,
@@ -13424,7 +13398,7 @@
           }
         },
         "tv": {
-          "displayPriority": 19,
+          "displayPriority": 7,
           "regionalPriorities": {
             "AD": 20,
             "AE": 11,
@@ -13442,7 +13416,7 @@
             "BO": 24,
             "BR": 38,
             "BS": 21,
-            "CA": 83,
+            "CA": 81,
             "CH": 35,
             "CI": 19,
             "CL": 24,
@@ -13451,7 +13425,7 @@
             "CU": 8,
             "CV": 9,
             "CZ": 19,
-            "DE": 67,
+            "DE": 70,
             "DK": 30,
             "DO": 23,
             "DZ": 20,
@@ -13557,17 +13531,17 @@
       "logoPath": "/9aLd9gAK6xHtWK2tXDYq1fOqzJA.jpg",
       "media": {
         "movie": {
-          "displayPriority": 66,
+          "displayPriority": 69,
           "regionalPriorities": {
             "AT": 38,
-            "DE": 66
+            "DE": 69
           }
         },
         "tv": {
-          "displayPriority": 66,
+          "displayPriority": 69,
           "regionalPriorities": {
             "AT": 38,
-            "DE": 66
+            "DE": 69
           }
         }
       }
@@ -13613,7 +13587,7 @@
       "logoPath": "/fbveJTcro9Xw2KuPIIoPPePHiwy.jpg",
       "media": {
         "movie": {
-          "displayPriority": 20,
+          "displayPriority": 3,
           "regionalPriorities": {
             "AE": 12,
             "AG": 8,
@@ -13634,7 +13608,7 @@
             "BS": 22,
             "BY": 5,
             "BZ": 7,
-            "CA": 84,
+            "CA": 82,
             "CH": 36,
             "CI": 20,
             "CL": 25,
@@ -13645,7 +13619,7 @@
             "CV": 8,
             "CY": 7,
             "CZ": 20,
-            "DE": 68,
+            "DE": 71,
             "DK": 31,
             "DO": 24,
             "DZ": 21,
@@ -13749,7 +13723,7 @@
           }
         },
         "tv": {
-          "displayPriority": 20,
+          "displayPriority": 3,
           "regionalPriorities": {
             "AE": 12,
             "AG": 8,
@@ -13770,7 +13744,7 @@
             "BS": 22,
             "BY": 5,
             "BZ": 7,
-            "CA": 84,
+            "CA": 82,
             "CH": 36,
             "CI": 20,
             "CL": 25,
@@ -13781,7 +13755,7 @@
             "CV": 8,
             "CY": 7,
             "CZ": 20,
-            "DE": 68,
+            "DE": 71,
             "DK": 31,
             "DO": 24,
             "DZ": 21,
@@ -13909,7 +13883,7 @@
       "logoPath": "/4bsFc5AgxDNdDeS1NIjVRviARhB.jpg",
       "media": {
         "movie": {
-          "displayPriority": 21,
+          "displayPriority": 9,
           "regionalPriorities": {
             "CI": 21,
             "DZ": 22,
@@ -13933,7 +13907,7 @@
           }
         },
         "tv": {
-          "displayPriority": 21,
+          "displayPriority": 9,
           "regionalPriorities": {
             "CI": 21,
             "DZ": 22,
@@ -13965,15 +13939,15 @@
       "logoPath": "/p5xtRLEzPyRhqOPpiW1sFy4FyPc.jpg",
       "media": {
         "movie": {
-          "displayPriority": 87,
+          "displayPriority": 85,
           "regionalPriorities": {
-            "CA": 87
+            "CA": 85
           }
         },
         "tv": {
-          "displayPriority": 87,
+          "displayPriority": 85,
           "regionalPriorities": {
-            "CA": 87
+            "CA": 85
           }
         }
       }
@@ -13985,17 +13959,17 @@
       "logoPath": "/9NYihXY9biyXFJSZQq5HIGu1n8B.jpg",
       "media": {
         "movie": {
-          "displayPriority": 95,
+          "displayPriority": 96,
           "regionalPriorities": {
             "AT": 41,
-            "DE": 95
+            "DE": 96
           }
         },
         "tv": {
-          "displayPriority": 95,
+          "displayPriority": 96,
           "regionalPriorities": {
             "AT": 41,
-            "DE": 95
+            "DE": 96
           }
         }
       }
@@ -14007,17 +13981,17 @@
       "logoPath": "/a2wCZ9ultzAbjAaG6JMiCFJoy9s.jpg",
       "media": {
         "movie": {
-          "displayPriority": 96,
+          "displayPriority": 97,
           "regionalPriorities": {
             "AT": 42,
-            "DE": 96
+            "DE": 97
           }
         },
         "tv": {
-          "displayPriority": 96,
+          "displayPriority": 97,
           "regionalPriorities": {
             "AT": 42,
-            "DE": 96
+            "DE": 97
           }
         }
       }
@@ -14032,7 +14006,7 @@
           "displayPriority": 64,
           "regionalPriorities": {
             "AT": 43,
-            "DE": 97,
+            "DE": 98,
             "IT": 64
           }
         },
@@ -14040,7 +14014,7 @@
           "displayPriority": 64,
           "regionalPriorities": {
             "AT": 43,
-            "DE": 97,
+            "DE": 98,
             "IT": 64
           }
         }
@@ -14053,15 +14027,15 @@
       "logoPath": "/eMoqH13BYzIC1wDlhONhHfDM3DN.jpg",
       "media": {
         "movie": {
-          "displayPriority": 72,
+          "displayPriority": 75,
           "regionalPriorities": {
-            "DE": 72
+            "DE": 75
           }
         },
         "tv": {
-          "displayPriority": 72,
+          "displayPriority": 75,
           "regionalPriorities": {
-            "DE": 72
+            "DE": 75
           }
         }
       }
@@ -14073,15 +14047,15 @@
       "logoPath": "/AvUM6aAqYh7JxUokb5T5ERn3KMs.jpg",
       "media": {
         "movie": {
-          "displayPriority": 71,
+          "displayPriority": 74,
           "regionalPriorities": {
-            "DE": 71
+            "DE": 74
           }
         },
         "tv": {
-          "displayPriority": 71,
+          "displayPriority": 74,
           "regionalPriorities": {
-            "DE": 71
+            "DE": 74
           }
         }
       }
@@ -14093,15 +14067,15 @@
       "logoPath": "/cYzZyot2IuGUYUXLvw6BMBT6v9p.jpg",
       "media": {
         "movie": {
-          "displayPriority": 74,
+          "displayPriority": 77,
           "regionalPriorities": {
-            "DE": 74
+            "DE": 77
           }
         },
         "tv": {
-          "displayPriority": 74,
+          "displayPriority": 77,
           "regionalPriorities": {
-            "DE": 74
+            "DE": 77
           }
         }
       }
@@ -14116,7 +14090,7 @@
           "displayPriority": 33,
           "regionalPriorities": {
             "AT": 138,
-            "DE": 73,
+            "DE": 76,
             "GB": 90,
             "IT": 50,
             "JP": 33
@@ -14131,15 +14105,15 @@
       "logoPath": "/gHBdFYhxdeLHl8jimTDwA1bFv01.jpg",
       "media": {
         "movie": {
-          "displayPriority": 76,
+          "displayPriority": 79,
           "regionalPriorities": {
-            "DE": 76
+            "DE": 79
           }
         },
         "tv": {
-          "displayPriority": 76,
+          "displayPriority": 79,
           "regionalPriorities": {
-            "DE": 76
+            "DE": 79
           }
         }
       }
@@ -14151,9 +14125,9 @@
       "logoPath": "/xXN970tHrMfL7BQUTVSu96IY9gs.jpg",
       "media": {
         "movie": {
-          "displayPriority": 75,
+          "displayPriority": 78,
           "regionalPriorities": {
-            "DE": 75
+            "DE": 78
           }
         }
       }
@@ -14165,16 +14139,16 @@
       "logoPath": "/7qZED0kLBtiV8mLRNBtW4PQCAqW.jpg",
       "media": {
         "movie": {
-          "displayPriority": 22,
+          "displayPriority": 10,
           "regionalPriorities": {
             "AE": 14,
             "AR": 34,
             "AU": 57,
             "BH": 27,
             "BR": 47,
-            "CA": 101,
+            "CA": 99,
             "CI": 22,
-            "DE": 100,
+            "DE": 101,
             "DZ": 23,
             "EG": 29,
             "ES": 59,
@@ -14218,16 +14192,16 @@
           }
         },
         "tv": {
-          "displayPriority": 22,
+          "displayPriority": 10,
           "regionalPriorities": {
             "AE": 14,
             "AR": 34,
             "AU": 57,
             "BH": 27,
             "BR": 47,
-            "CA": 101,
+            "CA": 99,
             "CI": 22,
-            "DE": 100,
+            "DE": 101,
             "DZ": 23,
             "EG": 29,
             "ES": 59,
@@ -14317,9 +14291,9 @@
       "logoPath": "/nJlTOUfDEUD6fQLopWBnUNzo2NA.jpg",
       "media": {
         "movie": {
-          "displayPriority": 69,
+          "displayPriority": 72,
           "regionalPriorities": {
-            "DE": 69
+            "DE": 72
           }
         }
       }
@@ -14331,9 +14305,9 @@
       "logoPath": "/p1mlqlIOtPPZf7lckxX3XLAm2ia.jpg",
       "media": {
         "movie": {
-          "displayPriority": 70,
+          "displayPriority": 73,
           "regionalPriorities": {
-            "DE": 70
+            "DE": 73
           }
         }
       }
@@ -14510,9 +14484,9 @@
           "displayPriority": 60,
           "regionalPriorities": {
             "BE": 57,
-            "ES": 83,
+            "ES": 84,
             "FI": 57,
-            "FR": 69,
+            "FR": 110,
             "SE": 60
           }
         }
@@ -14822,11 +14796,11 @@
       "logoPath": "/704tOH9qi7y7DDl1CmzDCAI0dcQ.jpg",
       "media": {
         "movie": {
-          "displayPriority": 87,
+          "displayPriority": 88,
           "regionalPriorities": {
             "AT": 51,
             "CH": 39,
-            "DE": 87
+            "DE": 88
           }
         }
       }
@@ -14841,8 +14815,8 @@
           "displayPriority": 88,
           "regionalPriorities": {
             "AT": 44,
-            "DE": 78,
-            "FR": 105,
+            "DE": 80,
+            "FR": 103,
             "GB": 82,
             "GG": 88
           }
@@ -14851,8 +14825,8 @@
           "displayPriority": 88,
           "regionalPriorities": {
             "AT": 44,
-            "DE": 78,
-            "FR": 105,
+            "DE": 80,
+            "FR": 103,
             "GB": 82,
             "GG": 88
           }
@@ -14880,7 +14854,7 @@
       "logoPath": "/ed0vz5bryWIhQB5sHiuGvHKnHHn.jpg",
       "media": {
         "movie": {
-          "displayPriority": 23,
+          "displayPriority": 11,
           "regionalPriorities": {
             "AD": 22,
             "AE": 16,
@@ -14898,7 +14872,7 @@
             "BO": 26,
             "BR": 40,
             "BS": 23,
-            "CA": 91,
+            "CA": 89,
             "CH": 40,
             "CI": 23,
             "CL": 26,
@@ -14906,7 +14880,7 @@
             "CR": 27,
             "CV": 10,
             "CZ": 21,
-            "DE": 79,
+            "DE": 81,
             "DK": 35,
             "DO": 26,
             "DZ": 25,
@@ -15067,17 +15041,17 @@
       "logoPath": "/rYszOzWFzq7xPffwJ7XN5rJRI7u.jpg",
       "media": {
         "movie": {
-          "displayPriority": 80,
+          "displayPriority": 82,
           "regionalPriorities": {
             "AT": 46,
-            "DE": 80
+            "DE": 82
           }
         },
         "tv": {
-          "displayPriority": 80,
+          "displayPriority": 82,
           "regionalPriorities": {
             "AT": 46,
-            "DE": 80
+            "DE": 82
           }
         }
       }
@@ -15120,14 +15094,14 @@
         "movie": {
           "displayPriority": 88,
           "regionalPriorities": {
-            "CA": 92,
+            "CA": 90,
             "US": 88
           }
         },
         "tv": {
           "displayPriority": 88,
           "regionalPriorities": {
-            "CA": 92,
+            "CA": 90,
             "US": 88
           }
         }
@@ -15144,8 +15118,8 @@
           "regionalPriorities": {
             "AU": 50,
             "BR": 42,
-            "CA": 93,
-            "DE": 82,
+            "CA": 91,
+            "DE": 84,
             "ES": 52,
             "FR": 52,
             "GB": 86,
@@ -15161,8 +15135,8 @@
           "regionalPriorities": {
             "AU": 50,
             "BR": 42,
-            "CA": 93,
-            "DE": 82,
+            "CA": 91,
+            "DE": 84,
             "ES": 52,
             "FR": 52,
             "GB": 86,
@@ -15182,15 +15156,15 @@
       "logoPath": "/3VYyCBiG2WTCZ2tGzTkWvoXTeqi.jpg",
       "media": {
         "movie": {
-          "displayPriority": 83,
+          "displayPriority": 85,
           "regionalPriorities": {
-            "DE": 83
+            "DE": 85
           }
         },
         "tv": {
-          "displayPriority": 83,
+          "displayPriority": 85,
           "regionalPriorities": {
-            "DE": 83
+            "DE": 85
           }
         }
       }
@@ -15247,7 +15221,7 @@
             "CZ": 21,
             "DE": 218,
             "ES": 87,
-            "FR": 106,
+            "FR": 104,
             "GB": 12,
             "IE": 65,
             "IT": 85,
@@ -15272,7 +15246,7 @@
             "CZ": 21,
             "DE": 218,
             "ES": 87,
-            "FR": 106,
+            "FR": 104,
             "GB": 12,
             "IE": 65,
             "IT": 85,
@@ -15314,9 +15288,9 @@
       "logoPath": "/fxYgfnsrUWa7e9aNr3j3RERpm66.jpg",
       "media": {
         "movie": {
-          "displayPriority": 86,
+          "displayPriority": 87,
           "regionalPriorities": {
-            "DE": 86
+            "DE": 87
           }
         }
       }
@@ -15364,14 +15338,14 @@
     {
       "stableKey": "provider:1852",
       "tmdbWatchProviderId": 1852,
-      "name": "Britbox Apple TV Channel",
+      "name": "Britbox Apple TV channel",
       "logoPath": "/bzEv2wssRqVgl12IVBfYhCIvvG.jpg",
       "media": {
         "movie": {
           "displayPriority": 25,
           "regionalPriorities": {
             "AU": 56,
-            "CA": 95,
+            "CA": 93,
             "NO": 37,
             "US": 25
           }
@@ -15380,7 +15354,7 @@
           "displayPriority": 25,
           "regionalPriorities": {
             "AU": 56,
-            "CA": 95,
+            "CA": 93,
             "NO": 37,
             "US": 25
           }
@@ -15390,7 +15364,7 @@
     {
       "stableKey": "provider:1853",
       "tmdbWatchProviderId": 1853,
-      "name": "Paramount Plus Apple TV Channel",
+      "name": "Paramount Plus Apple TV channel",
       "logoPath": "/tJqmTmQ8jp9WfyaZfApHK8lSywA.jpg",
       "media": {
         "movie": {
@@ -15401,12 +15375,12 @@
             "AU": 53,
             "BO": 30,
             "BR": 43,
-            "CA": 94,
+            "CA": 92,
             "CH": 44,
             "CL": 30,
             "CO": 31,
             "CR": 31,
-            "DE": 89,
+            "DE": 90,
             "DO": 29,
             "EC": 30,
             "FR": 58,
@@ -15433,12 +15407,12 @@
             "AU": 53,
             "BO": 30,
             "BR": 43,
-            "CA": 94,
+            "CA": 92,
             "CH": 44,
             "CL": 30,
             "CO": 31,
             "CR": 31,
-            "DE": 89,
+            "DE": 90,
             "DO": 29,
             "EC": 30,
             "FR": 58,
@@ -15462,14 +15436,14 @@
     {
       "stableKey": "provider:1854",
       "tmdbWatchProviderId": 1854,
-      "name": "AMC Plus Apple TV Channel",
+      "name": "AMC Plus Apple TV channel",
       "logoPath": "/oTQdXIqM9iewlN4MC2nhKB0gHw.jpg",
       "media": {
         "movie": {
           "displayPriority": 24,
           "regionalPriorities": {
             "AU": 54,
-            "CA": 96,
+            "CA": 94,
             "ES": 62,
             "US": 24
           }
@@ -15478,7 +15452,7 @@
           "displayPriority": 24,
           "regionalPriorities": {
             "AU": 54,
-            "CA": 96,
+            "CA": 94,
             "ES": 62,
             "US": 24
           }
@@ -15488,7 +15462,7 @@
     {
       "stableKey": "provider:1855",
       "tmdbWatchProviderId": 1855,
-      "name": "Starz Apple TV Channel",
+      "name": "Starz Apple TV channel",
       "logoPath": "/1C5EVCWyQD798CE1DFfcm6oAbxP.jpg",
       "media": {
         "movie": {
@@ -15509,7 +15483,7 @@
       "stableKey": "provider:1856",
       "tmdbWatchProviderId": 1856,
       "name": "Magenta TV",
-      "logoPath": "/f195E2gXoZBp7QjGNL4XICXxiDk.jpg",
+      "logoPath": "/dLrUV2v5EpIOv5hczp5lYUXZBbg.jpg",
       "media": {
         "movie": {
           "displayPriority": 7,
@@ -15612,13 +15586,13 @@
       "logoPath": "/xm8xr6LDdY5j2gjYf1S3yqaeRbE.jpg",
       "media": {
         "movie": {
-          "displayPriority": 29,
+          "displayPriority": 25,
           "regionalPriorities": {
             "AR": 31,
             "BO": 28,
             "BR": 45,
             "BZ": 8,
-            "CA": 98,
+            "CA": 96,
             "CL": 28,
             "CO": 29,
             "CR": 29,
@@ -15641,13 +15615,13 @@
           }
         },
         "tv": {
-          "displayPriority": 29,
+          "displayPriority": 25,
           "regionalPriorities": {
             "AR": 31,
             "BO": 28,
             "BR": 45,
             "BZ": 8,
-            "CA": 98,
+            "CA": 96,
             "CL": 28,
             "CO": 29,
             "CR": 29,
@@ -15782,7 +15756,7 @@
           "regionalPriorities": {
             "AU": 78,
             "ES": 58,
-            "FR": 90,
+            "FR": 88,
             "GB": 154,
             "GG": 60,
             "IT": 88,
@@ -15801,15 +15775,15 @@
       "logoPath": "/s7ZjSKXOtjKBb7hAzBm3b0iY0SG.jpg",
       "media": {
         "movie": {
-          "displayPriority": 91,
+          "displayPriority": 92,
           "regionalPriorities": {
-            "DE": 91
+            "DE": 92
           }
         },
         "tv": {
-          "displayPriority": 91,
+          "displayPriority": 92,
           "regionalPriorities": {
-            "DE": 91
+            "DE": 92
           }
         }
       }
@@ -15821,15 +15795,15 @@
       "logoPath": "/5Qe65kN95Z0CytOaG3I8bytdW7A.jpg",
       "media": {
         "movie": {
-          "displayPriority": 92,
+          "displayPriority": 93,
           "regionalPriorities": {
-            "DE": 92
+            "DE": 93
           }
         },
         "tv": {
-          "displayPriority": 92,
+          "displayPriority": 93,
           "regionalPriorities": {
-            "DE": 92
+            "DE": 93
           }
         }
       }
@@ -15954,7 +15928,7 @@
       "logoPath": "/jbe4gVSfRlbPTdESXhEKpornsfu.jpg",
       "media": {
         "movie": {
-          "displayPriority": 5,
+          "displayPriority": 28,
           "regionalPriorities": {
             "AD": 25,
             "AG": 12,
@@ -15984,7 +15958,7 @@
             "ES": 17,
             "FI": 42,
             "FJ": 21,
-            "FR": 75,
+            "FR": 73,
             "GB": 176,
             "GR": 36,
             "GT": 5,
@@ -16042,7 +16016,7 @@
           }
         },
         "tv": {
-          "displayPriority": 5,
+          "displayPriority": 28,
           "regionalPriorities": {
             "AD": 25,
             "AG": 12,
@@ -16072,7 +16046,7 @@
             "ES": 17,
             "FI": 42,
             "FJ": 21,
-            "FR": 75,
+            "FR": 73,
             "GB": 176,
             "GR": 36,
             "GT": 5,
@@ -16158,15 +16132,15 @@
       "logoPath": "/qTybjmHLNcXZExZLBnm4muVCDzP.jpg",
       "media": {
         "movie": {
-          "displayPriority": 93,
+          "displayPriority": 94,
           "regionalPriorities": {
-            "DE": 93
+            "DE": 94
           }
         },
         "tv": {
-          "displayPriority": 93,
+          "displayPriority": 94,
           "regionalPriorities": {
-            "DE": 93
+            "DE": 94
           }
         }
       }
@@ -16243,7 +16217,7 @@
       "stableKey": "provider:1920",
       "tmdbWatchProviderId": 1920,
       "name": "Reserva Imovision",
-      "logoPath": "/cV6ShEHGS1Bs83xszJlorJVRU47.jpg",
+      "logoPath": "/7ALaAGHrWIuGQFisHm2GhdeRaOH.jpg",
       "media": {
         "movie": {
           "displayPriority": 46,
@@ -16354,17 +16328,17 @@
       "logoPath": "/kVUNXh1Rt9JnwCDotghBKEwLGdH.jpg",
       "media": {
         "movie": {
-          "displayPriority": 98,
+          "displayPriority": 99,
           "regionalPriorities": {
             "AT": 71,
-            "DE": 98
+            "DE": 99
           }
         },
         "tv": {
-          "displayPriority": 98,
+          "displayPriority": 99,
           "regionalPriorities": {
             "AT": 71,
-            "DE": 98
+            "DE": 99
           }
         }
       }
@@ -16398,14 +16372,14 @@
         "movie": {
           "displayPriority": 161,
           "regionalPriorities": {
-            "CA": 99,
+            "CA": 97,
             "US": 161
           }
         },
         "tv": {
           "displayPriority": 161,
           "regionalPriorities": {
-            "CA": 99,
+            "CA": 97,
             "US": 161
           }
         }
@@ -16421,7 +16395,7 @@
           "displayPriority": 162,
           "regionalPriorities": {
             "AE": 18,
-            "DE": 99,
+            "DE": 100,
             "EG": 33,
             "IN": 44,
             "IQ": 28,
@@ -16435,7 +16409,7 @@
           "displayPriority": 162,
           "regionalPriorities": {
             "AE": 18,
-            "DE": 99,
+            "DE": 100,
             "EG": 33,
             "IN": 44,
             "IQ": 28,
@@ -16456,14 +16430,14 @@
         "movie": {
           "displayPriority": 163,
           "regionalPriorities": {
-            "CA": 100,
+            "CA": 98,
             "US": 163
           }
         },
         "tv": {
           "displayPriority": 163,
           "regionalPriorities": {
-            "CA": 100,
+            "CA": 98,
             "US": 163
           }
         }
@@ -16577,21 +16551,33 @@
             "AU": 80,
             "BE": 41,
             "BR": 70,
-            "CA": 11,
+            "CA": 10,
+            "CH": 79,
             "CL": 44,
             "CO": 45,
+            "CZ": 46,
             "DE": 175,
+            "DK": 64,
             "ES": 72,
-            "FR": 78,
+            "FI": 66,
+            "FR": 76,
             "GB": 14,
             "GG": 19,
+            "GR": 38,
+            "HR": 47,
+            "HU": 42,
+            "IE": 70,
             "IN": 50,
             "IT": 74,
             "MX": 61,
             "NL": 55,
+            "NO": 56,
             "NZ": 51,
             "PL": 44,
+            "PT": 53,
+            "RO": 37,
             "SE": 12,
+            "SK": 51,
             "US": 22
           }
         },
@@ -16603,21 +16589,33 @@
             "AU": 80,
             "BE": 41,
             "BR": 70,
-            "CA": 11,
+            "CA": 10,
+            "CH": 79,
             "CL": 44,
             "CO": 45,
+            "CZ": 46,
             "DE": 175,
+            "DK": 64,
             "ES": 72,
-            "FR": 78,
+            "FI": 66,
+            "FR": 76,
             "GB": 14,
             "GG": 19,
+            "GR": 38,
+            "HR": 47,
+            "HU": 42,
+            "IE": 70,
             "IN": 50,
             "IT": 74,
             "MX": 61,
             "NL": 55,
+            "NO": 56,
             "NZ": 51,
             "PL": 44,
+            "PT": 53,
+            "RO": 37,
             "SE": 12,
+            "SK": 51,
             "US": 22
           }
         }
@@ -16652,14 +16650,14 @@
         "movie": {
           "displayPriority": 171,
           "regionalPriorities": {
-            "CA": 102,
+            "CA": 100,
             "US": 171
           }
         },
         "tv": {
           "displayPriority": 171,
           "regionalPriorities": {
-            "CA": 102,
+            "CA": 100,
             "US": 171
           }
         }
@@ -16706,9 +16704,9 @@
       "logoPath": "/b1hPXukoQT9pkYbbNESUjNgSL3e.jpg",
       "media": {
         "tv": {
-          "displayPriority": 123,
+          "displayPriority": 121,
           "regionalPriorities": {
-            "CA": 123,
+            "CA": 121,
             "US": 223
           }
         }
@@ -16741,15 +16739,15 @@
       "logoPath": "/mmDWKHiDLmHDo2OWnduQuI1T4bh.jpg",
       "media": {
         "movie": {
-          "displayPriority": 102,
+          "displayPriority": 103,
           "regionalPriorities": {
-            "DE": 102
+            "DE": 103
           }
         },
         "tv": {
-          "displayPriority": 102,
+          "displayPriority": 103,
           "regionalPriorities": {
-            "DE": 102
+            "DE": 103
           }
         }
       }
@@ -16775,15 +16773,15 @@
       "logoPath": "/dKh2TJ9lTWV0UIcDQGMnMyQ8AIN.jpg",
       "media": {
         "movie": {
-          "displayPriority": 103,
+          "displayPriority": 104,
           "regionalPriorities": {
-            "DE": 103
+            "DE": 104
           }
         },
         "tv": {
-          "displayPriority": 103,
+          "displayPriority": 104,
           "regionalPriorities": {
-            "DE": 103
+            "DE": 104
           }
         }
       }
@@ -16795,9 +16793,9 @@
       "logoPath": "/a1zZJiOid4gG27xJtkcDaSVrQdb.jpg",
       "media": {
         "movie": {
-          "displayPriority": 104,
+          "displayPriority": 105,
           "regionalPriorities": {
-            "DE": 104
+            "DE": 105
           }
         }
       }
@@ -16839,7 +16837,7 @@
     {
       "stableKey": "provider:2033",
       "tmdbWatchProviderId": 2033,
-      "name": "A&E Crime Central Apple TV Channel",
+      "name": "A&E Crime Central Apple TV channel",
       "logoPath": "/a0vfnBfWPAF6OtKZCzlyiW9A9l6.jpg",
       "media": {
         "movie": {
@@ -16859,14 +16857,14 @@
     {
       "stableKey": "provider:2034",
       "tmdbWatchProviderId": 2034,
-      "name": "Acorn TV Apple TV",
+      "name": "Acorn TV Apple TV channel",
       "logoPath": "/kx8rGgFYxX6aJkG7RHx2mtijglC.jpg",
       "media": {
         "movie": {
           "displayPriority": 180,
           "regionalPriorities": {
             "AU": 60,
-            "CA": 103,
+            "CA": 101,
             "ES": 61,
             "GB": 94,
             "MX": 78,
@@ -16877,7 +16875,7 @@
           "displayPriority": 180,
           "regionalPriorities": {
             "AU": 60,
-            "CA": 103,
+            "CA": 101,
             "ES": 61,
             "GB": 94,
             "MX": 78,
@@ -16893,9 +16891,9 @@
       "logoPath": "/u8kLI2iiZVJfcQp9EqbaSU9OXFh.jpg",
       "media": {
         "tv": {
-          "displayPriority": 105,
+          "displayPriority": 106,
           "regionalPriorities": {
-            "DE": 105
+            "DE": 106
           }
         }
       }
@@ -16927,15 +16925,15 @@
       "logoPath": "/9jxvmD363A04nuMw9jgyLzeDB3J.jpg",
       "media": {
         "movie": {
-          "displayPriority": 106,
+          "displayPriority": 107,
           "regionalPriorities": {
-            "DE": 106
+            "DE": 107
           }
         },
         "tv": {
-          "displayPriority": 106,
+          "displayPriority": 107,
           "regionalPriorities": {
-            "DE": 106
+            "DE": 107
           }
         }
       }
@@ -16947,15 +16945,15 @@
       "logoPath": "/as1NArQkfAnptYQP3VS03GOJPdm.jpg",
       "media": {
         "movie": {
-          "displayPriority": 107,
+          "displayPriority": 108,
           "regionalPriorities": {
-            "DE": 107
+            "DE": 108
           }
         },
         "tv": {
-          "displayPriority": 107,
+          "displayPriority": 108,
           "regionalPriorities": {
-            "DE": 107
+            "DE": 108
           }
         }
       }
@@ -16969,14 +16967,14 @@
         "movie": {
           "displayPriority": 193,
           "regionalPriorities": {
-            "CA": 108,
+            "CA": 106,
             "US": 193
           }
         },
         "tv": {
           "displayPriority": 193,
           "regionalPriorities": {
-            "CA": 108,
+            "CA": 106,
             "US": 193
           }
         }
@@ -16999,7 +16997,7 @@
     {
       "stableKey": "provider:2042",
       "tmdbWatchProviderId": 2042,
-      "name": "Carnegie Hall+ Apple TV Channel",
+      "name": "Carnegie Hall+ Apple TV channel",
       "logoPath": "/dDHyeNrfnloy6skW0j6oIUXFa3Z.jpg",
       "media": {
         "movie": {
@@ -17013,20 +17011,20 @@
     {
       "stableKey": "provider:2044",
       "tmdbWatchProviderId": 2044,
-      "name": "OUTtv Apple TV Channel",
+      "name": "OUTtv Apple TV channel",
       "logoPath": "/1SuB6tXdKaW4qDRDiqm9C1nr1mD.jpg",
       "media": {
         "movie": {
           "displayPriority": 187,
           "regionalPriorities": {
-            "CA": 106,
+            "CA": 104,
             "US": 187
           }
         },
         "tv": {
           "displayPriority": 187,
           "regionalPriorities": {
-            "CA": 106,
+            "CA": 104,
             "US": 187
           }
         }
@@ -17035,7 +17033,7 @@
     {
       "stableKey": "provider:2045",
       "tmdbWatchProviderId": 2045,
-      "name": "UP Faith & Family Apple TV Channel",
+      "name": "UP Faith & Family Apple TV channel",
       "logoPath": "/92iY4soQNVzNM02mHGjqovPdzdF.jpg",
       "media": {
         "movie": {
@@ -17055,7 +17053,7 @@
     {
       "stableKey": "provider:2047",
       "tmdbWatchProviderId": 2047,
-      "name": "Tastemade Apple TV Channel",
+      "name": "Tastemade Apple TV channel",
       "logoPath": "/5a0E4ozONnF8rw5cI3n9uueK9WM.jpg",
       "media": {
         "movie": {
@@ -17077,20 +17075,20 @@
     {
       "stableKey": "provider:2048",
       "tmdbWatchProviderId": 2048,
-      "name": "Sundance Now Apple TV Channel",
+      "name": "Sundance Now Apple TV channel",
       "logoPath": "/1x0LxXHUibIolT5fxdSamGGMBC3.jpg",
       "media": {
         "movie": {
           "displayPriority": 184,
           "regionalPriorities": {
-            "CA": 104,
+            "CA": 102,
             "US": 184
           }
         },
         "tv": {
           "displayPriority": 184,
           "regionalPriorities": {
-            "CA": 104,
+            "CA": 102,
             "US": 184
           }
         }
@@ -17099,14 +17097,14 @@
     {
       "stableKey": "provider:2049",
       "tmdbWatchProviderId": 2049,
-      "name": "Shudder Apple TV Channel",
+      "name": "Shudder Apple TV channel",
       "logoPath": "/kLfq0I2MwiUFUY9yI1GwOeKxX8f.jpg",
       "media": {
         "movie": {
           "displayPriority": 185,
           "regionalPriorities": {
             "AU": 61,
-            "CA": 105,
+            "CA": 103,
             "US": 185
           }
         },
@@ -17114,7 +17112,7 @@
           "displayPriority": 185,
           "regionalPriorities": {
             "AU": 61,
-            "CA": 105,
+            "CA": 103,
             "US": 185
           }
         }
@@ -17123,7 +17121,7 @@
     {
       "stableKey": "provider:2050",
       "tmdbWatchProviderId": 2050,
-      "name": "ScreenPix Apple TV Channel",
+      "name": "ScreenPix Apple TV channel",
       "logoPath": "/96HJkA4nMkcOtiqH9oF1YYtGBHK.jpg",
       "media": {
         "movie": {
@@ -17147,15 +17145,15 @@
       "logoPath": "/dy9XKHyf16dSB1Lg7KIrtUwDxIX.jpg",
       "media": {
         "movie": {
-          "displayPriority": 107,
+          "displayPriority": 105,
           "regionalPriorities": {
-            "CA": 107
+            "CA": 105
           }
         },
         "tv": {
-          "displayPriority": 107,
+          "displayPriority": 105,
           "regionalPriorities": {
-            "CA": 107
+            "CA": 105
           }
         }
       }
@@ -17183,7 +17181,7 @@
     {
       "stableKey": "provider:2055",
       "tmdbWatchProviderId": 2055,
-      "name": "Lifetime Movie Club Apple TV Channel",
+      "name": "Lifetime Movie Club Apple TV channel",
       "logoPath": "/cpSQ9P0ntzr1gZcxHIyaryihpgH.jpg",
       "media": {
         "movie": {
@@ -17203,20 +17201,20 @@
     {
       "stableKey": "provider:2056",
       "tmdbWatchProviderId": 2056,
-      "name": "IFC Films Unlimited Apple TV Channel",
+      "name": "IFC Films Unlimited Apple TV channel",
       "logoPath": "/tPvmybuDUn84aDps72GiMbvr2xU.jpg",
       "media": {
         "movie": {
           "displayPriority": 195,
           "regionalPriorities": {
-            "CA": 109,
+            "CA": 107,
             "US": 195
           }
         },
         "tv": {
           "displayPriority": 195,
           "regionalPriorities": {
-            "CA": 109,
+            "CA": 107,
             "US": 195
           }
         }
@@ -17225,7 +17223,7 @@
     {
       "stableKey": "provider:2057",
       "tmdbWatchProviderId": 2057,
-      "name": "HISTORY Vault Apple TV Channel",
+      "name": "HISTORY Vault Apple TV channel",
       "logoPath": "/fsert5S2L3CWSFyaAODiWPOScmz.jpg",
       "media": {
         "movie": {
@@ -17245,7 +17243,7 @@
     {
       "stableKey": "provider:2058",
       "tmdbWatchProviderId": 2058,
-      "name": "Hallmark+ Apple TV Channel",
+      "name": "Hallmark+ Apple TV channel",
       "logoPath": "/hGIjvx8BIK4sHZwRYyyB17Pfywj.jpg",
       "media": {
         "movie": {
@@ -17265,7 +17263,7 @@
     {
       "stableKey": "provider:2059",
       "tmdbWatchProviderId": 2059,
-      "name": "Eros Now Select Apple TV Channel",
+      "name": "Eros Now Select Apple TV channel",
       "logoPath": "/cqgeSQHqKEkfcmsiy7GoCnf1Q2I.jpg",
       "media": {
         "movie": {
@@ -17289,7 +17287,7 @@
     {
       "stableKey": "provider:2060",
       "tmdbWatchProviderId": 2060,
-      "name": "CuriosityStream Apple TV Channel",
+      "name": "CuriosityStream Apple TV channel",
       "logoPath": "/z9x1xFFKjHTYlLYWtiPhAjN4jOp.jpg",
       "media": {
         "movie": {
@@ -17311,7 +17309,7 @@
     {
       "stableKey": "provider:2061",
       "tmdbWatchProviderId": 2061,
-      "name": "Cinemax Apple TV Channel",
+      "name": "Cinemax Apple TV channel",
       "logoPath": "/zXCdY4pczONheFCU9GkrMbGI1o5.jpg",
       "media": {
         "movie": {
@@ -17523,15 +17521,15 @@
       "logoPath": "/ptSF973yIl90KwhEmNWDvN1nhan.jpg",
       "media": {
         "movie": {
-          "displayPriority": 108,
+          "displayPriority": 109,
           "regionalPriorities": {
-            "DE": 108
+            "DE": 109
           }
         },
         "tv": {
-          "displayPriority": 108,
+          "displayPriority": 109,
           "regionalPriorities": {
-            "DE": 108
+            "DE": 109
           }
         }
       }
@@ -17553,7 +17551,7 @@
             "DK": 44,
             "EG": 37,
             "FR": 25,
-            "IN": 75,
+            "IN": 73,
             "NL": 47,
             "PE": 33,
             "RU": 32,
@@ -17571,7 +17569,7 @@
             "DK": 44,
             "EG": 37,
             "FR": 25,
-            "IN": 75,
+            "IN": 73,
             "NL": 47,
             "PE": 33,
             "RU": 32,
@@ -17607,15 +17605,15 @@
       "logoPath": "/5JkLub6H7HsWyLHbitnuXTzXmlJ.jpg",
       "media": {
         "movie": {
-          "displayPriority": 110,
+          "displayPriority": 111,
           "regionalPriorities": {
-            "DE": 110
+            "DE": 111
           }
         },
         "tv": {
-          "displayPriority": 110,
+          "displayPriority": 111,
           "regionalPriorities": {
-            "DE": 110
+            "DE": 111
           }
         }
       }
@@ -17629,6 +17627,7 @@
         "movie": {
           "displayPriority": 62,
           "regionalPriorities": {
+            "CA": 149,
             "IT": 62
           }
         }
@@ -17666,12 +17665,12 @@
             "AT": 62,
             "AU": 92,
             "BR": 80,
-            "CA": 111,
-            "DE": 111,
+            "CA": 109,
+            "DE": 17,
             "ES": 79,
-            "FR": 87,
+            "FR": 85,
             "GB": 98,
-            "IN": 73,
+            "IN": 71,
             "IT": 87,
             "JP": 71,
             "MX": 70,
@@ -17684,12 +17683,12 @@
             "AT": 62,
             "AU": 92,
             "BR": 80,
-            "CA": 111,
-            "DE": 111,
+            "CA": 109,
+            "DE": 17,
             "ES": 79,
-            "FR": 87,
+            "FR": 85,
             "GB": 98,
-            "IN": 73,
+            "IN": 71,
             "IT": 87,
             "JP": 71,
             "MX": 70,
@@ -17819,6 +17818,12 @@
           "regionalPriorities": {
             "IT": 65
           }
+        },
+        "tv": {
+          "displayPriority": 65,
+          "regionalPriorities": {
+            "IT": 65
+          }
         }
       }
     },
@@ -17887,7 +17892,7 @@
         "movie": {
           "displayPriority": 209,
           "regionalPriorities": {
-            "CA": 147,
+            "CA": 145,
             "US": 209
           }
         }
@@ -17932,7 +17937,7 @@
             "ES": 69,
             "GB": 104,
             "GG": 84,
-            "IN": 77,
+            "IN": 75,
             "IT": 72,
             "MX": 49,
             "NL": 48,
@@ -17952,7 +17957,7 @@
             "ES": 69,
             "GB": 104,
             "GG": 84,
-            "IN": 77,
+            "IN": 75,
             "IT": 72,
             "MX": 49,
             "NL": 48,
@@ -18088,10 +18093,10 @@
           "regionalPriorities": {
             "AU": 69,
             "BR": 58,
-            "CA": 114,
+            "CA": 112,
             "CL": 54,
             "CO": 55,
-            "IN": 65,
+            "IN": 63,
             "MX": 50,
             "NZ": 52
           }
@@ -18297,7 +18302,7 @@
           "displayPriority": 54,
           "regionalPriorities": {
             "AU": 71,
-            "IN": 66,
+            "IN": 64,
             "NZ": 54
           }
         },
@@ -18305,7 +18310,7 @@
           "displayPriority": 54,
           "regionalPriorities": {
             "AU": 71,
-            "IN": 66,
+            "IN": 64,
             "NZ": 54
           }
         }
@@ -18340,9 +18345,9 @@
       "logoPath": "/aaGh2F4UhXLRvOifdjSHQMqWB0K.jpg",
       "media": {
         "tv": {
-          "displayPriority": 115,
+          "displayPriority": 113,
           "regionalPriorities": {
-            "CA": 115
+            "CA": 113
           }
         }
       }
@@ -18374,17 +18379,17 @@
       "logoPath": "/h5QpXIpSnvrPFnOLRXV83CtVHQH.jpg",
       "media": {
         "movie": {
-          "displayPriority": 76,
+          "displayPriority": 74,
           "regionalPriorities": {
             "DE": 122,
-            "FR": 76
+            "FR": 74
           }
         },
         "tv": {
-          "displayPriority": 76,
+          "displayPriority": 74,
           "regionalPriorities": {
             "DE": 122,
-            "FR": 76
+            "FR": 74
           }
         }
       }
@@ -18564,9 +18569,9 @@
       "logoPath": "/8WPLg0mQQUdzWZw7xDaM0POmwfO.jpg",
       "media": {
         "movie": {
-          "displayPriority": 67,
+          "displayPriority": 65,
           "regionalPriorities": {
-            "IN": 67
+            "IN": 65
           }
         }
       }
@@ -18761,13 +18766,6 @@
             "AT": 73,
             "DE": 130
           }
-        },
-        "tv": {
-          "displayPriority": 130,
-          "regionalPriorities": {
-            "AT": 73,
-            "DE": 130
-          }
         }
       }
     },
@@ -18903,16 +18901,16 @@
             "AU": 83,
             "BE": 53,
             "BR": 73,
-            "CA": 122,
+            "CA": 120,
             "CL": 46,
             "CO": 47,
             "DE": 190,
             "ES": 73,
             "FI": 54,
-            "FR": 109,
+            "FR": 107,
             "GB": 118,
             "GG": 81,
-            "IN": 68,
+            "IN": 66,
             "IT": 76,
             "JP": 29,
             "MX": 64,
@@ -18931,16 +18929,16 @@
             "AU": 83,
             "BE": 53,
             "BR": 73,
-            "CA": 122,
+            "CA": 120,
             "CL": 46,
             "CO": 47,
             "DE": 190,
             "ES": 73,
             "FI": 54,
-            "FR": 109,
+            "FR": 107,
             "GB": 118,
             "GG": 81,
-            "IN": 68,
+            "IN": 66,
             "IT": 76,
             "JP": 29,
             "MX": 64,
@@ -19178,6 +19176,13 @@
       "logoPath": "/lNR6Af19xahfa0xqm2qjbmFe9EC.jpg",
       "media": {
         "movie": {
+          "displayPriority": 144,
+          "regionalPriorities": {
+            "AT": 86,
+            "DE": 144
+          }
+        },
+        "tv": {
           "displayPriority": 144,
           "regionalPriorities": {
             "AT": 86,
@@ -19723,7 +19728,7 @@
       "logoPath": "/y2wjCLxPrzPbghH07Sekqw5D1bE.jpg",
       "media": {
         "movie": {
-          "displayPriority": 27,
+          "displayPriority": 4,
           "regionalPriorities": {
             "AD": 4,
             "AE": 4,
@@ -19867,7 +19872,7 @@
           }
         },
         "tv": {
-          "displayPriority": 27,
+          "displayPriority": 4,
           "regionalPriorities": {
             "AD": 4,
             "AE": 4,
@@ -20019,15 +20024,15 @@
       "logoPath": "/PAaj5bekwbeeoRC1evWg4KJW8p.jpg",
       "media": {
         "movie": {
-          "displayPriority": 79,
+          "displayPriority": 77,
           "regionalPriorities": {
-            "FR": 79
+            "FR": 77
           }
         },
         "tv": {
-          "displayPriority": 79,
+          "displayPriority": 77,
           "regionalPriorities": {
-            "FR": 79
+            "FR": 77
           }
         }
       }
@@ -20388,8 +20393,8 @@
           "regionalPriorities": {
             "AU": 81,
             "BR": 71,
-            "CA": 120,
-            "FR": 80,
+            "CA": 118,
+            "FR": 78,
             "GB": 119,
             "IE": 45,
             "MX": 62,
@@ -20401,8 +20406,8 @@
           "regionalPriorities": {
             "AU": 81,
             "BR": 71,
-            "CA": 120,
-            "FR": 80,
+            "CA": 118,
+            "FR": 78,
             "GB": 119,
             "IE": 45,
             "MX": 62,
@@ -20421,7 +20426,7 @@
           "displayPriority": 46,
           "regionalPriorities": {
             "AU": 82,
-            "CA": 121,
+            "CA": 119,
             "GB": 120,
             "IE": 46
           }
@@ -20430,7 +20435,7 @@
           "displayPriority": 46,
           "regionalPriorities": {
             "AU": 82,
-            "CA": 121,
+            "CA": 119,
             "GB": 120,
             "IE": 46
           }
@@ -20444,15 +20449,15 @@
       "logoPath": "/rdMFjYYE0uZ55rBdlX149gRF1XQ.jpg",
       "media": {
         "movie": {
-          "displayPriority": 81,
+          "displayPriority": 79,
           "regionalPriorities": {
-            "FR": 81
+            "FR": 79
           }
         },
         "tv": {
-          "displayPriority": 81,
+          "displayPriority": 79,
           "regionalPriorities": {
-            "FR": 81
+            "FR": 79
           }
         }
       }
@@ -20745,7 +20750,7 @@
       "logoPath": "/sBTV0rN8JUhF4G3uIceinWtQ3gi.jpg",
       "media": {
         "movie": {
-          "displayPriority": 28,
+          "displayPriority": 6,
           "regionalPriorities": {
             "AD": 27,
             "AE": 21,
@@ -20768,7 +20773,7 @@
             "BS": 27,
             "BY": 8,
             "BZ": 12,
-            "CA": 129,
+            "CA": 127,
             "CD": 2,
             "CH": 64,
             "CI": 26,
@@ -20790,7 +20795,7 @@
             "ES": 75,
             "FI": 45,
             "FJ": 13,
-            "FR": 83,
+            "FR": 81,
             "GB": 148,
             "GF": 27,
             "GG": 53,
@@ -20807,7 +20812,7 @@
             "ID": 40,
             "IE": 51,
             "IL": 27,
-            "IN": 69,
+            "IN": 67,
             "IQ": 30,
             "IS": 32,
             "IT": 81,
@@ -20962,7 +20967,7 @@
       "stableKey": "provider:2358",
       "tmdbWatchProviderId": 2358,
       "name": "Lionsgate+ Amazon Channels",
-      "logoPath": "/o4OqlMLb3ZjhK7OwR4qvxiZKOXf.jpg",
+      "logoPath": "/b2WtG0iyi7UcJ6tqFDTgQjVrYSY.jpg",
       "media": {
         "movie": {
           "displayPriority": 371,
@@ -20972,7 +20977,7 @@
             "AU": 106,
             "BE": 65,
             "BR": 92,
-            "CA": 144,
+            "CA": 142,
             "CH": 77,
             "CL": 69,
             "CO": 71,
@@ -20981,13 +20986,13 @@
             "DK": 62,
             "ES": 90,
             "FI": 63,
-            "FR": 108,
+            "FR": 106,
             "GB": 171,
             "GG": 90,
             "HR": 45,
             "HU": 40,
             "IE": 68,
-            "IN": 90,
+            "IN": 88,
             "IT": 99,
             "MX": 84,
             "NL": 77,
@@ -21008,7 +21013,7 @@
             "AU": 106,
             "BE": 65,
             "BR": 92,
-            "CA": 144,
+            "CA": 142,
             "CH": 77,
             "CL": 69,
             "CO": 71,
@@ -21017,13 +21022,13 @@
             "DK": 62,
             "ES": 90,
             "FI": 63,
-            "FR": 108,
+            "FR": 106,
             "GB": 171,
             "GG": 90,
             "HR": 45,
             "HU": 40,
             "IE": 68,
-            "IN": 90,
+            "IN": 88,
             "IT": 99,
             "MX": 84,
             "NL": 77,
@@ -21300,7 +21305,7 @@
           "displayPriority": 242,
           "regionalPriorities": {
             "AU": 84,
-            "CA": 124,
+            "CA": 122,
             "GB": 130,
             "GG": 32,
             "NZ": 38,
@@ -21311,7 +21316,7 @@
           "displayPriority": 242,
           "regionalPriorities": {
             "AU": 84,
-            "CA": 124,
+            "CA": 122,
             "GB": 130,
             "GG": 32,
             "NZ": 38,
@@ -21380,7 +21385,7 @@
         "movie": {
           "displayPriority": 246,
           "regionalPriorities": {
-            "CA": 125,
+            "CA": 123,
             "US": 246
           }
         }
@@ -21693,7 +21698,7 @@
         "tv": {
           "displayPriority": 266,
           "regionalPriorities": {
-            "CA": 126,
+            "CA": 124,
             "US": 266
           }
         }
@@ -21843,7 +21848,7 @@
         "movie": {
           "displayPriority": 275,
           "regionalPriorities": {
-            "FR": 82,
+            "FR": 80,
             "GB": 137,
             "GG": 37,
             "US": 275
@@ -21852,7 +21857,7 @@
         "tv": {
           "displayPriority": 275,
           "regionalPriorities": {
-            "FR": 82,
+            "FR": 80,
             "GB": 137,
             "GG": 37,
             "US": 275
@@ -21893,14 +21898,14 @@
         "movie": {
           "displayPriority": 277,
           "regionalPriorities": {
-            "CA": 127,
+            "CA": 125,
             "US": 277
           }
         },
         "tv": {
           "displayPriority": 277,
           "regionalPriorities": {
-            "CA": 127,
+            "CA": 125,
             "US": 277
           }
         }
@@ -22419,7 +22424,7 @@
       "logoPath": "/mD3KV7olfMJOBxJqKKPjvNrpVJF.jpg",
       "media": {
         "movie": {
-          "displayPriority": 29,
+          "displayPriority": 325,
           "regionalPriorities": {
             "AD": 28,
             "AE": 22,
@@ -22442,7 +22447,7 @@
             "BS": 28,
             "BY": 9,
             "BZ": 13,
-            "CA": 130,
+            "CA": 128,
             "CD": 3,
             "CH": 65,
             "CI": 27,
@@ -22464,7 +22469,7 @@
             "ES": 77,
             "FI": 46,
             "FJ": 14,
-            "FR": 84,
+            "FR": 82,
             "GB": 149,
             "GF": 28,
             "GG": 54,
@@ -22481,7 +22486,7 @@
             "ID": 41,
             "IE": 52,
             "IL": 28,
-            "IN": 70,
+            "IN": 68,
             "IQ": 31,
             "IS": 33,
             "IT": 82,
@@ -22563,7 +22568,7 @@
           }
         },
         "tv": {
-          "displayPriority": 29,
+          "displayPriority": 325,
           "regionalPriorities": {
             "AD": 28,
             "AE": 22,
@@ -22586,7 +22591,7 @@
             "BS": 28,
             "BY": 9,
             "BZ": 13,
-            "CA": 130,
+            "CA": 128,
             "CD": 3,
             "CH": 65,
             "CI": 27,
@@ -22608,7 +22613,7 @@
             "ES": 77,
             "FI": 46,
             "FJ": 14,
-            "FR": 84,
+            "FR": 82,
             "GB": 149,
             "GF": 28,
             "GG": 54,
@@ -22625,7 +22630,7 @@
             "ID": 41,
             "IE": 52,
             "IL": 28,
-            "IN": 70,
+            "IN": 68,
             "IQ": 31,
             "IS": 33,
             "IT": 82,
@@ -22718,11 +22723,11 @@
           "displayPriority": 326,
           "regionalPriorities": {
             "AU": 88,
-            "CA": 131,
+            "CA": 129,
             "FI": 47,
             "GB": 151,
             "IE": 53,
-            "IN": 71,
+            "IN": 69,
             "NG": 31,
             "NO": 44,
             "NZ": 44,
@@ -22928,16 +22933,16 @@
       "logoPath": "/pQvLERAjzSc9XfrRppJQLoMKMPH.jpg",
       "media": {
         "movie": {
-          "displayPriority": 42,
+          "displayPriority": 70,
           "regionalPriorities": {
-            "IN": 72,
+            "IN": 70,
             "JP": 42
           }
         },
         "tv": {
-          "displayPriority": 42,
+          "displayPriority": 70,
           "regionalPriorities": {
-            "IN": 72,
+            "IN": 70,
             "JP": 42
           }
         }
@@ -23448,15 +23453,15 @@
       "logoPath": "/pK3bUzescsBuvzrCCZkj1YTdoDA.jpg",
       "media": {
         "movie": {
-          "displayPriority": 24,
+          "displayPriority": 23,
           "regionalPriorities": {
-            "CA": 24
+            "CA": 23
           }
         },
         "tv": {
-          "displayPriority": 24,
+          "displayPriority": 23,
           "regionalPriorities": {
-            "CA": 24
+            "CA": 23
           }
         }
       }
@@ -23524,9 +23529,9 @@
       "logoPath": "/jZpSkGmmuFwzK5hy9gRJlYrXatF.jpg",
       "media": {
         "movie": {
-          "displayPriority": 74,
+          "displayPriority": 72,
           "regionalPriorities": {
-            "IN": 74
+            "IN": 72
           }
         }
       }
@@ -23597,15 +23602,15 @@
       "logoPath": "/zw5wrC7yLu7bVMP9ntxun1CLwUZ.jpg",
       "media": {
         "movie": {
-          "displayPriority": 88,
+          "displayPriority": 86,
           "regionalPriorities": {
-            "FR": 88
+            "FR": 86
           }
         },
         "tv": {
-          "displayPriority": 88,
+          "displayPriority": 86,
           "regionalPriorities": {
-            "FR": 88
+            "FR": 86
           }
         }
       }
@@ -23701,7 +23706,7 @@
       "logoPath": "/qlsnWCrmcisQH5JnEDxPV2v2vlb.jpg",
       "media": {
         "movie": {
-          "displayPriority": 31,
+          "displayPriority": 339,
           "regionalPriorities": {
             "AD": 30,
             "AE": 24,
@@ -23724,7 +23729,7 @@
             "BS": 30,
             "BY": 11,
             "BZ": 15,
-            "CA": 134,
+            "CA": 132,
             "CD": 6,
             "CH": 70,
             "CI": 29,
@@ -23746,7 +23751,7 @@
             "ES": 80,
             "FI": 55,
             "FJ": 16,
-            "FR": 91,
+            "FR": 89,
             "GB": 160,
             "GF": 30,
             "GG": 82,
@@ -23763,7 +23768,7 @@
             "ID": 43,
             "IE": 58,
             "IL": 30,
-            "IN": 76,
+            "IN": 74,
             "IQ": 33,
             "IS": 35,
             "IT": 90,
@@ -23875,15 +23880,15 @@
       "logoPath": "/ghLtqIOuHnkg5HZ4Nz5OOWBsL0W.jpg",
       "media": {
         "movie": {
-          "displayPriority": 92,
+          "displayPriority": 90,
           "regionalPriorities": {
-            "FR": 92
+            "FR": 90
           }
         },
         "tv": {
-          "displayPriority": 92,
+          "displayPriority": 90,
           "regionalPriorities": {
-            "FR": 92
+            "FR": 90
           }
         }
       }
@@ -23915,14 +23920,14 @@
       "logoPath": "/zODyP8gGRnp3Gd23FhXhQwIpLie.jpg",
       "media": {
         "movie": {
-          "displayPriority": 32,
+          "displayPriority": 343,
           "regionalPriorities": {
             "AE": 25,
             "AT": 148,
             "AU": 98,
             "BE": 55,
             "BR": 82,
-            "CA": 135,
+            "CA": 133,
             "CL": 57,
             "CO": 58,
             "CZ": 38,
@@ -23931,13 +23936,13 @@
             "EG": 40,
             "ES": 81,
             "FI": 56,
-            "FR": 94,
+            "FR": 92,
             "GB": 163,
             "GR": 30,
             "ID": 44,
             "IE": 59,
             "IL": 31,
-            "IN": 78,
+            "IN": 76,
             "IT": 91,
             "JP": 75,
             "KE": 19,
@@ -23990,15 +23995,15 @@
       "logoPath": "/8o737RzF49I8kOHe9ua3tLORIEf.jpg",
       "media": {
         "movie": {
-          "displayPriority": 13,
+          "displayPriority": 21,
           "regionalPriorities": {
-            "DE": 13
+            "DE": 21
           }
         },
         "tv": {
-          "displayPriority": 13,
+          "displayPriority": 21,
           "regionalPriorities": {
-            "DE": 13
+            "DE": 21
           }
         }
       }
@@ -24044,7 +24049,7 @@
       "logoPath": "/nOE9GjiyF5UhUVRJ2yGSzdCh0ec.jpg",
       "media": {
         "movie": {
-          "displayPriority": 33,
+          "displayPriority": 347,
           "regionalPriorities": {
             "AD": 31,
             "AE": 26,
@@ -24067,7 +24072,7 @@
             "BS": 31,
             "BY": 12,
             "BZ": 16,
-            "CA": 138,
+            "CA": 136,
             "CD": 7,
             "CH": 71,
             "CI": 30,
@@ -24086,10 +24091,10 @@
             "EC": 38,
             "EE": 31,
             "EG": 41,
-            "ES": 84,
+            "ES": 83,
             "FI": 58,
             "FJ": 17,
-            "FR": 96,
+            "FR": 94,
             "GB": 165,
             "GF": 31,
             "GG": 85,
@@ -24107,7 +24112,7 @@
             "ID": 45,
             "IE": 60,
             "IL": 32,
-            "IN": 79,
+            "IN": 77,
             "IQ": 34,
             "IS": 36,
             "IT": 92,
@@ -24189,7 +24194,7 @@
           }
         },
         "tv": {
-          "displayPriority": 33,
+          "displayPriority": 347,
           "regionalPriorities": {
             "AD": 31,
             "AE": 26,
@@ -24212,7 +24217,7 @@
             "BS": 31,
             "BY": 12,
             "BZ": 16,
-            "CA": 138,
+            "CA": 136,
             "CD": 7,
             "CH": 71,
             "CI": 30,
@@ -24231,10 +24236,10 @@
             "EC": 38,
             "EE": 31,
             "EG": 41,
-            "ES": 84,
+            "ES": 83,
             "FI": 58,
             "FJ": 17,
-            "FR": 96,
+            "FR": 94,
             "GB": 165,
             "GF": 31,
             "GG": 85,
@@ -24252,7 +24257,7 @@
             "ID": 45,
             "IE": 60,
             "IL": 32,
-            "IN": 79,
+            "IN": 77,
             "IQ": 34,
             "IS": 36,
             "IT": 92,
@@ -24342,15 +24347,15 @@
       "logoPath": "/qcKfSyX4xkXESjHrkO8cZLRJkn6.jpg",
       "media": {
         "movie": {
-          "displayPriority": 139,
+          "displayPriority": 137,
           "regionalPriorities": {
-            "CA": 139
+            "CA": 137
           }
         },
         "tv": {
-          "displayPriority": 139,
+          "displayPriority": 137,
           "regionalPriorities": {
-            "CA": 139
+            "CA": 137
           }
         }
       }
@@ -24479,17 +24484,17 @@
       "logoPath": "/3P8G8lQRkZeoFsvsu9VQjiKwpE7.jpg",
       "media": {
         "movie": {
-          "displayPriority": 97,
+          "displayPriority": 95,
           "regionalPriorities": {
             "BE": 59,
-            "FR": 97
+            "FR": 95
           }
         },
         "tv": {
-          "displayPriority": 97,
+          "displayPriority": 95,
           "regionalPriorities": {
             "BE": 59,
-            "FR": 97
+            "FR": 95
           }
         }
       }
@@ -24501,9 +24506,9 @@
       "logoPath": "/oWXIJEGI3Z31FB78JYiAc1Kwb5f.jpg",
       "media": {
         "tv": {
-          "displayPriority": 80,
+          "displayPriority": 78,
           "regionalPriorities": {
-            "IN": 80
+            "IN": 78
           }
         }
       }
@@ -24515,9 +24520,9 @@
       "logoPath": "/8ms2NcDEuYi6cfFpRLPiU7aOIqs.jpg",
       "media": {
         "tv": {
-          "displayPriority": 81,
+          "displayPriority": 79,
           "regionalPriorities": {
-            "IN": 81
+            "IN": 79
           }
         }
       }
@@ -24529,9 +24534,9 @@
       "logoPath": "/jWUqMTaqhDcdK3HCI7HV4EWDr8r.jpg",
       "media": {
         "movie": {
-          "displayPriority": 98,
+          "displayPriority": 96,
           "regionalPriorities": {
-            "FR": 98
+            "FR": 96
           }
         }
       }
@@ -24543,15 +24548,15 @@
       "logoPath": "/vVK3CP8wZOg2Fm5pKwLoLatw4h6.jpg",
       "media": {
         "movie": {
-          "displayPriority": 99,
+          "displayPriority": 97,
           "regionalPriorities": {
-            "FR": 99
+            "FR": 97
           }
         },
         "tv": {
-          "displayPriority": 99,
+          "displayPriority": 97,
           "regionalPriorities": {
-            "FR": 99
+            "FR": 97
           }
         }
       }
@@ -24583,7 +24588,7 @@
       "logoPath": "/9pRY14ZWkDCRzQBuASRnYJ1KZwQ.jpg",
       "media": {
         "movie": {
-          "displayPriority": 34,
+          "displayPriority": 352,
           "regionalPriorities": {
             "AD": 32,
             "AE": 27,
@@ -24606,7 +24611,7 @@
             "BS": 32,
             "BY": 13,
             "BZ": 17,
-            "CA": 140,
+            "CA": 138,
             "CD": 8,
             "CH": 72,
             "CI": 31,
@@ -24628,7 +24633,7 @@
             "ES": 85,
             "FI": 59,
             "FJ": 18,
-            "FR": 100,
+            "FR": 98,
             "GB": 166,
             "GF": 32,
             "GG": 86,
@@ -24646,7 +24651,7 @@
             "ID": 46,
             "IE": 61,
             "IL": 33,
-            "IN": 82,
+            "IN": 80,
             "IQ": 35,
             "IS": 37,
             "IT": 95,
@@ -24728,7 +24733,7 @@
           }
         },
         "tv": {
-          "displayPriority": 34,
+          "displayPriority": 352,
           "regionalPriorities": {
             "AD": 32,
             "AE": 27,
@@ -24751,7 +24756,7 @@
             "BS": 32,
             "BY": 13,
             "BZ": 17,
-            "CA": 140,
+            "CA": 138,
             "CD": 8,
             "CH": 72,
             "CI": 31,
@@ -24773,7 +24778,7 @@
             "ES": 85,
             "FI": 59,
             "FJ": 18,
-            "FR": 100,
+            "FR": 98,
             "GB": 166,
             "GF": 32,
             "GG": 86,
@@ -24791,7 +24796,7 @@
             "ID": 46,
             "IE": 61,
             "IL": 33,
-            "IN": 82,
+            "IN": 80,
             "IQ": 35,
             "IS": 37,
             "IT": 95,
@@ -24915,7 +24920,7 @@
       "logoPath": "/5MsbQCp7FpYr3INLpeKDLJrlDh8.jpg",
       "media": {
         "movie": {
-          "displayPriority": 35,
+          "displayPriority": 355,
           "regionalPriorities": {
             "AD": 33,
             "AE": 28,
@@ -24938,7 +24943,7 @@
             "BS": 33,
             "BY": 14,
             "BZ": 18,
-            "CA": 142,
+            "CA": 140,
             "CD": 9,
             "CH": 73,
             "CI": 32,
@@ -24960,7 +24965,7 @@
             "ES": 86,
             "FI": 60,
             "FJ": 19,
-            "FR": 101,
+            "FR": 99,
             "GB": 168,
             "GF": 33,
             "GG": 87,
@@ -24978,7 +24983,7 @@
             "ID": 47,
             "IE": 62,
             "IL": 34,
-            "IN": 85,
+            "IN": 83,
             "IQ": 36,
             "IS": 38,
             "IT": 96,
@@ -25182,15 +25187,15 @@
       "logoPath": "/yR8lOw4xt1e1FFxXexLPtiy1qAG.jpg",
       "media": {
         "movie": {
-          "displayPriority": 141,
+          "displayPriority": 139,
           "regionalPriorities": {
-            "CA": 141
+            "CA": 139
           }
         },
         "tv": {
-          "displayPriority": 141,
+          "displayPriority": 139,
           "regionalPriorities": {
-            "CA": 141
+            "CA": 139
           }
         }
       }
@@ -25540,15 +25545,15 @@
       "logoPath": "/jZHi37cUrp7r31FMGDK3w7ZNGzm.jpg",
       "media": {
         "movie": {
-          "displayPriority": 102,
+          "displayPriority": 100,
           "regionalPriorities": {
-            "FR": 102
+            "FR": 100
           }
         },
         "tv": {
-          "displayPriority": 102,
+          "displayPriority": 100,
           "regionalPriorities": {
-            "FR": 102
+            "FR": 100
           }
         }
       }
@@ -25560,9 +25565,9 @@
       "logoPath": "/1gtidYfh89iLkGcbhPtr1lvx47W.jpg",
       "media": {
         "movie": {
-          "displayPriority": 103,
+          "displayPriority": 101,
           "regionalPriorities": {
-            "FR": 103
+            "FR": 101
           }
         }
       }
@@ -25574,9 +25579,9 @@
       "logoPath": "/vvGN84qJN5hI0vC6Gzl7g3W84An.jpg",
       "media": {
         "tv": {
-          "displayPriority": 104,
+          "displayPriority": 102,
           "regionalPriorities": {
-            "FR": 104
+            "FR": 102
           }
         }
       }
@@ -25744,7 +25749,7 @@
       "logoPath": "/rQqxsXq63XsDY8xcabqBWU5WWbw.jpg",
       "media": {
         "movie": {
-          "displayPriority": 37,
+          "displayPriority": 359,
           "regionalPriorities": {
             "AD": 34,
             "AE": 29,
@@ -25767,7 +25772,7 @@
             "BS": 34,
             "BY": 15,
             "BZ": 19,
-            "CA": 143,
+            "CA": 141,
             "CD": 10,
             "CH": 75,
             "CI": 33,
@@ -25789,7 +25794,7 @@
             "ES": 89,
             "FI": 62,
             "FJ": 20,
-            "FR": 107,
+            "FR": 105,
             "GB": 170,
             "GF": 34,
             "GG": 89,
@@ -25807,7 +25812,7 @@
             "ID": 49,
             "IE": 64,
             "IL": 35,
-            "IN": 86,
+            "IN": 84,
             "IQ": 37,
             "IS": 41,
             "IT": 98,
@@ -25889,7 +25894,7 @@
           }
         },
         "tv": {
-          "displayPriority": 37,
+          "displayPriority": 359,
           "regionalPriorities": {
             "AD": 34,
             "AE": 29,
@@ -25912,7 +25917,7 @@
             "BS": 34,
             "BY": 15,
             "BZ": 19,
-            "CA": 143,
+            "CA": 141,
             "CD": 10,
             "CH": 75,
             "CI": 33,
@@ -25934,7 +25939,7 @@
             "ES": 89,
             "FI": 62,
             "FJ": 20,
-            "FR": 107,
+            "FR": 105,
             "GB": 170,
             "GF": 34,
             "GG": 89,
@@ -25952,7 +25957,7 @@
             "ID": 49,
             "IE": 64,
             "IL": 35,
-            "IN": 86,
+            "IN": 84,
             "IQ": 37,
             "IS": 41,
             "IT": 98,
@@ -26031,6 +26036,26 @@
             "ZA": 37,
             "ZM": 22,
             "ZW": 13
+          }
+        }
+      }
+    },
+    {
+      "stableKey": "provider:2686",
+      "tmdbWatchProviderId": 2686,
+      "name": "Mewatch",
+      "logoPath": "/yGRNYhEBse9Ne2zFWManT0r4RPS.jpg",
+      "media": {
+        "movie": {
+          "displayPriority": 43,
+          "regionalPriorities": {
+            "SG": 43
+          }
+        },
+        "tv": {
+          "displayPriority": 43,
+          "regionalPriorities": {
+            "SG": 43
           }
         }
       }
@@ -26096,15 +26121,15 @@
       "logoPath": "/zSvOOgM3iqfmX09ld27YQHLH1qK.jpg",
       "media": {
         "movie": {
-          "displayPriority": 145,
+          "displayPriority": 143,
           "regionalPriorities": {
-            "CA": 145
+            "CA": 143
           }
         },
         "tv": {
-          "displayPriority": 145,
+          "displayPriority": 143,
           "regionalPriorities": {
-            "CA": 145
+            "CA": 143
           }
         }
       }
@@ -26465,9 +26490,9 @@
       "logoPath": "/fVLwmq9BPQHCG7eresHmMuRKRiF.jpg",
       "media": {
         "movie": {
-          "displayPriority": 88,
+          "displayPriority": 86,
           "regionalPriorities": {
-            "IN": 88
+            "IN": 86
           }
         }
       }
@@ -26728,6 +26753,12 @@
       "name": "TV SYD",
       "logoPath": "/86dc2eUINuIBwQ03M3BG1cpmw0F.jpg",
       "media": {
+        "movie": {
+          "displayPriority": 56,
+          "regionalPriorities": {
+            "DK": 56
+          }
+        },
         "tv": {
           "displayPriority": 56,
           "regionalPriorities": {
@@ -26847,9 +26878,9 @@
           "regionalPriorities": {
             "AE": 31,
             "AU": 105,
-            "CA": 148,
+            "CA": 146,
             "GB": 174,
-            "IN": 89,
+            "IN": 87,
             "SG": 44,
             "US": 18
           }
@@ -26866,7 +26897,7 @@
           "displayPriority": 69,
           "regionalPriorities": {
             "FI": 64,
-            "FR": 111,
+            "FR": 109,
             "GB": 175,
             "IT": 102,
             "SE": 69
@@ -26876,7 +26907,7 @@
           "displayPriority": 69,
           "regionalPriorities": {
             "FI": 64,
-            "FR": 111,
+            "FR": 109,
             "GB": 175,
             "IT": 102,
             "SE": 69
@@ -26915,7 +26946,7 @@
           "regionalPriorities": {
             "AT": 160,
             "AU": 107,
-            "CA": 150,
+            "CA": 148,
             "DE": 231,
             "FR": 112,
             "GB": 177,
@@ -26930,7 +26961,7 @@
           "regionalPriorities": {
             "AT": 160,
             "AU": 107,
-            "CA": 150,
+            "CA": 148,
             "DE": 231,
             "FR": 112,
             "GB": 177,
@@ -26983,17 +27014,246 @@
       "logoPath": "/acZuR8b9gDqMQnNFoNn82NYk72X.jpg",
       "media": {
         "movie": {
-          "displayPriority": 6,
+          "displayPriority": 19,
           "regionalPriorities": {
             "AT": 50,
-            "DE": 6
+            "DE": 19
           }
         },
         "tv": {
-          "displayPriority": 6,
+          "displayPriority": 19,
           "regionalPriorities": {
             "AT": 50,
-            "DE": 6
+            "DE": 19
+          }
+        }
+      }
+    },
+    {
+      "stableKey": "provider:2754",
+      "tmdbWatchProviderId": 2754,
+      "name": "Howdy Amazon Channel",
+      "logoPath": "/jcnN5YGef9R2117iqZaUxFOqxQg.jpg",
+      "media": {
+        "movie": {
+          "displayPriority": 372,
+          "regionalPriorities": {
+            "MX": 87,
+            "US": 372
+          }
+        },
+        "tv": {
+          "displayPriority": 372,
+          "regionalPriorities": {
+            "MX": 87,
+            "US": 372
+          }
+        }
+      }
+    },
+    {
+      "stableKey": "provider:2758",
+      "tmdbWatchProviderId": 2758,
+      "name": "Goldmines Play Amazon Channel",
+      "logoPath": "/pRUXuYG3fu0R2Zb3zjJ1QEt06z0.jpg",
+      "media": {
+        "movie": {
+          "displayPriority": 89,
+          "regionalPriorities": {
+            "IN": 89
+          }
+        }
+      }
+    },
+    {
+      "stableKey": "provider:2759",
+      "tmdbWatchProviderId": 2759,
+      "name": "JOJO Amazon Channel",
+      "logoPath": "/6az437JAQN9HSDswLLh4qqqY1fZ.jpg",
+      "media": {
+        "movie": {
+          "displayPriority": 90,
+          "regionalPriorities": {
+            "IN": 90
+          }
+        },
+        "tv": {
+          "displayPriority": 90,
+          "regionalPriorities": {
+            "IN": 90
+          }
+        }
+      }
+    },
+    {
+      "stableKey": "provider:2760",
+      "tmdbWatchProviderId": 2760,
+      "name": "Ultraplaybox Amazon Channel",
+      "logoPath": "/4QlY8McDfwXidzcbta5InurUiWq.jpg",
+      "media": {
+        "movie": {
+          "displayPriority": 91,
+          "regionalPriorities": {
+            "IN": 91
+          }
+        },
+        "tv": {
+          "displayPriority": 91,
+          "regionalPriorities": {
+            "IN": 91
+          }
+        }
+      }
+    },
+    {
+      "stableKey": "provider:2765",
+      "tmdbWatchProviderId": 2765,
+      "name": "Pijama Films",
+      "logoPath": "/1TGHFpj9yiu8NWjYBEU5HI7Gz4L.jpg",
+      "media": {
+        "movie": {
+          "displayPriority": 375,
+          "regionalPriorities": {
+            "AD": 35,
+            "AE": 32,
+            "AG": 22,
+            "AL": 37,
+            "AO": 14,
+            "AR": 65,
+            "AT": 161,
+            "AU": 108,
+            "AZ": 15,
+            "BA": 37,
+            "BB": 34,
+            "BE": 66,
+            "BF": 14,
+            "BG": 32,
+            "BH": 39,
+            "BM": 36,
+            "BO": 41,
+            "BR": 95,
+            "BS": 35,
+            "BY": 16,
+            "BZ": 20,
+            "CA": 151,
+            "CD": 11,
+            "CH": 78,
+            "CI": 34,
+            "CL": 72,
+            "CM": 13,
+            "CO": 74,
+            "CR": 41,
+            "CU": 17,
+            "CV": 22,
+            "CY": 20,
+            "CZ": 45,
+            "DE": 238,
+            "DK": 63,
+            "DO": 41,
+            "DZ": 37,
+            "EC": 43,
+            "EE": 38,
+            "EG": 45,
+            "ES": 93,
+            "FI": 65,
+            "FJ": 22,
+            "FR": 113,
+            "GB": 178,
+            "GF": 35,
+            "GG": 93,
+            "GH": 24,
+            "GI": 36,
+            "GP": 4,
+            "GQ": 22,
+            "GR": 37,
+            "GT": 41,
+            "GY": 14,
+            "HK": 46,
+            "HN": 41,
+            "HR": 46,
+            "HU": 41,
+            "ID": 50,
+            "IE": 69,
+            "IL": 37,
+            "IN": 92,
+            "IQ": 38,
+            "IS": 43,
+            "IT": 105,
+            "JM": 34,
+            "JO": 40,
+            "JP": 82,
+            "KE": 24,
+            "KR": 39,
+            "KW": 41,
+            "LB": 37,
+            "LC": 22,
+            "LI": 43,
+            "LT": 39,
+            "LU": 27,
+            "LV": 39,
+            "LY": 36,
+            "MA": 37,
+            "MC": 35,
+            "MD": 35,
+            "ME": 16,
+            "MG": 13,
+            "MK": 36,
+            "ML": 14,
+            "MT": 35,
+            "MU": 23,
+            "MW": 12,
+            "MX": 88,
+            "MY": 42,
+            "MZ": 25,
+            "NE": 34,
+            "NG": 39,
+            "NI": 24,
+            "NL": 80,
+            "NO": 55,
+            "NZ": 68,
+            "OM": 40,
+            "PA": 41,
+            "PE": 45,
+            "PF": 20,
+            "PG": 15,
+            "PH": 45,
+            "PK": 19,
+            "PL": 67,
+            "PS": 35,
+            "PT": 52,
+            "PY": 40,
+            "QA": 41,
+            "RO": 36,
+            "RS": 38,
+            "RU": 40,
+            "SA": 43,
+            "SC": 22,
+            "SE": 70,
+            "SG": 45,
+            "SI": 38,
+            "SK": 50,
+            "SM": 36,
+            "SN": 22,
+            "SV": 41,
+            "TC": 21,
+            "TD": 14,
+            "TH": 42,
+            "TN": 38,
+            "TR": 37,
+            "TT": 23,
+            "TW": 46,
+            "TZ": 40,
+            "UA": 19,
+            "UG": 25,
+            "US": 375,
+            "UY": 42,
+            "VA": 16,
+            "VE": 39,
+            "XK": 14,
+            "YE": 36,
+            "ZA": 38,
+            "ZM": 23,
+            "ZW": 14
           }
         }
       }
