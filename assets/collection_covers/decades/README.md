@@ -1,6 +1,6 @@
 # Decades artwork
 
-Eight decades, three content types and exactly four WebP assets per set: landscape.webp (1200 x 675), focus.webp (1200 x 675), title-logo.webp (1863 x 673, transparent) and hero.webp (2560 x 1440). The two existing parent covers remain separate.
+Eight decades, three content types and exactly four WebP assets per set: landscape.webp (1200 x 675), focus.webp (1200 x 675), title-logo.webp (1863 x 673, transparent) and hero.webp (2560 x 1440). The two parent covers remain separate: Movies by Decade and Series by Decade use eight chronological real-title panels at 1695 × 928.
 
 Heroes use one defining title per decade. Mixed uses the matching movie hero under its own path. Hero images contain no added year, title logo or caption. The white cinematic title logo is separate; covers and focus retain their approved silver glass styling.
 
@@ -31,4 +31,4 @@ The manifest fingerprint is SHA-256 of UTF-8 JSON.stringify({decades: manifest.d
 
 The 96 set images total 11.31 MB. All dimensions are retained; all title logos are byte-identical to the previous release. Photos use per-image WebP quality checks against lossless masters. Original sources and render evidence remain in ignored staging. Some heroes are mirrored or shifted to leave room for the Nuvio title; transformations are recorded in artworkSources.
 
-Source images and metadata: [TMDB](https://www.themoviedb.org/). This product uses the TMDB API but is not endorsed or certified by TMDB. Artwork belongs to its respective rights holders. No AI image generation was used.
+Source images and metadata: [TMDB](https://www.themoviedb.org/). This product uses the TMDB API but is not endorsed or certified by TMDB. Artwork belongs to its respective rights holders. All 98 current artwork images use real source artwork; the two earlier parent covers were replaced with owner-approved real-title panel designs. No AI image generation was used for these replacements.

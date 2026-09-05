@@ -853,6 +853,195 @@
               ]
             }
           }
+        },
+        "stableKey": {
+          "type": "string",
+          "pattern": "^decade:root:(movies|series)$"
+        },
+        "artworkSources": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 8,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "key",
+              "title",
+              "year",
+              "decade",
+              "artworkPath",
+              "sha256",
+              "sourceDimensions",
+              "crop",
+              "treatment",
+              "panel"
+            ],
+            "properties": {
+              "key": {
+                "type": "string",
+                "pattern": "^(movie|tv):[0-9]+$"
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "year": {
+                "type": "integer",
+                "minimum": 1880
+              },
+              "decade": {
+                "enum": [
+                  "1950s-earlier",
+                  "1960s",
+                  "1970s",
+                  "1980s",
+                  "1990s",
+                  "2000s",
+                  "2010s",
+                  "2020s"
+                ]
+              },
+              "artworkPath": {
+                "type": "string",
+                "pattern": "^/[A-Za-z0-9]+\\.(jpg|png|webp)$"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "sourceDimensions": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "width",
+                  "height"
+                ],
+                "properties": {
+                  "width": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "height": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              },
+              "crop": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "left",
+                  "top",
+                  "width",
+                  "height"
+                ],
+                "properties": {
+                  "left": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "top": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "width": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "height": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                }
+              },
+              "treatment": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "saturation",
+                  "brightness",
+                  "mirror"
+                ],
+                "properties": {
+                  "saturation": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "brightness": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "mirror": {
+                    "type": "boolean"
+                  }
+                }
+              },
+              "panel": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "left",
+                  "top",
+                  "width",
+                  "height"
+                ],
+                "properties": {
+                  "left": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "top": {
+                    "type": "number",
+                    "minimum": 0
+                  },
+                  "width": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "height": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "approval": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "status",
+            "recordedAt",
+            "sourcePackage",
+            "reviewedBindingsSha256",
+            "nuvioPreview"
+          ],
+          "properties": {
+            "status": {
+              "const": "owner-approved"
+            },
+            "recordedAt": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sourcePackage": {
+              "type": "string",
+              "minLength": 1
+            },
+            "reviewedBindingsSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "nuvioPreview": {
+              "enum": [
+                "pending",
+                "reviewed"
+              ]
+            }
+          }
         }
       }
     }

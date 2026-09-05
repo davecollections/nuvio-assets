@@ -4,14 +4,14 @@ Last updated: 2026-09-05. Read the [shared workflow](../artwork-workflow.md) fir
 
 ## Current state
 
-Published to main in commit 9e89b3b8ca9bfb951940f316181b799f8f7062ae. It replaced 24 montage heroes with single-title heroes and corrected the 2000s Movies landscape/focus pair. Seventy other set assets and two parent covers were retained. All 98 canonical artwork URLs stayed unchanged. The previous release is 8147e6dbac84ac4d2f1e8cfb80f164f8032bcf58.
+The latest set-image release was published to main in commit 9e89b3b8ca9bfb951940f316181b799f8f7062ae. It replaced 24 montage heroes with single-title heroes and corrected the 2000s Movies landscape/focus pair. Seventy other set assets and two parent covers were retained. All 98 canonical artwork URLs stayed unchanged. The previous release is 8147e6dbac84ac4d2f1e8cfb80f164f8032bcf58.
 
 - Category authority: [manifest](../../assets/collection_covers/decades/manifest.json), [schema](../../assets/collection_covers/decades/manifest.schema.json), [published design notes](../../assets/collection_covers/decades/README.md).
 - Live manifest: [Decades manifest](https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/manifest.json).
 - This category is separate from assets/collection_covers/runtime-lookup.json. No master index or general category-reader integration has been implemented in this task.
 - The user accepted the prior artwork in Nuvio and supplied a TV photo. The single-hero revision was approved for publication. At 12:46 on 2026-09-05, the user reported that some new heroes were visible in the existing import, with other decades still updating; full-set refresh and acceptance remain unconfirmed. No exact Nuvio version was supplied.
 - The user is deliberately leaving the existing imported collection and cache untouched to observe natural image refresh. Do not replace that import, clear its cache, or claim a refresh time as part of unrelated category work.
-- No artwork change is pending. The next infrastructure work discussed is a small master category index and a consistent category-manifest reader; it remains planned.
+- Both parent-cover replacements are owner-approved and installed for publication; see the 2026-09-05 parent-cover section below. The small master category index and consistent category-manifest reader remain planned infrastructure work.
 
 ## Identity and four-file contract
 
@@ -68,6 +68,33 @@ A fresh task can inspect the tracked manifests, assets, schema and this handover
 
 Removed `approval.approvalText` and `approval.deliveryAuthorization` from the public manifest and removed their schema definitions/requirements. Personal conversation text must not be exported in these manifests. Approval status, dates, scope and reviewed hashes remain metadata; exact local approval evidence is separate.
 
-The 98 artwork files, their URLs, hashes, source records, and manifest artwork fingerprint are unchanged. Both category schemas validate. Current manifest SHA-256: 2155224101f2f0aa45c4fe711138a982c3961538f0b55e727321e13a394262b5. Current schema SHA-256: 9712ae0a64bd541aef779dacfd461b0923a0defcdee63d05f4478d50ef7864dc.
+The 98 artwork files, their URLs, hashes, source records, and manifest artwork fingerprint are unchanged. Both category schemas validate. Manifest SHA-256 at cleanup: 2155224101f2f0aa45c4fe711138a982c3961538f0b55e727321e13a394262b5. Schema SHA-256 at cleanup: 9712ae0a64bd541aef779dacfd461b0923a0defcdee63d05f4478d50ef7864dc.
 
 This is a metadata-only maintenance change. The original artwork release remains as documented above. Historical release validators that compare the original whole-manifest hash predate this cleanup; use the current schema for the current manifest. Cleanup evidence and original metadata backups are ignored under tools/studio-network-batch/.work/staging/manifest-comment-cleanup-v1/.
+
+## Parent-cover replacement release — 2026-09-05
+
+The owner approved replacing both parent covers and committing/pushing this release. The approved files are installed; commit, push and live verification are the remaining publication steps. The two old files and prior manifest/schema are backed up. All 96 published set assets, set metadata and stable artwork URLs remain unchanged.
+
+The design uses eight chronological real-title panels, a cinematic black background, large silver Movies/Series headings and a spaced By Decade caption. Series replaces the old TV Shows wording. Both parent covers retain 1695 × 928 dimensions and their existing root paths. No additional roles or variants are introduced.
+
+| Stable key | Canonical target | Approved SHA-256 | Bytes |
+| --- | --- | --- | --- |
+| decade:root:movies | assets/collection_covers/decades/movies-by-decade.webp | e5316790958c99781d7c67953a7663a21cf27b437bc23aec5df0cfd84b64d631 | 108888 |
+| decade:root:series | assets/collection_covers/decades/series-by-decade.webp | e089f6be18982f30f09ecc89636a95e24bd5796a42b67084bc9f3f8274ed175d | 106750 |
+
+Sources reuse the sixteen current Decades hero title identities, with alternative cached photographs for I Love Lucy, Star Trek and M*A*S*H. Exact source image hashes, dimensions, crops, colour adjustments, mirror decisions and panel positions are now recorded in each rootCovers entry. Each parent also has its stableKey and owner-approved status/date/review-hash metadata. Optional parent-only schema fields support those records; schemaVersion remains 1. The original set-image approval and all other top-level metadata are retained. The artwork fingerprint was recomputed from decades and rootCovers. Public metadata contains no personal approval wording.
+
+No artwork was regenerated or re-encoded for publication. The original reviewed WebPs were copied exactly. The two covers total 215,638 bytes; the unchanged 96 set images total 11,310,842 bytes. All 98 images therefore total 11,526,480 bytes.
+
+Validation before installation: 136 existing tests passed; 100 original public Decades files matched the preserved baseline; two WebPs fully decoded at their expected dimensions; both lossless master hashes and all 16 source hashes/crop bounds passed. The prepared manifest passed its schema.
+
+Local-only evidence:
+
+- Reviewed source package: tools/studio-network-batch/.work/staging/decades-parent-covers-v1/. review-bindings.json SHA-256 is e173c734e8cf3a5f692e05d7b0b64e4185b287e87e513146e40f36ccbdc52d8d. The original pending-review file is retained unchanged; the subsequent publication approval is separate.
+- Release: tools/studio-network-batch/.work/staging/decades-parent-release-2026-09-05/. approval.json binds the exact owner-approved keys/targets/hashes. backup/ retains replaced assets, metadata and working documentation. snapshot.json records the original Git state and unrelated Awards file hashes. manifest-before.json, plan.json and subsequent validation/live-verification reports document the narrow delta.
+- Earlier draft, review gallery, source contact sheets and masters remain in the source package. Fonts were already installed locally and were not copied or downloaded. No source/API/image-generation requests were needed.
+
+The parent package render.cjs/package.cjs baseline checks describe the pre-replacement public tree; do not rerun them against the new release as though their old baseline were current. Use the release verification evidence and published manifest for the installed images. Keep all ignored backups and proof revisions.
+
+Unrelated Awards preparation in .gitignore, the root README, data/awards/, schemas/awards-*.schema.json and tools/awards-artwork/ is preserved and excluded from this release. Based on artwork and metadata are unchanged. Next: push this bounded release and verify stable and immutable URLs. Nuvio client acceptance and natural refresh of these parent covers remain untested; do not clear or replace the existing import.
