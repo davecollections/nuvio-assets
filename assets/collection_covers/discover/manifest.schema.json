@@ -32,7 +32,6 @@
       "required": [
         "status",
         "recordedAt",
-        "approvalText",
         "sourcePackage",
         "reviewedManifestSha256",
         "scope",
@@ -43,10 +42,6 @@
           "const": "owner-approved"
         },
         "recordedAt": {
-          "type": "string",
-          "minLength": 1
-        },
-        "approvalText": {
           "type": "string",
           "minLength": 1
         },

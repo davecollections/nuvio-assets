@@ -21,6 +21,8 @@ The agreed direction is a small master index pointing to separate category manif
 
 The shared master index, common category JSON schema and general builder reader are **not implemented or published yet**. This document is a working agreement, not that runtime. Do not invent a live index URL, claim that publishing a category automatically integrates it into the builder, or create competing master indexes in separate tasks. Reuse an implemented shared contract if one exists when the task starts; otherwise record the proposed category mapping in its handover and stage the candidate schema for review.
 
+Public artwork manifests must not contain quoted conversations, personal approval comments, or other owner remarks. Keep approval status and exact reviewed hashes as metadata; keep the original wording in local review evidence rather than exporting it. Category schemas must not require comment fields.
+
 Existing formats remain authoritative until an explicit migration. Companies/Networks can remain in their shared manifest and be referenced together. Categories do not need to move images or split working publication tools merely to fit the planned index. Only published categories and assets belong in a public runtime index.
 
 ## Start a category

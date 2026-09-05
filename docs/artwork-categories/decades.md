@@ -63,3 +63,11 @@ All paths below are relative to the repository. They are ignored local working e
 - The two earlier reviewed single heroes and 2000s cover correction: tools/studio-network-batch/.work/staging/decades-revision-v1/.
 
 A fresh task can inspect the tracked manifests, assets, schema and this handover without the ignored workspace. If a new render needs missing originals or scripts, locate the existing evidence or explicitly reconstruct the bounded source plan from the recorded real source identities and artwork paths; do not silently rerun a historical full batch. Never fabricate an approval for recreated bytes.
+
+## Manifest comment cleanup — 2026-09-05
+
+Removed `approval.approvalText` and `approval.deliveryAuthorization` from the public manifest and removed their schema definitions/requirements. Personal conversation text must not be exported in these manifests. Approval status, dates, scope and reviewed hashes remain metadata; exact local approval evidence is separate.
+
+The 98 artwork files, their URLs, hashes, source records, and manifest artwork fingerprint are unchanged. Both category schemas validate. Current manifest SHA-256: 2155224101f2f0aa45c4fe711138a982c3961538f0b55e727321e13a394262b5. Current schema SHA-256: 9712ae0a64bd541aef779dacfd461b0923a0defcdee63d05f4478d50ef7864dc.
+
+This is a metadata-only maintenance change. The original artwork release remains as documented above. Historical release validators that compare the original whole-manifest hash predate this cleanup; use the current schema for the current manifest. Cleanup evidence and original metadata backups are ignored under tools/studio-network-batch/.work/staging/manifest-comment-cleanup-v1/.

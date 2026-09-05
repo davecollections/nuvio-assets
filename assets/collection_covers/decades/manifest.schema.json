@@ -32,22 +32,16 @@
       "required": [
         "status",
         "recordedAt",
-        "approvalText",
         "sourcePackage",
         "reviewedManifestSha256",
         "scope",
-        "nuvioPreview",
-        "deliveryAuthorization"
+        "nuvioPreview"
       ],
       "properties": {
         "status": {
           "const": "owner-approved"
         },
         "recordedAt": {
-          "type": "string",
-          "minLength": 1
-        },
-        "approvalText": {
           "type": "string",
           "minLength": 1
         },
@@ -68,10 +62,6 @@
             "pending",
             "reviewed"
           ]
-        },
-        "deliveryAuthorization": {
-          "type": "string",
-          "minLength": 1
         }
       }
     },

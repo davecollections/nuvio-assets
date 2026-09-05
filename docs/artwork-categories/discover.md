@@ -16,11 +16,11 @@ Last updated: 2026-09-05. Read [the shared workflow](../artwork-workflow.md) fir
 
 Current state: published to main in asset commit [67c96b6](https://github.com/davecollections/nuvio-assets/commit/67c96b659ce4b169c905e669159ea858b3e8162a). All sixty approved v7 WebPs are available under assets/collection_covers/discover/, organised as five groups x three variants x four roles. The twelve legacy root JPGs were backed up and removed under explicit owner approval. All sixty live image hashes, manifest/schema hashes and twelve retired URL 404 responses were verified at 2026-09-05T06:24:30.839Z.
 
-The owner approved the covers, focus artwork and title logos after v6, then approved the revised heroes and replacement with: "ok i think we have it sorted, happy to approve these, also approve deleting the current files in the discovery folder in the repo and putting these there instead.". Exact final approval bindings for all sixty current hashes and twelve deletions are recorded in v7/publication/approval.json. No artwork approval remains pending for these exact bytes.
+The v6 covers, focus artwork and title logos, revised v7 heroes, and replacement of the legacy files were approved. Exact final approval bindings for all sixty current hashes and twelve deletions are recorded in v7/publication/approval.json. No artwork approval remains pending for these exact bytes.
 
 The cinematic-black base (#0A0C10), film reel, Series screen icon, typography and focus treatment remain settled. Each hero uses 65–78 distinct titles/images with no duplication within the hero; Mixed remains balanced. The forty-five approved static assets are unchanged from v6.
 
-The owner explicitly authorised Git publication with "ok, commit and push". The release includes only Discover assets and documentation; unrelated Awards changes remain uncommitted. Repository publication and live URL verification are complete. Builder integration and actual Nuvio display remain unverified.
+Git publication was explicitly authorised. The release includes only Discover assets and documentation; unrelated Awards changes remain uncommitted. Repository publication and live URL verification are complete. Builder integration and actual Nuvio display remain unverified.
 
 Verified live category manifest: [Discover manifest](https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/manifest.json).
 
@@ -72,7 +72,7 @@ Refresh into a new dated revision, compare selected identities/artwork paths and
 
 - Current category authority: assets/collection_covers/discover/manifest.json, schemaVersion 1, kind discover-artwork. Strict schema: assets/collection_covers/discover/manifest.schema.json. Both are published and live-hash verified.
 - The manifest follows the existing Decades category pattern: group objects with Movies/Series/Mixed entries, stable keys, media types and landscape/focus/titleLogo/hero role metadata. Each role records its path, intended canonical URL, SHA-256, bytes, dimensions, encoding and retained master hash. Cover/hero source identities and image hashes are included.
-- Manifest SHA-256: fb46ca7f8fede2b8023c1b7558c4e45160cc379cca1d0566c2ef9646e6da8183. Schema SHA-256: ba45dfeb5e2dd6b00147715ba9cbcb05dc29e3f44f74fda74888990d2755bbbc. Image package: 4,486,790 bytes across sixty WebPs.
+- Manifest SHA-256: 3d69881e5d91be780eaf579f01d9fe61d5f7642a2e9ace5a7c4589f2befe5061. Schema SHA-256: ac1a3b7a3ddd2e625c2b54ad5e04f01272ebaafc377bcdee14d4161c3f143c6e. Image package: 4,486,790 bytes across sixty WebPs.
 - v7/publication/approval.json binds the owner's final approval to all sixty v7 output hashes and the twelve exact legacy deletions. v7/publication/publish-plan.json and installation-receipt.json record the executed selection. Historical v6/v7 pre-release inventories are retained without rewriting their former review state.
 - All twelve legacy JPGs were removed from the repo as expressly authorised. Exact original bytes are retained under v7/publication/backup/, with hashes in legacy-backup-inventory.json. No compatibility JPGs or aliases were added.
 - Retired names: Blu-Ray Releases.jpg; Coming Soon.jpg; Latest Movies.jpg; Latest Series.jpg; Popular Movies.jpg; Popular Series.jpg; anticipated.jpg; anticipated movies.jpg; anticipated series.jpg; anticipated base.jpg; anticipated movies base.jpg; anticipated series base.jpg.
@@ -152,3 +152,11 @@ Asset commit: 67c96b659ce4b169c905e669159ea858b3e8162a. Pushed to origin/main. T
     ?? schemas/awards-registry.schema.json
     ?? schemas/awards-sources.schema.json
     ?? tools/awards-artwork/
+
+## Manifest comment cleanup — 2026-09-05
+
+Removed `approval.approvalText` from the public manifest and removed their schema definitions/requirements. Personal conversation text must not be exported in these manifests. Approval status, dates, scope and reviewed hashes remain metadata; exact local approval evidence is separate.
+
+The 60 artwork files, their URLs, hashes, source records, and manifest artwork fingerprint are unchanged. Both category schemas validate. Current manifest SHA-256: 3d69881e5d91be780eaf579f01d9fe61d5f7642a2e9ace5a7c4589f2befe5061. Current schema SHA-256: ac1a3b7a3ddd2e625c2b54ad5e04f01272ebaafc377bcdee14d4161c3f143c6e.
+
+This is a metadata-only maintenance change. The original artwork release remains as documented above. Historical release validators that compare the original whole-manifest hash predate this cleanup; use the current schema for the current manifest. Cleanup evidence and original metadata backups are ignored under tools/studio-network-batch/.work/staging/manifest-comment-cleanup-v1/.

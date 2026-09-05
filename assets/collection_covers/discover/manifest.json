@@ -5,7 +5,6 @@
   "approval": {
     "status": "owner-approved",
     "recordedAt": "2026-09-05T06:16:32.987Z",
-    "approvalText": "ok i think we have it sorted, happy to approve these, also approve deleting the current files in the discovery folder in the repo and putting these there instead.",
     "sourcePackage": "discover-artwork-v7",
     "reviewedManifestSha256": "4284a52ffd4815f723b9df3a0a524edf0da0559d50aebf5fabb9d69a4948b476",
     "scope": "All sixty v7 assets, replacement of all twelve legacy Discover JPGs, and Discover category metadata",
