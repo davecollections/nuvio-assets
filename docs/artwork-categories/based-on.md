@@ -21,11 +21,11 @@ Category key: based_on. Stable keys: based_on:SLUG. Ten film-artwork categories,
 
 ## State and next action
 
-Release state: owner-approved files installed in the isolated release checkout; commit, push and live verification pending. Approval covers all forty v3 images, retirement of all five legacy JPGs, category metadata, commit and push. The stronger focus treatment is selected. General Builder integration is absent and Nuvio client framing remains untested.
+Release state: published to remote main and live-hash verified. Approval covers all forty v3 images, retirement of all five legacy JPGs, category metadata, commit and push. The stronger focus treatment is selected. General Builder integration is absent and Nuvio client framing remains untested.
 
 The current original checkout has unrelated Awards/Decades changes. Those are preserved and excluded from this release. The isolated checkout starts from origin/main at 972a744056b0e372f408dae4c2c034afad556285 and uses branch work/based-on-artwork-release. Local main was not advanced.
 
-Next: commit and push the bounded release, then verify every public artifact against its published hash.
+Next: no publication work remains. General Builder integration, Nuvio client acceptance and holiday artwork are separate future work.
 
 ## Design and delivery contract
 
@@ -64,3 +64,15 @@ The bounded focus revision can be reproduced from retained inputs with:
     node tools/studio-network-batch/.work/staging/based-on-artwork-v3/revise-focus.cjs
 
 The old staging verifier expects the legacy public JPGs to remain and is historical after retirement; use the release verifier for installed/published artifacts. Keep all ignored revisions and backups. Future artwork changes require their own exact-output review; do not extend this release to holidays or unrelated categories.
+
+## Completed publication — 2026-09-05
+
+Artwork release commit: 7d141d280cb1d11a550ddcdc06b52a02234daf38. All forty images and the category manifest/schema were pushed to remote main. The five old JPGs are absent from the release and all five canonical raw URLs return 404.
+
+Published manifest: https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/manifest.json
+
+Live verification at 2026-09-05T10:34:53.467Z checked every image and all three metadata files at both main and the immutable release commit: eighty image responses and six metadata responses matched their committed hashes. Five retired legacy URLs returned 404. Local publication validation confirmed exact forty-file membership, hashes, dimensions, 7,844,264 image bytes, the schema, and fifty bounded commit paths (forty images, three metadata files, two documentation files and five deletions). No unrelated release paths changed. All 136 existing tests passed; no artwork regeneration or unresolved failures occurred.
+
+Evidence remains local-only in the release directory: publication-validation.json, live-verification.json, approval.json, allowed-commit-paths.json, original-checkout-snapshot.json, final-git-status.txt and final-release.json. The release checkout is clean after publication. The original checkout retains its unrelated Awards/Decades changes; only this task's handover and Based on workflow row are reconciled to the published state.
+
+The original local main remains at its earlier revision. Automatic approval review rejected advancing it because that would also import unrelated remote deletions and registry changes. Publication instead used the isolated checkout; this is a local checkout-state distinction, not an incomplete remote release. Inspect the latest remote manifest or the retained isolated checkout before resuming, and do not republish the old local JPG tree.
