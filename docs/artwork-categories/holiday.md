@@ -18,9 +18,9 @@ Other holidays, Awards, Builder development and the sibling tmdb-id-lookup repos
 
 ## State and next action
 
-State: approved release installed locally; commit, push and live verification are the current publication step. The owner authorised the exact reviewed set, three legacy JPG retirements, commit and push on 2026-09-05. Local main and fetched origin/main both started at 51a463d711a720e46a83f61d3d8a17fec96b6134.
+State: published and live-hash verified. The owner authorised the exact reviewed set, three legacy JPG retirements, commit and push on 2026-09-05. Local main and fetched origin/main both started at 51a463d711a720e46a83f61d3d8a17fec96b6134; main was checked again before staging and had not moved. Artwork release: [7d0ae9c](https://github.com/davecollections/nuvio-assets/commit/7d0ae9c354696ab9f190c4f6202758a9a1c2a4aa).
 
-Next: commit the scoped release, push without force, verify all twenty image URLs and category metadata against committed hashes, and record the release commit here. Builder integration is absent; Nuvio acceptance is untested.
+The requested artwork publication is complete. No further artwork changes are pending. A future owner-requested Nuvio preview or Builder integration is separate work; general Builder integration is absent and Nuvio acceptance is untested.
 
 Preexisting Awards changes in .gitignore, README.md, data/awards, schemas/awards-* and tools/awards-artwork are excluded from the release and preserved.
 
@@ -43,7 +43,7 @@ The final Christmas cover/focus omit the lower-right pine sprigs and berries. Va
 
 ## Manifest and builder contract
 
-Category manifest: assets/collection_covers/holiday/manifest.json. Schema: manifest.schema.json in the same folder, schemaVersion 1. It records five sets, twenty images, 4,934,172 image bytes, stable identities, role URLs, hashes, dimensions, encoding settings and source provenance. titleLogo maps to title-logo.webp.
+Published [category manifest](https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/manifest.json): assets/collection_covers/holiday/manifest.json. Schema: manifest.schema.json in the same folder, schemaVersion 1. It records five sets, twenty images, 4,934,172 image bytes, stable identities, role URLs, hashes, dimensions, encoding settings and source provenance. titleLogo maps to title-logo.webp.
 
 Asset sourceSha256 identifies a lossless render master; artworkSources identifies original TMDB image bytes. The manifest binds approval to the exact reviewed candidate and review-bindings hashes. It contains no raw approval conversation.
 
@@ -55,9 +55,11 @@ Ignored/local-only stage: tools/studio-network-batch/.work/staging/holiday-artwo
 
 Ignored/local-only release: tools/studio-network-batch/.work/staging/holiday-release-2026-09-05. approval.json authorises the twenty stable-key/role/target/hash records and three retirements. reviewed-* files freeze review evidence; prepared/ freezes delivered bytes; legacy-backup/ preserves all three old JPGs; documentation-before-release/ preserves the full earlier handover. plan.json limits the release to twenty WebPs, three category metadata files, two documents and three JPG deletions.
 
-Validation before installation: 136 studio/network tests passed; artwork verification passed all twenty outputs, identity/source hashes, dimensions, membership, focus master preservation, white-alpha logo bounds, distinct heroes and quality gates; candidate and public schemas passed PowerShell Test-Json; all twenty-eight gallery image responses matched local bytes. Publication verification additionally checks delivered hashes and all protected files except the three explicitly retired JPGs.
+Validation before installation: 136 studio/network tests passed; artwork verification passed all twenty outputs, identity/source hashes, dimensions, membership, focus master preservation, white-alpha logo bounds, distinct heroes and quality gates; candidate and public schemas passed PowerShell Test-Json; all twenty-eight gallery image responses matched local bytes. Publication verification passed all twenty delivered hashes and exact folder membership, all three legacy backups, 250 protected files and 44 unrelated dirty files with unchanged hashes and modification times. The three approved legacy JPG deletions are the only protected-file retirements.
 
-No artwork was regenerated for publication: all twenty approved files were copied byte-for-byte. No new TMDB requests or font downloads. Unrelated artwork and Awards work remain untouched. Only the Holiday final assets, manifest/schema/README and the two artwork documents are in scope.
+live-verification.json records 49 successful HTTP checks on 2026-09-05: twenty image hashes and three metadata hashes at both main and the immutable artwork commit, plus 404 responses for the three retired main-branch JPG URLs. Default URLs were verified without cache-busting parameters. Remote main matched the artwork commit at verification. No live failures or source failures remain.
+
+No artwork was regenerated for publication: all twenty approved files were copied byte-for-byte. No new TMDB requests or font downloads. Unrelated artwork and Awards work remain untouched. The release contains only the Holiday final assets, manifest/schema/README and the two artwork documents. Final git status retains only the preexisting Awards files listed above; no Holiday changes remain uncommitted after publication and verification documentation.
 
 ## Recovery and revision history
 
