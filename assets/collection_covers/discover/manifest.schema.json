@@ -1,0 +1,870 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nuvio approved Discover artwork manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kind",
+    "assetBaseUrl",
+    "approval",
+    "counts",
+    "fingerprint",
+    "sourcePolicy",
+    "heroPolicy",
+    "groups",
+    "retiredLegacyFiles",
+    "delivery"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "kind": {
+      "const": "discover-artwork"
+    },
+    "assetBaseUrl": {
+      "const": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/"
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "recordedAt",
+        "approvalText",
+        "sourcePackage",
+        "reviewedManifestSha256",
+        "scope",
+        "nuvioPreview"
+      ],
+      "properties": {
+        "status": {
+          "const": "owner-approved"
+        },
+        "recordedAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "approvalText": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourcePackage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewedManifestSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nuvioPreview": {
+          "enum": [
+            "pending",
+            "reviewed"
+          ]
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "groups",
+        "sets",
+        "assets",
+        "totalImageFiles",
+        "totalImageBytes"
+      ],
+      "properties": {
+        "groups": {
+          "const": 5
+        },
+        "sets": {
+          "const": 15
+        },
+        "assets": {
+          "const": 60
+        },
+        "totalImageFiles": {
+          "const": 60
+        },
+        "totalImageBytes": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "sourcePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "provider",
+        "asOf",
+        "newWindow",
+        "upcomingFrom",
+        "new",
+        "trending",
+        "popular",
+        "top",
+        "upcoming",
+        "seriesDates",
+        "refresh"
+      ],
+      "properties": {
+        "provider": {
+          "const": "TMDB"
+        },
+        "asOf": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "newWindow": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "start",
+            "end"
+          ],
+          "properties": {
+            "start": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            },
+            "end": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+            }
+          }
+        },
+        "upcomingFrom": {
+          "type": "string",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+        },
+        "new": {
+          "type": "string",
+          "minLength": 1
+        },
+        "trending": {
+          "type": "string",
+          "minLength": 1
+        },
+        "popular": {
+          "type": "string",
+          "minLength": 1
+        },
+        "top": {
+          "type": "string",
+          "minLength": 1
+        },
+        "upcoming": {
+          "type": "string",
+          "minLength": 1
+        },
+        "seriesDates": {
+          "type": "string",
+          "minLength": 1
+        },
+        "refresh": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "heroPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy",
+        "titleLogoBakedIn",
+        "uniqueness",
+        "mixed",
+        "adapterSha256",
+        "compositorSha256"
+      ],
+      "properties": {
+        "strategy": {
+          "const": "people-t2-unique-titles-v1"
+        },
+        "titleLogoBakedIn": {
+          "const": false
+        },
+        "uniqueness": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mixed": {
+          "type": "string",
+          "minLength": 1
+        },
+        "adapterSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "compositorSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "groups": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "new",
+        "trending",
+        "popular",
+        "top",
+        "upcoming"
+      ],
+      "properties": {
+        "new": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "movies",
+            "series",
+            "mixed"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "movies": {
+              "$ref": "#/$defs/variant"
+            },
+            "series": {
+              "$ref": "#/$defs/variant"
+            },
+            "mixed": {
+              "$ref": "#/$defs/variant"
+            }
+          }
+        },
+        "trending": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "movies",
+            "series",
+            "mixed"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "movies": {
+              "$ref": "#/$defs/variant"
+            },
+            "series": {
+              "$ref": "#/$defs/variant"
+            },
+            "mixed": {
+              "$ref": "#/$defs/variant"
+            }
+          }
+        },
+        "popular": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "movies",
+            "series",
+            "mixed"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "movies": {
+              "$ref": "#/$defs/variant"
+            },
+            "series": {
+              "$ref": "#/$defs/variant"
+            },
+            "mixed": {
+              "$ref": "#/$defs/variant"
+            }
+          }
+        },
+        "top": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "movies",
+            "series",
+            "mixed"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "movies": {
+              "$ref": "#/$defs/variant"
+            },
+            "series": {
+              "$ref": "#/$defs/variant"
+            },
+            "mixed": {
+              "$ref": "#/$defs/variant"
+            }
+          }
+        },
+        "upcoming": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "label",
+            "movies",
+            "series",
+            "mixed"
+          ],
+          "properties": {
+            "label": {
+              "type": "string",
+              "minLength": 1
+            },
+            "movies": {
+              "$ref": "#/$defs/variant"
+            },
+            "series": {
+              "$ref": "#/$defs/variant"
+            },
+            "mixed": {
+              "$ref": "#/$defs/variant"
+            }
+          }
+        }
+      }
+    },
+    "retiredLegacyFiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "bytes"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^assets/collection_covers/discover/[^/]+\\.jpg$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      },
+      "minItems": 12,
+      "maxItems": 12
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "reviewedImagesPreserved",
+        "transparentTitleLogos",
+        "fingerprintMethod"
+      ],
+      "properties": {
+        "format": {
+          "const": "webp"
+        },
+        "reviewedImagesPreserved": {
+          "const": true
+        },
+        "transparentTitleLogos": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fingerprintMethod": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "variant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableKey",
+        "name",
+        "mediaTypes",
+        "landscape",
+        "focus",
+        "titleLogo",
+        "hero",
+        "artworkSources",
+        "heroComposition"
+      ],
+      "properties": {
+        "stableKey": {
+          "type": "string",
+          "pattern": "^discover:(new|trending|popular|top|upcoming):(movies|series|mixed)$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mediaTypes": {
+          "enum": [
+            [
+              "movie"
+            ],
+            [
+              "tv"
+            ],
+            [
+              "movie",
+              "tv"
+            ]
+          ]
+        },
+        "landscape": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "encoding"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/discover/(new|trending|popular|top|upcoming)/(movies|series|mixed)/landscape\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 1200
+            },
+            "height": {
+              "const": 675
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1048575
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "const": "reviewed-webp"
+                },
+                "lossless": {
+                  "const": false
+                },
+                "quality": {
+                  "const": 88
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            }
+          }
+        },
+        "focus": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "encoding"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/discover/(new|trending|popular|top|upcoming)/(movies|series|mixed)/focus\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 1200
+            },
+            "height": {
+              "const": 675
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1048575
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "const": "reviewed-webp"
+                },
+                "lossless": {
+                  "const": false
+                },
+                "quality": {
+                  "const": 88
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            }
+          }
+        },
+        "titleLogo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "encoding"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/discover/(new|trending|popular|top|upcoming)/(movies|series|mixed)/title-logo\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 1863
+            },
+            "height": {
+              "const": 673
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1048575
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "const": "lossless-webp"
+                },
+                "lossless": {
+                  "const": true
+                },
+                "quality": {
+                  "type": "null"
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            }
+          }
+        },
+        "hero": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "encoding"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/discover/(new|trending|popular|top|upcoming)/(movies|series|mixed)/hero\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 2560
+            },
+            "height": {
+              "const": 1440
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 1048575
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "const": "reviewed-webp"
+                },
+                "lossless": {
+                  "const": false
+                },
+                "quality": {
+                  "const": 82
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            }
+          }
+        },
+        "artworkSources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "cover",
+            "hero"
+          ],
+          "properties": {
+            "cover": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "key",
+                  "title",
+                  "imageRole",
+                  "artworkPath",
+                  "sha256",
+                  "crop"
+                ],
+                "properties": {
+                  "key": {
+                    "type": "string",
+                    "pattern": "^(movie|tv):[1-9][0-9]*$"
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "imageRole": {
+                    "enum": [
+                      "portrait",
+                      "landscape"
+                    ]
+                  },
+                  "artworkPath": {
+                    "type": "string",
+                    "pattern": "^/[^/]+$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "crop": {
+                    "type": "array",
+                    "items": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "minItems": 4,
+                    "maxItems": 4
+                  }
+                }
+              },
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "hero": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "key",
+                  "title",
+                  "imageRole",
+                  "artworkPath",
+                  "sha256",
+                  "pixelSha256"
+                ],
+                "properties": {
+                  "key": {
+                    "type": "string",
+                    "pattern": "^(movie|tv):[1-9][0-9]*$"
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "imageRole": {
+                    "enum": [
+                      "portrait",
+                      "landscape"
+                    ]
+                  },
+                  "artworkPath": {
+                    "type": "string",
+                    "pattern": "^/[^/]+$"
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "pixelSha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  }
+                }
+              },
+              "minItems": 1
+            }
+          }
+        },
+        "heroComposition": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "seed",
+            "sourceCount",
+            "repeatedTitles",
+            "repeatedArtwork",
+            "frameCoveragePreserved"
+          ],
+          "properties": {
+            "seed": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "sourceCount": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "repeatedTitles": {
+              "const": 0
+            },
+            "repeatedArtwork": {
+              "const": 0
+            },
+            "frameCoveragePreserved": {
+              "const": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
