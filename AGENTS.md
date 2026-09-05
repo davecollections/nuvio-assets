@@ -6,6 +6,14 @@ This repository stores artwork assets for Nuvio. It also contains a local utilit
 
 The studio/network utility is separate from TMDB Collection Builder v1/v2 development. Do not mix their responsibilities or introduce Collection Builder work into this utility without an explicit request.
 
+## Shared instructions for every artwork category
+
+Before starting or resuming artwork work, read [docs/artwork-workflow.md](docs/artwork-workflow.md) and the relevant handover under `docs/artwork-categories/`. Create or update that handover using [docs/artwork-category-template.md](docs/artwork-category-template.md) when adding a category. Keep decisions and the next concrete action in the repository so another task can resume without conversation history.
+
+The shared guide records real-artwork and WebP delivery preferences, stable URL/hash handling, category-manifest responsibilities, review/publication gates, and current category ownership. A small master index with separate category manifests is the agreed direction; the guide explicitly distinguishes that plan from currently published infrastructure. Do not create an incompatible parallel index or claim an unimplemented builder integration exists.
+
+The studio/network source thresholds, production preset and fallback rules below apply to that utility. Use each other category's documented design and asset roles; the shared safety, preservation and authorisation rules still apply. Do not extend an approved artwork release to unrelated categories or overwrite another task's working changes.
+
 ## Source data
 
 The utility reads current cached data from a sibling `tmdb-id-lookup` checkout. Its primary inputs are:
