@@ -11,7 +11,7 @@ The latest set-image release was published to main in commit 9e89b3b8ca9bfb95194
 - This category is separate from assets/collection_covers/runtime-lookup.json. No master index or general category-reader integration has been implemented in this task.
 - The user accepted the prior artwork in Nuvio and supplied a TV photo. The single-hero revision was approved for publication. At 12:46 on 2026-09-05, the user reported that some new heroes were visible in the existing import, with other decades still updating; full-set refresh and acceptance remain unconfirmed. No exact Nuvio version was supplied.
 - The user is deliberately leaving the existing imported collection and cache untouched to observe natural image refresh. Do not replace that import, clear its cache, or claim a refresh time as part of unrelated category work.
-- Both parent-cover replacements are owner-approved and installed for publication; see the 2026-09-05 parent-cover section below. The small master category index and consistent category-manifest reader remain planned infrastructure work.
+- Both parent-cover replacements are published and live-hash verified; see the 2026-09-05 parent-cover section below. The small master category index and consistent category-manifest reader remain planned infrastructure work.
 
 ## Identity and four-file contract
 
@@ -74,7 +74,7 @@ This is a metadata-only maintenance change. The original artwork release remains
 
 ## Parent-cover replacement release — 2026-09-05
 
-The owner approved replacing both parent covers and committing/pushing this release. The approved files are installed; commit, push and live verification are the remaining publication steps. The two old files and prior manifest/schema are backed up. All 96 published set assets, set metadata and stable artwork URLs remain unchanged.
+The owner approved replacing both parent covers and committing/pushing this release. The approved files are published to main in commit 49f19b94d56064c0ea2947f4eb94a30a8d7f4438 and live-hash verified. The two old files and prior manifest/schema are backed up. All 96 published set assets, set metadata and stable artwork URLs remain unchanged.
 
 The design uses eight chronological real-title panels, a cinematic black background, large silver Movies/Series headings and a spaced By Decade caption. Series replaces the old TV Shows wording. Both parent covers retain 1695 × 928 dimensions and their existing root paths. No additional roles or variants are introduced.
 
@@ -97,4 +97,12 @@ Local-only evidence:
 
 The parent package render.cjs/package.cjs baseline checks describe the pre-replacement public tree; do not rerun them against the new release as though their old baseline were current. Use the release verification evidence and published manifest for the installed images. Keep all ignored backups and proof revisions.
 
-Unrelated Awards preparation in .gitignore, the root README, data/awards/, schemas/awards-*.schema.json and tools/awards-artwork/ is preserved and excluded from this release. Based on artwork and metadata are unchanged. Next: push this bounded release and verify stable and immutable URLs. Nuvio client acceptance and natural refresh of these parent covers remain untested; do not clear or replace the existing import.
+Unrelated Awards preparation in .gitignore, the root README, data/awards/, schemas/awards-*.schema.json and tools/awards-artwork/ is preserved and excluded from this release. Based on artwork and metadata are unchanged. Next: no artwork publication work remains. Nuvio client acceptance and natural refresh of these parent covers remain untested; do not clear or replace the existing import.
+
+## Parent release verification — 2026-09-05
+
+Release commit: 49f19b94d56064c0ea2947f4eb94a30a8d7f4438. At 2026-09-05T10:56:30.336Z, both stable /main/ parent-cover URLs and their immutable commit URLs returned the exact approved hashes. The manifest, schema and README also passed both URL checks: ten successful responses, no mismatches. Current manifest SHA-256: 1209bbf0e51fcdeb0283a1e4d357eee5a40d69fd710f0ecc62483338120a07e5. Current schema SHA-256: 920e17f23df98e9b8f000dd084f361b82c69b63607ee649745d6a1e629d0aee6.
+
+The release replaced only the two parent images, updated rootCovers metadata/fingerprint, added optional root-only schema fields, and updated three documentation files. All 96 set images and their metadata are unchanged; all 98 canonical artwork URLs are preserved. Two old parent files and prior metadata are backed up locally. No artwork was regenerated, no external source acquisition occurred, and no unresolved failures remain. The 136 repository tests passed. All 44 unrelated working files were hash-checked and preserved.
+
+Final evidence in the ignored release directory: publication-validation.json, live-verification.json, approval.json, snapshot.json, final-release.json and final-git-status.txt. The only remaining uncommitted work is the preexisting Awards preparation.
