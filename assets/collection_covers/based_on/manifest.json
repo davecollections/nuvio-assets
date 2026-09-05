@@ -1,0 +1,1069 @@
+{
+  "schemaVersion": 1,
+  "kind": "based-on-artwork",
+  "category": "based_on",
+  "assetBaseUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/",
+  "approval": {
+    "status": "owner-approved",
+    "recordedAt": "2026-09-05T10:31:47.052Z",
+    "sourcePackage": "based-on-artwork-v3",
+    "reviewedManifestSha256": "211f2640253f4d5d456b32d3702618dab28037ce884a2e3d4817bc08dca21db3",
+    "reviewedBindingsSha256": "21c5896461abc487204e2356cbbec782bfb225a06bbb4c26227c1728f2855df4",
+    "scope": "All forty v3 assets, retirement of five legacy Based on JPGs, and category metadata",
+    "nuvioPreview": "pending"
+  },
+  "counts": {
+    "sets": 10,
+    "assets": 40,
+    "totalImageFiles": 40,
+    "totalImageBytes": 7844264
+  },
+  "fingerprint": "8c0ac7389112c448c5d2e25663323c204064054a025e337447bb173e7602aec6",
+  "focusPolicy": {
+    "strategy": "stronger-text-outline",
+    "base": "landscape",
+    "normalLetterFillPreserved": true
+  },
+  "heroPolicy": {
+    "strategy": "single-related-film",
+    "differentSourceFromCover": true,
+    "titleLogoBakedIn": false,
+    "addedFade": false
+  },
+  "sets": {
+    "books": {
+      "stableKey": "based_on:books",
+      "name": "Books",
+      "artworkLabel": "BOOKS",
+      "basis": "J. K. Rowling novel",
+      "mediaTypes": [
+        "movie"
+      ],
+      "landscape": {
+        "path": "assets/collection_covers/based_on/books/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/books/landscape.webp",
+        "sha256": "872ed47e4dc7e5e7403eee57f54b83285e1c26fbc36baed86c3fd5d837c6304d",
+        "sourceSha256": "a3c04dda15e502f0d7a5a0b1f2afe396d40c849804e1caee869841b3a818aae5",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 83834,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "titleLogo": {
+        "path": "assets/collection_covers/based_on/books/title-logo.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/books/title-logo.webp",
+        "sha256": "80c965673df7be3cad2dce7e40ea20d2900e389e674e0138baddf314ceaf40ae",
+        "sourceSha256": "4cf225b762eb785a882eddacabcdff0a8a96503e7495d1ee2517fb95fc9cc9ed",
+        "format": "webp",
+        "width": 1863,
+        "height": 673,
+        "bytes": 15852,
+        "hasAlpha": true,
+        "encoding": {
+          "method": "lossless-webp",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "hero": {
+        "path": "assets/collection_covers/based_on/books/hero.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/books/hero.webp",
+        "sha256": "027fb592c04c52ac520c30922dc856f4df48a28431436919f84eb02a221a6d51",
+        "sourceSha256": "78c6ba5c906b310d085332014a5970308008c13ad1f22389e2504e8afad8ad28",
+        "format": "webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 951210,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "focus": {
+        "path": "assets/collection_covers/based_on/books/focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/books/focus.webp",
+        "sha256": "0eb30a3a42c3c1ae4d969cb90a90b0e15ffbf3b3c46fa1d54be73973ad449e99",
+        "sourceSha256": "901e59e9b3b3f0ba7b25cec67ef3c0c8922fc30587367602211b21f9a90fc896",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 88820,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "872ed47e4dc7e5e7403eee57f54b83285e1c26fbc36baed86c3fd5d837c6304d"
+      },
+      "artworkSources": {
+        "cover": {
+          "key": "movie:671",
+          "tmdbId": 671,
+          "title": "Harry Potter and the Philosopher's Stone",
+          "artworkPath": "bfh9Z3Ghz4FOJAfLOAhmc3ccnHU.jpg",
+          "sha256": "799982e7f10aa3184fb80e79d918de8a098f41528ef770ab71ac63bbff92e310",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false
+        },
+        "hero": {
+          "key": "movie:671",
+          "tmdbId": 671,
+          "title": "Harry Potter and the Philosopher's Stone",
+          "artworkPath": "5jkE2SzR5uR2egEb1rRhF22JyWN.jpg",
+          "sha256": "12ff0374157fa77ce02b8e6e40c09c79f232f6eac57fbaaf18b89d8f830f477b",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false
+        }
+      }
+    },
+    "video-games": {
+      "stableKey": "based_on:video-games",
+      "name": "Video Games",
+      "artworkLabel": "VIDEO GAMES",
+      "basis": "Nintendo Mario video games",
+      "mediaTypes": [
+        "movie"
+      ],
+      "landscape": {
+        "path": "assets/collection_covers/based_on/video-games/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/video-games/landscape.webp",
+        "sha256": "ad7a505e74e274e63609cbb390231929299c7510404e87a02b0244c12a568839",
+        "sourceSha256": "cd4a58ef75f9894afab2040e029a7c4b45a1af964b0f88ac720ca3a95314d9d9",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 127282,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "titleLogo": {
+        "path": "assets/collection_covers/based_on/video-games/title-logo.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/video-games/title-logo.webp",
+        "sha256": "429b9c1282700c52a6f7ff71f9147bc136e2e39e8c9c3ee351dc7817bb181341",
+        "sourceSha256": "b83a3fda85a9a1b87c5607a30053640f06956c12276fad1b7add06a826cefba4",
+        "format": "webp",
+        "width": 1863,
+        "height": 673,
+        "bytes": 16046,
+        "hasAlpha": true,
+        "encoding": {
+          "method": "lossless-webp",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "hero": {
+        "path": "assets/collection_covers/based_on/video-games/hero.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/video-games/hero.webp",
+        "sha256": "67a9c0002a8c1196cecd85f225db1edd8c89ccc4bb0379346dd10676c15afb80",
+        "sourceSha256": "fb6bfc570df0bebfa93043afe9f34c5a090f43cf319084cdf3f3a3e4745b4411",
+        "format": "webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 718404,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "focus": {
+        "path": "assets/collection_covers/based_on/video-games/focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/video-games/focus.webp",
+        "sha256": "19e0e19662615daf4707dc3b6ba1765bfe27465150b1133bc0f161cee69ee1ed",
+        "sourceSha256": "454df38fee02774d636e36dafeac684b8b0ffde3e3165c64890911ee11668fa9",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 179698,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp-high-quality",
+          "lossless": false,
+          "quality": 96,
+          "effort": 6
+        },
+        "baseCoverSha256": "ad7a505e74e274e63609cbb390231929299c7510404e87a02b0244c12a568839"
+      },
+      "artworkSources": {
+        "cover": {
+          "key": "movie:502356",
+          "tmdbId": 502356,
+          "title": "The Super Mario Bros. Movie",
+          "artworkPath": "nLBRD7UPR6GjmWQp6ASAfCTaWKX.jpg",
+          "sha256": "1f32f560cc21d472bffefc05c8928fe054d4e7e0a313b212566014a4c2b9f0e7",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false
+        },
+        "hero": {
+          "key": "movie:502356",
+          "tmdbId": 502356,
+          "title": "The Super Mario Bros. Movie",
+          "artworkPath": "iJQIbOPm81fPEGKt5BPuZmfnA54.jpg",
+          "sha256": "1777dd1139c6712fcd820c157417f343b3342add36e9d13a1b56a09e50dfef16",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false
+        }
+      }
+    },
+    "comics": {
+      "stableKey": "based_on:comics",
+      "name": "Comics",
+      "artworkLabel": "COMICS",
+      "basis": "DC Batman comics",
+      "mediaTypes": [
+        "movie"
+      ],
+      "landscape": {
+        "path": "assets/collection_covers/based_on/comics/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/comics/landscape.webp",
+        "sha256": "6211576be43a5689c9cd0a4413e4ffde4300861a72f26ca35ef50bbb104e0a85",
+        "sourceSha256": "e5d8bdf0d6eefaa1379205d381ce8d9db35af7e49885254f5db531ced40f4257",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 115982,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "titleLogo": {
+        "path": "assets/collection_covers/based_on/comics/title-logo.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/comics/title-logo.webp",
+        "sha256": "486837c0b9aaa007f650c2325fc650ab191296fe65cebd4cdee9c2cbcd78fa4a",
+        "sourceSha256": "f74caa5d01043fd4a09a0bc5bfadde2fb063c8680575346cc09dc5e5bdcd2dd7",
+        "format": "webp",
+        "width": 1863,
+        "height": 673,
+        "bytes": 7176,
+        "hasAlpha": true,
+        "encoding": {
+          "method": "lossless-webp",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "hero": {
+        "path": "assets/collection_covers/based_on/comics/hero.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/comics/hero.webp",
+        "sha256": "76e5ff99a857a9e0be6b1c0bef0585b44a333893849ad102ca6b608648164848",
+        "sourceSha256": "9c66c0884c49c1c84d7958adb9f348680665e822ce6dd732a8aa01b14ae19d2c",
+        "format": "webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 130254,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "focus": {
+        "path": "assets/collection_covers/based_on/comics/focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/comics/focus.webp",
+        "sha256": "35e6cbae9410b811cc72ee04467d4c54f4adf8ae662548a55d11c6240cab0924",
+        "sourceSha256": "41d6487f304bacd9fdf424dce0b1a55c2f34f3a33ce4b0df7396641620650041",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 117102,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "6211576be43a5689c9cd0a4413e4ffde4300861a72f26ca35ef50bbb104e0a85"
+      },
+      "artworkSources": {
+        "cover": {
+          "key": "movie:155",
+          "tmdbId": 155,
+          "title": "The Dark Knight",
+          "artworkPath": "9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+          "sha256": "d217714e70a9e863e12d12efad059996d6900c130d2d2a56f925aa7bb05dfcce",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": true
+        },
+        "hero": {
+          "key": "movie:155",
+          "tmdbId": 155,
+          "title": "The Dark Knight",
+          "artworkPath": "cfT29Im5VDvjE0RpyKOSdCKZal7.jpg",
+          "sha256": "12b0facceeab0e4f587d9031efc9dca17177f88568a918d6499423be14655dba",
+          "width": 3697,
+          "height": 2080,
+          "horizontalMirror": true
+        }
+      }
+    },
+    "true-stories": {
+      "stableKey": "based_on:true-stories",
+      "name": "True Stories",
+      "artworkLabel": "TRUE STORIES",
+      "basis": "Apollo 13 mission and Lost Moon memoir",
+      "mediaTypes": [
+        "movie"
+      ],
+      "landscape": {
+        "path": "assets/collection_covers/based_on/true-stories/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/true-stories/landscape.webp",
+        "sha256": "b9ec5828ca0d9b961549ef17e1257267d7f75073a9ea65be463e16015c50418e",
+        "sourceSha256": "b3576f97a73fa137b94229610ae38f789cfc34281e8cb3d32e2da643d85dc9ec",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 94072,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "titleLogo": {
+        "path": "assets/collection_covers/based_on/true-stories/title-logo.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/true-stories/title-logo.webp",
+        "sha256": "7714a772cf215434b113d720bbcb805972bf18c72f0bf30b8240b6f266173eef",
+        "sourceSha256": "1d5337d55fb9caee2d759b7c4994563c81cdad12aee9644b4ee713045a64c674",
+        "format": "webp",
+        "width": 1863,
+        "height": 673,
+        "bytes": 15144,
+        "hasAlpha": true,
+        "encoding": {
+          "method": "lossless-webp",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "hero": {
+        "path": "assets/collection_covers/based_on/true-stories/hero.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/true-stories/hero.webp",
+        "sha256": "48e4f5835a7163baefbdb00310de1d6be512459cf7f4ce25c540fe2d272b3cc7",
+        "sourceSha256": "9c7a1ad277597667026249d9901d308d0e2416470e560a41e4bfd211c2f99a89",
+        "format": "webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 59520,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 72,
+          "effort": 6
+        }
+      },
+      "focus": {
+        "path": "assets/collection_covers/based_on/true-stories/focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/true-stories/focus.webp",
+        "sha256": "7ccb91ccb7cbedc237382ee4a98281e0594a8d3aa4df68f25fec38a5a49cc408",
+        "sourceSha256": "9ebfa044b686ea697775e03d4e32de5d5225df1b64082e0b988b32394aa1957a",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 157462,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "b9ec5828ca0d9b961549ef17e1257267d7f75073a9ea65be463e16015c50418e"
+      },
+      "artworkSources": {
+        "cover": {
+          "key": "movie:568",
+          "tmdbId": 568,
+          "title": "Apollo 13",
+          "artworkPath": "pcSjQftPIflB8pSy0g41oSktp6N.jpg",
+          "sha256": "752b3d58ab4d1a1ffb33b187c47a719d1f36eb86bcedb1f0b3664e68d7d42469",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false
+        },
+        "hero": {
+          "key": "movie:568",
+          "tmdbId": 568,
+          "title": "Apollo 13",
+          "artworkPath": "n0FDJI9c0uWiZwm8wgXVjaMBn96.jpg",
+          "sha256": "ac5e59e371ea2a695718a98cd695b8bf91a8be420ca90a4afcd71f87aaac3bb6",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": true
+        }
+      }
+    },
+    "mythology": {
+      "stableKey": "based_on:mythology",
+      "name": "Myths & Legends",
+      "artworkLabel": "MYTHS & LEGENDS",
+      "basis": "Greek myth of Perseus",
+      "mediaTypes": [
+        "movie"
+      ],
+      "landscape": {
+        "path": "assets/collection_covers/based_on/mythology/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/mythology/landscape.webp",
+        "sha256": "054898cac9fb3dcd78223e0d2a535284f0198258b53cc397734fe67fa251cd16",
+        "sourceSha256": "44dbea43fbc9753af30d9ff516f36b4755aed737f406b09327b8beeebb6676c4",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 36796,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "titleLogo": {
+        "path": "assets/collection_covers/based_on/mythology/title-logo.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/mythology/title-logo.webp",
+        "sha256": "a31f765dfecef59a0a327d687d57573d28e96f75ebaa7639101c1a9d694d437f",
+        "sourceSha256": "e6d6e5edd342b1339f5eb3920cc08b21ee2433615b7a1d6eb5799d9fdf35b2f0",
+        "format": "webp",
+        "width": 1863,
+        "height": 673,
+        "bytes": 17568,
+        "hasAlpha": true,
+        "encoding": {
+          "method": "lossless-webp",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "hero": {
+        "path": "assets/collection_covers/based_on/mythology/hero.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/mythology/hero.webp",
+        "sha256": "a75c2cf94126eaa6221b7e8fe44ce0b553d6813d4765d7ebe6252fe25c640c27",
+        "sourceSha256": "38fb50f8d689c2dc77831f2bfaba1555ee849c26852c9da1da27b2b25e4c0720",
+        "format": "webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 701128,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "focus": {
+        "path": "assets/collection_covers/based_on/mythology/focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/mythology/focus.webp",
+        "sha256": "56ba69069245a9169e52ed8725f5d4bbe039e9578ea20bd06cc80399843565df",
+        "sourceSha256": "5cd5af6f6eb383830d175307fd9cc0ba4e7a7ec0b99dc5abdea44aa8e15c1143",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 42900,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "054898cac9fb3dcd78223e0d2a535284f0198258b53cc397734fe67fa251cd16"
+      },
+      "artworkSources": {
+        "cover": {
+          "key": "movie:18823",
+          "tmdbId": 18823,
+          "title": "Clash of the Titans",
+          "artworkPath": "h7Bk9yEIKhyYo96EuTUki1oJE1R.jpg",
+          "sha256": "f5e7b60592e93e1233462e51bf1f2491ddec7bdfc58b3c4f6069d85aeac6251b",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false
+        },
+        "hero": {
+          "key": "movie:18823",
+          "tmdbId": 18823,
+          "title": "Clash of the Titans",
+          "artworkPath": "8nlIP8REpkLLW6vU2sX2Z5SRt7s.jpg",
+          "sha256": "6813854d25830bbfd4f8a50d12dd940ce0d954c6a978bfdea013c44f5caffc06",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false
+        }
+      }
+    },
+    "history": {
+      "stableKey": "based_on:history",
+      "name": "History",
+      "artworkLabel": "HISTORY",
+      "basis": "The 1940 Dunkirk evacuation",
+      "mediaTypes": [
+        "movie"
+      ],
+      "landscape": {
+        "path": "assets/collection_covers/based_on/history/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/history/landscape.webp",
+        "sha256": "01b5a6c84e7117b8ab610abc46d1591c320af0bb5d19a67e7916587202c5ede9",
+        "sourceSha256": "c374a8202438ca5b283c1a46012ce89b54d9b4d015851f32e1efdd19543f8f78",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 31032,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "titleLogo": {
+        "path": "assets/collection_covers/based_on/history/title-logo.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/history/title-logo.webp",
+        "sha256": "6d715a8f1270c47dee092d7fe8faaa3a98989f5f318a4644e1d246ea25870340",
+        "sourceSha256": "90ecedb12f779e5fcf547fc4c7e55b00e47a8b5ca4498dea6f1afb347a93c17e",
+        "format": "webp",
+        "width": 1863,
+        "height": 673,
+        "bytes": 15624,
+        "hasAlpha": true,
+        "encoding": {
+          "method": "lossless-webp",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "hero": {
+        "path": "assets/collection_covers/based_on/history/hero.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/history/hero.webp",
+        "sha256": "d6d5b283358490149834c298e8b7221eae3c66a154fde5df578128da567b00b9",
+        "sourceSha256": "691ec019fedb834484a430922928d1133344bf32a90ae266580fc011307691c6",
+        "format": "webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 830632,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp-high-quality",
+          "lossless": false,
+          "quality": 96,
+          "effort": 6
+        }
+      },
+      "focus": {
+        "path": "assets/collection_covers/based_on/history/focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/history/focus.webp",
+        "sha256": "0d1e5fcb0349f688cbdc15b27bc7ebb4d08d5b4e119e22f4864ea5b1dfead037",
+        "sourceSha256": "573dec021d046300cd7cfd45f866aad91a6bfe6b97a6cf583423d81281f9c36f",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 34742,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "01b5a6c84e7117b8ab610abc46d1591c320af0bb5d19a67e7916587202c5ede9"
+      },
+      "artworkSources": {
+        "cover": {
+          "key": "movie:374720",
+          "tmdbId": 374720,
+          "title": "Dunkirk",
+          "artworkPath": "eXYbyOx6GFvmpOJl6AS8QxXeIYE.jpg",
+          "sha256": "1e816e7ad8865ae009d0ad6e3ae9f00a29c3d80d76d3f89e743cb0d2985b5f1f",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false
+        },
+        "hero": {
+          "key": "movie:374720",
+          "tmdbId": 374720,
+          "title": "Dunkirk",
+          "artworkPath": "ddIkmH3TpR6XSc47jj0BrGK5Rbz.jpg",
+          "sha256": "01b328862629f18b2f2da19eda6249e8d54b19a8f5b703389ad02ac29d99154e",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false
+        }
+      }
+    },
+    "fairy-tales": {
+      "stableKey": "based_on:fairy-tales",
+      "name": "Fairy Tales",
+      "artworkLabel": "FAIRY TALES",
+      "basis": "The Cinderella fairy tale",
+      "mediaTypes": [
+        "movie"
+      ],
+      "landscape": {
+        "path": "assets/collection_covers/based_on/fairy-tales/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/fairy-tales/landscape.webp",
+        "sha256": "34847f738d06f60dd9ab2d75f4a788e8da1f1050db395fc7c08fc4705eace7a9",
+        "sourceSha256": "285f801857c49739185031e1668c489bff3eecdf8652adf0a460feeb85d126e9",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 34610,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "titleLogo": {
+        "path": "assets/collection_covers/based_on/fairy-tales/title-logo.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/fairy-tales/title-logo.webp",
+        "sha256": "506a4d6161c5c8636691d8e95606d8271886f2f5db79db64b4b5231618c71bf1",
+        "sourceSha256": "d22f687f870649bb013ba5afb708244ef762b9c5c72a941f4c317926712d337f",
+        "format": "webp",
+        "width": 1863,
+        "height": 673,
+        "bytes": 23942,
+        "hasAlpha": true,
+        "encoding": {
+          "method": "lossless-webp",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "hero": {
+        "path": "assets/collection_covers/based_on/fairy-tales/hero.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/fairy-tales/hero.webp",
+        "sha256": "9d887a5fdf28004d439d0f973666b72dccc96b55fd8c0055c9bb73fff88b064c",
+        "sourceSha256": "5f8102003255967307bcba8d338ebffda92c2a596e0be47c7da96d5718a5f7bc",
+        "format": "webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 1268038,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "focus": {
+        "path": "assets/collection_covers/based_on/fairy-tales/focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/fairy-tales/focus.webp",
+        "sha256": "5c8818ab5b7494b3d94c0b1c8597248d7e4f951daa239c9335454cfe1be4020c",
+        "sourceSha256": "b3abff604445bd9c69c076beca121b8e17d9cd5f41f5add41f94c84724aec85a",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 38988,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "34847f738d06f60dd9ab2d75f4a788e8da1f1050db395fc7c08fc4705eace7a9"
+      },
+      "artworkSources": {
+        "cover": {
+          "key": "movie:150689",
+          "tmdbId": 150689,
+          "title": "Cinderella",
+          "artworkPath": "q7vmCCmyiHnuKGMzHZlr0fD44b9.jpg",
+          "sha256": "e6453b96f61d56c2d689141b12b4a78e7adab1c5134b384922672e9a9c0c8b02",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false
+        },
+        "hero": {
+          "key": "movie:150689",
+          "tmdbId": 150689,
+          "title": "Cinderella",
+          "artworkPath": "80ul1ovw39xZUYvTLVjSRgzaNiL.jpg",
+          "sha256": "c1b03e409f7422744e99ba1c4e8810f715e7eb2610a8f3be6c116ead2f4647b9",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false
+        }
+      }
+    },
+    "stage-shows": {
+      "stableKey": "based_on:stage-shows",
+      "name": "Stage Shows",
+      "artworkLabel": "STAGE SHOWS",
+      "basis": "The Wicked stage musical",
+      "mediaTypes": [
+        "movie"
+      ],
+      "landscape": {
+        "path": "assets/collection_covers/based_on/stage-shows/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/stage-shows/landscape.webp",
+        "sha256": "33a6ea5eb210c33b5b524ed117549d4446d925e8e006f192fdc502324a36ae79",
+        "sourceSha256": "e63a35fd41dfbc350ab995fb0624bbe2e59c6b133a974ac0e5aad956e0e9d6ac",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 24224,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 72,
+          "effort": 6
+        }
+      },
+      "titleLogo": {
+        "path": "assets/collection_covers/based_on/stage-shows/title-logo.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/stage-shows/title-logo.webp",
+        "sha256": "2f00dbbc6f9b1e46276203ee5cdfb4049d578cf8dd876ea96e6271ebe9a46de7",
+        "sourceSha256": "ece422f8f9b0b4ca3d09165e2f1536f2ad5815884163e7e33305a040a0b6f7d8",
+        "format": "webp",
+        "width": 1863,
+        "height": 673,
+        "bytes": 20306,
+        "hasAlpha": true,
+        "encoding": {
+          "method": "lossless-webp",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "hero": {
+        "path": "assets/collection_covers/based_on/stage-shows/hero.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/stage-shows/hero.webp",
+        "sha256": "1743d0f809666cfbbb66471aad375c09f5f37fa036b71661259d6aa0d3901dc6",
+        "sourceSha256": "cfa2bbc84a08d6c94c00028006e430a7f8fdac859797a4da5e41cb635133f7b8",
+        "format": "webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 332732,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "focus": {
+        "path": "assets/collection_covers/based_on/stage-shows/focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/stage-shows/focus.webp",
+        "sha256": "7a4cd0af3d20c7f346ff3a55e3d7be410fc8b07ac5b6d34aef541e130bc89928",
+        "sourceSha256": "95dcbccfec13b21b586bfc203f58dd2b28ffdad62a8ddb98918183b6c0355fad",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 29364,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 72,
+          "effort": 6
+        },
+        "baseCoverSha256": "33a6ea5eb210c33b5b524ed117549d4446d925e8e006f192fdc502324a36ae79"
+      },
+      "artworkSources": {
+        "cover": {
+          "key": "movie:402431",
+          "tmdbId": 402431,
+          "title": "Wicked",
+          "artworkPath": "jTOeWjamUKGxWVUO1TMZXqQUarw.jpg",
+          "sha256": "1f91da5d26aaf9c1d9b7da9cc818bfe6c469a9bb0ccbf94b63357fdd8bf66509",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false
+        },
+        "hero": {
+          "key": "movie:402431",
+          "tmdbId": 402431,
+          "title": "Wicked",
+          "artworkPath": "3iD9yEsxKqliZfPck1aoTVC6K53.jpg",
+          "sha256": "787e6852372dc504cc5785f812012ddcb94de408a70df5a7d9ec267c5b6660a7",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false
+        }
+      }
+    },
+    "toys-and-games": {
+      "stableKey": "based_on:toys-and-games",
+      "name": "Toys & Games",
+      "artworkLabel": "TOYS & GAMES",
+      "basis": "Mattel Barbie toys",
+      "mediaTypes": [
+        "movie"
+      ],
+      "landscape": {
+        "path": "assets/collection_covers/based_on/toys-and-games/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/toys-and-games/landscape.webp",
+        "sha256": "918b405a92d731d9114ce4a4e5e444f235874e2e487fb4e77b5ca7301483bf17",
+        "sourceSha256": "17491664fddc7a97186fd456bf74f2200fb6c1496d010db5de1154f54dbec918",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 29562,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 72,
+          "effort": 6
+        }
+      },
+      "titleLogo": {
+        "path": "assets/collection_covers/based_on/toys-and-games/title-logo.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/toys-and-games/title-logo.webp",
+        "sha256": "2577f069785e71c6033f146fb2e22285f3596037eda79466782f284c20c24167",
+        "sourceSha256": "6ccc731999c0b0aa1f75d5382f4461fe3ecbd05ff2b56a2b9d8344d6cfbfbea8",
+        "format": "webp",
+        "width": 1863,
+        "height": 673,
+        "bytes": 17520,
+        "hasAlpha": true,
+        "encoding": {
+          "method": "lossless-webp",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "hero": {
+        "path": "assets/collection_covers/based_on/toys-and-games/hero.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/toys-and-games/hero.webp",
+        "sha256": "1905341388462109c18106af75fbc51997674d10b12b7520cdf4b17d84cabe6e",
+        "sourceSha256": "daa97a535009b7d0b62f3d12b3ae0bf0d696f31c74d037eeee107736547eb9ca",
+        "format": "webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 578724,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "focus": {
+        "path": "assets/collection_covers/based_on/toys-and-games/focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/toys-and-games/focus.webp",
+        "sha256": "d6cbcb46783fcae1b3a452697a8a459982486309e7dcd751b8bda7a65f7293ee",
+        "sourceSha256": "63e5bc82a094efa225df8abc9fd3d126882314eebf84fe37e597d5740592dd4b",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 41378,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "918b405a92d731d9114ce4a4e5e444f235874e2e487fb4e77b5ca7301483bf17"
+      },
+      "artworkSources": {
+        "cover": {
+          "key": "movie:346698",
+          "tmdbId": 346698,
+          "title": "Barbie",
+          "artworkPath": "ctMserH8g2SeOAnCw5gFjdQF8mo.jpg",
+          "sha256": "a148c0f15012625e485465c8ff80df50b887678d413a9ed6b565355cc53eaa5d",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false
+        },
+        "hero": {
+          "key": "movie:346698",
+          "tmdbId": 346698,
+          "title": "Barbie",
+          "artworkPath": "tTfnd2VrlaZJSBD9HUbtSF3CqPJ.jpg",
+          "sha256": "39046f52591cf33b3d6445cea716b9cbf2292f5c80b9ba2add79a8556937422f",
+          "width": 3680,
+          "height": 2070,
+          "horizontalMirror": false
+        }
+      }
+    },
+    "tv-shows": {
+      "stableKey": "based_on:tv-shows",
+      "name": "TV Shows",
+      "artworkLabel": "TV SHOWS",
+      "basis": "The Mission: Impossible television series",
+      "mediaTypes": [
+        "movie"
+      ],
+      "landscape": {
+        "path": "assets/collection_covers/based_on/tv-shows/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/tv-shows/landscape.webp",
+        "sha256": "a39096666618fc6fa5cce744a169610c57b37fd84f42d4a025edef3225df4a66",
+        "sourceSha256": "3ba94ee61d3ec1742f37090a35f908d1381a89d4f4892d3d3fd6a89bf8e75b3a",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 131832,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "titleLogo": {
+        "path": "assets/collection_covers/based_on/tv-shows/title-logo.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/tv-shows/title-logo.webp",
+        "sha256": "76e22f4f1c2b45ece12516da55d3e3168fefd6b7c83ba0bf6ed35a2db96be4e2",
+        "sourceSha256": "3928c2952aaffaea2169a25a5e51a89fe03fcd9ef3599f22908c7337af737d2b",
+        "format": "webp",
+        "width": 1863,
+        "height": 673,
+        "bytes": 18066,
+        "hasAlpha": true,
+        "encoding": {
+          "method": "lossless-webp",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "hero": {
+        "path": "assets/collection_covers/based_on/tv-shows/hero.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/tv-shows/hero.webp",
+        "sha256": "f7a39341049b0a7024f4db9c44588ca62287d187ac8101bcbbace69caf056ddd",
+        "sourceSha256": "f50308ab7a04836dd28b70012eb1ffbb13109f264966f9daaf7f36094c88dedc",
+        "format": "webp",
+        "width": 2560,
+        "height": 1440,
+        "bytes": 474380,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "focus": {
+        "path": "assets/collection_covers/based_on/tv-shows/focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/tv-shows/focus.webp",
+        "sha256": "a1536997bc9e12a7e732050fce4840281d6dadfb01254b1422e4ff65cb8a83d0",
+        "sourceSha256": "73d5be83e2172629258ad65ae4227b14cd54718eff023d81b618b132c1350478",
+        "format": "webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 192318,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "a39096666618fc6fa5cce744a169610c57b37fd84f42d4a025edef3225df4a66"
+      },
+      "artworkSources": {
+        "cover": {
+          "key": "movie:954",
+          "tmdbId": 954,
+          "title": "Mission: Impossible",
+          "artworkPath": "jnR697dbIYn0erHOQdSFNhHhb1i.jpg",
+          "sha256": "d2d08dae581d18fca31fdf7c61e21fe56ea07a7fd0dd4738a204dfe276b278a7",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false
+        },
+        "hero": {
+          "key": "movie:954",
+          "tmdbId": 954,
+          "title": "Mission: Impossible",
+          "artworkPath": "pbaAkR1FDvgndTVFgGRIzf9o49r.jpg",
+          "sha256": "ce8eb69529c7e6b59cfc4391e455fc00f659ca1adb554743d2c8ceba428d7d34",
+          "width": 3151,
+          "height": 1773,
+          "horizontalMirror": false
+        }
+      }
+    }
+  },
+  "retiredLegacyFiles": [
+    {
+      "path": "assets/collection_covers/based_on/Books.jpg",
+      "sha256": "5c7162e9d438b48bb3456938d4854e0c78573edff04e76e03a42975beb21abbd",
+      "bytes": 180338
+    },
+    {
+      "path": "assets/collection_covers/based_on/Comics.jpg",
+      "sha256": "237a84386713f2c207629a3ea4db30138c5e23528e123863ecfeac6ed2e76248",
+      "bytes": 228341
+    },
+    {
+      "path": "assets/collection_covers/based_on/Mythology.jpg",
+      "sha256": "3746525846d81bf7d8fcfe61c8861e60b48e539df5f10bb2cacea1b78c0a8e6b",
+      "bytes": 184684
+    },
+    {
+      "path": "assets/collection_covers/based_on/True Stories.jpg",
+      "sha256": "50a177bbf26773c49e7be1846d1c541667a22d6e4d7ebdc4f7c798e1ebebad79",
+      "bytes": 177318
+    },
+    {
+      "path": "assets/collection_covers/based_on/Video Games.jpg",
+      "sha256": "98be6dd5bb0c12614bd4a79ae294a02686e06931bc18a03ceb7c6ad87a6b6242",
+      "bytes": 220173
+    }
+  ],
+  "delivery": {
+    "format": "webp",
+    "transparentTitleLogos": "lossless",
+    "photoCompression": "Perceptual quality checks and visual review",
+    "sourceHashMeaning": "Asset sourceSha256 is the lossless render master hash; artworkSources records the original film image hash",
+    "legacyPolicy": "Five legacy JPGs retired; new category paths replace them"
+  }
+}

@@ -1,0 +1,691 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nuvio approved Based on artwork manifest v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kind",
+    "category",
+    "assetBaseUrl",
+    "approval",
+    "counts",
+    "fingerprint",
+    "focusPolicy",
+    "heroPolicy",
+    "sets",
+    "retiredLegacyFiles",
+    "delivery"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "kind": {
+      "const": "based-on-artwork"
+    },
+    "category": {
+      "const": "based_on"
+    },
+    "assetBaseUrl": {
+      "const": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/"
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "recordedAt",
+        "sourcePackage",
+        "reviewedManifestSha256",
+        "reviewedBindingsSha256",
+        "scope",
+        "nuvioPreview"
+      ],
+      "properties": {
+        "status": {
+          "const": "owner-approved"
+        },
+        "recordedAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourcePackage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewedManifestSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "reviewedBindingsSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nuvioPreview": {
+          "enum": [
+            "pending",
+            "reviewed"
+          ]
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sets",
+        "assets",
+        "totalImageFiles",
+        "totalImageBytes"
+      ],
+      "properties": {
+        "sets": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "assets": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "totalImageFiles": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "totalImageBytes": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "focusPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy",
+        "base",
+        "normalLetterFillPreserved"
+      ],
+      "properties": {
+        "strategy": {
+          "const": "stronger-text-outline"
+        },
+        "base": {
+          "const": "landscape"
+        },
+        "normalLetterFillPreserved": {
+          "const": true
+        }
+      }
+    },
+    "heroPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy",
+        "differentSourceFromCover",
+        "titleLogoBakedIn",
+        "addedFade"
+      ],
+      "properties": {
+        "strategy": {
+          "const": "single-related-film"
+        },
+        "differentSourceFromCover": {
+          "const": true
+        },
+        "titleLogoBakedIn": {
+          "const": false
+        },
+        "addedFade": {
+          "const": false
+        }
+      }
+    },
+    "sets": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[a-z-]+$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/set"
+      }
+    },
+    "retiredLegacyFiles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "bytes"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "pattern": "^assets/collection_covers/based_on/[^/]+\\.jpg$"
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          }
+        }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "transparentTitleLogos",
+        "photoCompression",
+        "sourceHashMeaning",
+        "legacyPolicy"
+      ],
+      "properties": {
+        "format": {
+          "const": "webp"
+        },
+        "transparentTitleLogos": {
+          "const": "lossless"
+        },
+        "photoCompression": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceHashMeaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "legacyPolicy": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "set": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "stableKey",
+        "name",
+        "artworkLabel",
+        "basis",
+        "mediaTypes",
+        "landscape",
+        "focus",
+        "titleLogo",
+        "hero",
+        "artworkSources"
+      ],
+      "properties": {
+        "stableKey": {
+          "type": "string",
+          "pattern": "^based_on:[a-z-]+$"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artworkLabel": {
+          "type": "string",
+          "minLength": 1
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mediaTypes": {
+          "const": [
+            "movie"
+          ]
+        },
+        "landscape": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "hasAlpha",
+            "encoding"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/based_on/[a-z-]+/landscape\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/[a-z-]+/landscape\\.webp$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 1200
+            },
+            "height": {
+              "const": 675
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "hasAlpha": {
+              "const": false
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lossless": {
+                  "type": "boolean"
+                },
+                "quality": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            }
+          }
+        },
+        "focus": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "hasAlpha",
+            "encoding",
+            "baseCoverSha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/based_on/[a-z-]+/focus\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/[a-z-]+/focus\\.webp$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 1200
+            },
+            "height": {
+              "const": 675
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "hasAlpha": {
+              "const": false
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lossless": {
+                  "type": "boolean"
+                },
+                "quality": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            },
+            "baseCoverSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        "titleLogo": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "hasAlpha",
+            "encoding"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/based_on/[a-z-]+/title-logo\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/[a-z-]+/title-logo\\.webp$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 1863
+            },
+            "height": {
+              "const": 673
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "hasAlpha": {
+              "const": true
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lossless": {
+                  "type": "boolean"
+                },
+                "quality": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            }
+          }
+        },
+        "hero": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "hasAlpha",
+            "encoding"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/based_on/[a-z-]+/hero\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/[a-z-]+/hero\\.webp$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 2560
+            },
+            "height": {
+              "const": 1440
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "hasAlpha": {
+              "const": false
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lossless": {
+                  "type": "boolean"
+                },
+                "quality": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            }
+          }
+        },
+        "artworkSources": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "cover",
+            "hero"
+          ],
+          "properties": {
+            "cover": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "key",
+                "tmdbId",
+                "title",
+                "artworkPath",
+                "sha256",
+                "width",
+                "height",
+                "horizontalMirror"
+              ],
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "pattern": "^movie:[0-9]+$"
+                },
+                "tmdbId": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "artworkPath": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9]+\\.(jpg|png|webp)$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "width": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "height": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "horizontalMirror": {
+                  "type": "boolean"
+                }
+              }
+            },
+            "hero": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "key",
+                "tmdbId",
+                "title",
+                "artworkPath",
+                "sha256",
+                "width",
+                "height",
+                "horizontalMirror"
+              ],
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "pattern": "^movie:[0-9]+$"
+                },
+                "tmdbId": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "artworkPath": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9]+\\.(jpg|png|webp)$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "width": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "height": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "horizontalMirror": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
