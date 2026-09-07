@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Nuvio approved Decades artwork manifest v1",
+  "title": "Nuvio approved Decades artwork manifest v2",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -13,11 +13,14 @@
     "fingerprint",
     "decades",
     "rootCovers",
-    "delivery"
+    "delivery",
+    "formatExtensionApproval",
+    "posterSquarePolicy",
+    "formatExtensionDelivery"
   ],
   "properties": {
     "schemaVersion": {
-      "const": 1
+      "const": 2
     },
     "kind": {
       "const": "decade-artwork"
@@ -111,7 +114,8 @@
         "sets",
         "assets",
         "parentCovers",
-        "totalImageFiles"
+        "totalImageFiles",
+        "totalImageBytes"
       ],
       "properties": {
         "decades": {
@@ -121,13 +125,17 @@
           "const": 24
         },
         "assets": {
-          "const": 96
+          "const": 192
         },
         "parentCovers": {
           "const": 2
         },
         "totalImageFiles": {
-          "const": 98
+          "const": 194
+        },
+        "totalImageBytes": {
+          "type": "integer",
+          "minimum": 1
         }
       }
     },
@@ -234,6 +242,131 @@
           "type": "number"
         }
       }
+    },
+    "formatExtensionApproval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "recordedAt",
+        "sourcePackage",
+        "reviewedBindingsSha256",
+        "scope",
+        "nuvioPreview"
+      ],
+      "properties": {
+        "status": {
+          "const": "owner-approved"
+        },
+        "recordedAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourcePackage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nuvioPreview": {
+          "enum": [
+            "pending",
+            "reviewed"
+          ]
+        },
+        "reviewedBindingsSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "posterSquarePolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "imagesPerCover",
+        "year",
+        "moviesCaption",
+        "seriesCaption",
+        "mixedCaption",
+        "focus",
+        "matchingFormats",
+        "mixed"
+      ],
+      "properties": {
+        "imagesPerCover": {
+          "const": 1
+        },
+        "year": {
+          "type": "string",
+          "minLength": 1
+        },
+        "moviesCaption": {
+          "const": "A DECADE OF CINEMA"
+        },
+        "seriesCaption": {
+          "const": "A DECADE OF TV"
+        },
+        "mixedCaption": {
+          "type": "null"
+        },
+        "focus": {
+          "type": "string",
+          "minLength": 1
+        },
+        "matchingFormats": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mixed": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "formatExtensionDelivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "reviewedImagesPreserved",
+        "addedAssets",
+        "addedImageBytes",
+        "quality",
+        "effort",
+        "smartSubsample",
+        "legacyDeliveryScope"
+      ],
+      "properties": {
+        "format": {
+          "const": "webp"
+        },
+        "reviewedImagesPreserved": {
+          "const": true
+        },
+        "addedAssets": {
+          "const": 96
+        },
+        "addedImageBytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quality": {
+          "const": 82
+        },
+        "effort": {
+          "const": 6
+        },
+        "smartSubsample": {
+          "const": true
+        },
+        "legacyDeliveryScope": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   },
   "$defs": {
@@ -300,7 +433,11 @@
         "focus",
         "titleLogo",
         "hero",
-        "artworkSources"
+        "artworkSources",
+        "poster",
+        "posterFocus",
+        "square",
+        "squareFocus"
       ],
       "properties": {
         "stableKey": {
@@ -340,7 +477,9 @@
           "additionalProperties": false,
           "required": [
             "cover",
-            "hero"
+            "hero",
+            "poster",
+            "square"
           ],
           "properties": {
             "cover": {
@@ -358,8 +497,36 @@
               "items": {
                 "$ref": "#/$defs/source"
               }
+            },
+            "poster": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "$ref": "#/$defs/shapeSource"
+              }
+            },
+            "square": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 1,
+              "items": {
+                "$ref": "#/$defs/shapeSource"
+              }
             }
           }
+        },
+        "poster": {
+          "$ref": "#/$defs/poster"
+        },
+        "posterFocus": {
+          "$ref": "#/$defs/posterFocus"
+        },
+        "square": {
+          "$ref": "#/$defs/square"
+        },
+        "squareFocus": {
+          "$ref": "#/$defs/squareFocus"
         }
       }
     },
@@ -1040,6 +1207,418 @@
                 "pending",
                 "reviewed"
               ]
+            }
+          }
+        }
+      }
+    },
+    "poster": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "sourceSha256",
+        "encoding"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/decades/(1950s-earlier|1960s|1970s|1980s|1990s|2000s|2010s|2020s)/(movies|series|mixed)/poster\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/(1950s-earlier|1960s|1970s|1980s|1990s|2000s|2010s|2020s)/(movies|series|mixed)/poster\\.webp$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 800
+        },
+        "height": {
+          "const": 1200
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort",
+            "smartSubsample"
+          ],
+          "properties": {
+            "method": {
+              "const": "retained-approved-webp"
+            },
+            "lossless": {
+              "const": false
+            },
+            "quality": {
+              "const": 82
+            },
+            "effort": {
+              "const": 6
+            },
+            "smartSubsample": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "posterFocus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "sourceSha256",
+        "encoding"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/decades/(1950s-earlier|1960s|1970s|1980s|1990s|2000s|2010s|2020s)/(movies|series|mixed)/poster-focus\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/(1950s-earlier|1960s|1970s|1980s|1990s|2000s|2010s|2020s)/(movies|series|mixed)/poster-focus\\.webp$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 800
+        },
+        "height": {
+          "const": 1200
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort",
+            "smartSubsample"
+          ],
+          "properties": {
+            "method": {
+              "const": "retained-approved-webp"
+            },
+            "lossless": {
+              "const": false
+            },
+            "quality": {
+              "const": 82
+            },
+            "effort": {
+              "const": 6
+            },
+            "smartSubsample": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "square": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "sourceSha256",
+        "encoding"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/decades/(1950s-earlier|1960s|1970s|1980s|1990s|2000s|2010s|2020s)/(movies|series|mixed)/square\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/(1950s-earlier|1960s|1970s|1980s|1990s|2000s|2010s|2020s)/(movies|series|mixed)/square\\.webp$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 800
+        },
+        "height": {
+          "const": 800
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort",
+            "smartSubsample"
+          ],
+          "properties": {
+            "method": {
+              "const": "retained-approved-webp"
+            },
+            "lossless": {
+              "const": false
+            },
+            "quality": {
+              "const": 82
+            },
+            "effort": {
+              "const": 6
+            },
+            "smartSubsample": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "squareFocus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "sourceSha256",
+        "encoding"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/decades/(1950s-earlier|1960s|1970s|1980s|1990s|2000s|2010s|2020s)/(movies|series|mixed)/square-focus\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/(1950s-earlier|1960s|1970s|1980s|1990s|2000s|2010s|2020s)/(movies|series|mixed)/square-focus\\.webp$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 800
+        },
+        "height": {
+          "const": 800
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort",
+            "smartSubsample"
+          ],
+          "properties": {
+            "method": {
+              "const": "retained-approved-webp"
+            },
+            "lossless": {
+              "const": false
+            },
+            "quality": {
+              "const": 82
+            },
+            "effort": {
+              "const": 6
+            },
+            "smartSubsample": {
+              "const": true
+            }
+          }
+        }
+      }
+    },
+    "shapeSource": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "key",
+        "title",
+        "year",
+        "artworkPath",
+        "sha256",
+        "crop",
+        "sourceDimensions",
+        "treatment"
+      ],
+      "properties": {
+        "key": {
+          "type": "string",
+          "pattern": "^(movie|tv):[1-9][0-9]*$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 1
+        },
+        "year": {
+          "type": "integer"
+        },
+        "releaseDate": {
+          "type": "string",
+          "minLength": 1
+        },
+        "artworkPath": {
+          "type": "string",
+          "pattern": "^/[A-Za-z0-9]+\\.(jpg|png)$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "crop": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "focalPoint": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "number",
+            "minimum": 0
+          },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "treatment": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "horizontalMirror",
+            "shiftRightFraction",
+            "saturation",
+            "brightness"
+          ],
+          "properties": {
+            "horizontalMirror": {
+              "const": false
+            },
+            "shiftRightFraction": {
+              "const": 0
+            },
+            "saturation": {
+              "const": 0.78
+            },
+            "brightness": {
+              "const": 1.02
+            }
+          }
+        },
+        "fadeStops": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          }
+        },
+        "sourceDimensions": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "width",
+            "height"
+          ],
+          "properties": {
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
             }
           }
         }

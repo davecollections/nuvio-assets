@@ -1,34 +1,41 @@
 # Decades artwork
 
-Eight decades, three content types and exactly four WebP assets per set: landscape.webp (1200 x 675), focus.webp (1200 x 675), title-logo.webp (1863 x 673, transparent) and hero.webp (2560 x 1440). The two parent covers remain separate: Movies by Decade and Series by Decade use eight chronological real-title panels at 1695 × 928.
+Eight decades, three content variants and eight WebP assets per set. The two parent covers remain separate root images at 1695 x 928. Manifest schemaVersion 2 adds poster and square cover/focus pairs and preserves all original files and URLs.
 
-Heroes use one defining title per decade. Mixed uses the matching movie hero under its own path. Hero images contain no added year, title logo or caption. The white cinematic title logo is separate; covers and focus retain their approved silver glass styling.
+| Manifest field | Filename | Dimensions | Role |
+| --- | --- | --- | --- |
+| landscape | landscape.webp | 1200 x 675 | Landscape cover |
+| focus | focus.webp | 1200 x 675 | Landscape focus |
+| poster | poster.webp | 800 x 1200 | Poster cover |
+| posterFocus | poster-focus.webp | 800 x 1200 | Poster focus |
+| square | square.webp | 800 x 800 | Square cover |
+| squareFocus | square-focus.webp | 800 x 800 | Square focus |
+| titleLogo | title-logo.webp | 1863 x 673 | Transparent white title |
+| hero | hero.webp | 2560 x 1440 | Hero background |
 
-The 1950s-earlier folder includes releases through 1959; its artwork displays 1950s. Series selection uses first-air year. heroYears lists the distinct source years represented in each group.
+Use manifest.decades[decade][kind][role].url, where kind is movies, series or mixed. The original focus field remains the landscape focus. The same hero and title logo serve all three cover shapes. These role names match Discover's format extension. The category manifest remains separate from the company/network runtime lookup; a general Builder category reader is not supplied by this repository change.
 
-| Decade | Type | Hero |
-|---|---|---|
-| 1950s-earlier | movies | Singin' in the Rain |
-| 1950s-earlier | series | I Love Lucy |
-| 1960s | movies | 2001: A Space Odyssey |
-| 1960s | series | Star Trek |
-| 1970s | movies | Star Wars |
-| 1970s | series | M*A*S*H |
-| 1980s | movies | Back to the Future |
-| 1980s | series | The A-Team |
-| 1990s | movies | Jurassic Park |
-| 1990s | series | Friends |
-| 2000s | movies | The Lord of the Rings: The Fellowship of the Ring |
-| 2000s | series | Lost |
-| 2010s | movies | Avengers: Endgame |
-| 2010s | series | Game of Thrones |
-| 2020s | movies | Spider-Man: Brand New Day |
-| 2020s | series | Severance |
+The 1950s-earlier identity includes releases through 1959 and displays 1950s on its artwork. Series selections use first-air year. heroYears continues to describe existing hero sources.
 
-Use manifest.decades[decade][kind].landscape.url, focus.url, titleLogo.url and hero.url. For changed artwork at stable paths, append ?v= followed by the first 12 characters of that asset sha256. The manifest is separate from the company/network/people runtime lookup.
+Landscape covers retain their five-image compositions. Posters and squares use one real artwork image, a glassy silver year, and a spaced A DECADE OF CINEMA or A DECADE OF TV caption. Mixed uses the matching Movies artwork without the caption. Focus blurs the matching image and caption while keeping the year sharp.
 
-The manifest fingerprint is SHA-256 of UTF-8 JSON.stringify({decades: manifest.decades, rootCovers: manifest.rootCovers}). Approval records bind stable keys, targets and exact reviewed hashes. Changes require a reviewed release; no automatic refresh is configured.
+| Decade | Movie poster/square title | Movie hero | Series title |
+| --- | --- | --- | --- |
+| 1950s-earlier | Singin' in the Rain | Singin' in the Rain | I Love Lucy |
+| 1960s | 2001: A Space Odyssey | 2001: A Space Odyssey | Star Trek |
+| 1970s | Star Wars | Star Wars | M*A*S*H |
+| 1980s | Back to the Future | Back to the Future | The A-Team |
+| 1990s | Terminator 2: Judgment Day | Jurassic Park | Friends |
+| 2000s | The Lord of the Rings: The Fellowship of the Ring | The Lord of the Rings: The Fellowship of the Ring | Lost |
+| 2010s | Avengers: Endgame | Avengers: Endgame | Game of Thrones |
+| 2020s | Spider-Man: Brand New Day | Spider-Man: Brand New Day | Severance |
 
-The 96 set images total 11.31 MB. All dimensions are retained; all title logos are byte-identical to the previous release. Photos use per-image WebP quality checks against lossless masters. Original sources and render evidence remain in ignored staging. Some heroes are mirrored or shifted to leave room for the Nuvio title; transformations are recorded in artworkSources.
+Each shape can have its own source and crop. The 1970s Movies/Mixed poster uses a darker Star Wars image than the square. artworkSources.cover and artworkSources.hero retain their original records; artworkSources.poster and artworkSources.square describe the new cover/focus pairs. The asset sourceSha256 identifies its lossless master; each artwork source sha256 identifies the original source image.
 
-Source images and metadata: [TMDB](https://www.themoviedb.org/). This product uses the TMDB API but is not endorsed or certified by TMDB. Artwork belongs to its respective rights holders. All 98 current artwork images use real source artwork; the two earlier parent covers were replaced with owner-approved real-title panel designs. No AI image generation was used for these replacements.
+All 96 new images are copied exactly from the reviewed WebPs, without re-encoding: quality 82, effort 6, smart subsampling. They total 4,497,940 bytes. The 192 set images total 15,808,782 bytes; including the two parent covers, all 194 images total 16,024,420 bytes. counts contains current totals. The original delivery object retains the original four-role optimisation history; formatExtensionDelivery describes the added shapes.
+
+The manifest fingerprint is SHA-256 of UTF-8 JSON.stringify({decades: manifest.decades, rootCovers: manifest.rootCovers}). formatExtensionApproval records the approved new-shape release separately from the original approval. Original sources, masters and exact review bindings remain in ignored staging.
+
+Canonical URLs stay on /main/. A changed image has a new sha256; this metadata does not itself invalidate an image already cached by Nuvio. Versioned query URLs are not a guaranteed cache bypass. An immutable commit URL can identify exact release bytes for an intentional preview. No automatic artwork refresh is configured.
+
+Source images and metadata: [TMDB](https://www.themoviedb.org/). This product uses the TMDB API but is not endorsed or certified by TMDB. Artwork belongs to its respective rights holders. All images use real artwork; no AI image generation was used.
