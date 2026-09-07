@@ -13,7 +13,7 @@ The latest set-image release was published to main in commit 9e89b3b8ca9bfb95194
 - The user is deliberately leaving the existing imported collection and cache untouched to observe natural image refresh. Do not replace that import, clear its cache, or claim a refresh time as part of unrelated category work.
 - Both parent-cover replacements are published and live-hash verified; see the 2026-09-05 parent-cover section below. The small master category index and consistent category-manifest reader remain planned infrastructure work.
 
-- Current release: the owner approved all 96 v2 poster/square cover/focus files and authorised commit/push. The exact images and schemaVersion 2 manifest are installed. Git publication and live URL verification are the remaining steps; all 98 original artwork files and their URLs are preserved. See the 2026-09-07 format release below.
+- Current release: all 96 approved poster/square cover/focus files and the schemaVersion 2 manifest are published to main in commit 1d2b53407b434398b5acea57e7d06b2738086789. All 194 images and the category metadata passed live-hash verification. The 98 original artwork files and URLs are preserved. No publication work remains; new-shape display inside Nuvio is still untested.
 
 ## Identity and published asset roles
 
@@ -206,3 +206,14 @@ Exact review bindings: 4ac230174a675ed8efa916f6fa50bf1dab4cc848148d3c514cca75e1e
 Local release evidence is tools/studio-network-batch/.work/staging/decades-poster-square-all-v2/publication/: approval.json binds 96 stable keys to their final paths and exact hashes; publish-plan.json lists additions and preserved images; backup/ retains earlier manifest/schema/README and working documentation; preflight.json and protected-files.json preserve the initial state. Candidate and installed validators checked all 194 decoded image files, all 96 master hashes, 17 unique source hashes, 48 crops, original metadata equality, exact directory membership and 433 protected files. All 136 existing tests passed. The bundled Python lacked jsonschema; an isolated Ajv 8.17.1 validator was installed under ignored release storage and validated the draft 2020-12 schema and manifest. No project dependency files were changed. No unresolved validation failures remain.
 
 This release changes only Decades images, category metadata/README, this handover and the Decades entry/shared role guidance. The preexisting Awards files, root README and .gitignore changes remain outside the commit. Actual display in Nuvio for the new shapes has not been tested. Next: finish Git publication and verify live stable URLs against the committed hashes; then record the completed release.
+
+
+## Format release verification — 2026-09-07
+
+Artwork release commit: 1d2b53407b434398b5acea57e7d06b2738086789. Live verification completed at 2026-09-07T10:04:01.512Z: all 194 stable image URLs, three stable metadata URLs (manifest, schema and README), and the three matching immutable metadata URLs returned the exact committed hashes. All 200 checks passed with no failures. The original tool-runner interruption happened after the successful push; the resumed connection completed verification without republishing images.
+
+The manifest remains schemaVersion 2 at assets/collection_covers/decades/manifest.json. All 96 added WebPs match their reviewed bytes; all 98 original images and their stable URLs remain unchanged. Manifest SHA-256: 39031d9b2b0ec1cd442146ca60cbbcc0b5598bc56d0b56dd29b56d73c395d932. Schema SHA-256: 70acd9e58d0c68e25a15c5c8d42b91684f66fbfd7173f54ae8ced85ddc8b8e81. No new render, source acquisition, image or canonical-manifest writes occurred during final verification.
+
+Evidence is saved in the existing ignored publication/ directory: git-publication-receipt.json, live-url-verification.json, installed-validation.json, schema-validation.json and handoff.json. All 433 protected files matched their saved hashes during completion. The 136 existing tests passed before release; no implementation changes required another test run. Only this handover and the Decades publication-map status changed in the completion commit. Unrelated Awards preparation, the root README and .gitignore edits are preserved outside these commits.
+
+Next: no required publication work remains. Builder consumption and actual Nuvio display of poster/square shapes are separate follow-up work when requested; do not clear the existing Nuvio cache or replace its import as part of this completed release.
