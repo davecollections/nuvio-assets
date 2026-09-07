@@ -14,7 +14,7 @@ Last updated: 2026-09-07. Read [the shared workflow](../artwork-workflow.md) fir
 
 ## State and next action
 
-Current state: the sixty approved v3 poster/square cover and focus images are installed for the authorised commit/push, extending Discover to 120 WebPs and manifest schemaVersion 2. The original sixty landscape/focus/title-logo/hero assets from [67c96b6](https://github.com/davecollections/nuvio-assets/commit/67c96b659ce4b169c905e669159ea858b3e8162a) retain their exact bytes, paths and metadata. All twelve retired JPGs remain retired. Live verification of this extension follows its push.
+Current state: the sixty approved v3 poster/square cover and focus images are published on main in [659b243](https://github.com/davecollections/nuvio-assets/commit/659b243c5ce78b8a1bb1d461e34044d1e682568f), extending Discover to 120 WebPs and manifest schemaVersion 2. The original sixty landscape/focus/title-logo/hero assets from [67c96b6](https://github.com/davecollections/nuvio-assets/commit/67c96b659ce4b169c905e669159ea858b3e8162a) retain their exact bytes, paths and metadata. All twelve retired JPGs remain retired. All 120 canonical image URLs and both category metadata URLs matched their committed hashes at 2026-09-07T09:37:54.916Z.
 
 The v6 covers, focus artwork and title logos, revised v7 heroes, and replacement of the legacy files were approved. Exact final approval bindings for all sixty current hashes and twelve deletions are recorded in v7/publication/approval.json. No artwork approval remains pending for these exact bytes.
 
@@ -24,11 +24,11 @@ Git publication was explicitly authorised. The release includes only Discover as
 
 Verified live category manifest: [Discover manifest](https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/manifest.json).
 
-Next concrete action: complete the authorised v3 extension commit/push and live verification. Then follow [the refresh investigation](discover-refresh-plan.md) to implement a manual live Trending proposal before enabling scheduling. General Builder integration and actual Nuvio display remain unverified.
+Next concrete action: follow [the refresh investigation](discover-refresh-plan.md) to implement a manual live Trending proposal before enabling scheduling. The approved extension and its live verification are complete. General Builder integration and actual Nuvio display remain unverified.
 
 ## Design and delivery contract
 
-These are the installed repository paths. Their canonical GitHub URLs use /main/. The original sixty roles were previously live-verified; the extension is validated locally and awaiting its push/live check.
+These are the installed repository paths. Their canonical GitHub URLs use /main/. All 120 artwork URLs and both metadata URLs have been live-verified against the committed bytes.
 
 | Role | Dimensions | Format | Installed target |
 | --- | --- | --- | --- |
@@ -232,3 +232,5 @@ This additive category extension does not update runtime-lookup.json: the existi
 Validation passed for 120 installed image hashes, decodes, formats, dimensions, bytes, exact membership and the aggregate fingerprint. All 60 new outputs match approval bindings; all 60 original assets and their source metadata are preserved. Thirty unique title/source/pixel identities satisfy the English/US policy. The candidate schema passed and rejected a wrong poster width, a non-English source and a missing square-focus role. All 136 existing utility tests and the Inter font check passed. New image bytes total 2,321,300; all Discover image bytes total 6,808,090. Manifest SHA-256: 669a0d624c9fc9c3a89bf57f4918b3075a7fc36f5a9193c7e384d07ada70675b. Schema SHA-256: 57feb144d073378c5c94f97fc51ebc1f7c28038afd1b39bb7360dfe5aec62910.
 
 Only the sixty new Discover images, its manifest/schema, this handover, the Discover workflow row and the refresh-investigation note belong in the release. The preexisting .gitignore, README, Decades handover and Awards changes remain outside it. No files are deleted. Reproduction of the install audit: node tools/studio-network-batch/.work/staging/discover-poster-square-proof-v3/publication/release.cjs verify. Avoid rerunning historical proof validators that assert the pre-publication manifest hash; their preservation baselines intentionally predate this authorised extension.
+
+Publication completed in commit 659b243c5ce78b8a1bb1d461e34044d1e682568f, pushed to origin/main. live-url-verification.json records 122 successful canonical /main/ responses: all 120 images and both category metadata files, with zero failures. The release changes no existing images and deletes no files. A documentation-only follow-up records this verification. Final Git state retains only the preexisting unrelated .gitignore, README, Decades handover and Awards work. No Discover automation is scheduled or enabled.
