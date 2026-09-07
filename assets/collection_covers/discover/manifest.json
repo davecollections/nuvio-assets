@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "kind": "discover-artwork",
   "assetBaseUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/",
   "approval": {
@@ -13,11 +13,11 @@
   "counts": {
     "groups": 5,
     "sets": 15,
-    "assets": 60,
-    "totalImageFiles": 60,
-    "totalImageBytes": 4486790
+    "assets": 120,
+    "totalImageFiles": 120,
+    "totalImageBytes": 6808090
   },
-  "fingerprint": "254b39225f178b36c8a179e1ed8bc2ab0c7cf7354d774b23bbbbad473fb61b29",
+  "fingerprint": "1750591a23a933c87b91d3daf8d66354e96086f3196a49dee33b1293ba3cc075",
   "sourcePolicy": {
     "provider": "TMDB",
     "asOf": "2026-09-05",
@@ -782,6 +782,84 @@
               "sha256": "767353fa241de7b5f2ce265661cbd45d647d0ed407dd31dd2c7e4b3170f58572",
               "pixelSha256": "3c30c58860cdf576f98b3a135e78745c0c6e5350daedaa945273dbeaf397b154"
             }
+          ],
+          "poster": [
+            {
+              "key": "movie:1368337",
+              "title": "The Odyssey",
+              "imageRole": "landscape",
+              "artworkPath": "/twiVn9oFXOVR0uoYgawyEBlnFu8.jpg",
+              "sha256": "d2840b449b6dd8cf93e6f7793a7a97ae0f79cb6449f53e9c7ff6b32b910d0db7",
+              "crop": [
+                440,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "54eafa1c8247a3a8c545c1dfc29c5b5f850400be75d3bdb46fe970bd3edf04c4",
+              "originalLanguage": "en",
+              "originCountries": [
+                "GB",
+                "US"
+              ]
+            },
+            {
+              "key": "movie:1084244",
+              "title": "Toy Story 5",
+              "imageRole": "landscape",
+              "artworkPath": "/8sSKdEmlmqF4kJUd28SqthXC4yZ.jpg",
+              "sha256": "45023f1a66adf0682b9540ea2418dfb93e7b3d12f8577420b0cf77c96633a090",
+              "crop": [
+                465,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "91e70bb5b7a4082e453679cedbbc684ba5dbcd5e5f3950a3e8db09805b9875c0",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "movie:1368337",
+              "title": "The Odyssey",
+              "imageRole": "landscape",
+              "artworkPath": "/twiVn9oFXOVR0uoYgawyEBlnFu8.jpg",
+              "sha256": "d2840b449b6dd8cf93e6f7793a7a97ae0f79cb6449f53e9c7ff6b32b910d0db7",
+              "crop": [
+                391,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "54eafa1c8247a3a8c545c1dfc29c5b5f850400be75d3bdb46fe970bd3edf04c4",
+              "originalLanguage": "en",
+              "originCountries": [
+                "GB",
+                "US"
+              ]
+            },
+            {
+              "key": "movie:1084244",
+              "title": "Toy Story 5",
+              "imageRole": "landscape",
+              "artworkPath": "/8sSKdEmlmqF4kJUd28SqthXC4yZ.jpg",
+              "sha256": "45023f1a66adf0682b9540ea2418dfb93e7b3d12f8577420b0cf77c96633a090",
+              "crop": [
+                412,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "91e70bb5b7a4082e453679cedbbc684ba5dbcd5e5f3950a3e8db09805b9875c0",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -790,6 +868,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/new/movies/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/movies/poster.webp",
+          "sha256": "3630b29572d70981be6c579c8366876c7c13473b37fd8dcad679e7500be87950",
+          "sourceSha256": "8ae18cff923542f7598fcc0d37b67441785d5a7a1deb4f6e29bbafed4ba7dd0d",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 37068,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/new/movies/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/movies/poster-focus.webp",
+          "sha256": "69369aa9b345363fd99840797703670bc091197b7ecddb59581b01b669b9aebe",
+          "sourceSha256": "2562d13e22dc99a8c908eecd9116eaee42fc0680aefb5ecd101e9f5239937eb1",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 38714,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/new/movies/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/movies/square.webp",
+          "sha256": "a56d3ea754e97720ff42d4378b3e86ec4d1bd90f87ae8e882d08350252358c62",
+          "sourceSha256": "53f8eab2822290a734080363ef5b85a688082d9377741ce6d176dcdaaad2dbb9",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 26642,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/new/movies/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/movies/square-focus.webp",
+          "sha256": "e23ad61de33da9e5fe79e63689016a7cac950633c3695cc6c9e495385fd15a10",
+          "sourceSha256": "4e203894980887a5958652e0f23ab59645d5ded3c77bb39b333f0bd7f180fd65",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 27712,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
         }
       },
       "series": {
@@ -1473,6 +1615,82 @@
               "sha256": "586d1b78a9d04a6c9ad448d84dd3d6ec42c060ac8181a9f4115f2e1f5b3b08ce",
               "pixelSha256": "1956729269b2c5163fe3e8051332f2831576a18a7f3c8165e775f48c1467f336"
             }
+          ],
+          "poster": [
+            {
+              "key": "tv:287238",
+              "title": "Furious",
+              "imageRole": "landscape",
+              "artworkPath": "/iAOPgUlh7inOebFrUFHAjnFRCGS.jpg",
+              "sha256": "c23dd861e2ba8e0d2422fa435254070a58df1bad28186127eba580631f1996b8",
+              "crop": [
+                440,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "ac2ac61d92f05435f92873e78625f3a37811b191b5dd80b5d6b54e60bfd484b5",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "tv:95350",
+              "title": "Lanterns",
+              "imageRole": "landscape",
+              "artworkPath": "/mdbWfpbWhvxgG3k5MHpo90UgAUe.jpg",
+              "sha256": "52167e52bba21c6c0862cebaa4994c9f60d138cba9afbcfa53b9be87296ba00b",
+              "crop": [
+                747,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "e8bfe323fb92b1805bfc4088466920a19a637e726380bca64d373022fff18606",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "tv:287238",
+              "title": "Furious",
+              "imageRole": "landscape",
+              "artworkPath": "/iAOPgUlh7inOebFrUFHAjnFRCGS.jpg",
+              "sha256": "c23dd861e2ba8e0d2422fa435254070a58df1bad28186127eba580631f1996b8",
+              "crop": [
+                391,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "ac2ac61d92f05435f92873e78625f3a37811b191b5dd80b5d6b54e60bfd484b5",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "tv:95350",
+              "title": "Lanterns",
+              "imageRole": "landscape",
+              "artworkPath": "/mdbWfpbWhvxgG3k5MHpo90UgAUe.jpg",
+              "sha256": "52167e52bba21c6c0862cebaa4994c9f60d138cba9afbcfa53b9be87296ba00b",
+              "crop": [
+                693,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "e8bfe323fb92b1805bfc4088466920a19a637e726380bca64d373022fff18606",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -1481,6 +1699,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/new/series/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/series/poster.webp",
+          "sha256": "7134be1d16ebb7824c1460bbf6ea2a39c08980ee186e05fbbf0d5924a72f51ef",
+          "sourceSha256": "ed876523293c69c327cef69545d50de608cec15a6741dd78766b9eb57a866a13",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 36506,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/new/series/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/series/poster-focus.webp",
+          "sha256": "8dd00809f737e8d38b1207887a61841654777c1c90c721e8fd9f48d6d1c45678",
+          "sourceSha256": "6e980c271ee66a5be45dc7968e0d798b065d7cc9aac4911ca7c8a04a0f533a35",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 38554,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/new/series/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/series/square.webp",
+          "sha256": "9fcea7433068c2b84c4f838cfe76ba057aff095ad059a72c8f19ff3fdc4d1e86",
+          "sourceSha256": "99213d5c633589fa4c5a31e136763741576d4f3bf030060286d9fd72264078d2",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 20096,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/new/series/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/series/square-focus.webp",
+          "sha256": "69cd104e36fc876b61d8a15a6155f856dd38c82f692992e399a120df4fe008d9",
+          "sourceSha256": "89c6fdcc07bd7eeeb2789adbf29dd9c4603e53ffca5f57dbedb3432915436d1f",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 21124,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
         }
       },
       "mixed": {
@@ -2125,6 +2407,82 @@
               "sha256": "28c7af78b88402223efed8f3bc523de84a591d271eb4b7ff28d568ebea2b54a9",
               "pixelSha256": "5e3f618b409fa929328a84a70c0e0835cd1cce3541e4b7324629f6d07ba31690"
             }
+          ],
+          "poster": [
+            {
+              "key": "tv:287620",
+              "title": "Stuart Fails to Save the Universe",
+              "imageRole": "landscape",
+              "artworkPath": "/nW7oUFiJrIWwll4mZ8tYays7XRm.jpg",
+              "sha256": "b039a1920eedd841b2fee36241dea1e80a860f55125cddf6657985b6bd0242e8",
+              "crop": [
+                440,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "a819742bdd0b7d837beab84a45c6c2ee5df5b4cb5036ef7a1e769931aac747a2",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:969681",
+              "title": "Spider-Man: Brand New Day",
+              "imageRole": "landscape",
+              "artworkPath": "/qeQJx07rK2xm8SD2sJxFKhE7gs0.jpg",
+              "sha256": "ea0baa9672da0579d93c2f90cfef95eac406d8a6f7dbca151e45e3a40baddc79",
+              "crop": [
+                440,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "e3458c3894459756a6403a80233e4fea1d0c40f5195ad4bdea40097b9781b191",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "tv:287620",
+              "title": "Stuart Fails to Save the Universe",
+              "imageRole": "landscape",
+              "artworkPath": "/nW7oUFiJrIWwll4mZ8tYays7XRm.jpg",
+              "sha256": "b039a1920eedd841b2fee36241dea1e80a860f55125cddf6657985b6bd0242e8",
+              "crop": [
+                391,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "a819742bdd0b7d837beab84a45c6c2ee5df5b4cb5036ef7a1e769931aac747a2",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:969681",
+              "title": "Spider-Man: Brand New Day",
+              "imageRole": "landscape",
+              "artworkPath": "/qeQJx07rK2xm8SD2sJxFKhE7gs0.jpg",
+              "sha256": "ea0baa9672da0579d93c2f90cfef95eac406d8a6f7dbca151e45e3a40baddc79",
+              "crop": [
+                386,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "e3458c3894459756a6403a80233e4fea1d0c40f5195ad4bdea40097b9781b191",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -2133,6 +2491,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/new/mixed/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/mixed/poster.webp",
+          "sha256": "6b879222babf87d3a4784ffb46ac9195d4c45270a4b8a5cf155b5a3cc91e45f9",
+          "sourceSha256": "77ef608e516baddd2aac89bc53c54f218a17361f096343dbf93a0c0217265cef",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 78720,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 86,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/new/mixed/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/mixed/poster-focus.webp",
+          "sha256": "989d3841989988e9d62aca6d0e08d0e5cf2e2817a1461e33e25734adbbc628ce",
+          "sourceSha256": "0bed122249866cecf4b19f9775df76c24cc42340277d32ca943ede09336e061f",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 81900,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 86,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/new/mixed/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/mixed/square.webp",
+          "sha256": "ec02c8d2ee9e82e5af8ef236797ee84b7a1d2886a8af23c3b7d4781d0ff2b19b",
+          "sourceSha256": "2d5bed6c031d75685d238dac0c8468167ab63d6ef62792e16211c52f39a69c3c",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 36824,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/new/mixed/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/new/mixed/square-focus.webp",
+          "sha256": "97cbcb489874cca6b1b5061cc4b63d6b1861fdb076edbcb8184698aa4ba004ad",
+          "sourceSha256": "b2c2d45227030ae53745162b4a5eb6b8bafe47e1e0493dc3c7dcf45d0a43c701",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 38604,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
         }
       }
     },
@@ -2867,6 +3289,84 @@
               "sha256": "0a770727e7a75ba93f326be0c39c362bb77b7a5376d2151b437494e328ce00bb",
               "pixelSha256": "8105f27389f331ac1d5c3ec495e728a8f64c6d98e9c689efc8c2f084d0e3eb4f"
             }
+          ],
+          "poster": [
+            {
+              "key": "movie:1386315",
+              "title": "The Runner",
+              "imageRole": "landscape",
+              "artworkPath": "/ziXF8wIBguHNCeplNthUlDTCZP8.jpg",
+              "sha256": "7b1d0221b1efdb618435491b3408f8a5c080c85421b9653acf2f889a72e4f656",
+              "crop": [
+                440,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "949eb06c0e0634aaf23034c051cb90f8fe1528759737377639c1182f421d7ac4",
+              "originalLanguage": "en",
+              "originCountries": [
+                "GB",
+                "US"
+              ]
+            },
+            {
+              "key": "movie:860508",
+              "title": "The Whisper Man",
+              "imageRole": "landscape",
+              "artworkPath": "/xSJJQeAp9GBFmiKusysTRG6jQjt.jpg",
+              "sha256": "812377cf7f987f7b9fa8d1b6e180a8aa2f10dbdd049460087be6de7ce98ba83f",
+              "crop": [
+                465,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "db34e07d42e058967d5fadded08256cb8982eeb27f6d73a7768b3a76602269d5",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "movie:1386315",
+              "title": "The Runner",
+              "imageRole": "landscape",
+              "artworkPath": "/ziXF8wIBguHNCeplNthUlDTCZP8.jpg",
+              "sha256": "7b1d0221b1efdb618435491b3408f8a5c080c85421b9653acf2f889a72e4f656",
+              "crop": [
+                391,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "949eb06c0e0634aaf23034c051cb90f8fe1528759737377639c1182f421d7ac4",
+              "originalLanguage": "en",
+              "originCountries": [
+                "GB",
+                "US"
+              ]
+            },
+            {
+              "key": "movie:860508",
+              "title": "The Whisper Man",
+              "imageRole": "landscape",
+              "artworkPath": "/xSJJQeAp9GBFmiKusysTRG6jQjt.jpg",
+              "sha256": "812377cf7f987f7b9fa8d1b6e180a8aa2f10dbdd049460087be6de7ce98ba83f",
+              "crop": [
+                412,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "db34e07d42e058967d5fadded08256cb8982eeb27f6d73a7768b3a76602269d5",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -2875,6 +3375,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/trending/movies/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/movies/poster.webp",
+          "sha256": "1cbfab610c1e348e36a66f65c431693555aa1e3f397679a3eda6d85e6c341f74",
+          "sourceSha256": "6fafcaf40467b3682326e5579fb845a65de10522aa302479d12d805c7c65ba20",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 69378,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 86,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/trending/movies/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/movies/poster-focus.webp",
+          "sha256": "d881f987545713c6f623b8d43b0cd901f998d557e186e1f801d7032ad8b2ab19",
+          "sourceSha256": "7aa9776e55ae612fd77a1a4a30b348d386fa2bbda48e200d9c168abf878618d5",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 71712,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 86,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/trending/movies/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/movies/square.webp",
+          "sha256": "1eac5324235e78b63a50f7d95d85fd02514bfef3edf5469fcd0c84fd23651b82",
+          "sourceSha256": "47759eb25afd0fabe7db301a454bae9bd68ff2c06fb44699ca9fe362438541f0",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 29450,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/trending/movies/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/movies/square-focus.webp",
+          "sha256": "197f8252f33d04e283e5dca81070e8abf9eeba7cc565cf9ea9c0f4cbc257ed4d",
+          "sourceSha256": "c2213a5656ffed5547ccfef44385fa86582ea38e7a482a03cab7d2fdc9244c68",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 43966,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 86,
+            "effort": 6
+          }
         }
       },
       "series": {
@@ -3518,6 +4082,82 @@
               "sha256": "f56aea140742f9425f03ecd36fee695402080903c209e2096d2ff83ffead8fdc",
               "pixelSha256": "334bfc44d03154f944f923d85d698328e7074a68fe63ffb218ac059ecbc37343"
             }
+          ],
+          "poster": [
+            {
+              "key": "tv:196322",
+              "title": "Dark Matter",
+              "imageRole": "landscape",
+              "artworkPath": "/iBc82qaA05ntzSnrVndw8scv4Bn.jpg",
+              "sha256": "0644da2acddd2b6eb4a02e866e33c3dcadb435d6cca130c80981f75e9215d807",
+              "crop": [
+                299,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "dc5d008bbc40d9ea2e86c1dc7992fdc24561d596d5c1701f64bbaeb35ff6a8c2",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "tv:125988",
+              "title": "Silo",
+              "imageRole": "landscape",
+              "artworkPath": "/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg",
+              "sha256": "f9a853d4e9735528d1a949c99251b136aa88694ca0471c4d577a76ef8775d7ca",
+              "crop": [
+                273,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "a2c0ba6aaff12c062c3208dea3ccaf06fef739ce83ecb875e5dc6f5164564f19",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "tv:196322",
+              "title": "Dark Matter",
+              "imageRole": "landscape",
+              "artworkPath": "/iBc82qaA05ntzSnrVndw8scv4Bn.jpg",
+              "sha256": "0644da2acddd2b6eb4a02e866e33c3dcadb435d6cca130c80981f75e9215d807",
+              "crop": [
+                250,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "dc5d008bbc40d9ea2e86c1dc7992fdc24561d596d5c1701f64bbaeb35ff6a8c2",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "tv:125988",
+              "title": "Silo",
+              "imageRole": "landscape",
+              "artworkPath": "/uTWhbLc7Bj4qNSdW3ZvZKL8cOHv.jpg",
+              "sha256": "f9a853d4e9735528d1a949c99251b136aa88694ca0471c4d577a76ef8775d7ca",
+              "crop": [
+                220,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "a2c0ba6aaff12c062c3208dea3ccaf06fef739ce83ecb875e5dc6f5164564f19",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -3526,6 +4166,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/trending/series/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/series/poster.webp",
+          "sha256": "217a595c95dc6a741d9ba4f6a4c5d71f2158844c1d883c055d3fd28daadddd9d",
+          "sourceSha256": "70ece2686620bda6ccbae6396d0f2134731cc91d96fa45306ac6031d2c7b7520",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 31612,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/trending/series/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/series/poster-focus.webp",
+          "sha256": "6563c22767beb23413ec06b1fb33c73a63a31accff2c499824b2150402077b13",
+          "sourceSha256": "f4015840c1d8131e9efe5914b669a6297ad6dc91de8d63ea47ca37412e98ab9a",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 33802,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/trending/series/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/series/square.webp",
+          "sha256": "10983a1a00963874afdff5da6d50708d6dd863e808956890dc98a054fe3198fd",
+          "sourceSha256": "eb9a0df6dfe76d72b79eaea138044bf5a7102aa455f7106f140435a22469d9f1",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 18040,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/trending/series/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/series/square-focus.webp",
+          "sha256": "a8f8d8b19ff7d07fe95f458185e5ca190cb7839e176a5faa926179ac3c38eff3",
+          "sourceSha256": "70523a3fcfad0250fbed49e0830c26b34cb0f2efceccbf689546a9a22d2cc70e",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 19936,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
         }
       },
       "mixed": {
@@ -4218,6 +4922,82 @@
               "sha256": "e3047a8cf68baf9b1c4c2b241ee982ee21897e9ecd942895d263275af663a17d",
               "pixelSha256": "f50230fc3eff19e46ad754719c77642fc72118d526f1e606d915af0dc7ceddc6"
             }
+          ],
+          "poster": [
+            {
+              "key": "tv:97546",
+              "title": "Ted Lasso",
+              "imageRole": "landscape",
+              "artworkPath": "/nE94ejEbzNCU48bW1oju0dqBONz.jpg",
+              "sha256": "acc3afc326dd548cdd072e780607a451fc46ce2d8bc49d0822215d5c8e532b03",
+              "crop": [
+                440,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "40ec727df47fdb27c6dd8a0c4b58ed81ec4bada862a4fd874765fa7b1aa55917",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:1204680",
+              "title": "Coyote vs. Acme",
+              "imageRole": "landscape",
+              "artworkPath": "/l9mFW9HQnAZ4r1ChZJHoOT3jaal.jpg",
+              "sha256": "e38e4fdbcc53e065af5c582fbb1815d0ec10f2987fd961a38fe79b78ee8067f3",
+              "crop": [
+                107,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "bcac6adfa52a032706c5eea6bf36f24dba1466bfab57767adb360ca5c9daf03e",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "tv:97546",
+              "title": "Ted Lasso",
+              "imageRole": "landscape",
+              "artworkPath": "/nE94ejEbzNCU48bW1oju0dqBONz.jpg",
+              "sha256": "acc3afc326dd548cdd072e780607a451fc46ce2d8bc49d0822215d5c8e532b03",
+              "crop": [
+                391,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "40ec727df47fdb27c6dd8a0c4b58ed81ec4bada862a4fd874765fa7b1aa55917",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:1204680",
+              "title": "Coyote vs. Acme",
+              "imageRole": "landscape",
+              "artworkPath": "/l9mFW9HQnAZ4r1ChZJHoOT3jaal.jpg",
+              "sha256": "e38e4fdbcc53e065af5c582fbb1815d0ec10f2987fd961a38fe79b78ee8067f3",
+              "crop": [
+                53,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "bcac6adfa52a032706c5eea6bf36f24dba1466bfab57767adb360ca5c9daf03e",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -4226,6 +5006,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/trending/mixed/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/mixed/poster.webp",
+          "sha256": "42229bb232cfd17d35420781c4b84a8d05b07b0dff6f06d5f37e44118dbebf86",
+          "sourceSha256": "626348d49e7695a1298f524117ce51343b2f9f7020325faaf56feed62bee8ca8",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 27694,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/trending/mixed/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/mixed/poster-focus.webp",
+          "sha256": "99021618d290a7b4ca108f16734a710e7c115a6617504594500512e660ca4b93",
+          "sourceSha256": "cd9d020b1f4358c250377570c3a87489486b361f3705b2beb71765afa01a990a",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 36948,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/trending/mixed/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/mixed/square.webp",
+          "sha256": "4a9630b9e73e77aed2df6f076aff7a5aa99b3a0b965cbb114b9457b0f765eb5a",
+          "sourceSha256": "b55289404e640f67d65f696722bdacddee31e6300d68fb65ea39c1b411fc7fc7",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 20588,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/trending/mixed/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/trending/mixed/square-focus.webp",
+          "sha256": "fb1af97444794acc24ac2c294255d15788e8db43de42aa6cc68e51c143080053",
+          "sourceSha256": "17e036a8d2b6c5f48142b5171e5ded79450cc0ebcdf3db031bf05d5b8147000f",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 22624,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
         }
       }
     },
@@ -4944,6 +5788,82 @@
               "sha256": "03ae469d4964b7d15d4f16e41af62d0ae5496b98aafb1b574a82a3c6175ba6c7",
               "pixelSha256": "b7b2b6ba5f16506f554fb381d20239dae081e105e0f93b9300f228acba63def5"
             }
+          ],
+          "poster": [
+            {
+              "key": "movie:1275779",
+              "title": "Disclosure Day",
+              "imageRole": "landscape",
+              "artworkPath": "/flxau5Iu7bChQHsESqvGZ3FQRaI.jpg",
+              "sha256": "a4babd09dda6e13cf0634d7c7b88a655ded61a128f46da505a38fe109425d406",
+              "crop": [
+                440,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "d599bf8a146ebd262a33d2df972f807d4f44414acc61eec13a56d8583841e1a5",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:1288445",
+              "title": "Mutiny",
+              "imageRole": "landscape",
+              "artworkPath": "/qDa0fqDqIBCovRp975RvtGPcuN3.jpg",
+              "sha256": "d87a1eed27ffb430a08db1c0bf39904f2ba7436710fd394b1647015268720c75",
+              "crop": [
+                708,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "e5fc4527838040f8dd588c62b693c17d5c2eabb6794d37a862a139356586f1d1",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "movie:1275779",
+              "title": "Disclosure Day",
+              "imageRole": "landscape",
+              "artworkPath": "/flxau5Iu7bChQHsESqvGZ3FQRaI.jpg",
+              "sha256": "a4babd09dda6e13cf0634d7c7b88a655ded61a128f46da505a38fe109425d406",
+              "crop": [
+                391,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "d599bf8a146ebd262a33d2df972f807d4f44414acc61eec13a56d8583841e1a5",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:1288445",
+              "title": "Mutiny",
+              "imageRole": "landscape",
+              "artworkPath": "/qDa0fqDqIBCovRp975RvtGPcuN3.jpg",
+              "sha256": "d87a1eed27ffb430a08db1c0bf39904f2ba7436710fd394b1647015268720c75",
+              "crop": [
+                655,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "e5fc4527838040f8dd588c62b693c17d5c2eabb6794d37a862a139356586f1d1",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -4952,6 +5872,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/popular/movies/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/movies/poster.webp",
+          "sha256": "9737a4263353d6724220a5b08adf5ffd3fbe537de9fbd13bed411f640eb0e28e",
+          "sourceSha256": "be8cb5b6453960c2ded156664939a8ace593acd9a8b654f2484686a46da4ff0c",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 42442,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/popular/movies/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/movies/poster-focus.webp",
+          "sha256": "9e4350946939d696d5822feb3593fe7616c49b65b2c7f31115216ac9994868c9",
+          "sourceSha256": "1bd105b2952a84e55522ae6924754447e03513a075f00d955acc4a0cb75b8d23",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 44716,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/popular/movies/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/movies/square.webp",
+          "sha256": "1d7ba69ce93dbf178b8e703f7499fbe5594a2cdb5bcfd585c292f58e30da02d4",
+          "sourceSha256": "3c89e8e602be9783cee0af5b475cacb00a2204f8e56e8f4162ada7001d7cc234",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 30066,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/popular/movies/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/movies/square-focus.webp",
+          "sha256": "39bb0c0159c1ff21c00d994efe5b3437b4e7924066768dd33deb2b4f61a05a56",
+          "sourceSha256": "8cbce7fddecf46336c476a27434d35e58510930c6ebd1cdeb1417a5507b25b46",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 32946,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
         }
       },
       "series": {
@@ -5587,6 +6571,82 @@
               "sha256": "ee7f3c9c53579b07a36872f6140624333ad79e8658797901d3530773b1f8f858",
               "pixelSha256": "1c4993a2a0cb0e97276f2ef4afbf672265dcf58b8ca3f72fd30f776895b746f9"
             }
+          ],
+          "poster": [
+            {
+              "key": "tv:5920",
+              "title": "The Mentalist",
+              "imageRole": "landscape",
+              "artworkPath": "/q3pCsNvJ7CmdJUz2sJEEUY3pOPC.jpg",
+              "sha256": "b100ba78444527d19e31a5a8192627986cbe80f48651524768335dc9c0e72524",
+              "crop": [
+                504,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "8633b2fc0e74eeb75df7299eea291b953c050eeb2e08c29a21cd9d0a07b71e44",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "tv:108978",
+              "title": "Reacher",
+              "imageRole": "landscape",
+              "artworkPath": "/pF0qkRsrHkdYadPWY9AMeFZfcwk.jpg",
+              "sha256": "8ba3a3c3b91a1a41208881f659f81b6489ae1affd9280e3443cc312cf8933475",
+              "crop": [
+                452,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "0b2e374e1a4b822aee8488298f421f2b05f32451ef1a4cb79f0f95d465a0f041",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "tv:5920",
+              "title": "The Mentalist",
+              "imageRole": "landscape",
+              "artworkPath": "/q3pCsNvJ7CmdJUz2sJEEUY3pOPC.jpg",
+              "sha256": "b100ba78444527d19e31a5a8192627986cbe80f48651524768335dc9c0e72524",
+              "crop": [
+                455,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "8633b2fc0e74eeb75df7299eea291b953c050eeb2e08c29a21cd9d0a07b71e44",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "tv:108978",
+              "title": "Reacher",
+              "imageRole": "landscape",
+              "artworkPath": "/pF0qkRsrHkdYadPWY9AMeFZfcwk.jpg",
+              "sha256": "8ba3a3c3b91a1a41208881f659f81b6489ae1affd9280e3443cc312cf8933475",
+              "crop": [
+                399,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "0b2e374e1a4b822aee8488298f421f2b05f32451ef1a4cb79f0f95d465a0f041",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -5595,6 +6655,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/popular/series/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/series/poster.webp",
+          "sha256": "2037d0a6d5055721d378de21398ecc1b6b8b6e29b942017083f4f66600a1d45e",
+          "sourceSha256": "8634f763e5ac2dae64cb099d39c2a677a6b767535126623b29392bbef536c379",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 27172,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/popular/series/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/series/poster-focus.webp",
+          "sha256": "4e7f422fa07cc75b5b58a1c926af51fdc84a3939e33f83f295429a378333e2ea",
+          "sourceSha256": "db1939ce9df155b8cce0d29c3ffa224fe60cde1187bd43866d12e5188a1b77c9",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 36554,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/popular/series/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/series/square.webp",
+          "sha256": "60b749a6f6d55355ca9c344590cedd6fee34db3c1bc1a0c16535efec20d1101b",
+          "sourceSha256": "b6e13ce4a9a92c34f31a48ee097a9493b49cdc9d6abedcfa01292469d2597e40",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 18960,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/popular/series/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/series/square-focus.webp",
+          "sha256": "ec9da6a9af2800c1304970e20581e3f40686887ee5e90cc72f8a6424e594a9d0",
+          "sourceSha256": "cef28c9d01d88c28286b9e31d0867f47af6001b4c40455f6d5cd584be115519d",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 20928,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
         }
       },
       "mixed": {
@@ -6279,6 +7403,82 @@
               "sha256": "d6a448193ff1f28b3f817a43c53c2def5be37f76c1fe80ac8cb7eb36ead4b5a8",
               "pixelSha256": "5afae25523677fbdf5a4c99298b64fcde7e782d96b4b5c52e01dee15f2887682"
             }
+          ],
+          "poster": [
+            {
+              "key": "tv:79744",
+              "title": "The Rookie",
+              "imageRole": "landscape",
+              "artworkPath": "/6iNWfGVCEfASDdlNb05TP5nG0ll.jpg",
+              "sha256": "27f8d9e21b24fdc40ed4910fb8f91f67d142730b7fdbe0c6ac689362fcf04a72",
+              "crop": [
+                440,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "1b614e09ee0bbba036885d8d3a769552c71349f99c717c075829c92cc1ce2e21",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:687163",
+              "title": "Project Hail Mary",
+              "imageRole": "landscape",
+              "artworkPath": "/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
+              "sha256": "8de8caf5d52f91860cf6648841bfeda33f913e23917edd3ffdf6b4eb4bfbc712",
+              "crop": [
+                440,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "750b36b70483f7c510837aa8224d19426729f3183c7faffe6ccce6bc7acb7c98",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "tv:79744",
+              "title": "The Rookie",
+              "imageRole": "landscape",
+              "artworkPath": "/6iNWfGVCEfASDdlNb05TP5nG0ll.jpg",
+              "sha256": "27f8d9e21b24fdc40ed4910fb8f91f67d142730b7fdbe0c6ac689362fcf04a72",
+              "crop": [
+                391,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "1b614e09ee0bbba036885d8d3a769552c71349f99c717c075829c92cc1ce2e21",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:687163",
+              "title": "Project Hail Mary",
+              "imageRole": "landscape",
+              "artworkPath": "/8Tfys3mDZVp4tNoH2ktm06a0Tau.jpg",
+              "sha256": "8de8caf5d52f91860cf6648841bfeda33f913e23917edd3ffdf6b4eb4bfbc712",
+              "crop": [
+                386,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "750b36b70483f7c510837aa8224d19426729f3183c7faffe6ccce6bc7acb7c98",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -6287,6 +7487,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/popular/mixed/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/mixed/poster.webp",
+          "sha256": "7423a3e1c0c758cffe0cc0887574a4d79e7edf0a3996ac891331d75adb02a173",
+          "sourceSha256": "8c4026578aaad099c5a6985769cc97072af55dff5ec5340065947ae9c22c100e",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 49876,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/popular/mixed/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/mixed/poster-focus.webp",
+          "sha256": "3ae22baf355516e941f43e8cc0253fe57534003fb0d059eb97b4fcba2a6141e1",
+          "sourceSha256": "f948e292ede55cd8459eae4a39452820d324d90f84a60cdf94bf8ff91ef96485",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 52812,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/popular/mixed/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/mixed/square.webp",
+          "sha256": "f3b0e425d9b0af830b4e8cdbde2283e2bb51e591f57787fcce7769fdc7fadb62",
+          "sourceSha256": "162873c74252173b6077b35ea741ed4ce6e76c792256cca83e713808ff8adbec",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 28930,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/popular/mixed/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/popular/mixed/square-focus.webp",
+          "sha256": "c8d97e55efa2ae3394ab37e297a8180e349faa553386c0c4b99286f251ab5c87",
+          "sourceSha256": "6cdc6e3b71fb2d77aeee17d67977bd753de595f7135cf46adcdbfb4fa73dc9fd",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 31088,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
         }
       }
     },
@@ -6973,6 +8237,82 @@
               "sha256": "e5aa98dedc45a03a6612450fc0ca69c8ecdb1c17059488855452dbe3c0a04891",
               "pixelSha256": "f4489bd566a6af36f35e8f60a72e685dfdc3339fc06ef8acbc80f9896b39e1b7"
             }
+          ],
+          "poster": [
+            {
+              "key": "movie:238",
+              "title": "The Godfather",
+              "imageRole": "landscape",
+              "artworkPath": "/ejdD20cdHNFAYAN2DlqPToXKyzx.jpg",
+              "sha256": "d5c608927476d3c0731c15da0a021a2a202b6da3698b3fd4311fb38d2b3ed32d",
+              "crop": [
+                222,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "f98b991bc41ea377f4236101b7b1807476acd7b88c2b1fb4f72fdb1ea093a398",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:278",
+              "title": "The Shawshank Redemption",
+              "imageRole": "landscape",
+              "artworkPath": "/pNjh59JSxChQktamG3LMp9ZoQzp.jpg",
+              "sha256": "c05121a3646b722f06fc28373ec8a5b33bad411e9d5a31cccfc8e12c2c377efd",
+              "crop": [
+                696,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "992086756824817fbb769edee898b51dec6dff0db0306a59138701a71918a4d4",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "movie:238",
+              "title": "The Godfather",
+              "imageRole": "landscape",
+              "artworkPath": "/ejdD20cdHNFAYAN2DlqPToXKyzx.jpg",
+              "sha256": "d5c608927476d3c0731c15da0a021a2a202b6da3698b3fd4311fb38d2b3ed32d",
+              "crop": [
+                173,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "f98b991bc41ea377f4236101b7b1807476acd7b88c2b1fb4f72fdb1ea093a398",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:278",
+              "title": "The Shawshank Redemption",
+              "imageRole": "landscape",
+              "artworkPath": "/pNjh59JSxChQktamG3LMp9ZoQzp.jpg",
+              "sha256": "c05121a3646b722f06fc28373ec8a5b33bad411e9d5a31cccfc8e12c2c377efd",
+              "crop": [
+                642,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "992086756824817fbb769edee898b51dec6dff0db0306a59138701a71918a4d4",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -6981,6 +8321,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/top/movies/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/movies/poster.webp",
+          "sha256": "f045f35be030cb05053bc93fb9cb97ccb60afe082b4a7e85299adad517d65660",
+          "sourceSha256": "4ed1a40f79920074935d948d71cdefb708aad9b09ac460aa930224e2b1eaf878",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 52198,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/top/movies/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/movies/poster-focus.webp",
+          "sha256": "a180282473c6d9385a23aaf98dfbd36d9fb157a5f8e6e92ddcbad9ade72f41c7",
+          "sourceSha256": "26136ed04c19a11ca2d196e242db5bb901df00bc5446622fd7dbbcd94544fc75",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 73674,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 86,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/top/movies/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/movies/square.webp",
+          "sha256": "fc1d726a6751df3076e689af212fd54c5b2255b37d9897ecfa67bb3db0ded165",
+          "sourceSha256": "cdd7162d17a69eb7d053773f2272c6526542a94f2eefc84b7e4770e204cc2e1d",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 28628,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/top/movies/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/movies/square-focus.webp",
+          "sha256": "e2ac8bfb0f5683d79cb709664e11ca8fafc4ddb7dfdd7566ebf7b7fff41e7a61",
+          "sourceSha256": "e90207d10796487a62c24f8c50a5887c47f2fc13cddf4a8feff30842dc6583ac",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 30018,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
         }
       },
       "series": {
@@ -7704,6 +9108,82 @@
               "sha256": "ce8625967da55ca55631175d0a2407737720762e550f53163a6e7a90b62688ca",
               "pixelSha256": "85f72eff5b1553e4d651f09d0a0677d08a0c72e7ec49ef4f38e5d83e89825057"
             }
+          ],
+          "poster": [
+            {
+              "key": "tv:299167",
+              "title": "Dutton Ranch",
+              "imageRole": "landscape",
+              "artworkPath": "/ewlmL0nxo2lLqBj69upgp2gjHpV.jpg",
+              "sha256": "0cb687f6899b813a6118ab1427cb6d7718d83bec8066352291193bf6786f3ca0",
+              "crop": [
+                440,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "a427ca7cb4f47f4e9d68e485cde85274c65e6f3c5a04b187ac0d76ad69ef654e",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "tv:1396",
+              "title": "Breaking Bad",
+              "imageRole": "landscape",
+              "artworkPath": "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
+              "sha256": "bc08403e9a5f3bd1c14384555513f13a856aaea4347947155760e21bb421fc9c",
+              "crop": [
+                734,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "efa408f8e8870446d7a1cc2341a7a28ebce176225bb266f2953f80acc75da21c",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "tv:299167",
+              "title": "Dutton Ranch",
+              "imageRole": "landscape",
+              "artworkPath": "/ewlmL0nxo2lLqBj69upgp2gjHpV.jpg",
+              "sha256": "0cb687f6899b813a6118ab1427cb6d7718d83bec8066352291193bf6786f3ca0",
+              "crop": [
+                391,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "a427ca7cb4f47f4e9d68e485cde85274c65e6f3c5a04b187ac0d76ad69ef654e",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "tv:1396",
+              "title": "Breaking Bad",
+              "imageRole": "landscape",
+              "artworkPath": "/tsRy63Mu5cu8etL1X7ZLyf7UP1M.jpg",
+              "sha256": "bc08403e9a5f3bd1c14384555513f13a856aaea4347947155760e21bb421fc9c",
+              "crop": [
+                680,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "efa408f8e8870446d7a1cc2341a7a28ebce176225bb266f2953f80acc75da21c",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -7712,6 +9192,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/top/series/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/series/poster.webp",
+          "sha256": "27c805bf5b6f792f5d9ea5b80c487c2a86d8b8196249ba53103d820497cb7799",
+          "sourceSha256": "213e70ca1e123f9e9198a299514c12e1ca0c3e135b8aacd4160d4614b21ffbf5",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 55398,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/top/series/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/series/poster-focus.webp",
+          "sha256": "1a086a7c136d9492ca3c47d1a073e2f4430127cc80353f4a6b44bdece119bc03",
+          "sourceSha256": "7977ae95354f6c785d11273bad9a88427e5fb447c8dc57e9b8f00c3009368362",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 56842,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/top/series/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/series/square.webp",
+          "sha256": "f815bfeb262ed95ec22e26e32e4581afdb88c2a71866e1beffafc439ddc5ce52",
+          "sourceSha256": "b64f291964ca07cdcf59a781689c46c0398af835f88f5d72d4c27b1972d132b6",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 38064,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/top/series/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/series/square-focus.webp",
+          "sha256": "eda8bdb57159aaa69736906ee971a8af9bbfef14e170050de7524804330ad241",
+          "sourceSha256": "f21108f30bd0082cb96ca93c5e9e68f4e0d2a2b5e9885a33ccb9ba76b6111114",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 39428,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
         }
       },
       "mixed": {
@@ -8396,6 +9940,82 @@
               "sha256": "a36b51de06da0fc1f2842fe5f49b9ce18222768c4d2cae7683f30742f0e07cdd",
               "pixelSha256": "a0e32180dd0492c3e44c8a9e020836de0fee984b4c7b8b9cced0db01c82ff616"
             }
+          ],
+          "poster": [
+            {
+              "key": "tv:246",
+              "title": "Avatar: The Last Airbender",
+              "imageRole": "landscape",
+              "artworkPath": "/7oBGhqJIghRBvOwo5Qe0yM0cnMc.jpg",
+              "sha256": "fb2a75fec26c794dde020679c52f151d0f154109ac18c150fa1b2dbc9f77a01a",
+              "crop": [
+                453,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "72a9f195f7b02bb96655cfd901a9a75343df9faeedd727959dfa5b150e3733a3",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:155",
+              "title": "The Dark Knight",
+              "imageRole": "landscape",
+              "artworkPath": "/9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+              "sha256": "f202b5d3a0901b843656d25c2cfee93945b7784380052e44643d82973657ca42",
+              "crop": [
+                363,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "92712bdb4dbc61cab90bd21c2ba6026744a502e761c88444aa64cfe50316ee3a",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "tv:246",
+              "title": "Avatar: The Last Airbender",
+              "imageRole": "landscape",
+              "artworkPath": "/7oBGhqJIghRBvOwo5Qe0yM0cnMc.jpg",
+              "sha256": "fb2a75fec26c794dde020679c52f151d0f154109ac18c150fa1b2dbc9f77a01a",
+              "crop": [
+                404,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "72a9f195f7b02bb96655cfd901a9a75343df9faeedd727959dfa5b150e3733a3",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:155",
+              "title": "The Dark Knight",
+              "imageRole": "landscape",
+              "artworkPath": "/9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+              "sha256": "f202b5d3a0901b843656d25c2cfee93945b7784380052e44643d82973657ca42",
+              "crop": [
+                309,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "92712bdb4dbc61cab90bd21c2ba6026744a502e761c88444aa64cfe50316ee3a",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -8404,6 +10024,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/top/mixed/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/mixed/poster.webp",
+          "sha256": "cff2111de5d64f5ebe592221db0af7ec06880bd54837658dfe66fa5b5c937d42",
+          "sourceSha256": "517d1156a39ca4c7f0ec6cb8d9badae56cba71afcd114476386a69cc9605d202",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 49518,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/top/mixed/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/mixed/poster-focus.webp",
+          "sha256": "9583ebd9e3c2cce9327c006fdce2506661807669ac0205b2bac10e845fb1a218",
+          "sourceSha256": "6a72c92366c7eb2fed07caee08f21b40f3ff1aa646115764f4da761464302ee3",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 51460,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/top/mixed/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/mixed/square.webp",
+          "sha256": "9b47648b2981ba737555f2719202b8ec3064ef5b7fe242f5df317f24a26b0c79",
+          "sourceSha256": "a238a57854e836bc3c1a320a706fd26f38018adf200325db8130a7970fcc9a7a",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 34834,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/top/mixed/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/top/mixed/square-focus.webp",
+          "sha256": "b800ee8a562dd17e0a48843cbbd61708144b43303ce2c47219ca7499481a35ee",
+          "sourceSha256": "80a0935c3839695b5e1d51da6d24092f410c49fd87a595c77085473db68789d0",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 36148,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
         }
       }
     },
@@ -9106,6 +10790,82 @@
               "sha256": "725073a98bfe20e88f06250985b5231b903f1390061051db6470afde81bfc069",
               "pixelSha256": "2964f7602c4b0a4de02b0ed29ede6acd4be1411af6e9f2772d3f1d8489bdebfd"
             }
+          ],
+          "poster": [
+            {
+              "key": "movie:1302904",
+              "title": "Practical Magic 2",
+              "imageRole": "landscape",
+              "artworkPath": "/nUcauJ000dFBYkgGpxyxJ5aWEH2.jpg",
+              "sha256": "0d7bf964658682277a386227faf995432ffafdfb0294843332e8b71459e21097",
+              "crop": [
+                261,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "b1ab60c595fc66f5f2d7c6203b3f123f0aab22854e4840ac83d28e2ecc956fd6",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:1003596",
+              "title": "Avengers: Doomsday",
+              "imageRole": "landscape",
+              "artworkPath": "/s4v0UX1anfXm0UvloLsTTJ4v222.jpg",
+              "sha256": "87aae268a18d2b84fb1da362b1058b4566eff6876ee364c51ad70b905bd8f18a",
+              "crop": [
+                440,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "6e1175bddb591e3b3db11b28b9802e17702b4c2c45bf5777b35e471b97aad4b5",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "movie:1302904",
+              "title": "Practical Magic 2",
+              "imageRole": "landscape",
+              "artworkPath": "/nUcauJ000dFBYkgGpxyxJ5aWEH2.jpg",
+              "sha256": "0d7bf964658682277a386227faf995432ffafdfb0294843332e8b71459e21097",
+              "crop": [
+                212,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "b1ab60c595fc66f5f2d7c6203b3f123f0aab22854e4840ac83d28e2ecc956fd6",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:1003596",
+              "title": "Avengers: Doomsday",
+              "imageRole": "landscape",
+              "artworkPath": "/s4v0UX1anfXm0UvloLsTTJ4v222.jpg",
+              "sha256": "87aae268a18d2b84fb1da362b1058b4566eff6876ee364c51ad70b905bd8f18a",
+              "crop": [
+                386,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "6e1175bddb591e3b3db11b28b9802e17702b4c2c45bf5777b35e471b97aad4b5",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -9114,6 +10874,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/upcoming/movies/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/movies/poster.webp",
+          "sha256": "052d193b8a396053fb98e4e1fbd5a0277439dab9ce9497108c3c1f1dad46dbb6",
+          "sourceSha256": "2a6a1ec4f80e12ee92746e53f18b01dc167865a11aca2774f64f4b49d7a44ab3",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 64640,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 86,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/upcoming/movies/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/movies/poster-focus.webp",
+          "sha256": "5ff313af5a54bf53e310cd0054075de881a2d417d4ed86a3a78db63c2ebecc39",
+          "sourceSha256": "07893be63274c7ae42ac85ea824e8eba348fb522463e2331b6ba0b60788db47c",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 66556,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 86,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/upcoming/movies/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/movies/square.webp",
+          "sha256": "1e7981068e4d88a4b725733ea6fce5467b936eb2cd8220a0e2c0bd404de02322",
+          "sourceSha256": "8e024306c43d2ae8224bad26886b9df62c93ee7833028fe3ce987ee472286eab",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 33200,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/upcoming/movies/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/movies/square-focus.webp",
+          "sha256": "9fcde2f97dd69cd5b2eff04abf35c8ae5cbd141e54c53182f66fcf468a8ed893",
+          "sourceSha256": "5160de80b7bab3ca3319ddc9a32727fd85dbdc56128c68439bb53805f6ffeffe",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 35302,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
         }
       },
       "series": {
@@ -9853,6 +11677,84 @@
               "sha256": "d5691a9b9c45b7763f88886514d6f2b7480617c9fb09cf1cffcfb74aefd8906c",
               "pixelSha256": "4571c43725a7c173e0a307aba80b7f3e480ee6691e402865a06357252df165d0"
             }
+          ],
+          "poster": [
+            {
+              "key": "tv:213375",
+              "title": "VisionQuest",
+              "imageRole": "landscape",
+              "artworkPath": "/v50p9hearMiu6BlYfp4O7FACmXl.jpg",
+              "sha256": "1384445315111f8675b13cba23794b9afe5b10485ed81e96bb1f9436f6b644cb",
+              "crop": [
+                414,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "e43a230d9d74831a733b6ce6ff482064da9672c26ac2d8018c2bd8527ee80359",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "tv:224377",
+              "title": "Harry Potter",
+              "imageRole": "landscape",
+              "artworkPath": "/no0DU0EbeuBBDRz62SI4bp5x8Dy.jpg",
+              "sha256": "dfdffbc230cdcb22b7fd8217450837d605f77ebcd256ca6ae5ecdee59e028c10",
+              "crop": [
+                593,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "05547db27b2592016b12680aa09f127483f271e0a797e11e7b411001a1619527",
+              "originalLanguage": "en",
+              "originCountries": [
+                "GB",
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "tv:213375",
+              "title": "VisionQuest",
+              "imageRole": "landscape",
+              "artworkPath": "/v50p9hearMiu6BlYfp4O7FACmXl.jpg",
+              "sha256": "1384445315111f8675b13cba23794b9afe5b10485ed81e96bb1f9436f6b644cb",
+              "crop": [
+                365,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "e43a230d9d74831a733b6ce6ff482064da9672c26ac2d8018c2bd8527ee80359",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "tv:224377",
+              "title": "Harry Potter",
+              "imageRole": "landscape",
+              "artworkPath": "/no0DU0EbeuBBDRz62SI4bp5x8Dy.jpg",
+              "sha256": "dfdffbc230cdcb22b7fd8217450837d605f77ebcd256ca6ae5ecdee59e028c10",
+              "crop": [
+                540,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "05547db27b2592016b12680aa09f127483f271e0a797e11e7b411001a1619527",
+              "originalLanguage": "en",
+              "originCountries": [
+                "GB",
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -9861,6 +11763,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/upcoming/series/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/series/poster.webp",
+          "sha256": "59d407436de5cebbbc9643046f6516b1b91cfb5c4521adf4bf38ae06962928ff",
+          "sourceSha256": "e3a80e7941e601a379a87460e239a9b6bcaaad061a892130fafe26b1f0965d40",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 42210,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/upcoming/series/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/series/poster-focus.webp",
+          "sha256": "324af71d45643f650c1d0e11121073d16a052cacb79480456e67fde757572293",
+          "sourceSha256": "b608e03e9ca5e13f293135d2e278af067fc51aee17c35f575a73c59a74fec4f1",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 61252,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 86,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/upcoming/series/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/series/square.webp",
+          "sha256": "477ae7028da19448dc0cfd8b37a3703f3a56827fbbe8db416835fbbb0f0d55e2",
+          "sourceSha256": "d0060052bdda9379b6ccf7b44162bbb6f591605d591645f8c35e0d2af6bb3bf9",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 21976,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/upcoming/series/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/series/square-focus.webp",
+          "sha256": "d845f50abd6861808768f306fef26289367af04d3633707964444e0f69a899b5",
+          "sourceSha256": "9e069b5b444e173a1f675b944f62cecf5be52c4941b70e507eae789e26842b12",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 30130,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 80,
+            "effort": 6
+          }
         }
       },
       "mixed": {
@@ -10529,6 +12495,82 @@
               "sha256": "5c66db323179a6fd36c39340d219c4d9ad7cc2502b65add2c2266f9203fd90cb",
               "pixelSha256": "3a9f7309f627260f6f26ec76e5a2da725dc60f199105e26265d0450115ef8a71"
             }
+          ],
+          "poster": [
+            {
+              "key": "tv:292742",
+              "title": "S.W.A.T. Exiles",
+              "imageRole": "landscape",
+              "artworkPath": "/gUvAkHyi4rtiYWU9k6ySRyHdoXq.jpg",
+              "sha256": "c141950680fc8ad6a994a8f3fb08583cdb64870328b4dae75da637f8b954a811",
+              "crop": [
+                850,
+                0,
+                400,
+                720
+              ],
+              "pixelSha256": "a5d4eb417474b829baf1a9d2716a7063a3324171654c455064c77ca7867d045e",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:1170608",
+              "title": "Dune: Part Three",
+              "imageRole": "landscape",
+              "artworkPath": "/i5E9H7Ik0u61ylDDTbmUpTL3Yw.jpg",
+              "sha256": "593e88b44987fc087d329c7fb4d167084a4f0feb74a99db1a17565bb490d819b",
+              "crop": [
+                158,
+                0,
+                401,
+                720
+              ],
+              "pixelSha256": "05685cf2d02875c201695b518d54c3c71906d5230ae8e313bc7a5717c2426b35",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
+          ],
+          "square": [
+            {
+              "key": "tv:292742",
+              "title": "S.W.A.T. Exiles",
+              "imageRole": "landscape",
+              "artworkPath": "/gUvAkHyi4rtiYWU9k6ySRyHdoXq.jpg",
+              "sha256": "c141950680fc8ad6a994a8f3fb08583cdb64870328b4dae75da637f8b954a811",
+              "crop": [
+                782,
+                0,
+                498,
+                720
+              ],
+              "pixelSha256": "a5d4eb417474b829baf1a9d2716a7063a3324171654c455064c77ca7867d045e",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            },
+            {
+              "key": "movie:1170608",
+              "title": "Dune: Part Three",
+              "imageRole": "landscape",
+              "artworkPath": "/i5E9H7Ik0u61ylDDTbmUpTL3Yw.jpg",
+              "sha256": "593e88b44987fc087d329c7fb4d167084a4f0feb74a99db1a17565bb490d819b",
+              "crop": [
+                104,
+                0,
+                508,
+                720
+              ],
+              "pixelSha256": "05685cf2d02875c201695b518d54c3c71906d5230ae8e313bc7a5717c2426b35",
+              "originalLanguage": "en",
+              "originCountries": [
+                "US"
+              ]
+            }
           ]
         },
         "heroComposition": {
@@ -10537,6 +12579,70 @@
           "repeatedTitles": 0,
           "repeatedArtwork": 0,
           "frameCoveragePreserved": true
+        },
+        "poster": {
+          "path": "assets/collection_covers/discover/upcoming/mixed/poster.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/mixed/poster.webp",
+          "sha256": "9d8e910160e026730a93f9deb69aee5e1c3f13a2fdb01bedb331235e96d551b8",
+          "sourceSha256": "9277a40bca179d24213ec22eb2751ecfd94174d1448a3b687cff5bb82c792498",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 26390,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "posterFocus": {
+          "path": "assets/collection_covers/discover/upcoming/mixed/poster-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/mixed/poster-focus.webp",
+          "sha256": "cb5b984df9f8798457ced978946400dd6a73585dc3a4f62830b71b8e6df7ce71",
+          "sourceSha256": "753800e17084cca70db9fea8dc53c8532f9e7c4c4f2726658431a53cec225304",
+          "format": "webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 28138,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "square": {
+          "path": "assets/collection_covers/discover/upcoming/mixed/square.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/mixed/square.webp",
+          "sha256": "134247b04b5594c0ce529131e367d4b6d582e9b56aa3e997b7bb342054010f7d",
+          "sourceSha256": "fd5df5b1b2d616c03c57c5150b77a48f7c0a82456598e4d9e511327e085ccf2f",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 19376,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
+        },
+        "squareFocus": {
+          "path": "assets/collection_covers/discover/upcoming/mixed/square-focus.webp",
+          "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/discover/upcoming/mixed/square-focus.webp",
+          "sha256": "b6856848516b71f2385ec74491c2c683db67ba39ca63bd47266edfd027263310",
+          "sourceSha256": "8c01493502bb7648df26b754494095a9ff69290dbaa3071efea24f4a85ef5fe9",
+          "format": "webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 21216,
+          "encoding": {
+            "method": "reviewed-webp",
+            "lossless": false,
+            "quality": 72,
+            "effort": 6
+          }
         }
       }
     }
@@ -10608,5 +12714,24 @@
     "reviewedImagesPreserved": true,
     "transparentTitleLogos": "Lossless white artwork with exact alpha",
     "fingerprintMethod": "SHA-256 of sorted repository path + NUL + image SHA-256 lines"
+  },
+  "formatExtensionApproval": {
+    "status": "owner-approved",
+    "recordedAt": "2026-09-07T09:33:54.762Z",
+    "sourcePackage": "discover-poster-square-proof-v3",
+    "reviewedBindingsSha256": "5b3da4ba36db147ab58c22e92cf743a78b5c9a603be03f221be1dd5c4576d238",
+    "scope": "Sixty poster, poster-focus, square and square-focus assets across fifteen Discover identities",
+    "nuvioPreview": "pending"
+  },
+  "posterSquarePolicy": {
+    "sourceSnapshot": "2026-09-05",
+    "originalLanguage": "en",
+    "originCountry": "US",
+    "originCountryMatch": "includes",
+    "cardsPerCollection": 2,
+    "uniquenessScope": "all-fifteen-poster-square-collections",
+    "matchingFormatsShareSources": true,
+    "selection": "Existing category pools filtered by exact-title original language and origin country; not a new ranked-pool refresh",
+    "refresh": "Cadence under investigation; no refresh automation enabled"
   }
 }
