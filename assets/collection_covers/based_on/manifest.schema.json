@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Nuvio approved Based on artwork manifest v1",
+  "title": "Nuvio approved Based on artwork manifest v2",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -15,11 +15,12 @@
     "heroPolicy",
     "sets",
     "retiredLegacyFiles",
-    "delivery"
+    "delivery",
+    "formatExtensionApproval"
   ],
   "properties": {
     "schemaVersion": {
-      "const": 1
+      "const": 2
     },
     "kind": {
       "const": "based-on-artwork"
@@ -112,7 +113,8 @@
       "required": [
         "strategy",
         "base",
-        "normalLetterFillPreserved"
+        "normalLetterFillPreserved",
+        "baseRoles"
       ],
       "properties": {
         "strategy": {
@@ -123,6 +125,13 @@
         },
         "normalLetterFillPreserved": {
           "const": true
+        },
+        "baseRoles": {
+          "const": {
+            "focus": "landscape",
+            "posterFocus": "poster",
+            "squareFocus": "square"
+          }
         }
       }
     },
@@ -216,6 +225,45 @@
           "minLength": 1
         }
       }
+    },
+    "formatExtensionApproval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "recordedAt",
+        "sourcePackage",
+        "reviewedBindingsSha256",
+        "scope",
+        "nuvioPreview"
+      ],
+      "properties": {
+        "status": {
+          "const": "owner-approved"
+        },
+        "recordedAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourcePackage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nuvioPreview": {
+          "enum": [
+            "pending",
+            "reviewed"
+          ]
+        },
+        "reviewedBindingsSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
     }
   },
   "$defs": {
@@ -232,7 +280,11 @@
         "focus",
         "titleLogo",
         "hero",
-        "artworkSources"
+        "artworkSources",
+        "poster",
+        "posterFocus",
+        "square",
+        "squareFocus"
       ],
       "properties": {
         "stableKey": {
@@ -586,7 +638,9 @@
           "additionalProperties": false,
           "required": [
             "cover",
-            "hero"
+            "hero",
+            "poster",
+            "square"
           ],
           "properties": {
             "cover": {
@@ -682,6 +736,458 @@
                   "type": "boolean"
                 }
               }
+            },
+            "poster": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "key",
+                "tmdbId",
+                "title",
+                "artworkPath",
+                "sha256",
+                "width",
+                "height",
+                "horizontalMirror",
+                "crop",
+                "cropCoordinateSpace"
+              ],
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "pattern": "^movie:[0-9]+$"
+                },
+                "tmdbId": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "artworkPath": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9]+\\.(jpg|png|webp)$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "width": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "height": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "horizontalMirror": {
+                  "type": "boolean"
+                },
+                "crop": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "minItems": 4,
+                  "maxItems": 4
+                },
+                "cropCoordinateSpace": {
+                  "const": "after-horizontal-mirror"
+                }
+              }
+            },
+            "square": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "key",
+                "tmdbId",
+                "title",
+                "artworkPath",
+                "sha256",
+                "width",
+                "height",
+                "horizontalMirror",
+                "crop",
+                "cropCoordinateSpace"
+              ],
+              "properties": {
+                "key": {
+                  "type": "string",
+                  "pattern": "^movie:[0-9]+$"
+                },
+                "tmdbId": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "artworkPath": {
+                  "type": "string",
+                  "pattern": "^[A-Za-z0-9]+\\.(jpg|png|webp)$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "width": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "height": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "horizontalMirror": {
+                  "type": "boolean"
+                },
+                "crop": {
+                  "type": "array",
+                  "items": {
+                    "type": "integer",
+                    "minimum": 0
+                  },
+                  "minItems": 4,
+                  "maxItems": 4
+                },
+                "cropCoordinateSpace": {
+                  "const": "after-horizontal-mirror"
+                }
+              }
+            }
+          }
+        },
+        "poster": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "hasAlpha",
+            "encoding"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/based_on/[a-z-]+/poster\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/[a-z-]+/poster\\.webp$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 800
+            },
+            "height": {
+              "const": 1200
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "hasAlpha": {
+              "const": false
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lossless": {
+                  "type": "boolean"
+                },
+                "quality": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            }
+          }
+        },
+        "posterFocus": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "hasAlpha",
+            "encoding",
+            "baseCoverSha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/based_on/[a-z-]+/poster-focus\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/[a-z-]+/poster-focus\\.webp$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 800
+            },
+            "height": {
+              "const": 1200
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "hasAlpha": {
+              "const": false
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lossless": {
+                  "type": "boolean"
+                },
+                "quality": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            },
+            "baseCoverSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          }
+        },
+        "square": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "hasAlpha",
+            "encoding"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/based_on/[a-z-]+/square\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/[a-z-]+/square\\.webp$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 800
+            },
+            "height": {
+              "const": 800
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "hasAlpha": {
+              "const": false
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lossless": {
+                  "type": "boolean"
+                },
+                "quality": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            }
+          }
+        },
+        "squareFocus": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "path",
+            "url",
+            "sha256",
+            "sourceSha256",
+            "format",
+            "width",
+            "height",
+            "bytes",
+            "hasAlpha",
+            "encoding",
+            "baseCoverSha256"
+          ],
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": "^assets/collection_covers/based_on/[a-z-]+/square-focus\\.webp$"
+            },
+            "url": {
+              "type": "string",
+              "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/[a-z-]+/square-focus\\.webp$"
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "sourceSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            },
+            "format": {
+              "const": "webp"
+            },
+            "width": {
+              "const": 800
+            },
+            "height": {
+              "const": 800
+            },
+            "bytes": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "hasAlpha": {
+              "const": false
+            },
+            "encoding": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "method",
+                "lossless",
+                "quality",
+                "effort"
+              ],
+              "properties": {
+                "method": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "lossless": {
+                  "type": "boolean"
+                },
+                "quality": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1,
+                  "maximum": 100
+                },
+                "effort": {
+                  "const": 6
+                }
+              }
+            },
+            "baseCoverSha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
             }
           }
         }

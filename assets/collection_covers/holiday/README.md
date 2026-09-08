@@ -1,6 +1,6 @@
 # Holiday and seasonal artwork
 
-Five approved sets: Christmas, Halloween, Valentine’s, Summer Holidays and Winter Favourites. The seasonal spotlight design uses circular real-film imagery, individual lettering and a matching coloured focus outline.
+Forty WebPs across five approved sets: Christmas, Halloween, Valentine’s, Summer Holidays and Winter Favourites. The seasonal spotlight design uses circular real-film imagery, individual lettering and a matching coloured focus outline.
 
 [Manifest](manifest.json) · [Schema](manifest.schema.json) · [Handover](../../../docs/artwork-categories/holiday.md)
 
@@ -8,6 +8,10 @@ Five approved sets: Christmas, Halloween, Valentine’s, Summer Holidays and Win
 | --- | --- | --- |
 | Cover | 1200 × 675 | SLUG/landscape.webp |
 | Focus | 1200 × 675 | SLUG/focus.webp |
+| Poster | 800 × 1200 | SLUG/poster.webp |
+| Poster focus | 800 × 1200 | SLUG/poster-focus.webp |
+| Square | 800 × 800 | SLUG/square.webp |
+| Square focus | 800 × 800 | SLUG/square-focus.webp |
 | Transparent title logo | 1863 × 673 | SLUG/title-logo.webp |
 | Hero | 2560 × 1440 | SLUG/hero.webp |
 
@@ -26,3 +30,5 @@ The manifest supplies SHA-256 hashes, dimensions, bytes and full URLs. titleLogo
 Christmas.jpg, Halloween.jpg and Valentines.jpg were backed up and retired with approval. Their old URLs are not redirects. New imports should use the manifest’s WebP URLs; existing client caches may retain older images.
 
 The shared master index and general Builder reader are not implemented. Nuvio client framing remains untested.
+
+Manifest schemaVersion 2 adds poster, posterFocus, square and squareFocus without changing the original role paths or bytes. artworkSources.poster and artworkSources.square record the source and crop for each shape; crop is [left, top, width, height] in source pixels after any horizontal mirror. Every focus role binds its matching cover hash. The sixty combined Based on/Holiday format additions were approved on 2026-09-08.

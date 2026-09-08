@@ -1,10 +1,10 @@
 # Based on artwork handover
 
-Last updated: 2026-09-05. Read [the shared workflow](../artwork-workflow.md) first.
+Last updated: 2026-09-08. Read [the shared workflow](../artwork-workflow.md) first.
 
 ## Scope and identity
 
-Category key: based_on. Stable keys: based_on:SLUG. Ten film-artwork categories, with no added Movies/Series/Mixed variants. Category membership is an editorial decision; an artwork source does not define a Builder filter. History and True Stories may overlap. Toys & Games covers physical toys and board games; Video Games is separate. The mythology stable key displays as Myths & Legends and covers myths, legends and folklore. Holiday artwork remains separate future work.
+Category key: based_on. Stable keys: based_on:SLUG. Ten film-artwork categories, with no added Movies/Series/Mixed variants. Category membership is an editorial decision; an artwork source does not define a Builder filter. History and True Stories may overlap. Toys & Games covers physical toys and board games; Video Games is separate. The mythology stable key displays as Myths & Legends and covers myths, legends and folklore. Holiday artwork has its own category and handover.
 
 | Category | Slug | Film artwork (TMDB ID) |
 | --- | --- | --- |
@@ -21,11 +21,11 @@ Category key: based_on. Stable keys: based_on:SLUG. Ten film-artwork categories,
 
 ## State and next action
 
-Release state: published to remote main and live-hash verified. Approval covers all forty v3 images, retirement of all five legacy JPGs, category metadata, commit and push. The stronger focus treatment is selected. General Builder integration is absent and Nuvio client framing remains untested.
+Original landscape/logo/hero release state: published to remote main and live-hash verified. Approval covers all forty v3 images, retirement of all five legacy JPGs, category metadata, commit and push. The stronger focus treatment is selected. General Builder integration is absent and Nuvio client framing remains untested.
 
-The current original checkout has unrelated Awards/Decades changes. Those are preserved and excluded from this release. The isolated checkout starts from origin/main at 972a744056b0e372f408dae4c2c034afad556285 and uses branch work/based-on-artwork-release. Local main was not advanced.
+The 2026-09-08 proof work runs on the current local main with unrelated Awards changes preserved. Forty approved poster/square cover/focus files are installed and validated, with commit/push and live verification next; the original forty published assets remain unchanged. The isolated-checkout details in the completed-publication section below are historical release evidence.
 
-Next: no publication work remains. General Builder integration, Nuvio client acceptance and holiday artwork are separate future work.
+Next: commit and push the approved format extension, then verify live hashes. General Builder integration and Nuvio client acceptance remain separate work.
 
 ## Design and delivery contract
 
@@ -33,6 +33,10 @@ Next: no publication work remains. General Builder integration, Nuvio client acc
 | --- | --- | --- | --- |
 | Cover | 1200 × 675 | WebP | assets/collection_covers/based_on/SLUG/landscape.webp |
 | Focus | 1200 × 675 | WebP | assets/collection_covers/based_on/SLUG/focus.webp |
+| Poster | 800 × 1200 | WebP | assets/collection_covers/based_on/SLUG/poster.webp |
+| Poster focus | 800 × 1200 | WebP | assets/collection_covers/based_on/SLUG/poster-focus.webp |
+| Square | 800 × 800 | WebP | assets/collection_covers/based_on/SLUG/square.webp |
+| Square focus | 800 × 800 | WebP | assets/collection_covers/based_on/SLUG/square-focus.webp |
 | Title logo | 1863 × 673 | Transparent lossless WebP | assets/collection_covers/based_on/SLUG/title-logo.webp |
 | Hero | 2560 × 1440 | WebP | assets/collection_covers/based_on/SLUG/hero.webp |
 
@@ -41,8 +45,8 @@ Covers use real film artwork, a small BASED ON caption and large pearl-white cat
 ## Manifest and Builder contract
 
 - Category authority: assets/collection_covers/based_on/manifest.json.
-- Schema: assets/collection_covers/based_on/manifest.schema.json, schemaVersion 1, kind based-on-artwork.
-- The sets object maps each slug to stableKey, labels, basis, mediaTypes, landscape/focus/titleLogo/hero, and artworkSources. Every role has a path, URL, SHA-256, dimensions, bytes and encoding. Focus also binds its base-cover hash. Asset sourceSha256 is the lossless render-master hash; artworkSources retains the original film-image identity/hash and mirror decision.
+- Schema: assets/collection_covers/based_on/manifest.schema.json, schemaVersion 2, kind based-on-artwork; ten sets and eighty images (13,605,108 bytes).
+- The sets object maps each slug to stableKey, labels, basis, mediaTypes, landscape/focus/poster/posterFocus/square/squareFocus/titleLogo/hero, and artworkSources. Every role has a path, URL, SHA-256, dimensions, bytes and encoding. Focus also binds its base-cover hash. Asset sourceSha256 is the lossless render-master hash; artworkSources retains the original film-image identity/hash and mirror decision.
 - Public base: https://raw.githubusercontent.com/davecollections/nuvio-assets/main/.
 - No new shared master index or general Builder reader is introduced. Companies/Networks and other category manifests are unchanged.
 - Owner-approved retirement replaces the legacy Books.jpg, Comics.jpg, Mythology.jpg, True Stories.jpg and Video Games.jpg URLs with the new per-slug WebP paths. Old URLs are not redirects; existing imports may keep cached images.
@@ -76,3 +80,37 @@ Live verification at 2026-09-05T10:34:53.467Z checked every image and all three 
 Evidence remains local-only in the release directory: publication-validation.json, live-verification.json, approval.json, allowed-commit-paths.json, original-checkout-snapshot.json, final-git-status.txt and final-release.json. The release checkout is clean after publication. The original checkout retains its unrelated Awards/Decades changes; only this task's handover and Based on workflow row are reconciled to the published state.
 
 The original local main remains at its earlier revision. Automatic approval review rejected advancing it because that would also import unrelated remote deletions and registry changes. Publication instead used the isolated checkout; this is a local checkout-state distinction, not an incomplete remote release. Inspect the latest remote manifest or the retained isolated checkout before resuming, and do not republish the old local JPG tree.
+
+## Poster and square proofs — 2026-09-08
+
+The initial proof request did not authorise publication. The subsequent 2026-09-08 approval explicitly authorises these exact sixty proofs, required category metadata, commit and push; the hash-bound release evidence below supersedes the historical staging flags. All existing published cover, focus, title-logo and hero bytes and URLs are preserved.
+
+Shared ignored stage: tools/studio-network-batch/.work/staging/based-on-holiday-poster-square-proof-v1. Review entry point: review.html; the running local gallery URL/PID is in server-info.json. The gallery offers Poster/Square and Covers/Focus/Hover to focus, eight contact sheets, full-size proofs and the current published landscape for comparison. These are artwork proofs, not a Nuvio client integration test.
+
+Formats: poster 800 × 1200 (2:3, matching the recent Decades/Discover delivery) and square 800 × 800 (the owner-requested 1:1 size). Every theme has poster.webp, poster-focus.webp, square.webp and square-focus.webp below this stage’s assets/CATEGORY/SLUG/. The approved format extension uses these same filenames below assets/collection_covers/CATEGORY/SLUG/.
+
+Across both categories, sixty final WebPs total 7,811,554 bytes. All fifteen films remain the same as the current cover selections. Sixteen real source images are retained: fifteen current originals plus one alternative Harry Potter image for the Books poster. Only that original was newly downloaded from an already verified cached TMDB image entry; no source metadata/API requests, font downloads or generated scene imagery were needed. No source crop is upscaled.
+
+Validation: 136 existing repository tests passed. validation.json checks all sixty exact output/master/source hashes, dimensions, successful perceptual WebP encoding, thirty base/focus bindings, safe text bounds, crop bounds and no upscaling. Lossless masters preserve main-letter interiors and every pixel outside the outline/glow; independently encoded WebPs are not asserted to be pixel-identical. gallery-validation.json confirms the HTML and all eighty-three gallery image responses match local bytes. Browser review covered shape and focus controls and the narrow gallery layout.
+
+baseline.json protects 8,422 files, including existing published assets, original stages and unrelated Awards changes. All passed hash and modification-time checks before these handover edits; --allow-doc-updates excludes only these two category handovers and the shared workflow, leaving 8,419 protected files. render-report.json and review-bindings.json retain publicationAuthorized false and exact stable-key/role/proposed-target/output-hash records.
+
+The approved outputs are frozen in the publication package below. If the owner requests a later revision, preserve the current outputs and use render.cjs --only=SLUG for the smallest selection, followed by gallery.cjs within this shared stage. The original verify.cjs --allow-doc-updates is a historical prepublication check; it expects the old canonical manifests. Use publication/release.cjs verify --installed for the installed release. Do not rerun the one-time prepare.cjs or refine.cjs scripts over this stage. Initial crop proofs are preserved under revisions/initial-crops/; source-plan.json records the final source/crop decisions. Restart server.cjs hidden if the gallery is no longer running.
+
+Owner approval now binds all sixty reviewed hashes to their exact targets. The format extension follows the Decades/Discover poster, posterFocus, square and squareFocus role conventions. No general Builder integration or master index was created.
+
+Based on layout: scene above pearl-white titles, a close-set small BASED ON caption, compact two-line labels where needed and the selected stronger blue-white outer outline. The Books square retains the original trio; its poster uses Harry and a flying owl from the same film, verified TMDB movie 671 image /hziiv14OpD73u9gAak4XDDfBKa2.jpg, distinct from the published hero. Batman’s mirrored crop keeps the full character, Mission: Impossible keeps Cruise’s face in frame, and Apollo 13 stays within native source resolution.
+
+## Approved format extension — 2026-09-08
+
+State: installed and fully validated; commit/push and live URL verification are next. Local main and freshly fetched origin/main both matched f31212e6b9ba9da5b2180d7e885c0117490e71c8 before preparation and again before installation.
+
+Release evidence (ignored/local-only): tools/studio-network-batch/.work/staging/based-on-holiday-poster-square-proof-v1/publication/. approval.json binds the sixty reviewed stable-key/role/target/SHA-256 records. reviewed-* freezes the proof reports and source plan; prepared/ freezes the exact sixty delivered WebPs plus six category metadata files. backup/ retains both previous manifests, schemas, READMEs and all three artwork documents. plan.json permits exactly sixty new images, six metadata updates and three documentation updates. No original image is replaced or deleted.
+
+This category adds forty approved images and now supplies eighty WebPs. All sixty format additions across Based on and Holiday are copied byte-for-byte from the approved proofs; no artwork was regenerated, no sources were fetched, and no fonts were installed during publication.
+
+Both strict draft-2020-12 schemas pass Ajv validation. Candidate and installed validation checks all 120 image decodes, dimensions, hashes, byte counts, fingerprints, source/crop identities and thirty new focus-to-cover bindings. It verifies that all original role objects and cover/hero provenance are unchanged and that 8,413 protected files retain their hashes and modification times. The existing 136 repository tests passed; no failures remain.
+
+The schemaVersion 2 format extension preserves the original approval and adds formatExtensionApproval. Each new role has its exact URL, output hash, master hash, dimensions, bytes and encoding. artworkSources.poster and artworkSources.square retain original-image identity/hash, mirror flag and [left, top, width, height] crop in source pixels after the mirror. focusPolicy.baseRoles explicitly maps focus to landscape, posterFocus to poster and squareFocus to square. The original landscape/logo/hero URLs and all unrelated categories are unchanged.
+
+For recovery, run node tools/studio-network-batch/.work/staging/based-on-holiday-poster-square-proof-v1/publication/release.cjs verify --installed. Do not rerun prepare or install over an existing release. Source caches, local approvals and proof galleries are not committed. Other tasks’ Awards changes remain outside this release.

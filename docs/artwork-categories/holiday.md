@@ -1,6 +1,6 @@
 # Holiday and seasonal artwork handover
 
-Last updated: 2026-09-05. Read [the shared workflow](../artwork-workflow.md) before resuming.
+Last updated: 2026-09-08. Read [the shared workflow](../artwork-workflow.md) before resuming.
 
 ## Scope and identity
 
@@ -20,7 +20,7 @@ Other holidays, Awards, Builder development and the sibling tmdb-id-lookup repos
 
 State: published and live-hash verified. The owner authorised the exact reviewed set, three legacy JPG retirements, commit and push on 2026-09-05. Local main and fetched origin/main both started at 51a463d711a720e46a83f61d3d8a17fec96b6134; main was checked again before staging and had not moved. Artwork release: [7d0ae9c](https://github.com/davecollections/nuvio-assets/commit/7d0ae9c354696ab9f190c4f6202758a9a1c2a4aa).
 
-The requested artwork publication is complete. No further artwork changes are pending. A future owner-requested Nuvio preview or Builder integration is separate work; general Builder integration is absent and Nuvio acceptance is untested.
+The original landscape/logo/hero publication is complete. Twenty approved poster/square cover/focus files are installed and validated, with commit/push and live verification next. General Builder integration is absent and Nuvio acceptance remains untested.
 
 Preexisting Awards changes in .gitignore, README.md, data/awards, schemas/awards-* and tools/awards-artwork are excluded from the release and preserved.
 
@@ -32,6 +32,10 @@ One large circular real-film image at right, a dark surround, pale custom letter
 | --- | --- | --- | --- |
 | Landscape cover | 1200 × 675 | WebP | assets/collection_covers/holiday/SLUG/landscape.webp |
 | Matching focus | 1200 × 675 | WebP | assets/collection_covers/holiday/SLUG/focus.webp |
+| Poster | 800 × 1200 | WebP | assets/collection_covers/holiday/SLUG/poster.webp |
+| Poster focus | 800 × 1200 | WebP | assets/collection_covers/holiday/SLUG/poster-focus.webp |
+| Square | 800 × 800 | WebP | assets/collection_covers/holiday/SLUG/square.webp |
+| Square focus | 800 × 800 | WebP | assets/collection_covers/holiday/SLUG/square-focus.webp |
 | Transparent title logo | 1863 × 673 | Lossless WebP | assets/collection_covers/holiday/SLUG/title-logo.webp |
 | Single-image hero | 2560 × 1440 | WebP | assets/collection_covers/holiday/SLUG/hero.webp |
 
@@ -43,7 +47,7 @@ The final Christmas cover/focus omit the lower-right pine sprigs and berries. Va
 
 ## Manifest and builder contract
 
-Published [category manifest](https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/manifest.json): assets/collection_covers/holiday/manifest.json. Schema: manifest.schema.json in the same folder, schemaVersion 1. It records five sets, twenty images, 4,934,172 image bytes, stable identities, role URLs, hashes, dimensions, encoding settings and source provenance. titleLogo maps to title-logo.webp.
+Published [category manifest](https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/manifest.json): assets/collection_covers/holiday/manifest.json. Schema: manifest.schema.json in the same folder, schemaVersion 2. It records five sets, forty images, 6,984,882 image bytes, stable identities, role URLs, hashes, dimensions, encoding settings and source provenance. titleLogo maps to title-logo.webp.
 
 Asset sourceSha256 identifies a lossless render master; artworkSources identifies original TMDB image bytes. The manifest binds approval to the exact reviewed candidate and review-bindings hashes. It contains no raw approval conversation.
 
@@ -77,3 +81,37 @@ For a future requested revision, preserve the current stage, select only the req
 The original acquire.cjs still describes the superseded La La Land bootstrap. Do not rerun it, refine.cjs or the one-time Christmas/Notting Hill migration scripts over the final stage. Existing verify.cjs is a historical prepublication check that requires the retired JPGs; use release verify-release.cjs after publication.
 
 The read-only gallery server records its ephemeral URL/PID in server-info.json. Restart it hidden if needed. No new rendering or source acquisition is needed to reproduce the approved release from prepared/; validate exact hashes before any future publication.
+
+## Poster and square proofs — 2026-09-08
+
+The initial proof request did not authorise publication. The subsequent 2026-09-08 approval explicitly authorises these exact sixty proofs, required category metadata, commit and push; the hash-bound release evidence below supersedes the historical staging flags. All existing published cover, focus, title-logo and hero bytes and URLs are preserved.
+
+Shared ignored stage: tools/studio-network-batch/.work/staging/based-on-holiday-poster-square-proof-v1. Review entry point: review.html; the running local gallery URL/PID is in server-info.json. The gallery offers Poster/Square and Covers/Focus/Hover to focus, eight contact sheets, full-size proofs and the current published landscape for comparison. These are artwork proofs, not a Nuvio client integration test.
+
+Formats: poster 800 × 1200 (2:3, matching the recent Decades/Discover delivery) and square 800 × 800 (the owner-requested 1:1 size). Every theme has poster.webp, poster-focus.webp, square.webp and square-focus.webp below this stage’s assets/CATEGORY/SLUG/. The approved format extension uses these same filenames below assets/collection_covers/CATEGORY/SLUG/.
+
+Across both categories, sixty final WebPs total 7,811,554 bytes. All fifteen films remain the same as the current cover selections. Sixteen real source images are retained: fifteen current originals plus one alternative Harry Potter image for the Books poster. Only that original was newly downloaded from an already verified cached TMDB image entry; no source metadata/API requests, font downloads or generated scene imagery were needed. No source crop is upscaled.
+
+Validation: 136 existing repository tests passed. validation.json checks all sixty exact output/master/source hashes, dimensions, successful perceptual WebP encoding, thirty base/focus bindings, safe text bounds, crop bounds and no upscaling. Lossless masters preserve main-letter interiors and every pixel outside the outline/glow; independently encoded WebPs are not asserted to be pixel-identical. gallery-validation.json confirms the HTML and all eighty-three gallery image responses match local bytes. Browser review covered shape and focus controls and the narrow gallery layout.
+
+baseline.json protects 8,422 files, including existing published assets, original stages and unrelated Awards changes. All passed hash and modification-time checks before these handover edits; --allow-doc-updates excludes only these two category handovers and the shared workflow, leaving 8,419 protected files. render-report.json and review-bindings.json retain publicationAuthorized false and exact stable-key/role/proposed-target/output-hash records.
+
+The approved outputs are frozen in the publication package below. If the owner requests a later revision, preserve the current outputs and use render.cjs --only=SLUG for the smallest selection, followed by gallery.cjs within this shared stage. The original verify.cjs --allow-doc-updates is a historical prepublication check; it expects the old canonical manifests. Use publication/release.cjs verify --installed for the installed release. Do not rerun the one-time prepare.cjs or refine.cjs scripts over this stage. Initial crop proofs are preserved under revisions/initial-crops/; source-plan.json records the final source/crop decisions. Restart server.cjs hidden if the gallery is no longer running.
+
+Owner approval now binds all sixty reviewed hashes to their exact targets. The format extension follows the Decades/Discover poster, posterFocus, square and squareFocus role conventions. No general Builder integration or master index was created.
+
+Holiday layout: the circular film image moves above the title, with fewer peripheral details, compact captions and seasonal colours/fonts retained. Focus adds the same seasonal outer title outline while preserving the scene and main-letter fill. The Christmas crop removes the stray partial face at the circle edge and keeps the clean lower-right corner; Valentine’s remains the approved Notting Hill couple. Existing heroes and title logos are unchanged.
+
+## Approved format extension — 2026-09-08
+
+State: installed and fully validated; commit/push and live URL verification are next. Local main and freshly fetched origin/main both matched f31212e6b9ba9da5b2180d7e885c0117490e71c8 before preparation and again before installation.
+
+Release evidence (ignored/local-only): tools/studio-network-batch/.work/staging/based-on-holiday-poster-square-proof-v1/publication/. approval.json binds the sixty reviewed stable-key/role/target/SHA-256 records. reviewed-* freezes the proof reports and source plan; prepared/ freezes the exact sixty delivered WebPs plus six category metadata files. backup/ retains both previous manifests, schemas, READMEs and all three artwork documents. plan.json permits exactly sixty new images, six metadata updates and three documentation updates. No original image is replaced or deleted.
+
+This category adds twenty approved images and now supplies forty WebPs. All sixty format additions across Based on and Holiday are copied byte-for-byte from the approved proofs; no artwork was regenerated, no sources were fetched, and no fonts were installed during publication.
+
+Both strict draft-2020-12 schemas pass Ajv validation. Candidate and installed validation checks all 120 image decodes, dimensions, hashes, byte counts, fingerprints, source/crop identities and thirty new focus-to-cover bindings. It verifies that all original role objects and cover/hero provenance are unchanged and that 8,413 protected files retain their hashes and modification times. The existing 136 repository tests passed; no failures remain.
+
+The schemaVersion 2 format extension preserves the original approval and adds formatExtensionApproval. Each new role has its exact URL, output hash, master hash, dimensions, bytes and encoding. artworkSources.poster and artworkSources.square retain original-image identity/hash, mirror flag and [left, top, width, height] crop in source pixels after the mirror. focusPolicy.baseRoles explicitly maps focus to landscape, posterFocus to poster and squareFocus to square. The original landscape/logo/hero URLs and all unrelated categories are unchanged.
+
+For recovery, run node tools/studio-network-batch/.work/staging/based-on-holiday-poster-square-proof-v1/publication/release.cjs verify --installed. Do not rerun prepare or install over an existing release. Source caches, local approvals and proof galleries are not committed. Other tasks’ Awards changes remain outside this release.

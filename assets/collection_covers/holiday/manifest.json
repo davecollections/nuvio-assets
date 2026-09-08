@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "kind": "holiday-artwork",
   "category": "holiday",
   "assetBaseUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/",
@@ -14,15 +14,20 @@
   },
   "counts": {
     "sets": 5,
-    "assets": 20,
-    "totalImageFiles": 20,
-    "totalImageBytes": 4934172
+    "assets": 40,
+    "totalImageFiles": 40,
+    "totalImageBytes": 6984882
   },
-  "fingerprint": "812abfbb0295231721931214f8f1629fe9eaf68bd19fe7c49640da3795d5b4b7",
+  "fingerprint": "f984a0acbf98c22c3ca513c07661962f77d41fbdfb7c664126a3ffce99b58e46",
   "focusPolicy": {
     "strategy": "season-coloured-text-outline",
     "base": "landscape",
-    "normalLetterFillPreserved": true
+    "normalLetterFillPreserved": true,
+    "baseRoles": {
+      "focus": "landscape",
+      "posterFocus": "poster",
+      "squareFocus": "square"
+    }
   },
   "heroPolicy": {
     "strategy": "single-related-film",
@@ -129,7 +134,111 @@
           "width": 3840,
           "height": 2160,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:771",
+          "tmdbId": 771,
+          "title": "Home Alone",
+          "artworkPath": "ySmjHc3LZd4VmmIa6sgwkMIm6xl.jpg",
+          "sha256": "d726258afa73fe1a8d3fe917ed8a58c107c9cfa01164e27a380197102556f345",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            2040,
+            180,
+            1800,
+            1800
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:771",
+          "tmdbId": 771,
+          "title": "Home Alone",
+          "artworkPath": "ySmjHc3LZd4VmmIa6sgwkMIm6xl.jpg",
+          "sha256": "d726258afa73fe1a8d3fe917ed8a58c107c9cfa01164e27a380197102556f345",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            2040,
+            180,
+            1800,
+            1800
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/holiday/christmas/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/christmas/poster.webp",
+        "sha256": "daa50c54bd51521ba698ade63d0450884c32006c700ccbea2457a7b8cbf3e32d",
+        "sourceSha256": "e4af989ac383d1651557a70c58a78d608362560a1cefeb9039c45a1a495c3732",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 180302,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/holiday/christmas/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/christmas/poster-focus.webp",
+        "sha256": "36434ee41e33be618fc589a37384f0936456a9aba16955ca180b5eeb05a98acc",
+        "sourceSha256": "39b2bdb3ec3922f259234f5f9c6de35d7c7a16cfa0196820f6b434d231723635",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 245404,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp-high-quality",
+          "lossless": false,
+          "quality": 96,
+          "effort": 6
+        },
+        "baseCoverSha256": "daa50c54bd51521ba698ade63d0450884c32006c700ccbea2457a7b8cbf3e32d"
+      },
+      "square": {
+        "path": "assets/collection_covers/holiday/christmas/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/christmas/square.webp",
+        "sha256": "10ec9ac5232b077a6022edab325a36f37fed7ff83fa027c0137ad1b53c27cb82",
+        "sourceSha256": "a70b82bf9c9758787733f2e49eae9099e34c9c291b82957bd24fe59cd3b8dd23",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 157882,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp-high-quality",
+          "lossless": false,
+          "quality": 96,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/holiday/christmas/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/christmas/square-focus.webp",
+        "sha256": "9dc613d971ce0c2361cda686e88ec8fbfca255d98e1ba391b50d70377daa039e",
+        "sourceSha256": "a9325ce8979ddfe7f51041c63603f7cfb657f90fe83d13dd110c8d1e52998121",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 215134,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp-high-quality",
+          "lossless": false,
+          "quality": 100,
+          "effort": 6
+        },
+        "baseCoverSha256": "10ec9ac5232b077a6022edab325a36f37fed7ff83fa027c0137ad1b53c27cb82"
       }
     },
     "halloween": {
@@ -230,7 +339,111 @@
           "width": 3200,
           "height": 1800,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:10439",
+          "tmdbId": 10439,
+          "title": "Hocus Pocus",
+          "artworkPath": "ncr6KR7bBF8cps6yZKiTAwClpn1.jpg",
+          "sha256": "9e08989b1a05d0c7d3f38faf3551e05350699ccfaec6672a44ae48240dd8a4b0",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false,
+          "crop": [
+            497,
+            0,
+            1080,
+            1080
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:10439",
+          "tmdbId": 10439,
+          "title": "Hocus Pocus",
+          "artworkPath": "ncr6KR7bBF8cps6yZKiTAwClpn1.jpg",
+          "sha256": "9e08989b1a05d0c7d3f38faf3551e05350699ccfaec6672a44ae48240dd8a4b0",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false,
+          "crop": [
+            497,
+            0,
+            1080,
+            1080
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/holiday/halloween/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/halloween/poster.webp",
+        "sha256": "add10724b67298f20009bdf35f35e6a184545e00ddd426616cda2dd617634413",
+        "sourceSha256": "57300f082e1083d4b9af61b8ee489ffcc9d7b6d04f9df6ee81a0e455bee8fd76",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 82356,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/holiday/halloween/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/halloween/poster-focus.webp",
+        "sha256": "6e614c9e722bcca50dddeca633fd7c0f0cca4af691c20b3c36ab4b88296fff46",
+        "sourceSha256": "55a642ac90f6cb7f6fd33e9635f624d55b516c03001cfe1e4f9386975b75c45f",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 111722,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "add10724b67298f20009bdf35f35e6a184545e00ddd426616cda2dd617634413"
+      },
+      "square": {
+        "path": "assets/collection_covers/holiday/halloween/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/halloween/square.webp",
+        "sha256": "847ffe5ea0ebf5b3f32f5293c3dee4db982d17ae14965878f1012188d065dc3b",
+        "sourceSha256": "5ba5f76094b11358de4766267011c60741ae0e8c0e79d8586f4a8b1b9323e674",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 59446,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/holiday/halloween/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/halloween/square-focus.webp",
+        "sha256": "5bd49905e8af9a4fa3dede6c28c172b3164541ce056ce79db0e9ce7a5606307f",
+        "sourceSha256": "a57e48b6b322762ff1df1cfa6454cec6f0ca505dc738456d17ab61e1c5011019",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 79506,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "847ffe5ea0ebf5b3f32f5293c3dee4db982d17ae14965878f1012188d065dc3b"
       }
     },
     "valentines": {
@@ -331,7 +544,111 @@
           "width": 3840,
           "height": 2160,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:509",
+          "tmdbId": 509,
+          "title": "Notting Hill",
+          "artworkPath": "mqcqAE8yefvezVJ78FINJCiV6n3.jpg",
+          "sha256": "7974c8cf15afe63005a71ff2cf480a46b37a19d8f2c4593aa2eae91b56811216",
+          "width": 2499,
+          "height": 1406,
+          "horizontalMirror": false,
+          "crop": [
+            547,
+            0,
+            1406,
+            1406
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:509",
+          "tmdbId": 509,
+          "title": "Notting Hill",
+          "artworkPath": "mqcqAE8yefvezVJ78FINJCiV6n3.jpg",
+          "sha256": "7974c8cf15afe63005a71ff2cf480a46b37a19d8f2c4593aa2eae91b56811216",
+          "width": 2499,
+          "height": 1406,
+          "horizontalMirror": false,
+          "crop": [
+            547,
+            0,
+            1406,
+            1406
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/holiday/valentines/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/valentines/poster.webp",
+        "sha256": "82a0b8ff03b99bc25ebe53fe61620ecee064c9042265b7250d0aac573674ae9d",
+        "sourceSha256": "baef9873af82b1d6c352cef69e463026237ca2e3120b2b720e08787213a84206",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 42836,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/holiday/valentines/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/valentines/poster-focus.webp",
+        "sha256": "77a5f9813eae735235f95746fd730983881a8aa50f1ac64eff4c37f0f5416775",
+        "sourceSha256": "c1466e2fc35b0342a038d5658e8c6fa58293a5af24d74f03e938a7a8d8396ac5",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 47088,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "82a0b8ff03b99bc25ebe53fe61620ecee064c9042265b7250d0aac573674ae9d"
+      },
+      "square": {
+        "path": "assets/collection_covers/holiday/valentines/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/valentines/square.webp",
+        "sha256": "9defd84fa03f328e7e38caecc27e13755511e2784798b7b4a7d753feae1e05c8",
+        "sourceSha256": "6f9b47231f3b4e2502a2ce8586c403096ce121391f842479f87a3acf49faeb74",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 31154,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/holiday/valentines/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/valentines/square-focus.webp",
+        "sha256": "3e1c4e85d5ad767566e84e75a29f3e638aa35dbe02001e83118b2b7ef956d6db",
+        "sourceSha256": "f82c78f440e22a2c9bde7afd0c1604bffbb9671fef085d3b06b4ae5fdea49a1b",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 34410,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "9defd84fa03f328e7e38caecc27e13755511e2784798b7b4a7d753feae1e05c8"
       }
     },
     "summer-holidays": {
@@ -432,7 +749,111 @@
           "width": 3000,
           "height": 1688,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:11631",
+          "tmdbId": 11631,
+          "title": "Mamma Mia!",
+          "artworkPath": "8IGO8rF5asa7tnO0aEtx3e5R4Z5.jpg",
+          "sha256": "49c8fb2ccfd17ed1d266dc5b8fd0c84a8426bc4f379b224c127ba310c2a46bb2",
+          "width": 3200,
+          "height": 1800,
+          "horizontalMirror": false,
+          "crop": [
+            1400,
+            0,
+            1800,
+            1800
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:11631",
+          "tmdbId": 11631,
+          "title": "Mamma Mia!",
+          "artworkPath": "8IGO8rF5asa7tnO0aEtx3e5R4Z5.jpg",
+          "sha256": "49c8fb2ccfd17ed1d266dc5b8fd0c84a8426bc4f379b224c127ba310c2a46bb2",
+          "width": 3200,
+          "height": 1800,
+          "horizontalMirror": false,
+          "crop": [
+            1400,
+            0,
+            1800,
+            1800
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/holiday/summer-holidays/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/summer-holidays/poster.webp",
+        "sha256": "ad44dca15f64a9c00285569ee36a608e4037398247fb774aede829d3c1166963",
+        "sourceSha256": "8de1986fe94052b69d902bced33cba19732ef071501c53bd982c42a68c61ad3a",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 102394,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/holiday/summer-holidays/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/summer-holidays/poster-focus.webp",
+        "sha256": "3ab444d2a160ace91e4cbe129c8a0d0e68ddd4cd9ae177d3230593261dd8be27",
+        "sourceSha256": "360f30a633d6c592e009f59ca7405dc1a7568f2a97766948306625f771843c04",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 106462,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "ad44dca15f64a9c00285569ee36a608e4037398247fb774aede829d3c1166963"
+      },
+      "square": {
+        "path": "assets/collection_covers/holiday/summer-holidays/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/summer-holidays/square.webp",
+        "sha256": "13b7e8c84a23100d698a733b67f9788ac0b9d3edb56ab7a1ed3baaa7131f175f",
+        "sourceSha256": "82baedb70f51999c0ce3811b227d9487e871c6c96bb7d5c147685986bca6a44c",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 69250,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/holiday/summer-holidays/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/summer-holidays/square-focus.webp",
+        "sha256": "1742d5cfa4069ed26ca9a6613d1615870abd9c820317af7513cc4eaaf4437963",
+        "sourceSha256": "e9626dbb5ffd2851cc47469ff6f44e2736ab2a5cbc919224aac5f33de840a45d",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 71734,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "13b7e8c84a23100d698a733b67f9788ac0b9d3edb56ab7a1ed3baaa7131f175f"
       }
     },
     "winter-favourites": {
@@ -533,7 +954,111 @@
           "width": 3840,
           "height": 2160,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:109445",
+          "tmdbId": 109445,
+          "title": "Frozen",
+          "artworkPath": "jUPyfp07H2PXBSeFGw8BVMHfBV8.jpg",
+          "sha256": "f309526557fb8aae8cad462ecdb9d33234b3e83854e5e4ccc258a1907392295d",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false,
+          "crop": [
+            840,
+            0,
+            1080,
+            1080
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:109445",
+          "tmdbId": 109445,
+          "title": "Frozen",
+          "artworkPath": "jUPyfp07H2PXBSeFGw8BVMHfBV8.jpg",
+          "sha256": "f309526557fb8aae8cad462ecdb9d33234b3e83854e5e4ccc258a1907392295d",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false,
+          "crop": [
+            840,
+            0,
+            1080,
+            1080
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/holiday/winter-favourites/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/winter-favourites/poster.webp",
+        "sha256": "69a06801f2033fb5c01461efbb88efa3546d575c07196afa055a85a6e600aec9",
+        "sourceSha256": "798d67949c139f651d62d7e068d27819a17aff2b1a85cde945ed47963ca13d14",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 122792,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/holiday/winter-favourites/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/winter-favourites/poster-focus.webp",
+        "sha256": "f87574c215fb8cac2ae628510ac7243bc669c9989090cc5262b7ffc84b9e9072",
+        "sourceSha256": "3f05a3ce85c3c70aebf5976023b3e7066bbadc2fd053c5c068ed249703c1fd6f",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 126856,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "69a06801f2033fb5c01461efbb88efa3546d575c07196afa055a85a6e600aec9"
+      },
+      "square": {
+        "path": "assets/collection_covers/holiday/winter-favourites/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/winter-favourites/square.webp",
+        "sha256": "ce4d29a4c33b9b4cc700c1bff0fa063ce0f8b00a429a08b376c18de5eb9fe0dd",
+        "sourceSha256": "c3b0cae3b5a48a6a7b0dc80e8165159285b519d510906042262a260757ab852f",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 80270,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/holiday/winter-favourites/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/holiday/winter-favourites/square-focus.webp",
+        "sha256": "4aa40394804e8cba621cc000a6b5b587e4276ce62a31adecb6b5a684eb925d11",
+        "sourceSha256": "d75f6579cffb2d922923e3338cc4a8ba76d634ed08191cada6d4b51742d629ed",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 83712,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "ce4d29a4c33b9b4cc700c1bff0fa063ce0f8b00a429a08b376c18de5eb9fe0dd"
       }
     }
   },
@@ -560,5 +1085,13 @@
     "photoCompression": "Measured perceptual quality checks and visual review",
     "sourceHashMeaning": "Asset sourceSha256 is the lossless render master hash; artworkSources records the original film image hash",
     "legacyPolicy": "Three legacy JPGs retired with approval; use the new WebP paths"
+  },
+  "formatExtensionApproval": {
+    "status": "owner-approved",
+    "recordedAt": "2026-09-08T09:10:17.324Z",
+    "sourcePackage": "based-on-holiday-poster-square-proof-v1",
+    "reviewedBindingsSha256": "4b35ef54d8bc7cff53c1d18c3e82ff768a01ff3fbc513c244964eb7110251785",
+    "scope": "Twenty poster, poster-focus, square and square-focus assets across five Holiday sets",
+    "nuvioPreview": "pending"
   }
 }

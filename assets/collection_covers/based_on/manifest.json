@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "kind": "based-on-artwork",
   "category": "based_on",
   "assetBaseUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/",
@@ -14,15 +14,20 @@
   },
   "counts": {
     "sets": 10,
-    "assets": 40,
-    "totalImageFiles": 40,
-    "totalImageBytes": 7844264
+    "assets": 80,
+    "totalImageFiles": 80,
+    "totalImageBytes": 13605108
   },
-  "fingerprint": "8c0ac7389112c448c5d2e25663323c204064054a025e337447bb173e7602aec6",
+  "fingerprint": "2ace7f6d0408617ab6d444351fcb6ef57ece04ace44099cbb8aacad8cf76b0b5",
   "focusPolicy": {
     "strategy": "stronger-text-outline",
     "base": "landscape",
-    "normalLetterFillPreserved": true
+    "normalLetterFillPreserved": true,
+    "baseRoles": {
+      "focus": "landscape",
+      "posterFocus": "poster",
+      "squareFocus": "square"
+    }
   },
   "heroPolicy": {
     "strategy": "single-related-film",
@@ -128,7 +133,111 @@
           "width": 1920,
           "height": 1080,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:671",
+          "tmdbId": 671,
+          "title": "Harry Potter and the Philosopher's Stone",
+          "artworkPath": "hziiv14OpD73u9gAak4XDDfBKa2.jpg",
+          "sha256": "b75af799d772968a458a1c488953eb5863b3826614bcd0cf575adeed96be1406",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1750,
+            0,
+            1645,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:671",
+          "tmdbId": 671,
+          "title": "Harry Potter and the Philosopher's Stone",
+          "artworkPath": "bfh9Z3Ghz4FOJAfLOAhmc3ccnHU.jpg",
+          "sha256": "799982e7f10aa3184fb80e79d918de8a098f41528ef770ab71ac63bbff92e310",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1221,
+            0,
+            2319,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/based_on/books/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/books/poster.webp",
+        "sha256": "6d69c2349942d7e8cad28bcbb81ab51317da218739417fec9b11b54851138247",
+        "sourceSha256": "e0964bd92ddac5174815271a36a805de7e810e4b7ea32add49c983e7ff523295",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 99762,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/based_on/books/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/books/poster-focus.webp",
+        "sha256": "dba72a4179304872a936d7df87f55f1e7abdc543957c6ba9afb2c7c681666e13",
+        "sourceSha256": "2e2737a19f144f92f22bacbf0dcd10105e5ef59f5449118e52d390fe4a178509",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 104288,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "6d69c2349942d7e8cad28bcbb81ab51317da218739417fec9b11b54851138247"
+      },
+      "square": {
+        "path": "assets/collection_covers/based_on/books/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/books/square.webp",
+        "sha256": "5eb1be3d64c8c6aa03155cc009778204d0f84c4a8cd40474af2386b42a014192",
+        "sourceSha256": "48f189e24bc7ed30686d887796ebd9fadcb1c0e3ead554b3b0000d4c2cb3e3e7",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 147482,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/based_on/books/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/books/square-focus.webp",
+        "sha256": "13a8d9b8575716636e07bbdc941e0803a2b0d4eb70d2e73806b83a61a3f1cc1f",
+        "sourceSha256": "1f54b5c34ee067b3aaf1de30cdaeb4d44077801cb210c7b11a174f4a7ed1e7ba",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 153148,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "5eb1be3d64c8c6aa03155cc009778204d0f84c4a8cd40474af2386b42a014192"
       }
     },
     "video-games": {
@@ -228,7 +337,111 @@
           "width": 1920,
           "height": 1080,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:502356",
+          "tmdbId": 502356,
+          "title": "The Super Mario Bros. Movie",
+          "artworkPath": "nLBRD7UPR6GjmWQp6ASAfCTaWKX.jpg",
+          "sha256": "1f32f560cc21d472bffefc05c8928fe054d4e7e0a313b212566014a4c2b9f0e7",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1674,
+            0,
+            1645,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:502356",
+          "tmdbId": 502356,
+          "title": "The Super Mario Bros. Movie",
+          "artworkPath": "nLBRD7UPR6GjmWQp6ASAfCTaWKX.jpg",
+          "sha256": "1f32f560cc21d472bffefc05c8928fe054d4e7e0a313b212566014a4c2b9f0e7",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1337,
+            0,
+            2319,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/based_on/video-games/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/video-games/poster.webp",
+        "sha256": "3a9dc8fb87af25ba4f5c128c3b52e85ff5a8aeb000048d090ad26ab824284d70",
+        "sourceSha256": "7e66e90b01bf5a02d3f80b6793f9760112add81703ca545272a70df96f411bff",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 310000,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp-high-quality",
+          "lossless": false,
+          "quality": 100,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/based_on/video-games/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/video-games/poster-focus.webp",
+        "sha256": "2ae8032db6240f17e38ed1360098d09418adecb9c57003f9046d903700daecb0",
+        "sourceSha256": "ca074d1e7ece0339d3dcf27bc3cd644472ed6ba95858ae45f200013b27c3d0b6",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 323916,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp-high-quality",
+          "lossless": false,
+          "quality": 100,
+          "effort": 6
+        },
+        "baseCoverSha256": "3a9dc8fb87af25ba4f5c128c3b52e85ff5a8aeb000048d090ad26ab824284d70"
+      },
+      "square": {
+        "path": "assets/collection_covers/based_on/video-games/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/video-games/square.webp",
+        "sha256": "39254fad971ce3843160bc7319124dc18fbb285f94f826bd56f8c0a731f8c90f",
+        "sourceSha256": "62997d424560702c55d8148b9873a0de6e2f636a3ecaf81694272d5734d39757",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 628670,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "lossless-after-lossy-quality-gate",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/based_on/video-games/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/video-games/square-focus.webp",
+        "sha256": "619b192f3f38237a358a06d41aa1e8cf85f083e03eca30c9bef1ebcf68d8873a",
+        "sourceSha256": "24abdc94b521756e206c8260226e077f60cc6ae05424e60a35454995e93e2f82",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 649410,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "lossless-after-lossy-quality-gate",
+          "lossless": true,
+          "quality": null,
+          "effort": 6
+        },
+        "baseCoverSha256": "39254fad971ce3843160bc7319124dc18fbb285f94f826bd56f8c0a731f8c90f"
       }
     },
     "comics": {
@@ -328,7 +541,111 @@
           "width": 3697,
           "height": 2080,
           "horizontalMirror": true
+        },
+        "poster": {
+          "key": "movie:155",
+          "tmdbId": 155,
+          "title": "The Dark Knight",
+          "artworkPath": "9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+          "sha256": "d217714e70a9e863e12d12efad059996d6900c130d2d2a56f925aa7bb05dfcce",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": true,
+          "crop": [
+            1712,
+            0,
+            1645,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:155",
+          "tmdbId": 155,
+          "title": "The Dark Knight",
+          "artworkPath": "9FE5eD92WfVCiivM9Pq9GVSrlWk.jpg",
+          "sha256": "d217714e70a9e863e12d12efad059996d6900c130d2d2a56f925aa7bb05dfcce",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": true,
+          "crop": [
+            1375,
+            0,
+            2319,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/based_on/comics/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/comics/poster.webp",
+        "sha256": "8ccb11015e44c52f517b4c9fa62fb389d5f522574498721a8409b9d1e76dd5d7",
+        "sourceSha256": "b6e88d587f46b0e47442f9815f6badc4ebd2ec498f0694da07bdafdb1a27b051",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 112328,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/based_on/comics/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/comics/poster-focus.webp",
+        "sha256": "26a7216de5b4ed9c877d9192c9fe9977585754ae78d7eba728c8282ba52d4cac",
+        "sourceSha256": "9b114c5951825bc25e3ebae31ea1687dcc2e1dfb09f3fd51f62a6a72fed3da66",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 187710,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "8ccb11015e44c52f517b4c9fa62fb389d5f522574498721a8409b9d1e76dd5d7"
+      },
+      "square": {
+        "path": "assets/collection_covers/based_on/comics/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/comics/square.webp",
+        "sha256": "ec211d261d083e7291ab647b250f7afcbdcd575ac5fe8f6f6ee228084ac8db07",
+        "sourceSha256": "81d08081e898087f329196d80983c819cc0d0583a88862910021c67b5f9a4b5c",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 155860,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/based_on/comics/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/comics/square-focus.webp",
+        "sha256": "814b8e1a4db2b9d6e5e04fbdb98d1e4d83544e2d961e52365ec3a0d34ca6ba26",
+        "sourceSha256": "caa395270850615e25a16a89b2c746e4efac04d298dc3fc91fba177ab2b78ea8",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 160760,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "ec211d261d083e7291ab647b250f7afcbdcd575ac5fe8f6f6ee228084ac8db07"
       }
     },
     "true-stories": {
@@ -428,7 +745,111 @@
           "width": 3840,
           "height": 2160,
           "horizontalMirror": true
+        },
+        "poster": {
+          "key": "movie:568",
+          "tmdbId": 568,
+          "title": "Apollo 13",
+          "artworkPath": "pcSjQftPIflB8pSy0g41oSktp6N.jpg",
+          "sha256": "752b3d58ab4d1a1ffb33b187c47a719d1f36eb86bcedb1f0b3664e68d7d42469",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false,
+          "crop": [
+            0,
+            0,
+            822,
+            1080
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:568",
+          "tmdbId": 568,
+          "title": "Apollo 13",
+          "artworkPath": "pcSjQftPIflB8pSy0g41oSktp6N.jpg",
+          "sha256": "752b3d58ab4d1a1ffb33b187c47a719d1f36eb86bcedb1f0b3664e68d7d42469",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false,
+          "crop": [
+            0,
+            0,
+            1159,
+            1080
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/based_on/true-stories/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/true-stories/poster.webp",
+        "sha256": "9e41aebd3687b3f6e6693754160dd225f7f2554e5d52473c874dd4a0096d894b",
+        "sourceSha256": "7d0b2de49c30a7d3f6643d172efeb8bb201285e1ebb28f9aa17747deec8bfb3a",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 121552,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/based_on/true-stories/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/true-stories/poster-focus.webp",
+        "sha256": "b9d3eb7b813c47be49577e77ae51fbe400714e079e6233cb371c253fe3ceb5cc",
+        "sourceSha256": "729105d16a7f1fbff64730647a666a6ec379981db5a52e2ba23a99af87fcbe0d",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 129756,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "9e41aebd3687b3f6e6693754160dd225f7f2554e5d52473c874dd4a0096d894b"
+      },
+      "square": {
+        "path": "assets/collection_covers/based_on/true-stories/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/true-stories/square.webp",
+        "sha256": "a0261c6860d0a1385d7ba1d22ac13ba9f1a1aa77dbf31f5bcadb4c65d9dab7a7",
+        "sourceSha256": "ed1d40840f44e37856f332deae8e9818043f2a9b9c25ad792b855e6a1eb7784e",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 131820,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/based_on/true-stories/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/true-stories/square-focus.webp",
+        "sha256": "2158a635545157dc57920083584fb874f75aa09455bd9b718811bbbc65881daf",
+        "sourceSha256": "7c66640b832617c5602ea9106fb381579fbfaa4dc7f5832f6a15876cd68abde2",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 138822,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "a0261c6860d0a1385d7ba1d22ac13ba9f1a1aa77dbf31f5bcadb4c65d9dab7a7"
       }
     },
     "mythology": {
@@ -528,7 +949,111 @@
           "width": 1920,
           "height": 1080,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:18823",
+          "tmdbId": 18823,
+          "title": "Clash of the Titans",
+          "artworkPath": "h7Bk9yEIKhyYo96EuTUki1oJE1R.jpg",
+          "sha256": "f5e7b60592e93e1233462e51bf1f2491ddec7bdfc58b3c4f6069d85aeac6251b",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1405,
+            0,
+            1645,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:18823",
+          "tmdbId": 18823,
+          "title": "Clash of the Titans",
+          "artworkPath": "h7Bk9yEIKhyYo96EuTUki1oJE1R.jpg",
+          "sha256": "f5e7b60592e93e1233462e51bf1f2491ddec7bdfc58b3c4f6069d85aeac6251b",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1068,
+            0,
+            2319,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/based_on/mythology/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/mythology/poster.webp",
+        "sha256": "6499f167e61081c9d8b8d3d76d8e16e5c1da6b98c816c073896d4cbcd3c8b37d",
+        "sourceSha256": "1bc62fb0ed5022cb0ef83ea5e5a97064351054271b630d486c59b3a8f6aedf88",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 45672,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 72,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/based_on/mythology/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/mythology/poster-focus.webp",
+        "sha256": "959e23cda76195b2960e6ea34591926b0cf8f56f22e211f8ef593834cc314591",
+        "sourceSha256": "fc4bd9eb27edc047638a3406948e2e75ae35a2641e6abd6616bd441e7c06a667",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 64566,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "6499f167e61081c9d8b8d3d76d8e16e5c1da6b98c816c073896d4cbcd3c8b37d"
+      },
+      "square": {
+        "path": "assets/collection_covers/based_on/mythology/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/mythology/square.webp",
+        "sha256": "66dd01062c4da5eea2f03dce9a133ef01e83f7f10c3914c06f2757b337dcfd15",
+        "sourceSha256": "6fa73f362f42059250585b1aaf3ee7264817ff52ec28883bed68d25a41cd56c8",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 41298,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/based_on/mythology/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/mythology/square-focus.webp",
+        "sha256": "5eac6eee1dd17ecb6b4e47de041db7e12a787805e2cd4213cefde9581b11a05a",
+        "sourceSha256": "d1f52d401b5b3d47af20b53a2ab7c426d4bb9716dcfd3098801b103f5221894f",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 46612,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "66dd01062c4da5eea2f03dce9a133ef01e83f7f10c3914c06f2757b337dcfd15"
       }
     },
     "history": {
@@ -628,7 +1153,111 @@
           "width": 3840,
           "height": 2160,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:374720",
+          "tmdbId": 374720,
+          "title": "Dunkirk",
+          "artworkPath": "eXYbyOx6GFvmpOJl6AS8QxXeIYE.jpg",
+          "sha256": "1e816e7ad8865ae009d0ad6e3ae9f00a29c3d80d76d3f89e743cb0d2985b5f1f",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            2195,
+            0,
+            1645,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:374720",
+          "tmdbId": 374720,
+          "title": "Dunkirk",
+          "artworkPath": "eXYbyOx6GFvmpOJl6AS8QxXeIYE.jpg",
+          "sha256": "1e816e7ad8865ae009d0ad6e3ae9f00a29c3d80d76d3f89e743cb0d2985b5f1f",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1521,
+            0,
+            2319,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/based_on/history/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/history/poster.webp",
+        "sha256": "9ddf678a162c55e93edc70dceeded9cffecbf3ef3a3b1026bac68e8b30463ff5",
+        "sourceSha256": "8e138295d8919723babac581b74e04884a4d4eff55e1ef5bdc91bcba992e6632",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 117852,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/based_on/history/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/history/poster-focus.webp",
+        "sha256": "eeeccaaafe6baf5923d3944d73002e1f322a2a99bcfacab5b9409e70d592a3f4",
+        "sourceSha256": "d9ccead3a2a05e59f93e9a79324554c963c94321b9c25f34456ace6076afe86b",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 127468,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "9ddf678a162c55e93edc70dceeded9cffecbf3ef3a3b1026bac68e8b30463ff5"
+      },
+      "square": {
+        "path": "assets/collection_covers/based_on/history/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/history/square.webp",
+        "sha256": "5b62c50fd90051e9fd7b4bb8f47d1e3ac951d4d1c97df668c5aa5f9e8b6e852a",
+        "sourceSha256": "2841ae6bf0fdf7a8143195d84753c0c11063076812f67c92be2fd4ca7228a759",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 48992,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/based_on/history/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/history/square-focus.webp",
+        "sha256": "c4b8296d62e08bc116efc192adacc54396db63493b4f096724d02f15261d1588",
+        "sourceSha256": "1e1c7f1f06a307e7ab294f6790bc04fe78f79b9d6520dd4ad66419ca3187ab48",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 53152,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "5b62c50fd90051e9fd7b4bb8f47d1e3ac951d4d1c97df668c5aa5f9e8b6e852a"
       }
     },
     "fairy-tales": {
@@ -728,7 +1357,111 @@
           "width": 3840,
           "height": 2160,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:150689",
+          "tmdbId": 150689,
+          "title": "Cinderella",
+          "artworkPath": "q7vmCCmyiHnuKGMzHZlr0fD44b9.jpg",
+          "sha256": "e6453b96f61d56c2d689141b12b4a78e7adab1c5134b384922672e9a9c0c8b02",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            2134,
+            0,
+            1645,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:150689",
+          "tmdbId": 150689,
+          "title": "Cinderella",
+          "artworkPath": "q7vmCCmyiHnuKGMzHZlr0fD44b9.jpg",
+          "sha256": "e6453b96f61d56c2d689141b12b4a78e7adab1c5134b384922672e9a9c0c8b02",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1521,
+            0,
+            2319,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/based_on/fairy-tales/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/fairy-tales/poster.webp",
+        "sha256": "72f649a78d5e5342341e8d37d6eb02a37fa3a1fe0d144a4a9cd9c9076bc6baef",
+        "sourceSha256": "592a2dac7fd9738ddf069b25617968313ce25e478e65bdb85fa39ac0f46d48cb",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 64028,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/based_on/fairy-tales/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/fairy-tales/poster-focus.webp",
+        "sha256": "c30a8018bc29c6ace00ecd24465cc9cda89fb40e04f24ae72a995af8e13257ab",
+        "sourceSha256": "e410579b7c1e8f40fcc99b2059e9d4c0c2f083f8e759060bf243691dc5f04463",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 68260,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "72f649a78d5e5342341e8d37d6eb02a37fa3a1fe0d144a4a9cd9c9076bc6baef"
+      },
+      "square": {
+        "path": "assets/collection_covers/based_on/fairy-tales/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/fairy-tales/square.webp",
+        "sha256": "a8b11ded463c43841cde1ec56ff6a7817eb657bc0104d7a655e818b584f3c711",
+        "sourceSha256": "28117f4f9c8fa7bdc5d88e5b376f0e143ce292e4a3d2d0657d6eda5876dccea1",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 43510,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/based_on/fairy-tales/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/fairy-tales/square-focus.webp",
+        "sha256": "d07e60e9cf1c2f92decdcd350413f8b7e991c123f2b5a855f981abbd64ee0a50",
+        "sourceSha256": "0016396b946e4865e34a741576a7bd252154ebe0d7dec8dc3c45cad4d4641191",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 46340,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 86,
+          "effort": 6
+        },
+        "baseCoverSha256": "a8b11ded463c43841cde1ec56ff6a7817eb657bc0104d7a655e818b584f3c711"
       }
     },
     "stage-shows": {
@@ -828,7 +1561,111 @@
           "width": 3840,
           "height": 2160,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:402431",
+          "tmdbId": 402431,
+          "title": "Wicked",
+          "artworkPath": "jTOeWjamUKGxWVUO1TMZXqQUarw.jpg",
+          "sha256": "1f91da5d26aaf9c1d9b7da9cc818bfe6c469a9bb0ccbf94b63357fdd8bf66509",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            2058,
+            0,
+            1645,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:402431",
+          "tmdbId": 402431,
+          "title": "Wicked",
+          "artworkPath": "jTOeWjamUKGxWVUO1TMZXqQUarw.jpg",
+          "sha256": "1f91da5d26aaf9c1d9b7da9cc818bfe6c469a9bb0ccbf94b63357fdd8bf66509",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1521,
+            0,
+            2319,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/based_on/stage-shows/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/stage-shows/poster.webp",
+        "sha256": "b403615ac54806173c2135ba61f676fae6faf740deddc1817bde604de6469c4e",
+        "sourceSha256": "f28732257904379a20482f5084b42357d842418917126ba15aafc657cf86a784",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 110964,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/based_on/stage-shows/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/stage-shows/poster-focus.webp",
+        "sha256": "2ebe65d3508f1f83e5b659e175d2ad70ba983cd92e4a83881fa029b30a1e7600",
+        "sourceSha256": "cd44ef92edf60ea45eff36f2cfd43adcdfe5d1a6b39949a91d5d9d56aee0d79e",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 123566,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "b403615ac54806173c2135ba61f676fae6faf740deddc1817bde604de6469c4e"
+      },
+      "square": {
+        "path": "assets/collection_covers/based_on/stage-shows/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/stage-shows/square.webp",
+        "sha256": "36b2e5e93ea3b91abfc6af652e958535eb76fd3f987daee11592b760fdb1110f",
+        "sourceSha256": "f7ad973ba806726ac12712f4166fd0d2945a8b654e34e1d03eb5707ea10f5b45",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 27660,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/based_on/stage-shows/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/stage-shows/square-focus.webp",
+        "sha256": "18c8d6454973730b4fe04d7f61c5cda5f35eb203929d22f69030589f6229034c",
+        "sourceSha256": "14e6fe98c9169f2aa964642b3b9423ef984fb06b781d14ff2bcfc4de07136fa4",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 32504,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "36b2e5e93ea3b91abfc6af652e958535eb76fd3f987daee11592b760fdb1110f"
       }
     },
     "toys-and-games": {
@@ -928,7 +1765,111 @@
           "width": 3680,
           "height": 2070,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:346698",
+          "tmdbId": 346698,
+          "title": "Barbie",
+          "artworkPath": "ctMserH8g2SeOAnCw5gFjdQF8mo.jpg",
+          "sha256": "a148c0f15012625e485465c8ff80df50b887678d413a9ed6b565355cc53eaa5d",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1904,
+            0,
+            1645,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:346698",
+          "tmdbId": 346698,
+          "title": "Barbie",
+          "artworkPath": "ctMserH8g2SeOAnCw5gFjdQF8mo.jpg",
+          "sha256": "a148c0f15012625e485465c8ff80df50b887678d413a9ed6b565355cc53eaa5d",
+          "width": 3840,
+          "height": 2160,
+          "horizontalMirror": false,
+          "crop": [
+            1521,
+            0,
+            2319,
+            2160
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/based_on/toys-and-games/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/toys-and-games/poster.webp",
+        "sha256": "9a6f3cf826c494abd92716519f77e9307e582b8b9d1ae355b7b0c775cbf630c9",
+        "sourceSha256": "09106e6011f38e01644885822a10b95e09a8a14fc2363a87b9ea3ad481e26f49",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 45776,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/based_on/toys-and-games/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/toys-and-games/poster-focus.webp",
+        "sha256": "8fd8f6709efcbf007e567d81ce6dbb058fd8461b5203ea9c6cb0ccfdccc56781",
+        "sourceSha256": "59fba8df1368a58111ba296cd2341c36498cd10ebab29ded535a35e468767b00",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 51972,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "9a6f3cf826c494abd92716519f77e9307e582b8b9d1ae355b7b0c775cbf630c9"
+      },
+      "square": {
+        "path": "assets/collection_covers/based_on/toys-and-games/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/toys-and-games/square.webp",
+        "sha256": "7342f3b6585c30ed60daf4ff6ef756d93863178a9de9acc0d85d6c37f9a38c57",
+        "sourceSha256": "d4673bc5967b8e87569be92aeaa69e7c3c95e617c1b4fd38df47b9c9b61a3ae2",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 31998,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/based_on/toys-and-games/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/toys-and-games/square-focus.webp",
+        "sha256": "3d88864d08570ad12ccff9d33eea2f2d218d2d078ecba2f8217c1f90a0436dcf",
+        "sourceSha256": "39de72a24a11e77268e08e4099e001eddc5a584dda4af590b8bb722ea68e5f99",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 35758,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 80,
+          "effort": 6
+        },
+        "baseCoverSha256": "7342f3b6585c30ed60daf4ff6ef756d93863178a9de9acc0d85d6c37f9a38c57"
       }
     },
     "tv-shows": {
@@ -1028,7 +1969,111 @@
           "width": 3151,
           "height": 1773,
           "horizontalMirror": false
+        },
+        "poster": {
+          "key": "movie:954",
+          "tmdbId": 954,
+          "title": "Mission: Impossible",
+          "artworkPath": "jnR697dbIYn0erHOQdSFNhHhb1i.jpg",
+          "sha256": "d2d08dae581d18fca31fdf7c61e21fe56ea07a7fd0dd4738a204dfe276b278a7",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false,
+          "crop": [
+            818,
+            0,
+            822,
+            1080
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
+        },
+        "square": {
+          "key": "movie:954",
+          "tmdbId": 954,
+          "title": "Mission: Impossible",
+          "artworkPath": "jnR697dbIYn0erHOQdSFNhHhb1i.jpg",
+          "sha256": "d2d08dae581d18fca31fdf7c61e21fe56ea07a7fd0dd4738a204dfe276b278a7",
+          "width": 1920,
+          "height": 1080,
+          "horizontalMirror": false,
+          "crop": [
+            649,
+            0,
+            1159,
+            1080
+          ],
+          "cropCoordinateSpace": "after-horizontal-mirror"
         }
+      },
+      "poster": {
+        "path": "assets/collection_covers/based_on/tv-shows/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/tv-shows/poster.webp",
+        "sha256": "c58f756a81d85dd1aa32bc849873bab9bd6223d84981ed1f5a924cfa915db9cc",
+        "sourceSha256": "eda8296851969e4eeb5d25cf984930dc082ee954e4b53f2c94a95dc89486adf7",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 287894,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "posterFocus": {
+        "path": "assets/collection_covers/based_on/tv-shows/poster-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/tv-shows/poster-focus.webp",
+        "sha256": "97e2fd514af77e5455a7145b81aa0724f5c2aabd08dd2a65e2a7a478d097a3c8",
+        "sourceSha256": "64e68d592278b24d32f6e9d4fca2131a8c4af1a39d49c2d96583df62e3406fce",
+        "format": "webp",
+        "width": 800,
+        "height": 1200,
+        "bytes": 294644,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "c58f756a81d85dd1aa32bc849873bab9bd6223d84981ed1f5a924cfa915db9cc"
+      },
+      "square": {
+        "path": "assets/collection_covers/based_on/tv-shows/square.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/tv-shows/square.webp",
+        "sha256": "b4de01133097e4030cb4941a576528195f2e48afa4bbc9b2cf79230c9d394cdc",
+        "sourceSha256": "2257318bb2b9dd03443d4cf919e62dc309bf1db1af0eb844e4dc743a2a4b4d32",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 193976,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        }
+      },
+      "squareFocus": {
+        "path": "assets/collection_covers/based_on/tv-shows/square-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/based_on/tv-shows/square-focus.webp",
+        "sha256": "30025ba86d0e56858964c7d3aa42b8519576c9b5099981f67f2bda65b97e931a",
+        "sourceSha256": "2be2de57f183d222db0282d210cb3dea0c9d684da9dda7d90388a98e773efe53",
+        "format": "webp",
+        "width": 800,
+        "height": 800,
+        "bytes": 201098,
+        "hasAlpha": false,
+        "encoding": {
+          "method": "perceptually-checked-webp",
+          "lossless": false,
+          "quality": 92,
+          "effort": 6
+        },
+        "baseCoverSha256": "b4de01133097e4030cb4941a576528195f2e48afa4bbc9b2cf79230c9d394cdc"
       }
     }
   },
@@ -1065,5 +2110,13 @@
     "photoCompression": "Perceptual quality checks and visual review",
     "sourceHashMeaning": "Asset sourceSha256 is the lossless render master hash; artworkSources records the original film image hash",
     "legacyPolicy": "Five legacy JPGs retired; new category paths replace them"
+  },
+  "formatExtensionApproval": {
+    "status": "owner-approved",
+    "recordedAt": "2026-09-08T09:10:17.324Z",
+    "sourcePackage": "based-on-holiday-poster-square-proof-v1",
+    "reviewedBindingsSha256": "4b35ef54d8bc7cff53c1d18c3e82ff768a01ff3fbc513c244964eb7110251785",
+    "scope": "Forty poster, poster-focus, square and square-focus assets across ten Based on sets",
+    "nuvioPreview": "pending"
   }
 }
