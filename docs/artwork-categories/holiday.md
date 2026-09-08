@@ -18,9 +18,9 @@ Other holidays, Awards, Builder development and the sibling tmdb-id-lookup repos
 
 ## State and next action
 
-State: published and live-hash verified. The owner authorised the exact reviewed set, three legacy JPG retirements, commit and push on 2026-09-05. Local main and fetched origin/main both started at 51a463d711a720e46a83f61d3d8a17fec96b6134; main was checked again before staging and had not moved. Artwork release: [7d0ae9c](https://github.com/davecollections/nuvio-assets/commit/7d0ae9c354696ab9f190c4f6202758a9a1c2a4aa).
+Original release: published and live-hash verified. The owner authorised the exact reviewed set, three legacy JPG retirements, commit and push on 2026-09-05. Local main and fetched origin/main both started at 51a463d711a720e46a83f61d3d8a17fec96b6134; main was checked again before staging and had not moved. Artwork release: [7d0ae9c](https://github.com/davecollections/nuvio-assets/commit/7d0ae9c354696ab9f190c4f6202758a9a1c2a4aa).
 
-The original landscape/logo/hero publication is complete. Twenty approved poster/square cover/focus files are installed and validated, with commit/push and live verification next. General Builder integration is absent and Nuvio acceptance remains untested.
+The original landscape/logo/hero publication is complete. Twenty approved poster/square cover/focus files are published to main and live-hash verified. General Builder integration is absent and Nuvio acceptance remains untested.
 
 Preexisting Awards changes in .gitignore, README.md, data/awards, schemas/awards-* and tools/awards-artwork are excluded from the release and preserved.
 
@@ -104,7 +104,7 @@ Holiday layout: the circular film image moves above the title, with fewer periph
 
 ## Approved format extension — 2026-09-08
 
-State: installed and fully validated; commit/push and live URL verification are next. Local main and freshly fetched origin/main both matched f31212e6b9ba9da5b2180d7e885c0117490e71c8 before preparation and again before installation.
+State: published to remote main and live-hash verified. Artwork release commit: [3b99d1e](https://github.com/davecollections/nuvio-assets/commit/3b99d1e34491fc3277f2a46ec8f2344278c7add5). Local main and freshly fetched origin/main both matched f31212e6b9ba9da5b2180d7e885c0117490e71c8 before preparation and again before installation.
 
 Release evidence (ignored/local-only): tools/studio-network-batch/.work/staging/based-on-holiday-poster-square-proof-v1/publication/. approval.json binds the sixty reviewed stable-key/role/target/SHA-256 records. reviewed-* freezes the proof reports and source plan; prepared/ freezes the exact sixty delivered WebPs plus six category metadata files. backup/ retains both previous manifests, schemas, READMEs and all three artwork documents. plan.json permits exactly sixty new images, six metadata updates and three documentation updates. No original image is replaced or deleted.
 
@@ -115,3 +115,9 @@ Both strict draft-2020-12 schemas pass Ajv validation. Candidate and installed v
 The schemaVersion 2 format extension preserves the original approval and adds formatExtensionApproval. Each new role has its exact URL, output hash, master hash, dimensions, bytes and encoding. artworkSources.poster and artworkSources.square retain original-image identity/hash, mirror flag and [left, top, width, height] crop in source pixels after the mirror. focusPolicy.baseRoles explicitly maps focus to landscape, posterFocus to poster and squareFocus to square. The original landscape/logo/hero URLs and all unrelated categories are unchanged.
 
 For recovery, run node tools/studio-network-batch/.work/staging/based-on-holiday-poster-square-proof-v1/publication/release.cjs verify --installed. Do not rerun prepare or install over an existing release. Source caches, local approvals and proof galleries are not committed. Other tasks’ Awards changes remain outside this release.
+
+### Format publication verification
+
+At 2026-09-08T09:13:50.132Z, all 252 HTTP checks passed: 120 image responses and six category metadata responses at both main and the immutable artwork commit 3b99d1e34491fc3277f2a46ec8f2344278c7add5. Every response matched its committed SHA-256; default main URLs were checked without cache-busting parameters. live-url-verification.json records the results. Remote main matched the artwork commit at verification.
+
+commit-receipt.json records exactly 69 release paths: sixty new WebPs, six category metadata files and three artwork documents. No image replacements, deletions, source downloads or regeneration occurred. The subsequent documentation commit records completion only. All 136 repository tests, two schemas and installed/preservation checks passed. The working tree retains only the preexisting Awards changes; no Based on or Holiday publication work remains.

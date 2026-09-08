@@ -23,9 +23,9 @@ Category key: based_on. Stable keys: based_on:SLUG. Ten film-artwork categories,
 
 Original landscape/logo/hero release state: published to remote main and live-hash verified. Approval covers all forty v3 images, retirement of all five legacy JPGs, category metadata, commit and push. The stronger focus treatment is selected. General Builder integration is absent and Nuvio client framing remains untested.
 
-The 2026-09-08 proof work runs on the current local main with unrelated Awards changes preserved. Forty approved poster/square cover/focus files are installed and validated, with commit/push and live verification next; the original forty published assets remain unchanged. The isolated-checkout details in the completed-publication section below are historical release evidence.
+The 2026-09-08 proof work runs on the current local main with unrelated Awards changes preserved. Forty approved poster/square cover/focus files are published to main and live-hash verified; the original forty published assets remain unchanged. The isolated-checkout details in the completed-publication section below are historical release evidence.
 
-Next: commit and push the approved format extension, then verify live hashes. General Builder integration and Nuvio client acceptance remain separate work.
+Next: no publication work remains for the approved format extension. General Builder integration and Nuvio client acceptance remain separate work.
 
 ## Design and delivery contract
 
@@ -103,7 +103,7 @@ Based on layout: scene above pearl-white titles, a close-set small BASED ON capt
 
 ## Approved format extension — 2026-09-08
 
-State: installed and fully validated; commit/push and live URL verification are next. Local main and freshly fetched origin/main both matched f31212e6b9ba9da5b2180d7e885c0117490e71c8 before preparation and again before installation.
+State: published to remote main and live-hash verified. Artwork release commit: [3b99d1e](https://github.com/davecollections/nuvio-assets/commit/3b99d1e34491fc3277f2a46ec8f2344278c7add5). Local main and freshly fetched origin/main both matched f31212e6b9ba9da5b2180d7e885c0117490e71c8 before preparation and again before installation.
 
 Release evidence (ignored/local-only): tools/studio-network-batch/.work/staging/based-on-holiday-poster-square-proof-v1/publication/. approval.json binds the sixty reviewed stable-key/role/target/SHA-256 records. reviewed-* freezes the proof reports and source plan; prepared/ freezes the exact sixty delivered WebPs plus six category metadata files. backup/ retains both previous manifests, schemas, READMEs and all three artwork documents. plan.json permits exactly sixty new images, six metadata updates and three documentation updates. No original image is replaced or deleted.
 
@@ -114,3 +114,9 @@ Both strict draft-2020-12 schemas pass Ajv validation. Candidate and installed v
 The schemaVersion 2 format extension preserves the original approval and adds formatExtensionApproval. Each new role has its exact URL, output hash, master hash, dimensions, bytes and encoding. artworkSources.poster and artworkSources.square retain original-image identity/hash, mirror flag and [left, top, width, height] crop in source pixels after the mirror. focusPolicy.baseRoles explicitly maps focus to landscape, posterFocus to poster and squareFocus to square. The original landscape/logo/hero URLs and all unrelated categories are unchanged.
 
 For recovery, run node tools/studio-network-batch/.work/staging/based-on-holiday-poster-square-proof-v1/publication/release.cjs verify --installed. Do not rerun prepare or install over an existing release. Source caches, local approvals and proof galleries are not committed. Other tasks’ Awards changes remain outside this release.
+
+### Format publication verification
+
+At 2026-09-08T09:13:50.132Z, all 252 HTTP checks passed: 120 image responses and six category metadata responses at both main and the immutable artwork commit 3b99d1e34491fc3277f2a46ec8f2344278c7add5. Every response matched its committed SHA-256; default main URLs were checked without cache-busting parameters. live-url-verification.json records the results. Remote main matched the artwork commit at verification.
+
+commit-receipt.json records exactly 69 release paths: sixty new WebPs, six category metadata files and three artwork documents. No image replacements, deletions, source downloads or regeneration occurred. The subsequent documentation commit records completion only. All 136 repository tests, two schemas and installed/preservation checks passed. The working tree retains only the preexisting Awards changes; no Based on or Holiday publication work remains.
