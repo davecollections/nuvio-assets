@@ -1,6 +1,6 @@
 # Decades artwork
 
-Eight decades, three content variants and eight WebP assets per set. The two parent covers remain separate root images at 1695 x 928. Manifest schemaVersion 2 adds poster and square cover/focus pairs and preserves all original files and URLs.
+Eight decades, three content variants and eight WebP assets per set. The two parent covers remain separate root images at 1695 x 928. Manifest schemaVersion 2 supplies landscape, poster and square cover/focus pairs. The pearl-white cover replacement preserves every existing filename, path and URL.
 
 | Manifest field | Filename | Dimensions | Role |
 | --- | --- | --- | --- |
@@ -17,7 +17,7 @@ Use manifest.decades[decade][kind][role].url, where kind is movies, series or mi
 
 The 1950s-earlier identity includes releases through 1959 and displays 1950s on its artwork. Series selections use first-air year. heroYears continues to describe existing hero sources.
 
-Landscape covers retain their five-image compositions. Posters and squares use one real artwork image, a glassy silver year, and a spaced A DECADE OF CINEMA or A DECADE OF TV caption. Mixed uses the matching Movies artwork without the caption. Focus blurs the matching image and caption while keeping the year sharp.
+Landscape covers retain their five-image compositions. Posters and squares use one real artwork image. All three shapes now use an opaque pearl-white (#F5F5F0) year with the original Impact geometry, lowercase s and surrounding rim/shadow. Movies and Series retain the spaced A DECADE OF CINEMA or A DECADE OF TV caption. Mixed uses the matching Movies artwork without the caption. Focus blurs the matching image and caption while keeping the year sharp.
 
 | Decade | Movie poster/square title | Movie hero | Series title |
 | --- | --- | --- | --- |
@@ -32,9 +32,9 @@ Landscape covers retain their five-image compositions. Posters and squares use o
 
 Each shape can have its own source and crop. The 1970s Movies/Mixed poster uses a darker Star Wars image than the square. artworkSources.cover and artworkSources.hero retain their original records; artworkSources.poster and artworkSources.square describe the new cover/focus pairs. The asset sourceSha256 identifies its lossless master; each artwork source sha256 identifies the original source image.
 
-All 96 new images are copied exactly from the reviewed WebPs, without re-encoding: quality 82, effort 6, smart subsampling. They total 4,497,940 bytes. The 192 set images total 15,808,782 bytes; including the two parent covers, all 194 images total 16,024,420 bytes. counts contains current totals. The original delivery object retains the original four-role optimisation history; formatExtensionDelivery describes the added shapes.
+The current release replaces 144 cover/focus files with the exact approved WebPs, without re-encoding: quality 86, effort 6, smart subsampling. Only the year fill changes; original photographs, crops, montage fades, text placement, captions and focus blur are retained. These replacements total 6,973,886 bytes. The 24 heroes, 24 title logos and two parent covers are unchanged. All 194 images total 16,736,762 bytes. counts and each asset record contain current totals and encoding details. delivery and formatExtensionDelivery retain historical release metrics; coverReplacementDelivery describes this replacement.
 
-The manifest fingerprint is SHA-256 of UTF-8 JSON.stringify({decades: manifest.decades, rootCovers: manifest.rootCovers}). formatExtensionApproval records the approved new-shape release separately from the original approval. Original sources, masters and exact review bindings remain in ignored staging.
+The manifest fingerprint is SHA-256 of UTF-8 JSON.stringify({decades: manifest.decades, rootCovers: manifest.rootCovers}). formatExtensionApproval records the historical new-shape release separately from the original approval. coverReplacementApproval records the approved pearl-white replacement and its reviewed binding hash. Original sources, masters and exact review bindings remain in ignored staging.
 
 Canonical URLs stay on /main/. A changed image has a new sha256; this metadata does not itself invalidate an image already cached by Nuvio. Versioned query URLs are not a guaranteed cache bypass. An immutable commit URL can identify exact release bytes for an intentional preview. No automatic artwork refresh is configured.
 

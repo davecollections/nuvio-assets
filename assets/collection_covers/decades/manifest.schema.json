@@ -367,6 +367,110 @@
           "minLength": 1
         }
       }
+    },
+    "coverReplacementApproval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "recordedAt",
+        "sourcePackage",
+        "reviewedBindingsSha256",
+        "scope",
+        "nuvioPreview"
+      ],
+      "properties": {
+        "status": {
+          "const": "owner-approved"
+        },
+        "recordedAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourcePackage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        },
+        "nuvioPreview": {
+          "enum": [
+            "pending",
+            "reviewed"
+          ]
+        },
+        "reviewedBindingsSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "coverReplacementDelivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "replacedAssets",
+        "preservedAssets",
+        "replacedBytesBefore",
+        "replacedBytesAfter",
+        "quality",
+        "effort",
+        "smartSubsample",
+        "filenamesPathsAndUrlsPreserved",
+        "reviewedImagesPreserved",
+        "yearFill",
+        "scope"
+      ],
+      "properties": {
+        "format": {
+          "type": "string",
+          "minLength": 1
+        },
+        "replacedAssets": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "preservedAssets": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "replacedBytesBefore": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "replacedBytesAfter": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "quality": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "effort": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "smartSubsample": {
+          "const": true
+        },
+        "filenamesPathsAndUrlsPreserved": {
+          "const": true
+        },
+        "reviewedImagesPreserved": {
+          "const": true
+        },
+        "yearFill": {
+          "type": "string",
+          "minLength": 1
+        },
+        "scope": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
     }
   },
   "$defs": {
@@ -698,6 +802,9 @@
                 "integer",
                 "null"
               ]
+            },
+            "smartSubsample": {
+              "type": "boolean"
             }
           }
         }
@@ -778,6 +885,9 @@
                 "integer",
                 "null"
               ]
+            },
+            "smartSubsample": {
+              "type": "boolean"
             }
           }
         }
@@ -1274,7 +1384,10 @@
               "const": false
             },
             "quality": {
-              "const": 82
+              "enum": [
+                82,
+                86
+              ]
             },
             "effort": {
               "const": 6
@@ -1348,7 +1461,10 @@
               "const": false
             },
             "quality": {
-              "const": 82
+              "enum": [
+                82,
+                86
+              ]
             },
             "effort": {
               "const": 6
@@ -1422,7 +1538,10 @@
               "const": false
             },
             "quality": {
-              "const": 82
+              "enum": [
+                82,
+                86
+              ]
             },
             "effort": {
               "const": 6
@@ -1496,7 +1615,10 @@
               "const": false
             },
             "quality": {
-              "const": 82
+              "enum": [
+                82,
+                86
+              ]
             },
             "effort": {
               "const": 6

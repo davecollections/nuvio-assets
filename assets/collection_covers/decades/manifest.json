@@ -24,9 +24,9 @@
     "assets": 192,
     "parentCovers": 2,
     "totalImageFiles": 194,
-    "totalImageBytes": 16024420
+    "totalImageBytes": 16736762
   },
-  "fingerprint": "36c9b6a427f3febf3ed9092979648f3eea2a4559204fe4dc33047c0400d345e3",
+  "fingerprint": "48e2a8d6da06175cb95f6c9a34248f5be9c325522cb91de8f87f37d8e2e02873",
   "decades": {
     "1950s-earlier": {
       "label": "1950s & Earlier",
@@ -46,33 +46,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1950s-earlier/movies/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/movies/landscape.webp",
-          "sha256": "ab6cf7225f0edb677bf4bffa580ad298598eebf5d31da1d992e39a4782bb0ec6",
+          "sha256": "7b52088836889a8ad5d27e8b54e000d5d9bc9a0836cbf5e8577f9e42311a6b6d",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 55950,
-          "sourceSha256": "d92bc5a488e2d30ec9bb206d9c6bc7c2d83db048f03497c39495d7b57721c8b3",
+          "bytes": 61584,
+          "sourceSha256": "e0d670d623ba55dc64b2e5ac09fe8671b36d1a731d5f5f68ae39da6b24c658b3",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1950s-earlier/movies/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/movies/focus.webp",
-          "sha256": "da1e0aa9e91eb76cd3e566d059fabc7f4640830880d90bb2efdc9530ac9a6f51",
+          "sha256": "2305452ccb724bfd5a08cd1b3347f2e84877cfe6c3823cd839bf13f3d8994134",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 19730,
-          "sourceSha256": "3080d0533091242823f3fc090ea63a07461effabcc496f7134d4b4fa446aa465",
+          "bytes": 19160,
+          "sourceSha256": "8d4f524ef8856aef8a7948619b803c810ece8938541ab74d3d2c8dbd51b125f3",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -243,16 +245,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1950s-earlier/movies/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/movies/poster.webp",
-          "sha256": "53afe60aa3e353268915125b056c595d9a4eb9f08ba9d6f8e904db0a85d49bb1",
+          "sha256": "ad29001c375e5ff87f7f0eedce4d61c080f5decc17082ded4e4e955e0d83af88",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 66500,
-          "sourceSha256": "d234ed8e1dca512cbf279fe5cbdca6d8f6db626bd5669b4f827ba0746ff75d9b",
+          "bytes": 79592,
+          "sourceSha256": "19d0ae2f31ac056d70d01dca829b37dbb3afe7316858743a7fa56deb24b14945",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -260,16 +262,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1950s-earlier/movies/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/movies/poster-focus.webp",
-          "sha256": "d3ab7b69628e8f510a2107ba41a0480ac1106e7d77fb48e830870832bc699354",
+          "sha256": "2101779be7079727d4178b842d60dadf105a1b8c55267d11d4478f980c40e62f",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 21614,
-          "sourceSha256": "644380bec6047f6e8609b05fa321f58f419acea9e7d3aa7ff1f253cafc26b5be",
+          "bytes": 22092,
+          "sourceSha256": "ca06b0574275e31d1c8caeaab884a6ee7f9e825f7e9c3778f88e3f27d41e3a04",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -277,16 +279,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1950s-earlier/movies/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/movies/square.webp",
-          "sha256": "e0d3498a77c62e11143d99181ef1622e3c04b936aefa24c41d8ee7a77ccece37",
+          "sha256": "737cd5f08151b959136f12f781baf1ac2f9d6b87b6d2a90f4a0e7b0a223de3fc",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 46044,
-          "sourceSha256": "a66ee83fd2f6d1845f8fc757b20ba477ef6a47fae90cfe0d19ce893304f9a0cf",
+          "bytes": 52606,
+          "sourceSha256": "eb11df2386b62956bb7f8db344cb5e28591b06cd2271cc5fe3154b096986481e",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -294,16 +296,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1950s-earlier/movies/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/movies/square-focus.webp",
-          "sha256": "0e65a6bd7a1939d760f451165cf879405f44f66e0761e764e54eb02a93c71c2c",
+          "sha256": "921a784ec25541d304a6376fd6014c8d1418aa930ad3dc2fd4c9d0f38109f84b",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 17352,
-          "sourceSha256": "0f75a46d37ba64f50b252418814be60429d28d7d0591a9f0d7c7ec49df4badd6",
+          "bytes": 16168,
+          "sourceSha256": "e0cd53bdf6753a73c95d384103cf73cf29fc69b48070dac011c7e2b5de806e33",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -318,33 +320,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1950s-earlier/series/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/series/landscape.webp",
-          "sha256": "9e4aaac998e79456729aecce1ac830b8768ac41a678567035908b33adc20b429",
+          "sha256": "b75a8cc433b533bfe8da15073ef6bb9ce914bdee4b0d1d74bbe4d1fbee5ed61f",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 48352,
-          "sourceSha256": "b3dafdbef17af6c7fee0a050a1f83691fb74dc879484e10b340ecc488a6ea60e",
+          "bytes": 55612,
+          "sourceSha256": "91ff390aa928e80db6cf52fe613785dc2ae2df532a13fae3f8b5652254d04fce",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1950s-earlier/series/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/series/focus.webp",
-          "sha256": "f15b3903b8c5ea30a1446e6c7675763123d9f6d509eee39ab00c5252efd5087e",
+          "sha256": "1c87c0228d0e5ea5f4219d104ad5694ddad7def7c98f64b26963fcb34fc18152",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 17466,
-          "sourceSha256": "5d59ec33df1f2e6ad7e6e68f8c17bd798dbc76a01f6be22003fdcbd836345bda",
+          "bytes": 18864,
+          "sourceSha256": "38c4751a2bd3d2096c7e6476746dce0ce237da79c1ee3c8c89293db98270f80e",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -515,16 +519,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1950s-earlier/series/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/series/poster.webp",
-          "sha256": "e231d3612cd725705427e7c3fd3be73f62a96daa7d3c4af38a8114de4bf5ac48",
+          "sha256": "bc583472fa2d098082a94adb93f68c5f9affb8ca6cb50bd65d2827fe46ecef74",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 47824,
-          "sourceSha256": "74c0112e3b1df48c125a3e9d11cb479efc523af94014e1a6bb400b613b09322d",
+          "bytes": 54728,
+          "sourceSha256": "99c2a868f430dce11615fe5b7b83bd3011f915be9bb058861b0ca302f9b27785",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -532,16 +536,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1950s-earlier/series/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/series/poster-focus.webp",
-          "sha256": "a8433e9f0c7ce8c4cfd22fc886943e6a1eacf29f8f3ac4b06f9b888da9f16074",
+          "sha256": "4969956830daa45abadf1e4a4fce45acfb57f544ac773fcc401c67103d020c05",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 21766,
-          "sourceSha256": "9020c5e2be5da4c640cd5cf47cfca61bf7be83fee2a647c256f2b1ce5f52e819",
+          "bytes": 22940,
+          "sourceSha256": "605d584ded287163de84b31545bc4843081c138f67bf800cf4e6c9f3392351a3",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -549,16 +553,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1950s-earlier/series/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/series/square.webp",
-          "sha256": "ed78ba05a284cbca9d49fedfc0051278d7357bf71c236a76f2f1b2a7c52a723d",
+          "sha256": "a454a408ef4856de4f2d0b2c58aff4be851834f595c8b890f48ed13802c201bd",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 41660,
-          "sourceSha256": "1c4a270b2584ea1a01f61dcfa510b7369902b8adaeb043e073cb9c0495efd7c0",
+          "bytes": 47322,
+          "sourceSha256": "469f1ac89c60725d1d7cc19e050d2de383ba3df2c16abd6bee148a5190c9a0fa",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -566,16 +570,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1950s-earlier/series/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/series/square-focus.webp",
-          "sha256": "1d6958b434146d967bec417e4f9770bf55f0fcad2799e12e6c7bae1399376d28",
+          "sha256": "66f616a97992bb2298c179c2b0440bb2aed9582cd9864ba5ba5b9c693a0a3202",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 18636,
-          "sourceSha256": "6b8e4ef7f80b99faa0269ea65feba16df707020c01a23e89cd3b6ddc6b6895d4",
+          "bytes": 18400,
+          "sourceSha256": "9bf454a457dd005dbddc509f67f5048a0df06f181f2fe5ca6f19b783cc0d8ab2",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -591,33 +595,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1950s-earlier/mixed/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/mixed/landscape.webp",
-          "sha256": "303157d81cd4d0d7b7cd48cce72bbb2ae6062b3137a220de3d48fc10631e4797",
+          "sha256": "c2e48d347129ea99cea4b4de9807ffd118bb2cdd4f7691276b3d27080f612fe3",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 52598,
-          "sourceSha256": "3eaa2afebd0dedda83a00a836183c37155445abf2ed2b00882b9add8dc47f51e",
+          "bytes": 59300,
+          "sourceSha256": "0d890ba4a801b6fcad747e8e7393e1cc183e8b85f950d4a15e5a8adf3a65a829",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1950s-earlier/mixed/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/mixed/focus.webp",
-          "sha256": "d1840518fb66d2db20e31883ddf80dd9371ce703a4a6836e55accb60c107b4ec",
+          "sha256": "de243e59f49c573508169abf7712af1869711b1c254f640532685c2b0f8a8793",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 18464,
-          "sourceSha256": "64a54c56edc0d0e9ce33f2be9735e0104a399521447410c4761b28c5d7d02753",
+          "bytes": 18980,
+          "sourceSha256": "5318ba89caffa8292bddd668fa0f994568d48b39014bfe626eace8a616705316",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -788,16 +794,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1950s-earlier/mixed/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/mixed/poster.webp",
-          "sha256": "e1725525b9395dc74b5001744de48a1e517ca055aee350b517ebc89bdc1909ec",
+          "sha256": "8cf983bd03f022fc6db920b1d8e25333fdfc287ce7fa472d2a18351eacadc45f",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 64424,
-          "sourceSha256": "e0c7845b5d499ad0c71dcba3ebf18f131a6031a29f72cdbd357deff64c4d046e",
+          "bytes": 77412,
+          "sourceSha256": "c90fb53c0c255c53b28298344010bcb2093d2f346290ca12a5181117d454495c",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -805,16 +811,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1950s-earlier/mixed/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/mixed/poster-focus.webp",
-          "sha256": "e5319e125658aa44ea7361ed06c45b74c373ba684c5b8a1a9253c807ee8785f1",
+          "sha256": "9394620725c30e39870ddcbe4b546a6e850bcaa6e86eedd961d72fd3871ade74",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 21570,
-          "sourceSha256": "16a8a7aa5d3753b2bb6f0a9180a6830e4f9cb6fa4280d2274ae3c85655069c40",
+          "bytes": 21886,
+          "sourceSha256": "143f2ba90d15297ba37d44a78c1bbd70a0b38115bc96b10aea3321b36585157f",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -822,16 +828,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1950s-earlier/mixed/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/mixed/square.webp",
-          "sha256": "e1757ca1e9e68a4a5602a672734cbf91fc47b55b56cbd4c7b12d1924781fc64a",
+          "sha256": "9363b8f4181653bf1a88043cb80ce85def46b72dd105b8116eb222ee74800a50",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 43884,
-          "sourceSha256": "85d8f560879aaffd700f20c595163c2457bd2545e5ff78e8f379f5dc66ac64b5",
+          "bytes": 50316,
+          "sourceSha256": "3cabef52872ccec7e60c0dd69557887344b5dd3e0bab313dbfb49ef816e55280",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -839,16 +845,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1950s-earlier/mixed/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1950s-earlier/mixed/square-focus.webp",
-          "sha256": "63bb5299affbf3077a800dfc1852fc28b2403a09090cbf154eee3e9e6f5ca340",
+          "sha256": "086d6d3ac3973b9b1df3fe006fd3c641b55a66288c9cdbea84a1731e6b38e36e",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 17346,
-          "sourceSha256": "1a3b85302e959f0acb2bf7dad34a3ee94e764392192a7302f0ad5455d6bdd79d",
+          "bytes": 16364,
+          "sourceSha256": "7c6f93046b387292a48d1d83a9273da8fe8a7a82c7a645552d55e286ed033152",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -873,33 +879,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1960s/movies/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/movies/landscape.webp",
-          "sha256": "a11a887c2d846bc2b2de607f12cadfe5376187f0bbe6601415a0b0d231d7e720",
+          "sha256": "936bf2c923762697b783243e87ef694cc5ba9e60faee1282d31c7fc4468bca16",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 55618,
-          "sourceSha256": "8bf9270abd8e42a9f57ed99d130deb6d0a2a038f96dee5077b217a80163360b6",
+          "bytes": 62902,
+          "sourceSha256": "b32053daff85ebf84547b7714e7be1eec036d61456a30a083e37fd3527a2de42",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1960s/movies/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/movies/focus.webp",
-          "sha256": "7ed8279067e79b7f4bb7c5fe60956b4a24611715aebbbd56280e44bdee5b40ec",
+          "sha256": "87724ff8d9e7ba0d045ade72491f8d2f4917fac96d0dbdb92754e38c94838682",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 19674,
-          "sourceSha256": "4fbb29fbc0ba5fe02cae7607da557ac74b1fd129f1d15ef1a5aac5e47bb45a94",
+          "bytes": 20218,
+          "sourceSha256": "e515606d4b0f58ab4261d1cad925ac8284e174c8f1939c707257af08d06196e2",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -1070,16 +1078,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1960s/movies/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/movies/poster.webp",
-          "sha256": "2feb745af8b796bd96454eb73255040519226004972d94768ef0004dbf6762c6",
+          "sha256": "1afe3c8de35e0e333596c947fa1cd0979f6090daa08eb5958ca05a93678536db",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 62636,
-          "sourceSha256": "c20e5e93abe44ed2facf4433c6366fbdc0c08aaf0f9ff7d77779e299935a4e2f",
+          "bytes": 73232,
+          "sourceSha256": "df6379920dadaa7dc670aa44a222f5cddef1b0f8d95f0003ac994ce0c9d2d649",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1087,16 +1095,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1960s/movies/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/movies/poster-focus.webp",
-          "sha256": "82946dcd82c2af9aaa39208391d75a1a2732fc857b0fb18bc235e50df9b9e11a",
+          "sha256": "37c360a3cb13aa133d1fdfa61f7c1d2f830728843f5277b0b3287fcd26aa646f",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 26786,
-          "sourceSha256": "cb845252c1eb57c5b9b6458f2da7c34ab4515bef943448215f3f49e1440420f1",
+          "bytes": 27348,
+          "sourceSha256": "b7054cc1f7e5cbc18f59ac4a9bc1cd204badf5314bccdb761ddb355b741aed99",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1104,16 +1112,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1960s/movies/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/movies/square.webp",
-          "sha256": "2dbbbcba51c47bd79c04c2cd019f94ad63dabd6a1e65bb4afac96bab9ce8db9c",
+          "sha256": "1e45d2d7944e6896cb316219aefc4b5a71066132bc270a49cf7c02df41ddff10",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 51130,
-          "sourceSha256": "b150e92ae5353d16eee4661160c46c22e412cbad7bc87616a0e8162b8bb12a4f",
+          "bytes": 56468,
+          "sourceSha256": "718fc1ffd416703ae126254a99a8ef69450b316bfce353ce043250a8e508ba05",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1121,16 +1129,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1960s/movies/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/movies/square-focus.webp",
-          "sha256": "febc60dc5e0920675859c540fa74bafd66207b375546d2ee957b8e82d9a2c092",
+          "sha256": "cbcad42f4d381472511e36d75dc19a02d65731196c1f1906600870c47ce805b2",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 22134,
-          "sourceSha256": "9cf162722922cd33a9af3688428c460b99dd2c5310b3ca53dc836c366bb60150",
+          "bytes": 20868,
+          "sourceSha256": "d81d450e5f87dd7ef8b8371fe250eb87f44be2f69512902d2fa7e5c4cb2ec73f",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1145,33 +1153,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1960s/series/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/series/landscape.webp",
-          "sha256": "c89d5a85780e02e107445f461907f15b748b76082df6e2d247723a443df3afb1",
+          "sha256": "e4666e6d3b9ebf10324341ea5c0cbf3223e959d8ff5dcca7b17f8d481adbb330",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 54802,
-          "sourceSha256": "2ab24b3e40824cf9544da1ad46713b25a1c09061bdfe37ee891136d411c28c40",
+          "bytes": 62286,
+          "sourceSha256": "18098e73bd58206773106de29da51236cc209413f86e410be2760ccadf383e9d",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1960s/series/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/series/focus.webp",
-          "sha256": "da8ef5fa6d399402faf574914daa5041d2cf67326a1cc8ea83dde717edfbb124",
+          "sha256": "2e737ff7852ede1ea536fc01b65de9da408a6c18ea94be0d217a073f83263135",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 19376,
-          "sourceSha256": "8303a3bee52d60086abca54f5b643446b0bb25fd035ad227c2255fec55cad975",
+          "bytes": 20292,
+          "sourceSha256": "2a0e29377dc5eaee0c11694c64a21ce82f86fb73ecdca60d3fd2b8927e224519",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -1342,16 +1352,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1960s/series/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/series/poster.webp",
-          "sha256": "eebe6690591734639d49ffc0630fc96c2c10e9f60d628a2e4ccf5e4e720f6b85",
+          "sha256": "580d8615a0515f9613752dddc39d82f9fbad71f89e8a6266d25e7e9d4bfaa299",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 91508,
-          "sourceSha256": "291223a568d6eb7d7743f498826e76e51a5acfe5903a77cc9e3c09f7b4685b03",
+          "bytes": 108818,
+          "sourceSha256": "8f025ab2298dc578be413fbbc00715f82a2c50dc42f16799afb11dcdecc1a3f8",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1359,16 +1369,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1960s/series/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/series/poster-focus.webp",
-          "sha256": "2364cb477787dbc3fe3aa864ce0a228f63f25a6853e6893b3b5656a3121693c4",
+          "sha256": "d98b7ac87111af7be45974b8910a4da3d553dfab9cac032eeb5dc88273bd733c",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 27584,
-          "sourceSha256": "f0719fa4c5013fbadb3c59660bd99a6165b1680ec6239843f8cf73f32d79433d",
+          "bytes": 28016,
+          "sourceSha256": "e33050e78958255de5a7ac06e718b526dc7f4c045911926d973c3c149addaf52",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1376,16 +1386,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1960s/series/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/series/square.webp",
-          "sha256": "60db709bad720a4bda04deb30fe73eb88e5094f3d2cc0e3428b140244dce0dd6",
+          "sha256": "5ec1bee91dbf83dfc6c72d6cfdab57773e0f4087e2d34b22e960e789e4800a1a",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 76022,
-          "sourceSha256": "f9744373d9222013276faf7119dd0fd566f4d723e97300dba467d49c729cd127",
+          "bytes": 87502,
+          "sourceSha256": "1f420cbcea2ade265cc2450610018446e0fac63356610a73d728f1a00290ad42",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1393,16 +1403,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1960s/series/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/series/square-focus.webp",
-          "sha256": "5bea57b4d6764ee48a6c14932f9e275641e5b0aa1a18fe97f801329fdcc4324b",
+          "sha256": "0dcf6f4f36a7471283d661f1cf7f136a9cc1d5b42e7afb472084beeaad707a5c",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 22230,
-          "sourceSha256": "21a71e73ca98f3aa99a5a1f6a08504b5d3a18d04e2bd6ac09e28e4f5dde5e628",
+          "bytes": 21364,
+          "sourceSha256": "86b1f58e548151b29919175d63af1ce893b2ae5ec129ab52b8dbbb1323cc6223",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1418,33 +1428,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1960s/mixed/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/mixed/landscape.webp",
-          "sha256": "d55b05fd0e4214201aef99b2162e8ccf203443a38f3c61464489d241df6b421b",
+          "sha256": "fa56a8738d2a32b28930654fd38bb0616be99add7eaa085d88bfe09e1c729d3e",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 46206,
-          "sourceSha256": "c29da670f78a763d6f8110bdad8e0f941a503fa5d0d73d5e7c50db3d28454bea",
+          "bytes": 52284,
+          "sourceSha256": "ffd0f208b572a88e8b38fe2dffd3f4f80250becb3a03b73f02c3c0694fd7c60b",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1960s/mixed/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/mixed/focus.webp",
-          "sha256": "65fb860955d116cd8f99d050bbef81f4f8aa4a7c18a8d8771f675b61b32dd779",
+          "sha256": "29232d326b899dac2f273d2cda2857e56fd07494671655a88042e1a306a20daa",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 18938,
-          "sourceSha256": "a2d6a8810d7f9e9bfbd9da4297b3de0dc42db5f5f01047e0b2cd2133b47eaf7a",
+          "bytes": 20082,
+          "sourceSha256": "eddb2f873c1ad4e11dec054f7043caed490b9f297cdd6bbcd329e907db80ddd9",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -1615,16 +1627,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1960s/mixed/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/mixed/poster.webp",
-          "sha256": "87b38d4dc66fb102feb1462d4ef2b176a1b8007f214d2209842b449f8ea12012",
+          "sha256": "e3fa2f5c37d7da573ae0f85694c78a8f647a729cc1d4506caf2b09955848b25f",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 59172,
-          "sourceSha256": "4abbe870508e2d3d2cda32f41b2056decdac750d24a1df3589e06075852d9ebf",
+          "bytes": 68138,
+          "sourceSha256": "9da8ff79c4fe0cca71c2ba1e9d76a5708dad84c7995679d21d502b7e26ed1d06",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1632,16 +1644,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1960s/mixed/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/mixed/poster-focus.webp",
-          "sha256": "9c0b49ab6fb1d983766cb377b51c1487304c0cf5e307d35036e594e915d011b9",
+          "sha256": "de5b1a32b9e2313cb5381617317dc24e9f6dcd1b0edbac80ea338327a8db9f7b",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 26716,
-          "sourceSha256": "f003d0366f8d8402a8404aa949bc55adaba578622bb36ada69fb75e4a299c5a3",
+          "bytes": 27256,
+          "sourceSha256": "c650636465ca0a5e551a97553df0321b863c2ab902da3994b716e7050fd447dd",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1649,16 +1661,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1960s/mixed/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/mixed/square.webp",
-          "sha256": "afc66f619f4a4f088a7c4e1dcef2dc546f040fddeecbb3e38d05bbad36d6c208",
+          "sha256": "1d5765929c275092ae247e69c36c52373cf41ec16a947bdd68e090e8f4df1695",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 48070,
-          "sourceSha256": "2180af80b9c6b7353df5bd48ad94a8480223ec12da47ec8007580b44e9cd8a67",
+          "bytes": 53350,
+          "sourceSha256": "609a70973714ea449aadfe7a152a74bc503cbcd0a229e2aa8c62a7aaa486c1f0",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1666,16 +1678,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1960s/mixed/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1960s/mixed/square-focus.webp",
-          "sha256": "3333a73b2328ca40e7ff36a1b5677beb1f9a6cc35b8388cf724a297748532b6c",
+          "sha256": "2a8626bda73cda49ed3b205ba83e76c2ef0fc1ad3a33e122dc544fdb7035c82c",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 22072,
-          "sourceSha256": "7650e616b38f960f61fcf125c3e80ac4498f6eb7269192152ecc72bfd47083ee",
+          "bytes": 20774,
+          "sourceSha256": "024372ce605dd824599d7bddc7b8a89c1759cbaf50efe708a57b58538e56e098",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1700,33 +1712,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1970s/movies/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/movies/landscape.webp",
-          "sha256": "9605b51375b90ade8455d161fa613e59e366ac17718e7df5619b7395dc37f416",
+          "sha256": "e2e4eea7b752763ee481e02a15c42fd1a4ad85b3b1c3e7d7fb0d704580d27aa4",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 55918,
-          "sourceSha256": "bbaead41dc86babad4931dade7f562957511e14515f120f97c4ab2c65c6ed754",
+          "bytes": 64874,
+          "sourceSha256": "bb2bf7d4b01a08e46b654a69b92235e94d418b719cfe606adb679a67420b8c55",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1970s/movies/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/movies/focus.webp",
-          "sha256": "5f43135281a8fef7b2567b66ba9f379279396efe4bec0c5ae43f254c3044de7a",
+          "sha256": "7b10c552c8e7911804f9e487854892fbe509d3143376540bdb1cf87db5cd26fb",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 18568,
-          "sourceSha256": "992871d16602abe24f1aae6b392404b21f22cbf4fb876f112358b5e55cad73f6",
+          "bytes": 19158,
+          "sourceSha256": "80414cc7dae06736c9773a996d3747881eb1adae4541861da5595ea43d941313",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -1897,16 +1911,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1970s/movies/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/movies/square.webp",
-          "sha256": "8b87cf119d8db928f542e92f813c4b081fc49da265727ed82bc1da232edbbb54",
+          "sha256": "50b60fcb8965059ec2bc945bf9247fd3ae726ab9182a0efecd0ae177e35100df",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 94510,
-          "sourceSha256": "0c68b6b9eb37788c36df054d9323abb1921e7a8e5d5bc5d5be561a5d2d668488",
+          "bytes": 102612,
+          "sourceSha256": "a7c833978177919abf55c5fec23722717e39f4f327db8b7ec4e1018fb18ca78b",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1914,16 +1928,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1970s/movies/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/movies/square-focus.webp",
-          "sha256": "a6c109f3cc1cba7a94bc941ebf00aa357bf394f60cc207f0bd98481901070efd",
+          "sha256": "8d66eb216aea638da68c0b5504d1ed74e2b5c85991c474b99cfa078857a0be54",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 26598,
-          "sourceSha256": "ba2b877e86a90d725c66b5efeb3deb1663f87a6ffe1cb81921df1295601b6974",
+          "bytes": 23238,
+          "sourceSha256": "7b595d529998219b285a75fb7c075c54cd4ac85cb0fba1b028a664b04007e25d",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1931,16 +1945,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1970s/movies/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/movies/poster.webp",
-          "sha256": "36f701816e7ff37ab3d20618de7f5242bce1e91007bf3025e17136f168440e08",
+          "sha256": "b1cfb30c32bdb8af6b188fdb28a59912c95c87b54a559d55c7fbe75641f960be",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 157166,
-          "sourceSha256": "cba750010c5f0f6395311d001c2d9a3d3d82a04fe4e7d520fead44376e0dc45c",
+          "bytes": 185104,
+          "sourceSha256": "966ede366563c5bf86e08fb4d07e43a47ca0917e3cb37aca68edffc918288560",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1948,16 +1962,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1970s/movies/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/movies/poster-focus.webp",
-          "sha256": "482b4d4c51d2168f779ef6c83cf25cf2c33705e94903abec47d1aa73fd2acad7",
+          "sha256": "e0359c06105329be541ff6504efde83ec776b44de6f03e31e2bc6cac0e55ea4c",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 24224,
-          "sourceSha256": "e8329797263a29d9a634e28e98008818b117c2e888c6356344be23672a6f4d00",
+          "bytes": 26112,
+          "sourceSha256": "db90da3e765cf09cd74cedbd351793edeb8368fc5b526710432cc1022f3824a4",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -1972,33 +1986,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1970s/series/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/series/landscape.webp",
-          "sha256": "88d4e148019a228a1030d9e939b21b9655250f75504b26bac8a9567f3e0783e3",
+          "sha256": "9f1898c61a2b1f30903a04bc0fe8d11e711aab9c586d4873c2ea04138fb20282",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 45458,
-          "sourceSha256": "8bfcc903c22f4d8297de2890f0fe025084f8413f8f2d60e643b7aa61059ea01a",
+          "bytes": 51584,
+          "sourceSha256": "72def2cf59775c89dc81bacd575b9b9c7e3ba6ebab3db375967368354a0a3fbf",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1970s/series/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/series/focus.webp",
-          "sha256": "716b602dc34fe8b82cd2d95951afff989fe2cd4879b88af382bff7dc4d9d1349",
+          "sha256": "4a7f1f6439d61622895b0e2a21d23cc4911375d0067988f134f95d18d508cd42",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 18480,
-          "sourceSha256": "98a207cda33654932c6d0b671490614d19b9c5f38f1afe78cb8e9f82444e339e",
+          "bytes": 20498,
+          "sourceSha256": "85c4639c3cc922c3c34d6f8ab4d25a90bed5b188f44221f6dc709b695ee384be",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -2169,16 +2185,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1970s/series/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/series/poster.webp",
-          "sha256": "e054c7711ea31526bee7f958abf0b2045973305943cfa587dd516d7289e01b72",
+          "sha256": "31b733e877ae0c693567edaa915dafb1c8ce35a7d998c2975d6a132180c6f867",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 53742,
-          "sourceSha256": "a8164c69c3c43628c64a31ee44f452016bfa486e6aea141f567d0409b10c8d60",
+          "bytes": 60638,
+          "sourceSha256": "6e056a7b75244c2d681bbaa867b2309d24c142e4ff968519231a44b2e294977e",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2186,16 +2202,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1970s/series/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/series/poster-focus.webp",
-          "sha256": "97816338f91822fe243f9846e8c1645fd909e6c47b0e9753a4d0503e7f70e555",
+          "sha256": "5eb8e9dd1f977ca89cf2f2ba14291532129eecc4dcf5a30da19b28f3164f177e",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 23076,
-          "sourceSha256": "c3ff33b90b479e4965ab1af775f109d3c274c5ee2a720a981802465356221b6c",
+          "bytes": 23198,
+          "sourceSha256": "81ed74582339dbe8ceb4b8ffdd22bd84f6bea6ea1701898a2c155a42af7f6df6",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2203,16 +2219,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1970s/series/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/series/square.webp",
-          "sha256": "d31b3160ae248c517cd15d6f9fbb3cd5b33649f412c80714dec9840a13815afd",
+          "sha256": "da9e63508b2803e5af225f6e1bc35b9ec64660fd6c7c97ce0e0fae5893f763c1",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 49004,
-          "sourceSha256": "bad565c8c91c3fe6ffafe5fd54a50b545ede9b4f580466361cc266795f42187e",
+          "bytes": 54058,
+          "sourceSha256": "3164a15d96cac0332add458e0a20f814f59f81d080eef6f83167347fa51bb095",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2220,16 +2236,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1970s/series/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/series/square-focus.webp",
-          "sha256": "3bbd5379d59d080c10dd83420e9dbfc244304370a4eb40c584f3a74a66bc8953",
+          "sha256": "2322d6af0014cbc22266ec0368fd7e54c7cd6ad6b417d4fd868e7feaf9e9615c",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 19872,
-          "sourceSha256": "a91de0fecdd027e0f94256e9c18947df5bbbb957af319997f003407be0d69087",
+          "bytes": 18808,
+          "sourceSha256": "896554e2f565939715537cc4389cf7d2184a16ef70382f1c942c21135f548362",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2245,33 +2261,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1970s/mixed/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/mixed/landscape.webp",
-          "sha256": "3bb1947020fedc9c5abda4bbced0b5d85149f75f467e78f5665aa1eb145d89c8",
+          "sha256": "b62d20c78ffa92bdefba6830fdb4eb62477486f7ba5080fd910cd371ee1f1076",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 69198,
-          "sourceSha256": "1a9a940906e96a229248018b7c5efe3f0d8ca4702a3b59aaabfa678e503f141b",
+          "bytes": 57322,
+          "sourceSha256": "ec6ff16c35cba494a268111f9048f7af026a270d5effeb045fa5994ee229a65f",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
             "quality": 86,
-            "effort": 6
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1970s/mixed/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/mixed/focus.webp",
-          "sha256": "a93c8e0ad0fc5c01c177c7fbff493cda1b8002e7d17843bdab6c8fa00e17652d",
+          "sha256": "5715c898e0f00be52eeb67a8c5a96a0643e2add48a806540a4a84bffcf8c5377",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 18402,
-          "sourceSha256": "1f629514067e278784e45b937002b6b4a3a263ca3f1fc4214c73e161752f8928",
+          "bytes": 19852,
+          "sourceSha256": "b41ca3466f1be5af1139a3a67be33064d044db8b92af957c882c89784fd6f4fb",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -2442,16 +2460,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1970s/mixed/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/mixed/square.webp",
-          "sha256": "f574169ef85f8399023f58a678d341e954eb3cb9a4465f54019f0ea78ddf5443",
+          "sha256": "da2541dd122ac19c58609c4d93b34b9c1521abd0ab1add44e19b32ce28306ed2",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 92120,
-          "sourceSha256": "f6a5c5d6bfa5096437e4f5d8707de88c9d49cb9efc45d5c8978b295595ea85ba",
+          "bytes": 99956,
+          "sourceSha256": "3733a7fe5a25bff2217d5ac7059934ee8a0be0a789f32f1add17db5c7d9d0cea",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2459,16 +2477,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1970s/mixed/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/mixed/square-focus.webp",
-          "sha256": "48ac6799c3dfa86d4f63bbdab6776a5bfb6a321a318c8f5b98aee82d54a48c98",
+          "sha256": "598e819822a9606a021a86a68533d408768572a487fc083015bcfcd782630ad1",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 26570,
-          "sourceSha256": "dc213d7552d76264fe1416a23b3fc87c7c2442a095fa9759344bcb01c9fe319c",
+          "bytes": 23214,
+          "sourceSha256": "30df037174831f143ae020745d60b50a82164809f08587b69ff10a627f4f0666",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2476,16 +2494,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1970s/mixed/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/mixed/poster.webp",
-          "sha256": "9499afafe1f6e34b84f66d7e385759fcc612853509f9150184b04d435d206402",
+          "sha256": "a1f9793c9036ebe166c60bfa076ce415a5f2323361b1806d0313a2640c5a2e72",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 153938,
-          "sourceSha256": "ebfd747f846e7f012517b263cfa311dd18e7dfbf418a11d1e155dd6d3121e3d5",
+          "bytes": 181512,
+          "sourceSha256": "554a05dc50ee1874bddc8269652f85c73f4575bfa92a5d690258ce1ab53c6c99",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2493,16 +2511,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1970s/mixed/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1970s/mixed/poster-focus.webp",
-          "sha256": "24732e46ecc992e658809e3bf4a48eef936622744c30ff7564c94cb5df0068b2",
+          "sha256": "fe1be051fd3b01969d250bac0b9c10e42a0df90b98cf09cdcfb8cb8be7725ac0",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 23828,
-          "sourceSha256": "49df28aa5e5b0a1dbca919c95d0f78b8eeb1818ea17b1aeea9d9adf92e7c058c",
+          "bytes": 25758,
+          "sourceSha256": "cf34dc8bcab4f89488dd37ec79c784a5718dcad12409276ae25c937ec1615558",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2527,33 +2545,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1980s/movies/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/movies/landscape.webp",
-          "sha256": "015dfe5d176b1bf68747fe6ee3046fbf0fbb8dcbe0bb69c9ec0fbff1195949eb",
+          "sha256": "ad57452a012aee30f6b4e9a88bf219126eda7183b28e3b821a1e3a4554e3653a",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 86940,
-          "sourceSha256": "9a9124e258e976395c6228e2f3664013e8a90285a5c4bdc6020623c6369a9fdd",
+          "bytes": 75694,
+          "sourceSha256": "4ba61ad0c5f472fe5ae1548cddb317d2c2eb5bf1a5d9abbc273a7a178d0dc3c8",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
             "quality": 86,
-            "effort": 6
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1980s/movies/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/movies/focus.webp",
-          "sha256": "7e9e360ed7e5ffe558bf92a7b17cfcdf78dc7d824d1b438d0e1f1652fca9ae8e",
+          "sha256": "74164fc1a89766ee9a41a85485a8f5e672ab6fb77fd6a4e4691a431130d75926",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 19736,
-          "sourceSha256": "fa1a1c72162c445bd0180181e1af9e0a97f1bf1e0afb68da40a8db79b8bf5ac1",
+          "bytes": 20412,
+          "sourceSha256": "f9361b59f21b9e32a8796ec3481e51738691975ff9bef7d48bffbc5ff40b78ef",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -2724,16 +2744,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1980s/movies/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/movies/poster.webp",
-          "sha256": "8e7ca4d829991d9c9724f3ff61f42e0b9378244977668ffa1b1c4de55cff8dbc",
+          "sha256": "ae284c7f8f3910b14a4ba9b5fa37f9680efbc795f071a6eae95939a312e3c380",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 67982,
-          "sourceSha256": "71e6c541e7aa7fa67de97e456a8c23c7be3179fc3c63e490cc790c16e09d9d70",
+          "bytes": 85454,
+          "sourceSha256": "ab5df11eeab9131caf27c198d980260026aaee4b148de4d726b906cab078178b",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2741,16 +2761,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1980s/movies/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/movies/poster-focus.webp",
-          "sha256": "1110cc3a141d2ab02d8a7585951fe7c6222a2c27ce0795828edaa2b1b7029d84",
+          "sha256": "809b0833b7110323744fd6a45b1ad77b816f94959c7d5d7c1fa589af0c9e1e41",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 26078,
-          "sourceSha256": "012801e45da71123822722b7a2ceee2ad6de9a0242b09621da28d61ed990a906",
+          "bytes": 27364,
+          "sourceSha256": "2a0e9b2a9daccf82a230478e72be7a73e2cbc25dc9ee9200d850ec5f9b00b406",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2758,16 +2778,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1980s/movies/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/movies/square.webp",
-          "sha256": "bf195476c136236e5e14059b847215d7b762eb412525cbc4121565ec55cc131f",
+          "sha256": "187ad581bed0334fc1b2dc5e801e9a1b6bd6440ceb14e9e740fdf1413221a270",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 44842,
-          "sourceSha256": "4ad1a04b2d5bd36daab84def6a8b47a7b869ead7fea3b743a3715d61141b56f5",
+          "bytes": 50614,
+          "sourceSha256": "f43d8a5275714da42443caf5b836b3ab3d7d7f06d2687b2c40d8ae8b180950bd",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2775,16 +2795,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1980s/movies/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/movies/square-focus.webp",
-          "sha256": "249e3c04d7652906f469dabb6a688595e1f514b73365cad13da3a64c0aab6312",
+          "sha256": "85517b95e18f7675cbd3bfe08ff7074fb809300f0a7ac3fc909d1f8739428be0",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 20538,
-          "sourceSha256": "d2e49f5a43cf3a1263bc0ec39ae51b9b44e729df54374def2bb7734a9b4ee000",
+          "bytes": 20176,
+          "sourceSha256": "4e6cadaec754f8909320e7e1ba528ef8f57835ed29f91bdbaddc9c6cbc4cfd23",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -2799,33 +2819,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1980s/series/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/series/landscape.webp",
-          "sha256": "56ccff3b76ddfdbe10b80266c5878577c8743e4e352ac883ff7eb4bef6d1397d",
+          "sha256": "340f0f48cb5f367556a00e0b4cec912c6602bea0cab2c515e491b19a22fbcbcf",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 47790,
-          "sourceSha256": "1aea1b2f58b2d610585cf97d1aba9f6bd501c75a763d3d2ea82848c08e849329",
+          "bytes": 55522,
+          "sourceSha256": "022680851fe649019b15ef522e1c039d1c229e6f150a084c9d00ce6672faf562",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1980s/series/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/series/focus.webp",
-          "sha256": "626783a49fa33de1f647bafed0ebe65cf71a5c377b523fad042c52874ee3c4fe",
+          "sha256": "fad1a01decbb550c82b163d62e1f405132517189401983d3d12e0edf8cb8c777",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 22780,
-          "sourceSha256": "afbf01096b839b8e93f801131d0658c6715aebe3952d5bd41372a9ca53d0998e",
+          "bytes": 19740,
+          "sourceSha256": "288315049af1e1bf6844db2cad53e558e90a03d6cad42058125dfd7038edb8ac",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -2996,16 +3018,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1980s/series/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/series/poster.webp",
-          "sha256": "964d988a5b889de65e7046d52c3a5a4fbb151477c7ff27161cc0e6983ef1b4ea",
+          "sha256": "a194e126d6b965ba912827343a9288edc0249f93271a7a03281728a5a59d2234",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 88366,
-          "sourceSha256": "5a414f221de9b044e504830b856d8bc31db2d80b487d0e5d94db8ef4c8a665e9",
+          "bytes": 104726,
+          "sourceSha256": "d6dfcda6a375d71af57647041e937611efaf7e86d4cac461689629a9cf151fdc",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3013,16 +3035,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1980s/series/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/series/poster-focus.webp",
-          "sha256": "b698dcfc63b485717c5b11012ecde14b30aa8fc376f1194e0e710ea910f3ce98",
+          "sha256": "362243aeb33fffaf4c45ef8b228bac29f48a5c0dc66a8cd0962bd74373623bbd",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 23568,
-          "sourceSha256": "30f48e255d777ba38812ac865201715128cb0c27b10b052a54e71a8c66b52195",
+          "bytes": 23930,
+          "sourceSha256": "b95f38eee34bf2a70cf7d856501d54ded4ad435300d478d748d1bbfec69d3220",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3030,16 +3052,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1980s/series/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/series/square.webp",
-          "sha256": "5cf51c96083dafdbb66afdfb3dffde9854516e11141673134854c44bb0d256aa",
+          "sha256": "3c94e98216d2fef3a8efd65757e627601abfb153ae565286e36ee2f3e0a3cdc1",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 76938,
-          "sourceSha256": "23352a1605f37fd3137ffe874170faa2d963aeb5972099080e67216913d8c420",
+          "bytes": 88432,
+          "sourceSha256": "90253924f45a19d87aa76b8e1105b44d56a42b1350917fe5e92b3ff57ee54377",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3047,16 +3069,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1980s/series/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/series/square-focus.webp",
-          "sha256": "461261cc1078fa414e01059c102d4661189d753add2e1e4db0027099ed5b93a0",
+          "sha256": "025f255780702818eed240eefc237b9c6a10445f834bfdd4b22c8b4402f13281",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 21806,
-          "sourceSha256": "8119ea335a8c11e4e05995640a8e80c34d535612617f0cbd68bc84c95b61388d",
+          "bytes": 20280,
+          "sourceSha256": "fa4b10835fe2ef66815e929adf329c1adbe06c9f9f28cfabc7344e3f3f21b73b",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3072,33 +3094,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1980s/mixed/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/mixed/landscape.webp",
-          "sha256": "9a3343474bcad00c65f19735e4c4365dabb57e585f5f8b00a6668086074630a9",
+          "sha256": "4b8417ac80b1a627acf2ac0449e88c86fc4dfeedeaaf0d7bd31f0ce3d3682eff",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 71410,
-          "sourceSha256": "e609a4e71355782ac12c8b435f7b2d75f66fd826da72c5c42862e96f9fae95f9",
+          "bytes": 62878,
+          "sourceSha256": "070a4aa60787ba47928d91615df66e8c6b4190cf63df6a62ac305eef0c5f3bc7",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
             "quality": 86,
-            "effort": 6
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1980s/mixed/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/mixed/focus.webp",
-          "sha256": "a9fe0e10edee4a9fcd7a1b1864299c46fb34e1a29c3c1674c38d7d4155284218",
+          "sha256": "dc78d3d9e020ab261985048a2c2704c3b9df37e50123e9cb084a31f01c9024cb",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 18092,
-          "sourceSha256": "ea9b610c570de060d5e0d37e8b57e0f3a827533bc679df56a355cf3d7b48cecb",
+          "bytes": 19910,
+          "sourceSha256": "d3457a3a69f8663ce8bc7a9374758c6c9f45d4331209b786c38156daf2792ee1",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -3269,16 +3293,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1980s/mixed/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/mixed/poster.webp",
-          "sha256": "58c796d636a707f6ccb750899518a5a264b53e2fff1feab28fc7b14c3f26801b",
+          "sha256": "5ffc7c49bd0406905934efc5c2537c30320e1943eec0b75c0380b49ea8aeb951",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 64976,
-          "sourceSha256": "f1a3d1d9788a70a414442f8eb001a36d91ca8a7abd9b17fba140d1f990a446cd",
+          "bytes": 82026,
+          "sourceSha256": "ccaa2dbcdf3155970728749a3e91fedeccc8598bf1f1e400811aa21ebdf533ef",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3286,16 +3310,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1980s/mixed/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/mixed/poster-focus.webp",
-          "sha256": "72435074218751c59c4c4e7e81c967d123c1cca9b4e3f206236fd82e0ad0446e",
+          "sha256": "c150539053e6d2ec13ca1cd934b9ae26eb4f85d1dab3bcdcd3f0ae89480bb0cd",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 25988,
-          "sourceSha256": "cb827faf2272e94a10e366329cd8b916f86d6f452fa54d57dfa4a614e00a0922",
+          "bytes": 27272,
+          "sourceSha256": "3600e80098965e8288c24383b9b2dea7add3d3b3e249c2c4e00b107171de36b6",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3303,16 +3327,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1980s/mixed/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/mixed/square.webp",
-          "sha256": "05285b54b392fd8ecc7a5e1189cfad63a6d96302e01c4a115993bcc37631d472",
+          "sha256": "bd1178206c8fdf12925e57eee6b40ed7512b771cc94818e5a71ee21e24211c9e",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 41792,
-          "sourceSha256": "e57d16c6f63cf4786958c5e1dc550d7a36f9b7df4b335c74c4087d835df70a5c",
+          "bytes": 47130,
+          "sourceSha256": "8b0cf49be1fc13a9ec91b3f60beb7ef7803fc5c7159b23d483c7ba989f26bd46",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3320,16 +3344,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1980s/mixed/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1980s/mixed/square-focus.webp",
-          "sha256": "fbb85dfe3bbb8b43123394afacc3bd09f1c51f27864c817bc301b031a42231ac",
+          "sha256": "e75c4b0066ac2519893b1b640669e9b3abb7459c258ee7861cef2c0d7cb76394",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 20538,
-          "sourceSha256": "411805386237faec20d6c2bdb5558cc20c4fcf70000abbcff12650ce2492290d",
+          "bytes": 20000,
+          "sourceSha256": "af40a0f74c038d41a6c0d96f3ae43541ffadba69d72627a4317f65304afbe8be",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3354,33 +3378,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1990s/movies/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/movies/landscape.webp",
-          "sha256": "75538da1c5cf3e6c66daa3007f67ea08db0b58d850e521a98a485292b4b4efef",
+          "sha256": "459ce64e75f9be9500a30501f77bf56762d3f875c35924357c91685381cfd6dd",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 53418,
-          "sourceSha256": "a49d3f0b31ed704d0dac66a4646de59a3f45d457e931107b78b6c97f95d4cb62",
+          "bytes": 63346,
+          "sourceSha256": "4fb346a1cfb1f31c44579dbcba66358e5e445bbca27d0edbc3f6a8c58fc53b51",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1990s/movies/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/movies/focus.webp",
-          "sha256": "ff76aef40c8c2c9c6955d682406c48b1b27d5e559034f8e6044954dc2d4202e2",
+          "sha256": "7952798d8b9385831ae41a5a5adce69aa9660e32b2b449d1137e793ac9aa4fac",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 17886,
-          "sourceSha256": "92dd26cc7520f5f886f08d54666f305d5683d06003d0e1ba0ed7aa39caea04a0",
+          "bytes": 19482,
+          "sourceSha256": "8fc4e555e073358309b1de3e323fe1fe0291259ca76b5298736725d5d105bb50",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -3551,16 +3577,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1990s/movies/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/movies/poster.webp",
-          "sha256": "72811e8ecefee1caa13114c6dd838f9323e43dda236ee82e1d6c96b49c9dd3aa",
+          "sha256": "af2d21678e776fbfbcc65dfea95c702c8b0092b99070ea0bfee098522fa46817",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 92448,
-          "sourceSha256": "d19df0b8bfc4db1c3418209c27a3752068e7f8f22e28d2817c6548fdfb98359d",
+          "bytes": 108774,
+          "sourceSha256": "d4f0cf06d1d9063f84acc4422b83b15d1ccdeecbdf7e3daa8b7a243b8b1c8320",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3568,16 +3594,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1990s/movies/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/movies/poster-focus.webp",
-          "sha256": "d03438017df60c747e723b1e96a146f95409ce839603e7fe4526a56f76f30b8b",
+          "sha256": "2ed5202c69b0c8e4ce550c0e5fb715a84a31d08b676e6ed51a8816ce3cfdc301",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 24320,
-          "sourceSha256": "5d199127ca5756073637263024f953d3ce37365cf415d048a09a8850827a37a4",
+          "bytes": 23808,
+          "sourceSha256": "2fb9d1a2202b2918074f42519acca58072418c4d7ae4e54b3d9b6fa06fbafce3",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3585,16 +3611,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1990s/movies/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/movies/square.webp",
-          "sha256": "b3a0bb23a0f1dc164b68f6371a772d6426c880027bfe8ee8727ad565bd202e68",
+          "sha256": "d1e836b19d8e54261c54e45183054addf5f70ae079d8805867b3c344b655e0c1",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 71306,
-          "sourceSha256": "956d7a06c31643d465a9154414e00339c3baf55df592a827fadf8bf81f487c5e",
+          "bytes": 79850,
+          "sourceSha256": "abd5addec1483ee223770ac3adceeb6604ef5852cd742c21c7849a7346d957de",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3602,16 +3628,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1990s/movies/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/movies/square-focus.webp",
-          "sha256": "37898c6ff286689a5d06b779d41e55a07151618a17e441883cb310cc39da723e",
+          "sha256": "bb496d212865017ea2ea33662a25f42b1944d1d8f2328353c86ec45b6a077acf",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 20650,
-          "sourceSha256": "1e3527416a9c4310a8e155c19ffc27a5fdd3f94f3228fcab459301638ec01c8c",
+          "bytes": 17546,
+          "sourceSha256": "2ea6502cee4115b6121cb34e7785be005cbaef86c0515195d27646ff2606fad7",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3626,33 +3652,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1990s/series/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/series/landscape.webp",
-          "sha256": "87ed50f27a8838df5862f5525b581ec8dee8d2836a8c8a6d61d809127d0547cf",
+          "sha256": "daa8df4112e1529c1f472ee3a75e138502773f709b6b876e362b60b7d2ca96f1",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 31972,
-          "sourceSha256": "9113cfa50e4cc52edf009b04863bbb7623edc3d037331ac4143718696bce5e17",
+          "bytes": 46420,
+          "sourceSha256": "d5749b846cdfafcd801bb68b88b765c572f27e85c483d045360d35db78c600a3",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1990s/series/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/series/focus.webp",
-          "sha256": "af5711f68b13e372ee03f8564816d7187c6f35777f941c879bd9287621fddac0",
+          "sha256": "4495c0ba66d817833c86a399fd35323cd3b813de3a26d0e808d3a653d3fc6995",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 17308,
-          "sourceSha256": "1d2f40a640a971290e081be29591f9ba2765effd7d5f91b9fd618110807e43c9",
+          "bytes": 19416,
+          "sourceSha256": "6dda6f157102f514ec8a6ed200402693c3b673a5c2413ad25832acec0a34f515",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -3823,16 +3851,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1990s/series/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/series/poster.webp",
-          "sha256": "b5a4c344037767dc40c6b820b53b4ddd8909addaac23322724d0afc715ca78c1",
+          "sha256": "c3f7e499ef9fa0f4379e588d0c653553b0c613e2a5abffaacf347fef50aa7b96",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 64490,
-          "sourceSha256": "f5c6d887d85c814662d42725a1c08013fddcb251352617b34532744044b2a928",
+          "bytes": 86444,
+          "sourceSha256": "24d54658910b23e6ee4b2c72af41e2d0a7e9a7a2a3cc0a2fd89a5711e0d850bd",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3840,16 +3868,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1990s/series/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/series/poster-focus.webp",
-          "sha256": "eb2317bea576993240fda6b4947449108dd4a6d772aaba9acd3782a97527f3f0",
+          "sha256": "a0d1f41541aaeb67ba6c95eeda05dce4614293f62aec7896704dd58b80e848cb",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 23696,
-          "sourceSha256": "b1e6e71cbe42763c1ca97e6e7b04dd5654d17d0a490d876e004bb499778001fb",
+          "bytes": 24940,
+          "sourceSha256": "928d08f3c292b27ce6ce492c4d6e8454843ebc595ae1ad53f3f9a775905e4288",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3857,16 +3885,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1990s/series/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/series/square.webp",
-          "sha256": "b28b0b67da66d0bdc58640cd2d261e48fe8625ab42d1eb7437374e8f79d06820",
+          "sha256": "21e98e7a28f126ed3261958e450732a3f625e0b7dbafadaf27bc1be1b8cb53f0",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 43056,
-          "sourceSha256": "4f93d5b40c8c1183f9fa5ae61c38cd0debafb230590bddb1f0c25dc288552a10",
+          "bytes": 49480,
+          "sourceSha256": "87e8934673adf51a191c68de7b3923b6b67a6ff8be43fb0439a1f1bcc4266a95",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3874,16 +3902,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1990s/series/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/series/square-focus.webp",
-          "sha256": "019b65ca8becd1942bb660be35ef54e5eba8c9513c425d6989c18e9acab8f8e0",
+          "sha256": "6037075eeac9185332fc965707e57dbb8443b30d87120b5267955f06baf42b3d",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 19932,
-          "sourceSha256": "eaab161b9eb2e2b4d58aeb8026f490ff1f93ee14a94abe1197df563d12337354",
+          "bytes": 19680,
+          "sourceSha256": "dd5804063c5a7c951ae38873f552b39c96910695b09e73d1078d0d4991c1d384",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -3899,33 +3927,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/1990s/mixed/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/mixed/landscape.webp",
-          "sha256": "98abd089512350fba0bc784462d65961479278818a5d89dcb6b0531227f43993",
+          "sha256": "d267222c9457d118d2d1211f171e827040b8e3d4882cde98bed33c85e4042cb6",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 45770,
-          "sourceSha256": "a43688c901739c17032dc91c59688d88225788e79f0768e40f4a41d79c374d79",
+          "bytes": 53680,
+          "sourceSha256": "1ecfd8cd00925e0ba3bd8c309de7519d5481c498a075cc7dec40df2177a75079",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/1990s/mixed/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/mixed/focus.webp",
-          "sha256": "7fc299e944b094dcd3a6d30b73680e7f6a89bc5848debb7e1861e61239f7a63d",
+          "sha256": "cf644597d991d7371a167ca9d2fb09dfe9492ab8390985a907f1b67174304d37",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 17564,
-          "sourceSha256": "c8ed959eea81d661e7cabfd17ed64fed3bd11f42054f01b627a7669a439c64d5",
+          "bytes": 19384,
+          "sourceSha256": "ba7b09632ac069e3b7d5e80d0da787505259d602823424932431ab1e696cbd72",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -4096,16 +4126,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/1990s/mixed/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/mixed/poster.webp",
-          "sha256": "d83ffddd11a676cd164b2bf4cdd17dc4b1def83795e4f7d75726c6c04c0d7a94",
+          "sha256": "10b17ca85ddc16224d6506451ac397002f3d6ebf8d24f2302a220ab6e00a77ba",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 90112,
-          "sourceSha256": "c73ff0bfff828dc0e5b0f19b306347795f08f482c3709356502de6f39e492de9",
+          "bytes": 105772,
+          "sourceSha256": "fac977bddd320c537905c2ac4fc9b8b3f6fafafa4c849e57c91fb99fb4169056",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4113,16 +4143,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/1990s/mixed/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/mixed/poster-focus.webp",
-          "sha256": "e14072723e9ca3433c08c81a0fc00bfcc9b54fc3b4817ce85285eabacb7a9742",
+          "sha256": "3bb9ab70cc8f57efe1863f8c76f3038fce77f333134e75faba443c018195ce5c",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 24182,
-          "sourceSha256": "18955fa80182994c8bcdd76aa5a0f642d9900bed6d2a1727e3adb87198644b17",
+          "bytes": 23650,
+          "sourceSha256": "558c7e06910f1e3d7d4d9413e495487f048d8f3d90a20f634ea33ef064522982",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4130,16 +4160,16 @@
         "square": {
           "path": "assets/collection_covers/decades/1990s/mixed/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/mixed/square.webp",
-          "sha256": "97ded419efcd476903e83e6bafc6fbdbaca381d42922cca2b8f5439a4d5e8c5b",
+          "sha256": "816668f5d05c0b01d57843f19ad8521e347d552b888adbbe64b7c0c30edd353c",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 69016,
-          "sourceSha256": "d30ab153bddf4249502a9637ea62a5dff09e7580051cc679541ac30c338b1023",
+          "bytes": 76826,
+          "sourceSha256": "adb236b8b6bfdbe6c297f24da11c238f6ada2cf7a9217f2bf7c0524eab6830e0",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4147,16 +4177,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/1990s/mixed/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/1990s/mixed/square-focus.webp",
-          "sha256": "27bb01ef15dc8d09ae0be1f23bd6e717d5961c177b5b90163ed0a2909dc1e9da",
+          "sha256": "a607182e360e3b152618ae4a8482cd145fc9db53c2cc9da3a9051f3ee1fb58ce",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 20414,
-          "sourceSha256": "5c901718f4e70b2c8a1e0ecb2e4c3cb7819a4c2288ae3901ff6ff24288f09640",
+          "bytes": 17352,
+          "sourceSha256": "2bd35d963abeff870520b92c05a102f6b1c897f41b0618ea2371b8123f8f6cc8",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4181,33 +4211,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/2000s/movies/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/movies/landscape.webp",
-          "sha256": "662fd5aa15ca0fe011675954ee293c57d4174340334ec5f61772e4c560c7b8c5",
+          "sha256": "1bc14bb6b6d751a8a46bb818c1dfae7f5b55787455bc2361e8b34b195dc05c83",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 63148,
-          "sourceSha256": "c518668db7af4782909cc9c174fd4e0797d8b69b6f02f09cd5c54b0b4d8a1f8b",
+          "bytes": 55562,
+          "sourceSha256": "b19a87e89d105018ee6f7bf54c440a01d33ed257a87faebde65545402973ad6c",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
             "quality": 86,
-            "effort": 6
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/2000s/movies/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/movies/focus.webp",
-          "sha256": "0cf19514ed2ef78bdf7fb7508822c1a0925490e1d415f7281c5205591874d8e0",
+          "sha256": "ff9b83c78005f328c571186d112c9ce37ac3b8c8c0aaffa465c33a40871d6721",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 16692,
-          "sourceSha256": "a8387464715245c0d20fcacda0627dce503120a00b719fe8d059c5ef1cab9480",
+          "bytes": 18784,
+          "sourceSha256": "7ea6cdf247414ed4c372a24eddc09667c2778a99889c9147cc9383e07a8a0c3b",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -4404,16 +4436,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/2000s/movies/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/movies/poster.webp",
-          "sha256": "efad60e8b54aecd19c9564a2338210c4c8460b5df20e107a737eb999907f8826",
+          "sha256": "09000ac1c6bd7c8d950580342add4b789700c756cf307d27a74b6292c6835ff5",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 38970,
-          "sourceSha256": "fa23a4bfff42a5b2a6dd3b6e45fa7fc313b5beded6ffad844b19a3898254aa26",
+          "bytes": 47198,
+          "sourceSha256": "951eac464e1d1a2eb0ba36bb4985c41681879bf1986039e63a1ed6c77ae89537",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4421,16 +4453,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/2000s/movies/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/movies/poster-focus.webp",
-          "sha256": "6f9011099fb3e776b6e4c63801bde0da8b30fa1c2099134a26b9b031989ebb83",
+          "sha256": "6e396677eef03178d1a33430e009ff572111fdd8e9b85991466200c44ab04ca5",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 16552,
-          "sourceSha256": "0954960f97258a20a3f312dbb9416f6160a8f9791b4d2bb5df1188031cc8c10b",
+          "bytes": 17652,
+          "sourceSha256": "5dc31fda42017c710ada5989cf9cb6ee759afadcc2e62af34c32d79d5d39da6e",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4438,16 +4470,16 @@
         "square": {
           "path": "assets/collection_covers/decades/2000s/movies/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/movies/square.webp",
-          "sha256": "cae90590fe949059bbc2db169b6a7974e0a9dd0c15220676e8ad3ad6dfec5233",
+          "sha256": "a2e6b9361e8e916c769587bf724619f16d38264fb5562feb19dd0a04475a0893",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 44980,
-          "sourceSha256": "7961cf168a4658fa8d6e19daf5fdffe3fbfb09f5febbf6a84a3b76b8e30e7e19",
+          "bytes": 53584,
+          "sourceSha256": "a7fbf87d51e66bf886ae49c0b31316db3c4a52e48010923744dee1ae44bee3d0",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4455,16 +4487,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/2000s/movies/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/movies/square-focus.webp",
-          "sha256": "910dc2c454412dd538750dc7634433f77899fc9c65f8ad4ac36665c1ab56b706",
+          "sha256": "0ccc11b8faad789eee82679ab1175f38d54a5d2f38f0c2efb7e9c4dcb527ed0b",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 14378,
-          "sourceSha256": "2d983c426bf6819f017a7c5fbe297e78716d48b37a7bee563810677ac429f0b8",
+          "bytes": 14736,
+          "sourceSha256": "af02f9ca501ad2f65ce21bb9f6f92691906a163e7af41460aa878d876248706e",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4479,33 +4511,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/2000s/series/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/series/landscape.webp",
-          "sha256": "4e45ab872bc1306ccb814d594474108dc7dd5cb57ce8ef3414a1769d67f50159",
+          "sha256": "881c600354e84d8806eb796860e77179e0dbdf2a4cff8dc3391a45c50d7eea32",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 34970,
-          "sourceSha256": "e0ce99dfcf709191a71873d0ebeecc57888bfa0de3bac35ead9a66bc58de3af4",
+          "bytes": 49298,
+          "sourceSha256": "33817848abceeb850b279fbc0d9670637ca29c274b9e4035b224498187fdbc90",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/2000s/series/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/series/focus.webp",
-          "sha256": "b9e7cb8ce206a6ed8a423f60bc3aec247acd1e7ff508c606089ff34a12c12afc",
+          "sha256": "452c3d5905d58217f72e307e109bb7c4cc49f9727328a54e20fa4f8dc61410b1",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 16366,
-          "sourceSha256": "f9978c32fba233657ae7a946fc945d68aea997b779660aa352828da400554546",
+          "bytes": 18250,
+          "sourceSha256": "d6e72a4e4a2e7eb617587e4ad031b92f9b3596ea5e990336ecdadc6fc8e7817b",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -4676,16 +4710,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/2000s/series/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/series/poster.webp",
-          "sha256": "a0ab86026116af6b8964c4e680db0381acbf2c8aba569e74ee81e554c501304b",
+          "sha256": "e574fbaad44136a37a0148051586490507236e1d21fa8166df1198e834c52fb5",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 111664,
-          "sourceSha256": "832eda2a7cf3e4ba4b9f6b773505d490b04fd73801d63396d4b2aeaa3a4656c4",
+          "bytes": 129334,
+          "sourceSha256": "3f7d90e698e392595a2c093435960301891ae0aadf80719e67b327fab82209cc",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4693,16 +4727,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/2000s/series/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/series/poster-focus.webp",
-          "sha256": "43f98b73e32dda17a4865eeaf5051107b5a2c116f46f17374c65fda333b74949",
+          "sha256": "a5671e8db5e2a08380b9bdf6385df6cf16f58e0a0afbab0fc787587668be32f2",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 24420,
-          "sourceSha256": "42c9792bf2d3088874440e5ff7d91d950e710cc7a3445b626405a0dd86caf664",
+          "bytes": 26212,
+          "sourceSha256": "e3d445acf36326d1dcb90e9dff312fdb82bd127c67aa4441da302ac5626496c3",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4710,16 +4744,16 @@
         "square": {
           "path": "assets/collection_covers/decades/2000s/series/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/series/square.webp",
-          "sha256": "ce3122e1d37bb3bf759c820519e69b32a4f18ddfa073b0fd4483075d602c3ce5",
+          "sha256": "45ca733bcf4addf7f3ee57a9ca9d60bf1dba10ce87e96062836dc92bb721cf5f",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 96060,
-          "sourceSha256": "4b5715b51edb9e31fa9f78ad653a7f50637d5e16baca0ac5c09331001d0d057e",
+          "bytes": 110884,
+          "sourceSha256": "f3ab38a0b974f0bcc7e4ae5b30691edfd362100c5deb4277f30b8a136c0c2661",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4727,16 +4761,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/2000s/series/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/series/square-focus.webp",
-          "sha256": "d683e887bee16ef5e1a04f2f9aea7431f292b5377e84f507691a6d9bb97fe4f2",
+          "sha256": "8470fd5ab2c175d99643c313e68406c89848e6c3b96c8e22c1eb5c137f9c6dd2",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 19858,
-          "sourceSha256": "a73b78c33502abcef9f593a6c1a0d96855a62f8162e2853fc1b00e713fa7f3b7",
+          "bytes": 19492,
+          "sourceSha256": "ba3b68a0513671adf322158be4a5c4b6e7985150e507516668c3276462e89bc3",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4752,33 +4786,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/2000s/mixed/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/mixed/landscape.webp",
-          "sha256": "4a85602cc2b386776ea68c9f3938eaa89353f956de21e6729fb9211192d7e2ba",
+          "sha256": "4715e5d649d83956f12cd1f2e84ad0d55b6dfca950da6b601d32ad794187d4d7",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 49074,
-          "sourceSha256": "5f9ccba3c7501f40f1c87fda6a180ae795104249fbcd7f346c99e096bca498aa",
+          "bytes": 58250,
+          "sourceSha256": "fcdbc57761be26b76f7be9db064381fdb0d91f2ab681176d3f7240aca23af84a",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/2000s/mixed/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/mixed/focus.webp",
-          "sha256": "115714d7a44c92b3bcd04ca7b2ad8e13feee4b4325313eae3b459a8deac663a2",
+          "sha256": "5b6d886fbc03990c755b00a3546400e6e3848036c9e6d761e9969779567e3c69",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 17998,
-          "sourceSha256": "90dd3cce627e372ce12c95dafabc48d3a86800dc250719a2d62d6499912ca254",
+          "bytes": 19448,
+          "sourceSha256": "2a7633a393ce592b7ca8f7d0c06908fd884912d7962b90d80a9f56f527885d19",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -4949,16 +4985,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/2000s/mixed/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/mixed/poster.webp",
-          "sha256": "b6b7ec5035ec066dba563debdc2ce0f7159f12ebd12a1fc256bd9471c68fc292",
+          "sha256": "d7ed7800feb2bfb4347413bba835158998f3b5132043726614c34fbc7386a809",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 35092,
-          "sourceSha256": "901a3a197d6c7122a3d2dfe5b7ba5fdcff9520064ee2c0a4a4e1b85b8d4de4c2",
+          "bytes": 41572,
+          "sourceSha256": "e74740763ceeffe11aeb3066b0a8aaebd13422b17f840d78d29e39004912219a",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4966,16 +5002,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/2000s/mixed/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/mixed/poster-focus.webp",
-          "sha256": "1f8880d9cde2b57955cfac3515f0154af1d6da2e820ecdc18a7307bd5b1e3dc6",
+          "sha256": "e35ffbc7e4487ec6d54ebddbf6c97b5dd7e2a9402e5933f5a3a74400995e92e1",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 16288,
-          "sourceSha256": "ca020bc9049de40d4248b990c34a47759ddd04450c5361e245a19c9735e8328e",
+          "bytes": 17292,
+          "sourceSha256": "d26f300bf9023a509d8a58521b01f9efba4de4ddb92bbe4aed0db10fd01b7e62",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -4983,16 +5019,16 @@
         "square": {
           "path": "assets/collection_covers/decades/2000s/mixed/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/mixed/square.webp",
-          "sha256": "9d82af10174a55f6a6d0c1f67c552bee09060d9a2d69ca05b53fbd9cc0267a0c",
+          "sha256": "23645061e705a6778736d3be903bf56fe2d892a3c07474192d7ed0b79a4ecc4f",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 42154,
-          "sourceSha256": "3224570bd03c0668aaa1e458aa66ab3681bc1b69dc727e0fe28209daf56aee75",
+          "bytes": 49922,
+          "sourceSha256": "9556dc02f20170d409e33597b0b9f6c46c5b0794d0f1d52f170d846dd71b6c6f",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5000,16 +5036,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/2000s/mixed/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2000s/mixed/square-focus.webp",
-          "sha256": "96f7bea55fe2bf58c8277bd6213ca9900bdced24bef2dd524dab3cdf8b01ae6f",
+          "sha256": "e31b2eee1ecc0777093ac8a00d21b3152007326f67ebf76e563c56cb2cd5ec37",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 14234,
-          "sourceSha256": "f77ac412cebda2afcb0378ead7dab9a3d546a15958783d4ed713d367c2995c37",
+          "bytes": 14298,
+          "sourceSha256": "148ddbd4d10dad4bd48e97e90a48550a948db033cf36f3ccb101d998555bc3ab",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5034,33 +5070,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/2010s/movies/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/movies/landscape.webp",
-          "sha256": "f70df7049d54440de94d04f6559a9dcf431f53b1d7e0ec47eca53d66a9f3bf18",
+          "sha256": "f499979bf35a28f997e47b561f35a103e616911686e8dc8a192b4ece80494fd0",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 87516,
-          "sourceSha256": "51180720ccdcb5dd50282e54399aab26641187146ffb52e04408685d41265ddd",
+          "bytes": 75278,
+          "sourceSha256": "51d876687c2419172145c8c43cec004e946844388a1c9f47f496ff4bc28c6a35",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
             "quality": 86,
-            "effort": 6
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/2010s/movies/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/movies/focus.webp",
-          "sha256": "684c9a0881206b9ce9c29306268e708158eb9688d49a7092d6f4461056a6097b",
+          "sha256": "143c0c651ef0c53dbe5efa83912d4b2799c9be41a2f2332a1fc571b362844151",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 19268,
-          "sourceSha256": "b528f6c6b5aef99768bda35008df5b4773560738e62c21c3652d71743ebe9fc1",
+          "bytes": 19368,
+          "sourceSha256": "48151ae6026dfe4ac0f491eca82b16d9bad157238a81135384d94d20a2b53edc",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -5231,16 +5269,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/2010s/movies/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/movies/poster.webp",
-          "sha256": "35ea0c3c4bd296d629335d554a3b10bf87351e10b12cae495b03129f09a194c5",
+          "sha256": "e1516a67fae336d5a2fcb8a3803782b9e3a1a5978cb1f3ad75c5db06152842c0",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 172304,
-          "sourceSha256": "52248afaf4e839eb35fa7e8e2637414308ba687c1df1950a62c3281bc8cf623d",
+          "bytes": 201056,
+          "sourceSha256": "62d7d4aa9646238158af92e89b8a55ee80388b63646f0e7dec108d8c4e0e0692",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5248,16 +5286,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/2010s/movies/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/movies/poster-focus.webp",
-          "sha256": "3dc5a5a3a8718e56abd97714383b1f753e504b821975e9549a5056a89878d051",
+          "sha256": "8d9e040441755be53e5a1de5877f0cd4cd15c606427a615b8ccf6b6e9c58388a",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 30348,
-          "sourceSha256": "a878dd9b3e7ebec3c1b663f0bd7c5752d54907fd72de257df2547a4aeb14f50d",
+          "bytes": 29984,
+          "sourceSha256": "a09d231f524624ed52bb6e86ed96cb55060e7963ceff58f3851c01f1246c4072",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5265,16 +5303,16 @@
         "square": {
           "path": "assets/collection_covers/decades/2010s/movies/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/movies/square.webp",
-          "sha256": "dc439d161d233b60679edd3f7ac9b0087ffbaa2099ecf232c6a7cedead3e0821",
+          "sha256": "e7b7d33e7e16fab93d692d95e08065a9caeef63e2abdec7e3a81569e57fc5ed0",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 98482,
-          "sourceSha256": "b06d9bb1ffd303d696555f34a9d34bd7027b17049949aa39983c12317e91763c",
+          "bytes": 110140,
+          "sourceSha256": "c1ec7ea109a8ad9cf8f2077c0c787c0d507238c0be2fbbe6316bd4132ecf25ba",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5282,16 +5320,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/2010s/movies/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/movies/square-focus.webp",
-          "sha256": "8a950b7f65f923e674daa8bdf8a1e9e153c28b747f45f40ab4834d834d67dab0",
+          "sha256": "dd8eed83754f761c6096335a89ca363dfef6717307941e215a86ad5e470c6690",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 22860,
-          "sourceSha256": "71fbaea6731a44b87e877343f6def6ab5e6096ba00bbf9808d0ef796c09d968e",
+          "bytes": 21302,
+          "sourceSha256": "f60bfca66fb0663243ec937f696882a83acbcea48ca29f50612c116757cbb2ae",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5306,33 +5344,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/2010s/series/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/series/landscape.webp",
-          "sha256": "7070d75883096f9446133180287c5e575a059722239102cb01caffee01fc1e91",
+          "sha256": "bd80baed102a1111ad896941e7f3015c26ee09dc0072969adc5c235181595504",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 53762,
-          "sourceSha256": "b0228902988a4cbd0d37a8055899c1194418b6e684c1d15e340c09d28c76eb68",
+          "bytes": 63310,
+          "sourceSha256": "c8535aa58315a2b25b41a6ecf192fe5f02f3c4ee283e1e6d52d976ba09f52cc0",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/2010s/series/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/series/focus.webp",
-          "sha256": "09b749efe16457c25b52d86c8a3e0a0a6b04a3e109efa143c52920a0efb061cb",
+          "sha256": "3384249698ee176cd85a87622a0db11d514127d7395bf5bd88aa9287c32e0e30",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 16314,
-          "sourceSha256": "60494ed9258ea756f71f505b13c717411c158006335decf3011f6eb21e1ada52",
+          "bytes": 18180,
+          "sourceSha256": "7109f7e734c977e077cb6ee958e1d11213ae8f62328fb86135839ab9ba3fab61",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -5503,16 +5543,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/2010s/series/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/series/poster.webp",
-          "sha256": "d202cc508ba1e5745e3c2014860189f54a42de225186e14aeda23e4a4be8ccb7",
+          "sha256": "f0078120b21961baae228706524a8b2de6ed45b7664c332d61e3621adcd3dc68",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 107260,
-          "sourceSha256": "8bfc3700d83318a4c0ef409b444a2f21441a2ac52ddb6802785c5f1baf02ca86",
+          "bytes": 128344,
+          "sourceSha256": "e04efc804382ae019ff5774bfe424cc2b85ecbe7eda005dbe6cec35c84e5e9e9",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5520,16 +5560,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/2010s/series/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/series/poster-focus.webp",
-          "sha256": "a310b6a3805920fbcaeecb0190a79b0c5470c7aae2ad6a85e5440111a7af0a45",
+          "sha256": "ddb34d7cb2e5e3c8e26bf504b2ce65f9692e48a236659664a206bb51587c466a",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 20322,
-          "sourceSha256": "7315cba5bb837d90451ca991ce7ab659c10a1feee63ca9d16f8a1d30ebf451cd",
+          "bytes": 21784,
+          "sourceSha256": "d9989a69cb1a4cc4d36e3c355e3668dbd27a0e8556642ffd896130aacc174dc6",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5537,16 +5577,16 @@
         "square": {
           "path": "assets/collection_covers/decades/2010s/series/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/series/square.webp",
-          "sha256": "d265a58a7dbb5424c042120fd68067cc4b73ac2a9d3306a236ef84e0764e0720",
+          "sha256": "b55927bcc68377df9b6565bedcc1fa916bce30af79ca8811f3cfbc441a34e508",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 64314,
-          "sourceSha256": "d74eeb5c7e28046b72153a44f8701ccf0d19f616cc28f64076249ac805b7c5cb",
+          "bytes": 75050,
+          "sourceSha256": "070e2251a4ae64f4cacc350bc3b176c38ebd3aef42fbea17100a37d3689c084c",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5554,16 +5594,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/2010s/series/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/series/square-focus.webp",
-          "sha256": "966e68862e2b0d9bf9a4179a42dc1da924a5ec430bf973e78a5bfa106cff10b5",
+          "sha256": "dc5121c6115a0cfddaa17d7075c480211c2c6a778abdde7a220cb1ed845620ed",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 15072,
-          "sourceSha256": "cee6bc7d526e6105562228af08bc4285921b5a8ff4c81995025148795051aa2b",
+          "bytes": 14704,
+          "sourceSha256": "daaf3ebf7f8873b0bb1151c93168d6e5a59b514f8eed780bdadc7fe6b15103be",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5579,33 +5619,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/2010s/mixed/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/mixed/landscape.webp",
-          "sha256": "0b2146598dbe1d4075b277c43f99d5a95ad0d61114de13127356adc19cfeb105",
+          "sha256": "361ab15b4d6163df22cc9ec777e1b244feb3a58b5708a16982e57a1d67838383",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 76980,
-          "sourceSha256": "164e81c7d540326d67013c0baa10420c9306edcb8b8f11d0900d9ad8af6fd0a6",
+          "bytes": 67244,
+          "sourceSha256": "e70eef46a3419ced3f5cea91de4c720ea4e8fd2a86337aedd8fbd1ef9b3a0a85",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
             "quality": 86,
-            "effort": 6
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/2010s/mixed/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/mixed/focus.webp",
-          "sha256": "afab546350186eea1ab734844fefb14d065af20900fd8da9cafdf811eb0c63e3",
+          "sha256": "c41ea2548628c99aa6cc88a2896d86dd97c7b5bf4a4ef703a2cacb28bebf755d",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 17492,
-          "sourceSha256": "0151704624f0d102951ec5ee13019538ce303dedfacf685ea2d1c43b997dadb8",
+          "bytes": 18562,
+          "sourceSha256": "fabbfddd7f0193f8e873dbe7f34a50c3e6a9b6164de40dfc3b172e820d2d0aea",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -5776,16 +5818,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/2010s/mixed/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/mixed/poster.webp",
-          "sha256": "c519e82e8be1d4751e87007bf6a8adde894ddbada71b4c2bc928a53b35f33fa1",
+          "sha256": "99b6ee780ff1ffbcb4f9417fc6f3d0a216bed235b458664f3330d515c85fb778",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 169964,
-          "sourceSha256": "4b795526324d3080dbdba7fc769ab726eba8e87f4169957739db9bf2cbfd7e1c",
+          "bytes": 198628,
+          "sourceSha256": "b1db24434acc60f2eed2f15c831ea78c7256b5d2c08829d95bb40b1f833e24fe",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5793,16 +5835,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/2010s/mixed/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/mixed/poster-focus.webp",
-          "sha256": "d6258c691005aff0e21d7de3958c608cb317979442f33f6b92ec7c34fe4f3f14",
+          "sha256": "fac6f8dca72fcc41f3d508cbe0445e547fd8125f7e21780de4647b1794afa860",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 30240,
-          "sourceSha256": "d423b79871ce054903a63ecaba7ad9d656be9ef2b5bdf4fb072b892162bad2c0",
+          "bytes": 29890,
+          "sourceSha256": "e83037ad12c299c4961728f81dc4f6bf8893300813aa492aeb64768b93cb6715",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5810,16 +5852,16 @@
         "square": {
           "path": "assets/collection_covers/decades/2010s/mixed/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/mixed/square.webp",
-          "sha256": "14d32bbb63eceeb0b78371b13a3edea7332e8d9eacd42c77dcd6c9be35a8b9a6",
+          "sha256": "2b602fefdfed501a05c5aaaf48d21832e24e2e25ea7905eacd30532b6e2d399e",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 96070,
-          "sourceSha256": "6ca66f620a957e34fb059eae9c1b26280ee3d8ccffba5f25d42bdd6367be314d",
+          "bytes": 107554,
+          "sourceSha256": "48e493e23f77d8ff19c07bab7f2aa4434ce74c4f53929aa7e9a7317098e08366",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5827,16 +5869,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/2010s/mixed/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2010s/mixed/square-focus.webp",
-          "sha256": "994ad7747bd5e7897817cc9153825e17a78edee9e155d223f70526ce0ede27fb",
+          "sha256": "040e447669003d591b754a13e632c7dfc010da9d40bbfc7e1c95d4c47acccadf",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 23032,
-          "sourceSha256": "3f05e37e93aa124b8db18d90995049a7ad9a0864fd7a6deddcdb9a72b34dd94f",
+          "bytes": 21124,
+          "sourceSha256": "45a7b9a19731091f617456a39bdec2e1fc788023abbfff3b988a599fe94021d1",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -5861,33 +5903,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/2020s/movies/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/movies/landscape.webp",
-          "sha256": "590be953b075b1bf76df05a26bcc5f03c25a7ccdb55295086a53eeb3d2fbb95a",
+          "sha256": "ed78f06bf114f67e74e316fd59b7882a665fdc52a3a32e7d9c8ac11808eca637",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 45450,
-          "sourceSha256": "cb4d6699f7003f8c500e25ad0539a1efa154faf5373c55c66f6d7d8d1ea99ada",
+          "bytes": 54718,
+          "sourceSha256": "c500689be9aa509374806ac7a695ac01e017bd081d841bcb7dc64a239b02289e",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/2020s/movies/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/movies/focus.webp",
-          "sha256": "515cc8e1d0badfc1200625652508892cb63ef7e2d2c80ee454147a5940c04daf",
+          "sha256": "0f0e397d9648d9a9d272e362c753f2e902e2af02195fc22ef4a4348883526f82",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 16980,
-          "sourceSha256": "e9a2e6f41b9e6581bb336b89fe016b739001a772f3c5a54cdd585d7c6d346c59",
+          "bytes": 19766,
+          "sourceSha256": "ee4014cd5ecfb9882a676a5be4391bf62eff6bca9a1ac06cb9313263096497e0",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -6058,16 +6102,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/2020s/movies/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/movies/poster.webp",
-          "sha256": "9c3ccea59dc092c27ea247a51bae3572c50fa112a2ba48ac684ada6045034a4e",
+          "sha256": "dd44c9b958cddf19b1797e81ac7c1cb2f418bb162bb0d16ecf6078e7be529354",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 49614,
-          "sourceSha256": "15a2cbbfd6a3bf957f635051069935499e74f12ad0a304c9ada4e585e2eb1d40",
+          "bytes": 65670,
+          "sourceSha256": "043bfa3dd6b08c8570cbc07627e22311a1379abae561b37930eb18212ec0b7bb",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6075,16 +6119,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/2020s/movies/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/movies/poster-focus.webp",
-          "sha256": "47d3d1e5605f6011c6099fb31672a2ccf90cbd43d517c08e7599d4045f5ab211",
+          "sha256": "d78a51ce5d9943afd9bbb67adea4f0a044b24a15913a53940e24bc6d2a2dfcc9",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 18940,
-          "sourceSha256": "fa62c55df7d5a0ad03f80e7ec32f0872278d820c7c66b577a4990aefd6ef1c5c",
+          "bytes": 20986,
+          "sourceSha256": "377df1490229a74be0ac38815f35960b1ac9c6301ccaf35b2a8e869f0ddd6b08",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6092,16 +6136,16 @@
         "square": {
           "path": "assets/collection_covers/decades/2020s/movies/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/movies/square.webp",
-          "sha256": "bb2a4c23fb60f34d592ce22570cc778666b4e67af9cc81ab67c673a261c42517",
+          "sha256": "51e99cf94866588343f160892d188a0b4eb70099a3800fef98219611a1347655",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 37112,
-          "sourceSha256": "cfbc880ad21377ac7fd1a6e226edb67bd0c30638a39d3bf5b8c600b71f4b4457",
+          "bytes": 48236,
+          "sourceSha256": "c2584e825496c76b70846c57ae3512b5d7a5e5466e68f783caa81c22627ca208",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6109,16 +6153,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/2020s/movies/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/movies/square-focus.webp",
-          "sha256": "caca8021c47bd7ae72ef56c8b33f9f2af4df1da4184f9eecc9970463a70c48e7",
+          "sha256": "8172f816d0f9eaf836c610a041e1a5dcaf6c7a854eb5d949f4b52feb5e901ecb",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 16632,
-          "sourceSha256": "ca8ff9923e9996272e3b950193517048219b0eb18bd290b25e3e9474f6cef1f9",
+          "bytes": 17512,
+          "sourceSha256": "ea9542fdb38b57fef8f8619a1a97d25ebf63688f84511ec9103fd836a391b83a",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6133,33 +6177,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/2020s/series/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/series/landscape.webp",
-          "sha256": "3c2587bfb594393ac4840dbb44cc27a506c59384325352310e1909aebac40f1a",
+          "sha256": "155a89d6f66b382e6191aab2fb281718a8f9b228c5a44ad01455f22fc506d52a",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 51448,
-          "sourceSha256": "575f697f6e019931b1421f5851095e032bac5d91f3facc4518c07bbfa9bdb198",
+          "bytes": 59300,
+          "sourceSha256": "eac0755cb36f9b35a7943514a526fb0cd53742ea840855d8d62847dc4459fd61",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/2020s/series/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/series/focus.webp",
-          "sha256": "21a4228aa8d5b8ea83a2dd2075ccb0d6aedcfe4b583fc0cc83e27bd8a294b848",
+          "sha256": "5010e79dc97f33f4d8760179749da2894d0ba4ee00490451a794e0c148a1b606",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 17702,
-          "sourceSha256": "f78e6b080ad782843636ac408b317a95734a0f31bfdb260052ca921266e0b489",
+          "bytes": 18800,
+          "sourceSha256": "7058818b40fa9fa58960cfcfdcb9c19f48c631cb18563863de5313da86a92611",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -6330,16 +6376,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/2020s/series/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/series/poster.webp",
-          "sha256": "2c4c490bef2e9e78fd7c217c81b77efcb31ab7f725908765bc24094c4712c027",
+          "sha256": "0da375477fd0c2e71c467608807f102552641eb970ebeff61457ddcd4dac1262",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 56772,
-          "sourceSha256": "f41df8b6c8f1beaaa4f8e04329b404ad02d9334ba07a80e8d2f0fb3523705135",
+          "bytes": 71544,
+          "sourceSha256": "f0268cfd7b1e4b0e4fb727c6e7f73f3ee60e790c4e58e924da2399b4553aff14",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6347,16 +6393,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/2020s/series/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/series/poster-focus.webp",
-          "sha256": "ba8c65b9547e0060d7e86d8f16f04d92be62f096ce7a89e35fc4356ef48ad486",
+          "sha256": "928d8ae63b7e92cea0bb2acec957cbf0cbf81396743984770f3c41c946cb0b0e",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 20940,
-          "sourceSha256": "3c0e07f635e7f3da329e86d7faf5764b286e7b5802e17e524273e3a9e55b922c",
+          "bytes": 22496,
+          "sourceSha256": "86dc602b5c4ccb70641e42c897a856d7cc691dd4e01aab86737c4130acfe80f9",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6364,16 +6410,16 @@
         "square": {
           "path": "assets/collection_covers/decades/2020s/series/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/series/square.webp",
-          "sha256": "3dae5d6f4f38df94e9c721f6eb4cefe5c17df6e2f622164175dea5349fb45ef4",
+          "sha256": "b57eea09b79389cfece71b4a4df9efd02915039e8dca2cf459d7e5c40189d159",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 41924,
-          "sourceSha256": "63728bc24949761da540dc6fe79edaf9f1614d5e9e014bfe5e4848112f401909",
+          "bytes": 49006,
+          "sourceSha256": "5c5cfc7116939cf125401b02c26219942241408c48f18a63275401f657d77aba",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6381,16 +6427,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/2020s/series/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/series/square-focus.webp",
-          "sha256": "60a8c0fbb564af6d6f3483639344a957b97b12684b9d5ee6f6b9a59f884fd7a0",
+          "sha256": "d4d73e3aaa2c5924689024f7c19d26540757e5b0da78e81a557efc99ff743d35",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 18390,
-          "sourceSha256": "18ab9545cb61c2ea02d04c20ce258912babc47740b8ada7b0b85fa2f95e0bf6f",
+          "bytes": 18398,
+          "sourceSha256": "100d5edd2a11c3e7ee98d4ddfeed85d8e6704f7847e030cd50b0831b33e091be",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6406,33 +6452,35 @@
         "landscape": {
           "path": "assets/collection_covers/decades/2020s/mixed/landscape.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/mixed/landscape.webp",
-          "sha256": "5ac43f24750e1246d1063c83989a897a06194769c5caa8d2874e8ebd85ddbd5d",
+          "sha256": "3c55da09489a29d3add97edc31f2873a3680d49633056095978ce643459756e2",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 41936,
-          "sourceSha256": "befafbd8c41999412d45b25c125437100cff084bcddd960e1dfa8ab1e1a05c5b",
+          "bytes": 49346,
+          "sourceSha256": "7c35fd04f32d1d4cc80d9af7e9ef063e01d74dd1ae76c93387ea356db778d311",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 80,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "focus": {
           "path": "assets/collection_covers/decades/2020s/mixed/focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/mixed/focus.webp",
-          "sha256": "1d78d62a021edd685e710b502223ece13d8d316cb337edbed252256e12dd34b9",
+          "sha256": "6b691fdcf4b34cec97e4ef7b8dcb1f73db3eccf6e766c2f08374cae22c43813e",
           "format": "webp",
           "width": 1200,
           "height": 675,
-          "bytes": 16644,
-          "sourceSha256": "88944659292886421c092639e83288ebcc209deb303154ccda007158535e0b7a",
+          "bytes": 19060,
+          "sourceSha256": "cc2552a58f2036afd2282c9b297704b47311bee22b7a27b95fc89cf9e48cb42c",
           "encoding": {
-            "method": "perceptually-checked-webp",
+            "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 72,
-            "effort": 6
+            "quality": 86,
+            "effort": 6,
+            "smartSubsample": true
           }
         },
         "titleLogo": {
@@ -6603,16 +6651,16 @@
         "poster": {
           "path": "assets/collection_covers/decades/2020s/mixed/poster.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/mixed/poster.webp",
-          "sha256": "7d0e50968026c47d1764617e4ab697469bbba5079ee9aa02de95db2805cd58cd",
+          "sha256": "9528206d36f1f87c7e391a3f1cb43f876302c28371f1cddeaa93514483cd2190",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 47800,
-          "sourceSha256": "a6e10b571deca488c04e5f5c989ab73cea6132074102f3aea894ff5b5263dc0d",
+          "bytes": 64514,
+          "sourceSha256": "c7eebc607654390f0d1193ac6f1c8b580410af6cd72dbb640321b449a8e2d0b4",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6620,16 +6668,16 @@
         "posterFocus": {
           "path": "assets/collection_covers/decades/2020s/mixed/poster-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/mixed/poster-focus.webp",
-          "sha256": "214e9d6ecf3ba5cd917e792faadd97dee59aa8893939d109781aaf19d1ae1d66",
+          "sha256": "83fdf8d81bbcb2223b2e808404aab3a2a3c50357834188d30981f6b46fcbedb8",
           "format": "webp",
           "width": 800,
           "height": 1200,
-          "bytes": 18828,
-          "sourceSha256": "9c58917ce70b32e6f98d24f93a9e05c06d6ee3b487ecff4bed1833f29c545c06",
+          "bytes": 20856,
+          "sourceSha256": "d140edbb3f1cc0fac594f675e4998a24d4ac03f5c97272f8e3f980dce58adb66",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6637,16 +6685,16 @@
         "square": {
           "path": "assets/collection_covers/decades/2020s/mixed/square.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/mixed/square.webp",
-          "sha256": "b018cde456f98cef335cc295769a5baa742cb43e4f20e477e8197d905c14d3ea",
+          "sha256": "1b1fdd36faf6ab07899c2ff0c6cff5c853b3e39404aaaaca5c6228f88a3ac754",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 33144,
-          "sourceSha256": "c86558fd008f8df5aa29c355d080b508b0fa8533b11d9422e2208f39cd271b1b",
+          "bytes": 43604,
+          "sourceSha256": "ac5b4e040ed3f7070ed8bde1d25a58f9dabf3a9906f6a91efe0132a47ead94f1",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -6654,16 +6702,16 @@
         "squareFocus": {
           "path": "assets/collection_covers/decades/2020s/mixed/square-focus.webp",
           "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/decades/2020s/mixed/square-focus.webp",
-          "sha256": "3e3d015b67a70e2b3f6f6a9493671c249dfb4a5b9f39cbb4eff4c0c3708c68b7",
+          "sha256": "3ac75b87c612e2fe5ebd060cd1a3a174b3d61fb4f4b1224c5161a822dec632cc",
           "format": "webp",
           "width": 800,
           "height": 800,
-          "bytes": 16564,
-          "sourceSha256": "d455e5775693079972ad3fe63147f13883e1b81f20a56f6a9d1a304fc4102233",
+          "bytes": 17374,
+          "sourceSha256": "8d4525323c6f1e875fa8a9cc9eefacadd195bf868f102b153af4f1b6dd717792",
           "encoding": {
             "method": "retained-approved-webp",
             "lossless": false,
-            "quality": 82,
+            "quality": 86,
             "effort": 6,
             "smartSubsample": true
           }
@@ -7210,7 +7258,7 @@
   },
   "posterSquarePolicy": {
     "imagesPerCover": 1,
-    "year": "Full decade with lowercase s, glassy silver chrome and smooth reflection",
+    "year": "Full decade with original lowercase s and opaque pearl-white #F5F5F0 fill; original geometry and rim/shadow retained",
     "moviesCaption": "A DECADE OF CINEMA",
     "seriesCaption": "A DECADE OF TV",
     "mixedCaption": null,
@@ -7227,5 +7275,27 @@
     "effort": 6,
     "smartSubsample": true,
     "legacyDeliveryScope": "The original delivery object describes landscape, focus, titleLogo and hero assets"
+  },
+  "coverReplacementApproval": {
+    "status": "owner-approved",
+    "recordedAt": "2026-09-16T23:55:27.923Z",
+    "sourcePackage": "decades-original-pearl-all-v1",
+    "reviewedBindingsSha256": "70db060ca3a5dcd9675b17704baff578915c439c00098418835aea16b4e7a16c",
+    "scope": "144 pearl-white landscape, poster and square cover/focus replacements across all 24 Decades sets",
+    "nuvioPreview": "pending"
+  },
+  "coverReplacementDelivery": {
+    "format": "webp",
+    "replacedAssets": 144,
+    "preservedAssets": 50,
+    "replacedBytesBefore": 6261544,
+    "replacedBytesAfter": 6973886,
+    "quality": 86,
+    "effort": 6,
+    "smartSubsample": true,
+    "filenamesPathsAndUrlsPreserved": true,
+    "reviewedImagesPreserved": true,
+    "yearFill": "#F5F5F0",
+    "scope": "Cover and focus in all three shapes; prior delivery and formatExtensionDelivery records describe historical releases"
   }
 }
