@@ -6,6 +6,8 @@ Last updated: 2026-09-17. Read [the shared workflow](../artwork-workflow.md) fir
 
 Category key: genre. The owner selected original lettering on photo-free colour cards, separate photographic heroes, and focus treatment A. The release supplies eight roles for all 31 genres (248 WebPs): landscape/focus, poster/posterFocus, square/squareFocus, titleLogo and hero. Stable keys, TMDB genre IDs, editorial distinctions and source-film identities remain in the preserved genre-full-v1 package. These are shared artwork sets without Movies/Series/Mixed variants; source titles do not define collection membership.
 
+Release record: [PR #18](https://github.com/davecollections/nuvio-assets/pull/18); artwork commit [50d05d7](https://github.com/davecollections/nuvio-assets/commit/50d05d7590a25f500cc77826ed1c7a932dd9b7df). The PR records merge status and subsequent live URL verification. [Canonical manifest](https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/manifest.json).
+
 ## State and next action
 
 State: the authorised Genre release supplies 248 WebPs across 31 complete eight-role sets, replacing all 62 legacy JPGs. The category authority is assets/collection_covers/genre/manifest.json, schemaVersion 2, with a strict sibling schema. It records exact URLs, dimensions, byte counts, source hashes, role bindings and every retired-path replacement. The selected original lettering, colour cards, A focus and photographic heroes are delivered byte-for-byte from genre-focus-full-v1. The owner authorised branch, commit, push, PR and merge. General Builder integration and actual Nuvio display acceptance remain absent.
