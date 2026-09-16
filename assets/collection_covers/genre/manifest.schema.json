@@ -1,0 +1,1192 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nuvio Genre artwork manifest v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kind",
+    "category",
+    "assetBaseUrl",
+    "approval",
+    "counts",
+    "fingerprint",
+    "focusPolicy",
+    "heroPolicy",
+    "sets",
+    "retiredLegacyFiles",
+    "delivery"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 2
+    },
+    "kind": {
+      "const": "genre-artwork"
+    },
+    "category": {
+      "const": "genre"
+    },
+    "assetBaseUrl": {
+      "const": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/"
+    },
+    "approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "recordedAt",
+        "sourcePackage",
+        "reviewedBindingsSha256",
+        "nuvioPreview"
+      ],
+      "properties": {
+        "status": {
+          "const": "owner-approved"
+        },
+        "recordedAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourcePackage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "reviewedBindingsSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "nuvioPreview": {
+          "enum": [
+            "pending",
+            "reviewed"
+          ]
+        }
+      }
+    },
+    "counts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sets",
+        "assets",
+        "totalImageFiles",
+        "totalImageBytes"
+      ],
+      "properties": {
+        "sets": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "assets": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "totalImageFiles": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "totalImageBytes": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "fingerprint": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "focusPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy",
+        "normalLetterFillPreserved",
+        "baseRoles",
+        "parameters"
+      ],
+      "properties": {
+        "strategy": {
+          "const": "genre-coloured-title-halo-and-background-lift"
+        },
+        "normalLetterFillPreserved": {
+          "const": true
+        },
+        "baseRoles": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "focus",
+            "posterFocus",
+            "squareFocus"
+          ],
+          "properties": {
+            "focus": {
+              "const": "landscape"
+            },
+            "posterFocus": {
+              "const": "poster"
+            },
+            "squareFocus": {
+              "const": "square"
+            }
+          }
+        },
+        "parameters": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "backgroundChannelGain",
+            "backgroundChannelOffset",
+            "haloNearSigmaAt1200",
+            "haloFarSigmaAt1200",
+            "haloNearWeight",
+            "haloFarWeight",
+            "haloAlphaCap",
+            "tintWhiteMix",
+            "cutShieldRadiusAt1200"
+          ],
+          "properties": {
+            "backgroundChannelGain": {
+              "type": "number",
+              "minimum": 0
+            },
+            "backgroundChannelOffset": {
+              "type": "number",
+              "minimum": 0
+            },
+            "haloNearSigmaAt1200": {
+              "type": "number",
+              "minimum": 0
+            },
+            "haloFarSigmaAt1200": {
+              "type": "number",
+              "minimum": 0
+            },
+            "haloNearWeight": {
+              "type": "number",
+              "minimum": 0
+            },
+            "haloFarWeight": {
+              "type": "number",
+              "minimum": 0
+            },
+            "haloAlphaCap": {
+              "type": "number",
+              "minimum": 0
+            },
+            "tintWhiteMix": {
+              "type": "number",
+              "minimum": 0
+            },
+            "cutShieldRadiusAt1200": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        }
+      }
+    },
+    "heroPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "strategy",
+        "titleLogoBakedIn",
+        "addedFade"
+      ],
+      "properties": {
+        "strategy": {
+          "const": "single-curated-film-or-series-image"
+        },
+        "titleLogoBakedIn": {
+          "const": false
+        },
+        "addedFade": {
+          "const": false
+        }
+      }
+    },
+    "sets": {
+      "type": "object",
+      "minProperties": 31,
+      "maxProperties": 31,
+      "propertyNames": {
+        "enum": [
+          "science-fiction",
+          "horror",
+          "romance",
+          "action",
+          "action-and-adventure",
+          "adventure",
+          "animation",
+          "comedy",
+          "crime",
+          "disaster",
+          "documentary",
+          "drama",
+          "family",
+          "fantasy",
+          "history",
+          "kids",
+          "music",
+          "musicals",
+          "mystery",
+          "news",
+          "queer",
+          "reality",
+          "rom-com",
+          "sci-fi-and-fantasy",
+          "soap",
+          "talk",
+          "thriller",
+          "tv-movie",
+          "war",
+          "war-and-politics",
+          "western"
+        ]
+      },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "stableKey",
+          "name",
+          "genreId",
+          "membershipKind",
+          "design",
+          "artworkSources",
+          "landscape",
+          "focus",
+          "poster",
+          "posterFocus",
+          "square",
+          "squareFocus",
+          "titleLogo",
+          "hero"
+        ],
+        "properties": {
+          "stableKey": {
+            "type": "string",
+            "pattern": "^genre:[a-z0-9-]+$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "genreId": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "membershipKind": {
+            "enum": [
+              "tmdb-genre",
+              "editorial"
+            ]
+          },
+          "design": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "cardStyle",
+              "tone",
+              "motif"
+            ],
+            "properties": {
+              "cardStyle": {
+                "const": "colour-and-original-lettering"
+              },
+              "tone": {
+                "type": "string",
+                "pattern": "^#[a-fA-F0-9]{6}$"
+              },
+              "motif": {
+                "enum": [
+                  "diagonal",
+                  "geometry",
+                  "orbits"
+                ]
+              }
+            }
+          },
+          "artworkSources": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "hero"
+            ],
+            "properties": {
+              "hero": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "provider",
+                  "mediaType",
+                  "tmdbId",
+                  "title",
+                  "imagePath",
+                  "sha256",
+                  "metadataSha256",
+                  "width",
+                  "height",
+                  "crop",
+                  "horizontalMirror",
+                  "scale",
+                  "resolutionNote"
+                ],
+                "properties": {
+                  "provider": {
+                    "const": "TMDB"
+                  },
+                  "mediaType": {
+                    "enum": [
+                      "movie",
+                      "tv"
+                    ]
+                  },
+                  "tmdbId": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "imagePath": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "sha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "metadataSha256": {
+                    "type": "string",
+                    "pattern": "^[a-f0-9]{64}$"
+                  },
+                  "width": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "height": {
+                    "type": "integer",
+                    "minimum": 1
+                  },
+                  "crop": {
+                    "type": "array",
+                    "minItems": 4,
+                    "maxItems": 4,
+                    "items": {
+                      "type": "number",
+                      "minimum": 0
+                    }
+                  },
+                  "horizontalMirror": {
+                    "type": "boolean"
+                  },
+                  "scale": {
+                    "type": "number",
+                    "exclusiveMinimum": 0
+                  },
+                  "resolutionNote": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "landscape": {
+            "$ref": "#/$defs/landscape"
+          },
+          "focus": {
+            "$ref": "#/$defs/focus"
+          },
+          "poster": {
+            "$ref": "#/$defs/poster"
+          },
+          "posterFocus": {
+            "$ref": "#/$defs/posterFocus"
+          },
+          "square": {
+            "$ref": "#/$defs/square"
+          },
+          "squareFocus": {
+            "$ref": "#/$defs/squareFocus"
+          },
+          "titleLogo": {
+            "$ref": "#/$defs/titleLogo"
+          },
+          "hero": {
+            "$ref": "#/$defs/hero"
+          }
+        }
+      }
+    },
+    "retiredLegacyFiles": {
+      "type": "array",
+      "minItems": 62,
+      "maxItems": 62,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "bytes",
+          "replacementPath",
+          "stableKey",
+          "role"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "replacementPath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "stableKey": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "enum": [
+              "landscape",
+              "poster"
+            ]
+          }
+        }
+      }
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "format",
+        "transparentTitleLogos",
+        "sourceHashMeaning",
+        "legacyPolicy"
+      ],
+      "properties": {
+        "format": {
+          "const": "webp"
+        },
+        "transparentTitleLogos": {
+          "const": "lossless"
+        },
+        "sourceHashMeaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "legacyPolicy": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "landscape": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "sourceSha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "hasAlpha",
+        "encoding"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 1200
+        },
+        "height": {
+          "const": 675
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hasAlpha": {
+          "const": false
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort"
+          ],
+          "properties": {
+            "method": {
+              "enum": [
+                "lossless-webp",
+                "perceptually-checked-webp"
+              ]
+            },
+            "lossless": {
+              "type": "boolean"
+            },
+            "quality": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 100
+            },
+            "effort": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          }
+        }
+      }
+    },
+    "focus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "sourceSha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "hasAlpha",
+        "encoding",
+        "baseCoverSha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 1200
+        },
+        "height": {
+          "const": 675
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hasAlpha": {
+          "const": false
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort"
+          ],
+          "properties": {
+            "method": {
+              "enum": [
+                "lossless-webp",
+                "perceptually-checked-webp"
+              ]
+            },
+            "lossless": {
+              "type": "boolean"
+            },
+            "quality": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 100
+            },
+            "effort": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          }
+        },
+        "baseCoverSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "poster": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "sourceSha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "hasAlpha",
+        "encoding"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 800
+        },
+        "height": {
+          "const": 1200
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hasAlpha": {
+          "const": false
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort"
+          ],
+          "properties": {
+            "method": {
+              "enum": [
+                "lossless-webp",
+                "perceptually-checked-webp"
+              ]
+            },
+            "lossless": {
+              "type": "boolean"
+            },
+            "quality": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 100
+            },
+            "effort": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          }
+        }
+      }
+    },
+    "posterFocus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "sourceSha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "hasAlpha",
+        "encoding",
+        "baseCoverSha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 800
+        },
+        "height": {
+          "const": 1200
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hasAlpha": {
+          "const": false
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort"
+          ],
+          "properties": {
+            "method": {
+              "enum": [
+                "lossless-webp",
+                "perceptually-checked-webp"
+              ]
+            },
+            "lossless": {
+              "type": "boolean"
+            },
+            "quality": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 100
+            },
+            "effort": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          }
+        },
+        "baseCoverSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "square": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "sourceSha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "hasAlpha",
+        "encoding"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 800
+        },
+        "height": {
+          "const": 800
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hasAlpha": {
+          "const": false
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort"
+          ],
+          "properties": {
+            "method": {
+              "enum": [
+                "lossless-webp",
+                "perceptually-checked-webp"
+              ]
+            },
+            "lossless": {
+              "type": "boolean"
+            },
+            "quality": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 100
+            },
+            "effort": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          }
+        }
+      }
+    },
+    "squareFocus": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "sourceSha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "hasAlpha",
+        "encoding",
+        "baseCoverSha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 800
+        },
+        "height": {
+          "const": 800
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hasAlpha": {
+          "const": false
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort"
+          ],
+          "properties": {
+            "method": {
+              "enum": [
+                "lossless-webp",
+                "perceptually-checked-webp"
+              ]
+            },
+            "lossless": {
+              "type": "boolean"
+            },
+            "quality": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 100
+            },
+            "effort": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          }
+        },
+        "baseCoverSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "titleLogo": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "sourceSha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "hasAlpha",
+        "encoding"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 1863
+        },
+        "height": {
+          "const": 673
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hasAlpha": {
+          "const": true
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort"
+          ],
+          "properties": {
+            "method": {
+              "enum": [
+                "lossless-webp",
+                "perceptually-checked-webp"
+              ]
+            },
+            "lossless": {
+              "type": "boolean"
+            },
+            "quality": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 100
+            },
+            "effort": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          }
+        }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "url",
+        "sha256",
+        "sourceSha256",
+        "format",
+        "width",
+        "height",
+        "bytes",
+        "hasAlpha",
+        "encoding"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "sourceSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "format": {
+          "const": "webp"
+        },
+        "width": {
+          "const": 2560
+        },
+        "height": {
+          "const": 1440
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "hasAlpha": {
+          "const": false
+        },
+        "encoding": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "method",
+            "lossless",
+            "quality",
+            "effort"
+          ],
+          "properties": {
+            "method": {
+              "enum": [
+                "lossless-webp",
+                "perceptually-checked-webp"
+              ]
+            },
+            "lossless": {
+              "type": "boolean"
+            },
+            "quality": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 1,
+              "maximum": 100
+            },
+            "effort": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            }
+          }
+        }
+      }
+    }
+  }
+}
