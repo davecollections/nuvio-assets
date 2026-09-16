@@ -5,9 +5,9 @@
   "assetBaseUrl": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/",
   "approval": {
     "status": "owner-approved",
-    "recordedAt": "2026-09-16T23:30:19.650Z",
+    "recordedAt": "2026-09-16T23:53:29.058Z",
     "sourcePackage": "genre-focus-full-v1",
-    "reviewedBindingsSha256": "0207ba1d388f752ec97e3345337c7ff446a14f2e98a2242226485f0024b2a46d",
+    "reviewedBindingsSha256": "73da284d11e0cc50ec481361189ae9567b61bcbd76b2e2281c8dfd7c0878bdcc",
     "nuvioPreview": "pending"
   },
   "counts": {
@@ -16,7 +16,7 @@
     "totalImageFiles": 248,
     "totalImageBytes": 46377380
   },
-  "fingerprint": "d6bcefbe2052ac55b5ffb1b1fab1a81057c16ff66f84d18f3bcc469b671207f5",
+  "fingerprint": "f9da4d963c04e74d81fa93d52cecde6b8b0441d61ab187ea3b0c6ff26167ecf7",
   "focusPolicy": {
     "strategy": "genre-coloured-title-halo-and-background-lift",
     "normalLetterFillPreserved": true,
@@ -76,8 +76,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/science fiction wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/science%20fiction%20wide.webp",
+        "path": "assets/collection_covers/genre/science-fiction/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/science-fiction/landscape.webp",
         "sha256": "8d558f97578c9fd22f59f2f1881976331b853557cfc548fa3cfd7b27f2e51c22",
         "sourceSha256": "712ae47794fca484a8d8a40e49df0c7223bc0e34c3deb7765e2f399b8a38e74d",
         "format": "webp",
@@ -93,8 +93,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/science-fiction/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/science-fiction/focus.webp",
+        "path": "assets/collection_covers/genre/science-fiction/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/science-fiction/landscape-focus.webp",
         "sha256": "747f357d2b660e4374809f0e9b170a069e55be28fc3b98ca74f06ff6135f3c82",
         "sourceSha256": "5848eef9ce212df2620c07b08577faa9e016ca66523a5f3ee5d41ab8946dc54b",
         "format": "webp",
@@ -111,8 +111,8 @@
         "baseCoverSha256": "8d558f97578c9fd22f59f2f1881976331b853557cfc548fa3cfd7b27f2e51c22"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Sci-Fi.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Sci-Fi.webp",
+        "path": "assets/collection_covers/genre/science-fiction/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/science-fiction/poster.webp",
         "sha256": "e9cf70ef65481046b1a6859c394643d56c2439617fdc786b854fa804ce3927e4",
         "sourceSha256": "1c43a0e3288438a107bfa9510a664a3b8d5fa1279ecc17a4e9c66b320cb6c566",
         "format": "webp",
@@ -248,8 +248,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/horror wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/horror%20wide.webp",
+        "path": "assets/collection_covers/genre/horror/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/horror/landscape.webp",
         "sha256": "01673b3571fee35450f23a7ca9f5e42259c8e64731824d4b3c9db17f2a2e9df5",
         "sourceSha256": "4e09a7036792bb1d4621205f6f9d5c2e94ec93e5e7a12c2aea7293a438335486",
         "format": "webp",
@@ -265,8 +265,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/horror/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/horror/focus.webp",
+        "path": "assets/collection_covers/genre/horror/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/horror/landscape-focus.webp",
         "sha256": "afa492206cbbe6d89a7b7d057a5c07025ba29d5b60dd1ebcaf0081fa1b094708",
         "sourceSha256": "6055ee10cc3faff57f64c55694811c7655be450219ab2e08568458b687cdb9dc",
         "format": "webp",
@@ -283,8 +283,8 @@
         "baseCoverSha256": "01673b3571fee35450f23a7ca9f5e42259c8e64731824d4b3c9db17f2a2e9df5"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Horror.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Horror.webp",
+        "path": "assets/collection_covers/genre/horror/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/horror/poster.webp",
         "sha256": "86b6e6d1471835f8f82283a69090e3997f9da8d02c92edb9cccfb9058d30e21b",
         "sourceSha256": "f713777e538996ea1a7e8716a5b1f5886c4f933b882b6b12e6b46687719a49c1",
         "format": "webp",
@@ -420,8 +420,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/romance wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/romance%20wide.webp",
+        "path": "assets/collection_covers/genre/romance/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/romance/landscape.webp",
         "sha256": "ddfee425497220e19516c0cd8c54c241d0b01eb8f7ca187c9abd1da674376daa",
         "sourceSha256": "c1462b1e461e8f1a52c2d864c1dcff6ef27373c28759e21e3a53a55d83643da7",
         "format": "webp",
@@ -437,8 +437,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/romance/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/romance/focus.webp",
+        "path": "assets/collection_covers/genre/romance/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/romance/landscape-focus.webp",
         "sha256": "e1e3e295b57485d26634958b1c600004e4a641983423d92b8f0f6f02c46a1ef0",
         "sourceSha256": "0cd82e8e83b70119d77ae201601bd8263982aa86574a1d8cd482d8a64814df1c",
         "format": "webp",
@@ -455,8 +455,8 @@
         "baseCoverSha256": "ddfee425497220e19516c0cd8c54c241d0b01eb8f7ca187c9abd1da674376daa"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Romance.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Romance.webp",
+        "path": "assets/collection_covers/genre/romance/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/romance/poster.webp",
         "sha256": "f7ab67d98c654528e025da5bddb45763524f2a1b9a755cf8e886d32f94fbe316",
         "sourceSha256": "1050b50ecbbb8735efc44d5fea3cfb5e31afd59f50ba0b8f870b657febd03ac5",
         "format": "webp",
@@ -592,8 +592,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/action wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/action%20wide.webp",
+        "path": "assets/collection_covers/genre/action/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/action/landscape.webp",
         "sha256": "49092c380f5d32d1bbfe4cd288daace80971c406988a8012c626e13c94cc027f",
         "sourceSha256": "48ab1589732eb9a7154590fc8e0d47f26b1ecb18afea80685f2117728072c06c",
         "format": "webp",
@@ -609,8 +609,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/action/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/action/focus.webp",
+        "path": "assets/collection_covers/genre/action/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/action/landscape-focus.webp",
         "sha256": "6299f83d7cf1140e8391fd8ca5ae6b2d80c7b7ee41f5843240f6ff456ca6e220",
         "sourceSha256": "a6857c71865da2fe87d3dca9ce6cabc676bd644e99b0591a6a8d065e6bc7c30e",
         "format": "webp",
@@ -627,8 +627,8 @@
         "baseCoverSha256": "49092c380f5d32d1bbfe4cd288daace80971c406988a8012c626e13c94cc027f"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Action.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Action.webp",
+        "path": "assets/collection_covers/genre/action/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/action/poster.webp",
         "sha256": "ae8a1e63e803a8d5535a36f28f6ef7945664db4e0a37d166a1ee61eb1eaeb3ac",
         "sourceSha256": "ece345274f08c4cb43929f91f513a56d221dc7282d010dada55b234be31348d7",
         "format": "webp",
@@ -764,8 +764,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/action_and_adventure wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/action_and_adventure%20wide.webp",
+        "path": "assets/collection_covers/genre/action-and-adventure/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/action-and-adventure/landscape.webp",
         "sha256": "9e7c9a2ef43712afed8bc7647526ac9ded31c1308b2388ccb9eb8cff93e4c88f",
         "sourceSha256": "6cde259428dded4c884d8ee777fdb11fd67d75d216304667359ad0bc940de884",
         "format": "webp",
@@ -781,8 +781,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/action-and-adventure/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/action-and-adventure/focus.webp",
+        "path": "assets/collection_covers/genre/action-and-adventure/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/action-and-adventure/landscape-focus.webp",
         "sha256": "fd50e920ea397b5e3bbf634865e445145f299c6a0b036b6064a34cc369d6a232",
         "sourceSha256": "c056a6661153470dd82971b8f28bce67e832d407481d50744f4d7270ab3e98de",
         "format": "webp",
@@ -799,8 +799,8 @@
         "baseCoverSha256": "9e7c9a2ef43712afed8bc7647526ac9ded31c1308b2388ccb9eb8cff93e4c88f"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/action_and_adventure.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/action_and_adventure.webp",
+        "path": "assets/collection_covers/genre/action-and-adventure/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/action-and-adventure/poster.webp",
         "sha256": "38e55b14289ca07f83742c0bed1c360b5e783956e5826d4f3924af92bfaffe4f",
         "sourceSha256": "b8c1180a7f89ccb4123d10e1d75585727bb6566b62e04e1c1a1c1f3c7af71784",
         "format": "webp",
@@ -936,8 +936,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/adventure wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/adventure%20wide.webp",
+        "path": "assets/collection_covers/genre/adventure/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/adventure/landscape.webp",
         "sha256": "1df522d8a9168a79dbaad894866e77b42b3d5a8147aaddb1d1433286ef756aac",
         "sourceSha256": "058c8e3b50860539c79f4e64e77ac898aac166580ae992a691a46574cb9c7bf1",
         "format": "webp",
@@ -953,8 +953,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/adventure/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/adventure/focus.webp",
+        "path": "assets/collection_covers/genre/adventure/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/adventure/landscape-focus.webp",
         "sha256": "d26e9b61117e0357f70966dbfac198dd9ab9c09fe2f7b7b2476f96093f9155c9",
         "sourceSha256": "cba98a9f51aeaabe4506e103a0e88c7386db247c23dbae274b85874cb21fcefc",
         "format": "webp",
@@ -971,8 +971,8 @@
         "baseCoverSha256": "1df522d8a9168a79dbaad894866e77b42b3d5a8147aaddb1d1433286ef756aac"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Adventure.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Adventure.webp",
+        "path": "assets/collection_covers/genre/adventure/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/adventure/poster.webp",
         "sha256": "ed69cf7c77bb4429032b49a42375d47b16c7225e565b28afc2b8d4326b2268af",
         "sourceSha256": "44bbfa575697b62a27d2ea27dba74da8c4e3f28d779613751f16a29bd6dda195",
         "format": "webp",
@@ -1108,8 +1108,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/animation wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/animation%20wide.webp",
+        "path": "assets/collection_covers/genre/animation/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/animation/landscape.webp",
         "sha256": "00d05fa3a877e06c7f81b9a9b4f6c2611e92da4e5a153ffd099510c16743c1c0",
         "sourceSha256": "ef98156d635555ec14ee92ec347a6d3040f2850f79bf30c2e6fd9428bb7209a1",
         "format": "webp",
@@ -1125,8 +1125,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/animation/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/animation/focus.webp",
+        "path": "assets/collection_covers/genre/animation/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/animation/landscape-focus.webp",
         "sha256": "bc1cd21efa0ee012f711c921d394339dfb1ba39ea6202c39a392793dae277273",
         "sourceSha256": "ba65f1825cabae79e5b0b76e0a36d26149966ff3a9dc4e18c052597b36bf2ff9",
         "format": "webp",
@@ -1143,8 +1143,8 @@
         "baseCoverSha256": "00d05fa3a877e06c7f81b9a9b4f6c2611e92da4e5a153ffd099510c16743c1c0"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Animation.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Animation.webp",
+        "path": "assets/collection_covers/genre/animation/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/animation/poster.webp",
         "sha256": "83f37f3ccfb278e23a3e17ab5a74fb8260f9c18022c4679d5fb744ded74d08f6",
         "sourceSha256": "d6edede870ff8fc5fa4ef42699d8e49c9153fbfa33f9c3a32c426a4c3e1fee40",
         "format": "webp",
@@ -1280,8 +1280,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/comedy wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/comedy%20wide.webp",
+        "path": "assets/collection_covers/genre/comedy/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/comedy/landscape.webp",
         "sha256": "b4617fc2e53e306b799e9e3375710efa7cf31ac8374e59ff11e5ca52f31a3128",
         "sourceSha256": "c988e35a81b26ed2695e1ea9163cb4bb6669916230e1ae312edd735530949d36",
         "format": "webp",
@@ -1297,8 +1297,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/comedy/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/comedy/focus.webp",
+        "path": "assets/collection_covers/genre/comedy/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/comedy/landscape-focus.webp",
         "sha256": "6cca6925350a192e8f582d8b58eb46fc82c1a0ca899a040442a0aad3b136eebe",
         "sourceSha256": "d6d574e8ad3115bcbee3a62594e08d6bc066e84a6246c27c4855d51101ab8a17",
         "format": "webp",
@@ -1315,8 +1315,8 @@
         "baseCoverSha256": "b4617fc2e53e306b799e9e3375710efa7cf31ac8374e59ff11e5ca52f31a3128"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Comedy.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Comedy.webp",
+        "path": "assets/collection_covers/genre/comedy/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/comedy/poster.webp",
         "sha256": "cfd650bce58a7c484eb1456d37cf60cf4cbd5e855207bdcd709d91d8752a4d4c",
         "sourceSha256": "066d159aee7748de1b056654a4c43a94cce794bf7664b89f665023a24e6d6c52",
         "format": "webp",
@@ -1452,8 +1452,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/crime wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/crime%20wide.webp",
+        "path": "assets/collection_covers/genre/crime/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/crime/landscape.webp",
         "sha256": "8bd5ee874ae26aa233b99abc42e77b572b4d9cc5e56423fc85ae9509c15ff2f6",
         "sourceSha256": "9165c3597bdb0fb34102cc024f90ff39e824fe1e51b7bd3eef277aae0f3e8cf5",
         "format": "webp",
@@ -1469,8 +1469,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/crime/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/crime/focus.webp",
+        "path": "assets/collection_covers/genre/crime/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/crime/landscape-focus.webp",
         "sha256": "c69299e72f5cd53fa85045006e94216bdaad0d8fc7d5d51f71298786ea7f5371",
         "sourceSha256": "0cadc59ce98db7604b0751090649e90982102ab819948aa398a4bbd095082554",
         "format": "webp",
@@ -1487,8 +1487,8 @@
         "baseCoverSha256": "8bd5ee874ae26aa233b99abc42e77b572b4d9cc5e56423fc85ae9509c15ff2f6"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/crime.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/crime.webp",
+        "path": "assets/collection_covers/genre/crime/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/crime/poster.webp",
         "sha256": "70320f3dadf4557aad79d8c13f0e9e0df19ddd249b4ee233d624a5e7b0e474b9",
         "sourceSha256": "2be46c49796b3248007dcf28b8a5c912772c3efafccca5363810555952ed489d",
         "format": "webp",
@@ -1624,8 +1624,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/disaster wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/disaster%20wide.webp",
+        "path": "assets/collection_covers/genre/disaster/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/disaster/landscape.webp",
         "sha256": "9e3ceb602306f0e21316df499f3fff28ef43270c62170ee51ff6a3802c4e7186",
         "sourceSha256": "29ba49dad13eb10f9d5e14526630f9ef7602dc3c9bab7cc269f5d3a858a57c4c",
         "format": "webp",
@@ -1641,8 +1641,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/disaster/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/disaster/focus.webp",
+        "path": "assets/collection_covers/genre/disaster/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/disaster/landscape-focus.webp",
         "sha256": "785fe1bff981db7c531ee915eafbdb4fa4418bb7b59752655cadfd0158a11cb8",
         "sourceSha256": "85bd71fd041d3478fd625c405dbd70081d0a55265a520192c55e745f9dc6f6b9",
         "format": "webp",
@@ -1659,8 +1659,8 @@
         "baseCoverSha256": "9e3ceb602306f0e21316df499f3fff28ef43270c62170ee51ff6a3802c4e7186"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Disaster.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Disaster.webp",
+        "path": "assets/collection_covers/genre/disaster/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/disaster/poster.webp",
         "sha256": "fdcfa883cac3396a0ae74241acd4d78f6579fd9824478b4fe55dffc23b32a997",
         "sourceSha256": "eecd1b705d9acc7c736c37873252bb96cb8f1076b38632990b8de808be2f5a00",
         "format": "webp",
@@ -1796,8 +1796,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/documentary wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/documentary%20wide.webp",
+        "path": "assets/collection_covers/genre/documentary/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/documentary/landscape.webp",
         "sha256": "62fe318b390ab5fc31d9a21aa6ddc63b096d01cec3ec147b26daeb53ae761a2e",
         "sourceSha256": "ae0a96f460d1203ee52575fa5b97b28e8abb8d320d69c7d731fbc84b38a11440",
         "format": "webp",
@@ -1813,8 +1813,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/documentary/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/documentary/focus.webp",
+        "path": "assets/collection_covers/genre/documentary/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/documentary/landscape-focus.webp",
         "sha256": "b929bffeddee93b9a83e76942772ce2a1ae0384954abfe89a9d79cbd48b828f9",
         "sourceSha256": "682158d93d770433906c99ef2944572484b28af54096196051d25857b1461058",
         "format": "webp",
@@ -1831,8 +1831,8 @@
         "baseCoverSha256": "62fe318b390ab5fc31d9a21aa6ddc63b096d01cec3ec147b26daeb53ae761a2e"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Documentary.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Documentary.webp",
+        "path": "assets/collection_covers/genre/documentary/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/documentary/poster.webp",
         "sha256": "094e6e2446cee17d60f4f59200234b23415380a381a92bfc06c9a6ff27bf8ba2",
         "sourceSha256": "811acfe85c3fd9fd683108f424fae64ebb2063ad4971974ef5e0252d0f5e7087",
         "format": "webp",
@@ -1968,8 +1968,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/drama wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/drama%20wide.webp",
+        "path": "assets/collection_covers/genre/drama/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/drama/landscape.webp",
         "sha256": "41b850b52c0b901b00e7d404396edbeae1193c25c6ca9db9eef34e18468975f5",
         "sourceSha256": "eb6349d256839aa659e8c7f032105039e9babb286db9d27e6160eab119551390",
         "format": "webp",
@@ -1985,8 +1985,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/drama/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/drama/focus.webp",
+        "path": "assets/collection_covers/genre/drama/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/drama/landscape-focus.webp",
         "sha256": "89101bea9a19b22735f124fbf683d364677a15c080822b53aacf570594646b45",
         "sourceSha256": "5413201e03f02f26a9c93e1a8fd28be59ca65f4c5cde1c8264af3ef9584d0475",
         "format": "webp",
@@ -2003,8 +2003,8 @@
         "baseCoverSha256": "41b850b52c0b901b00e7d404396edbeae1193c25c6ca9db9eef34e18468975f5"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Drama.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Drama.webp",
+        "path": "assets/collection_covers/genre/drama/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/drama/poster.webp",
         "sha256": "b77053dbc5bd2906195aefd74ce38865aa269d5c6b26b74cb57cf045480f9923",
         "sourceSha256": "05cb81c1074a0bbe0bc73866c54d3b49c3c6b5deda77854e5669886b81f63905",
         "format": "webp",
@@ -2140,8 +2140,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/family wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/family%20wide.webp",
+        "path": "assets/collection_covers/genre/family/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/family/landscape.webp",
         "sha256": "1aac02cedf1b57d09f1e696c6d3afeaa209f5b88dfc7b856c1f6e5487a659eae",
         "sourceSha256": "ef9bda7872cb38e769c14b19e66c3228885463d86122e0a3b62f7670d4db8a08",
         "format": "webp",
@@ -2157,8 +2157,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/family/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/family/focus.webp",
+        "path": "assets/collection_covers/genre/family/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/family/landscape-focus.webp",
         "sha256": "3adb3d1b3afe4620e18100f671c0028b4a0c5db59b5e7687bca97e48d1b0b05f",
         "sourceSha256": "ae0d3447eafce4382bd11aaf5547cf47c48b604ee37e9f2b95dec7696021a7c4",
         "format": "webp",
@@ -2175,8 +2175,8 @@
         "baseCoverSha256": "1aac02cedf1b57d09f1e696c6d3afeaa209f5b88dfc7b856c1f6e5487a659eae"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/family.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/family.webp",
+        "path": "assets/collection_covers/genre/family/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/family/poster.webp",
         "sha256": "cbb0c8c23c5648e144aa314f5346e7e4a51760f6453d608650942878b4244812",
         "sourceSha256": "9439092e5a09a0648800127df3a47949de4c26a9c61110415ca3a5539d901b21",
         "format": "webp",
@@ -2312,8 +2312,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/fantasy wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/fantasy%20wide.webp",
+        "path": "assets/collection_covers/genre/fantasy/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/fantasy/landscape.webp",
         "sha256": "ac241a888d16d96328ff77405156b90d8581a63f4875949a8d49f35e3c3e4362",
         "sourceSha256": "495dfa7227462355f97f8dd08e5971786ecde3dcc580c98ab1a282f0f0e2d362",
         "format": "webp",
@@ -2329,8 +2329,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/fantasy/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/fantasy/focus.webp",
+        "path": "assets/collection_covers/genre/fantasy/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/fantasy/landscape-focus.webp",
         "sha256": "4d0fc931d33c06d54db9922731c6259a41ffe2fbe933d9cb1767cc071ff34b01",
         "sourceSha256": "84b8bfce2b016146ebd46a17dd2725f3821479c6dcdf6cdd971eb5376b59f9a2",
         "format": "webp",
@@ -2347,8 +2347,8 @@
         "baseCoverSha256": "ac241a888d16d96328ff77405156b90d8581a63f4875949a8d49f35e3c3e4362"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Fantasy.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Fantasy.webp",
+        "path": "assets/collection_covers/genre/fantasy/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/fantasy/poster.webp",
         "sha256": "a9a4e8430a600659e1a59e30c431d774584b486846f489137cf86f15918fb6a1",
         "sourceSha256": "45bc5a526d8eb4557fb196cbb6b14f2796b3bcebbf7a9a74b50636eba0c361bd",
         "format": "webp",
@@ -2484,8 +2484,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/history wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/history%20wide.webp",
+        "path": "assets/collection_covers/genre/history/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/history/landscape.webp",
         "sha256": "a8b6b9a7af39fac05e0cadd9c71f792ff701aa2066e56b978e8011082a66f820",
         "sourceSha256": "5e51a20324b6c157a6d43a140f90ad34a399a24653444718f709a037984c4a9c",
         "format": "webp",
@@ -2501,8 +2501,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/history/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/history/focus.webp",
+        "path": "assets/collection_covers/genre/history/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/history/landscape-focus.webp",
         "sha256": "b8bdac8b4ad3df983faf7e70afa24aa8bcb5540f5feee9fd1ab4cdb98b029c18",
         "sourceSha256": "40519976eaf8a4c929d34bccb024ada6474003036c6dc689bfd96e31b6ffc1f6",
         "format": "webp",
@@ -2519,8 +2519,8 @@
         "baseCoverSha256": "a8b6b9a7af39fac05e0cadd9c71f792ff701aa2066e56b978e8011082a66f820"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/history.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/history.webp",
+        "path": "assets/collection_covers/genre/history/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/history/poster.webp",
         "sha256": "927a489bc423a3826b530ab3980a6e27bf6bfd5968f0ca26b9695b225f9f7100",
         "sourceSha256": "3a78393677f9587c25cd66135b5846925dbd9e9cbac38dcbc18d6528f3b1967e",
         "format": "webp",
@@ -2656,8 +2656,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/kids wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/kids%20wide.webp",
+        "path": "assets/collection_covers/genre/kids/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/kids/landscape.webp",
         "sha256": "048197713ab28711e585491d8fd3e888ebfd71a7b68b83e9c970150ffd3a9f94",
         "sourceSha256": "20f8d6b97d4e512393d027fdb748debda8049794f0bbcb7b330629feac2aa0d2",
         "format": "webp",
@@ -2673,8 +2673,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/kids/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/kids/focus.webp",
+        "path": "assets/collection_covers/genre/kids/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/kids/landscape-focus.webp",
         "sha256": "f463c57416109fcd2a2569c6dd9218974febe0bce55358fb3eb16b3bbc5b8b92",
         "sourceSha256": "5739783fd1b24f0943f3cfa9980fd550f1baf9862d2e3fc53fca294d5e81b320",
         "format": "webp",
@@ -2691,8 +2691,8 @@
         "baseCoverSha256": "048197713ab28711e585491d8fd3e888ebfd71a7b68b83e9c970150ffd3a9f94"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/kids.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/kids.webp",
+        "path": "assets/collection_covers/genre/kids/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/kids/poster.webp",
         "sha256": "e5b5eea4937a9117d98ccd2d9c20e263a3b65aa0c92a5b8403cf710b5648ee9f",
         "sourceSha256": "9966e11757c2c942bbe88f2454b06e895def41ed343d190d5d1a48b3463fafe2",
         "format": "webp",
@@ -2828,8 +2828,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/music wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/music%20wide.webp",
+        "path": "assets/collection_covers/genre/music/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/music/landscape.webp",
         "sha256": "63e4771acbf5a4dcf6a025f4607387074635252a2f95ccb0a42eaa8a6dbbdbdb",
         "sourceSha256": "bf53e07332bb94bf250bc929985e1a877dc562f5887292fe3bf55d75498242f1",
         "format": "webp",
@@ -2845,8 +2845,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/music/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/music/focus.webp",
+        "path": "assets/collection_covers/genre/music/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/music/landscape-focus.webp",
         "sha256": "90915b4a7a916af21932998b315f587184602d48dd4b9f8671a3a0a2fb9281f3",
         "sourceSha256": "12acc90f690869a33577eaa714a870c0565d7b0808391dc375e1c1194d0a1017",
         "format": "webp",
@@ -2863,8 +2863,8 @@
         "baseCoverSha256": "63e4771acbf5a4dcf6a025f4607387074635252a2f95ccb0a42eaa8a6dbbdbdb"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Music.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Music.webp",
+        "path": "assets/collection_covers/genre/music/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/music/poster.webp",
         "sha256": "1e90cbe209ea01d80b215a1242a162f7533bdc319833919fe94afea2aa7fb22a",
         "sourceSha256": "eea750e78da824840d1a2d5949fbb68ff736ef74cdcdd804f602bb2e4bf46269",
         "format": "webp",
@@ -3000,8 +3000,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/musicals wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/musicals%20wide.webp",
+        "path": "assets/collection_covers/genre/musicals/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/musicals/landscape.webp",
         "sha256": "c232c80e428a1cd8525ab902d09cb970857a66bdcd4b8ff547ed99dce9281b5a",
         "sourceSha256": "34caa4d584e25af9fc7ca1f905d64b40eb7c4059fb293349e4247147b6566367",
         "format": "webp",
@@ -3017,8 +3017,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/musicals/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/musicals/focus.webp",
+        "path": "assets/collection_covers/genre/musicals/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/musicals/landscape-focus.webp",
         "sha256": "a184db1c9b749919e6de4069b805683e5ea804a6cfcc0569d84c1764a488e3e6",
         "sourceSha256": "60089a89ee957607e1bb0973a3b0edbd38fa12e5e80063cce4bb381d743c27f6",
         "format": "webp",
@@ -3035,8 +3035,8 @@
         "baseCoverSha256": "c232c80e428a1cd8525ab902d09cb970857a66bdcd4b8ff547ed99dce9281b5a"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Musical.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Musical.webp",
+        "path": "assets/collection_covers/genre/musicals/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/musicals/poster.webp",
         "sha256": "477a3e0b68da3799c1d58e2bec76b453bfd23a9aa6423ab9a3c10bb822e7cc25",
         "sourceSha256": "65018d4f42a66ec812f84f834df8286ef5f46e21276c90e2fbb9961b20173740",
         "format": "webp",
@@ -3172,8 +3172,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/mystery wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/mystery%20wide.webp",
+        "path": "assets/collection_covers/genre/mystery/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/mystery/landscape.webp",
         "sha256": "7abb7e9202a5b4d585d400834964eed3f94cd5b69b2a7313d3b98d95039226af",
         "sourceSha256": "be2477054e014285d0cd0fdbf341e865281e4737678a2d372ae3c0dbf4b49b7a",
         "format": "webp",
@@ -3189,8 +3189,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/mystery/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/mystery/focus.webp",
+        "path": "assets/collection_covers/genre/mystery/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/mystery/landscape-focus.webp",
         "sha256": "99b473d1eb208024119811ddff346afe7bd56fde9f0235cb07140bb36285885e",
         "sourceSha256": "217b886900fba335d4026cdbccb19283f3c1f7315ce1c8a40b3540ff994d78e8",
         "format": "webp",
@@ -3207,8 +3207,8 @@
         "baseCoverSha256": "7abb7e9202a5b4d585d400834964eed3f94cd5b69b2a7313d3b98d95039226af"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Mystery.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Mystery.webp",
+        "path": "assets/collection_covers/genre/mystery/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/mystery/poster.webp",
         "sha256": "ef63a40f39c42d77a5d7d3f0f4f0b846089a0b47099fd5a6594d745c1fa43d0f",
         "sourceSha256": "10bbff932494dc65aff9bb88a7b92b815aefd6ff1681018d6badc35b4a505041",
         "format": "webp",
@@ -3344,8 +3344,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/news wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/news%20wide.webp",
+        "path": "assets/collection_covers/genre/news/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/news/landscape.webp",
         "sha256": "164f2043c2b34a93e19af0427dce8ad28ccf839c0a8ef90375c9cddae75ffedc",
         "sourceSha256": "5f55b19c81371b6626438893dde328d93010cd8b0e7e91442767cc95419f6800",
         "format": "webp",
@@ -3361,8 +3361,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/news/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/news/focus.webp",
+        "path": "assets/collection_covers/genre/news/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/news/landscape-focus.webp",
         "sha256": "f2a9df9c0db6f6a2fd3894633676152acc51b4679ebd9f7b8f0664d1d9079346",
         "sourceSha256": "f7852385e649c7688ad367ed4591c9b5bc794239a5b3dc142ceed8951a4ac14a",
         "format": "webp",
@@ -3379,8 +3379,8 @@
         "baseCoverSha256": "164f2043c2b34a93e19af0427dce8ad28ccf839c0a8ef90375c9cddae75ffedc"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/news.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/news.webp",
+        "path": "assets/collection_covers/genre/news/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/news/poster.webp",
         "sha256": "36f1c5e700f22ddb226f14a526c104a99f07f581e75fa4c61e1c8a22b94b3868",
         "sourceSha256": "f87edbc613221dd4e9f9b9230adae5487a5cfd7a7f0241e3dcfbbab223259af7",
         "format": "webp",
@@ -3516,8 +3516,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/queer wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/queer%20wide.webp",
+        "path": "assets/collection_covers/genre/queer/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/queer/landscape.webp",
         "sha256": "2235b958a5e3c77ae5eadacabfdc563b5cbac0657b11bedc371d582d04c363a2",
         "sourceSha256": "56bae3b56b6269c6cf47a841834cc7bce37b2b5be793d97fb941715e0e7af141",
         "format": "webp",
@@ -3533,8 +3533,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/queer/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/queer/focus.webp",
+        "path": "assets/collection_covers/genre/queer/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/queer/landscape-focus.webp",
         "sha256": "dc5b7440027f9958cfc55be503395a885ebcd848fc6f4cf75ceec550d5df29f3",
         "sourceSha256": "0202e0eba4392bc5b3d4c54f98f0f107d4452950bea338e0eccb5af8d4056578",
         "format": "webp",
@@ -3551,8 +3551,8 @@
         "baseCoverSha256": "2235b958a5e3c77ae5eadacabfdc563b5cbac0657b11bedc371d582d04c363a2"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Queer.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Queer.webp",
+        "path": "assets/collection_covers/genre/queer/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/queer/poster.webp",
         "sha256": "7363c71103584ded56578b7b1d6100b12e26f9f6415ca1ab45c36e291d4b0501",
         "sourceSha256": "19d77622ce705dc01240626837247fcebdc8dea8e06ca93bc4097b2887351dfb",
         "format": "webp",
@@ -3688,8 +3688,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/reality wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/reality%20wide.webp",
+        "path": "assets/collection_covers/genre/reality/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/reality/landscape.webp",
         "sha256": "f7413a509e58a1a505191274afe018b457762834dcfa9602c80614815a7ffbfc",
         "sourceSha256": "71633095f005b35bc8a0b98b940034c6360387dcc07f5f79af45077807c77027",
         "format": "webp",
@@ -3705,8 +3705,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/reality/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/reality/focus.webp",
+        "path": "assets/collection_covers/genre/reality/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/reality/landscape-focus.webp",
         "sha256": "cb74f6fab07434010e80ed4a4a88ed9745fad9a667539e7f0fa99eb7e6e712c3",
         "sourceSha256": "d23e85aa1d0db0bab75b40a032a74bb833c62eadd908eb9740802db4f779b2bb",
         "format": "webp",
@@ -3723,8 +3723,8 @@
         "baseCoverSha256": "f7413a509e58a1a505191274afe018b457762834dcfa9602c80614815a7ffbfc"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/reality.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/reality.webp",
+        "path": "assets/collection_covers/genre/reality/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/reality/poster.webp",
         "sha256": "3f396d4eebf0b2f1968f798e3f9c15083f50c54eb8d4bd34f69138fb5348ec14",
         "sourceSha256": "d15d579ae73d623cc2e5467db96a4b9cf797f66d9b6c06fc51563cd0dc6d223b",
         "format": "webp",
@@ -3860,8 +3860,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/rom com wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/rom%20com%20wide.webp",
+        "path": "assets/collection_covers/genre/rom-com/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/rom-com/landscape.webp",
         "sha256": "1d6baed802841dff2603ede1c3337d8295ce150a3ed5cc32e7660ec42f46ec2d",
         "sourceSha256": "8d9d21ca4f905f3662700fbc4dce8076c624dc12b3d01db063b1b14b3af2a3b9",
         "format": "webp",
@@ -3877,8 +3877,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/rom-com/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/rom-com/focus.webp",
+        "path": "assets/collection_covers/genre/rom-com/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/rom-com/landscape-focus.webp",
         "sha256": "79e163084b68eb97453ba01dfb9b41240b3bf80475e171c3c12a0d6acfd29294",
         "sourceSha256": "63122a76192703131bbb4e1ba83fd58f7453ebae5cbc9e18f48a840ecd42d996",
         "format": "webp",
@@ -3895,8 +3895,8 @@
         "baseCoverSha256": "1d6baed802841dff2603ede1c3337d8295ce150a3ed5cc32e7660ec42f46ec2d"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Rom Com.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Rom%20Com.webp",
+        "path": "assets/collection_covers/genre/rom-com/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/rom-com/poster.webp",
         "sha256": "bbee7010c86d54cc422486a3abe2ec0d3bd56d358d053ee362d23e2cb4fe5c3d",
         "sourceSha256": "6f9cea9ab96758eb9764b1e91bc32e65f26195b0470a5966811cd9fd665d3952",
         "format": "webp",
@@ -4032,8 +4032,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/sci-fi_and_fantasy wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/sci-fi_and_fantasy%20wide.webp",
+        "path": "assets/collection_covers/genre/sci-fi-and-fantasy/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/sci-fi-and-fantasy/landscape.webp",
         "sha256": "6aca0577a4eb6fc4290edd2eee885f61f5dd62549760b9b3ee32e1e715016973",
         "sourceSha256": "e99f41f62b503c884f11dbf7ee20ef1897618887c855c8c012c18c0d17b7fa2a",
         "format": "webp",
@@ -4049,8 +4049,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/sci-fi-and-fantasy/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/sci-fi-and-fantasy/focus.webp",
+        "path": "assets/collection_covers/genre/sci-fi-and-fantasy/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/sci-fi-and-fantasy/landscape-focus.webp",
         "sha256": "a1cdafdbb1d124986b10cc1dcfca13da31a26af96260a5fe5fe77c721e394282",
         "sourceSha256": "ba865f975e58b6bcc0f3c9d481dfd6d70441f2fcec5741b8b42afb582e210855",
         "format": "webp",
@@ -4067,8 +4067,8 @@
         "baseCoverSha256": "6aca0577a4eb6fc4290edd2eee885f61f5dd62549760b9b3ee32e1e715016973"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/sci-fi_and_fantasy.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/sci-fi_and_fantasy.webp",
+        "path": "assets/collection_covers/genre/sci-fi-and-fantasy/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/sci-fi-and-fantasy/poster.webp",
         "sha256": "6df5687fb8d72da1123924289f3154d3816a28b8bac72da1d9e0ab8a8ef28650",
         "sourceSha256": "d5ee9f84082861c144aebe1e76ea6b03ff2236cb14c998ab8f3a88963830ef30",
         "format": "webp",
@@ -4204,8 +4204,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/soap wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/soap%20wide.webp",
+        "path": "assets/collection_covers/genre/soap/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/soap/landscape.webp",
         "sha256": "79be5a599afed38b505ec608d97028fb0768be86f6f8fc560f904f8bc44fa4bd",
         "sourceSha256": "5b65fdbd685297b5dc7eaca496f6c4b1a7426168f62ec3fdaf26daf3b2ccf626",
         "format": "webp",
@@ -4221,8 +4221,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/soap/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/soap/focus.webp",
+        "path": "assets/collection_covers/genre/soap/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/soap/landscape-focus.webp",
         "sha256": "b425ca7509351367e39057fe96c2df135c41f22dfd45fa11580c7f48cdb1ed5c",
         "sourceSha256": "b5c2cf12438d88d883e8274089447d3b8155c88d74919d21df0c977d757e7273",
         "format": "webp",
@@ -4239,8 +4239,8 @@
         "baseCoverSha256": "79be5a599afed38b505ec608d97028fb0768be86f6f8fc560f904f8bc44fa4bd"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/soap.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/soap.webp",
+        "path": "assets/collection_covers/genre/soap/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/soap/poster.webp",
         "sha256": "8df193b334056940a2b00a32c735b9dd685b4742dddcb5616026ed7d62d6a850",
         "sourceSha256": "2654c32ccbb7d2d5b6514f3443c7ed385272c330c20174b7ae31a1a23e7fb514",
         "format": "webp",
@@ -4376,8 +4376,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/talk wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/talk%20wide.webp",
+        "path": "assets/collection_covers/genre/talk/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/talk/landscape.webp",
         "sha256": "ef149ddcd537045935f6ef02e6ef1694b021ab14cb42bcf21e34e898802004c0",
         "sourceSha256": "daf2d059199e6501bbc01ca4f67d6f87fbd89e1350c3ff8d60fb127c804e7310",
         "format": "webp",
@@ -4393,8 +4393,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/talk/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/talk/focus.webp",
+        "path": "assets/collection_covers/genre/talk/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/talk/landscape-focus.webp",
         "sha256": "2fcb3bd7efe760765c80682640cb5398033c38cd7468de2dc2794e8c92524abc",
         "sourceSha256": "9df733a1c73f0dcb2d75dbe45514fcd683a0d626266e0773a94bc3231bc3d52b",
         "format": "webp",
@@ -4411,8 +4411,8 @@
         "baseCoverSha256": "ef149ddcd537045935f6ef02e6ef1694b021ab14cb42bcf21e34e898802004c0"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/talk.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/talk.webp",
+        "path": "assets/collection_covers/genre/talk/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/talk/poster.webp",
         "sha256": "fbd25b0bddec441bc0472c1caa20cc997257efffc08f07ad6e00316d4bbf4834",
         "sourceSha256": "8c21443a563ea5b4538634d2cd982b1bf300e2ecbce4f62329f64a22e7e53d9c",
         "format": "webp",
@@ -4548,8 +4548,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/thriller wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/thriller%20wide.webp",
+        "path": "assets/collection_covers/genre/thriller/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/thriller/landscape.webp",
         "sha256": "3116bd84fa7e736b6cd12c74038a92c47e2b9a1be35d11168f621400c903d652",
         "sourceSha256": "5f798eeb6a338f163c1b5c42bfba10d639af67572e3cacf2b0c28d8abe9d2583",
         "format": "webp",
@@ -4565,8 +4565,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/thriller/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/thriller/focus.webp",
+        "path": "assets/collection_covers/genre/thriller/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/thriller/landscape-focus.webp",
         "sha256": "f0041b18510a3ebb9f12734b7d28551582ae4b25000541a66bdea57d00191631",
         "sourceSha256": "4c0fa765893406541d797a64934476d8b25cb0352789fa9215f083e79d2023b1",
         "format": "webp",
@@ -4583,8 +4583,8 @@
         "baseCoverSha256": "3116bd84fa7e736b6cd12c74038a92c47e2b9a1be35d11168f621400c903d652"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Thriller.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Thriller.webp",
+        "path": "assets/collection_covers/genre/thriller/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/thriller/poster.webp",
         "sha256": "bc4490dc5e36e20579cc2eb8df0e1ae5ebdbbef4be62ed8f8de2b5c6168bd24e",
         "sourceSha256": "35e11b94774ad234f5cbbd5f71dc6c8002f098ebe7502e5dc2d7007a0f59a450",
         "format": "webp",
@@ -4720,8 +4720,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/tv movie wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/tv%20movie%20wide.webp",
+        "path": "assets/collection_covers/genre/tv-movie/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/tv-movie/landscape.webp",
         "sha256": "98b56b326368f6994f0b929617f284f1599ef1ffd800862b9595bc324984a2d6",
         "sourceSha256": "326387c1bc1a6f8eab20a881d4ff84e9bedc6de2a53d6d955f583554480a5c88",
         "format": "webp",
@@ -4737,8 +4737,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/tv-movie/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/tv-movie/focus.webp",
+        "path": "assets/collection_covers/genre/tv-movie/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/tv-movie/landscape-focus.webp",
         "sha256": "6ce78af7811e0ea1b6b5e4d1e80f5745df2dbd8c68006ecadd2bfa858a25ce2f",
         "sourceSha256": "2f75dcb93da2a2afe1aa046b8cf4c25ffbc61b88a0f03816a48adb6de1f02fc1",
         "format": "webp",
@@ -4755,8 +4755,8 @@
         "baseCoverSha256": "98b56b326368f6994f0b929617f284f1599ef1ffd800862b9595bc324984a2d6"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/tv movie.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/tv%20movie.webp",
+        "path": "assets/collection_covers/genre/tv-movie/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/tv-movie/poster.webp",
         "sha256": "640fba75885dd54a0187cfead9f468110f875febbb25f3fec0cc7da174308db2",
         "sourceSha256": "589d3393ad7d7a2fc1bada2396d6a482601f2c0eae636f0613eb6408bab74825",
         "format": "webp",
@@ -4892,8 +4892,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/war wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/war%20wide.webp",
+        "path": "assets/collection_covers/genre/war/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/war/landscape.webp",
         "sha256": "0833a2a0b3d2b51df8d518c52e4f37b64848178c4f5c13393bc1f771b79ecbb9",
         "sourceSha256": "448980f740b5892d13dee71d65369fe9afdb4d7a7d707c89e24e0cc8aa0cecce",
         "format": "webp",
@@ -4909,8 +4909,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/war/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/war/focus.webp",
+        "path": "assets/collection_covers/genre/war/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/war/landscape-focus.webp",
         "sha256": "a198af42ba3a0a0da65b51a01b70a1c611552f1844c6edf5ebab30f93962a926",
         "sourceSha256": "2c1747eebef07c32cf2b973f9709af45c4f121fe9c90899a94f34a5f90f366c4",
         "format": "webp",
@@ -4927,8 +4927,8 @@
         "baseCoverSha256": "0833a2a0b3d2b51df8d518c52e4f37b64848178c4f5c13393bc1f771b79ecbb9"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/War.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/War.webp",
+        "path": "assets/collection_covers/genre/war/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/war/poster.webp",
         "sha256": "5202227bfb1060ca20b4bac4e5d6e9890649002123336e58b4ebec047eca7ae3",
         "sourceSha256": "d2baa992458537bfda06fab4ffd5e2c2a15cfbc48331036acdf9ebd080e51435",
         "format": "webp",
@@ -5064,8 +5064,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/war_and_politics wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/war_and_politics%20wide.webp",
+        "path": "assets/collection_covers/genre/war-and-politics/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/war-and-politics/landscape.webp",
         "sha256": "ea35fddaf76028f2481a8435076935e8e34c5b45b2d7bffb47b7a718d038cf4d",
         "sourceSha256": "5c18c013be1ad9a161e6e1316d36c1ab36f79b8dc70872aa8145296f187ea987",
         "format": "webp",
@@ -5081,8 +5081,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/war-and-politics/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/war-and-politics/focus.webp",
+        "path": "assets/collection_covers/genre/war-and-politics/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/war-and-politics/landscape-focus.webp",
         "sha256": "d4347a9a2faa8220caf571ad07bbf1352521330d1f256c296a303d05b991cbbc",
         "sourceSha256": "b59589be9cf5c9de3005af67cba64547e985be92c2892ca5c331ebed307744e8",
         "format": "webp",
@@ -5099,8 +5099,8 @@
         "baseCoverSha256": "ea35fddaf76028f2481a8435076935e8e34c5b45b2d7bffb47b7a718d038cf4d"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/war_and_politics.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/war_and_politics.webp",
+        "path": "assets/collection_covers/genre/war-and-politics/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/war-and-politics/poster.webp",
         "sha256": "4083b51220381d15c4dfa07d2bdaec761a9d34c39af39bb328b7e4441b728e61",
         "sourceSha256": "930c2e9e6a7cc1c48e9d3e40565a16b568da54a904dd87e870800ded3004376f",
         "format": "webp",
@@ -5236,8 +5236,8 @@
         }
       },
       "landscape": {
-        "path": "assets/collection_covers/genre/wide/western wide.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/wide/western%20wide.webp",
+        "path": "assets/collection_covers/genre/western/landscape.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/western/landscape.webp",
         "sha256": "00f7f3f07b47141007e2473f637e3f35a4b7db9b0701c86d3d55594db3f94c4d",
         "sourceSha256": "0b4580cca054b0ae7948cf83057eb12d3255ae079de4f0bff19c654b9e510b44",
         "format": "webp",
@@ -5253,8 +5253,8 @@
         }
       },
       "focus": {
-        "path": "assets/collection_covers/genre/western/focus.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/western/focus.webp",
+        "path": "assets/collection_covers/genre/western/landscape-focus.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/western/landscape-focus.webp",
         "sha256": "4b50316c929d293ad14c3ead642305c53b4ec9b4cdc5290ea54995e31ef8de94",
         "sourceSha256": "652603493905f2be211cf1e1949884d5279d07b6e65caa8c3e8c59132ae0be70",
         "format": "webp",
@@ -5271,8 +5271,8 @@
         "baseCoverSha256": "00f7f3f07b47141007e2473f637e3f35a4b7db9b0701c86d3d55594db3f94c4d"
       },
       "poster": {
-        "path": "assets/collection_covers/genre/vertical/Western.webp",
-        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/vertical/Western.webp",
+        "path": "assets/collection_covers/genre/western/poster.webp",
+        "url": "https://raw.githubusercontent.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/western/poster.webp",
         "sha256": "4d52800593fa220fe5f4651cd6c6f2720c58fbb4189cecb5d14f683fc8c4bb6b",
         "sourceSha256": "ee66dff9220894bc698ede1bb839e85112b3794ba2a1130a3a5399f528c88a59",
         "format": "webp",
@@ -5381,7 +5381,7 @@
       "path": "assets/collection_covers/genre/vertical/Action.jpg",
       "sha256": "eca91b4b1173f8036577e1392758e83eb8242a229eeedfebf28db0249542e5e8",
       "bytes": 277928,
-      "replacementPath": "assets/collection_covers/genre/vertical/Action.webp",
+      "replacementPath": "assets/collection_covers/genre/action/poster.webp",
       "stableKey": "genre:action",
       "role": "poster"
     },
@@ -5389,7 +5389,7 @@
       "path": "assets/collection_covers/genre/vertical/Adventure.jpg",
       "sha256": "2fbac400f6485ee2d64b6f2bd1e78ba2cafe9892a56c4a6e09f873fbf6bad64b",
       "bytes": 339713,
-      "replacementPath": "assets/collection_covers/genre/vertical/Adventure.webp",
+      "replacementPath": "assets/collection_covers/genre/adventure/poster.webp",
       "stableKey": "genre:adventure",
       "role": "poster"
     },
@@ -5397,7 +5397,7 @@
       "path": "assets/collection_covers/genre/vertical/Animation.jpg",
       "sha256": "e4db76c62c79945bda7d660a843188ac2714a6a121a285fddc30d00ea576f9d4",
       "bytes": 280515,
-      "replacementPath": "assets/collection_covers/genre/vertical/Animation.webp",
+      "replacementPath": "assets/collection_covers/genre/animation/poster.webp",
       "stableKey": "genre:animation",
       "role": "poster"
     },
@@ -5405,7 +5405,7 @@
       "path": "assets/collection_covers/genre/vertical/Comedy.jpg",
       "sha256": "54de0c6ecfaf0bb3b1859eb57ce01cfbbbbfa6ec7a28d79e6a169213933bcbcd",
       "bytes": 198360,
-      "replacementPath": "assets/collection_covers/genre/vertical/Comedy.webp",
+      "replacementPath": "assets/collection_covers/genre/comedy/poster.webp",
       "stableKey": "genre:comedy",
       "role": "poster"
     },
@@ -5413,7 +5413,7 @@
       "path": "assets/collection_covers/genre/vertical/Disaster.jpg",
       "sha256": "380d6592186dbabd90c95a5e4f6f9b4b49fdc27941ac2a4875f4cc7d8ce889fe",
       "bytes": 382912,
-      "replacementPath": "assets/collection_covers/genre/vertical/Disaster.webp",
+      "replacementPath": "assets/collection_covers/genre/disaster/poster.webp",
       "stableKey": "genre:disaster",
       "role": "poster"
     },
@@ -5421,7 +5421,7 @@
       "path": "assets/collection_covers/genre/vertical/Documentary.jpg",
       "sha256": "009baef0fa6f7fffeb936cf4627d81b2850954311013961dcfe5adced970e9c5",
       "bytes": 217080,
-      "replacementPath": "assets/collection_covers/genre/vertical/Documentary.webp",
+      "replacementPath": "assets/collection_covers/genre/documentary/poster.webp",
       "stableKey": "genre:documentary",
       "role": "poster"
     },
@@ -5429,7 +5429,7 @@
       "path": "assets/collection_covers/genre/vertical/Drama.jpg",
       "sha256": "4160e7d3d74f957107389cd4859edc83ebe75376fb261489a314abf6fff860c8",
       "bytes": 156805,
-      "replacementPath": "assets/collection_covers/genre/vertical/Drama.webp",
+      "replacementPath": "assets/collection_covers/genre/drama/poster.webp",
       "stableKey": "genre:drama",
       "role": "poster"
     },
@@ -5437,7 +5437,7 @@
       "path": "assets/collection_covers/genre/vertical/Fantasy.jpg",
       "sha256": "3b824589b54f46ed036cad0a8c90cb6c8e7b8bfbeb841cc5d5f978f6892b0273",
       "bytes": 180050,
-      "replacementPath": "assets/collection_covers/genre/vertical/Fantasy.webp",
+      "replacementPath": "assets/collection_covers/genre/fantasy/poster.webp",
       "stableKey": "genre:fantasy",
       "role": "poster"
     },
@@ -5445,7 +5445,7 @@
       "path": "assets/collection_covers/genre/vertical/Horror.jpg",
       "sha256": "586d95249fd11c2c6a8e21b364ec595f2f13c082f7ce342697499afef4ea2347",
       "bytes": 173740,
-      "replacementPath": "assets/collection_covers/genre/vertical/Horror.webp",
+      "replacementPath": "assets/collection_covers/genre/horror/poster.webp",
       "stableKey": "genre:horror",
       "role": "poster"
     },
@@ -5453,7 +5453,7 @@
       "path": "assets/collection_covers/genre/vertical/Music.jpg",
       "sha256": "77cfe30d5d69c6d83888ca58b3bc8ceedde1bbc89c348cdf0a90a300fc31b2e8",
       "bytes": 199576,
-      "replacementPath": "assets/collection_covers/genre/vertical/Music.webp",
+      "replacementPath": "assets/collection_covers/genre/music/poster.webp",
       "stableKey": "genre:music",
       "role": "poster"
     },
@@ -5461,7 +5461,7 @@
       "path": "assets/collection_covers/genre/vertical/Musical.jpg",
       "sha256": "ad33ccd940efe26b460003cef7b9b927190c4e3ab8504af798bc5ab114ae5a43",
       "bytes": 206652,
-      "replacementPath": "assets/collection_covers/genre/vertical/Musical.webp",
+      "replacementPath": "assets/collection_covers/genre/musicals/poster.webp",
       "stableKey": "genre:musicals",
       "role": "poster"
     },
@@ -5469,7 +5469,7 @@
       "path": "assets/collection_covers/genre/vertical/Mystery.jpg",
       "sha256": "c43d3f41b7be96d2f7d26ce233514729c7af184cc4c7104610efbe2514ea8d1e",
       "bytes": 245139,
-      "replacementPath": "assets/collection_covers/genre/vertical/Mystery.webp",
+      "replacementPath": "assets/collection_covers/genre/mystery/poster.webp",
       "stableKey": "genre:mystery",
       "role": "poster"
     },
@@ -5477,7 +5477,7 @@
       "path": "assets/collection_covers/genre/vertical/Queer.jpg",
       "sha256": "a46c99effa8c440b09c2fd9e3e1ef742ff2a62c2897f05a3ade4e334ad4f0c9c",
       "bytes": 182949,
-      "replacementPath": "assets/collection_covers/genre/vertical/Queer.webp",
+      "replacementPath": "assets/collection_covers/genre/queer/poster.webp",
       "stableKey": "genre:queer",
       "role": "poster"
     },
@@ -5485,7 +5485,7 @@
       "path": "assets/collection_covers/genre/vertical/Rom Com.jpg",
       "sha256": "6853e8effeb7851a3cafe49c812e4b235d1cd31b7a1f9fdf2b2cdd85e1bcdc42",
       "bytes": 221300,
-      "replacementPath": "assets/collection_covers/genre/vertical/Rom Com.webp",
+      "replacementPath": "assets/collection_covers/genre/rom-com/poster.webp",
       "stableKey": "genre:rom-com",
       "role": "poster"
     },
@@ -5493,7 +5493,7 @@
       "path": "assets/collection_covers/genre/vertical/Romance.jpg",
       "sha256": "9b4f882a24a50bf8f705b090279c667a707bbd2d1047c66262eea1aa7ac27c26",
       "bytes": 167618,
-      "replacementPath": "assets/collection_covers/genre/vertical/Romance.webp",
+      "replacementPath": "assets/collection_covers/genre/romance/poster.webp",
       "stableKey": "genre:romance",
       "role": "poster"
     },
@@ -5501,7 +5501,7 @@
       "path": "assets/collection_covers/genre/vertical/Sci-Fi.jpg",
       "sha256": "8785eceda4778ad62e2d7cce831059db694f3868848d5d0e07e2febee0357968",
       "bytes": 289707,
-      "replacementPath": "assets/collection_covers/genre/vertical/Sci-Fi.webp",
+      "replacementPath": "assets/collection_covers/genre/science-fiction/poster.webp",
       "stableKey": "genre:science-fiction",
       "role": "poster"
     },
@@ -5509,7 +5509,7 @@
       "path": "assets/collection_covers/genre/vertical/Thriller.jpg",
       "sha256": "ee7cd56448626f55428155c2feaeb0a8fe2d156c14c435114010e374e93606c7",
       "bytes": 233443,
-      "replacementPath": "assets/collection_covers/genre/vertical/Thriller.webp",
+      "replacementPath": "assets/collection_covers/genre/thriller/poster.webp",
       "stableKey": "genre:thriller",
       "role": "poster"
     },
@@ -5517,7 +5517,7 @@
       "path": "assets/collection_covers/genre/vertical/War.jpg",
       "sha256": "aa1ad1522f440072d899bd00935f078c570edbb6931b56597c9dc5f2bf326504",
       "bytes": 218724,
-      "replacementPath": "assets/collection_covers/genre/vertical/War.webp",
+      "replacementPath": "assets/collection_covers/genre/war/poster.webp",
       "stableKey": "genre:war",
       "role": "poster"
     },
@@ -5525,7 +5525,7 @@
       "path": "assets/collection_covers/genre/vertical/Western.jpg",
       "sha256": "87ea3d3eb0aedef3e0f648c79674c3ef6687797d7bd3471fe378a1e329715b93",
       "bytes": 226391,
-      "replacementPath": "assets/collection_covers/genre/vertical/Western.webp",
+      "replacementPath": "assets/collection_covers/genre/western/poster.webp",
       "stableKey": "genre:western",
       "role": "poster"
     },
@@ -5533,7 +5533,7 @@
       "path": "assets/collection_covers/genre/vertical/action_and_adventure.jpg",
       "sha256": "c6275d439d9816dd1cb738ed08f93922af288bae3d20737817beba51957ea5e7",
       "bytes": 341054,
-      "replacementPath": "assets/collection_covers/genre/vertical/action_and_adventure.webp",
+      "replacementPath": "assets/collection_covers/genre/action-and-adventure/poster.webp",
       "stableKey": "genre:action-and-adventure",
       "role": "poster"
     },
@@ -5541,7 +5541,7 @@
       "path": "assets/collection_covers/genre/vertical/crime.jpg",
       "sha256": "cdf0bd70a79a1c249960cf8eacdf1dfa96f332414437166df88e43bd5a0ce7ef",
       "bytes": 190670,
-      "replacementPath": "assets/collection_covers/genre/vertical/crime.webp",
+      "replacementPath": "assets/collection_covers/genre/crime/poster.webp",
       "stableKey": "genre:crime",
       "role": "poster"
     },
@@ -5549,7 +5549,7 @@
       "path": "assets/collection_covers/genre/vertical/family.jpg",
       "sha256": "dfec2961d34b02c9cd3da994973ac81416718ecce1dad6a1effbadff6c146144",
       "bytes": 252182,
-      "replacementPath": "assets/collection_covers/genre/vertical/family.webp",
+      "replacementPath": "assets/collection_covers/genre/family/poster.webp",
       "stableKey": "genre:family",
       "role": "poster"
     },
@@ -5557,7 +5557,7 @@
       "path": "assets/collection_covers/genre/vertical/history.jpg",
       "sha256": "c3068208d97c9f605e941df0287bcec31449e86a07f9f697937a8070f748445d",
       "bytes": 273175,
-      "replacementPath": "assets/collection_covers/genre/vertical/history.webp",
+      "replacementPath": "assets/collection_covers/genre/history/poster.webp",
       "stableKey": "genre:history",
       "role": "poster"
     },
@@ -5565,7 +5565,7 @@
       "path": "assets/collection_covers/genre/vertical/kids.jpg",
       "sha256": "244b24cb5c318345862334e8bf5760b1cf90efac86236ffd9b1cb280b43521b7",
       "bytes": 266316,
-      "replacementPath": "assets/collection_covers/genre/vertical/kids.webp",
+      "replacementPath": "assets/collection_covers/genre/kids/poster.webp",
       "stableKey": "genre:kids",
       "role": "poster"
     },
@@ -5573,7 +5573,7 @@
       "path": "assets/collection_covers/genre/vertical/news.jpg",
       "sha256": "7c3f2dc2965ba1f4b006c164d9c0c48bfd8d116716d0d5ee9fe14b0d2f9f6e4b",
       "bytes": 225285,
-      "replacementPath": "assets/collection_covers/genre/vertical/news.webp",
+      "replacementPath": "assets/collection_covers/genre/news/poster.webp",
       "stableKey": "genre:news",
       "role": "poster"
     },
@@ -5581,7 +5581,7 @@
       "path": "assets/collection_covers/genre/vertical/reality.jpg",
       "sha256": "c0009fc86149b10556f4dbdf49767f2810d46e8cd35fe977342bf6a589c6b9c5",
       "bytes": 236265,
-      "replacementPath": "assets/collection_covers/genre/vertical/reality.webp",
+      "replacementPath": "assets/collection_covers/genre/reality/poster.webp",
       "stableKey": "genre:reality",
       "role": "poster"
     },
@@ -5589,7 +5589,7 @@
       "path": "assets/collection_covers/genre/vertical/sci-fi_and_fantasy.jpg",
       "sha256": "1d04eb8dbf23f58eae2fa2333e8dbc8cdaed920d602ff8216a971e72fa80e1f7",
       "bytes": 279392,
-      "replacementPath": "assets/collection_covers/genre/vertical/sci-fi_and_fantasy.webp",
+      "replacementPath": "assets/collection_covers/genre/sci-fi-and-fantasy/poster.webp",
       "stableKey": "genre:sci-fi-and-fantasy",
       "role": "poster"
     },
@@ -5597,7 +5597,7 @@
       "path": "assets/collection_covers/genre/vertical/soap.jpg",
       "sha256": "a1fd1392e60d27658b7bd5f7f0f334f9935ffda292d9b6637da56305034dfdaf",
       "bytes": 240630,
-      "replacementPath": "assets/collection_covers/genre/vertical/soap.webp",
+      "replacementPath": "assets/collection_covers/genre/soap/poster.webp",
       "stableKey": "genre:soap",
       "role": "poster"
     },
@@ -5605,7 +5605,7 @@
       "path": "assets/collection_covers/genre/vertical/talk.jpg",
       "sha256": "b6d16c5286c9ebb856a89c4f0c6e188abff25ae6e1cc08b54470ee57ba87a31c",
       "bytes": 159784,
-      "replacementPath": "assets/collection_covers/genre/vertical/talk.webp",
+      "replacementPath": "assets/collection_covers/genre/talk/poster.webp",
       "stableKey": "genre:talk",
       "role": "poster"
     },
@@ -5613,7 +5613,7 @@
       "path": "assets/collection_covers/genre/vertical/tv movie.jpg",
       "sha256": "27c92ef42870b5d261cac0664877b5bbfba8fd2689fad08fe9ed59e8d44509e0",
       "bytes": 199961,
-      "replacementPath": "assets/collection_covers/genre/vertical/tv movie.webp",
+      "replacementPath": "assets/collection_covers/genre/tv-movie/poster.webp",
       "stableKey": "genre:tv-movie",
       "role": "poster"
     },
@@ -5621,7 +5621,7 @@
       "path": "assets/collection_covers/genre/vertical/war_and_politics.jpg",
       "sha256": "c5106197a2eb8cba64fbd320749be32ce04edceea9758d887a539c377c93adc8",
       "bytes": 207546,
-      "replacementPath": "assets/collection_covers/genre/vertical/war_and_politics.webp",
+      "replacementPath": "assets/collection_covers/genre/war-and-politics/poster.webp",
       "stableKey": "genre:war-and-politics",
       "role": "poster"
     },
@@ -5629,7 +5629,7 @@
       "path": "assets/collection_covers/genre/wide/action wide.jpg",
       "sha256": "87f27f31450540f9b73ab40c837ac9b75864ce08f4f9beaea36038b3c5168afc",
       "bytes": 124143,
-      "replacementPath": "assets/collection_covers/genre/wide/action wide.webp",
+      "replacementPath": "assets/collection_covers/genre/action/landscape.webp",
       "stableKey": "genre:action",
       "role": "landscape"
     },
@@ -5637,7 +5637,7 @@
       "path": "assets/collection_covers/genre/wide/action_and_adventure wide.jpg",
       "sha256": "707a33257b4b7e5b53a0ca7d9b9f7aed7e6cc1a443fad20155c711c844dc11ee",
       "bytes": 283764,
-      "replacementPath": "assets/collection_covers/genre/wide/action_and_adventure wide.webp",
+      "replacementPath": "assets/collection_covers/genre/action-and-adventure/landscape.webp",
       "stableKey": "genre:action-and-adventure",
       "role": "landscape"
     },
@@ -5645,7 +5645,7 @@
       "path": "assets/collection_covers/genre/wide/adventure wide.jpg",
       "sha256": "bb34597014615f43ba45967228d075d3b864da273c4acff5f142723d384f2de9",
       "bytes": 113077,
-      "replacementPath": "assets/collection_covers/genre/wide/adventure wide.webp",
+      "replacementPath": "assets/collection_covers/genre/adventure/landscape.webp",
       "stableKey": "genre:adventure",
       "role": "landscape"
     },
@@ -5653,7 +5653,7 @@
       "path": "assets/collection_covers/genre/wide/animation wide.jpg",
       "sha256": "3e02ccb84f0542f1c65dc9ab37a63b5ff95bf035a38e2801e1bd5d51c6ceddb7",
       "bytes": 165645,
-      "replacementPath": "assets/collection_covers/genre/wide/animation wide.webp",
+      "replacementPath": "assets/collection_covers/genre/animation/landscape.webp",
       "stableKey": "genre:animation",
       "role": "landscape"
     },
@@ -5661,7 +5661,7 @@
       "path": "assets/collection_covers/genre/wide/comedy wide.jpg",
       "sha256": "bdaed9e3d3f22fa232b2475c7dc9ba7c34b45e8c69b79c7519e51423900ed8f9",
       "bytes": 173162,
-      "replacementPath": "assets/collection_covers/genre/wide/comedy wide.webp",
+      "replacementPath": "assets/collection_covers/genre/comedy/landscape.webp",
       "stableKey": "genre:comedy",
       "role": "landscape"
     },
@@ -5669,7 +5669,7 @@
       "path": "assets/collection_covers/genre/wide/crime wide.jpg",
       "sha256": "61625e0716b43aed4e43de4c4bc285d71b2dd5f3abe67c716950e8e573f85ab3",
       "bytes": 125115,
-      "replacementPath": "assets/collection_covers/genre/wide/crime wide.webp",
+      "replacementPath": "assets/collection_covers/genre/crime/landscape.webp",
       "stableKey": "genre:crime",
       "role": "landscape"
     },
@@ -5677,7 +5677,7 @@
       "path": "assets/collection_covers/genre/wide/disaster wide.jpg",
       "sha256": "b58c5dc9e097d3ead4a79811f4d0c158d67f04c4bf94f5c3a5ce321083620beb",
       "bytes": 157723,
-      "replacementPath": "assets/collection_covers/genre/wide/disaster wide.webp",
+      "replacementPath": "assets/collection_covers/genre/disaster/landscape.webp",
       "stableKey": "genre:disaster",
       "role": "landscape"
     },
@@ -5685,7 +5685,7 @@
       "path": "assets/collection_covers/genre/wide/documentary wide.jpg",
       "sha256": "f781e62eb46f25d58736f4b30b1fcc74d6c3e450014491fcc98defdceb23ce44",
       "bytes": 186691,
-      "replacementPath": "assets/collection_covers/genre/wide/documentary wide.webp",
+      "replacementPath": "assets/collection_covers/genre/documentary/landscape.webp",
       "stableKey": "genre:documentary",
       "role": "landscape"
     },
@@ -5693,7 +5693,7 @@
       "path": "assets/collection_covers/genre/wide/drama wide.jpg",
       "sha256": "e7b0b9e180ce5cfaa3a41bb4671cb384562711daeeea5b2d11fd4752ba531227",
       "bytes": 101971,
-      "replacementPath": "assets/collection_covers/genre/wide/drama wide.webp",
+      "replacementPath": "assets/collection_covers/genre/drama/landscape.webp",
       "stableKey": "genre:drama",
       "role": "landscape"
     },
@@ -5701,7 +5701,7 @@
       "path": "assets/collection_covers/genre/wide/family wide.jpg",
       "sha256": "260a05aa190ce9c46c8c953c8645839b6678ca43f61e8e9eed0927cdef5d00e6",
       "bytes": 156590,
-      "replacementPath": "assets/collection_covers/genre/wide/family wide.webp",
+      "replacementPath": "assets/collection_covers/genre/family/landscape.webp",
       "stableKey": "genre:family",
       "role": "landscape"
     },
@@ -5709,7 +5709,7 @@
       "path": "assets/collection_covers/genre/wide/fantasy wide.jpg",
       "sha256": "e41c016c7ae371a0102a3e8904caa620ca680c9007be647f827401c131bac818",
       "bytes": 142585,
-      "replacementPath": "assets/collection_covers/genre/wide/fantasy wide.webp",
+      "replacementPath": "assets/collection_covers/genre/fantasy/landscape.webp",
       "stableKey": "genre:fantasy",
       "role": "landscape"
     },
@@ -5717,7 +5717,7 @@
       "path": "assets/collection_covers/genre/wide/history wide.jpg",
       "sha256": "3eea94c91f008b71b49374745ce456a4b9f3aeb3c014b55b554b0683af3bab71",
       "bytes": 130498,
-      "replacementPath": "assets/collection_covers/genre/wide/history wide.webp",
+      "replacementPath": "assets/collection_covers/genre/history/landscape.webp",
       "stableKey": "genre:history",
       "role": "landscape"
     },
@@ -5725,7 +5725,7 @@
       "path": "assets/collection_covers/genre/wide/horror wide.jpg",
       "sha256": "2efe4514b2dfade7c14d3585bc8f0ec03c79537809fc32b622abeeb90152d13c",
       "bytes": 133453,
-      "replacementPath": "assets/collection_covers/genre/wide/horror wide.webp",
+      "replacementPath": "assets/collection_covers/genre/horror/landscape.webp",
       "stableKey": "genre:horror",
       "role": "landscape"
     },
@@ -5733,7 +5733,7 @@
       "path": "assets/collection_covers/genre/wide/kids wide.jpg",
       "sha256": "c98b8d001d2f2eef2ebc3f25eb24d568c6787ed87bc3f210fbcf0b715d99360f",
       "bytes": 142263,
-      "replacementPath": "assets/collection_covers/genre/wide/kids wide.webp",
+      "replacementPath": "assets/collection_covers/genre/kids/landscape.webp",
       "stableKey": "genre:kids",
       "role": "landscape"
     },
@@ -5741,7 +5741,7 @@
       "path": "assets/collection_covers/genre/wide/music wide.jpg",
       "sha256": "57583afee930594f552aca19890b1aa1dd98c0408e276f2707db9419641a651c",
       "bytes": 164390,
-      "replacementPath": "assets/collection_covers/genre/wide/music wide.webp",
+      "replacementPath": "assets/collection_covers/genre/music/landscape.webp",
       "stableKey": "genre:music",
       "role": "landscape"
     },
@@ -5749,7 +5749,7 @@
       "path": "assets/collection_covers/genre/wide/musicals wide.jpg",
       "sha256": "d73e7457045bdd42f0cfb75c94c5de677bf8f5a8791f3d847f4f5e42e1f25208",
       "bytes": 207431,
-      "replacementPath": "assets/collection_covers/genre/wide/musicals wide.webp",
+      "replacementPath": "assets/collection_covers/genre/musicals/landscape.webp",
       "stableKey": "genre:musicals",
       "role": "landscape"
     },
@@ -5757,7 +5757,7 @@
       "path": "assets/collection_covers/genre/wide/mystery wide.jpg",
       "sha256": "3ae9f93c6c080467a53fbd9af09a98182b62223107044a4cf690cdd8bee61429",
       "bytes": 121396,
-      "replacementPath": "assets/collection_covers/genre/wide/mystery wide.webp",
+      "replacementPath": "assets/collection_covers/genre/mystery/landscape.webp",
       "stableKey": "genre:mystery",
       "role": "landscape"
     },
@@ -5765,7 +5765,7 @@
       "path": "assets/collection_covers/genre/wide/news wide.jpg",
       "sha256": "c0efe36ae38f0f9bddef5a4f7ba0f4f0a7485aea44d9ba86ac5bfa2fd2c27c4d",
       "bytes": 148094,
-      "replacementPath": "assets/collection_covers/genre/wide/news wide.webp",
+      "replacementPath": "assets/collection_covers/genre/news/landscape.webp",
       "stableKey": "genre:news",
       "role": "landscape"
     },
@@ -5773,7 +5773,7 @@
       "path": "assets/collection_covers/genre/wide/queer wide'.jpg",
       "sha256": "729648d08bfb8e631c0488926a8f41bb0dc3353f4dbc1d82379d890007e7d4bf",
       "bytes": 137261,
-      "replacementPath": "assets/collection_covers/genre/wide/queer wide.webp",
+      "replacementPath": "assets/collection_covers/genre/queer/landscape.webp",
       "stableKey": "genre:queer",
       "role": "landscape"
     },
@@ -5781,7 +5781,7 @@
       "path": "assets/collection_covers/genre/wide/reality wide.jpg",
       "sha256": "901748255977c86eec54bab38e34fe27a786e46757dfb6a437b8aedf02144a3b",
       "bytes": 163852,
-      "replacementPath": "assets/collection_covers/genre/wide/reality wide.webp",
+      "replacementPath": "assets/collection_covers/genre/reality/landscape.webp",
       "stableKey": "genre:reality",
       "role": "landscape"
     },
@@ -5789,7 +5789,7 @@
       "path": "assets/collection_covers/genre/wide/rom com wide.jpg",
       "sha256": "d15343a72ccdb2be95efe467c65e656f4831605bdf0a037a90616f26b93e215d",
       "bytes": 169824,
-      "replacementPath": "assets/collection_covers/genre/wide/rom com wide.webp",
+      "replacementPath": "assets/collection_covers/genre/rom-com/landscape.webp",
       "stableKey": "genre:rom-com",
       "role": "landscape"
     },
@@ -5797,7 +5797,7 @@
       "path": "assets/collection_covers/genre/wide/romance wide.jpg",
       "sha256": "249ded162f2ad31482a569d94f2af5d720955b4e1a6a80d478193c7cb8c4f907",
       "bytes": 211415,
-      "replacementPath": "assets/collection_covers/genre/wide/romance wide.webp",
+      "replacementPath": "assets/collection_covers/genre/romance/landscape.webp",
       "stableKey": "genre:romance",
       "role": "landscape"
     },
@@ -5805,7 +5805,7 @@
       "path": "assets/collection_covers/genre/wide/sci-fi_and_fantasy wide.jpg",
       "sha256": "7bd9416184d5b77485d2b1e6f0d7d8f26550e93509c8fb61fcfd77f58ef1864f",
       "bytes": 194073,
-      "replacementPath": "assets/collection_covers/genre/wide/sci-fi_and_fantasy wide.webp",
+      "replacementPath": "assets/collection_covers/genre/sci-fi-and-fantasy/landscape.webp",
       "stableKey": "genre:sci-fi-and-fantasy",
       "role": "landscape"
     },
@@ -5813,7 +5813,7 @@
       "path": "assets/collection_covers/genre/wide/science fiction wide.jpg",
       "sha256": "321f3f8abad2d22ff0dd8ab2b72189c88e2e5ae389ed67476276ea25c624a8c3",
       "bytes": 156579,
-      "replacementPath": "assets/collection_covers/genre/wide/science fiction wide.webp",
+      "replacementPath": "assets/collection_covers/genre/science-fiction/landscape.webp",
       "stableKey": "genre:science-fiction",
       "role": "landscape"
     },
@@ -5821,7 +5821,7 @@
       "path": "assets/collection_covers/genre/wide/soap wide.jpg",
       "sha256": "2d6e8294289d749795f8ed49aea0b42fd8b0c41ebb9aa76fe6e2353b1f33745e",
       "bytes": 153847,
-      "replacementPath": "assets/collection_covers/genre/wide/soap wide.webp",
+      "replacementPath": "assets/collection_covers/genre/soap/landscape.webp",
       "stableKey": "genre:soap",
       "role": "landscape"
     },
@@ -5829,7 +5829,7 @@
       "path": "assets/collection_covers/genre/wide/talk wide.jpg",
       "sha256": "ab187f8e19f70bca95032d23a09060bc610c55bede47cd26a2fb32288d73ee18",
       "bytes": 154324,
-      "replacementPath": "assets/collection_covers/genre/wide/talk wide.webp",
+      "replacementPath": "assets/collection_covers/genre/talk/landscape.webp",
       "stableKey": "genre:talk",
       "role": "landscape"
     },
@@ -5837,7 +5837,7 @@
       "path": "assets/collection_covers/genre/wide/thriller wide.jpg",
       "sha256": "14ef81e98c80339da19608027dafc68a9eee791a250217acb243865def4f275a",
       "bytes": 140056,
-      "replacementPath": "assets/collection_covers/genre/wide/thriller wide.webp",
+      "replacementPath": "assets/collection_covers/genre/thriller/landscape.webp",
       "stableKey": "genre:thriller",
       "role": "landscape"
     },
@@ -5845,7 +5845,7 @@
       "path": "assets/collection_covers/genre/wide/tv movie wide.jpg",
       "sha256": "46517c309254a4a98012ff605cee2c07c2ef9c0d0899ec87cd901b483da026b8",
       "bytes": 173017,
-      "replacementPath": "assets/collection_covers/genre/wide/tv movie wide.webp",
+      "replacementPath": "assets/collection_covers/genre/tv-movie/landscape.webp",
       "stableKey": "genre:tv-movie",
       "role": "landscape"
     },
@@ -5853,7 +5853,7 @@
       "path": "assets/collection_covers/genre/wide/war wide.jpg",
       "sha256": "1b6ffa956002180904710945eb567017cc1b49af1ec3c64f0abe03692961b74c",
       "bytes": 168496,
-      "replacementPath": "assets/collection_covers/genre/wide/war wide.webp",
+      "replacementPath": "assets/collection_covers/genre/war/landscape.webp",
       "stableKey": "genre:war",
       "role": "landscape"
     },
@@ -5861,7 +5861,7 @@
       "path": "assets/collection_covers/genre/wide/war_and_politics wide.jpg",
       "sha256": "43def22eb9e54dcf8acaea99fea1008ddd402e125d8b0fbf255019d73cfea52c",
       "bytes": 151607,
-      "replacementPath": "assets/collection_covers/genre/wide/war_and_politics wide.webp",
+      "replacementPath": "assets/collection_covers/genre/war-and-politics/landscape.webp",
       "stableKey": "genre:war-and-politics",
       "role": "landscape"
     },
@@ -5869,7 +5869,7 @@
       "path": "assets/collection_covers/genre/wide/western wide.jpg",
       "sha256": "b985c2625cb5d5046aa197b04638b826c9e626b726849b6b0b92017b5e89b65d",
       "bytes": 201868,
-      "replacementPath": "assets/collection_covers/genre/wide/western wide.webp",
+      "replacementPath": "assets/collection_covers/genre/western/landscape.webp",
       "stableKey": "genre:western",
       "role": "landscape"
     }
@@ -5878,6 +5878,752 @@
     "format": "webp",
     "transparentTitleLogos": "lossless",
     "sourceHashMeaning": "Asset sourceSha256 is the lossless render master hash; artworkSources.hero records the original image hash.",
-    "legacyPolicy": "Wide/vertical directory and filename stems retained where unambiguous; JPG extensions replaced with WebP; the stray apostrophe in the Queer landscape stem is removed. Each retired path maps to its replacement. New roles use explicit per-genre filenames."
-  }
+    "legacyPolicy": "All eight assets are grouped under each stable genre slug with explicit shape names. retiredLegacyFiles maps the 62 former JPG paths directly to current files; relocatedFiles maps 93 former WebP paths directly to current files. Prior wide/vertical and generic focus.webp paths are retired."
+  },
+  "relocatedFiles": [
+    {
+      "path": "assets/collection_covers/genre/wide/science fiction wide.webp",
+      "sha256": "8d558f97578c9fd22f59f2f1881976331b853557cfc548fa3cfd7b27f2e51c22",
+      "bytes": 115372,
+      "replacementPath": "assets/collection_covers/genre/science-fiction/landscape.webp",
+      "stableKey": "genre:science-fiction",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/science-fiction/focus.webp",
+      "sha256": "747f357d2b660e4374809f0e9b170a069e55be28fc3b98ca74f06ff6135f3c82",
+      "bytes": 172262,
+      "replacementPath": "assets/collection_covers/genre/science-fiction/landscape-focus.webp",
+      "stableKey": "genre:science-fiction",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Sci-Fi.webp",
+      "sha256": "e9cf70ef65481046b1a6859c394643d56c2439617fdc786b854fa804ce3927e4",
+      "bytes": 168124,
+      "replacementPath": "assets/collection_covers/genre/science-fiction/poster.webp",
+      "stableKey": "genre:science-fiction",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/horror wide.webp",
+      "sha256": "01673b3571fee35450f23a7ca9f5e42259c8e64731824d4b3c9db17f2a2e9df5",
+      "bytes": 86228,
+      "replacementPath": "assets/collection_covers/genre/horror/landscape.webp",
+      "stableKey": "genre:horror",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/horror/focus.webp",
+      "sha256": "afa492206cbbe6d89a7b7d057a5c07025ba29d5b60dd1ebcaf0081fa1b094708",
+      "bytes": 118446,
+      "replacementPath": "assets/collection_covers/genre/horror/landscape-focus.webp",
+      "stableKey": "genre:horror",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Horror.webp",
+      "sha256": "86b6e6d1471835f8f82283a69090e3997f9da8d02c92edb9cccfb9058d30e21b",
+      "bytes": 119434,
+      "replacementPath": "assets/collection_covers/genre/horror/poster.webp",
+      "stableKey": "genre:horror",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/romance wide.webp",
+      "sha256": "ddfee425497220e19516c0cd8c54c241d0b01eb8f7ca187c9abd1da674376daa",
+      "bytes": 122908,
+      "replacementPath": "assets/collection_covers/genre/romance/landscape.webp",
+      "stableKey": "genre:romance",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/romance/focus.webp",
+      "sha256": "e1e3e295b57485d26634958b1c600004e4a641983423d92b8f0f6f02c46a1ef0",
+      "bytes": 164110,
+      "replacementPath": "assets/collection_covers/genre/romance/landscape-focus.webp",
+      "stableKey": "genre:romance",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Romance.webp",
+      "sha256": "f7ab67d98c654528e025da5bddb45763524f2a1b9a755cf8e886d32f94fbe316",
+      "bytes": 176808,
+      "replacementPath": "assets/collection_covers/genre/romance/poster.webp",
+      "stableKey": "genre:romance",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/action wide.webp",
+      "sha256": "49092c380f5d32d1bbfe4cd288daace80971c406988a8012c626e13c94cc027f",
+      "bytes": 106416,
+      "replacementPath": "assets/collection_covers/genre/action/landscape.webp",
+      "stableKey": "genre:action",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/action/focus.webp",
+      "sha256": "6299f83d7cf1140e8391fd8ca5ae6b2d80c7b7ee41f5843240f6ff456ca6e220",
+      "bytes": 141408,
+      "replacementPath": "assets/collection_covers/genre/action/landscape-focus.webp",
+      "stableKey": "genre:action",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Action.webp",
+      "sha256": "ae8a1e63e803a8d5535a36f28f6ef7945664db4e0a37d166a1ee61eb1eaeb3ac",
+      "bytes": 148600,
+      "replacementPath": "assets/collection_covers/genre/action/poster.webp",
+      "stableKey": "genre:action",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/action_and_adventure wide.webp",
+      "sha256": "9e7c9a2ef43712afed8bc7647526ac9ded31c1308b2388ccb9eb8cff93e4c88f",
+      "bytes": 104810,
+      "replacementPath": "assets/collection_covers/genre/action-and-adventure/landscape.webp",
+      "stableKey": "genre:action-and-adventure",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/action-and-adventure/focus.webp",
+      "sha256": "fd50e920ea397b5e3bbf634865e445145f299c6a0b036b6064a34cc369d6a232",
+      "bytes": 149366,
+      "replacementPath": "assets/collection_covers/genre/action-and-adventure/landscape-focus.webp",
+      "stableKey": "genre:action-and-adventure",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/action_and_adventure.webp",
+      "sha256": "38e55b14289ca07f83742c0bed1c360b5e783956e5826d4f3924af92bfaffe4f",
+      "bytes": 145192,
+      "replacementPath": "assets/collection_covers/genre/action-and-adventure/poster.webp",
+      "stableKey": "genre:action-and-adventure",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/adventure wide.webp",
+      "sha256": "1df522d8a9168a79dbaad894866e77b42b3d5a8147aaddb1d1433286ef756aac",
+      "bytes": 102728,
+      "replacementPath": "assets/collection_covers/genre/adventure/landscape.webp",
+      "stableKey": "genre:adventure",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/adventure/focus.webp",
+      "sha256": "d26e9b61117e0357f70966dbfac198dd9ab9c09fe2f7b7b2476f96093f9155c9",
+      "bytes": 132412,
+      "replacementPath": "assets/collection_covers/genre/adventure/landscape-focus.webp",
+      "stableKey": "genre:adventure",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Adventure.webp",
+      "sha256": "ed69cf7c77bb4429032b49a42375d47b16c7225e565b28afc2b8d4326b2268af",
+      "bytes": 146564,
+      "replacementPath": "assets/collection_covers/genre/adventure/poster.webp",
+      "stableKey": "genre:adventure",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/animation wide.webp",
+      "sha256": "00d05fa3a877e06c7f81b9a9b4f6c2611e92da4e5a153ffd099510c16743c1c0",
+      "bytes": 113662,
+      "replacementPath": "assets/collection_covers/genre/animation/landscape.webp",
+      "stableKey": "genre:animation",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/animation/focus.webp",
+      "sha256": "bc1cd21efa0ee012f711c921d394339dfb1ba39ea6202c39a392793dae277273",
+      "bytes": 146466,
+      "replacementPath": "assets/collection_covers/genre/animation/landscape-focus.webp",
+      "stableKey": "genre:animation",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Animation.webp",
+      "sha256": "83f37f3ccfb278e23a3e17ab5a74fb8260f9c18022c4679d5fb744ded74d08f6",
+      "bytes": 166138,
+      "replacementPath": "assets/collection_covers/genre/animation/poster.webp",
+      "stableKey": "genre:animation",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/comedy wide.webp",
+      "sha256": "b4617fc2e53e306b799e9e3375710efa7cf31ac8374e59ff11e5ca52f31a3128",
+      "bytes": 116554,
+      "replacementPath": "assets/collection_covers/genre/comedy/landscape.webp",
+      "stableKey": "genre:comedy",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/comedy/focus.webp",
+      "sha256": "6cca6925350a192e8f582d8b58eb46fc82c1a0ca899a040442a0aad3b136eebe",
+      "bytes": 150522,
+      "replacementPath": "assets/collection_covers/genre/comedy/landscape-focus.webp",
+      "stableKey": "genre:comedy",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Comedy.webp",
+      "sha256": "cfd650bce58a7c484eb1456d37cf60cf4cbd5e855207bdcd709d91d8752a4d4c",
+      "bytes": 169396,
+      "replacementPath": "assets/collection_covers/genre/comedy/poster.webp",
+      "stableKey": "genre:comedy",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/crime wide.webp",
+      "sha256": "8bd5ee874ae26aa233b99abc42e77b572b4d9cc5e56423fc85ae9509c15ff2f6",
+      "bytes": 104896,
+      "replacementPath": "assets/collection_covers/genre/crime/landscape.webp",
+      "stableKey": "genre:crime",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/crime/focus.webp",
+      "sha256": "c69299e72f5cd53fa85045006e94216bdaad0d8fc7d5d51f71298786ea7f5371",
+      "bytes": 140342,
+      "replacementPath": "assets/collection_covers/genre/crime/landscape-focus.webp",
+      "stableKey": "genre:crime",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/crime.webp",
+      "sha256": "70320f3dadf4557aad79d8c13f0e9e0df19ddd249b4ee233d624a5e7b0e474b9",
+      "bytes": 154142,
+      "replacementPath": "assets/collection_covers/genre/crime/poster.webp",
+      "stableKey": "genre:crime",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/disaster wide.webp",
+      "sha256": "9e3ceb602306f0e21316df499f3fff28ef43270c62170ee51ff6a3802c4e7186",
+      "bytes": 99222,
+      "replacementPath": "assets/collection_covers/genre/disaster/landscape.webp",
+      "stableKey": "genre:disaster",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/disaster/focus.webp",
+      "sha256": "785fe1bff981db7c531ee915eafbdb4fa4418bb7b59752655cadfd0158a11cb8",
+      "bytes": 131226,
+      "replacementPath": "assets/collection_covers/genre/disaster/landscape-focus.webp",
+      "stableKey": "genre:disaster",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Disaster.webp",
+      "sha256": "fdcfa883cac3396a0ae74241acd4d78f6579fd9824478b4fe55dffc23b32a997",
+      "bytes": 141626,
+      "replacementPath": "assets/collection_covers/genre/disaster/poster.webp",
+      "stableKey": "genre:disaster",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/documentary wide.webp",
+      "sha256": "62fe318b390ab5fc31d9a21aa6ddc63b096d01cec3ec147b26daeb53ae761a2e",
+      "bytes": 100326,
+      "replacementPath": "assets/collection_covers/genre/documentary/landscape.webp",
+      "stableKey": "genre:documentary",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/documentary/focus.webp",
+      "sha256": "b929bffeddee93b9a83e76942772ce2a1ae0384954abfe89a9d79cbd48b828f9",
+      "bytes": 126498,
+      "replacementPath": "assets/collection_covers/genre/documentary/landscape-focus.webp",
+      "stableKey": "genre:documentary",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Documentary.webp",
+      "sha256": "094e6e2446cee17d60f4f59200234b23415380a381a92bfc06c9a6ff27bf8ba2",
+      "bytes": 147796,
+      "replacementPath": "assets/collection_covers/genre/documentary/poster.webp",
+      "stableKey": "genre:documentary",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/drama wide.webp",
+      "sha256": "41b850b52c0b901b00e7d404396edbeae1193c25c6ca9db9eef34e18468975f5",
+      "bytes": 102512,
+      "replacementPath": "assets/collection_covers/genre/drama/landscape.webp",
+      "stableKey": "genre:drama",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/drama/focus.webp",
+      "sha256": "89101bea9a19b22735f124fbf683d364677a15c080822b53aacf570594646b45",
+      "bytes": 136306,
+      "replacementPath": "assets/collection_covers/genre/drama/landscape-focus.webp",
+      "stableKey": "genre:drama",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Drama.webp",
+      "sha256": "b77053dbc5bd2906195aefd74ce38865aa269d5c6b26b74cb57cf045480f9923",
+      "bytes": 147428,
+      "replacementPath": "assets/collection_covers/genre/drama/poster.webp",
+      "stableKey": "genre:drama",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/family wide.webp",
+      "sha256": "1aac02cedf1b57d09f1e696c6d3afeaa209f5b88dfc7b856c1f6e5487a659eae",
+      "bytes": 106432,
+      "replacementPath": "assets/collection_covers/genre/family/landscape.webp",
+      "stableKey": "genre:family",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/family/focus.webp",
+      "sha256": "3adb3d1b3afe4620e18100f671c0028b4a0c5db59b5e7687bca97e48d1b0b05f",
+      "bytes": 141578,
+      "replacementPath": "assets/collection_covers/genre/family/landscape-focus.webp",
+      "stableKey": "genre:family",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/family.webp",
+      "sha256": "cbb0c8c23c5648e144aa314f5346e7e4a51760f6453d608650942878b4244812",
+      "bytes": 154896,
+      "replacementPath": "assets/collection_covers/genre/family/poster.webp",
+      "stableKey": "genre:family",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/fantasy wide.webp",
+      "sha256": "ac241a888d16d96328ff77405156b90d8581a63f4875949a8d49f35e3c3e4362",
+      "bytes": 110352,
+      "replacementPath": "assets/collection_covers/genre/fantasy/landscape.webp",
+      "stableKey": "genre:fantasy",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/fantasy/focus.webp",
+      "sha256": "4d0fc931d33c06d54db9922731c6259a41ffe2fbe933d9cb1767cc071ff34b01",
+      "bytes": 146308,
+      "replacementPath": "assets/collection_covers/genre/fantasy/landscape-focus.webp",
+      "stableKey": "genre:fantasy",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Fantasy.webp",
+      "sha256": "a9a4e8430a600659e1a59e30c431d774584b486846f489137cf86f15918fb6a1",
+      "bytes": 162730,
+      "replacementPath": "assets/collection_covers/genre/fantasy/poster.webp",
+      "stableKey": "genre:fantasy",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/history wide.webp",
+      "sha256": "a8b6b9a7af39fac05e0cadd9c71f792ff701aa2066e56b978e8011082a66f820",
+      "bytes": 110458,
+      "replacementPath": "assets/collection_covers/genre/history/landscape.webp",
+      "stableKey": "genre:history",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/history/focus.webp",
+      "sha256": "b8bdac8b4ad3df983faf7e70afa24aa8bcb5540f5feee9fd1ab4cdb98b029c18",
+      "bytes": 146500,
+      "replacementPath": "assets/collection_covers/genre/history/landscape-focus.webp",
+      "stableKey": "genre:history",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/history.webp",
+      "sha256": "927a489bc423a3826b530ab3980a6e27bf6bfd5968f0ca26b9695b225f9f7100",
+      "bytes": 160656,
+      "replacementPath": "assets/collection_covers/genre/history/poster.webp",
+      "stableKey": "genre:history",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/kids wide.webp",
+      "sha256": "048197713ab28711e585491d8fd3e888ebfd71a7b68b83e9c970150ffd3a9f94",
+      "bytes": 112018,
+      "replacementPath": "assets/collection_covers/genre/kids/landscape.webp",
+      "stableKey": "genre:kids",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/kids/focus.webp",
+      "sha256": "f463c57416109fcd2a2569c6dd9218974febe0bce55358fb3eb16b3bbc5b8b92",
+      "bytes": 149298,
+      "replacementPath": "assets/collection_covers/genre/kids/landscape-focus.webp",
+      "stableKey": "genre:kids",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/kids.webp",
+      "sha256": "e5b5eea4937a9117d98ccd2d9c20e263a3b65aa0c92a5b8403cf710b5648ee9f",
+      "bytes": 152680,
+      "replacementPath": "assets/collection_covers/genre/kids/poster.webp",
+      "stableKey": "genre:kids",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/music wide.webp",
+      "sha256": "63e4771acbf5a4dcf6a025f4607387074635252a2f95ccb0a42eaa8a6dbbdbdb",
+      "bytes": 109204,
+      "replacementPath": "assets/collection_covers/genre/music/landscape.webp",
+      "stableKey": "genre:music",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/music/focus.webp",
+      "sha256": "90915b4a7a916af21932998b315f587184602d48dd4b9f8671a3a0a2fb9281f3",
+      "bytes": 151008,
+      "replacementPath": "assets/collection_covers/genre/music/landscape-focus.webp",
+      "stableKey": "genre:music",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Music.webp",
+      "sha256": "1e90cbe209ea01d80b215a1242a162f7533bdc319833919fe94afea2aa7fb22a",
+      "bytes": 153956,
+      "replacementPath": "assets/collection_covers/genre/music/poster.webp",
+      "stableKey": "genre:music",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/musicals wide.webp",
+      "sha256": "c232c80e428a1cd8525ab902d09cb970857a66bdcd4b8ff547ed99dce9281b5a",
+      "bytes": 126102,
+      "replacementPath": "assets/collection_covers/genre/musicals/landscape.webp",
+      "stableKey": "genre:musicals",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/musicals/focus.webp",
+      "sha256": "a184db1c9b749919e6de4069b805683e5ea804a6cfcc0569d84c1764a488e3e6",
+      "bytes": 164634,
+      "replacementPath": "assets/collection_covers/genre/musicals/landscape-focus.webp",
+      "stableKey": "genre:musicals",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Musical.webp",
+      "sha256": "477a3e0b68da3799c1d58e2bec76b453bfd23a9aa6423ab9a3c10bb822e7cc25",
+      "bytes": 180324,
+      "replacementPath": "assets/collection_covers/genre/musicals/poster.webp",
+      "stableKey": "genre:musicals",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/mystery wide.webp",
+      "sha256": "7abb7e9202a5b4d585d400834964eed3f94cd5b69b2a7313d3b98d95039226af",
+      "bytes": 100868,
+      "replacementPath": "assets/collection_covers/genre/mystery/landscape.webp",
+      "stableKey": "genre:mystery",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/mystery/focus.webp",
+      "sha256": "99b473d1eb208024119811ddff346afe7bd56fde9f0235cb07140bb36285885e",
+      "bytes": 134500,
+      "replacementPath": "assets/collection_covers/genre/mystery/landscape-focus.webp",
+      "stableKey": "genre:mystery",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Mystery.webp",
+      "sha256": "ef63a40f39c42d77a5d7d3f0f4f0b846089a0b47099fd5a6594d745c1fa43d0f",
+      "bytes": 147270,
+      "replacementPath": "assets/collection_covers/genre/mystery/poster.webp",
+      "stableKey": "genre:mystery",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/news wide.webp",
+      "sha256": "164f2043c2b34a93e19af0427dce8ad28ccf839c0a8ef90375c9cddae75ffedc",
+      "bytes": 106644,
+      "replacementPath": "assets/collection_covers/genre/news/landscape.webp",
+      "stableKey": "genre:news",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/news/focus.webp",
+      "sha256": "f2a9df9c0db6f6a2fd3894633676152acc51b4679ebd9f7b8f0664d1d9079346",
+      "bytes": 145544,
+      "replacementPath": "assets/collection_covers/genre/news/landscape-focus.webp",
+      "stableKey": "genre:news",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/news.webp",
+      "sha256": "36f1c5e700f22ddb226f14a526c104a99f07f581e75fa4c61e1c8a22b94b3868",
+      "bytes": 151826,
+      "replacementPath": "assets/collection_covers/genre/news/poster.webp",
+      "stableKey": "genre:news",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/queer wide.webp",
+      "sha256": "2235b958a5e3c77ae5eadacabfdc563b5cbac0657b11bedc371d582d04c363a2",
+      "bytes": 113470,
+      "replacementPath": "assets/collection_covers/genre/queer/landscape.webp",
+      "stableKey": "genre:queer",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/queer/focus.webp",
+      "sha256": "dc5b7440027f9958cfc55be503395a885ebcd848fc6f4cf75ceec550d5df29f3",
+      "bytes": 153046,
+      "replacementPath": "assets/collection_covers/genre/queer/landscape-focus.webp",
+      "stableKey": "genre:queer",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Queer.webp",
+      "sha256": "7363c71103584ded56578b7b1d6100b12e26f9f6415ca1ab45c36e291d4b0501",
+      "bytes": 161570,
+      "replacementPath": "assets/collection_covers/genre/queer/poster.webp",
+      "stableKey": "genre:queer",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/reality wide.webp",
+      "sha256": "f7413a509e58a1a505191274afe018b457762834dcfa9602c80614815a7ffbfc",
+      "bytes": 104904,
+      "replacementPath": "assets/collection_covers/genre/reality/landscape.webp",
+      "stableKey": "genre:reality",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/reality/focus.webp",
+      "sha256": "cb74f6fab07434010e80ed4a4a88ed9745fad9a667539e7f0fa99eb7e6e712c3",
+      "bytes": 137414,
+      "replacementPath": "assets/collection_covers/genre/reality/landscape-focus.webp",
+      "stableKey": "genre:reality",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/reality.webp",
+      "sha256": "3f396d4eebf0b2f1968f798e3f9c15083f50c54eb8d4bd34f69138fb5348ec14",
+      "bytes": 153464,
+      "replacementPath": "assets/collection_covers/genre/reality/poster.webp",
+      "stableKey": "genre:reality",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/rom com wide.webp",
+      "sha256": "1d6baed802841dff2603ede1c3337d8295ce150a3ed5cc32e7660ec42f46ec2d",
+      "bytes": 124776,
+      "replacementPath": "assets/collection_covers/genre/rom-com/landscape.webp",
+      "stableKey": "genre:rom-com",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/rom-com/focus.webp",
+      "sha256": "79e163084b68eb97453ba01dfb9b41240b3bf80475e171c3c12a0d6acfd29294",
+      "bytes": 160222,
+      "replacementPath": "assets/collection_covers/genre/rom-com/landscape-focus.webp",
+      "stableKey": "genre:rom-com",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Rom Com.webp",
+      "sha256": "bbee7010c86d54cc422486a3abe2ec0d3bd56d358d053ee362d23e2cb4fe5c3d",
+      "bytes": 178884,
+      "replacementPath": "assets/collection_covers/genre/rom-com/poster.webp",
+      "stableKey": "genre:rom-com",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/sci-fi_and_fantasy wide.webp",
+      "sha256": "6aca0577a4eb6fc4290edd2eee885f61f5dd62549760b9b3ee32e1e715016973",
+      "bytes": 118402,
+      "replacementPath": "assets/collection_covers/genre/sci-fi-and-fantasy/landscape.webp",
+      "stableKey": "genre:sci-fi-and-fantasy",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/sci-fi-and-fantasy/focus.webp",
+      "sha256": "a1cdafdbb1d124986b10cc1dcfca13da31a26af96260a5fe5fe77c721e394282",
+      "bytes": 175254,
+      "replacementPath": "assets/collection_covers/genre/sci-fi-and-fantasy/landscape-focus.webp",
+      "stableKey": "genre:sci-fi-and-fantasy",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/sci-fi_and_fantasy.webp",
+      "sha256": "6df5687fb8d72da1123924289f3154d3816a28b8bac72da1d9e0ab8a8ef28650",
+      "bytes": 169746,
+      "replacementPath": "assets/collection_covers/genre/sci-fi-and-fantasy/poster.webp",
+      "stableKey": "genre:sci-fi-and-fantasy",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/soap wide.webp",
+      "sha256": "79be5a599afed38b505ec608d97028fb0768be86f6f8fc560f904f8bc44fa4bd",
+      "bytes": 127908,
+      "replacementPath": "assets/collection_covers/genre/soap/landscape.webp",
+      "stableKey": "genre:soap",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/soap/focus.webp",
+      "sha256": "b425ca7509351367e39057fe96c2df135c41f22dfd45fa11580c7f48cdb1ed5c",
+      "bytes": 165960,
+      "replacementPath": "assets/collection_covers/genre/soap/landscape-focus.webp",
+      "stableKey": "genre:soap",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/soap.webp",
+      "sha256": "8df193b334056940a2b00a32c735b9dd685b4742dddcb5616026ed7d62d6a850",
+      "bytes": 185738,
+      "replacementPath": "assets/collection_covers/genre/soap/poster.webp",
+      "stableKey": "genre:soap",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/talk wide.webp",
+      "sha256": "ef149ddcd537045935f6ef02e6ef1694b021ab14cb42bcf21e34e898802004c0",
+      "bytes": 110052,
+      "replacementPath": "assets/collection_covers/genre/talk/landscape.webp",
+      "stableKey": "genre:talk",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/talk/focus.webp",
+      "sha256": "2fcb3bd7efe760765c80682640cb5398033c38cd7468de2dc2794e8c92524abc",
+      "bytes": 142128,
+      "replacementPath": "assets/collection_covers/genre/talk/landscape-focus.webp",
+      "stableKey": "genre:talk",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/talk.webp",
+      "sha256": "fbd25b0bddec441bc0472c1caa20cc997257efffc08f07ad6e00316d4bbf4834",
+      "bytes": 159632,
+      "replacementPath": "assets/collection_covers/genre/talk/poster.webp",
+      "stableKey": "genre:talk",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/thriller wide.webp",
+      "sha256": "3116bd84fa7e736b6cd12c74038a92c47e2b9a1be35d11168f621400c903d652",
+      "bytes": 97304,
+      "replacementPath": "assets/collection_covers/genre/thriller/landscape.webp",
+      "stableKey": "genre:thriller",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/thriller/focus.webp",
+      "sha256": "f0041b18510a3ebb9f12734b7d28551582ae4b25000541a66bdea57d00191631",
+      "bytes": 127456,
+      "replacementPath": "assets/collection_covers/genre/thriller/landscape-focus.webp",
+      "stableKey": "genre:thriller",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Thriller.webp",
+      "sha256": "bc4490dc5e36e20579cc2eb8df0e1ae5ebdbbef4be62ed8f8de2b5c6168bd24e",
+      "bytes": 141974,
+      "replacementPath": "assets/collection_covers/genre/thriller/poster.webp",
+      "stableKey": "genre:thriller",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/tv movie wide.webp",
+      "sha256": "98b56b326368f6994f0b929617f284f1599ef1ffd800862b9595bc324984a2d6",
+      "bytes": 111194,
+      "replacementPath": "assets/collection_covers/genre/tv-movie/landscape.webp",
+      "stableKey": "genre:tv-movie",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/tv-movie/focus.webp",
+      "sha256": "6ce78af7811e0ea1b6b5e4d1e80f5745df2dbd8c68006ecadd2bfa858a25ce2f",
+      "bytes": 148588,
+      "replacementPath": "assets/collection_covers/genre/tv-movie/landscape-focus.webp",
+      "stableKey": "genre:tv-movie",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/tv movie.webp",
+      "sha256": "640fba75885dd54a0187cfead9f468110f875febbb25f3fec0cc7da174308db2",
+      "bytes": 161534,
+      "replacementPath": "assets/collection_covers/genre/tv-movie/poster.webp",
+      "stableKey": "genre:tv-movie",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/war wide.webp",
+      "sha256": "0833a2a0b3d2b51df8d518c52e4f37b64848178c4f5c13393bc1f771b79ecbb9",
+      "bytes": 104870,
+      "replacementPath": "assets/collection_covers/genre/war/landscape.webp",
+      "stableKey": "genre:war",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/war/focus.webp",
+      "sha256": "a198af42ba3a0a0da65b51a01b70a1c611552f1844c6edf5ebab30f93962a926",
+      "bytes": 134602,
+      "replacementPath": "assets/collection_covers/genre/war/landscape-focus.webp",
+      "stableKey": "genre:war",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/War.webp",
+      "sha256": "5202227bfb1060ca20b4bac4e5d6e9890649002123336e58b4ebec047eca7ae3",
+      "bytes": 146674,
+      "replacementPath": "assets/collection_covers/genre/war/poster.webp",
+      "stableKey": "genre:war",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/war_and_politics wide.webp",
+      "sha256": "ea35fddaf76028f2481a8435076935e8e34c5b45b2d7bffb47b7a718d038cf4d",
+      "bytes": 103342,
+      "replacementPath": "assets/collection_covers/genre/war-and-politics/landscape.webp",
+      "stableKey": "genre:war-and-politics",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/war-and-politics/focus.webp",
+      "sha256": "d4347a9a2faa8220caf571ad07bbf1352521330d1f256c296a303d05b991cbbc",
+      "bytes": 139964,
+      "replacementPath": "assets/collection_covers/genre/war-and-politics/landscape-focus.webp",
+      "stableKey": "genre:war-and-politics",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/war_and_politics.webp",
+      "sha256": "4083b51220381d15c4dfa07d2bdaec761a9d34c39af39bb328b7e4441b728e61",
+      "bytes": 149008,
+      "replacementPath": "assets/collection_covers/genre/war-and-politics/poster.webp",
+      "stableKey": "genre:war-and-politics",
+      "role": "poster"
+    },
+    {
+      "path": "assets/collection_covers/genre/wide/western wide.webp",
+      "sha256": "00f7f3f07b47141007e2473f637e3f35a4b7db9b0701c86d3d55594db3f94c4d",
+      "bytes": 107416,
+      "replacementPath": "assets/collection_covers/genre/western/landscape.webp",
+      "stableKey": "genre:western",
+      "role": "landscape"
+    },
+    {
+      "path": "assets/collection_covers/genre/western/focus.webp",
+      "sha256": "4b50316c929d293ad14c3ead642305c53b4ec9b4cdc5290ea54995e31ef8de94",
+      "bytes": 143112,
+      "replacementPath": "assets/collection_covers/genre/western/landscape-focus.webp",
+      "stableKey": "genre:western",
+      "role": "focus"
+    },
+    {
+      "path": "assets/collection_covers/genre/vertical/Western.webp",
+      "sha256": "4d52800593fa220fe5f4651cd6c6f2720c58fbb4189cecb5d14f683fc8c4bb6b",
+      "bytes": 157880,
+      "replacementPath": "assets/collection_covers/genre/western/poster.webp",
+      "stableKey": "genre:western",
+      "role": "poster"
+    }
+  ]
 }

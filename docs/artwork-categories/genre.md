@@ -10,9 +10,9 @@ Release record: [PR #18](https://github.com/davecollections/nuvio-assets/pull/18
 
 ## State and next action
 
-State: the authorised Genre release supplies 248 WebPs across 31 complete eight-role sets, replacing all 62 legacy JPGs. The category authority is assets/collection_covers/genre/manifest.json, schemaVersion 2, with a strict sibling schema. It records exact URLs, dimensions, byte counts, source hashes, role bindings and every retired-path replacement. The selected original lettering, colour cards, A focus and photographic heroes are delivered byte-for-byte from genre-focus-full-v1. The owner authorised branch, commit, push, PR and merge. General Builder integration and actual Nuvio display acceptance remain absent.
+State: the authorised Genre release supplies 248 WebPs across 31 complete eight-role sets, replacing all 62 legacy JPGs. All eight images now live together in each genre folder with explicit shape filenames. The category authority is assets/collection_covers/genre/manifest.json, schemaVersion 2, with a strict sibling schema. It records exact URLs, dimensions, byte counts, source hashes, role bindings and every retired-path replacement. The selected original lettering, colour cards, A focus and photographic heroes are delivered byte-for-byte from genre-focus-full-v1. The owner authorised branch, commit, push, PR and merge. General Builder integration and actual Nuvio display acceptance remain absent.
 
-Next: consumers should use the role URLs in the Genre category manifest and migrate old JPG references using retiredLegacyFiles. Actual Nuvio display/crop acceptance and general Builder integration are separate work. Preserve the published paths and reviewed output hashes for later refreshes.
+Next: consumers should use the role URLs in the Genre category manifest and migrate old JPG references using retiredLegacyFiles; migrate the earlier WebP layout using relocatedFiles. These mappings are not redirects. Actual Nuvio display/crop acceptance and general Builder integration are separate work. Preserve the published paths and reviewed output hashes for later refreshes.
 
 ## Design and delivery contract
 
@@ -20,10 +20,10 @@ Selected design: photo-free cards with muted genre colours, quiet abstract conto
 
 | Role | Dimensions | Format | Published path |
 | --- | --- | --- | --- |
-| Poster | 800 x 1200 | WebP | assets/collection_covers/genre/vertical/LEGACY-STEM.webp |
+| Poster | 800 x 1200 | WebP | assets/collection_covers/genre/SLUG/poster.webp |
 | Square | 800 x 800 | WebP | assets/collection_covers/genre/SLUG/square.webp |
-| Landscape | 1200 x 675 | WebP | assets/collection_covers/genre/wide/LEGACY-STEM.webp |
-| Landscape focus | 1200 x 675 | WebP | assets/collection_covers/genre/SLUG/focus.webp |
+| Landscape | 1200 x 675 | WebP | assets/collection_covers/genre/SLUG/landscape.webp |
+| Landscape focus | 1200 x 675 | WebP | assets/collection_covers/genre/SLUG/landscape-focus.webp |
 | Poster focus | 800 x 1200 | WebP | assets/collection_covers/genre/SLUG/poster-focus.webp |
 | Square focus | 800 x 800 | WebP | assets/collection_covers/genre/SLUG/square-focus.webp |
 | Title logo | 1863 x 673 | Transparent lossless WebP | assets/collection_covers/genre/SLUG/title-logo.webp |
@@ -33,11 +33,11 @@ Heroes retain the accepted photographic selections from the earlier photo-card p
 
 ## Manifest and builder contract
 
-Category authority: assets/collection_covers/genre/manifest.json, schemaVersion 2, kind genre-artwork. It supplies 31 stable genre keys and all eight roles, with a strict manifest.schema.json. The 62 old JPG paths are retired by the authorised replacement; their hash-bound mappings are in retiredLegacyFiles. Wide/vertical directory locations and stems are retained, except the stray apostrophe in the Queer landscape filename; the real WebP files use .webp extensions. New roles use explicit filenames below their stable genre slug. No shared master index, studio/network runtime entry or general Builder integration is added.
+Category authority: assets/collection_covers/genre/manifest.json, schemaVersion 2, kind genre-artwork. It supplies 31 stable genre keys and all eight roles, with a strict manifest.schema.json. The 62 old JPG paths are retired by the authorised replacement; their hash-bound mappings are in retiredLegacyFiles. All eight role files live below each stable genre slug. The former wide/vertical folders and generic focus.webp filenames are retired; relocatedFiles maps their 93 previous WebP paths directly to current targets. Original JPG migration mappings also resolve directly to current targets. All image hashes are unchanged. No shared master index, studio/network runtime entry or general Builder integration is added.
 
 ## Review and publication evidence
 
-Approved complete review package: tools/studio-network-batch/.work/staging/genre-focus-full-v1/. Its owner-selection.json binds the twelve original A proofs and review-bindings.json covers all 93 focus outputs. The later complete-release authorisation supersedes their earlier needs-review state. Release evidence in tools/studio-network-batch/.work/staging/genre-release-20260917/publication-approval.json binds all 248 approved outputs to the actual published targets; reviewed-bindings.json records the exact hashes. Base cards come unchanged from genre-original-type-colour-v3; original title logos and heroes trace back to genre-full-v1. Earlier source-photo selection, crop evidence and proofs remain preserved. The milestone sections below describe historical states; the current release contract above takes precedence.
+Approved complete review package: tools/studio-network-batch/.work/staging/genre-focus-full-v1/. Its owner-selection.json binds the twelve original A proofs and review-bindings.json covers all 93 focus outputs. The later complete-release authorisation supersedes their earlier needs-review state. Release evidence in tools/studio-network-batch/.work/staging/genre-release-20260917/publication-approval.json records the initial publication targets. The owner subsequently authorised the grouped folder layout; tools/studio-network-batch/.work/staging/genre-layout-20260917/publication-approval.json and reviewed-bindings.json bind all 248 unchanged hashes to the current targets. Base cards come unchanged from genre-original-type-colour-v3; original title logos and heroes trace back to genre-full-v1. Earlier source-photo selection, crop evidence and proofs remain preserved. The milestone sections below describe historical states; the current release contract above takes precedence.
 
 Preflight: 136 repository tests passed and Inter font check confirmed after rerunning with required temporary-file access. The initial sandbox-only EPERM failures were environmental and resolved.
 
@@ -273,3 +273,14 @@ The new category manifest and strict draft-2020-12 schema follow the existing ca
 Validation: 136 existing repository tests; all 248 reviewed image hashes, dimensions, alpha roles and decodes; all 93 focus-base bindings; all 31 hero identities/crops; 62 backed-up legacy hashes and replacement mappings; exact category membership; strict manifest schema. The prior full-set pixel and browser checks remain applicable because image bytes are unchanged. Hero scale values are derived from recorded pixel crop and output dimensions, completing two inherited missing values and normalising one rounded-crop value before schema validation. No artwork changed. Live URL verification is recorded in the release evidence and release PR after publication.
 
 The source workspace stays separate from this release checkout. Existing Awards, README, ignore-file and concurrent Decades work are excluded. Only the Genre folder, this handover and the Genres workflow entry are in release scope. The retired JPGs are the only authorised image deletions.
+
+
+## Grouped genre folders - 2026-09-17
+
+The owner requested that every genre keep all its artwork together. All 31 genres now have eight files in one folder: landscape.webp, landscape-focus.webp, poster.webp, poster-focus.webp, square.webp, square-focus.webp, hero.webp and title-logo.webp. The manifest role keys are unchanged.
+
+Exactly 93 existing WebPs are relocated: 31 landscape covers, 31 poster covers and 31 landscape focus files. The other 155 assets retain their paths. All 248 image hashes, source/master metadata and dimensions are unchanged; zero artwork is regenerated. Old wide/vertical directories are removed from the published tree. relocatedFiles maps all 93 former WebP paths, and retiredLegacyFiles maps all 62 original JPG paths, directly to the final locations. There are no duplicate aliases or redirect promises.
+
+Local evidence is tools/studio-network-batch/.work/staging/genre-layout-20260917/. backup/ preserves the previous category; publication-approval.json and reviewed-bindings.json bind stable keys, roles, final paths and exact approved bytes. Validation covers all 31 eight-file folders, 248 hashes/dimensions/alpha roles, 93 focus pairs and 155 direct migration records, plus the strict manifest schema and 136 existing repository tests. Only the Genre folder, this handover and the Genre workflow row are changed. Unrelated Awards and Decades work is preserved.
+
+The owner-approved Genre publication workflow continues through a dedicated branch, commit, PR and merge. Consumers should use the manifest role URLs; Nuvio acceptance and Builder integration remain separate work. Subsequent live verification is recorded in local release evidence and the publication PR.
