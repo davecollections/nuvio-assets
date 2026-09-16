@@ -4,7 +4,7 @@ Last updated: 2026-09-17. Read the [shared workflow](../artwork-workflow.md) fir
 
 ## Current state
 
-The full 144-file pearl-white cover/focus replacement is owner-approved and installed on work/decades-pearl-artwork-release for the requested commit, PR and merge process (2026-09-17). All original filenames, paths and canonical URLs are preserved; heroes, title logos and parent covers are retained. The final section records release status. Earlier layout and media-object studies are superseded.
+The full 144-file pearl-white cover/focus release is delivered through [PR #20](https://github.com/davecollections/nuvio-assets/pull/20), using work/decades-pearl-artwork-release (2026-09-17). All original filenames, paths and canonical URLs are preserved; heroes, title logos and parent covers are retained. The final section records validation and publication evidence. Earlier layout and media-object studies are superseded.
 
 The preceding single-hero release was published to main in commit 9e89b3b8ca9bfb951940f316181b799f8f7062ae. It replaced 24 montage heroes with single-title heroes and corrected the 2000s Movies landscape/focus pair. Seventy other set assets and two parent covers were retained. All 98 canonical artwork URLs stayed unchanged. The previous release is 8147e6dbac84ac4d2f1e8cfb80f164f8032bcf58.
 
@@ -377,4 +377,6 @@ Validation: 136 repository tests passed. Candidate and installed manifests pass 
 
 Changed tracked scope: the 144 existing image files, Decades manifest/schema/README, this handover and the Decades row in the shared workflow (149 paths). Source backups, exact approval, publish plan, candidate/installed validation and preflight are retained under tools/studio-network-batch/.work/staging/decades-original-pearl-all-v1/publication/. No existing ignored proof was removed.
 
-Next: review the branch diff, commit only the 149 release paths, push the branch, create and merge its PR after checks, fast-forward local main and verify the live manifest/artwork hashes. Update this section with the PR and completion evidence. Keep stable URLs; do not clear Nuvio caches or modify Builder imports as part of publication.
+Publication: [PR #20](https://github.com/davecollections/nuvio-assets/pull/20) carries artwork commit d77390d9be542d93b1a027ea6636fd725592fe3b plus this handover link. The PR targets main and was cleanly mergeable; GitHub reported no configured checks for this branch. The 136 local tests and complete schema/asset/preservation validation supply the recorded checks. The exact merged commit, live URL hash responses and final working-tree state are recorded after merge in local publication/merge-receipt.json, live-url-verification.json and final-status.txt. Use the linked PR for authoritative merge state when those ignored receipts are absent in another checkout.
+
+Next: use the unchanged category URLs and manifest. Observe Nuvio cache refresh separately if needed; do not clear caches or modify Builder imports as part of this release. Any further image change needs its own staged review and exact-output approval.
