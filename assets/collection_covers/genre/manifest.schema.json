@@ -15,7 +15,8 @@
     "heroPolicy",
     "sets",
     "retiredLegacyFiles",
-    "delivery"
+    "delivery",
+    "relocatedFiles"
   ],
   "properties": {
     "schemaVersion": {
@@ -498,6 +499,52 @@
           "minLength": 1
         }
       }
+    },
+    "relocatedFiles": {
+      "type": "array",
+      "minItems": 93,
+      "maxItems": 93,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "path",
+          "sha256",
+          "bytes",
+          "replacementPath",
+          "stableKey",
+          "role"
+        ],
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "bytes": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "replacementPath": {
+            "type": "string",
+            "minLength": 1
+          },
+          "stableKey": {
+            "type": "string",
+            "minLength": 1
+          },
+          "role": {
+            "enum": [
+              "landscape",
+              "poster",
+              "focus"
+            ]
+          }
+        }
+      }
     }
   },
   "$defs": {
@@ -519,11 +566,11 @@
       "properties": {
         "path": {
           "type": "string",
-          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+          "pattern": "^assets/collection_covers/genre/[a-z0-9-]+/landscape\\.webp$"
         },
         "url": {
           "type": "string",
-          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/[a-z0-9-]+/landscape\\.webp$"
         },
         "sha256": {
           "type": "string",
@@ -604,11 +651,11 @@
       "properties": {
         "path": {
           "type": "string",
-          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+          "pattern": "^assets/collection_covers/genre/[a-z0-9-]+/landscape-focus\\.webp$"
         },
         "url": {
           "type": "string",
-          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/[a-z0-9-]+/landscape-focus\\.webp$"
         },
         "sha256": {
           "type": "string",
@@ -692,11 +739,11 @@
       "properties": {
         "path": {
           "type": "string",
-          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+          "pattern": "^assets/collection_covers/genre/[a-z0-9-]+/poster\\.webp$"
         },
         "url": {
           "type": "string",
-          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/[a-z0-9-]+/poster\\.webp$"
         },
         "sha256": {
           "type": "string",
@@ -777,11 +824,11 @@
       "properties": {
         "path": {
           "type": "string",
-          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+          "pattern": "^assets/collection_covers/genre/[a-z0-9-]+/poster-focus\\.webp$"
         },
         "url": {
           "type": "string",
-          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/[a-z0-9-]+/poster-focus\\.webp$"
         },
         "sha256": {
           "type": "string",
@@ -865,11 +912,11 @@
       "properties": {
         "path": {
           "type": "string",
-          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+          "pattern": "^assets/collection_covers/genre/[a-z0-9-]+/square\\.webp$"
         },
         "url": {
           "type": "string",
-          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/[a-z0-9-]+/square\\.webp$"
         },
         "sha256": {
           "type": "string",
@@ -950,11 +997,11 @@
       "properties": {
         "path": {
           "type": "string",
-          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+          "pattern": "^assets/collection_covers/genre/[a-z0-9-]+/square-focus\\.webp$"
         },
         "url": {
           "type": "string",
-          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/[a-z0-9-]+/square-focus\\.webp$"
         },
         "sha256": {
           "type": "string",
@@ -1038,11 +1085,11 @@
       "properties": {
         "path": {
           "type": "string",
-          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+          "pattern": "^assets/collection_covers/genre/[a-z0-9-]+/title-logo\\.webp$"
         },
         "url": {
           "type": "string",
-          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/[a-z0-9-]+/title-logo\\.webp$"
         },
         "sha256": {
           "type": "string",
@@ -1122,11 +1169,11 @@
       "properties": {
         "path": {
           "type": "string",
-          "pattern": "^assets/collection_covers/genre/.+\\.webp$"
+          "pattern": "^assets/collection_covers/genre/[a-z0-9-]+/hero\\.webp$"
         },
         "url": {
           "type": "string",
-          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/"
+          "pattern": "^https://raw\\.githubusercontent\\.com/davecollections/nuvio-assets/main/assets/collection_covers/genre/[a-z0-9-]+/hero\\.webp$"
         },
         "sha256": {
           "type": "string",
