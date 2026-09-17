@@ -380,3 +380,16 @@ Changed tracked scope: the 144 existing image files, Decades manifest/schema/REA
 Publication: [PR #20](https://github.com/davecollections/nuvio-assets/pull/20) carries artwork commit d77390d9be542d93b1a027ea6636fd725592fe3b plus this handover link. The PR targets main and was cleanly mergeable; GitHub reported no configured checks for this branch. The 136 local tests and complete schema/asset/preservation validation supply the recorded checks. The exact merged commit, live URL hash responses and final working-tree state are recorded after merge in local publication/merge-receipt.json, live-url-verification.json and final-status.txt. Use the linked PR for authoritative merge state when those ignored receipts are absent in another checkout.
 
 Next: use the unchanged category URLs and manifest. Observe Nuvio cache refresh separately if needed; do not clear caches or modify Builder imports as part of this release. Any further image change needs its own staged review and exact-output approval.
+
+
+## Approved Decades housekeeping - 2026-09-17
+
+After explicit approval of the recorded cleanup proposal, the fully merged work/decades-pearl-artwork-release branch was removed locally and from GitHub. Its tip 553887a95fc3cc0256240c77ab011a2000853340 remains reachable through main and merged PR #20; no commits or release history were discarded.
+
+Removed exactly 753 rejected draft/master files from eight directories, freeing 308,535,443 bytes (308.54 MB): masters and drafts under decades-library-proof-v1, decades-layout-study-v2 and decades-format-library-v1, plus masters under decades-media-objects-v1 and decades-media-objects-v2. Every resolved absolute path was checked to remain inside the intended staging directories, all reparse points were refused, and the complete file list, sizes and SHA-256 hashes matched the approved plan before deletion.
+
+Retained and hash-verified all 1,547 protected files, including every published Decades asset/manifest, the current pearl review and its 144 approved masters, original master inputs, rejected studies current WebP review galleries, scripts and records. Original source imagery/caches, other categories/worktrees and unrelated working changes were not modified. No artwork generation, publication or manifest writes occurred. No application tests were rerun for this file/ref-only cleanup; exact deletion, retained-hash, branch-absence and commit-reachability checks passed without failures.
+
+The earlier preservation reports are historical snapshots and may reference the now-authorised removed drafts. Do not interpret those missing files as a failed release or automatically recreate them. Discarded versions and their historical validators cannot be reopened/rerun unchanged; current published artwork and retained review galleries remain available.
+
+Local evidence: tools/studio-network-batch/.work/reports/decades-housekeeping-2026-09-17/ contains the unchanged approved plan.json, approved-preflight.json, native PowerShell cleanup script, deletion-progress.json, file-cleanup-receipt.json, completion.json and final-git-status.txt. This housekeeping note is recorded separately on main; it changes no published artwork or manifests. Next: no remaining approved cleanup work; keep the retained masters/source records for future changes.
